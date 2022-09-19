@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "email": "admin@comics.com",
+      "password": "$2a$10$nLQ7eabVMbf2jYhmpPnRMOGq3GPu6urmjTGVeOV7luhd4DWIlTS3m",
+      "name": "Administrator",
+      "role": "admin",
+      "id": 1
+    }
+  ],
+  "issues": [
+    {
+      "id": 1,
+      "title": "ng-bootstrap Playbook",
+      "instructor": "Steve Michelotti",
+      "path": "Angular",
+      "source": "Pluralsight"
+    }
+  ],
+  "publishers": [
+    {
+      "id": 1,
+      "name": "Marvel Comics"
+    },
+    {
+      "id": 2,
+      "name": "DC Comics"
+    },
+    {
+      "id": 3,
+      "name": "Dark Horse"
+    }
+  ],
+  "titles": [
+    {
+      "title": "Might Thor, The",
+      "publisher": "Mavel Comics",
+      "id": 1
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer",
+      "id": 2
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer, The",
+      "id": 3
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Web of Spider-Man",
+      "id": 4
+    }
+  ]
+}

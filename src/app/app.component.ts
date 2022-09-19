@@ -1,10 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+import { AuthService } from './auth/auth.service';
+import { MenuComponent } from './menu/menu.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  standalone: true,
+  imports: [MenuComponent, RouterOutlet],
+
+  template: `
+    <app-menu></app-menu>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  `,
+  styles: [],
 })
-export class AppComponent {
-  title = 'comic-collection';
+export class AppComponent implements OnInit {
+  title = 'Training Course Tracker';
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    this.authService.checkLogin();
+  }
 }
