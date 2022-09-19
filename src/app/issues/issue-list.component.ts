@@ -14,7 +14,7 @@ import { DisplayTableComponent } from '../shared/display-table.component';
 import { ModalDataService } from '../modals/modal-data.service';
 
 @Component({
-  selector: 'app-issue-list',
+  selector: 'app-issue-all-list',
   standalone: true,
   imports: [DisplayTableComponent, NgIf],
 
@@ -46,7 +46,7 @@ import { ModalDataService } from '../modals/modal-data.service';
     `,
   ],
 })
-export class IssueListComponent implements OnInit, OnDestroy {
+export class IssueAllListComponent implements OnInit, OnDestroy {
   columns: Column[] = [
     {
       key: 'title',
@@ -57,22 +57,22 @@ export class IssueListComponent implements OnInit, OnDestroy {
       sortDefault: true,
     },
     {
-      key: 'instructor',
-      name: 'Instructor',
+      key: 'publisher',
+      name: 'Publisher',
       width: '400px',
       type: 'sort',
       position: 'left',
     },
     {
-      key: 'path',
-      name: 'Path',
+      key: 'issue',
+      name: 'Issue Number',
       width: '150px',
       type: 'sort',
       position: 'left',
     },
     {
-      key: 'source',
-      name: 'Source',
+      key: 'coverPrice',
+      name: 'Cover Price',
       width: '150px',
       type: 'sort',
       position: 'left',
@@ -128,7 +128,7 @@ export class IssueListComponent implements OnInit, OnDestroy {
   }
 
   editIssue(id: number) {
-    this.router.navigate(['/issue', id]);
+    this.router.navigate(['/issues', id]);
   }
 
   getAllIssues(): void {
@@ -143,6 +143,6 @@ export class IssueListComponent implements OnInit, OnDestroy {
   }
 
   newIssue() {
-    this.router.navigate(['/issue/new']);
+    this.router.navigate(['/issues/new']);
   }
 }

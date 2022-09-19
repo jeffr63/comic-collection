@@ -30,11 +30,11 @@ import { take } from 'rxjs';
       <a
         mat-button
         class="primary"
-        [routerLink]="['/by_publishers']"
+        [routerLink]="['/by_publisher']"
         id="by_publishers"
         >By Publisher</a
       >
-      <a mat-button class="primary" [routerLink]="['/by_titles']" id="by_titles"
+      <a mat-button class="primary" [routerLink]="['/by_title']" id="by_titles"
         >By Title</a
       >
       <a mat-button class="primary" [routerLink]="['/issues']" id="courses"

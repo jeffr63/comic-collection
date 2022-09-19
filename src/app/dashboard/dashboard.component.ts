@@ -9,7 +9,7 @@ import { IssueService } from '../issues/issue.service';
   standalone: true,
   imports: [],
 
-  template: ` <section></section> `,
+  template: ` <section>Soon...</section> `,
 
   styles: [],
 })

@@ -10,11 +10,12 @@
   ],
   "issues": [
     {
-      "id": 1,
-      "title": "ng-bootstrap Playbook",
-      "instructor": "Steve Michelotti",
-      "path": "Angular",
-      "source": "Pluralsight"
+      "coverPrice": 1.25,
+      "includes": "",
+      "issue": 1,
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer",
+      "id": 1
     }
   ],
   "publishers": [

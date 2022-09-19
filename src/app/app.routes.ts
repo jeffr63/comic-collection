@@ -7,12 +7,28 @@ export const APP_ROUTES: Routes = [
   {
     path: 'admin',
     title: 'Administration',
-    loadChildren: () => import('./admin/admin.routes').then((m) => m.ADMIN_ROUTES),
+    loadChildren: () =>
+      import('./admin/admin.routes').then((r) => r.ADMIN_ROUTES),
+  },
+  {
+    path: 'by_publisher',
+    title: 'By Publisher',
+    loadChildren: () =>
+      import('./by-publisher/by-publisher.routes').then(
+        (r) => r.BY_PUBLISHER_ROUTES
+      ),
+  },
+  {
+    path: 'by_title',
+    title: 'By Title',
+    loadChildren: () =>
+      import('./by-title/by-title.routes').then((r) => r.BY_TITLE_ROUTES),
   },
   {
     path: 'issues',
     title: 'All Issues',
-    loadChildren: () => import('./issues/issue.routes').then((m) => m.ISSUES_ROUTES),
+    loadChildren: () =>
+      import('./issues/issue.routes').then((m) => m.ISSUES_ROUTES),
   },
   { path: 'home', title: 'Home', component: DashboardComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
