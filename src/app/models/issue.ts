@@ -4,7 +4,8 @@ export interface Issue {
   title: string;
   issue: number;
   coverPrice: number;
-  includes: string;
+  supporting: string;
+  antagonist: string;
 }
 
 export interface IssueData {

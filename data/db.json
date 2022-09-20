@@ -5,53 +5,837 @@
       "password": "$2a$10$nLQ7eabVMbf2jYhmpPnRMOGq3GPu6urmjTGVeOV7luhd4DWIlTS3m",
       "name": "Administrator",
       "role": "admin",
-      "id": 1
+      "antagonist": "","id": 1
     }
   ],
   "issues": [
     {
-      "coverPrice": 1.25,
-      "includes": "",
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
       "issue": 1,
-      "publisher": "Marvel Comics",
-      "title": "Silver Surfer",
-      "id": 1
-    }
-  ],
-  "publishers": [
-    {
-      "id": 1,
-      "name": "Marvel Comics"
-    },
-    {
-      "id": 2,
-      "name": "DC Comics"
-    },
-    {
-      "id": 3,
-      "name": "Dark Horse"
-    }
-  ],
-  "titles": [
-    {
-      "title": "Might Thor, The",
-      "publisher": "Mavel Comics",
+      "coverPrice": 1.25,
+      "supporting": "Galactus, Nova, Fantastic Four",
+      "antagonist": "Champion of the Universe, Skrull Empire",
       "id": 1
     },
     {
       "publisher": "Marvel Comics",
-      "title": "Silver Surfer",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "2",
+      "coverPrice": 0.75,
+      "supporting": "Empress Shalla-Bal",
+      "antagonist": "Ambassador Ptakr, Agent Al'Arok",
       "id": 2
     },
     {
       "publisher": "Marvel Comics",
-      "title": "Silver Surfer, The",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "3",
+      "coverPrice": 0.75,
+      "supporting": "Espirita",
+      "antagonist": "Elders of the Univers, Private Sta-Ramm, Major Muz-Kott, Agent Al'Arok, Ambassador Ptakr, Commander Krilok",
       "id": 3
     },
     {
       "publisher": "Marvel Comics",
-      "title": "Web of Spider-Man",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "4",
+      "coverPrice": 0.75,
+      "supporting": "Mantis",
+      "antagonist": "Elders of the Universe, Supreme Intelligence, Ripan, Emperor Kylor",
       "id": 4
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "5",
+      "coverPrice": 0.75,
+      "supporting": "Mantis, Jemiah the Analyzer",
+      "antagonist": "Obliterator, Emperor Kylor, Ripan, Captain-Tar-Rell, Medic Eine",
+      "id": 5
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "6",
+      "coverPrice": 0.75,
+      "supporting": "Mantis, Empress Shalla-Bal",
+      "antagonist": "Emperor Kylor, Aptak, Ripan, Emperor Yorak, Supreme Intelligence, Chief Coordinator Nenora, Councilor Phae-Dor, Coordinator Tus-Katt, Nullet",
+      "id": 6
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "7",
+      "coverPrice": 0.75,
+      "supporting": "Mantis, Empress Shalla-Bal",
+      "antagonist": "Lieutenant Bas-For, Supreme Intelligence, Chief Coordinator Nenora, Elders of the Universe",
+      "id": 7
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "8",
+      "coverPrice": 0.75,
+      "supporting": "Empress Shalla-Bal",
+      "antagonist": "Supreme Intelligence, Chief Coordinator Nenora, Master Pap-Torn, Rok, Aptak, Emperor Kylor, Ripan, Elders of the Universe",
+      "id": 8
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "9",
+      "coverPrice": 0.75,
+      "supporting": "Empress Shalla-Bal, Mantis, Nova, Galactus",
+      "antagonist": "Elders of the Universe",
+      "id": 9
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "10",
+      "coverPrice": 0.75,
+      "supporting": "Galactus, Nova, Eternity",
+      "antagonist": "Elders of the Universe, Supreme Leader, Aptak",
+      "id": 10
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "11",
+      "coverPrice": 1,
+      "supporting": "Nova",
+      "antagonist": "Supreme Leader Nenora, Clumsy Foulup, Bartak, Captain Reptyl, Contemplator",
+      "id": 11
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "12",
+      "coverPrice": 1,
+      "supporting": "Nova",
+      "antagonist": "Captain Reptyl, Contemplator, Clumsy Foulup",
+      "id": 12
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "13",
+      "coverPrice": 1,
+      "supporting": "Nova",
+      "antagonist": "Ronan the Accuser, Supreme Leader Nenora, Emperor Kylor, Ripan, Empress S'Byll, Krat",
+      "id": 49
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "14",
+      "coverPrice": 1,
+      "supporting": "Nova",
+      "antagonist": "Bartak, Ronan the Accuser",
+      "id": 13
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "15",
+      "coverPrice": 1,
+      "supporting": "Mr. Fantastic, Invisible Woman, Franklin Richards, Nova, Galactus",
+      "antagonist": "Elders of the Universe, Malice",
+      "id": 14
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "16",
+      "coverPrice": 1,
+      "supporting": "Mr. Fantastic",
+      "antagonist": "Malice, Elders of the Universe, In-Betweener",
+      "id": 15
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "17",
+      "coverPrice": 1,
+      "supporting": "Mr. Fantastic, Invisible Woman, Nova, Galactus",
+      "antagonist": "In-Betweener, Elders of the Universe",
+      "id": 16
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "18",
+      "coverPrice": 1,
+      "supporting": "Mr. Fantastic, Invisible Woman, Franklin Richards, Nova, Galactus, Master Order, Lord Chaos",
+      "antagonist": "In-Betweener, Elders of the Universe",
+      "id": 17
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "19",
+      "coverPrice": 1,
+      "supporting": "Nova, Galactus, Mr. Fantastic, Invisible Woman, Franklin Richards",
+      "antagonist": "Elders of the Universe, Captain Reptyl, Clumsy Foulup, Starfox, Firelord",
+      "id": 18
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "20",
+      "coverPrice": 1,
+      "supporting": "Nova, Galactus, Empress Shalla-Bal, Mantis",
+      "antagonist": "Firelord, Starfox, Captain Reptyl, Clumsy Foulup, Skyrot, Captain Jac'Oyaa, Lieutenant Nap'Perr, Supreme Leader Nonora, Super-Skrull",
+      "id": 19
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "21",
+      "coverPrice": 1,
+      "supporting": "Nova, Empress Shalla-Bal",
+      "antagonist": "Obliterator, Contemplator",
+      "id": 20
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "22",
+      "coverPrice": 1,
+      "supporting": "",
+      "antagonist": "Ego The Living Planet",
+      "id": 21
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "23",
+      "coverPrice": 1,
+      "supporting": "",
+      "antagonist": "Dragon",
+      "id": 22
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "24",
+      "coverPrice": 1,
+      "supporting": "",
+      "antagonist": "Motherboard 49.7",
+      "id": 23
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "25",
+      "coverPrice": 1.5,
+      "supporting": "Super-Skrull, Empress S'Byll, Empress Shalla-Bal",
+      "antagonist": "Brotherhood of the Badoon, Ronan the Accuser",
+      "id": 24
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "26",
+      "coverPrice": 1,
+      "supporting": "Empress S'Byll, Super-Skrull, Empress Shalla-Bal",
+      "antagonist": "Super Leader Nenora",
+      "id": 25
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "27",
+      "coverPrice": 1,
+      "supporting": "Empress S'Byll, Super-Skrull, Empress Shalla-Bal",
+      "antagonist": "Supreme Leader Nenora, Clumsy Foulup, Contemplator, Stranger, Brotherhood of Badoon",
+      "id": 26
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "28",
+      "coverPrice": 1,
+      "supporting": "Empress S'Byll, Super-Skrull, Empress Shalla-Bal",
+      "antagonist": "Captain Reptyl, Clumsy Foulup, Kree Sentr 7497, Supreme Leader Nenora, Contemplator",
+      "id": 27
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "29",
+      "coverPrice": 1,
+      "supporting": "Empress Shalla-Bal, Empress S'byll",
+      "antagonist": "Supreme Leader Nenora, Kar-Sagg, Midnight Sun, Kree Sentry 7497, Clumsy Foulup, Contemplator, Captain Reptyl",
+      "id": 28
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "30",
+      "coverPrice": 1,
+      "supporting": "Empress S'Byll, Empress Shalla-Bal",
+      "antagonist": "General Nos-Verr, Clumsy Foulup, Midnight Sun, Supreme Leader Nenora, Contemplator",
+      "id": 29
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "31",
+      "coverPrice": 1.5,
+      "supporting": "Empress Shalla-Bal, Empress S'byll",
+      "antagonist": "Coordinator Tus-Katt, General Dwi-Zann, Supreme Intelligence, Living Tribunal",
+      "id": 30
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "32",
+      "coverPrice": 1,
+      "supporting": "Captain Kerjos",
+      "antagonist": "Mephisto, Hlavac Virus",
+      "id": 31
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "33",
+      "coverPrice": 1,
+      "supporting": "",
+      "antagonist": "Impossible Man, Captain Glaktu",
+      "id": 32
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "34",
+      "coverPrice": 1,
+      "supporting": "",
+      "antagonist": "Ratter, Death, Thanos",
+      "id": 33
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "35",
+      "coverPrice": 1,
+      "supporting": "",
+      "antagonist": "Thanos",
+      "id": 34
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "36",
+      "coverPrice": 1,
+      "supporting": "Captain America, Impossible Man",
+      "antagonist": "She-Hulk",
+      "id": 35
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "37",
+      "coverPrice": 1,
+      "supporting": "Mentor, Starfox, Human Torch",
+      "antagonist": "Drax the Destroyer",
+      "id": 36
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "38",
+      "coverPrice": 1,
+      "supporting": "",
+      "antagonist": "Captain Nebula, Geatar, Thanos, Death",
+      "id": 37
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "40",
+      "coverPrice": 1,
+      "supporting": "Mentor, Starfox, Drak the Destroyer",
+      "antagonist": "Deputy Process Server C2DT42, Judge P-U2D-C, Thanos",
+      "id": 38
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "41",
+      "coverPrice": 1,
+      "supporting": "Big Bram Born, Zeaklar Belgewater",
+      "antagonist": "",
+      "id": 39
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "42",
+      "coverPrice": 1,
+      "supporting": "Zeaklar Belgewater",
+      "antagonist": "Great I",
+      "id": 40
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "43",
+      "coverPrice": 1,
+      "supporting": "Zeaklar Belgewater",
+      "antagonist": "",
+      "id": 41
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "44",
+      "coverPrice": 1,
+      "supporting": "Mentor, Starfox, Drak the Destroyer",
+      "antagonist": "Thanos, Mephisto",
+      "id": 42
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "45",
+      "coverPrice": 1,
+      "supporting": "Captain Styx, Bo's'n Mantrax, Nebula",
+      "antagonist": "Mephisto",
+      "id": 43
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "46",
+      "coverPrice": 1,
+      "supporting": "Drax the Destroyer, Judge Kray-Tor, Gamora, Pip, Autolycus, Adam Warlock",
+      "antagonist": "Thanos",
+      "id": 44
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "47",
+      "coverPrice": 1,
+      "supporting": "Drax the Destroyer, Gamora, Autolycus, Pip, Adam Warlock",
+      "antagonist": "Mephisto, Thanos",
+      "id": 45
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "48",
+      "coverPrice": 1,
+      "supporting": "Drax the Destroyer, Nova, Galactus, Adam Warlock, Gamora, Pip",
+      "antagonist": "Thanos, Mephisto",
+      "id": 46
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "49",
+      "coverPrice": 1,
+      "supporting": "Mentor, Starfox, Drak the Destroyer",
+      "antagonist": "Thanos, Mephisto",
+      "id": 47
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "50",
+      "coverPrice": 1.5,
+      "supporting": "Jartran Radd, Empress Shalla-Bal, Galactus",
+      "antagonist": "Thanos Statue",
+      "id": 48
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "51",
+      "coverPrice": 1,
+      "supporting": "Galactus, Nova",
+      "antagonist": "",
+      "id": 50
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "52",
+      "coverPrice": 1,
+      "supporting": "Adam Warlock, Captain America, Cloak, Doctor Strange, Drax the Destroyer, Fireload, Iron Man, Nova, Pip the Troll, She-Hulk, Spider-Man, Starfox, Thor, Wolverine",
+      "antagonist": "Thanos, Wong, Mentor, ISAAC, Tycho",
+      "id": 51
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "53",
+      "coverPrice": 1,
+      "supporting": "Kree, Clumsy Foulup, General Dwi-Zann",
+      "antagonist": "General Ael-Dan, General Dar-Benn, Corporal Aa-Gorn, Dr. Kaer-Linn",
+      "id": 52
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "54",
+      "coverPrice": 1,
+      "supporting": "Rhino",
+      "antagonist": "",
+      "id": 53
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "55",
+      "coverPrice": 1,
+      "supporting": "Adam Warlock",
+      "antagonist": "Thanos, Mephisto",
+      "id": 54
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "56",
+      "coverPrice": 1,
+      "supporting": "Adam Warlock",
+      "antagonist": "Thanos",
+      "id": 55
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "57",
+      "coverPrice": 1,
+      "supporting": "Captain America",
+      "antagonist": "Virtual Reality, Thanos",
+      "id": 56
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "58",
+      "coverPrice": 1,
+      "supporting": "Virtual Reality, Adam Warlock",
+      "antagonist": "Denial, Doubt, Guilt",
+      "id": 57
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "59",
+      "coverPrice": 1,
+      "supporting": "Adam Warlock, Doctor Strange, Thor, Drax the Destroyer, Firelord, Doctor Doom, Hulk, Thanos",
+      "antagonist": "Thanos",
+      "id": 58
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "60",
+      "coverPrice": 1,
+      "supporting": "Doctor Strange, Thor, Inhumans (Black Bolt, Gorgon, Karnak, Lockjaw",
+      "antagonist": "Midnight Sun, Collector",
+      "id": 59
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "61",
+      "coverPrice": 1,
+      "supporting": "Collector",
+      "antagonist": "Collection Agency (Shaara, Janus, Jude)",
+      "id": 60
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "62",
+      "coverPrice": 1.25,
+      "supporting": "",
+      "antagonist": "Collection Agency (Shaara, Janus, Jude)",
+      "id": 61
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "63",
+      "coverPrice": 1.25,
+      "supporting": "Captain Marvel",
+      "antagonist": "Collection Agency (Shaara, Janus, Jude), Captain Reptyl",
+      "id": 62
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "64",
+      "coverPrice": 1.25,
+      "supporting": "",
+      "antagonist": "Collector, Collection Agency (Shaara, Janus, Jude), Captain Reptyl",
+      "id": 63
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "65",
+      "coverPrice": 1.25,
+      "supporting": "",
+      "antagonist": "Captain Reptyl",
+      "id": 64
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "66",
+      "coverPrice": 1.25,
+      "supporting": "Mistress Love, Sire Hate, Avatar",
+      "antagonist": "",
+      "id": 65
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "67",
+      "coverPrice": 1.25,
+      "supporting": "Galactus, Doctor Strange, Nova, Starfox, Firelord, Mentor",
+      "antagonist": "",
+      "id": 66
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "68",
+      "coverPrice": 1.25,
+      "supporting": "Galactus, Doctor Strange, Nova",
+      "antagonist": "Khoon, Wolf Pack",
+      "id": 67
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "69",
+      "coverPrice": 1.25,
+      "supporting": "Nova, Galactus, Doctor Strange",
+      "antagonist": "Khoon, Wolf Pack",
+      "id": 68
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "70",
+      "coverPrice": 1.25,
+      "supporting": "Nova, Galactus",
+      "antagonist": "Morg",
+      "id": 69
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "71",
+      "coverPrice": 1.25,
+      "supporting": "Galactus, Firelord",
+      "antagonist": "Morg",
+      "id": 70
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "72",
+      "coverPrice": 1.25,
+      "supporting": "Firelord, Nova, Galactus",
+      "antagonist": "Morg",
+      "id": 71
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "73",
+      "coverPrice": 1.25,
+      "supporting": "Firelord, Nova, Galactus, Air-Walker",
+      "antagonist": "Morg",
+      "id": 72
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "74",
+      "coverPrice": 1.25,
+      "supporting": "Nova, Firelord, Air-Walker, Terrax the Tamer",
+      "antagonist": "",
+      "id": 73
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "75",
+      "coverPrice": 2.5,
+      "supporting": "Galactus, Terrax the Tamer, Firelord, Nova, Air-Walker",
+      "antagonist": "Morg",
+      "id": 74
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "76",
+      "coverPrice": 1.25,
+      "supporting": "Jack of Hearts, Galactus, Air-Walker, Firelord, Morg",
+      "antagonist": "Nebula, Geatar",
+      "id": 75
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "77",
+      "coverPrice": 1.25,
+      "supporting": "Jack of Hearts, Galactus, Air-Walker, Firelord, Morg",
+      "antagonist": "Nebula, Geatar",
+      "id": 76
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "78",
+      "coverPrice": 1.25,
+      "supporting": "Jack of Hearts, Air-Walker, Firelord, Galactus",
+      "antagonist": "Morg, Nebula, Geatar",
+      "id": 77
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "issue": "79",
+      "coverPrice": 1.25,
+      "supporting": "Imperial Guard (Gladiator, Oracle, Tempest)",
+      "antagonist": "Captain Atlas, Dr. Ninerva",
+      "id": 78
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Annual Volume 1, The",
+      "issue": "1",
+      "coverPrice": 1.75,
+      "supporting": "Ikaris, Eternals, Karkas, Nova, High Evolutionary, Super-Skrull",
+      "antagonist": "",
+      "id": 79
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Annual Volume 1, The",
+      "issue": "2",
+      "coverPrice": 2,
+      "supporting": "",
+      "antagonist": "Ghaur, Llyra",
+      "id": 80
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Annual Volume 1, The",
+      "issue": "3",
+      "coverPrice": 2,
+      "supporting": "Captain America, Mr. Fantastic",
+      "antagonist": "Lifeform","id": 81
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Annual Volume 1, The",
+      "issue": "4",
+      "coverPrice": 2,
+      "supporting": "Galactus",
+      "antagonist": "",
+      "id": 82
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Annual Volume 1, The",
+      "issue": "5",
+      "coverPrice": 2.25,
+      "supporting": "Rick Jones, Hulk, Namor the Supmariner",
+      "antagonist": "Shanzar, Lucian Aster, Wild One, Chthon",
+      "id": 83
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Limited Series, The",
+      "issue": "1",
+      "coverPrice": 1,
+      "supporting": "Galactus",
+      "antagonist": "",
+      "id": 84
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Limited Series, The",
+      "issue": "2",
+      "coverPrice": 1,
+      "supporting": "Empress Shalla-Bal, Ambassador Ptakr, Agent Al'Arok",
+      "antagonist": "",
+      "id": 85
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Solarman",
+      "issue": "1",
+      "coverPrice": 1,
+      "supporting": "Michael Tucker",
+      "antagonist": "Gormagga Kraal",
+      "id": 86
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Solarman",
+      "issue": "2",
+      "coverPrice": 1,
+      "supporting": "Jenny, Beepie, Michael Tucker",
+      "antagonist": "Dr. Doom",
+      "id": 87
+    }
+  ],
+  "publishers": [
+    {
+      "name": "Marvel Comics",
+      "id": 1
+    },
+    {
+      "name": "DC Comics",
+      "id": 2
+    },
+    {
+      "name": "Dark Horse",
+      "id": 3
+    }
+  ],
+  "titles": [
+    {
+      "publisher": "Mavel Comics",
+      "title": "Mighty Thor, The",
+      "id": 1
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Volume 3, The",
+      "id": 2
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Web of Spider-Man",
+      "id": 3
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Annual Volume 1, The",
+      "id": 4
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Silver Surfer Limited Series, The",
+      "id": 5
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Solarman",
+      "id": 6
     }
   ]
 }

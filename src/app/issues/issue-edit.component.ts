@@ -126,14 +126,26 @@ import { MatButtonModule } from '@angular/material/button';
           </mat-form-field>
 
           <mat-form-field appearance="outline">
-            <mat-label for="issue">Includes</mat-label>
+            <mat-label for="issue">Supporting Characters</mat-label>
             <input
               ngbAutofocus
               type="text"
-              id="includes"
+              id="supporting"
               matInput
-              formControlName="includes"
-              placeholder="Enter other major characters included in comic"
+              formControlName="supporting"
+              placeholder="Enter supporting characters"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label for="issue">Antagonist</mat-label>
+            <input
+              ngbAutofocus
+              type="text"
+              id="antagonist"
+              matInput
+              formControlName="antagonist"
+              placeholder="Enter major antagonist"
             />
           </mat-form-field>
         </form>
@@ -153,7 +165,7 @@ import { MatButtonModule } from '@angular/material/button';
           mat-flat-button
           color="accent"
           class="ml-10"
-          [routerLink]="['/courses']"
+          [routerLink]="['/issues']"
           ><mat-icon>cancel</mat-icon> Cancel</a
         >
       </mat-card-actions>
@@ -210,7 +222,8 @@ export class IssueEditComponent implements OnInit, OnDestroy {
       title: ['', Validators.required],
       issue: ['', Validators.required],
       coverPrice: ['', Validators.required],
-      includes: [''],
+      supporting: [''],
+      antagonist: ['']
     });
 
     this.route.params.subscribe((params) => {
@@ -243,19 +256,21 @@ export class IssueEditComponent implements OnInit, OnDestroy {
           title: issue.title,
           issue: issue.issue,
           coverPrice: issue.coverPrice,
-          includes: issue.includes,
+          supporting: issue.supporting,
+          antagonist: issue.antagonist
         });
       });
   }
 
   save() {
-    const { publisher, title, issue, coverPrice, includes } =
+    const { publisher, title, issue, coverPrice, supporting, antagonist } =
       this.issueEditForm.getRawValue();
     this.issue.publisher = publisher;
     this.issue.title = title;
     this.issue.issue = issue;
     this.issue.coverPrice = coverPrice;
-    this.issue.includes = includes;
+    this.issue.supporting = supporting;
+    this.issue.antagonist = antagonist;
 
     if (this.isNew) {
       this.issueService.add(this.issue);
