@@ -1,8 +1,8 @@
 export interface Issue {
-  id: number;
+  id: number | null;
   publisher: string;
   title: string;
-  issue: number;
+  issue: number | null;
   coverPrice: number;
   supporting: string;
   antagonist: string;

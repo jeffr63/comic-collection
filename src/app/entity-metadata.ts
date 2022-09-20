@@ -1,4 +1,5 @@
-import { EntityMetadataMap } from '@ngrx/data';
+import { EntityMetadataMap, PropsFilterFnFactory } from '@ngrx/data';
+import { Title } from './models/title';
 
 const entityMetadata: EntityMetadataMap = {
   Publishers: {

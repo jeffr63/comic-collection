@@ -64,7 +64,7 @@ export class TitleListComponent implements OnInit, OnDestroy {
       width: '300px',
       type: 'sort',
       position: 'left',
-      sortDefault: true,
+      sortDefault: false,
     },
     { key: 'action', name: '', width: '', type: 'action', position: 'left' },
   ];

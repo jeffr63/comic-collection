@@ -161,13 +161,19 @@ import { MatButtonModule } from '@angular/material/button';
         >
           <mat-icon>save</mat-icon> Save
         </button>
-        <a
+        <button
           mat-flat-button
-          color="accent"
+          color="warn"
+          (click)="saveNew()"
+          title="Save"
+          [disabled]="!issueEditForm.valid"
           class="ml-10"
-          [routerLink]="['/issues']"
-          ><mat-icon>cancel</mat-icon> Cancel</a
         >
+          <mat-icon>add_task</mat-icon> Save & New
+        </button>
+        <button mat-flat-button color="accent" (click)="cancel()" class="ml-10">
+          <mat-icon>cancel</mat-icon> Cancel
+        </button>
       </mat-card-actions>
     </mat-card>
   `,
@@ -223,7 +229,7 @@ export class IssueEditComponent implements OnInit, OnDestroy {
       issue: ['', Validators.required],
       coverPrice: ['', Validators.required],
       supporting: [''],
-      antagonist: ['']
+      antagonist: [''],
     });
 
     this.route.params.subscribe((params) => {
@@ -245,6 +251,10 @@ export class IssueEditComponent implements OnInit, OnDestroy {
     this.componentIsDestroyed.complete();
   }
 
+  cancel() {
+    this.location.back();
+  }
+
   loadFormValues(id: number) {
     this.issueService
       .getByKey(id)
@@ -257,7 +267,7 @@ export class IssueEditComponent implements OnInit, OnDestroy {
           issue: issue.issue,
           coverPrice: issue.coverPrice,
           supporting: issue.supporting,
-          antagonist: issue.antagonist
+          antagonist: issue.antagonist,
         });
       });
   }
@@ -278,5 +288,41 @@ export class IssueEditComponent implements OnInit, OnDestroy {
       this.issueService.update(this.issue);
     }
     this.location.back();
+  }
+
+  saveNew() {
+    const { publisher, title, issue, coverPrice, supporting, antagonist } =
+      this.issueEditForm.getRawValue();
+    this.issue.publisher = publisher;
+    this.issue.title = title;
+    this.issue.issue = issue;
+    this.issue.coverPrice = coverPrice;
+    this.issue.supporting = supporting;
+    this.issue.antagonist = antagonist;
+
+    if (this.isNew) {
+      this.issueService.add(this.issue);
+    } else {
+      this.issueService.update(this.issue);
+    }
+
+    // create new issue object and set publisher, title and coverPrice values
+    this.issue = {
+      publisher: publisher,
+      title: title,
+      coverPrice: coverPrice,
+      supporting: '',
+      antagonist: '',
+      id: null,
+      issue: null,
+    };
+    this.issueEditForm.patchValue({
+      publisher: this.issue.publisher,
+      title: this.issue.title,
+      coverPrice: this.issue.coverPrice,
+      issue: this.issue.issue,
+      supporting: this.issue.supporting,
+      antagonist: this.issue.antagonist,
+    });
   }
 }

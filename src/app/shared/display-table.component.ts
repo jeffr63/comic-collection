@@ -126,6 +126,24 @@ import { Column } from '../models/column';
               </button>
             </td>
           </ng-container>
+          <ng-container *ngIf="column.type === 'view'">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              [class.text-right]="column.position === 'right'"
+              style="min-width: {{ column.width }}"
+            ></th>
+            <td mat-cell *matCellDef="let element">
+              <button
+                mat-icon-button
+                color="primary"
+                (click)="emitOpen(element.id)"
+                title="View"
+              >
+                <mat-icon>view_list</mat-icon>
+              </button>
+            </td>
+          </ng-container>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -203,6 +221,7 @@ export class DisplayTableComponent implements OnInit, AfterViewInit {
   @Output() add: EventEmitter<any> = new EventEmitter();
   @Output() delete: EventEmitter<number> = new EventEmitter();
   @Output() edit: EventEmitter<number> = new EventEmitter();
+  @Output() open: EventEmitter<number> = new EventEmitter();
 
   constructor() {}
 
@@ -248,5 +267,9 @@ export class DisplayTableComponent implements OnInit, AfterViewInit {
 
   emitEdit(id: number) {
     this.edit.emit(id);
+  }
+
+  emitOpen(id: number) {
+    this.open.emit(id);
   }
 }

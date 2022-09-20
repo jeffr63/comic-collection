@@ -85,7 +85,6 @@ export class IssueAllListComponent implements OnInit, OnDestroy {
       position: 'left',
     },
   ];
-  public defaultSortColumn = 'title';
   loading = false;
   issues: Issue[] = [];
   componentIsDestroyed = new Subject<boolean>();
