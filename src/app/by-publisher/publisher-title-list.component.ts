@@ -30,7 +30,16 @@ import { NgIf } from '@angular/common';
       (open)="open($event)"
     ></app-display-table>
   </section>`,
-  styles: [],
+  styles: [
+    `
+      table {
+        width: 100%;
+      }
+      section {
+        margin: 10px 20px;
+      }
+    `,
+  ],
 })
 export class PublisherTitleListComponent implements OnInit, OnDestroy {
   columns: Column[] = [

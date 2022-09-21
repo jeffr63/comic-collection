@@ -1,4 +1,4 @@
-import { NgClass, NgForOf, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
   Component,
@@ -30,9 +30,7 @@ import { Column } from '../models/column';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    NgIf,
-    NgClass,
-    NgForOf,
+    CommonModule,
   ],
   template: `
     <ng-container>
@@ -85,6 +83,21 @@ import { Column } from '../models/column';
               {{ element[column.key] }}
             </td>
           </ng-container>
+          <ng-container *ngIf="column.type === 'currency_sort'">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              [class.text-right]="column.position === 'right'"
+              [arrowPosition]="column.position === 'right' ? 'before' : 'after'"
+              style="min-width: {{ column.width }}"
+            >
+              {{ column.name }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element[column.key] | currency }}
+            </td>
+          </ng-container>
           <ng-container *ngIf="column.type === ''">
             <th
               mat-header-cell
@@ -96,6 +109,19 @@ import { Column } from '../models/column';
             </th>
             <td mat-cell *matCellDef="let element">
               {{ element[column.key] }}
+            </td>
+          </ng-container>
+          <ng-container *ngIf="column.type === 'link'">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              [class.text-right]="column.position === 'right'"
+              style="min-width: {{ column.width }}"
+            >
+              {{ column.name }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <a href="{{ element[column.key] }}">{{ element[column.key] }}</a>
             </td>
           </ng-container>
           <ng-container *ngIf="column.type === 'action'">

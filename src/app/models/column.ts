@@ -2,7 +2,7 @@ export interface Column {
   key: string;
   name: string;
   width: string;
-  type: 'sort' | 'action' | 'view' | '';
+  type: 'sort' | 'currency_sort' | 'link' | 'action' | 'view' | '';
   position?: 'right' | 'left';
   sortDefault?: boolean;
 }

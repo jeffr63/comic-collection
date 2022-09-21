@@ -38,6 +38,9 @@ import { DeleteComponent } from '../modals/delete.component';
   `,
   styles: [
     `
+      table {
+        width: 100%;
+      }
       section {
         margin: 10px 20px;
       }
@@ -64,15 +67,22 @@ export class TitleIssueListComponent implements OnInit, OnDestroy {
     {
       key: 'issue',
       name: 'Issue Number',
-      width: '150px',
+      width: '50px',
       type: 'sort',
       position: 'left',
     },
     {
       key: 'coverPrice',
       name: 'Cover Price',
-      width: '150px',
-      type: 'sort',
+      width: '50px',
+      type: 'currency_sort',
+      position: 'left',
+    },
+    {
+      key: 'url',
+      name: 'Url',
+      width: '200px',
+      type: 'link',
       position: 'left',
     },
     {
