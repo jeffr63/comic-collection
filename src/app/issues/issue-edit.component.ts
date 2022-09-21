@@ -46,7 +46,7 @@ import { MatButtonModule } from '@angular/material/button';
       <mat-card-content>
         <form *ngIf="issueEditForm" [formGroup]="issueEditForm">
           <mat-form-field appearance="outline">
-            <mat-label>Publisher</mat-label>
+            <mat-label for="publisher">Publisher</mat-label>
             <mat-select id="publisher" formControlName="publisher">
               <mat-option
                 *ngFor="let publisher of publishers$ | async"
@@ -66,7 +66,7 @@ import { MatButtonModule } from '@angular/material/button';
           </mat-form-field>
 
           <mat-form-field appearance="outline">
-            <mat-label>Title</mat-label>
+            <mat-label for="title">Title</mat-label>
             <mat-select id="title" formControlName="title">
               <mat-option
                 *ngFor="let title of titles$ | async"
@@ -126,26 +126,14 @@ import { MatButtonModule } from '@angular/material/button';
           </mat-form-field>
 
           <mat-form-field appearance="outline">
-            <mat-label for="issue">Supporting Characters</mat-label>
+            <mat-label for="url">Url</mat-label>
             <input
               ngbAutofocus
               type="text"
-              id="supporting"
+              id="url"
               matInput
-              formControlName="supporting"
-              placeholder="Enter supporting characters"
-            />
-          </mat-form-field>
-
-          <mat-form-field appearance="outline">
-            <mat-label for="issue">Antagonist</mat-label>
-            <input
-              ngbAutofocus
-              type="text"
-              id="antagonist"
-              matInput
-              formControlName="antagonist"
-              placeholder="Enter major antagonist"
+              formControlName="url"
+              placeholder="Enter url to comic page"
             />
           </mat-form-field>
         </form>
@@ -228,8 +216,7 @@ export class IssueEditComponent implements OnInit, OnDestroy {
       title: ['', Validators.required],
       issue: ['', Validators.required],
       coverPrice: ['', Validators.required],
-      supporting: [''],
-      antagonist: [''],
+      url: [''],
     });
 
     this.route.params.subscribe((params) => {
@@ -266,21 +253,19 @@ export class IssueEditComponent implements OnInit, OnDestroy {
           title: issue.title,
           issue: issue.issue,
           coverPrice: issue.coverPrice,
-          supporting: issue.supporting,
-          antagonist: issue.antagonist,
+          url: issue.url,
         });
       });
   }
 
   save() {
-    const { publisher, title, issue, coverPrice, supporting, antagonist } =
+    const { publisher, title, issue, coverPrice, url } =
       this.issueEditForm.getRawValue();
     this.issue.publisher = publisher;
     this.issue.title = title;
     this.issue.issue = issue;
     this.issue.coverPrice = coverPrice;
-    this.issue.supporting = supporting;
-    this.issue.antagonist = antagonist;
+    this.issue.url = url;
 
     if (this.isNew) {
       this.issueService.add(this.issue);
@@ -291,14 +276,13 @@ export class IssueEditComponent implements OnInit, OnDestroy {
   }
 
   saveNew() {
-    const { publisher, title, issue, coverPrice, supporting, antagonist } =
+    const { publisher, title, issue, coverPrice, url } =
       this.issueEditForm.getRawValue();
     this.issue.publisher = publisher;
     this.issue.title = title;
     this.issue.issue = issue;
     this.issue.coverPrice = coverPrice;
-    this.issue.supporting = supporting;
-    this.issue.antagonist = antagonist;
+    this.issue.url = url;
 
     if (this.isNew) {
       this.issueService.add(this.issue);
@@ -311,8 +295,7 @@ export class IssueEditComponent implements OnInit, OnDestroy {
       publisher: publisher,
       title: title,
       coverPrice: coverPrice,
-      supporting: '',
-      antagonist: '',
+      url: url,
       id: null,
       issue: null,
     };
@@ -321,8 +304,7 @@ export class IssueEditComponent implements OnInit, OnDestroy {
       title: this.issue.title,
       coverPrice: this.issue.coverPrice,
       issue: this.issue.issue,
-      supporting: this.issue.supporting,
-      antagonist: this.issue.antagonist,
+      url: this.issue.url,
     });
   }
 }
