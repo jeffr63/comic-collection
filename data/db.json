@@ -676,16 +676,18 @@
     },
     {
       "publisher": "Marvel Comics",
-      "title": "Silver Surfer Limited Series, The",
+      "title": "Silver Surfer Volume 4, The",
       "issue": "1",
       "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Silver_Surfer_Vol_4_1",
       "id": 84
     },
     {
       "publisher": "Marvel Comics",
-      "title": "Silver Surfer Limited Series, The",
+      "title": "Silver Surfer Volume 4, The",
       "issue": "2",
       "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Silver_Surfer_Vol_4_2",
       "id": 85
     },
     {
@@ -693,6 +695,7 @@
       "title": "Solarman",
       "issue": "1",
       "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Solarman_Vol_1_1",
       "id": 86
     },
     {
@@ -700,6 +703,7 @@
       "title": "Solarman",
       "issue": "2",
       "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Solarman_Vol_1_2",
       "id": 87
     },
     {
@@ -707,6 +711,7 @@
       "title": "Quasar Volume 1",
       "issue": "42",
       "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Quasar_Vol_1_42",
       "id": 88
     },
     {
@@ -714,6 +719,7 @@
       "title": "Quasar Volume 1",
       "coverPrice": 1.25,
       "id": 89,
+      "url": "https://marvel.fandom.com/wiki/Quasar_Vol_1_43",
       "issue": "43"
     },
     {
@@ -721,6 +727,7 @@
       "title": "Quasar Volume 1",
       "coverPrice": 1.25,
       "id": 90,
+      "url": "https://marvel.fandom.com/wiki/Quasar_Vol_1_44",
       "issue": "44"
     },
     {
@@ -728,6 +735,7 @@
       "title": "Quasar Volume 1",
       "coverPrice": 1.25,
       "id": 91,
+      "url": "https://marvel.fandom.com/wiki/Quasar_Vol_1_45",
       "issue": "45"
     },
     {
@@ -735,6 +743,7 @@
       "title": "Quasar Volume 1",
       "coverPrice": 1.25,
       "id": 92,
+      "url": "https://marvel.fandom.com/wiki/Quasar_Vol_1_46",
       "issue": "46"
     },
     {
@@ -742,6 +751,7 @@
       "title": "Ravage 2099",
       "issue": "1",
       "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Ravage_2099_Vol_1_1",
       "id": 93
     },
     {
@@ -749,6 +759,7 @@
       "title": "Rom",
       "issue": "63",
       "coverPrice": 0.6,
+      "url": "https://marvel.fandom.com/wiki/Rom_Vol_1_63",
       "id": 94
     },
     {
@@ -756,6 +767,7 @@
       "title": "Silver Sable and the Wild Pack",
       "issue": "1",
       "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Silver_Sable_and_the_Wild_Pack_Vol_1_1",
       "id": 95
     },
     {
@@ -763,6 +775,7 @@
       "title": "Silver Sable and the Wild Pack",
       "coverPrice": 1.25,
       "id": 96,
+      "url": "https://marvel.fandom.com/wiki/Silver_Sable_and_the_Wild_Pack_Vol_1_2",
       "issue": "2"
     },
     {
@@ -770,6 +783,7 @@
       "title": "Silver Sable and the Wild Pack",
       "coverPrice": 1.25,
       "id": 97,
+      "url": "https://marvel.fandom.com/wiki/Silver_Sable_and_the_Wild_Pack_Vol_1_3",
       "issue": "3"
     },
     {
@@ -777,6 +791,7 @@
       "title": "Silver Sable and the Wild Pack",
       "coverPrice": 1.25,
       "id": 98,
+      "url": "https://marvel.fandom.com/wiki/Silver_Sable_and_the_Wild_Pack_Vol_1_4",
       "issue": "4"
     },
     {
@@ -784,6 +799,7 @@
       "title": "Silver Sable and the Wild Pack",
       "coverPrice": 1.25,
       "id": 99,
+      "url": "https://marvel.fandom.com/wiki/Silver_Sable_and_the_Wild_Pack_Vol_1_5",
       "issue": "5"
     },
     {
@@ -791,6 +807,7 @@
       "title": "Speedball",
       "issue": "1",
       "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Speedball_Vol_1_1",
       "id": 100
     },
     {
@@ -798,6 +815,7 @@
       "title": "Speedball",
       "coverPrice": 0.75,
       "id": 101,
+      "url": "https://marvel.fandom.com/wiki/Speedball_Vol_1_2",
       "issue": "2"
     },
     {
@@ -805,6 +823,7 @@
       "title": "Spider-Man Volume 1",
       "issue": "16",
       "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Spider-Man_Vol_1_16",
       "id": 102
     },
     {
@@ -812,6 +831,7 @@
       "title": "Spider-Man Volume 1",
       "coverPrice": 1.75,
       "id": 103,
+      "url": "https://marvel.fandom.com/wiki/Spider-Man_Vol_1_17",
       "issue": "17"
     },
     {
@@ -819,6 +839,7 @@
       "title": "Spider-Man Volume 1",
       "coverPrice": 3.5,
       "id": 104,
+      "url": "https://marvel.fandom.com/wiki/Spider-Man_Vol_1_26",
       "issue": "26"
     },
     {
@@ -826,6 +847,7 @@
       "title": "Spider-Man 2099 Volume 1",
       "issue": "1",
       "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Spider-Man_2099_Vol_1_1",
       "id": 105
     },
     {
@@ -833,6 +855,7 @@
       "title": "Spider-Man 2099 Volume 1",
       "coverPrice": 1.25,
       "id": 106,
+      "url": "https://marvel.fandom.com/wiki/Spider-Man_2099_Vol_1_2",
       "issue": "2"
     },
     {
@@ -840,6 +863,7 @@
       "title": "Spider-Man 2099 Volume 1",
       "coverPrice": 1.25,
       "id": 107,
+      "url": "https://marvel.fandom.com/wiki/Spider-Man_2099_Vol_1_3",
       "issue": "3"
     },
     {
@@ -847,6 +871,7 @@
       "title": "Spider-Man 2099 Volume 1",
       "coverPrice": 1.25,
       "id": 108,
+      "url": "https://marvel.fandom.com/wiki/Spider-Man_2099_Vol_1_4",
       "issue": "4"
     },
     {
@@ -854,6 +879,7 @@
       "title": "Spider-Man 2099 Volume 1",
       "coverPrice": 1.25,
       "id": 109,
+      "url": "https://marvel.fandom.com/wiki/Spider-Man_2099_Vol_1_5",
       "issue": "5"
     },
     {
@@ -861,6 +887,7 @@
       "title": "Spider-Man 2099 Volume 1",
       "coverPrice": 1.25,
       "id": 110,
+      "url": "https://marvel.fandom.com/wiki/Spider-Man_2099_Vol_1_6",
       "issue": "6"
     },
     {
@@ -868,6 +895,7 @@
       "title": "Spider-Man 2099 Volume 1",
       "coverPrice": 1.25,
       "id": 111,
+      "url": "https://marvel.fandom.com/wiki/Spider-Man_2099_Vol_1_7",
       "issue": "7"
     },
     {
@@ -875,6 +903,7 @@
       "title": "Spider-Man 2099 Volume 1",
       "coverPrice": 1.25,
       "id": 112,
+      "url": "https://marvel.fandom.com/wiki/Spider-Man_2099_Vol_1_8",
       "issue": "8"
     },
     {
@@ -882,6 +911,7 @@
       "title": "Spider-Man 2099 Volume 1",
       "coverPrice": 1.25,
       "id": 113,
+      "url": "https://marvel.fandom.com/wiki/Spider-Man_2099_Vol_1_9",
       "issue": "9"
     },
     {
@@ -1083,6 +1113,1438 @@
       "id": 138,
       "issue": "23",
       "url": "https://marvel.fandom.com/wiki/Amazing_Spider-Man_Annual_Vol_1_23"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "issue": "146",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_146",
+      "id": 139
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_147",
+      "id": 140,
+      "issue": "147"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_148",
+      "id": 141,
+      "issue": "148"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_149",
+      "id": 142,
+      "issue": "149"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_150",
+      "id": 143,
+      "issue": "150"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_151",
+      "id": 144,
+      "issue": "151"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_152",
+      "id": 145,
+      "issue": "152"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_153",
+      "id": 146,
+      "issue": "153"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_154",
+      "id": 147,
+      "issue": "154"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_155",
+      "id": 148,
+      "issue": "155"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_156",
+      "id": 149,
+      "issue": "156"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_157",
+      "id": 150,
+      "issue": "157"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_158",
+      "id": 151,
+      "issue": "158"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_159",
+      "id": 152,
+      "issue": "159"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_160",
+      "id": 153,
+      "issue": "160"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_161",
+      "id": 154,
+      "issue": "161"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_162",
+      "id": 155,
+      "issue": "162"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_163",
+      "id": 156,
+      "issue": "163"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_189",
+      "id": 157,
+      "issue": "189"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Vol_1_200",
+      "id": 158,
+      "issue": "200"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Annual Volume 1, The Spectacular",
+      "issue": "8",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Annual_Vol_1_8",
+      "id": 159
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Annual Volume 1, The Spectacular",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Spectacular_Spider-Man_Annual_Vol_1_9",
+      "id": 160,
+      "issue": "9"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Unlimited Volume 1",
+      "issue": "1",
+      "coverPrice": 3.95,
+      "url": "https://marvel.fandom.com/wiki/Spider-Man_Unlimited_Vol_1_1",
+      "id": 161
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "issue": "47",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_47",
+      "id": 162
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_48",
+      "id": 163,
+      "issue": "48"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_49",
+      "id": 164,
+      "issue": "49"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "issue": "50",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_50",
+      "id": 165
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_51",
+      "id": 166,
+      "issue": "51"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_52",
+      "id": 167,
+      "issue": "52"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_53",
+      "id": 168,
+      "issue": "53"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_54",
+      "id": 169,
+      "issue": "54"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_55",
+      "id": 170,
+      "issue": "55"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_56",
+      "id": 171,
+      "issue": "56"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_57",
+      "id": 172,
+      "issue": "57"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_58",
+      "id": 173,
+      "issue": "58"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_59",
+      "id": 174,
+      "issue": "59"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_60",
+      "id": 175,
+      "issue": "60"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_61",
+      "id": 176,
+      "issue": "61"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_62",
+      "id": 177,
+      "issue": "62"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_63",
+      "id": 178,
+      "issue": "63"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man, Web of",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Vol_1_100",
+      "id": 179,
+      "issue": "100"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Annual, Web of",
+      "issue": "5",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Web_of_Spider-Man_Annual_Vol_1_5",
+      "id": 180
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Ghost Rider & Blaze: Spirits of Vengeance",
+      "issue": "2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Ghost_Rider/Blaze:_Spirits_of_Vengeance_Vol_1_2",
+      "id": 181
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spitfire and the Troubleshooters",
+      "issue": "1",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Spitfire_and_the_Troubleshooters_Vol_1_1",
+      "id": 182
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spitfire and the Troubleshooters",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Spitfire_and_the_Troubleshooters_Vol_1_2",
+      "id": 183,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Stalkers",
+      "issue": "1",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Stalkers_Vol_1_1",
+      "id": 184
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Terror Inc.",
+      "issue": "2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Terror_Inc._Vol_1_2",
+      "id": 185
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Terror Inc.",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Terror_Inc._Vol_1_3",
+      "id": 186,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "TekWorld",
+      "issue": "2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/TekWorld_Vol_1_2",
+      "id": 187
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "TekWorld",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/TekWorld_Vol_1_3",
+      "id": 188,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Star Trek / X-Men",
+      "issue": "1",
+      "coverPrice": 4.95,
+      "url": "https://marvel.fandom.com/wiki/Star_Trek_/_X-Men_Vol_1_1",
+      "id": 189
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Star Brand",
+      "issue": "1",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Star_Brand_Vol_1_1",
+      "id": 190
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Star Brand",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Star_Brand_Vol_1_2",
+      "id": 191,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What If? Special",
+      "issue": "1",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/What_If%3F_Special_Vol_1",
+      "id": 192
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What The--?!",
+      "issue": "5",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/What_The--%3F!_Vol_1_5",
+      "id": 193
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What The--?!",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/What_The--%3F!_Vol_1_6",
+      "id": 194,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What If...?",
+      "issue": "1",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/What_If...%3F_Vol_1_1",
+      "id": 195
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What If...?",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/What_If...%3F_Vol_1_4",
+      "id": 196,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What If...?",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/What_If...%3F_Vol_1_5",
+      "id": 197,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What If...?",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/What_If...%3F_Vol_1_6",
+      "id": 198,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What If...?",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/What_If...%3F_Vol_1_7",
+      "id": 199,
+      "issue": "7"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What If...?",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/What_If...%3F_Vol_1_8",
+      "id": 200,
+      "issue": "8"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What If...?",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/What_If...%3F_Vol_1_9",
+      "id": 201,
+      "issue": "9"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What If...?",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/What_If...%3F_Vol_1_11",
+      "id": 202,
+      "issue": "11"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What If...?",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/What_If...%3F_Vol_1_39",
+      "id": 203,
+      "issue": "39"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thunder Strike",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Thunderstrike_Vol_1_1",
+      "id": 204
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Venom: Lethal Protector Volume 1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Venom:_Lethal_Protector_Vol_1_1",
+      "id": 205,
+      "issue": "1"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Venom: Lethal Protector Volume 1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Venom:_Lethal_Protector_Vol_1_2",
+      "id": 206,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Venom: Lethal Protector Volume 1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Venom:_Lethal_Protector_Vol_1_3",
+      "id": 207,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Venom: Lethal Protector Volume 1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Venom:_Lethal_Protector_Vol_1_4",
+      "id": 208,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Venom: Lethal Protector Volume 1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Venom:_Lethal_Protector_Vol_1_5",
+      "id": 209,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Venom: Lethal Protector Volume 1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Venom:_Lethal_Protector_Vol_1_6",
+      "id": 210,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Visionaries",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Visionaries_Vol_1_1",
+      "id": 211,
+      "issue": "1"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Visionaries",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Visionaries_Vol_1_2",
+      "id": 212,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Visionaries",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Visionaries_Vol_1_3",
+      "id": 213,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Visionaries",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Visionaries_Vol_1_4",
+      "id": 214,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Visionaries",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Visionaries_Vol_1_6",
+      "id": 215,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock Volume 3",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Warlock_Vol_3_1",
+      "id": 216
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock Volume 3",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Warlock_Vol_3_2",
+      "id": 217,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock Volume 3",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Warlock_Vol_3_3",
+      "id": 218,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock Volume 3",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Warlock_Vol_3_4",
+      "id": 219,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock Volume 3",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Warlock_Vol_3_5",
+      "id": 220,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock and the Infinity Watch",
+      "issue": "1",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Warlock_and_the_Infinity_Watch_Vol_1_1",
+      "id": 221
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock and the Infinity Watch",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Warlock_and_the_Infinity_Watch_Vol_1_2",
+      "id": 222,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock and the Infinity Watch",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Warlock_and_the_Infinity_Watch_Vol_1_3",
+      "id": 223,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock and the Infinity Watch",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Warlock_and_the_Infinity_Watch_Vol_1_4",
+      "id": 224,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock and the Infinity Watch",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Warlock_and_the_Infinity_Watch_Vol_1_5",
+      "id": 225,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock and the Infinity Watch",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Warlock_and_the_Infinity_Watch_Vol_1_6",
+      "id": 226,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock and the Infinity Watch",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Warlock_and_the_Infinity_Watch_Vol_1_7",
+      "id": 227,
+      "issue": "7"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock and the Infinity Watch",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Warlock_and_the_Infinity_Watch_Vol_1_8",
+      "id": 228,
+      "issue": "8"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock and the Infinity Watch",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Warlock_and_the_Infinity_Watch_Vol_1_9",
+      "id": 229,
+      "issue": "9"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock and the Infinity Watch",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Warlock_and_the_Infinity_Watch_Vol_1_10",
+      "id": 230,
+      "issue": "10"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "WildThing",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/WildThing_Vol_1_1",
+      "id": 231
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor Corps",
+      "issue": "1",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Corps_Vol_1_1",
+      "id": 232
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor Corps",
+      "coverPrice": 1.75,
+      "url": "https://ma2vel.fandom.com/wiki/Thor_Corps_Vol_1_1",
+      "id": 233,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor Corps",
+      "coverPrice": 1.75,
+      "url": "https://ma2vel.fandom.com/wiki/Thor_Corps_Vol_1_3",
+      "id": 234,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor - The Ballad of Beta Ray Bill, The",
+      "coverPrice": 8.95,
+      "url": "https://marvel.fandom.com/wiki/The_Mighty_Thor:_The_Ballad_of_Beta_Ray_Bill_TPB_Vol_1_1",
+      "id": 235,
+      "issue": "1"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor Annual, The Mighty",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Thor_Annual_Vol_1_14",
+      "id": 236,
+      "issue": "14"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor Annual, The Mighty",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Thor_Annual_Vol_1_15",
+      "id": 237,
+      "issue": "15"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor Annual, The Mighty",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Thor_Annual_Vol_1_16",
+      "id": 238,
+      "issue": "16"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor Annual, The Mighty",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Thor_Annual_Vol_1_17",
+      "id": 239,
+      "issue": "17"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_373",
+      "id": 240,
+      "issue": "373"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_374",
+      "id": 241,
+      "issue": "374"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_381",
+      "id": 242,
+      "issue": "381"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_382",
+      "id": 243,
+      "issue": "382"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_383",
+      "id": 244,
+      "issue": "383"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_384",
+      "id": 245,
+      "issue": "384"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_385",
+      "id": 246,
+      "issue": "385"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_386",
+      "id": 247,
+      "issue": "386"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_387",
+      "id": 248,
+      "issue": "387"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_388",
+      "id": 249,
+      "issue": "388"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_389",
+      "id": 250,
+      "issue": "389"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_390",
+      "id": 251,
+      "issue": "390"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_391",
+      "id": 252,
+      "issue": "391"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_392",
+      "id": 253,
+      "issue": "392"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_393",
+      "id": 254,
+      "issue": "393"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_394",
+      "id": 255,
+      "issue": "394"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_395",
+      "id": 256,
+      "issue": "395"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_396",
+      "id": 257,
+      "issue": "396"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_397",
+      "id": 258,
+      "issue": "397"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_398",
+      "id": 259,
+      "issue": "398"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_399",
+      "id": 260,
+      "issue": "399"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_400",
+      "id": 261,
+      "issue": "400"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_401",
+      "id": 262,
+      "issue": "401"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_402",
+      "id": 263,
+      "issue": "402"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_403",
+      "id": 264,
+      "issue": "403"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_404",
+      "id": 265,
+      "issue": "404"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_405",
+      "id": 266,
+      "issue": "405"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_406",
+      "id": 267,
+      "issue": "406"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_407",
+      "id": 268,
+      "issue": "407"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_408",
+      "id": 269,
+      "issue": "408"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Thor_Vol_1_409",
+      "id": 270,
+      "issue": "409"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "issue": "410",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_410",
+      "id": 271
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_411",
+      "id": 272,
+      "issue": "411"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_412",
+      "id": 273,
+      "issue": "412"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_413",
+      "id": 274,
+      "issue": "413"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_414",
+      "id": 275,
+      "issue": "414"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_415",
+      "id": 276,
+      "issue": "415"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_416",
+      "id": 277,
+      "issue": "416"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_417",
+      "id": 278,
+      "issue": "417"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_418",
+      "id": 279,
+      "issue": "418"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_419",
+      "id": 280,
+      "issue": "419"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_420",
+      "id": 281,
+      "issue": "420"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_421",
+      "id": 282,
+      "issue": "421"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_422",
+      "id": 283,
+      "issue": "422"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_423",
+      "id": 284,
+      "issue": "423"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_424",
+      "id": 285,
+      "issue": "424"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_425",
+      "id": 286,
+      "issue": "425"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_426",
+      "id": 287,
+      "issue": "426"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_427",
+      "id": 288,
+      "issue": "427"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_428",
+      "id": 289,
+      "issue": "428"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_430",
+      "id": 290,
+      "issue": "430"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_432",
+      "id": 291,
+      "issue": "432"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_433",
+      "id": 292,
+      "issue": "433"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_438",
+      "id": 293,
+      "issue": "438"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_439",
+      "id": 294,
+      "issue": "439"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_440",
+      "id": 295,
+      "issue": "440"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_441",
+      "id": 296,
+      "issue": "441"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_442",
+      "id": 297,
+      "issue": "442"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_443",
+      "id": 298,
+      "issue": "443"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_444",
+      "id": 299,
+      "issue": "444"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_445",
+      "id": 300,
+      "issue": "445"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_449",
+      "id": 301,
+      "issue": "449"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_450",
+      "id": 302,
+      "issue": "450"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "issue": "451",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_451",
+      "id": 303
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_452",
+      "id": 304,
+      "issue": "452"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_453",
+      "id": 305,
+      "issue": "453"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_454",
+      "id": 306,
+      "issue": "454"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_455",
+      "id": 307,
+      "issue": "455"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_456",
+      "id": 308,
+      "issue": "456"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_457",
+      "id": 309,
+      "issue": "457"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_458",
+      "id": 310,
+      "issue": "458"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_459",
+      "id": 311,
+      "issue": "459"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_460",
+      "id": 312,
+      "issue": "460"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_461",
+      "id": 313,
+      "issue": "461"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_462",
+      "id": 314,
+      "issue": "462"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_463",
+      "id": 315,
+      "issue": "463"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_464",
+      "id": 316,
+      "issue": "464"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor, The Mighty",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Mighty_Thor_Vol_1_475",
+      "id": 317,
+      "issue": "475"
     }
   ],
   "publishers": [
@@ -1102,7 +2564,7 @@
   "titles": [
     {
       "publisher": "Mavel Comics",
-      "title": "Mighty Thor, The",
+      "title": "Thor, The Mighty",
       "id": 1
     },
     {
@@ -1112,7 +2574,7 @@
     },
     {
       "publisher": "Marvel Comics",
-      "title": "Web of Spider-Man",
+      "title": "Spider-Man, Web of",
       "id": 3
     },
     {
@@ -1122,7 +2584,7 @@
     },
     {
       "publisher": "Marvel Comics",
-      "title": "Silver Surfer Limited Series, The",
+      "title": "Silver Surfer Volume 4, The",
       "id": 5
     },
     {
@@ -1174,6 +2636,121 @@
       "publisher": "Marvel Comics",
       "title": "Spider-Man Annual Volume 1, The Amazing",
       "id": 15
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Volume 1, The Spectacular",
+      "id": 16
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Annual Volume 1, The Spectacular",
+      "id": 17
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Unlimited Volume 1",
+      "id": 18
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spider-Man Annual, Web of",
+      "id": 19
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Ghost Rider & Blaze: Spirits of Vengeance",
+      "id": 20
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spitfire and the Troubleshooters",
+      "id": 21
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Stalkers",
+      "id": 22
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Star Brand",
+      "id": 23
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Star Trek / X-Men",
+      "id": 24
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "TekWorld",
+      "id": 25
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Terror Inc.",
+      "id": 26
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor Annual, The Mighty",
+      "id": 27
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor - The Ballad of Beta Ray Bill, The",
+      "id": 28
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thor Corps",
+      "id": 29
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Thunder Strike",
+      "id": 30
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Venom: Lethal Protector Volume 1",
+      "id": 31
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Visionaries",
+      "id": 32
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock Volume 3",
+      "id": 33
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "WildThing",
+      "id": 34
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What If? Special",
+      "id": 35
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What If...?",
+      "id": 36
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "What The--?!",
+      "id": 37
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Warlock and the Infinity Watch",
+      "id": 38
     }
   ]
 }
