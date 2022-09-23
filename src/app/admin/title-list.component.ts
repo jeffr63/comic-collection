@@ -3,7 +3,7 @@ import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
-import { Subject, take, takeUntil } from 'rxjs';
+import { Observable, Subject, take, takeUntil, tap } from 'rxjs';
 
 import { Column } from '../models/column';
 import { DeleteComponent } from '../modals/delete.component';
@@ -68,8 +68,16 @@ export class TitleListComponent implements OnInit, OnDestroy {
     },
     { key: 'action', name: '', width: '', type: 'action', position: 'left' },
   ];
-  titles: Title[] = [];
   componentIsDestroyed = new Subject<boolean>();
+  titles: Title[] = [];
+  titles$ = this.titleService.entities$
+    .pipe(takeUntil(this.componentIsDestroyed))
+    .pipe(
+      tap((data) => {
+        this.titles = data;
+      })
+    )
+    .subscribe();
 
   constructor(
     private titleService: TitleService,
@@ -101,7 +109,6 @@ export class TitleListComponent implements OnInit, OnDestroy {
       .subscribe((result) => {
         if (result == 'delete') {
           this.titleService.delete(id);
-          this.getAllTitles();
         }
       });
   }
@@ -111,14 +118,7 @@ export class TitleListComponent implements OnInit, OnDestroy {
   }
 
   getAllTitles(): void {
-    this.titleService
-      .getAll()
-      .pipe(takeUntil(this.componentIsDestroyed))
-      .subscribe({
-        next: (data) => {
-          this.titles = data;
-        },
-      });
+    this.titleService.getAll();
   }
 
   newTitle() {

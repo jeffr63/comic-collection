@@ -3,7 +3,7 @@ import { Router, RouterLinkWithHref } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 
-import { Subject, take, takeUntil } from 'rxjs';
+import { Subject, take, takeUntil, tap } from 'rxjs';
 
 import { Column } from '../models/column';
 import { DeleteComponent } from '../modals/delete.component';
@@ -60,8 +60,16 @@ export class PublisherListComponent implements OnInit, OnDestroy {
     },
     { key: 'action', name: '', width: '', type: 'action', position: 'left' },
   ];
-  publishers: Publisher[] = [];
   componentIsDestroyed = new Subject<boolean>();
+  publishers: Publisher[] = [];
+  publishers$ = this.publisherService.entities$
+    .pipe(takeUntil(this.componentIsDestroyed))
+    .pipe(
+      tap((data) => {
+        this.publishers = data;
+      })
+    )
+    .subscribe();
 
   constructor(
     private publisherService: PublisherService,
@@ -93,7 +101,7 @@ export class PublisherListComponent implements OnInit, OnDestroy {
       .subscribe((result) => {
         if (result == 'delete') {
           this.publisherService.delete(id);
-          this.getAllPublishers();
+          //this.getAllPublishers();
         }
       });
   }
@@ -103,14 +111,7 @@ export class PublisherListComponent implements OnInit, OnDestroy {
   }
 
   getAllPublishers(): void {
-    this.publisherService
-      .getAll()
-      .pipe(takeUntil(this.componentIsDestroyed))
-      .subscribe({
-        next: (data) => {
-          this.publishers = data;
-        },
-      });
+    this.publisherService.getAll();
   }
 
   newPublisher() {

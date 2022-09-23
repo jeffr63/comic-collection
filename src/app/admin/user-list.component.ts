@@ -10,7 +10,7 @@ import { DisplayTableComponent } from '../shared/display-table.component';
 import { ModalDataService } from '../modals/modal-data.service';
 import { User } from '../models/user';
 import { UserService } from '../services/user.service';
-import { Subject, take, takeUntil } from 'rxjs';
+import { Subject, take, takeUntil, tap } from 'rxjs';
 
 @Component({
   selector: 'app-user-list',
@@ -77,8 +77,16 @@ export class UserListComponent implements OnInit, OnDestroy {
       position: 'left',
     },
   ];
-  users: User[] = [];
   componentIsDestroyed = new Subject<boolean>();
+  users: User[] = [];
+  users$ = this.userService.entities$
+    .pipe(takeUntil(this.componentIsDestroyed))
+    .pipe(
+      tap((data) => {
+        this.users = data;
+      })
+    )
+    .subscribe();
 
   constructor(
     private userService: UserService,
@@ -110,7 +118,7 @@ export class UserListComponent implements OnInit, OnDestroy {
       .subscribe((result) => {
         if (result == 'delete') {
           this.userService.delete(id);
-          this.getAllUsers();
+          //this.getAllUsers();
         }
       });
   }
@@ -120,13 +128,6 @@ export class UserListComponent implements OnInit, OnDestroy {
   }
 
   getAllUsers(): void {
-    this.userService
-      .getAll()
-      .pipe(takeUntil(this.componentIsDestroyed))
-      .subscribe({
-        next: (data) => {
-          this.users = data;
-        },
-      });
+    this.userService.getAll();
   }
 }

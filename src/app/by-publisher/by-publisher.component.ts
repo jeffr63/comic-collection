@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, takeUntil, tap } from 'rxjs';
 
 import { Column } from '../models/column';
 import { DisplayTableComponent } from '../shared/display-table.component';
@@ -60,8 +60,16 @@ export class ByPublisherComponent implements OnInit, OnDestroy {
     },
   ];
   loading = false;
-  publishers: Publisher[] = [];
   componentIsDestroyed = new Subject<boolean>();
+  publishers: Publisher[] = [];
+  publishers$ = this.publisherService.entities$
+    .pipe(takeUntil(this.componentIsDestroyed))
+    .pipe(
+      tap((data) => {
+        this.publishers = data;
+      })
+    )
+    .subscribe();
 
   constructor(
     private publisherService: PublisherService,
@@ -78,14 +86,7 @@ export class ByPublisherComponent implements OnInit, OnDestroy {
   }
 
   getAllPublishers() {
-    this.publisherService
-      .getAll()
-      .pipe(takeUntil(this.componentIsDestroyed))
-      .subscribe({
-        next: (data) => {
-          this.publishers = data;
-        },
-      });
+    this.publisherService.getAll();
   }
 
   open(id: number) {
