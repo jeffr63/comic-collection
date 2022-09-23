@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CommonModule, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TitleService } from '../services/title.service';
 import { IssueService } from '../issues/issue.service';
@@ -132,12 +132,10 @@ export class TitleIssueListComponent implements OnInit, OnDestroy {
 
   getIssuesForTitle(title: string) {
     this.issueService
-      .getAll()
+      .getWithQuery(`title=${title}`)
       .pipe(takeUntil(this.componentIsDestroyed))
       .subscribe({
-        next: (data) => {
-          this.issues = data.filter((issue) => issue.title === title);
-        },
+        next: (data) => (this.issues = data),
       });
   }
 

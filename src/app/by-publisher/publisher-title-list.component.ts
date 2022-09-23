@@ -101,12 +101,10 @@ export class PublisherTitleListComponent implements OnInit, OnDestroy {
 
   getTitlesForPublisher(publisher: string) {
     this.titleService
-      .getAll()
+      .getWithQuery(`publisher=${publisher}`)
       .pipe(takeUntil(this.componentIsDestroyed))
       .subscribe({
-        next: (data) => {
-          this.titles = data.filter((title) => title.publisher === publisher);
-        },
+        next: (data) => (this.titles = data),
       });
   }
 
