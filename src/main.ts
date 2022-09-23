@@ -34,9 +34,10 @@ bootstrapApplication(AppComponent, {
       EffectsModule.forRoot([]),
       EntityDataModule.forRoot(entityConfig),
       StoreDevtoolsModule.instrument({
-        maxAge: 5,
+        maxAge: 25,
         logOnly: environment.production,
-      }), BrowserAnimationsModule
+        autoPause: true,
+      }),
     ),
     { provide: DefaultDataServiceConfig, useValue: defaultDataServiceConfig },
     { provide: TitleStrategy, useClass: CustomTitleStrategyService },
