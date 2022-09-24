@@ -69,12 +69,12 @@ import { PublisherService } from '../services/publisher.service';
         >
           <mat-icon>save</mat-icon> Save
         </button>
-        <a
+        <button
           mat-flat-button
           color="accent"
           class="ml-10"
-          [routerLink]="['/admin/publishers']"
-          ><mat-icon>cancel</mat-icon> Cancel</a
+          (click)="cancel()"
+          ><mat-icon>cancel</mat-icon> Cancel</button
         >
       </mat-card-actions>
     </mat-card>
@@ -155,5 +155,27 @@ export class PublisherEditComponent implements OnInit, OnDestroy {
       this.publisherService.update(this.publisher);
     }
     this.location.back();
+  }
+
+  cancel() {
+    this.location.back();
+  }
+
+  saveNew() {
+    this.publisher.name = this.publisherEditForm.controls['name'].value;
+    if (this.isNew) {
+      this.publisherService.add(this.publisher);
+    } else {
+      this.publisherService.update(this.publisher);
+    }
+
+    // create new publisher object and set publisher name to blank
+    this.publisher = {
+      name: '',
+      id: null,
+    };
+    this.publisherEditForm.patchValue({
+      publisher: this.publisher.name,
+    });
   }
 }

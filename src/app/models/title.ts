@@ -1,5 +1,5 @@
 export interface Title {
-  id: number;
+  id: number | null;
   title: string;
   publisher: string;
 }

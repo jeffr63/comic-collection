@@ -75,6 +75,15 @@ import { MatButtonModule } from '@angular/material/button';
                 {{ title.title }}
               </mat-option>
             </mat-select>
+            <a
+              style="float:right"
+              mat-mini-fab
+              color="primary"
+              [routerLink]="['/admin/title/new']"
+              title="Add new title"
+            >
+              <mat-icon>add</mat-icon>
+            </a>
             <mat-error
               *ngIf="
                 issueEditForm.controls['title']?.errors?.['required'] &&

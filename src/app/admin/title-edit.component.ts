@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 import { Observable, Subject, takeUntil } from 'rxjs';
 
@@ -19,7 +20,6 @@ import { Title } from '../models/title';
 import { TitleService } from '../services/title.service';
 import { Publisher } from '../models/publisher';
 import { PublisherService } from '../services/publisher.service';
-import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-title-edit',
@@ -53,6 +53,15 @@ import { MatSelectModule } from '@angular/material/select';
                 {{ publisher.name }}
               </mat-option>
             </mat-select>
+            <a
+              style="float:right"
+              mat-mini-fab
+              color="primary"
+              [routerLink]="['/admin/publisher/new']"
+              title="Add new publisher"
+            >
+              <mat-icon>add</mat-icon>
+            </a>
             <mat-error
               *ngIf="
                 titleEditForm.controls['publisher']?.errors?.['required'] &&
@@ -92,13 +101,19 @@ import { MatSelectModule } from '@angular/material/select';
         >
           <mat-icon>save</mat-icon> Save
         </button>
-        <a
+        <button
           mat-flat-button
-          color="accent"
+          color="warn"
+          (click)="saveNew()"
+          title="Save"
+          [disabled]="!titleEditForm.valid"
           class="ml-10"
-          [routerLink]="['/admin/titles']"
-          ><mat-icon>cancel</mat-icon> Cancel</a
         >
+          <mat-icon>add_task</mat-icon> Save & New
+        </button>
+        <button mat-flat-button color="accent" class="ml-10" (click)="cancel()">
+          <mat-icon>cancel</mat-icon> Cancel
+        </button>
       </mat-card-actions>
     </mat-card>
   `,
@@ -178,6 +193,10 @@ export class TitleEditComponent implements OnInit, OnDestroy {
       });
   }
 
+  cancel() {
+    this.location.back();
+  }
+
   save() {
     const { publisher, title } = this.titleEditForm.getRawValue();
     this.title.publisher = publisher;
@@ -188,5 +207,28 @@ export class TitleEditComponent implements OnInit, OnDestroy {
       this.titleService.update(this.title);
     }
     this.location.back();
+  }
+
+  saveNew() {
+    const { publisher, title } = this.titleEditForm.getRawValue();
+    this.title.publisher = publisher;
+    this.title.title = title;
+
+    if (this.isNew) {
+      this.titleService.add(this.title);
+    } else {
+      this.titleService.update(this.title);
+    }
+
+    // create new title object and set publisher
+    this.title = {
+      publisher: publisher,
+      title: '',
+      id: null,
+    };
+    this.titleEditForm.patchValue({
+      publisher: this.title.publisher,
+      title: this.title.title,
+    });
   }
 }

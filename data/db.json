@@ -6737,6 +6737,1822 @@
       "url": "",
       "id": 841,
       "issue": "1"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Advanced Dungeons & Dragons",
+      "issue": "1",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Advanced_Dungeons_and_Dragons_Vol_1_1",
+      "id": 842
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Advanced Dungeons & Dragons",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Advanced_Dungeons_and_Dragons_Vol_1_2",
+      "id": 843,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Advanced Dungeons & Dragons",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Advanced_Dungeons_and_Dragons_Vol_1_4",
+      "id": 844,
+      "issue": "4"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Advanced Dungeons & Dragons",
+      "issue": "5",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Advanced_Dungeons_and_Dragons_Vol_1_5",
+      "id": 845
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Advanced Dungeons & Dragons",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Advanced_Dungeons_and_Dragons_Vol_1_6",
+      "id": 846,
+      "issue": "6"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Advanced Dungeons & Dragons",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Advanced_Dungeons_and_Dragons_Vol_1_7",
+      "id": 847,
+      "issue": "7"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Advanced Dungeons & Dragons",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Advanced_Dungeons_and_Dragons_Vol_1_8",
+      "id": 848,
+      "issue": "8"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Advanced Dungeons & Dragons",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Advanced_Dungeons_and_Dragons_Vol_1_9",
+      "id": 849,
+      "issue": "9"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Advanced Dungeons & Dragons",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Advanced_Dungeons_and_Dragons_Vol_1_10",
+      "id": 850,
+      "issue": "10"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Advanced Dungeons & Dragons",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Advanced_Dungeons_and_Dragons_Vol_1_11",
+      "id": 851,
+      "issue": "11"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Advanced Dungeons & Dragons",
+      "coverPrice": 1.5,
+      "url": "",
+      "id": 852,
+      "issue": "12"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Atlantis Chronicles",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://dc.fandom.com/wiki/Atlantis_Chronicles_Vol_1_1",
+      "id": 853
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Atlantis Chronicles",
+      "coverPrice": 2.95,
+      "url": "https://dc.fandom.com/wiki/Atlantis_Chronicles_Vol_1_2",
+      "id": 854,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Atlantis Chronicles",
+      "coverPrice": 2.95,
+      "url": "https://dc.fandom.com/wiki/Atlantis_Chronicles_Vol_1_4",
+      "id": 855,
+      "issue": "4"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Atlantis Chronicles",
+      "coverPrice": 2.95,
+      "url": "https://dc.fandom.com/wiki/Atlantis_Chronicles_Vol_1_5",
+      "id": 856,
+      "issue": "5"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Atlantis Chronicles",
+      "coverPrice": 2.95,
+      "url": "https://dc.fandom.com/wiki/Atlantis_Chronicles_Vol_1_6",
+      "id": 857,
+      "issue": "6"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Atlantis Chronicles",
+      "coverPrice": 2.95,
+      "url": "https://dc.fandom.com/wiki/Atlantis_Chronicles_Vol_1_7",
+      "id": 858,
+      "issue": "7"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Batman Volume 1",
+      "issue": "415",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Batman_Vol_1_415",
+      "id": 859
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Blue Beetle Volume 6",
+      "issue": "20",
+      "coverPrice": 1,
+      "url": "https://dc.fandom.com/wiki/Blue_Beetle_Vol_6_20",
+      "id": 860
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Camelot 3000",
+      "coverPrice": 12.95,
+      "url": "https://dc.fandom.com/wiki/Camelot_3000_Vol_1",
+      "id": 861,
+      "issue": "0"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Captain Atom Volume 2",
+      "issue": "26",
+      "coverPrice": 1,
+      "url": "https://dc.fandom.com/wiki/Captain_Atom_Vol_2_26",
+      "id": 862
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Challengers of the Unknown",
+      "coverPrice": 1,
+      "url": "https://dc.fandom.com/wiki/Challengers_of_the_Unknown_Vol_1_81",
+      "id": 863,
+      "issue": "81"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Dragonlance",
+      "issue": "1",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Dragonlance_Vol_1_1",
+      "id": 864
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Dragonlance",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Dragonlance_Vol_1_2",
+      "id": 865,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Dragonlance",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Dragonlance_Vol_1_3",
+      "id": 866,
+      "issue": "3"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Dragonlance",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Dragonlance_Vol_1_4",
+      "id": 867,
+      "issue": "4"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Dragonlance",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Dragonlance_Vol_1_5",
+      "id": 868,
+      "issue": "5"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Dragonlance",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Dragonlance_Vol_1_6",
+      "id": 869,
+      "issue": "6"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Dragonlance",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Dragonlance_Vol_1_7",
+      "id": 870,
+      "issue": "7"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Dragonlance",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Dragonlance_Vol_1_8",
+      "id": 871,
+      "issue": "8"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Dragonlance",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Dragonlance_Vol_1_9",
+      "id": 872,
+      "issue": "9"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Dragonlance",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Dragonlance_Vol_1_10",
+      "id": 873,
+      "issue": "10"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Dragonlance",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Dragonlance_Vol_1_11",
+      "id": 874,
+      "issue": "11"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Dragonlance",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Dragonlance_Vol_1_12",
+      "id": 875,
+      "issue": "12"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Firestorm Volume 2",
+      "issue": "68",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Firestorm_Vol_2_68",
+      "id": 876
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Flash Volume 2",
+      "issue": "7",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/The_Flash_Vol_2_7",
+      "id": 877
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Flash Volume 2",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/The_Flash_Vol_2_8",
+      "id": 878,
+      "issue": "8"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Flash Volume 2",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/The_Flash_Vol_2_9",
+      "id": 879,
+      "issue": "9"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Flash Volume 2",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/The_Flash_Vol_2_10",
+      "id": 880,
+      "issue": "10"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Flash Volume 2",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/The_Flash_Vol_2_11",
+      "id": 881,
+      "issue": "11"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Flash Volume 2",
+      "coverPrice": 1,
+      "url": "https://dc.fandom.com/wiki/The_Flash_Vol_2_12",
+      "id": 882,
+      "issue": "12"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Flash Volume 2",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/The_Flash_Vol_2_14",
+      "id": 883,
+      "issue": "14"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Flash Gordon",
+      "issue": "1",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Flash_Gordon_Vol_1_1",
+      "id": 884
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Flash Gordon",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Flash_Gordon_Vol_1_2",
+      "id": 885,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Flash Gordon",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Flash_Gordon_Vol_1_3",
+      "id": 886,
+      "issue": "3"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Flash Gordon",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Flash_Gordon_Vol_1_4",
+      "id": 887,
+      "issue": "4"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Flash Gordon",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Flash_Gordon_Vol_1_5",
+      "id": 888,
+      "issue": "5"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Flash Gordon",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Flash_Gordon_Vol_1_6",
+      "id": 889,
+      "issue": "6"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Flash Gordon",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Flash_Gordon_Vol_1_7",
+      "id": 890,
+      "issue": "7"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Flash Gordon",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Flash_Gordon_Vol_1_9",
+      "id": 891,
+      "issue": "9"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "issue": "1",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_1",
+      "id": 892
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_2",
+      "id": 893,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_3",
+      "id": 894,
+      "issue": "3"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_4",
+      "id": 895,
+      "issue": "4"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_5",
+      "id": 896,
+      "issue": "5"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_6",
+      "id": 897,
+      "issue": "6"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_7",
+      "id": 898,
+      "issue": "7"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_8",
+      "id": 899,
+      "issue": "8"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_9",
+      "id": 900,
+      "issue": "9"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_10",
+      "id": 901,
+      "issue": "10"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_12",
+      "id": 902,
+      "issue": "12"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_13",
+      "id": 903,
+      "issue": "13"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_15",
+      "id": 904,
+      "issue": "15"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_16",
+      "id": 905,
+      "issue": "16"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_17",
+      "id": 906,
+      "issue": "17"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_18",
+      "id": 907,
+      "issue": "18"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_19",
+      "id": 908,
+      "issue": "19"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Vol_1_20",
+      "id": 909,
+      "issue": "20"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Forgotten Realms Annual",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://dc.fandom.com/wiki/Forgotten_Realms_Annual_Vol_1_1",
+      "id": 910
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Freedom Fighters",
+      "issue": "13",
+      "coverPrice": 0.35,
+      "url": "https://dc.fandom.com/wiki/Freedom_Fighters_Vol_1_13",
+      "id": 911
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Gammarauders",
+      "issue": "1",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Gammarauders_Vol_1_1",
+      "id": 912
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Gammarauders",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Gammarauders_Vol_1_2",
+      "id": 913,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Gammarauders",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Gammarauders_Vol_1_3",
+      "id": 914,
+      "issue": "3"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Gammarauders",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Gammarauders_Vol_1_4",
+      "id": 915,
+      "issue": "4"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Green Lantern Corps, The",
+      "issue": "220",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Green_Lantern_Corps_Vol_1_220",
+      "id": 916
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Green Lantern Corps, The",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Green_Lantern_Corps_Vol_1_221",
+      "id": 917,
+      "issue": "221"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Green Lantern Corps, The",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Green_Lantern_Corps_Vol_1_222",
+      "id": 918,
+      "issue": "222"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Green Lantern Corps, The",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Green_Lantern_Corps_Vol_1_223",
+      "id": 919,
+      "issue": "223"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Green Lantern Corps, The",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Green_Lantern_Corps_Vol_1_224",
+      "id": 920,
+      "issue": "224"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Green Lantern Special, The",
+      "issue": "2",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Green_Lantern_Special_Vol_1_2",
+      "id": 921
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Green Lantern: Emerald Dawn",
+      "issue": "1",
+      "coverPrice": 1,
+      "url": "https://dc.fandom.com/wiki/Green_Lantern:_Emerald_Dawn_Vol_1_1",
+      "id": 922
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Green Lantern: Emerald Dawn",
+      "coverPrice": 1,
+      "url": "https://dc.fandom.com/wiki/Green_Lantern:_Emerald_Dawn_Vol_1_1",
+      "id": 923,
+      "issue": "4"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Green Lantern Volume 3",
+      "issue": "1",
+      "coverPrice": 1,
+      "url": "https://dc.fandom.com/wiki/Green_Lantern_Vol_3",
+      "id": 924
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "New Guardians, The",
+      "issue": "1",
+      "coverPrice": 2,
+      "url": "https://dc.fandom.com/wiki/New_Guardians_Vol_1_1",
+      "id": 925
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Infinity Inc.",
+      "issue": "46",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Infinity_Inc._Vol_1_46",
+      "id": 926
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Invasion!",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://dc.fandom.com/wiki/Invasion!_Vol_1",
+      "id": 927
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Invasion!",
+      "coverPrice": 2.95,
+      "url": "https://dc.fandom.com/wiki/Invasion!_Vol_2",
+      "id": 928,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Invasion!",
+      "coverPrice": 2.95,
+      "url": "https://dc.fandom.com/wiki/Invasion!_Vol_3",
+      "id": 929,
+      "issue": "3"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Justice League International",
+      "issue": "9",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Justice_League_International_Vol_1_9",
+      "id": 930
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "All-Star Comics Volume 1",
+      "issue": "67",
+      "coverPrice": 0.35,
+      "url": "https://dc.fandom.com/wiki/All-Star_Comics_Vol_1_67",
+      "id": 931
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "issue": "1",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_1",
+      "id": 932
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_2",
+      "id": 933,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_3",
+      "id": 934,
+      "issue": "3"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_4",
+      "id": 935,
+      "issue": "4"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_5",
+      "id": 936,
+      "issue": "5"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_6",
+      "id": 937,
+      "issue": "6"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_7",
+      "id": 938,
+      "issue": "7"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_8",
+      "id": 939,
+      "issue": "8"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_9",
+      "id": 940,
+      "issue": "9"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_11",
+      "id": 941,
+      "issue": "11"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_12",
+      "id": 942,
+      "issue": "12"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_13",
+      "id": 943,
+      "issue": "13"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_14",
+      "id": 944,
+      "issue": "14"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_15",
+      "id": 945,
+      "issue": "15"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_16",
+      "id": 946,
+      "issue": "16"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_17",
+      "id": 947,
+      "issue": "17"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_18",
+      "id": 948,
+      "issue": "18"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_19",
+      "id": 949,
+      "issue": "19"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_20",
+      "id": 950,
+      "issue": "20"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_21",
+      "id": 951,
+      "issue": "21"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_22",
+      "id": 952,
+      "issue": "22"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_23",
+      "id": 953,
+      "issue": "23"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_25",
+      "id": 954,
+      "issue": "25"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_26",
+      "id": 955,
+      "issue": "26"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_27",
+      "id": 956,
+      "issue": "27"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_28",
+      "id": 957,
+      "issue": "28"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_29",
+      "id": 958,
+      "issue": "29"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_30",
+      "id": 959,
+      "issue": "30"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_31",
+      "id": 960,
+      "issue": "31"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_32",
+      "id": 961,
+      "issue": "32"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_33",
+      "id": 962,
+      "issue": "33"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_34",
+      "id": 963,
+      "issue": "34"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_35",
+      "id": 964,
+      "issue": "35"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_36",
+      "id": 965,
+      "issue": "36"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_37",
+      "id": 966,
+      "issue": "37"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_38",
+      "id": 967,
+      "issue": "38"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_39",
+      "id": 968,
+      "issue": "39"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_40",
+      "id": 969,
+      "issue": "40"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N. Annual",
+      "issue": "`",
+      "coverPrice": 2.95,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Annual_Vol_1_1",
+      "id": 970
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N. Annual",
+      "coverPrice": 2.95,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Annual_Vol_1_2",
+      "id": 971,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "issue": "42",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_42",
+      "id": 972
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_43",
+      "id": 973,
+      "issue": "43"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_44",
+      "id": 974,
+      "issue": "44"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 2.95,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_45",
+      "id": 975,
+      "issue": "45"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_46",
+      "id": 976,
+      "issue": "46"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_47",
+      "id": 977,
+      "issue": "47"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_48",
+      "id": 978,
+      "issue": "48"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_49",
+      "id": 979,
+      "issue": "49"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 2.5,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_50",
+      "id": 980,
+      "issue": "50"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_51",
+      "id": 981,
+      "issue": "51"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_52",
+      "id": 982,
+      "issue": "52"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_53",
+      "id": 983,
+      "issue": "53"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_54",
+      "id": 984,
+      "issue": "54"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_55",
+      "id": 985,
+      "issue": "55"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_56",
+      "id": 986,
+      "issue": "56"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_57",
+      "id": 987,
+      "issue": "57"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_58",
+      "id": 988,
+      "issue": "58"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_59",
+      "id": 989,
+      "issue": "59"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_60",
+      "id": 990,
+      "issue": "60"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_61",
+      "id": 991,
+      "issue": "61"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_62",
+      "id": 992,
+      "issue": "62"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_3_63",
+      "id": 993,
+      "issue": "63"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Annual Volume 2",
+      "issue": "4",
+      "coverPrice": 2.5,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Annual_Vol_2_4",
+      "id": 994
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 4",
+      "issue": "1",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_4_1",
+      "id": 995
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 4",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Legion_of_Super-Heroes_Vol_4_2",
+      "id": 996,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Lobo",
+      "issue": "1",
+      "coverPrice": 0.99,
+      "url": "https://dc.fandom.com/wiki/Lobo_Vol_1_1",
+      "id": 997
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Lobo",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Lobo_Vol_1_2",
+      "id": 998,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Lobo",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Lobo_Vol_1_3",
+      "id": 999,
+      "issue": "3"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Our Fighting Forces",
+      "issue": "174",
+      "coverPrice": 0.35,
+      "url": "https://dc.fandom.com/wiki/Our_Fighting_Forces_Vol_1_174",
+      "id": 1000
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Our Fighting Forces",
+      "coverPrice": 0.35,
+      "url": "https://dc.fandom.com/wiki/Our_Fighting_Forces_Vol_1_175",
+      "id": 1001,
+      "issue": "175"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/L.E.G.I.O.N._Vol_1_25",
+      "id": 1002,
+      "issue": "25"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Men of War",
+      "issue": "2",
+      "coverPrice": 0.35,
+      "url": "https://dc.fandom.com/wiki/Men_of_War_Vol_1_2",
+      "id": 1003
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Metal Men",
+      "issue": "45",
+      "coverPrice": 0.3,
+      "url": "https://dc.fandom.com/wiki/Metal_Men_Vol_1_45",
+      "id": 1004
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Metal Men Volume 2",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://dc.fandom.com/wiki/Metal_Men_Vol_2_1",
+      "id": 1005
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Millennium",
+      "issue": "1",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Millennium_Vol_1_1",
+      "id": 1006
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Millennium",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Millennium_Vol_1_2",
+      "id": 1007,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Millennium",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Millennium_Vol_1_3",
+      "id": 1008,
+      "issue": "3"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Millennium",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Millennium_Vol_1_4",
+      "id": 1009,
+      "issue": "4"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Millennium",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Millennium_Vol_1_5",
+      "id": 1010,
+      "issue": "5"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Millennium",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Millennium_Vol_1_6",
+      "id": 1011,
+      "issue": "6"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Millennium",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Millennium_Vol_1_7",
+      "id": 1012,
+      "issue": "7"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Millennium",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Millennium_Vol_1_8",
+      "id": 1013,
+      "issue": "8"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "New Gods Volume 3",
+      "issue": "1",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Millennium_Vol_1_1",
+      "id": 1014
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Plastic Man Volume 2",
+      "issue": "19",
+      "coverPrice": 0.35,
+      "url": "https://dc.fandom.com/wiki/Plastic_Man_Vol_2_19",
+      "id": 1015
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Outsiders",
+      "issue": "27",
+      "coverPrice": 1.5,
+      "url": "https://dc.fandom.com/wiki/Outsiders_Vol_1_27",
+      "id": 1016
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "New Gods",
+      "issue": "13",
+      "coverPrice": 0.35,
+      "url": "https://dc.fandom.com/wiki/New_Gods_Vol_1_13",
+      "id": 1017
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "New Gods",
+      "coverPrice": 0.35,
+      "url": "https://dc.fandom.com/wiki/New_Gods_Vol_1_14",
+      "id": 1018,
+      "issue": "14"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "New Gods",
+      "coverPrice": 0.35,
+      "url": "https://dc.fandom.com/wiki/New_Gods_Vol_1_16",
+      "id": 1019,
+      "issue": "16"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Secret Origins Volume 2",
+      "issue": "22",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Secret_Origins_Vol_2_22",
+      "id": 1020
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Secret Origins Volume 2",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Secret_Origins_Vol_2_23",
+      "id": 1021,
+      "issue": "23"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Sgt. Rock",
+      "issue": "404",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Sgt._Rock_Vol_1_404",
+      "id": 1022
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Spelljammer",
+      "issue": "1",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Spelljammer_Vol_1_1",
+      "id": 1023
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Spelljammer",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Spelljammer_Vol_1_2",
+      "id": 1024,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Spelljammer",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Spelljammer_Vol_1_3",
+      "id": 1025,
+      "issue": "3"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Superboy",
+      "issue": "204",
+      "coverPrice": 0.2,
+      "url": "https://dc.fandom.com/wiki/Superboy_Vol_1_204",
+      "id": 1026
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Action Comics",
+      "issue": "475",
+      "coverPrice": 0.35,
+      "url": "https://dc.fandom.com/wiki/Action_Comics_Vol_1_475",
+      "id": 1027
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Superman Volume 2",
+      "issue": "13",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Superman_Vol_2_13",
+      "id": 1028
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Teen Titans Spotlight",
+      "issue": "19",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Teen_Titans_Spotlight_Vol_1_19",
+      "id": 1029
+    },
+    {
+      "publisher": "Vertigo",
+      "title": "US",
+      "issue": "1",
+      "coverPrice": 4.95,
+      "url": "",
+      "id": 1030
+    },
+    {
+      "publisher": "Vertigo",
+      "title": "US",
+      "coverPrice": 4.95,
+      "url": "",
+      "id": 1031,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wanderers, The",
+      "issue": "1",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Wanderers_Vol_1_1",
+      "id": 1032
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wanderers, The",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Wanderers_Vol_1_3",
+      "id": 1033,
+      "issue": "3"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wanderers, The",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Wanderers_Vol_1_4",
+      "id": 1034,
+      "issue": "4"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wanderers, The",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Wanderers_Vol_1_5",
+      "id": 1035,
+      "issue": "5"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wanderers, The",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Wanderers_Vol_1_6",
+      "id": 1036,
+      "issue": "6"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wanderers, The",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Wanderers_Vol_1_7",
+      "id": 1037,
+      "issue": "7"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wanderers, The",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Wanderers_Vol_1_8",
+      "id": 1038,
+      "issue": "8"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wanderers, The",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Wanderers_Vol_1_9",
+      "id": 1039,
+      "issue": "9"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wanderers, The",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Wanderers_Vol_1_10",
+      "id": 1040,
+      "issue": "10"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wanderers, The",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Wanderers_Vol_1_11",
+      "id": 1041,
+      "issue": "11"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wanderers, The",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Wanderers_Vol_1_12",
+      "id": 1042,
+      "issue": "12"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wanderers, The",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Wanderers_Vol_1_13",
+      "id": 1043,
+      "issue": "13"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord, The",
+      "issue": "8",
+      "coverPrice": 0.35,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_1_8",
+      "id": 1044
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord, The",
+      "coverPrice": 0.35,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_1_10",
+      "id": 1045,
+      "issue": "10"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord, The",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_1_77",
+      "id": 1046,
+      "issue": "77"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord, The",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_1_78",
+      "id": 1047,
+      "issue": "78"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord, The",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_1_79",
+      "id": 1048,
+      "issue": "79"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord, The",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_1_80",
+      "id": 1049,
+      "issue": "80"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord, The",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_1_81",
+      "id": 1050,
+      "issue": "81"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord, The",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_1_82",
+      "id": 1051,
+      "issue": "82"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord, The",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_1_83",
+      "id": 1052,
+      "issue": "83"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord, The",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_1_84",
+      "id": 1053,
+      "issue": "84"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord Volume 2, The",
+      "issue": "1",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_2_1",
+      "id": 1054
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord Volume 2, The",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_2_2",
+      "id": 1055,
+      "issue": "2"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord Volume 2, The",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_2_3",
+      "id": 1056,
+      "issue": "3"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord Volume 2, The",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_2_4",
+      "id": 1057,
+      "issue": "4"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord Volume 2, The",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_2_5",
+      "id": 1058,
+      "issue": "5"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord Volume 2, The",
+      "coverPrice": 1.75,
+      "url": "https://dc.fandom.com/wiki/Warlord_Vol_2_6",
+      "id": 1059,
+      "issue": "6"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Weird War Tales",
+      "issue": "60",
+      "coverPrice": 0.35,
+      "url": "https://dc.fandom.com/wiki/Weird_War_Tales_Vol_1_60",
+      "id": 1060
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wonder Woman Volume 2",
+      "issue": "12",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Wonder_Woman_Vol_2_12",
+      "id": 1061
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wonder Woman Volume 2",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Wonder_Woman_Vol_2_13",
+      "id": 1062,
+      "issue": "13"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wonder Woman Volume 2",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Wonder_Woman_Vol_2_14",
+      "id": 1063,
+      "issue": "14"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wonder Woman Volume 2",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Wonder_Woman_Vol_2_15",
+      "id": 1064,
+      "issue": "15"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wonder Woman Volume 2",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Wonder_Woman_Vol_2_16",
+      "id": 1065,
+      "issue": "16"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wonder Woman Volume 2",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Wonder_Woman_Vol_2_17",
+      "id": 1066,
+      "issue": "17"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wonder Woman Volume 2",
+      "coverPrice": 0.75,
+      "url": "https://dc.fandom.com/wiki/Wonder_Woman_Vol_2_18",
+      "id": 1067,
+      "issue": "18"
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Young All-Stars",
+      "issue": "8",
+      "coverPrice": 1.25,
+      "url": "https://dc.fandom.com/wiki/Young_All-Stars_Vol_1_8",
+      "id": 1068
     }
   ],
   "publishers": [
@@ -6863,6 +8679,10 @@
     {
       "name": "Genesis West Comics",
       "id": 32
+    },
+    {
+      "name": "Vertigo",
+      "id": 33
     }
   ],
   "titles": [
@@ -7705,6 +9525,271 @@
       "publisher": "Dark Horse Comics",
       "title": "Titan",
       "id": 173
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Advanced Dungeons & Dragons",
+      "id": 174
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Atlantis Chronicles",
+      "id": 175
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Batman Volume 1",
+      "id": 176
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Blue Beetle Volume 6",
+      "id": 177
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Camelot 3000",
+      "id": 178
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Captain Atom Volume 2",
+      "id": 179
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Challengers of the Unknown",
+      "id": 180
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Dragonlance",
+      "id": 181
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Firestorm Volume 2",
+      "id": 182
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Flash Volume 2",
+      "id": 183
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Flash Gordon",
+      "id": 184
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Forgotten Realms",
+      "id": 185
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Forgotten Realms Annual",
+      "id": 186
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Freedom Fighters",
+      "id": 187
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Gammarauders",
+      "id": 188
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Green Lantern Corps, The",
+      "id": 189
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Green Lantern Special, The",
+      "id": 190
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Green Lantern: Emerald Dawn",
+      "id": 191
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Green Lantern Volume 3",
+      "id": 192
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "New Guardians, The",
+      "id": 193
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Infinity Inc.",
+      "id": 194
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Invasion!",
+      "id": 195
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Justice League International",
+      "id": 196
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "All-Star Comics Volume 1",
+      "id": 197
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N.",
+      "id": 198
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "L.E.G.I.O.N. Annual",
+      "id": 199
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 3",
+      "id": 200
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Annual Volume 2",
+      "id": 201
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Legion of Super-Heroes Volume 4",
+      "id": 202
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Lobo",
+      "id": 203
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Our Fighting Forces",
+      "id": 204
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Men of War",
+      "id": 205
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Metal Men",
+      "id": 206
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Metal Men Volume 2",
+      "id": 207
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Millennium",
+      "id": 208
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "New Gods Volume 3",
+      "id": 209
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Plastic Man Volume 2",
+      "id": 210
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Outsiders",
+      "id": 211
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "New Gods",
+      "id": 212
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Secret Origins Volume 2",
+      "id": 213
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Sgt. Rock",
+      "id": 214
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Spelljammer",
+      "id": 215
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Superboy",
+      "id": 216
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Action Comics",
+      "id": 217
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Superman Volume 2",
+      "id": 218
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Teen Titans Spotlight",
+      "id": 219
+    },
+    {
+      "publisher": "Vertigo",
+      "title": "US",
+      "id": 220
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wanderers, The",
+      "id": 221
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord, The",
+      "id": 222
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Warlord Volume 2, The",
+      "id": 223
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Weird War Tales",
+      "id": 224
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Wonder Woman Volume 2",
+      "id": 225
+    },
+    {
+      "publisher": "DC Comics",
+      "title": "Young All-Stars",
+      "id": 226
     }
   ]
 }
