@@ -8553,6 +8553,38 @@
       "coverPrice": 1.25,
       "url": "https://dc.fandom.com/wiki/Young_All-Stars_Vol_1_8",
       "id": 1068
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Star Trek: Operation Assimilation",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Star_Trek:_Operation_Assimilation_Vol_1_1",
+      "id": 1069
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Star Trek: Starfleet Academy",
+      "issue": "2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Star_Trek:_Starfleet_Academy_Vol_1_2",
+      "id": 1070
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Star Trek: Starfleet Academy",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Star_Trek:_Starfleet_Academy_Vol_1_3",
+      "id": 1071,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Men in Black: Retribution",
+      "issue": "1",
+      "coverPrice": 3.99,
+      "url": "https://marvel.fandom.com/wiki/Men_in_Black:_Retribution_Vol_1_1",
+      "id": 1072
     }
   ],
   "publishers": [
@@ -9790,6 +9822,21 @@
       "publisher": "DC Comics",
       "title": "Young All-Stars",
       "id": 226
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Star Trek: Operation Assimilation",
+      "id": 227
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Star Trek: Starfleet Academy",
+      "id": 228
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Men in Black: Retribution",
+      "id": 229
     }
   ]
 }
