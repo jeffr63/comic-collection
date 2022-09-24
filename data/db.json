@@ -5481,6 +5481,1262 @@
       "url": "",
       "id": 684,
       "issue": "35"
+    },
+    {
+      "publisher": "Valiant / Image",
+      "title": "Deathmate",
+      "issue": "0",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 685
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Dark Horse Presents",
+      "coverPrice": 1.95,
+      "url": "",
+      "id": 686,
+      "issue": "36"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Dark Horse Presents",
+      "coverPrice": 1.95,
+      "url": "",
+      "id": 687,
+      "issue": "34"
+    },
+    {
+      "publisher": "Aaaargh! Associated Artists",
+      "title": "Crypt, The",
+      "coverPrice": 1.95,
+      "url": "",
+      "id": 688,
+      "issue": "1"
+    },
+    {
+      "publisher": "Crossgen Comics",
+      "title": "Crossgen Chronicles",
+      "coverPrice": 3.95,
+      "url": "",
+      "id": 689,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Catalyst: Agents of Change",
+      "coverPrice": 1,
+      "url": "",
+      "id": 690,
+      "issue": "1"
+    },
+    {
+      "publisher": "Continuity Comics",
+      "title": "Captain Power and the Soldiers of the Future",
+      "coverPrice": 2,
+      "url": "",
+      "id": 691,
+      "issue": "1"
+    },
+    {
+      "publisher": "Continuity Comics",
+      "title": "Captain Power and the Soldiers of the Future",
+      "coverPrice": 2,
+      "url": "",
+      "id": 692,
+      "issue": "2"
+    },
+    {
+      "publisher": "Pocket Books",
+      "title": "Buffy the Vampire Slayer: The Watcher's Guide",
+      "issue": "0",
+      "coverPrice": 14,
+      "url": "",
+      "id": 693
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Buffy the Vampire Slayer: The Dust Waltz",
+      "coverPrice": 9.95,
+      "url": "",
+      "id": 694,
+      "issue": "0"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Buffy the Vampire Slayer: Ring of Fire",
+      "coverPrice": 9.95,
+      "url": "",
+      "id": 695,
+      "issue": "0"
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica: Season III",
+      "coverPrice": 4.99,
+      "url": "",
+      "id": 696,
+      "issue": "1"
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica: Season III",
+      "coverPrice": 2.99,
+      "url": "",
+      "id": 697,
+      "issue": "2"
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica: Season III",
+      "coverPrice": 2.99,
+      "url": "",
+      "id": 698,
+      "issue": "3"
+    },
+    {
+      "publisher": "Adventure Publications",
+      "title": "Adventurers",
+      "coverPrice": 1.5,
+      "url": "",
+      "id": 699,
+      "issue": "1"
+    },
+    {
+      "publisher": "Avatar",
+      "title": "Avengelyne",
+      "coverPrice": 3.5,
+      "url": "",
+      "id": 700,
+      "issue": "1"
+    },
+    {
+      "publisher": "Eclipse Comics",
+      "title": "Axa",
+      "coverPrice": 1.75,
+      "url": "",
+      "id": 701,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Barb Wire",
+      "coverPrice": 1.25,
+      "url": "",
+      "id": 702,
+      "issue": "1"
+    },
+    {
+      "publisher": "Maximum Press",
+      "title": "Battlestar Galactica",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 703,
+      "issue": "1"
+    },
+    {
+      "publisher": "Maximum Press",
+      "title": "Battlestar Galactica",
+      "issue": "2",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 704
+    },
+    {
+      "publisher": "Maximum Press",
+      "title": "Battlestar Galactica",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 705,
+      "issue": "3"
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica: Search for Sanctuary",
+      "coverPrice": 3.99,
+      "url": "",
+      "id": 706,
+      "issue": "0"
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica: Search for Sanctuary",
+      "coverPrice": 2.99,
+      "url": "",
+      "id": 707,
+      "issue": "1"
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica",
+      "coverPrice": 2.99,
+      "url": "",
+      "id": 708,
+      "issue": "1"
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica",
+      "coverPrice": 2.99,
+      "url": "",
+      "id": 709,
+      "issue": "2"
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica",
+      "coverPrice": 2.99,
+      "url": "",
+      "id": 710,
+      "issue": "3"
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica",
+      "coverPrice": 2.99,
+      "url": "",
+      "id": 711,
+      "issue": "4"
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica",
+      "coverPrice": 2.99,
+      "url": "",
+      "id": 712,
+      "issue": "5"
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica: Eve of Destruction",
+      "coverPrice": 3.99,
+      "url": "",
+      "id": 713,
+      "issue": "0"
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica: 1999 Tourbook",
+      "coverPrice": 2.99,
+      "url": "",
+      "id": 714,
+      "issue": "0"
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica: The New Millennium",
+      "coverPrice": 2.99,
+      "url": "",
+      "id": 715,
+      "issue": "1"
+    },
+    {
+      "publisher": "Valiant / Image",
+      "title": "Deathmate",
+      "coverPrice": 4.95,
+      "url": "",
+      "id": 716,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Division 13",
+      "issue": "1",
+      "coverPrice": 1,
+      "url": "",
+      "id": 717
+    },
+    {
+      "publisher": "Valiant",
+      "title": "Doctor Mirage",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 718,
+      "issue": "1"
+    },
+    {
+      "publisher": "Eclipse Books",
+      "title": "Dragonflight",
+      "coverPrice": 4.95,
+      "url": "",
+      "id": 719,
+      "issue": "0"
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Drakkon Wars, The",
+      "coverPrice": 2.99,
+      "url": "",
+      "id": 720,
+      "issue": "0"
+    },
+    {
+      "publisher": "Eternity Comics",
+      "title": "Earthlore",
+      "coverPrice": 1.8,
+      "url": "",
+      "id": 721,
+      "issue": "2"
+    },
+    {
+      "publisher": "Northern Lights Publishing",
+      "title": "Empire Lanes",
+      "coverPrice": 1.75,
+      "url": "",
+      "id": 722,
+      "issue": "1"
+    },
+    {
+      "publisher": "Keyline Books",
+      "title": "Empire Lanes",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 723
+    },
+    {
+      "publisher": "Blackthorne Publishing",
+      "title": "Enchanted Valley",
+      "issue": "1",
+      "coverPrice": 1.75,
+      "url": "",
+      "id": 724
+    },
+    {
+      "publisher": "Charlton Group Comics",
+      "title": "Fighting Marines",
+      "coverPrice": 0.35,
+      "url": "",
+      "id": 725,
+      "issue": "133"
+    },
+    {
+      "publisher": "Crossgen Comics",
+      "title": "First, The",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 726,
+      "issue": "1"
+    },
+    {
+      "publisher": "Crossgen Comics",
+      "title": "First, The",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 727,
+      "issue": "2"
+    },
+    {
+      "publisher": "Valiant",
+      "title": "Geomancer: Guardian of Earth",
+      "coverPrice": 3.75,
+      "url": "",
+      "id": 728,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Ghost",
+      "coverPrice": 1,
+      "url": "",
+      "id": 729,
+      "issue": "3"
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Gigantor",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 730,
+      "issue": "1"
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Gigantor",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 731,
+      "issue": "2"
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Gigantor",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 732,
+      "issue": "3"
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Gigantor",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 733,
+      "issue": "4"
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Gigantor",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 734,
+      "issue": "5"
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Gigantor",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 735,
+      "issue": "6"
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Gigantor",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 736,
+      "issue": "7"
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Gigantor",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 737,
+      "issue": "8"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Hero Zero",
+      "coverPrice": 1,
+      "url": "",
+      "id": 738,
+      "issue": "2"
+    },
+    {
+      "publisher": "Eclipse Books",
+      "title": "Hobbit, The",
+      "coverPrice": 4.95,
+      "url": "",
+      "id": 739,
+      "issue": "0"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Hypersonic",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 740,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Hypersonic",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 741,
+      "issue": "2"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Hypersonic",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 742,
+      "issue": "3"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Insane",
+      "coverPrice": 1.75,
+      "url": "",
+      "id": 743,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "King Tiger",
+      "coverPrice": 1,
+      "url": "",
+      "id": 744,
+      "issue": "3"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Legacy",
+      "coverPrice": 2.25,
+      "url": "",
+      "id": 745,
+      "issue": "1"
+    },
+    {
+      "publisher": "Caliber Comics",
+      "title": "Legends of Camelot",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 746,
+      "issue": "0"
+    },
+    {
+      "publisher": "Aircel",
+      "title": "Maelstrom",
+      "coverPrice": 1.7,
+      "url": "",
+      "id": 747,
+      "issue": "1"
+    },
+    {
+      "publisher": "Aircel",
+      "title": "Maelstrom",
+      "coverPrice": 1.7,
+      "url": "",
+      "id": 748,
+      "issue": "2"
+    },
+    {
+      "publisher": "Image",
+      "title": "Maxx, The",
+      "coverPrice": 1.95,
+      "url": "",
+      "id": 749,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Machine, The",
+      "coverPrice": 1.25,
+      "url": "",
+      "id": 750,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Mecha",
+      "coverPrice": 1.25,
+      "url": "",
+      "id": 751,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Meridian",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 752,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Meridian",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 753,
+      "issue": "2"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Meridian",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 754,
+      "issue": "3"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Meridian",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 755,
+      "issue": "4"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Meridian",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 756,
+      "issue": "4"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Meridian",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 757,
+      "issue": "5"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Meridian",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 758,
+      "issue": "6"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Meridian",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 759,
+      "issue": "7"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Monster",
+      "coverPrice": 1,
+      "url": "",
+      "id": 760,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Motorhead",
+      "coverPrice": 1,
+      "url": "",
+      "id": 761,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Mr. Monster",
+      "issue": "1",
+      "coverPrice": 1.75,
+      "url": "",
+      "id": 762
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Mystic",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 763,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Mystic",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 764,
+      "issue": "2"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Mystic",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 765,
+      "issue": "3"
+    },
+    {
+      "publisher": "Crossgen Comics",
+      "title": "Mystic",
+      "issue": "4",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 766
+    },
+    {
+      "publisher": "Crossgen Comics",
+      "title": "Mystic",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 767,
+      "issue": "5"
+    },
+    {
+      "publisher": "Crossgen Comics",
+      "title": "Mystic",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 768,
+      "issue": "6"
+    },
+    {
+      "publisher": "Crossgen Comics",
+      "title": "Mystic",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 769,
+      "issue": "7"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Next Men",
+      "issue": "12",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 770
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Next Men",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 771,
+      "issue": "13"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Ninja Funnies",
+      "coverPrice": 1.8,
+      "url": "",
+      "id": 772,
+      "issue": "2"
+    },
+    {
+      "publisher": "M Graphics",
+      "title": "Open Space",
+      "coverPrice": 4.95,
+      "url": "",
+      "id": 773,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Out of the Vortex",
+      "coverPrice": 1,
+      "url": "",
+      "id": 774,
+      "issue": "4"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Out of the Vortex",
+      "coverPrice": 2,
+      "url": "",
+      "id": 775,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Pit Bulls",
+      "coverPrice": 1,
+      "url": "",
+      "id": 776,
+      "issue": "2"
+    },
+    {
+      "publisher": "Viz Comics",
+      "title": "Pokemon",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 777,
+      "issue": "0"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 778,
+      "issue": "1"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 779,
+      "issue": "2"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 780,
+      "issue": "3"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 781,
+      "issue": "4"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 782,
+      "issue": "5"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 783,
+      "issue": "6"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 784,
+      "issue": "7"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 785,
+      "issue": "8"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 786,
+      "issue": "9"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 787,
+      "issue": "9"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 788,
+      "issue": "10"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 789,
+      "issue": "11"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 790,
+      "issue": "12"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 791,
+      "issue": "14"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 792,
+      "issue": "15"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "coverPrice": 2,
+      "url": "",
+      "id": 793,
+      "issue": "16"
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant Annual",
+      "coverPrice": 3.95,
+      "url": "",
+      "id": 794,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Rebel",
+      "coverPrice": 1,
+      "url": "",
+      "id": 795,
+      "issue": "1"
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Robotech: Cover Ops",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 796,
+      "issue": "1"
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Robotech: Wings of Gibraltar",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 797,
+      "issue": "1"
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Robotech: The Sentinels Rubicon",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 798,
+      "issue": "1"
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "RoboCop versus The Terminator",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 799,
+      "issue": "2"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Scion",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 800
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Scion",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 801,
+      "issue": "2"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Scion",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 802,
+      "issue": "3"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Scion",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 803,
+      "issue": "4"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Scion",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 804,
+      "issue": "5"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Scion",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 805,
+      "issue": "6"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Scion",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 806,
+      "issue": "7"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Sigil",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 807,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Sigil",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 808,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Sigil",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 809,
+      "issue": "2"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Sigil",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 810,
+      "issue": "3"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Sigil",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 811,
+      "issue": "3"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Sigil",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 812,
+      "issue": "4"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Sigil",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 813,
+      "issue": "4"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Sigil",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 814,
+      "issue": "5"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Sigil",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 815,
+      "issue": "6"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Sigil",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 816,
+      "issue": "7"
+    },
+    {
+      "publisher": "Innovation",
+      "title": "Shadow of the Torturer, The",
+      "coverPrice": 2.5,
+      "url": "",
+      "id": 817,
+      "issue": "2"
+    },
+    {
+      "publisher": "Topps Comics",
+      "title": "Space: Above and Beyond - The Gauntlet",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 818,
+      "issue": "1"
+    },
+    {
+      "publisher": "Topps Comics",
+      "title": "Space: Above and Beyond - The Gauntlet",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 819,
+      "issue": "2"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Star Wars: Dark Forces - Soldier for the Empire",
+      "coverPrice": 14.95,
+      "url": "",
+      "id": 820,
+      "issue": "0"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Starship Troopers",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 821,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Starship Troopers",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 822,
+      "issue": "2"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Starship Troopers: Brute Creations",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 823,
+      "issue": "0"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Starship Troopers: Dominant Species",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 824,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Starship Troopers: Dominant Species",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 825,
+      "issue": "2"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Starship Troopers: Dominant Species",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 826,
+      "issue": "3"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Starship Troopers: Dominant Species",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 827,
+      "issue": "4"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Starship Troopers: Insect Touch",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 828,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Starship Troopers: Insect Touch",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 829,
+      "issue": "2"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Starship Troopers: Insect Touch",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 830,
+      "issue": "3"
+    },
+    {
+      "publisher": "Image",
+      "title": "Storm Watch",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "",
+      "id": 831
+    },
+    {
+      "publisher": "Eternity Comics",
+      "title": "Three Musketeers, The",
+      "coverPrice": 1.95,
+      "url": "",
+      "id": 832,
+      "issue": "1"
+    },
+    {
+      "publisher": "Eternity Comics",
+      "title": "Three Musketeers, The",
+      "coverPrice": 1.95,
+      "url": "",
+      "id": 833,
+      "issue": "2"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Titan",
+      "issue": "1",
+      "coverPrice": 1,
+      "url": "",
+      "id": 834
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Titan A.E.",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 835,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Titan A.E.",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 836,
+      "issue": "2"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Titan A.E.",
+      "coverPrice": 2.95,
+      "url": "",
+      "id": 837,
+      "issue": "3"
+    },
+    {
+      "publisher": "Genesis West Comics",
+      "title": "Last of the Viking Heroes, The",
+      "coverPrice": 8.95,
+      "url": "",
+      "id": 838,
+      "issue": "0"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Wolf Gang",
+      "coverPrice": 1,
+      "url": "",
+      "id": 839,
+      "issue": "1"
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "X",
+      "coverPrice": 1,
+      "url": "",
+      "id": 840,
+      "issue": "1"
+    },
+    {
+      "publisher": "Eclipse Comics",
+      "title": "Xanadu",
+      "coverPrice": 2,
+      "url": "",
+      "id": 841,
+      "issue": "1"
     }
   ],
   "publishers": [
@@ -5495,6 +6751,118 @@
     {
       "name": "Dark Horse Comics",
       "id": 3
+    },
+    {
+      "name": "Adventure Publications",
+      "id": 4
+    },
+    {
+      "name": "Avatar",
+      "id": 5
+    },
+    {
+      "name": "Eclipse Comics",
+      "id": 6
+    },
+    {
+      "name": "Maximum Press",
+      "id": 7
+    },
+    {
+      "name": "Realm Press",
+      "id": 8
+    },
+    {
+      "name": "Pocket Books",
+      "id": 9
+    },
+    {
+      "name": "Continuity Comics",
+      "id": 10
+    },
+    {
+      "name": "Crossgen Comics",
+      "id": 11
+    },
+    {
+      "name": "Aaaargh! Associated Artists",
+      "id": 12
+    },
+    {
+      "name": "Valiant / Image",
+      "id": 13
+    },
+    {
+      "name": "Valiant",
+      "id": 14
+    },
+    {
+      "name": "Eclipse Books",
+      "id": 15
+    },
+    {
+      "name": "Eternity Comics",
+      "id": 16
+    },
+    {
+      "name": "Northern Lights Publishing",
+      "id": 17
+    },
+    {
+      "name": "Blackthorne Publishing",
+      "id": 19
+    },
+    {
+      "name": "Charlton Group Comics",
+      "id": 20
+    },
+    {
+      "name": "Antarctic Press",
+      "id": 21
+    },
+    {
+      "name": "Majectic",
+      "id": 22
+    },
+    {
+      "name": "Caliber Comics",
+      "id": 23
+    },
+    {
+      "name": "Aircel",
+      "id": 24
+    },
+    {
+      "name": "Image",
+      "id": 25
+    },
+    {
+      "name": "Keyline Books",
+      "id": 26
+    },
+    {
+      "name": "M Graphics",
+      "id": 27
+    },
+    {
+      "name": "Viz Comics",
+      "id": 28
+    },
+    {
+      "name": "Pioneer",
+      "id": 29
+    },
+    {
+      "name": "Innovation",
+      "id": 30
+    },
+    {
+      "name": "Topps Comics",
+      "id": 31
+    },
+    {
+      "name": "Genesis West Comics",
+      "id": 32
     }
   ],
   "titles": [
@@ -5947,6 +7315,396 @@
       "publisher": "Dark Horse Comics",
       "title": "Star Wars: X-Wing Rogue Squadron",
       "id": 95
+    },
+    {
+      "publisher": "Adventure Publications",
+      "title": "Adventurers",
+      "id": 96
+    },
+    {
+      "publisher": "Avatar",
+      "title": "Avengelyne",
+      "id": 97
+    },
+    {
+      "publisher": "Eclipse Comics",
+      "title": "Axa",
+      "id": 98
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Barb Wire",
+      "id": 99
+    },
+    {
+      "publisher": "Maximum Press",
+      "title": "Battlestar Galactica",
+      "id": 100
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica: Search for Sanctuary",
+      "id": 101
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica",
+      "id": 102
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica: Eve of Destruction",
+      "id": 103
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica: 1999 Tourbook",
+      "id": 104
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica: The New Millennium",
+      "id": 105
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Battlestar Galactica: Season III",
+      "id": 106
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Buffy the Vampire Slayer: Ring of Fire",
+      "id": 107
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Buffy the Vampire Slayer: The Dust Waltz",
+      "id": 108
+    },
+    {
+      "publisher": "Pocket Books",
+      "title": "Buffy the Vampire Slayer: The Watcher's Guide",
+      "id": 109
+    },
+    {
+      "publisher": "Continuity Comics",
+      "title": "Captain Power and the Soldiers of the Future",
+      "id": 110
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Catalyst: Agents of Change",
+      "id": 111
+    },
+    {
+      "publisher": "Crossgen Comics",
+      "title": "Crossgen Chronicles",
+      "id": 112
+    },
+    {
+      "publisher": "Aaaargh! Associated Artists",
+      "title": "Crypt, The",
+      "id": 113
+    },
+    {
+      "publisher": "Valiant / Image",
+      "title": "Deathmate",
+      "id": 114
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Division 13",
+      "id": 115
+    },
+    {
+      "publisher": "Valiant",
+      "title": "Doctor Mirage",
+      "id": 116
+    },
+    {
+      "publisher": "Eclipse Books",
+      "title": "Dragonflight",
+      "id": 117
+    },
+    {
+      "publisher": "Realm Press",
+      "title": "Drakkon Wars, The",
+      "id": 118
+    },
+    {
+      "publisher": "Eternity Comics",
+      "title": "Earthlore",
+      "id": 119
+    },
+    {
+      "publisher": "Northern Lights Publishing",
+      "title": "Empire Lanes",
+      "id": 120
+    },
+    {
+      "publisher": "Blackthorne Publishing",
+      "title": "Enchanted Valley",
+      "id": 121
+    },
+    {
+      "publisher": "Charlton Group Comics",
+      "title": "Fighting Marines",
+      "id": 122
+    },
+    {
+      "publisher": "Crossgen Comics",
+      "title": "First, The",
+      "id": 123
+    },
+    {
+      "publisher": "Valiant",
+      "title": "Geomancer: Guardian of Earth",
+      "id": 124
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Ghost",
+      "id": 125
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Gigantor",
+      "id": 126
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Hero Zero",
+      "id": 127
+    },
+    {
+      "publisher": "Eclipse Books",
+      "title": "Hobbit, The",
+      "id": 128
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Hypersonic",
+      "id": 129
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Insane",
+      "id": 130
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "King Tiger",
+      "id": 131
+    },
+    {
+      "publisher": "Majectic",
+      "title": "Legacy",
+      "id": 132
+    },
+    {
+      "publisher": "Caliber Comics",
+      "title": "Legends of Camelot",
+      "id": 133
+    },
+    {
+      "publisher": "Aircel",
+      "title": "Maelstrom",
+      "id": 134
+    },
+    {
+      "publisher": "Image",
+      "title": "Maxx, The",
+      "id": 135
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Machine, The",
+      "id": 136
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Mecha",
+      "id": 137
+    },
+    {
+      "publisher": "Crossgen Comics",
+      "title": "Meridian",
+      "id": 138
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Monster",
+      "id": 139
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Motorhead",
+      "id": 140
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Mr. Monster",
+      "id": 141
+    },
+    {
+      "publisher": "Crossgen Comics",
+      "title": "Mystic",
+      "id": 142
+    },
+    {
+      "publisher": "Keyline Books",
+      "title": "Empire Lanes",
+      "id": 143
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Next Men",
+      "id": 144
+    },
+    {
+      "publisher": "Eternity Comics",
+      "title": "Ninja Funnies",
+      "id": 145
+    },
+    {
+      "publisher": "M Graphics",
+      "title": "Open Space",
+      "id": 146
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Out of the Vortex",
+      "id": 147
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Pit Bulls",
+      "id": 148
+    },
+    {
+      "publisher": "Viz Comics",
+      "title": "Pokemon",
+      "id": 149
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant",
+      "id": 150
+    },
+    {
+      "publisher": "Pioneer",
+      "title": "Prince Valiant Annual",
+      "id": 151
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Rebel",
+      "id": 152
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Robotech: Cover Ops",
+      "id": 153
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Robotech: Wings of Gibraltar",
+      "id": 154
+    },
+    {
+      "publisher": "Antarctic Press",
+      "title": "Robotech: The Sentinels Rubicon",
+      "id": 155
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "RoboCop versus The Terminator",
+      "id": 156
+    },
+    {
+      "publisher": "Crossgen Comics",
+      "title": "Scion",
+      "id": 157
+    },
+    {
+      "publisher": "Crossgen Comics",
+      "title": "Sigil",
+      "id": 158
+    },
+    {
+      "publisher": "Innovation",
+      "title": "Shadow of the Torturer, The",
+      "id": 159
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Starship Troopers",
+      "id": 160
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Starship Troopers: Dominant Species",
+      "id": 161
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Starship Troopers: Insect Touch",
+      "id": 162
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Star Wars: Dark Forces - Soldier for the Empire",
+      "id": 163
+    },
+    {
+      "publisher": "Image",
+      "title": "Storm Watch",
+      "id": 164
+    },
+    {
+      "publisher": "Eternity Comics",
+      "title": "Three Musketeers, The",
+      "id": 165
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Titan A.E.",
+      "id": 166
+    },
+    {
+      "publisher": "Topps Comics",
+      "title": "Space: Above and Beyond - The Gauntlet",
+      "id": 167
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Starship Troopers: Brute Creations",
+      "id": 168
+    },
+    {
+      "publisher": "Genesis West Comics",
+      "title": "Last of the Viking Heroes, The",
+      "id": 169
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Wolf Gang",
+      "id": 170
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "X",
+      "id": 171
+    },
+    {
+      "publisher": "Eclipse Comics",
+      "title": "Xanadu",
+      "id": 172
+    },
+    {
+      "publisher": "Dark Horse Comics",
+      "title": "Titan",
+      "id": 173
     }
   ]
 }
