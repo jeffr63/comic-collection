@@ -8585,6 +8585,2598 @@
       "coverPrice": 3.99,
       "url": "https://marvel.fandom.com/wiki/Men_in_Black:_Retribution_Vol_1_1",
       "id": 1072
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "2099 Unlimited",
+      "issue": "1",
+      "coverPrice": 3.95,
+      "url": "https://marvel.fandom.com/wiki/2099_Unlimited_Vol_1_1",
+      "id": 1073
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Air Raiders",
+      "issue": "1",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Air_Raiders_Vol_1_1",
+      "id": 1074
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Alpha Flight",
+      "issue": "100",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Alpha_Flight_Vol_1_100",
+      "id": 1075
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Alpha Flight",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Alpha_Flight_Vol_1_107",
+      "id": 1076,
+      "issue": "107"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "issue": "163",
+      "coverPrice": 0.3,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_163",
+      "id": 1077
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "issue": "288",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_288",
+      "id": 1078
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_289",
+      "id": 1079,
+      "issue": "289"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_290",
+      "id": 1080,
+      "issue": "290"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_292",
+      "id": 1081,
+      "issue": "292"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "issue": "293",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_293",
+      "id": 1082
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_294",
+      "id": 1083,
+      "issue": "294"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_295",
+      "id": 1084,
+      "issue": "295"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_296",
+      "id": 1085,
+      "issue": "296"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_297",
+      "id": 1086,
+      "issue": "297"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_298",
+      "id": 1087,
+      "issue": "298"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_300",
+      "id": 1088,
+      "issue": "300"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_301",
+      "id": 1089,
+      "issue": "301"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_302",
+      "id": 1090,
+      "issue": "302"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_303",
+      "id": 1091,
+      "issue": "303"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_304",
+      "id": 1092,
+      "issue": "304"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_305",
+      "id": 1093,
+      "issue": "305"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_306",
+      "id": 1094,
+      "issue": "306"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_307",
+      "id": 1095,
+      "issue": "307"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_308",
+      "id": 1096,
+      "issue": "308"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_309",
+      "id": 1097,
+      "issue": "309"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_310",
+      "id": 1098,
+      "issue": "310"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_311",
+      "id": 1099,
+      "issue": "311"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_312",
+      "id": 1100,
+      "issue": "312"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_313",
+      "id": 1101,
+      "issue": "313"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_314",
+      "id": 1102,
+      "issue": "314"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_315",
+      "id": 1103,
+      "issue": "315"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_316",
+      "id": 1104,
+      "issue": "316"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_317",
+      "id": 1105,
+      "issue": "317"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_360",
+      "id": 1106,
+      "issue": "360"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_363",
+      "id": 1107,
+      "issue": "363"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_368",
+      "id": 1108,
+      "issue": "368"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Vol_1_368",
+      "id": 1109,
+      "issue": "369"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers Annual",
+      "issue": "16",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Annual_Vol_1_16",
+      "id": 1110
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers Annual",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Annual_Vol_1_17",
+      "id": 1111,
+      "issue": "17"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers Annual",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Annual_Vol_1_18",
+      "id": 1112,
+      "issue": "18"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers Annual",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Annual_Vol_1_21",
+      "id": 1113,
+      "issue": "21"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers Spotlight",
+      "issue": "29",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Avengers_Spotlight_Vol_1_29",
+      "id": 1114
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "issue": "45",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Vol_2_45",
+      "id": 1115
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Vol_2_46",
+      "id": 1116,
+      "issue": "46"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Vol_2_47",
+      "id": 1117,
+      "issue": "47"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Vol_2_48",
+      "id": 1118,
+      "issue": "48"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Vol_2_49",
+      "id": 1119,
+      "issue": "49"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Vol_2_50",
+      "id": 1120,
+      "issue": "50"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Vol_2_51",
+      "id": 1121,
+      "issue": "51"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Vol_2_52",
+      "id": 1122,
+      "issue": "52"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Vol_2_53",
+      "id": 1123,
+      "issue": "53"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Vol_2_54",
+      "id": 1124,
+      "issue": "54"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Vol_2_55",
+      "id": 1125,
+      "issue": "55"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Vol_2_57",
+      "id": 1126,
+      "issue": "57"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Vol_2_58",
+      "id": 1127,
+      "issue": "58"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Vol_2_101",
+      "id": 1128,
+      "issue": "101"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Annual",
+      "issue": "3",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Annual_Vol_1_3",
+      "id": 1129
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Annual",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/West_Coast_Avengers_Annual_Vol_1_4",
+      "id": 1130,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "issue": "334",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_334",
+      "id": 1131
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Black Knight Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Black_Knight_Vol_2_1",
+      "id": 1132,
+      "issue": "1"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Black Knight Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Black_Knight_Vol_2_2",
+      "id": 1133,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Black Panther",
+      "coverPrice": 0.35,
+      "url": "https://marvel.fandom.com/wiki/Black_Panther_Vol_1_7",
+      "id": 1134,
+      "issue": "7"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Black Panther",
+      "coverPrice": 0.35,
+      "url": "https://marvel.fandom.com/wiki/Black_Panther_Vol_1_8",
+      "id": 1135,
+      "issue": "8"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_335",
+      "id": 1136,
+      "issue": "335"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_336",
+      "id": 1137,
+      "issue": "336"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_337",
+      "id": 1138,
+      "issue": "337"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_338",
+      "id": 1139,
+      "issue": "338"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_339",
+      "id": 1140,
+      "issue": "339"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_340",
+      "id": 1141,
+      "issue": "340"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_341",
+      "id": 1142,
+      "issue": "341"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_342",
+      "id": 1143,
+      "issue": "342"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_343",
+      "id": 1144,
+      "issue": "343"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_344",
+      "id": 1145,
+      "issue": "344"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_345",
+      "id": 1146,
+      "issue": "345"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_346",
+      "id": 1147,
+      "issue": "346"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_347",
+      "id": 1148,
+      "issue": "347"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_348",
+      "id": 1149,
+      "issue": "348"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_349",
+      "id": 1150,
+      "issue": "349"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_350",
+      "id": 1151,
+      "issue": "350"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_351",
+      "id": 1152,
+      "issue": "351"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_352",
+      "id": 1153,
+      "issue": "352"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_353",
+      "id": 1154,
+      "issue": "353"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_354",
+      "id": 1155,
+      "issue": "354"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_355",
+      "id": 1156,
+      "issue": "355"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_356",
+      "id": 1157,
+      "issue": "356"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_357",
+      "id": 1158,
+      "issue": "357"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_358",
+      "id": 1159,
+      "issue": "358"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_359",
+      "id": 1160,
+      "issue": "359"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_360",
+      "id": 1161,
+      "issue": "360"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_361",
+      "id": 1162,
+      "issue": "361"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_362",
+      "id": 1163,
+      "issue": "362"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_363",
+      "id": 1164,
+      "issue": "363"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_364",
+      "id": 1165,
+      "issue": "364"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_365",
+      "id": 1166,
+      "issue": "365"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_366",
+      "id": 1167,
+      "issue": "366"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_367",
+      "id": 1168,
+      "issue": "367"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_368",
+      "id": 1169,
+      "issue": "368"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_369",
+      "id": 1170,
+      "issue": "369"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_370",
+      "id": 1171,
+      "issue": "370"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_371",
+      "id": 1172,
+      "issue": "371"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_372",
+      "id": 1173,
+      "issue": "372"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_373",
+      "id": 1174,
+      "issue": "373"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_374",
+      "id": 1175,
+      "issue": "374"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_375",
+      "id": 1176,
+      "issue": "375"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_376",
+      "id": 1177,
+      "issue": "376"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_377",
+      "id": 1178,
+      "issue": "377"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_378",
+      "id": 1179,
+      "issue": "378"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_379",
+      "id": 1180,
+      "issue": "379"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_380",
+      "id": 1181,
+      "issue": "380"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_381",
+      "id": 1182,
+      "issue": "381"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_382",
+      "id": 1183,
+      "issue": "382"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_383",
+      "id": 1184,
+      "issue": "383"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_384",
+      "id": 1185,
+      "issue": "384"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Vol_1_385",
+      "id": 1186,
+      "issue": "385"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America Annual",
+      "issue": "9",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Annual_Vol_1_9",
+      "id": 1187
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America Annual",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Captain_America_Annual_Vol_1_11",
+      "id": 1188,
+      "issue": "11"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "ClanDestine",
+      "issue": "0",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/ClanDestine_Vol_1_1",
+      "id": 1189
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "ClanDestine",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/ClanDestine_Vol_1_1",
+      "id": 1190,
+      "issue": "1"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "ClanDestine",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/ClanDestine_Vol_1_2",
+      "id": 1191,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Damage Control",
+      "issue": "1",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Damage_Control_Vol_1_1",
+      "id": 1192
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Damage Control",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Damage_Control_Vol_1_2",
+      "id": 1193,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Damage Control",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Damage_Control_Vol_1_3",
+      "id": 1194,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Damage Control",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Damage_Control_Vol_1_4",
+      "id": 1195,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Damage Control Volume 2",
+      "issue": "1",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Damage_Control_Vol_2_1",
+      "id": 1196
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Damage Control Volume 2",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Damage_Control_Vol_2_2",
+      "id": 1197,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Damage Control Volume 2",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Damage_Control_Vol_2_3",
+      "id": 1198,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Damage Control Volume 2",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Damage_Control_Vol_2_4",
+      "id": 1199,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Damage Control Volume 3",
+      "issue": "1",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Damage_Control_Vol_3_1",
+      "id": 1200
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Damage Control Volume 3",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Damage_Control_Vol_3_2",
+      "id": 1201,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Daredevil",
+      "issue": "252",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Daredevil_Vol_1_252",
+      "id": 1202
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Daredevil",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Daredevil_Vol_1_262",
+      "id": 1203,
+      "issue": "262"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Daredevil",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Daredevil_Vol_1_263",
+      "id": 1204,
+      "issue": "263"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Daredevil",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Daredevil_Vol_1_264",
+      "id": 1205,
+      "issue": "264"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Daredevil",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Daredevil_Vol_1_265",
+      "id": 1206,
+      "issue": "265"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Daredevil",
+      "issue": "300",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Daredevil_Vol_1_300",
+      "id": 1207
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Daredevil Annual",
+      "issue": "4",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Daredevil_Annual_Vol_1_4B",
+      "id": 1208
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Darkman Volume 2",
+      "issue": "1",
+      "coverPrice": 3.95,
+      "url": "https://marvel.fandom.com/wiki/Darkman_Vol_2_1",
+      "id": 1209
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head",
+      "issue": "1",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Death%27s_Head_Vol_1_1",
+      "id": 1210
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Death%27s_Head_Vol_1_2",
+      "id": 1211,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Death%27s_Head_Vol_1_3",
+      "id": 1212,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Death%27s_Head_Vol_1_4",
+      "id": 1213,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Death%27s_Head_Vol_1_5",
+      "id": 1214,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Death%27s_Head_Vol_1_6",
+      "id": 1215,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Death%27s_Head_Vol_1_7",
+      "id": 1216,
+      "issue": "7"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Death%27s_Head_Vol_1_8",
+      "id": 1217,
+      "issue": "8"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Death%27s_Head_Vol_1_9",
+      "id": 1218,
+      "issue": "9"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Death%27s_Head_Vol_1_10",
+      "id": 1219,
+      "issue": "10"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Death%27s_Head_Vol_2_2",
+      "id": 1220,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Death%27s_Head_Vol_2_4",
+      "id": 1221,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Death%27s_Head_Vol_2_1",
+      "id": 1222,
+      "issue": "1"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Defenders, The",
+      "issue": "49",
+      "coverPrice": 0.3,
+      "url": "https://marvel.fandom.com/wiki/Defenders_Vol_1_49",
+      "id": 1223
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Defenders, The",
+      "coverPrice": 0.3,
+      "url": "https://marvel.fandom.com/wiki/Defenders_Vol_1_50",
+      "id": 1224,
+      "issue": "50"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Defenders, The",
+      "coverPrice": 0.3,
+      "url": "https://marvel.fandom.com/wiki/Defenders_Vol_1_51",
+      "id": 1225,
+      "issue": "51"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Defenders, The",
+      "coverPrice": 0.3,
+      "url": "https://marvel.fandom.com/wiki/Defenders_Vol_1_56",
+      "id": 1226,
+      "issue": "56"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Secret Defenders, The",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Secret_Defenders_Vol_1_1",
+      "id": 1227
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Destroyer Volume 2, The",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Destroyer_Vol_2_1",
+      "id": 1228
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Destroyer Volume 2, The",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Destroyer_Vol_2_2",
+      "id": 1229,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Destroyer Volume 2, The",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Destroyer_Vol_2_3",
+      "id": 1230,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Destroyer Volume 2, The",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Destroyer_Vol_2_4",
+      "id": 1231,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doom 2099",
+      "issue": "1",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Doom_2099_Vol_1_1",
+      "id": 1232
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doom 2099",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Doom_2099_Vol_1_2",
+      "id": 1233,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doom 2099",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Doom_2099_Vol_1_3",
+      "id": 1234,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doom 2099",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Doom_2099_Vol_1_4",
+      "id": 1235,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doom 2099",
+      "issue": "5",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Doom_2099_Vol_1_5",
+      "id": 1236
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "issue": "1",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_1",
+      "id": 1237
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_2",
+      "id": 1238,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_3",
+      "id": 1239,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_4",
+      "id": 1240,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_5",
+      "id": 1241,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_6",
+      "id": 1242,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_7",
+      "id": 1243,
+      "issue": "7"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_10",
+      "id": 1244,
+      "issue": "10"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_11",
+      "id": 1245,
+      "issue": "11"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_12",
+      "id": 1246,
+      "issue": "12"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_13",
+      "id": 1247,
+      "issue": "13"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_14",
+      "id": 1248,
+      "issue": "14"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_15",
+      "id": 1249,
+      "issue": "15"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_16",
+      "id": 1250,
+      "issue": "16"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_17",
+      "id": 1251,
+      "issue": "17"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_18",
+      "id": 1252,
+      "issue": "18"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_19",
+      "id": 1253,
+      "issue": "19"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Doctor_Strange,_Sorcerer_Supreme_Vol_1_36",
+      "id": 1254,
+      "issue": "36"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Double Dragon",
+      "issue": "1",
+      "coverPrice": 1,
+      "url": "",
+      "id": 1255
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Double Dragon",
+      "coverPrice": 1,
+      "url": "",
+      "id": 1256,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Double Dragon",
+      "coverPrice": 1,
+      "url": "",
+      "id": 1257,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Double Dragon",
+      "coverPrice": 1,
+      "url": "",
+      "id": 1258,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Double Dragon",
+      "coverPrice": 1,
+      "url": "",
+      "id": 1259,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Double Dragon",
+      "coverPrice": 1,
+      "url": "",
+      "id": 1260,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "D.P.7",
+      "issue": "1",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/D.P.7_Vol_1_1",
+      "id": 1261
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "D.P.7",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/D.P.7_Vol_1_2",
+      "id": 1262,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "D.P.7",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/D.P.7_Vol_1_3",
+      "id": 1263,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "D.P.7",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/D.P.7_Vol_1_4",
+      "id": 1264,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "D.P.7",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/D.P.7_Vol_1_5",
+      "id": 1265,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "D.P.7",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/D.P.7_Vol_1_6",
+      "id": 1266,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "D.P.7",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/D.P.7_Vol_1_7",
+      "id": 1267,
+      "issue": "7"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Tomb of Dracula, The",
+      "issue": "59",
+      "coverPrice": 0.3,
+      "url": "https://marvel.fandom.com/wiki/Tomb_of_Dracula_Vol_1_59",
+      "id": 1268
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Tomb of Dracula, The",
+      "coverPrice": 0.35,
+      "url": "https://marvel.fandom.com/wiki/Tomb_of_Dracula_Vol_1_63",
+      "id": 1269,
+      "issue": "63"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Dragon's Claws",
+      "issue": "1",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Dragon's_Claws_Vol_1_1",
+      "id": 1270
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Dragon's Claws",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Dragon's_Claws_Vol_1_2",
+      "id": 1271,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Dragon's Claws",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Dragon's_Claws_Vol_1_3",
+      "id": 1272,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Dragon's Claws",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Dragon's_Claws_Vol_1_4",
+      "id": 1273,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Dragon's Claws",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Dragon's_Claws_Vol_1_5",
+      "id": 1274,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Dragon's Claws",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Dragon's_Claws_Vol_1_6",
+      "id": 1275,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Dragon's Claws",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Dragon's_Claws_Vol_1_7",
+      "id": 1276,
+      "issue": "7"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Dragon's Claws",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Dragon's_Claws_Vol_1_8",
+      "id": 1277,
+      "issue": "8"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Dragon's Claws",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Dragon's_Claws_Vol_1_9",
+      "id": 1278,
+      "issue": "9"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Dragon's Claws",
+      "issue": "10",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Dragon's_Claws_Vol_1_10",
+      "id": 1279
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Dragon Strike",
+      "issue": "1",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Dragon_Strike_Vol_1_1",
+      "id": 1280
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Eternals: The Herod Factor",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Eternals:_The_Herod_Factor_Vol_1_1",
+      "id": 1281
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Eternals: The Herod Factor",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Eternals:_The_Herod_Factor_Vol_1_1",
+      "id": 1282
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Force",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Force_Vol_1_1",
+      "id": 1283
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "issue": "310",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_310",
+      "id": 1284
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_311",
+      "id": 1285,
+      "issue": "311"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_312",
+      "id": 1286,
+      "issue": "312"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_313",
+      "id": 1287,
+      "issue": "313"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_314",
+      "id": 1288,
+      "issue": "314"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_315",
+      "id": 1289,
+      "issue": "315"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_316",
+      "id": 1290,
+      "issue": "316"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "issue": "317",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_317",
+      "id": 1291
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_318",
+      "id": 1292,
+      "issue": "318"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_319",
+      "id": 1293,
+      "issue": "319"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "issue": "321",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_321",
+      "id": 1294
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_322",
+      "id": 1295,
+      "issue": "322"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_323",
+      "id": 1296,
+      "issue": "323"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_324",
+      "id": 1297,
+      "issue": "324"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_325",
+      "id": 1298,
+      "issue": "325"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_326",
+      "id": 1299,
+      "issue": "326"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_327",
+      "id": 1300,
+      "issue": "327"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_328",
+      "id": 1301,
+      "issue": "328"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_329",
+      "id": 1302,
+      "issue": "329"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_330",
+      "id": 1303,
+      "issue": "330"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_331",
+      "id": 1304,
+      "issue": "331"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_332",
+      "id": 1305,
+      "issue": "332"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_333",
+      "id": 1306,
+      "issue": "333"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_334",
+      "id": 1307,
+      "issue": "334"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_335",
+      "id": 1308,
+      "issue": "335"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_336",
+      "id": 1309,
+      "issue": "336"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_337",
+      "id": 1310,
+      "issue": "337"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_338",
+      "id": 1311,
+      "issue": "338"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_339",
+      "id": 1312,
+      "issue": "339"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_340",
+      "id": 1313,
+      "issue": "340"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_358",
+      "id": 1314,
+      "issue": "358"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "issue": "369",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_369",
+      "id": 1315
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_371",
+      "id": 1316,
+      "issue": "371"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Vol_1_375",
+      "id": 1317,
+      "issue": "375"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four Annual",
+      "issue": "21",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Annual_Vol_1_21",
+      "id": 1318
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four Annual",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Annual_Vol_1_22",
+      "id": 1319,
+      "issue": "22"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four Annual",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Annual_Vol_1_23",
+      "id": 1320,
+      "issue": "23"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four Annual",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Annual_Vol_1_24",
+      "id": 1321,
+      "issue": "24"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four Annual",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Annual_Vol_1_25",
+      "id": 1322,
+      "issue": "25"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four vs. the X-Men",
+      "issue": "1",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_vs._the_X-Men_Vol_1_1",
+      "id": 1323
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four vs. the X-Men",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_vs._the_X-Men_Vol_1_2",
+      "id": 1324,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four vs. the X-Men",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_vs._the_X-Men_Vol_1_3",
+      "id": 1325,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four vs. the X-Men",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_vs._the_X-Men_Vol_1_4",
+      "id": 1326,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four Unlimited",
+      "issue": "1",
+      "coverPrice": 3.95,
+      "url": "https://marvel.fandom.com/wiki/Fantastic_Four_Unlimited_Vol_1_1",
+      "id": 1327
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Foolkiller",
+      "issue": "2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Foolkiller_Vol_1_2",
+      "id": 1328
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Foolkiller",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Foolkiller_Vol_1_3",
+      "id": 1329,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Ghost Rider Volume 3",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Ghost_Rider_Vol_3_1",
+      "id": 1330
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Ghost Rider Volume 3",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Ghost_Rider_Vol_3_2",
+      "id": 1331,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Ghost Rider Volume 3",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Ghost_Rider_Vol_3_3",
+      "id": 1332,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Ghost Rider Volume 3",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Ghost_Rider_Vol_3_4",
+      "id": 1333,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Ghost Rider Volume 3",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Ghost_Rider_Vol_3_15",
+      "id": 1334,
+      "issue": "15"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Ghost Rider Volume 3",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Ghost_Rider_Vol_3_28",
+      "id": 1335,
+      "issue": "28"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Ghost Rider Volume 3",
+      "issue": "28",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Ghost_Rider_Vol_3_28",
+      "id": 1336
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Ghost Rider Rides Again, The Original",
+      "issue": "1",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Original_Ghost_Rider_Rides_Again_Vol_1_1",
+      "id": 1337
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "issue": "1",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_1",
+      "id": 1338
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_2",
+      "id": 1339,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_3",
+      "id": 1340,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_4",
+      "id": 1341,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_5",
+      "id": 1342,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_6",
+      "id": 1343,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_7",
+      "id": 1344,
+      "issue": "7"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_8",
+      "id": 1345,
+      "issue": "8"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_9",
+      "id": 1346,
+      "issue": "9"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_10",
+      "id": 1347,
+      "issue": "10"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_11",
+      "id": 1348,
+      "issue": "11"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_12",
+      "id": 1349,
+      "issue": "12"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_13",
+      "id": 1350,
+      "issue": "13"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_14",
+      "id": 1351,
+      "issue": "14"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_15",
+      "id": 1352,
+      "issue": "15"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_16",
+      "id": 1353,
+      "issue": "16"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "issue": "17",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_17",
+      "id": 1354
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_18",
+      "id": 1355,
+      "issue": "18"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_19",
+      "id": 1356,
+      "issue": "19"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_20",
+      "id": 1357,
+      "issue": "20"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_21",
+      "id": 1358,
+      "issue": "21"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_22",
+      "id": 1359,
+      "issue": "22"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_23",
+      "id": 1360,
+      "issue": "23"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_24",
+      "id": 1361,
+      "issue": "24"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_25",
+      "id": 1362,
+      "issue": "25"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_26",
+      "id": 1363,
+      "issue": "26"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_27",
+      "id": 1364,
+      "issue": "27"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_28",
+      "id": 1365,
+      "issue": "28"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_29",
+      "id": 1366,
+      "issue": "29"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_30",
+      "id": 1367,
+      "issue": "30"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_31",
+      "id": 1368,
+      "issue": "31"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_32",
+      "id": 1369,
+      "issue": "32"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_33",
+      "id": 1370,
+      "issue": "33"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_34",
+      "id": 1371,
+      "issue": "34"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_35",
+      "id": 1372,
+      "issue": "35"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Vol_1_36",
+      "id": 1373,
+      "issue": "36"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy Annual",
+      "issue": "1",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Annual_Vol_1_1",
+      "id": 1374
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy Annual",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Guardians_of_the_Galaxy_Annual_Vol_1_2",
+      "id": 1375,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hell's Angel",
+      "issue": "1",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Hell's_Angel_Vol_1_1",
+      "id": 1376
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hell's Angel",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Hell's_Angel_Vol_1_2",
+      "id": 1377,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hellstorm: Price of Lies",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Hellstorm:_Prince_of_Lies_Vol_1_1",
+      "id": 1378
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hero",
+      "issue": "1",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Hero_Vol_1_1",
+      "id": 1379
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hero",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Hero_Vol_1_2",
+      "id": 1380,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hero",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Hero_Vol_1_3",
+      "id": 1381,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hero",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Hero_Vol_1_4",
+      "id": 1382,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hero",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Hero_Vol_1_5",
+      "id": 1383,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hero",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Hero_Vol_1_6",
+      "id": 1384,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hook: Official Movie Adaptation",
+      "issue": "1",
+      "coverPrice": 1,
+      "url": "",
+      "id": 1385
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hook: Official Movie Adaptation",
+      "coverPrice": 1,
+      "url": "",
+      "id": 1386,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hook: Official Movie Adaptation",
+      "coverPrice": 1,
+      "url": "",
+      "id": 1387,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hook: Official Movie Adaptation",
+      "coverPrice": 1,
+      "url": "",
+      "id": 1388,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Imposible Man: Summer Vacation, The",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Impossible_Man_Summer_Vacation_Vol_1_1",
+      "id": 1389,
+      "issue": "1"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Imposible Man: Summer Vacation, The",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Impossible_Man_Summer_Vacation_Vol_1_2",
+      "id": 1390,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Incredible Hulk, The",
+      "issue": "336",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Incredible_Hulk_Vol_1_336",
+      "id": 1391
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Incredible Hulk, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Incredible_Hulk_Vol_1_337",
+      "id": 1392,
+      "issue": "337"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Incredible Hulk, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Incredible_Hulk_Vol_1_340",
+      "id": 1393,
+      "issue": "340"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Incredible Hulk, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Incredible_Hulk_Vol_1_364",
+      "id": 1394,
+      "issue": "364"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Incredible Hulk, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Incredible_Hulk_Vol_1_365",
+      "id": 1395,
+      "issue": "365"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Incredible Hulk, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Incredible_Hulk_Vol_1_366",
+      "id": 1396,
+      "issue": "366"
     }
   ],
   "publishers": [
@@ -9837,6 +12429,246 @@
       "publisher": "Marvel Comics",
       "title": "Men in Black: Retribution",
       "id": 229
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "2099 Unlimited",
+      "id": 230
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Air Raiders",
+      "id": 231
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Alpha Flight",
+      "id": 232
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers",
+      "id": 233
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers Annual",
+      "id": 234
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Avengers Spotlight",
+      "id": 235
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Volume 2",
+      "id": 236
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "West Coast Avengers Annual",
+      "id": 237
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Black Knight Volume 2",
+      "id": 238
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Black Panther",
+      "id": 239
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America",
+      "id": 240
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain America Annual",
+      "id": 241
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "ClanDestine",
+      "id": 242
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Damage Control",
+      "id": 243
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Damage Control Volume 2",
+      "id": 244
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Damage Control Volume 3",
+      "id": 245
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Daredevil",
+      "id": 246
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Daredevil Annual",
+      "id": 247
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Darkman Volume 2",
+      "id": 248
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head",
+      "id": 249
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Death's Head Volume 2",
+      "id": 250
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Defenders, The",
+      "id": 251
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Secret Defenders, The",
+      "id": 252
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Destroyer Volume 2, The",
+      "id": 253
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doom 2099",
+      "id": 254
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Doctor Strange: Sorcerer Supreme",
+      "id": 255
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Double Dragon",
+      "id": 256
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "D.P.7",
+      "id": 257
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Tomb of Dracula, The",
+      "id": 258
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Dragon's Claws",
+      "id": 259
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Dragon Strike",
+      "id": 260
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Eternals: The Herod Factor",
+      "id": 261
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Force",
+      "id": 262
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four",
+      "id": 263
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four Annual",
+      "id": 264
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four vs. the X-Men",
+      "id": 265
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Fantastic Four Unlimited",
+      "id": 266
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Foolkiller",
+      "id": 267
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Ghost Rider Volume 3",
+      "id": 268
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Ghost Rider Rides Again, The Original",
+      "id": 269
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy",
+      "id": 270
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Guardians of the Galaxy Annual",
+      "id": 271
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hell's Angel",
+      "id": 272
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hellstorm: Price of Lies",
+      "id": 273
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hero",
+      "id": 274
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Hook: Official Movie Adaptation",
+      "id": 275
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Imposible Man: Summer Vacation, The",
+      "id": 276
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Incredible Hulk, The",
+      "id": 277
     }
   ]
 }
