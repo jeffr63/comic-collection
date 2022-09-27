@@ -13425,6 +13425,2558 @@
       "url": "https://marvel.fandom.com/wiki/Nick_Fury,_Agent_of_S.H.I.E.L.D._Vol_3_17",
       "id": 1677,
       "issue": "17"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Askani'son",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Askani%27son_Vol_1_1",
+      "id": 1678
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Askani'son",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Askani%27son_Vol_1_2",
+      "id": 1679,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Askani'son",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Askani%27son_Vol_1_3",
+      "id": 1680,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Askani'son",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Askani%27son_Vol_1_4",
+      "id": 1681,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Bishop",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Bishop_Vol_1_1",
+      "id": 1682
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Bishop",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Bishop_Vol_1_2",
+      "id": 1683,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Bishop",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Bishop_Vol_1_2",
+      "id": 1684,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Bishop",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Bishop_Vol_1_4",
+      "id": 1685,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Bishop: Xavier Security Enforcer",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Bishop:_XSE_Vol_1_1",
+      "id": 1686
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Bishop: Xavier Security Enforcer",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Bishop:_XSE_Vol_1_2",
+      "id": 1687,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "issue": "1",
+      "coverPrice": 3.5,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_1",
+      "id": 1688
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_2",
+      "id": 1689,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_3",
+      "id": 1690,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_5",
+      "id": 1691,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_6",
+      "id": 1692,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_7",
+      "id": 1693,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_8",
+      "id": 1694,
+      "issue": "8"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_9",
+      "id": 1695,
+      "issue": "9"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_10",
+      "id": 1696,
+      "issue": "10"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_11",
+      "id": 1697,
+      "issue": "11"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_12",
+      "id": 1698,
+      "issue": "12"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_13",
+      "id": 1699,
+      "issue": "13"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_14",
+      "id": 1700,
+      "issue": "14"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_15",
+      "id": 1701,
+      "issue": "15"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 3.5,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_16",
+      "id": 1702,
+      "issue": "16"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_17",
+      "id": 1703,
+      "issue": "17"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_18",
+      "id": 1704,
+      "issue": "18"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_19",
+      "id": 1705,
+      "issue": "19"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_20",
+      "id": 1706,
+      "issue": "20"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_21",
+      "id": 1707,
+      "issue": "21"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_22",
+      "id": 1708,
+      "issue": "22"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_23",
+      "id": 1709,
+      "issue": "23"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_24",
+      "id": 1710,
+      "issue": "24"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 3.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_25",
+      "id": 1711,
+      "issue": "25"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_26",
+      "id": 1712,
+      "issue": "26"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_27",
+      "id": 1713,
+      "issue": "27"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_28",
+      "id": 1714,
+      "issue": "28"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_29",
+      "id": 1715,
+      "issue": "29"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_30",
+      "id": 1716,
+      "issue": "30"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_31",
+      "id": 1717,
+      "issue": "31"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_32",
+      "id": 1718,
+      "issue": "32"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_33",
+      "id": 1719,
+      "issue": "33"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_34",
+      "id": 1720,
+      "issue": "34"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_35",
+      "id": 1721,
+      "issue": "35"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_36",
+      "id": 1722,
+      "issue": "36"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_37",
+      "id": 1723,
+      "issue": "37"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_38",
+      "id": 1724,
+      "issue": "38"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_39",
+      "id": 1725,
+      "issue": "39"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "issue": "40",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_40",
+      "id": 1726
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_41",
+      "id": 1727,
+      "issue": "41"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_42",
+      "id": 1728,
+      "issue": "42"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_43",
+      "id": 1729,
+      "issue": "43"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_44",
+      "id": 1730,
+      "issue": "44"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_45",
+      "id": 1731,
+      "issue": "45"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_46",
+      "id": 1732,
+      "issue": "46"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_47",
+      "id": 1733,
+      "issue": "47"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_48",
+      "id": 1734,
+      "issue": "48"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_49",
+      "id": 1735,
+      "issue": "49"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_50",
+      "id": 1736,
+      "issue": "50"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_51",
+      "id": 1737,
+      "issue": "51"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_52",
+      "id": 1738,
+      "issue": "52"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_53",
+      "id": 1739,
+      "issue": "53"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_54",
+      "id": 1740,
+      "issue": "54"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_55",
+      "id": 1741,
+      "issue": "55"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_56",
+      "id": 1742,
+      "issue": "56"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_57",
+      "id": 1743,
+      "issue": "57"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_58",
+      "id": 1744,
+      "issue": "58"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_59",
+      "id": 1745,
+      "issue": "59"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_60",
+      "id": 1746,
+      "issue": "60"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_61",
+      "id": 1747,
+      "issue": "61"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_62",
+      "id": 1748,
+      "issue": "62"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_63",
+      "id": 1749,
+      "issue": "63"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_64",
+      "id": 1750,
+      "issue": "64"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_65",
+      "id": 1751,
+      "issue": "65"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_66",
+      "id": 1752,
+      "issue": "66"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_67",
+      "id": 1753,
+      "issue": "67"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_68",
+      "id": 1754,
+      "issue": "68"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_69",
+      "id": 1755,
+      "issue": "69"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_70",
+      "id": 1756,
+      "issue": "70"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_71",
+      "id": 1757,
+      "issue": "71"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_72",
+      "id": 1758,
+      "issue": "72"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_73",
+      "id": 1759,
+      "issue": "73"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_74",
+      "id": 1760,
+      "issue": "74"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_75",
+      "id": 1761,
+      "issue": "75"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_76",
+      "id": 1762,
+      "issue": "76"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_77",
+      "id": 1763,
+      "issue": "77"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_77",
+      "id": 1764,
+      "issue": "77"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_78",
+      "id": 1765,
+      "issue": "78"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_78",
+      "id": 1766,
+      "issue": "78"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_79",
+      "id": 1767,
+      "issue": "79"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_80",
+      "id": 1768,
+      "issue": "80"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_81",
+      "id": 1769,
+      "issue": "81"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_82",
+      "id": 1770,
+      "issue": "82"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_83",
+      "id": 1771,
+      "issue": "83"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_84",
+      "id": 1772,
+      "issue": "84"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_85",
+      "id": 1773,
+      "issue": "85"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_86",
+      "id": 1774,
+      "issue": "86"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_87",
+      "id": 1775,
+      "issue": "87"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Cable_Vol_1_88",
+      "id": 1776,
+      "issue": "88"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable: Blood and Metal",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Cable_-_Blood_and_Metal_Vol_1_1",
+      "id": 1777
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable: Blood and Metal",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Cable_-_Blood_and_Metal_Vol_1_2",
+      "id": 1778,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable Annual",
+      "issue": "1999",
+      "coverPrice": 3.5,
+      "url": "https://marvel.fandom.com/wiki/Cable_Annual_Vol_1_1999",
+      "id": 1779
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain Britain Volume 2",
+      "issue": "0",
+      "coverPrice": 12.95,
+      "url": "https://marvel.fandom.com/wiki/Captain_Britain_Vol_2",
+      "id": 1780
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Deadpool",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Deadpool_Vol_1_1",
+      "id": 1781
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Deadpool",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Deadpool_Vol_1_2",
+      "id": 1782,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Deadpool",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Deadpool_Vol_1_3",
+      "id": 1783,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Deadpool",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Deadpool_Vol_1_4",
+      "id": 1784,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Deadpool Volume 2",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Deadpool_Vol_2_1",
+      "id": 1785
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Deadpool Volume 2",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Deadpool_Vol_2_2",
+      "id": 1786,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Deadpool Volume 2",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Deadpool_Vol_2_2",
+      "id": 1787,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Deadpool Volume 2",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Deadpool_Vol_2_3",
+      "id": 1788,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Deadpool Volume 2",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Deadpool_Vol_2_4",
+      "id": 1789,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "issue": "1",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_1",
+      "id": 1790
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_2",
+      "id": 1791,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_3",
+      "id": 1792,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_4",
+      "id": 1793,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_5",
+      "id": 1794,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_6",
+      "id": 1795,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_7",
+      "id": 1796,
+      "issue": "7"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_8",
+      "id": 1797,
+      "issue": "8"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_9",
+      "id": 1798,
+      "issue": "9"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_10",
+      "id": 1799,
+      "issue": "10"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_11",
+      "id": 1800,
+      "issue": "11"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_12",
+      "id": 1801,
+      "issue": "12"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_13",
+      "id": 1802,
+      "issue": "13"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_14",
+      "id": 1803,
+      "issue": "14"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_15",
+      "id": 1804,
+      "issue": "15"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_16",
+      "id": 1805,
+      "issue": "16"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_17",
+      "id": 1806,
+      "issue": "17"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_18",
+      "id": 1807,
+      "issue": "18"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_19",
+      "id": 1808,
+      "issue": "19"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_20",
+      "id": 1809,
+      "issue": "20"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_21",
+      "id": 1810,
+      "issue": "21"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_22",
+      "id": 1811,
+      "issue": "22"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_23",
+      "id": 1812,
+      "issue": "23"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_24",
+      "id": 1813,
+      "issue": "24"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_25",
+      "id": 1814,
+      "issue": "25"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "issue": "27",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_27",
+      "id": 1815
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "issue": "26",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_26",
+      "id": 1816
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_28",
+      "id": 1817,
+      "issue": "28"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_29",
+      "id": 1818,
+      "issue": "29"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_30",
+      "id": 1819,
+      "issue": "30"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_31",
+      "id": 1820,
+      "issue": "31"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_32",
+      "id": 1821,
+      "issue": "32"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_33",
+      "id": 1822,
+      "issue": "33"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_34",
+      "id": 1823,
+      "issue": "34"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_35",
+      "id": 1824,
+      "issue": "35"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_36",
+      "id": 1825,
+      "issue": "36"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_37",
+      "id": 1826,
+      "issue": "37"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_38",
+      "id": 1827,
+      "issue": "38"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_39",
+      "id": 1828,
+      "issue": "39"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_40",
+      "id": 1829,
+      "issue": "40"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_41",
+      "id": 1830,
+      "issue": "41"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_42",
+      "id": 1831,
+      "issue": "42"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_43",
+      "id": 1832,
+      "issue": "43"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_44",
+      "id": 1833,
+      "issue": "44"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_45",
+      "id": 1834,
+      "issue": "45"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_46",
+      "id": 1835,
+      "issue": "46"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_47",
+      "id": 1836,
+      "issue": "47"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_48",
+      "id": 1837,
+      "issue": "48"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_49",
+      "id": 1838,
+      "issue": "49"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 2.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_50",
+      "id": 1839,
+      "issue": "50"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_51",
+      "id": 1840,
+      "issue": "51"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_52",
+      "id": 1841,
+      "issue": "52"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_53",
+      "id": 1842,
+      "issue": "53"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_54",
+      "id": 1843,
+      "issue": "54"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_55",
+      "id": 1844,
+      "issue": "55"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_56",
+      "id": 1845,
+      "issue": "56"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_57",
+      "id": 1846,
+      "issue": "57"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_58",
+      "id": 1847,
+      "issue": "58"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_59",
+      "id": 1848,
+      "issue": "59"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_60",
+      "id": 1849,
+      "issue": "60"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 3.95,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_71",
+      "id": 1850,
+      "issue": "71"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 3.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_75",
+      "id": 1851,
+      "issue": "75"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_78",
+      "id": 1852,
+      "issue": "78"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_79",
+      "id": 1853,
+      "issue": "79"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_80",
+      "id": 1854,
+      "issue": "80"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_80",
+      "id": 1855,
+      "issue": "80"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_81",
+      "id": 1856,
+      "issue": "81"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 3.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_82",
+      "id": 1857,
+      "issue": "82"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_83",
+      "id": 1858,
+      "issue": "83"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Vol_1_86",
+      "id": 1859,
+      "issue": "86"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Factor X",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Factor_X_Vol_1_1",
+      "id": 1860
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Factor X",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Factor_X_Vol_1_3",
+      "id": 1861,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Factor X",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Factor_X_Vol_1_2",
+      "id": 1862,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Factor X",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Factor_X_Vol_1_4",
+      "id": 1863,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Factor X",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Factor_X_Vol_1_4",
+      "id": 1864,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur Special Edition",
+      "issue": "1",
+      "coverPrice": 3.25,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Special_Edition_Vol_1_1",
+      "id": 1865
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur Air Apparent",
+      "issue": "1",
+      "coverPrice": 4.95,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Air_Apparent_Vol_1_1",
+      "id": 1866
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur Mojo Mayhem",
+      "issue": "1",
+      "coverPrice": 4.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_Mojo_Mayhem_Vol_1_1",
+      "id": 1867
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur: The Possession",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Excalibur:_The_Possession_Vol_1_1",
+      "id": 1868
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur XX Crossing",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Excalibur_XX_Crossing_Vol_1_1",
+      "id": 1869
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Gambit",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Gambit_Vol_1_1",
+      "id": 1870
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Gambit",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Gambit_Vol_1_2",
+      "id": 1871,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Gambit",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Gambit_Vol_1_2",
+      "id": 1872,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Gambit",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Gambit_Vol_1_3",
+      "id": 1873,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Gambit",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Gambit_Vol_1_4",
+      "id": 1874,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Gambit and the X-Ternals",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Gambit_and_the_X-Ternals_Vol_1_1",
+      "id": 1875
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Gambit and the X-Ternals",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Gambit_and_the_X-Ternals_Vol_1_2",
+      "id": 1876,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Gambit and the X-Ternals",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Gambit_and_the_X-Ternals_Vol_1_3",
+      "id": 1877,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Gambit and the X-Ternals",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Gambit_and_the_X-Ternals_Vol_1_4",
+      "id": 1878,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Gambit and the X-Ternals",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Gambit_and_the_X-Ternals_Vol_1_4",
+      "id": 1879,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Generation Next",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Generation_Next_Vol_1_1",
+      "id": 1880
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Generation Next",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Generation_Next_Vol_1_2",
+      "id": 1881,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Generation Next",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Generation_Next_Vol_1_3",
+      "id": 1882,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Generation Next",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Generation_Next_Vol_1_4",
+      "id": 1883,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Generation X",
+      "issue": "1",
+      "coverPrice": 3.95,
+      "url": "https://marvel.fandom.com/wiki/Generation_X_Vol_1_1",
+      "id": 1884
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Generation X",
+      "coverPrice": 3.95,
+      "url": "https://marvel.fandom.com/wiki/Generation_X_Vol_1_1",
+      "id": 1885,
+      "issue": "1"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Generation X",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Generation_X_Vol_1_2",
+      "id": 1886,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Generation X",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Generation_X_Vol_1_3",
+      "id": 1887,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Generation X",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Generation_X_Vol_1_3",
+      "id": 1888,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Generation X",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Generation_X_Vol_1_5",
+      "id": 1889,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Imperial Guard",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Imperial_Guard_Vol_1_1",
+      "id": 1890
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Imperial Guard",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Imperial_Guard_Vol_1_2",
+      "id": 1891,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Knights of Pendragon, The",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Knights_of_Pendragon_Vol_1_1",
+      "id": 1892
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Pendragon",
+      "issue": "1",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Pendragon_Vol_1_1",
+      "id": 1893
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Pendragon",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Pendragon_Vol_1_2",
+      "id": 1894,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Pendragon",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Pendragon_Vol_1_3",
+      "id": 1895,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Pendragon",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Pendragon_Vol_1_4",
+      "id": 1896,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Logan: Path of the Warlord",
+      "issue": "1",
+      "coverPrice": 5.95,
+      "url": "https://marvel.fandom.com/wiki/Logan:_Path_of_the_Warlord_Vol_1_1",
+      "id": 1897
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Magneto",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Magneto_Vol_1_1",
+      "id": 1898
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Magneto",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Magneto_Vol_1_2",
+      "id": 1899,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "issue": "1",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_1",
+      "id": 1900
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_2",
+      "id": 1901,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_3",
+      "id": 1902,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_11",
+      "id": 1903,
+      "issue": "11"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_73",
+      "id": 1904,
+      "issue": "73"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_74",
+      "id": 1905,
+      "issue": "74"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_75",
+      "id": 1906,
+      "issue": "75"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_75",
+      "id": 1907,
+      "issue": "75"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_77",
+      "id": 1908,
+      "issue": "77"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_78",
+      "id": 1909,
+      "issue": "78"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_79",
+      "id": 1910,
+      "issue": "79"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_80",
+      "id": 1911,
+      "issue": "80"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_81",
+      "id": 1912,
+      "issue": "81"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_82",
+      "id": 1913,
+      "issue": "82"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_83",
+      "id": 1914,
+      "issue": "83"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_84",
+      "id": 1915,
+      "issue": "84"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_94",
+      "id": 1916,
+      "issue": "94"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_95",
+      "id": 1917,
+      "issue": "95"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_96",
+      "id": 1918,
+      "issue": "96"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_97",
+      "id": 1919,
+      "issue": "97"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_98",
+      "id": 1920,
+      "issue": "98"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_99",
+      "id": 1921,
+      "issue": "99"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_100",
+      "id": 1922,
+      "issue": "100"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_101",
+      "id": 1923,
+      "issue": "101"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_102",
+      "id": 1924,
+      "issue": "102"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_103",
+      "id": 1925,
+      "issue": "103"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_104",
+      "id": 1926,
+      "issue": "104"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_105",
+      "id": 1927,
+      "issue": "105"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_106",
+      "id": 1928,
+      "issue": "106"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_107",
+      "id": 1929,
+      "issue": "107"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_108",
+      "id": 1930,
+      "issue": "108"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_110",
+      "id": 1931,
+      "issue": "110"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_111",
+      "id": 1932,
+      "issue": "111"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1_112",
+      "id": 1933,
+      "issue": "112"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Riot",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Riot_Vol_1_1",
+      "id": 1934
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "issue": "46",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_46",
+      "id": 1935
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_47",
+      "id": 1936,
+      "issue": "47"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_48",
+      "id": 1937,
+      "issue": "48"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_49",
+      "id": 1938,
+      "issue": "49"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_50",
+      "id": 1939,
+      "issue": "50"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_51",
+      "id": 1940,
+      "issue": "51"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_52",
+      "id": 1941,
+      "issue": "52"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_53",
+      "id": 1942,
+      "issue": "53"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_54",
+      "id": 1943,
+      "issue": "54"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_55",
+      "id": 1944,
+      "issue": "55"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_56",
+      "id": 1945,
+      "issue": "56"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_57",
+      "id": 1946,
+      "issue": "57"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_58",
+      "id": 1947,
+      "issue": "58"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_59",
+      "id": 1948,
+      "issue": "59"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_60",
+      "id": 1949,
+      "issue": "60"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_61",
+      "id": 1950,
+      "issue": "61"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_62",
+      "id": 1951,
+      "issue": "62"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_63",
+      "id": 1952,
+      "issue": "63"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_64",
+      "id": 1953,
+      "issue": "64"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_65",
+      "id": 1954,
+      "issue": "65"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_66",
+      "id": 1955,
+      "issue": "66"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_67",
+      "id": 1956,
+      "issue": "67"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_68",
+      "id": 1957,
+      "issue": "68"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_69",
+      "id": 1958,
+      "issue": "69"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_70",
+      "id": 1959,
+      "issue": "70"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_71",
+      "id": 1960,
+      "issue": "71"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_72",
+      "id": 1961,
+      "issue": "72"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_73",
+      "id": 1962,
+      "issue": "73"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_74",
+      "id": 1963,
+      "issue": "74"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_75",
+      "id": 1964,
+      "issue": "75"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_76",
+      "id": 1965,
+      "issue": "76"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_77",
+      "id": 1966,
+      "issue": "1"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_78",
+      "id": 1967,
+      "issue": "78"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_79",
+      "id": 1968,
+      "issue": "79"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_80",
+      "id": 1969,
+      "issue": "80"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_81",
+      "id": 1970,
+      "issue": "81"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_82",
+      "id": 1971,
+      "issue": "82"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_83",
+      "id": 1972,
+      "issue": "83"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_84",
+      "id": 1973,
+      "issue": "84"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_85",
+      "id": 1974,
+      "issue": "85"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_86",
+      "id": 1975,
+      "issue": "86"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_87",
+      "id": 1976,
+      "issue": "87"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_87",
+      "id": 1977,
+      "issue": "87"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_88",
+      "id": 1978,
+      "issue": "88"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_89",
+      "id": 1979,
+      "issue": "89"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_90",
+      "id": 1980,
+      "issue": "90"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_91",
+      "id": 1981,
+      "issue": "91"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_92",
+      "id": 1982,
+      "issue": "92"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_93",
+      "id": 1983,
+      "issue": "93"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_94",
+      "id": 1984,
+      "issue": "94"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_95",
+      "id": 1985,
+      "issue": "95"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_96",
+      "id": 1986,
+      "issue": "96"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_97",
+      "id": 1987,
+      "issue": "87"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_98",
+      "id": 1988,
+      "issue": "98"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_99",
+      "id": 1989,
+      "issue": "99"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Vol_1_100",
+      "id": 1990,
+      "issue": "100"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants Annual, The",
+      "issue": "3",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Annual_Vol_1_3",
+      "id": 1991
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants Annual, The",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Annual_Vol_1_4",
+      "id": 1992,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants Annual, The",
+      "issue": "5",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Annual_Vol_1_5",
+      "id": 1993
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants Annual, The",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Annual_Vol_1_6",
+      "id": 1994,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants Annual, The",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Annual_Vol_1_7",
+      "id": 1995,
+      "issue": "7"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants Summer Special",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/New_Mutants_Summer_Special_Vol_1_1",
+      "id": 1996
     }
   ],
   "publishers": [
@@ -15147,6 +17699,156 @@
       "publisher": "Marvel Comics",
       "title": "Nick Fury, Agent of S.H.I.E.L.D. Volume 3",
       "id": 323
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Askani'son",
+      "id": 324
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Bishop",
+      "id": 325
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Bishop: Xavier Security Enforcer",
+      "id": 326
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable",
+      "id": 327
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable: Blood and Metal",
+      "id": 328
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Cable Annual",
+      "id": 329
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Captain Britain Volume 2",
+      "id": 330
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Deadpool",
+      "id": 331
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Deadpool Volume 2",
+      "id": 332
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur",
+      "id": 333
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Factor X",
+      "id": 334
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur Special Edition",
+      "id": 335
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur Air Apparent",
+      "id": 336
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur Mojo Mayhem",
+      "id": 337
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur: The Possession",
+      "id": 338
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Excalibur XX Crossing",
+      "id": 339
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Gambit",
+      "id": 340
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Gambit and the X-Ternals",
+      "id": 341
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Generation Next",
+      "id": 342
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Generation X",
+      "id": 343
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Imperial Guard",
+      "id": 344
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Knights of Pendragon, The",
+      "id": 345
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Pendragon",
+      "id": 346
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Logan: Path of the Warlord",
+      "id": 347
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Magneto",
+      "id": 348
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "id": 349
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Riot",
+      "id": 350
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants, The",
+      "id": 351
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants Annual, The",
+      "id": 352
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "New Mutants Summer Special",
+      "id": 353
     }
   ]
 }
