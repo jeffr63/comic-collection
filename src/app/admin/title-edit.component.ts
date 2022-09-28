@@ -1,11 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, RouterLinkWithHref } from '@angular/router';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AsyncPipe, Location, NgForOf, NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -46,16 +41,13 @@ import { PublisherService } from '../services/publisher.service';
           <mat-form-field appearance="outline">
             <mat-label>Publisher</mat-label>
             <mat-select id="publisher" formControlName="publisher">
-              <mat-option
-                *ngFor="let publisher of publishers$ | async"
-                [value]="publisher.name"
-              >
+              <mat-option *ngFor="let publisher of publishers$ | async" [value]="publisher.name">
                 {{ publisher.name }}
               </mat-option>
             </mat-select>
             <a
-              style="float:right"
-              mat-mini-fab
+              mat-flat-button
+              matSuffix
               color="primary"
               [routerLink]="['/admin/publisher/new']"
               title="Add new publisher"
@@ -92,13 +84,7 @@ import { PublisherService } from '../services/publisher.service';
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button
-          mat-flat-button
-          color="primary"
-          (click)="save()"
-          title="Save"
-          [disabled]="!titleEditForm.valid"
-        >
+        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!titleEditForm.valid">
           <mat-icon>save</mat-icon> Save
         </button>
         <button
@@ -124,7 +110,7 @@ import { PublisherService } from '../services/publisher.service';
         margin: 30px;
         padding-left: 15px;
         padding-right: 15px;
-        width: 30%;
+        width: 35%;
       }
 
       mat-content {

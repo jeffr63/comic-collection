@@ -1,11 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, RouterLinkWithHref } from '@angular/router';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AsyncPipe, Location, NgForOf, NgIf } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -42,16 +37,13 @@ import { MatButtonModule } from '@angular/material/button';
 
   template: `
     <mat-card>
-      <mat-card-title>Course Edit</mat-card-title>
+      <mat-card-title>Issue Edit</mat-card-title>
       <mat-card-content>
         <form *ngIf="issueEditForm" [formGroup]="issueEditForm">
           <mat-form-field appearance="outline">
             <mat-label for="publisher">Publisher</mat-label>
             <mat-select id="publisher" formControlName="publisher">
-              <mat-option
-                *ngFor="let publisher of publishers$ | async"
-                [value]="publisher.name"
-              >
+              <mat-option *ngFor="let publisher of publishers$ | async" [value]="publisher.name">
                 {{ publisher.name }}
               </mat-option>
             </mat-select>
@@ -68,20 +60,11 @@ import { MatButtonModule } from '@angular/material/button';
           <mat-form-field appearance="outline">
             <mat-label for="title">Title</mat-label>
             <mat-select id="title" formControlName="title">
-              <mat-option
-                *ngFor="let title of titles$ | async"
-                [value]="title.title"
-              >
+              <mat-option *ngFor="let title of titles$ | async" [value]="title.title">
                 {{ title.title }}
               </mat-option>
             </mat-select>
-            <a
-              style="float:right"
-              mat-mini-fab
-              color="primary"
-              [routerLink]="['/admin/title/new']"
-              title="Add new title"
-            >
+            <a mat-flat-button matSuffix color="primary" [routerLink]="['/admin/title/new']" title="Add new title">
               <mat-icon>add</mat-icon>
             </a>
             <mat-error
@@ -149,13 +132,7 @@ import { MatButtonModule } from '@angular/material/button';
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button
-          mat-flat-button
-          color="primary"
-          (click)="save()"
-          title="Save"
-          [disabled]="!issueEditForm.valid"
-        >
+        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!issueEditForm.valid">
           <mat-icon>save</mat-icon> Save
         </button>
         <button
@@ -181,7 +158,7 @@ import { MatButtonModule } from '@angular/material/button';
         margin: 30px;
         padding-left: 15px;
         padding-right: 15px;
-        width: 30%;
+        width: 40%;
       }
 
       mat-content {
@@ -268,8 +245,7 @@ export class IssueEditComponent implements OnInit, OnDestroy {
   }
 
   save() {
-    const { publisher, title, issue, coverPrice, url } =
-      this.issueEditForm.getRawValue();
+    const { publisher, title, issue, coverPrice, url } = this.issueEditForm.getRawValue();
     this.issue.publisher = publisher;
     this.issue.title = title;
     this.issue.issue = issue;
@@ -285,8 +261,7 @@ export class IssueEditComponent implements OnInit, OnDestroy {
   }
 
   saveNew() {
-    const { publisher, title, issue, coverPrice, url } =
-      this.issueEditForm.getRawValue();
+    const { publisher, title, issue, coverPrice, url } = this.issueEditForm.getRawValue();
     this.issue.publisher = publisher;
     this.issue.title = title;
     this.issue.issue = issue;
