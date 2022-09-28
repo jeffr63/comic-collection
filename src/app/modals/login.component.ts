@@ -1,14 +1,10 @@
 import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 @Component({
@@ -16,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
   standalone: true,
   imports: [
     MatButtonModule,
+    MatIconModule,
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
@@ -30,6 +27,7 @@ import { MatInputModule } from '@angular/material/input';
         <form [formGroup]="loginForm">
           <mat-form-field appearance="outline">
             <mat-label for="email">Email Address</mat-label>
+            <mat-icon matSuffix>mail_outline</mat-icon>
             <input
               ngbAutofocus
               type="email"
@@ -57,11 +55,13 @@ import { MatInputModule } from '@angular/material/input';
           </mat-form-field>
           <mat-form-field appearance="outline" class="mt-5">
             <mat-label for="email">Password</mat-label>
+            <mat-icon (click)="flag = !flag" matSuffix>{{ flag ? 'visibility' : 'visibility_off' }}</mat-icon>
             <input
               type="password"
               id="password"
               matInput
               formControlName="password"
+              [type]="flag ? 'password' : 'text'"
             />
             <mat-error
               *ngIf="
@@ -76,15 +76,7 @@ import { MatInputModule } from '@angular/material/input';
       </mat-dialog-content>
       <mat-dialog-actions [align]="'end'">
         <button mat-flat-button color="primary" (click)="login()">Login</button>
-        <button
-          mat-flat-button
-          mat-dialog-close
-          color="warn"
-          (click)="cancel()"
-          class="ml-8"
-        >
-          Cancel
-        </button>
+        <button mat-flat-button mat-dialog-close color="warn" (click)="cancel()" class="ml-8">Cancel</button>
       </mat-dialog-actions>
     </div>
   `,
@@ -110,11 +102,9 @@ export class LoginComponent implements OnInit {
     password: '',
   };
   loginForm!: FormGroup;
+  flag = true;
 
-  constructor(
-    public dialogRef: MatDialogRef<LoginComponent>,
-    private fb: FormBuilder
-  ) {}
+  constructor(public dialogRef: MatDialogRef<LoginComponent>, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
