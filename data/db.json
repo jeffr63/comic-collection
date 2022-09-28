@@ -15977,6 +15977,2542 @@
       "coverPrice": 2.95,
       "url": "https://marvel.fandom.com/wiki/New_Mutants_Summer_Special_Vol_1_1",
       "id": 1996
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Imperial Guard",
+      "issue": "3",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Imperial_Guard_Vol_1_3",
+      "id": 1997
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Nightcrawler",
+      "issue": "1",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Nightcrawler_Vol_1_1",
+      "id": 1998
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Nightcrawler",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Nightcrawler_Vol_1_2",
+      "id": 1999,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Nightcrawler",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Nightcrawler_Vol_1_3",
+      "id": 2000,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Nightcrawler",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/Nightcrawler_Vol_1_4",
+      "id": 2001,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Onslaught Epilogue",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Onslaught_Epilogue_Vol_1_1",
+      "id": 2002
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Onslaught Marvel Universe",
+      "issue": "1",
+      "coverPrice": 3.95,
+      "url": "https://marvel.fandom.com/wiki/Onslaught_Epilogue_Vol_1_1",
+      "id": 2003
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Onslaught X-Men",
+      "coverPrice": 3.95,
+      "url": "https://marvel.fandom.com/wiki/Onslaught:_X-Men_Vol_1_1",
+      "id": 2004,
+      "issue": "1"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Phoenix: The Untold Story",
+      "issue": "1",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Phoenix:_The_Untold_Story_Vol_1_1",
+      "id": 2005
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Phoenix Resurrection: Genesis",
+      "issue": "1",
+      "coverPrice": 3.95,
+      "url": "https://marvel.fandom.com/wiki/Phoenix_Resurrection:_Genesis_Vol_1_1",
+      "id": 2006
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Further Adventures of Cyclops and Phoenix",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Further_Adventures_of_Cyclops_and_Phoenix_Vol_1_1",
+      "id": 2007
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Professor Xavier and the X-Men",
+      "issue": "2",
+      "coverPrice": 0.99,
+      "url": "https://marvel.fandom.com/wiki/Professor_Xavier_and_the_X-Men_Vol_1_2",
+      "id": 2008
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Professor Xavier and the X-Men",
+      "coverPrice": 0.99,
+      "url": "https://marvel.fandom.com/wiki/Professor_Xavier_and_the_X-Men_Vol_1_1",
+      "id": 2009,
+      "issue": "1"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Rise of Apocalypse, The",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Rise_of_Apocalypse_Vol_1_1",
+      "id": 2010
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Rise of Apocalypse, The",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Rise_of_Apocalypse_Vol_1_2",
+      "id": 2011,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Rise of Apocalypse, The",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Rise_of_Apocalypse_Vol_1_3",
+      "id": 2012,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Rise of Apocalypse, The",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Rise_of_Apocalypse_Vol_1_4",
+      "id": 2013,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Rogue",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Rogue_Vol_1_1",
+      "id": 2014
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Rogue",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Rogue_Vol_1_2",
+      "id": 2015,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Rogue",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Rogue_Vol_1_3",
+      "id": 2016,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Rogue",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Rogue_Vol_1_4",
+      "id": 2017,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Sabretooth",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Sabretooth_Vol_1_1",
+      "id": 2018
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Sabretooth",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Sabretooth_Vol_1_2",
+      "id": 2019,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Sabretooth",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Sabretooth_Vol_1_4",
+      "id": 2020,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Sabretooth Special",
+      "issue": "1",
+      "coverPrice": 4.95,
+      "url": "https://marvel.fandom.com/wiki/Sabretooth_Special_Vol_1_1",
+      "id": 2021
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Sabretooth and Mystique",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Sabretooth_and_Mystique_Vol_1_1",
+      "id": 2022
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Soviet Super Soldiers",
+      "issue": "1",
+      "coverPrice": 2,
+      "url": "https://marvel.fandom.com/wiki/Soviet_Super_Soldiers_Vol_1_1",
+      "id": 2023
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Men: Spotlight on... Starjammers",
+      "issue": "1",
+      "coverPrice": 4.5,
+      "url": "https://marvel.fandom.com/wiki/X-Men:_Spotlight_on...Starjammers_Vol_1_1",
+      "id": 2024
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Men: Spotlight on... Starjammers",
+      "coverPrice": 4.5,
+      "url": "https://marvel.fandom.com/wiki/X-Men:_Spotlight_on...Starjammers_Vol_1_2",
+      "id": 2025,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spelljammer",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Starjammers_Vol_1_1",
+      "id": 2026
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spelljammer",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Starjammers_Vol_1_2",
+      "id": 2027,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spelljammer",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Starjammers_Vol_1_3",
+      "id": 2028,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Spelljammer",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Starjammers_Vol_1_4",
+      "id": 2029,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Storm",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Storm_Vol_1_1",
+      "id": 2030
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Storm",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Storm_Vol_1_4",
+      "id": 2031,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Stryfe's Strike File",
+      "issue": "1",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Stryfe's_Strike_File_Vol_1",
+      "id": 2032
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Team X/Team 7",
+      "issue": "1",
+      "coverPrice": 4.95,
+      "url": "https://marvel.fandom.com/wiki/Team_X/Team_7_Vol_1_1",
+      "id": 2033
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Team X 2000",
+      "issue": "1",
+      "coverPrice": 3.5,
+      "url": "https://marvel.fandom.com/wiki/Team_X_2000_Vol_1",
+      "id": 2034
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wild Thing",
+      "issue": "1",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wild_Thing_Vol_1_1",
+      "id": 2035
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Weapon X",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Weapon_X_Vol_1_1",
+      "id": 2036
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Weapon X",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Weapon_X_Vol_1_2",
+      "id": 2037,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Weapon X",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Weapon_X_Vol_1_3",
+      "id": 2038,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Weapon X",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Weapon_X_Vol_1_4",
+      "id": 2039,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Weapon X",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Weapon_X_Vol_1_4",
+      "id": 2040,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "issue": "1",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_1",
+      "id": 2041
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_2",
+      "id": 2042,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_3",
+      "id": 2043,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_4",
+      "id": 2044,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_5",
+      "id": 2045,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_6",
+      "id": 2046,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_7",
+      "id": 2047,
+      "issue": "7"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_8",
+      "id": 2048,
+      "issue": "8"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_9",
+      "id": 2049,
+      "issue": "9"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_10",
+      "id": 2050,
+      "issue": "10"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_11",
+      "id": 2051,
+      "issue": "11"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_12",
+      "id": 2052,
+      "issue": "12"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_13",
+      "id": 2053,
+      "issue": "13"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_14",
+      "id": 2054,
+      "issue": "14"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_15",
+      "id": 2055,
+      "issue": "15"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_16",
+      "id": 2056,
+      "issue": "16"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_17",
+      "id": 2057,
+      "issue": "17"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_18",
+      "id": 2058,
+      "issue": "18"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_19",
+      "id": 2059,
+      "issue": "19"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_20",
+      "id": 2060,
+      "issue": "20"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_21",
+      "id": 2061,
+      "issue": "21"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_22",
+      "id": 2062,
+      "issue": "22"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_23",
+      "id": 2063,
+      "issue": "23"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_24",
+      "id": 2064,
+      "issue": "24"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_25",
+      "id": 2065,
+      "issue": "25"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_26",
+      "id": 2066,
+      "issue": "26"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_27",
+      "id": 2067,
+      "issue": "27"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_28",
+      "id": 2068,
+      "issue": "28"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_29",
+      "id": 2069,
+      "issue": "29"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_30",
+      "id": 2070,
+      "issue": "30"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_31",
+      "id": 2071,
+      "issue": "31"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_32",
+      "id": 2072,
+      "issue": "32"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_33",
+      "id": 2073,
+      "issue": "33"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_34",
+      "id": 2074,
+      "issue": "34"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_35",
+      "id": 2075,
+      "issue": "35"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_36",
+      "id": 2076,
+      "issue": "36"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_37",
+      "id": 2077,
+      "issue": "37"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_38",
+      "id": 2078,
+      "issue": "38"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_39",
+      "id": 2079,
+      "issue": "39"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_40",
+      "id": 2080,
+      "issue": "40"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_41",
+      "id": 2081,
+      "issue": "41"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_41",
+      "id": 2082,
+      "issue": "41"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_42",
+      "id": 2083,
+      "issue": "42"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_43",
+      "id": 2084,
+      "issue": "43"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_44",
+      "id": 2085,
+      "issue": "44"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_45",
+      "id": 2086,
+      "issue": "45"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_46",
+      "id": 2087,
+      "issue": "46"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_47",
+      "id": 2088,
+      "issue": "47"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_48",
+      "id": 2089,
+      "issue": "48"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_49",
+      "id": 2090,
+      "issue": "49"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_50",
+      "id": 2091,
+      "issue": "50"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_51",
+      "id": 2092,
+      "issue": "51"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_52",
+      "id": 2093,
+      "issue": "52"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_53",
+      "id": 2094,
+      "issue": "53"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_54",
+      "id": 2095,
+      "issue": "54"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_55",
+      "id": 2096,
+      "issue": "55"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_56",
+      "id": 2097,
+      "issue": "56"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_57",
+      "id": 2098,
+      "issue": "57"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_58",
+      "id": 2099,
+      "issue": "58"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_59",
+      "id": 2100,
+      "issue": "59"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_60",
+      "id": 2101,
+      "issue": "60"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_61",
+      "id": 2102,
+      "issue": "61"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_62",
+      "id": 2103,
+      "issue": "62"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_63",
+      "id": 2104,
+      "issue": "63"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_63",
+      "id": 2105,
+      "issue": "63"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_64",
+      "id": 2106,
+      "issue": "64"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_65",
+      "id": 2107,
+      "issue": "65"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_66",
+      "id": 2108,
+      "issue": "66"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_67",
+      "id": 2109,
+      "issue": "67"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_68",
+      "id": 2110,
+      "issue": "68"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_69",
+      "id": 2111,
+      "issue": "69"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_70",
+      "id": 2112,
+      "issue": "70"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_71",
+      "id": 2113,
+      "issue": "71"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_72",
+      "id": 2114,
+      "issue": "72"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_73",
+      "id": 2115,
+      "issue": "73"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_74",
+      "id": 2116,
+      "issue": "74"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 3.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_75",
+      "id": 2117,
+      "issue": "75"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_76",
+      "id": 2118,
+      "issue": "76"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_77",
+      "id": 2119,
+      "issue": "77"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_78",
+      "id": 2120,
+      "issue": "78"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_78",
+      "id": 2121,
+      "issue": "78"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_79",
+      "id": 2122,
+      "issue": "79"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_80",
+      "id": 2123,
+      "issue": "80"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_81",
+      "id": 2124,
+      "issue": "81"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_82",
+      "id": 2125,
+      "issue": "82"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_83",
+      "id": 2126,
+      "issue": "83"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_84",
+      "id": 2127,
+      "issue": "84"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_84",
+      "id": 2128,
+      "issue": "84"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 3.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_85",
+      "id": 2129,
+      "issue": "85"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_86",
+      "id": 2130,
+      "issue": "86"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_86",
+      "id": 2131,
+      "issue": "86"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_87",
+      "id": 2132,
+      "issue": "87"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_88",
+      "id": 2133,
+      "issue": "88"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_89",
+      "id": 2134,
+      "issue": "89"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_90",
+      "id": 2135,
+      "issue": "90"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_91",
+      "id": 2136,
+      "issue": "91"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_92",
+      "id": 2137,
+      "issue": "92"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_93",
+      "id": 2138,
+      "issue": "93"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_94",
+      "id": 2139,
+      "issue": "94"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_95",
+      "id": 2140,
+      "issue": "95"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_96",
+      "id": 2141,
+      "issue": "96"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_97",
+      "id": 2142,
+      "issue": "97"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_98",
+      "id": 2143,
+      "issue": "98"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_99",
+      "id": 2144,
+      "issue": "99"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 3.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_100",
+      "id": 2145,
+      "issue": "100"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_102",
+      "id": 2146,
+      "issue": "102"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_103",
+      "id": 2147,
+      "issue": "103"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_104",
+      "id": 2148,
+      "issue": "104"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_105",
+      "id": 2149,
+      "issue": "105"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_106",
+      "id": 2150,
+      "issue": "106"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_107",
+      "id": 2151,
+      "issue": "107"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_108",
+      "id": 2152,
+      "issue": "108"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_109",
+      "id": 2153,
+      "issue": "109"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_110",
+      "id": 2154,
+      "issue": "110"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_111",
+      "id": 2155,
+      "issue": "111"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_112",
+      "id": 2156,
+      "issue": "112"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_113",
+      "id": 2157,
+      "issue": "113"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_114",
+      "id": 2158,
+      "issue": "114"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_115",
+      "id": 2159,
+      "issue": "115"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "issue": "116",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_116",
+      "id": 2160
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_117",
+      "id": 2161,
+      "issue": "117"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_118",
+      "id": 2162,
+      "issue": "118"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_119",
+      "id": 2163,
+      "issue": "119"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_120",
+      "id": 2164,
+      "issue": "120"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_122",
+      "id": 2165,
+      "issue": "122"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_123",
+      "id": 2166,
+      "issue": "123"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_124",
+      "id": 2167,
+      "issue": "124"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 2.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_125",
+      "id": 2168,
+      "issue": "125"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_126",
+      "id": 2169,
+      "issue": "126"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_127",
+      "id": 2170,
+      "issue": "127"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_128",
+      "id": 2171,
+      "issue": "128"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_129",
+      "id": 2172,
+      "issue": "129"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_130",
+      "id": 2173,
+      "issue": "130"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_131",
+      "id": 2174,
+      "issue": "131"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_132",
+      "id": 2175,
+      "issue": "132"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_133",
+      "id": 2176,
+      "issue": "133"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_134",
+      "id": 2177,
+      "issue": "134"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_135",
+      "id": 2178,
+      "issue": "135"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_136",
+      "id": 2179,
+      "issue": "136"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_137",
+      "id": 2180,
+      "issue": "137"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_138",
+      "id": 2181,
+      "issue": "138"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_139",
+      "id": 2182,
+      "issue": "139"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_140",
+      "id": 2183,
+      "issue": "140"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_141",
+      "id": 2184,
+      "issue": "141"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_142",
+      "id": 2185,
+      "issue": "142"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_143",
+      "id": 2186,
+      "issue": "143"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_144",
+      "id": 2187,
+      "issue": "144"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 3.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_145",
+      "id": 2188,
+      "issue": "145"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_146",
+      "id": 2189,
+      "issue": "146"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_147",
+      "id": 2190,
+      "issue": "147"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_148",
+      "id": 2191,
+      "issue": "148"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 1.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_149",
+      "id": 2192,
+      "issue": "149"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 2.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_150",
+      "id": 2193,
+      "issue": "150"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 2.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_150",
+      "id": 2194,
+      "issue": "150"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_151",
+      "id": 2195,
+      "issue": "151"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_152",
+      "id": 2196,
+      "issue": "152"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_153",
+      "id": 2197,
+      "issue": "153"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_153",
+      "id": 2198,
+      "issue": "153"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_154",
+      "id": 2199,
+      "issue": "154"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_155",
+      "id": 2200,
+      "issue": "155"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_156",
+      "id": 2201,
+      "issue": "156"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_157",
+      "id": 2202,
+      "issue": "157"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_158",
+      "id": 2203,
+      "issue": "158"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "coverPrice": 2.25,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Vol_2_159",
+      "id": 2204,
+      "issue": "159"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Annual",
+      "issue": "1995",
+      "coverPrice": 3.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Annual_Vol_1_1995",
+      "id": 2205
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Annual",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Annual_Vol_1_1996",
+      "id": 2206,
+      "issue": "1996"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Annual",
+      "coverPrice": 2.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Annual_Vol_1_1997",
+      "id": 2207,
+      "issue": "1997"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Annual",
+      "coverPrice": 3.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Annual_Vol_1_1999",
+      "id": 2208,
+      "issue": "1999"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Annual",
+      "coverPrice": 3.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_Annual_Vol_1_2000",
+      "id": 2209,
+      "issue": "2000"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Marvel Comics Presents",
+      "issue": "0",
+      "coverPrice": 4.95,
+      "url": "https://marvel.fandom.com/wiki/Marvel_Comics_Presents_Vol_1",
+      "id": 2210
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine: The Jungle Adventure",
+      "issue": "1",
+      "coverPrice": 4.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine:_The_Jungle_Adventure_Vol_1_1",
+      "id": 2211
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine: Bloodlust",
+      "issue": "1",
+      "coverPrice": 4.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine:_Bloodlust_Vol_1_1",
+      "id": 2212
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine: Black Rio",
+      "issue": "1",
+      "coverPrice": 5.99,
+      "url": "https://marvel.fandom.com/wiki/Wolverine:_Black_Rio_Vol_1",
+      "id": 2213
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine: Days of Future Past",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine:_Days_of_Future_Past_Vol_1_1",
+      "id": 2214
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine: Days of Future Past",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine:_Days_of_Future_Past_Vol_1_2",
+      "id": 2215,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine: Days of Future Past",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Wolverine:_Days_of_Future_Past_Vol_1_3",
+      "id": 2216,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Deathblow and Wolverine",
+      "issue": "1",
+      "coverPrice": 2.5,
+      "url": "https://marvel.fandom.com/wiki/Deathblow_/_Wolverine_Vol_1_1",
+      "id": 2217
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine / Gambit: Victims",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_/_Gambit:_Victims_Vol_1_1",
+      "id": 2218
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine / Gambit: Victims",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_/_Gambit:_Victims_Vol_1_2",
+      "id": 2219,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine / Gambit: Victims",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_/_Gambit:_Victims_Vol_1_3",
+      "id": 2220,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine / Gambit: Victims",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine_/_Gambit:_Victims_Vol_1_4",
+      "id": 2221,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine / Witchblade",
+      "issue": "1",
+      "coverPrice": 2.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine/Witchblade_Vol_1_1",
+      "id": 2222
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine: Rahne of Terra",
+      "issue": "1",
+      "coverPrice": 5.95,
+      "url": "https://marvel.fandom.com/wiki/Wolverine:_Rahne_of_Terra_Vol_1_1",
+      "id": 2223
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Babies: Murderama",
+      "issue": "1",
+      "coverPrice": 2.99,
+      "url": "https://marvel.fandom.com/wiki/X-Babies:_Murderama_Vol_1_1",
+      "id": 2224
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Babies Reborn",
+      "issue": "1",
+      "coverPrice": 3.5,
+      "url": "https://marvel.fandom.com/wiki/X-Babies_Reborn_Vol_1_1",
+      "id": 2225
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Calibre",
+      "issue": "1",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/X-Calibre_Vol_1_1",
+      "id": 2226
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Calibre",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/X-Calibre_Vol_1_2",
+      "id": 2227,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Calibre",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/X-Calibre_Vol_1_2",
+      "id": 2228,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Calibre",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/X-Calibre_Vol_1_3",
+      "id": 2229,
+      "issue": "3"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Calibre",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/X-Calibre_Vol_1_4",
+      "id": 2230,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Calibre",
+      "coverPrice": 1.95,
+      "url": "https://marvel.fandom.com/wiki/X-Calibre_Vol_1_4",
+      "id": 2231,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "issue": "1",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_1",
+      "id": 2232
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_2",
+      "id": 2233,
+      "issue": "2"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "issue": "3",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_3",
+      "id": 2234
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_4",
+      "id": 2235,
+      "issue": "4"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_5",
+      "id": 2236,
+      "issue": "5"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_6",
+      "id": 2237,
+      "issue": "6"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_7",
+      "id": 2238,
+      "issue": "7"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_8",
+      "id": 2239,
+      "issue": "8"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_9",
+      "id": 2240,
+      "issue": "9"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_10",
+      "id": 2241,
+      "issue": "10"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_11",
+      "id": 2242,
+      "issue": "11"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_12",
+      "id": 2243,
+      "issue": "12"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_13",
+      "id": 2244,
+      "issue": "13"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_14",
+      "id": 2245,
+      "issue": "14"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_15",
+      "id": 2246,
+      "issue": "15"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_16",
+      "id": 2247,
+      "issue": "16"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_17",
+      "id": 2248,
+      "issue": "17"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_18",
+      "id": 2249,
+      "issue": "18"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_19",
+      "id": 2250,
+      "issue": "19"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_20",
+      "id": 2251,
+      "issue": "20"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_21",
+      "id": 2252,
+      "issue": "21"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_22",
+      "id": 2253,
+      "issue": "22"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_23",
+      "id": 2254,
+      "issue": "23"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_24",
+      "id": 2255,
+      "issue": "24"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_25",
+      "id": 2256,
+      "issue": "25"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_26",
+      "id": 2257,
+      "issue": "26"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "issue": "27",
+      "coverPrice": 0.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_27",
+      "id": 2258
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_28",
+      "id": 2259,
+      "issue": "28"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_29",
+      "id": 2260,
+      "issue": "29"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_30",
+      "id": 2261,
+      "issue": "30"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_31",
+      "id": 2262,
+      "issue": "31"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_32",
+      "id": 2263,
+      "issue": "32"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_33",
+      "id": 2264,
+      "issue": "33"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_34",
+      "id": 2265,
+      "issue": "34"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_35",
+      "id": 2266,
+      "issue": "35"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_36",
+      "id": 2267,
+      "issue": "36"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_38",
+      "id": 2268,
+      "issue": "38"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_39",
+      "id": 2269,
+      "issue": "39"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_40",
+      "id": 2270,
+      "issue": "40"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_41",
+      "id": 2271,
+      "issue": "41"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_42",
+      "id": 2272,
+      "issue": "42"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_43",
+      "id": 2273,
+      "issue": "43"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_44",
+      "id": 2274,
+      "issue": "44"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_45",
+      "id": 2275,
+      "issue": "45"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_46",
+      "id": 2276,
+      "issue": "46"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_47",
+      "id": 2277,
+      "issue": "47"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_48",
+      "id": 2278,
+      "issue": "48"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_49",
+      "id": 2279,
+      "issue": "49"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1.5,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_50",
+      "id": 2280,
+      "issue": "50"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_51",
+      "id": 2281,
+      "issue": "51"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_52",
+      "id": 2282,
+      "issue": "52"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_53",
+      "id": 2283,
+      "issue": "53"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_54",
+      "id": 2284,
+      "issue": "54"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_55",
+      "id": 2285,
+      "issue": "55"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_56",
+      "id": 2286,
+      "issue": "56"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_57",
+      "id": 2287,
+      "issue": "57"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_58",
+      "id": 2288,
+      "issue": "58"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_59",
+      "id": 2289,
+      "issue": "59"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_60",
+      "id": 2290,
+      "issue": "60"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_61",
+      "id": 2291,
+      "issue": "61"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_62",
+      "id": 2292,
+      "issue": "62"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_63",
+      "id": 2293,
+      "issue": "63"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_64",
+      "id": 2294,
+      "issue": "64"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_65",
+      "id": 2295,
+      "issue": "65"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_66",
+      "id": 2296,
+      "issue": "66"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_67",
+      "id": 2297,
+      "issue": "67"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_68",
+      "id": 2298,
+      "issue": "68"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_69",
+      "id": 2299,
+      "issue": "69"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_70",
+      "id": 2300,
+      "issue": "70"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_71",
+      "id": 2301,
+      "issue": "71"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_72",
+      "id": 2302,
+      "issue": "72"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_73",
+      "id": 2303,
+      "issue": "73"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_74",
+      "id": 2304,
+      "issue": "74"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1.75,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_75",
+      "id": 2305,
+      "issue": "75"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_76",
+      "id": 2306,
+      "issue": "76"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_77",
+      "id": 2307,
+      "issue": "77"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_78",
+      "id": 2308,
+      "issue": "78"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_79",
+      "id": 2309,
+      "issue": "79"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_80",
+      "id": 2310,
+      "issue": "80"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_81",
+      "id": 2311,
+      "issue": "81"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_82",
+      "id": 2312,
+      "issue": "82"
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "coverPrice": 1.25,
+      "url": "https://marvel.fandom.com/wiki/X-Factor_Vol_1_83",
+      "id": 2313,
+      "issue": "83"
     }
   ],
   "publishers": [
@@ -17849,6 +20385,186 @@
       "publisher": "Marvel Comics",
       "title": "New Mutants Summer Special",
       "id": 353
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Nightcrawler",
+      "id": 354
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Onslaught Epilogue",
+      "id": 355
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Onslaught Marvel Universe",
+      "id": 356
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Onslaught X-Men",
+      "id": 357
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Phoenix: The Untold Story",
+      "id": 358
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Phoenix Resurrection: Genesis",
+      "id": 359
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Further Adventures of Cyclops and Phoenix",
+      "id": 360
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Professor Xavier and the X-Men",
+      "id": 361
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Rise of Apocalypse, The",
+      "id": 362
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Rogue",
+      "id": 363
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Sabretooth",
+      "id": 364
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Sabretooth Special",
+      "id": 365
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Sabretooth and Mystique",
+      "id": 366
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Soviet Super Soldiers",
+      "id": 367
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Men: Spotlight on... Starjammers",
+      "id": 368
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Starjammers",
+      "id": 369
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Storm",
+      "id": 370
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Stryfe's Strike File",
+      "id": 371
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Team X/Team 7",
+      "id": 372
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Team X 2000",
+      "id": 373
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wild Thing",
+      "id": 374
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Weapon X",
+      "id": 375
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Volume 2",
+      "id": 376
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine Annual",
+      "id": 377
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine: The Jungle Adventure",
+      "id": 378
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine: Bloodlust",
+      "id": 379
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine: Black Rio",
+      "id": 380
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine: Days of Future Past",
+      "id": 381
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Deathblow and Wolverine",
+      "id": 382
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine / Gambit: Victims",
+      "id": 383
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine / Witchblade",
+      "id": 384
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "Wolverine: Rahne of Terra",
+      "id": 385
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Babies: Murderama",
+      "id": 386
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Babies Reborn",
+      "id": 387
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Calibre",
+      "id": 388
+    },
+    {
+      "publisher": "Marvel Comics",
+      "title": "X-Factor",
+      "id": 389
     }
   ]
 }
