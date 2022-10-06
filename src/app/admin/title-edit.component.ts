@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, RouterLinkWithHref } from '@angular/router';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { AsyncPipe, Location, NgForOf, NgIf } from '@angular/common';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -9,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
-import { Observable, Subject, takeUntil } from 'rxjs';
+import { BehaviorSubject, map, tap, Observable, Subject, takeUntil, findIndex, take } from 'rxjs';
 
 import { Title } from '../models/title';
 import { TitleService } from '../services/title.service';
@@ -21,6 +22,7 @@ import { PublisherService } from '../services/publisher.service';
   standalone: true,
   imports: [
     AsyncPipe,
+    MatAutocompleteModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
@@ -38,13 +40,21 @@ import { PublisherService } from '../services/publisher.service';
       <mat-card-title>Title Edit</mat-card-title>
       <mat-card-content>
         <form *ngIf="titleEditForm" [formGroup]="titleEditForm">
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="outline" *ngIf="publishers$ | async as publishers">
             <mat-label>Publisher</mat-label>
-            <mat-select id="publisher" formControlName="publisher">
-              <mat-option *ngFor="let publisher of publishers$ | async" [value]="publisher.name">
+            <input
+              matInput
+              id="publisher"
+              #inputPublisher
+              formControlName="publisher"
+              [matAutocomplete]="publisherAuto"
+              (keyup)="onAutocompleteKeyUp(inputPublisher.value, publishers)"
+            />
+            <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
+              <mat-option *ngFor="let publisher of filteredPublishers$ | async" [value]="publisher.name">
                 {{ publisher.name }}
               </mat-option>
-            </mat-select>
+            </mat-autocomplete>
             <a
               mat-flat-button
               matSuffix
@@ -61,6 +71,9 @@ import { PublisherService } from '../services/publisher.service';
               "
             >
               Publisher is required
+            </mat-error>
+            <mat-error *ngIf="titleEditForm.controls['publisher'].errors?.['match']">
+              Please select a publisher from the list.
             </mat-error>
           </mat-form-field>
 
@@ -133,9 +146,11 @@ export class TitleEditComponent implements OnInit, OnDestroy {
   componentActive = true;
   titleEditForm!: FormGroup;
   publishers$!: Observable<Publisher[]>;
+  filteredPublishers$!: Observable<Publisher[]>;
   private title = <Title>{};
   private isNew = true;
   componentIsDestroyed = new Subject<boolean>();
+  private filteredPublisherSubject = new BehaviorSubject<Publisher[]>([]);
 
   constructor(
     private route: ActivatedRoute,
@@ -147,7 +162,7 @@ export class TitleEditComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.titleEditForm = this.fb.group({
-      publisher: ['', Validators.required],
+      publisher: ['', [Validators.required, this.autocompleteStringValidator()]],
       title: ['', Validators.required],
     });
 
@@ -157,9 +172,14 @@ export class TitleEditComponent implements OnInit, OnDestroy {
         this.loadFormValues(params['id']);
       }
     });
+    this.filteredPublishers$ = this.filteredPublisherSubject.asObservable();
 
     this.publisherService.getAll();
-    this.publishers$ = this.publisherService.entities$;
+    this.publishers$ = this.publisherService.entities$.pipe(
+      tap((o) => {
+        this.filteredPublisherSubject.next(o);
+      })
+    );
   }
 
   ngOnDestroy() {
@@ -183,8 +203,20 @@ export class TitleEditComponent implements OnInit, OnDestroy {
     this.location.back();
   }
 
+  getAutoCompleteDisplayValue(option: string): string {
+    return option;
+  }
+
+  onAutocompleteKeyUp(searchText: string, options: Publisher[]): void {
+    const lowerSearchText = searchText?.toLowerCase();
+    this.filteredPublisherSubject.next(
+      !lowerSearchText ? options : options.filter((r) => r.name.toLocaleLowerCase().startsWith(lowerSearchText))
+    );
+  }
+
   save() {
     const { publisher, title } = this.titleEditForm.getRawValue();
+    console.log(publisher, title);
     this.title.publisher = publisher;
     this.title.title = title;
     if (this.isNew) {
@@ -197,6 +229,7 @@ export class TitleEditComponent implements OnInit, OnDestroy {
 
   saveNew() {
     const { publisher, title } = this.titleEditForm.getRawValue();
+    console.log(publisher, title);
     this.title.publisher = publisher;
     this.title.title = title;
 
@@ -216,5 +249,27 @@ export class TitleEditComponent implements OnInit, OnDestroy {
       publisher: this.title.publisher,
       title: this.title.title,
     });
+  }
+
+  autocompleteStringValidator(): ValidatorFn {
+    let selectedItem!: Publisher | undefined;
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      console.log(control.value);
+      if (control.value === '') {
+        return null;
+      }
+      this.publisherService.entities$
+        .pipe(
+          take(1),
+          tap((publishers: Publisher[]) => {
+            selectedItem = publishers.find((publisher: Publisher) => publisher.name === control.value);
+          })
+        )
+        .subscribe();
+      if (selectedItem) {
+        return null; /* valid option selected */
+      }
+      return { match: { value: control.value } };
+    };
   }
 }
