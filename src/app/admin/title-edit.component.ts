@@ -10,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
-import { BehaviorSubject, map, tap, Observable, Subject, takeUntil, findIndex, take } from 'rxjs';
+import { BehaviorSubject, tap, Observable, Subject, takeUntil, take } from 'rxjs';
 
 import { Title } from '../models/title';
 import { TitleService } from '../services/title.service';
@@ -147,10 +147,10 @@ export class TitleEditComponent implements OnInit, OnDestroy {
   titleEditForm!: FormGroup;
   publishers$!: Observable<Publisher[]>;
   filteredPublishers$!: Observable<Publisher[]>;
+  private filteredPublisherSubject = new BehaviorSubject<Publisher[]>([]);
   private title = <Title>{};
   private isNew = true;
   componentIsDestroyed = new Subject<boolean>();
-  private filteredPublisherSubject = new BehaviorSubject<Publisher[]>([]);
 
   constructor(
     private route: ActivatedRoute,
