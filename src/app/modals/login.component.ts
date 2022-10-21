@@ -27,7 +27,7 @@ import { MatInputModule } from '@angular/material/input';
         <form [formGroup]="loginForm">
           <mat-form-field appearance="outline" class="mt-5">
             <mat-label for="email">Email Address</mat-label>
-            <mat-icon matSuffix>mail_outline</mat-icon>
+            <mat-icon matIconSuffix>mail_outline</mat-icon>
             <input
               ngbAutofocus
               type="email"

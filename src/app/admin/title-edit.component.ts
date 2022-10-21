@@ -57,7 +57,7 @@ import { PublisherService } from '../services/publisher.service';
             </mat-autocomplete>
             <button
               mat-icon-button
-              matSuffix
+              matIconSuffix
               color="primary"
               [routerLink]="['/admin/publisher/new']"
               title="Add new publisher"
