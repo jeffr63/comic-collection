@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router, RouterLinkWithHref } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -15,7 +15,7 @@ import { PublisherService } from '../services/publisher.service';
 @Component({
   selector: 'app-publisher-list',
   standalone: true,
-  imports: [DisplayTableComponent, NgIf, RouterLinkWithHref],
+  imports: [DisplayTableComponent, NgIf, RouterLink],
 
   template: `
     <section class="mt-5">
@@ -39,13 +39,13 @@ import { PublisherService } from '../services/publisher.service';
 
   styles: [
     `
-      table {
-        width: 100%;
-      }
-      section {
-        margin: 10px 20px;
-      }
-    `,
+           table {
+             width: 100%;
+           }
+           section {
+             margin: 10px 20px;
+           }
+         `,
   ],
 })
 export class PublisherListComponent implements OnInit, OnDestroy {

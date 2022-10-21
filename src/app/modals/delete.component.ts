@@ -48,10 +48,10 @@ import { MatButtonModule } from '@angular/material/button';
   `,
   styles: [
     `
-      .ml-10 {
-        margin-left: 10px;
-      }
-    `,
+           .ml-10 {
+             margin-left: 10px;
+           }
+         `,
   ],
 })
 export class DeleteComponent implements OnInit {

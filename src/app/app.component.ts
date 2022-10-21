@@ -18,8 +18,6 @@ import { MenuComponent } from './menu/menu.component';
   styles: [],
 })
 export class AppComponent implements OnInit {
-  title = 'Training Course Tracker';
-
   constructor(private authService: AuthService) {}
 
   ngOnInit() {

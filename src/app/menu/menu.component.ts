@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { NgIf } from '@angular/common';
-import { Router, RouterLinkWithHref } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AuthService } from '../auth/auth.service';
 import { LoginComponent } from '../modals/login.component';
@@ -12,59 +13,31 @@ import { take } from 'rxjs';
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [
-    MatDialogModule,
-    MatToolbarModule,
-    MatButtonModule,
-    NgIf,
-    RouterLinkWithHref,
-  ],
+  imports: [MatDialogModule, MatIconModule, MatToolbarModule, MatButtonModule, NgIf, RouterLink],
 
   template: `
     <mat-toolbar color="primary">
-      <a mat-button class="primary" [routerLink]="['/']" id="brand">
-        <h3 class="text-white">Comic Collection</h3>
-      </a>
-      <span style="flex: 1 1 auto;"></span>
-      <a mat-button class="primary" [routerLink]="['/']" id="home">Home</a>
-      <a
-        mat-button
-        class="primary"
-        [routerLink]="['/by_publisher']"
-        id="by_publishers"
-        >By Publisher</a
-      >
-      <a mat-button class="primary" [routerLink]="['/by_title']" id="by_titles"
-        >By Title</a
-      >
-      <a mat-button class="primary" [routerLink]="['/issues']" id="courses"
-        >All Issues</a
-      >
-      <button
-        mat-button
-        class="primary"
-        *ngIf="auth.isAuthenticated === false"
-        (click)="open()"
-        id="login"
-      >
+      <button mat-flat-button color="primary" [routerLink]="['/']">
+        <span style="font-size:20px">Comic Collection</span>
+      </button>
+      <span style="flex: 1 1 auto"></span>
+      <button mat-flat-button color="primary" [routerLink]="['/']" id="home">Home</button>
+      <button mat-flat-button color="primary" [routerLink]="['/by_publisher']" id="by_publishers">By Publisher</button>
+      <button mat-flat-button color="primary" [routerLink]="['/by_title']" id="by_titles">By Title</button>
+      <button mat-flat-button color="primary" [routerLink]="['/issues']" id="courses">All Issues</button>
+      <button mat-flat-button color="primary" *ngIf="auth.isAuthenticated === false" (click)="open()" id="login">
         Login
       </button>
-      <a
-        mat-button
-        class="primary"
+      <button
+        mat-flat-button
+        color="primary"
         [routerLink]="['/admin']"
         *ngIf="auth.isAuthenticated && auth.isAdmin"
         id="admin"
       >
         Admin
-      </a>
-      <button
-        mat-button
-        class="primary"
-        *ngIf="auth.isAuthenticated"
-        (click)="logout()"
-        id="logout"
-      >
+      </button>
+      <button mat-flat-button color="primary" *ngIf="auth.isAuthenticated" (click)="logout()" id="logout">
         Logout
       </button>
     </mat-toolbar>
@@ -83,11 +56,7 @@ export class MenuComponent {
   email = '';
   password = '';
 
-  constructor(
-    public auth: AuthService,
-    private dialog: MatDialog,
-    private router: Router
-  ) {}
+  constructor(public auth: AuthService, private dialog: MatDialog, private router: Router) {}
 
   open() {
     const dialogRef = this.dialog.open(LoginComponent, {
@@ -100,10 +69,7 @@ export class MenuComponent {
       .pipe(take(1))
       .subscribe({
         next: (result) => {
-          this.auth
-            .login(result.email, result.password)
-            .pipe(take(1))
-            .subscribe();
+          this.auth.login(result.email, result.password).pipe(take(1)).subscribe();
         },
       });
   }

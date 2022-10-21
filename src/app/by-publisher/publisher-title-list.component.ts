@@ -32,13 +32,13 @@ import { NgIf } from '@angular/common';
   </section>`,
   styles: [
     `
-      table {
-        width: 100%;
-      }
-      section {
-        margin: 10px 20px;
-      }
-    `,
+           table {
+             width: 100%;
+           }
+           section {
+             margin: 10px 20px;
+           }
+         `,
   ],
 })
 export class PublisherTitleListComponent implements OnInit, OnDestroy {

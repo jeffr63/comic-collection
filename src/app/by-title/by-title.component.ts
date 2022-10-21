@@ -30,13 +30,13 @@ import { Column } from '../models/column';
   `,
   styles: [
     `
-      table {
-        width: 100%;
-      }
-      section {
-        margin: 10px 20px;
-      }
-    `,
+          table {
+            width: 100%;
+          }
+          section {
+            margin: 10px 20px;
+          }
+        `,
   ],
 })
 export class ByTitleListComponent implements OnInit, OnDestroy {

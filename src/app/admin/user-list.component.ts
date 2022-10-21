@@ -36,13 +36,13 @@ import { Subject, take, takeUntil, tap } from 'rxjs';
   `,
   styles: [
     `
-      table {
-        width: 100%;
-      }
-      section {
-        margin: 10px 20px;
-      }
-    `,
+           table {
+             width: 100%;
+           }
+           section {
+             margin: 10px 20px;
+           }
+         `,
   ],
 })
 export class UserListComponent implements OnInit, OnDestroy {

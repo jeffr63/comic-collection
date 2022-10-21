@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, RouterLinkWithHref } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { AsyncPipe, Location, NgForOf, NgIf } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
@@ -34,11 +34,11 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     NgForOf,
     NgIf,
     ReactiveFormsModule,
-    RouterLinkWithHref,
+    RouterLink,
   ],
 
   template: `
-    <mat-card>
+    <mat-card appearance="outlined">
       <mat-card-title>Issue Edit</mat-card-title>
       <mat-card-content>
         <form *ngIf="issueEditForm" [formGroup]="issueEditForm">
@@ -85,9 +85,15 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
                 {{ title.title }}
               </mat-option>
             </mat-autocomplete>
-            <a mat-flat-button matSuffix color="primary" [routerLink]="['/admin/title/new']" title="Add new title">
+            <button
+              mat-icon-button
+              matIconSuffix
+              color="primary"
+              [routerLink]="['/admin/title/new']"
+              title="Add new title"
+            >
               <mat-icon>add</mat-icon>
-            </a>
+            </button>
             <mat-error
               *ngIf="
                 issueEditForm.controls['title']?.errors?.['required'] &&
@@ -178,6 +184,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
   styles: [
     `
+      /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
       mat-card {
         margin: 30px;
         padding-left: 15px;

@@ -1,13 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  AfterViewInit,
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -36,7 +28,7 @@ import { Column } from '../models/column';
     <ng-container>
       <!-- Filter -->
       <ng-container *ngIf="isFilterable">
-        <mat-form-field appearance="standard">
+        <mat-form-field appearance="outline">
           <mat-label>Filter </mat-label>
           <input matInput (keyup)="applyFilter($event)" placeholder="filter" />
         </mat-form-field>
@@ -58,16 +50,8 @@ import { Column } from '../models/column';
       </ng-container>
 
       <!-- Table -->
-      <table
-        mat-table
-        [dataSource]="tableDataSource"
-        matSort
-        class="mat-elevation-z8"
-      >
-        <ng-container
-          [matColumnDef]="column.key"
-          *ngFor="let column of tableColumns"
-        >
+      <table mat-table [dataSource]="tableDataSource" matSort class="mat-elevation-z8">
+        <ng-container [matColumnDef]="column.key" *ngFor="let column of tableColumns">
           <ng-container *ngIf="column.type === 'sort'">
             <th
               mat-header-cell
@@ -121,7 +105,7 @@ import { Column } from '../models/column';
               {{ column.name }}
             </th>
             <td mat-cell *matCellDef="let element">
-              <a href="{{ element[column.key] }}">{{ element[column.key] }}</a>
+              <a *ngIf="element[column.key]" href="{{ element[column.key] }}"><mat-icon>link</mat-icon></a>
             </td>
           </ng-container>
           <ng-container *ngIf="column.type === 'action'">
@@ -160,12 +144,7 @@ import { Column } from '../models/column';
               style="min-width: {{ column.width }}"
             ></th>
             <td mat-cell *matCellDef="let element">
-              <button
-                mat-icon-button
-                color="primary"
-                (click)="emitOpen(element.id)"
-                title="View"
-              >
+              <button mat-icon-button color="primary" (click)="emitOpen(element.id)" title="View">
                 <mat-icon>view_list</mat-icon>
               </button>
             </td>
@@ -173,11 +152,7 @@ import { Column } from '../models/column';
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr
-          mat-row
-          *matRowDef="let row; columns: displayedColumns; let even = even"
-          [ngClass]="{ gray: even }"
-        ></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns; let even = even" [ngClass]="{ gray: even }"></tr>
 
         <tr class="mat-row" *matNoDataRow>
           <td class="mat-cell" colspan="5">No data matching the filter</td>
@@ -216,7 +191,7 @@ import { Column } from '../models/column';
         float: right;
         vertical-align: middle;
       }
-      .mat-form-field {
+      .mat-mdc-form-field {
         font-size: 14px;
         width: 80%;
       }

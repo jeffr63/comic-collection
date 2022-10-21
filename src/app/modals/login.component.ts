@@ -25,7 +25,7 @@ import { MatInputModule } from '@angular/material/input';
       <h2 mat-dialog-title>Login</h2>
       <mat-dialog-content>
         <form [formGroup]="loginForm">
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="outline" class="mt-5">
             <mat-label for="email">Email Address</mat-label>
             <mat-icon matSuffix>mail_outline</mat-icon>
             <input

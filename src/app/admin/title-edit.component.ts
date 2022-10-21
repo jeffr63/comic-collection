@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, RouterLinkWithHref } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { AsyncPipe, Location, NgForOf, NgIf } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -32,11 +32,11 @@ import { PublisherService } from '../services/publisher.service';
     NgIf,
     NgForOf,
     ReactiveFormsModule,
-    RouterLinkWithHref,
+    RouterLink,
   ],
 
   template: `
-    <mat-card>
+    <mat-card appearance="outlined">
       <mat-card-title>Title Edit</mat-card-title>
       <mat-card-content>
         <form *ngIf="titleEditForm" [formGroup]="titleEditForm">
@@ -55,15 +55,15 @@ import { PublisherService } from '../services/publisher.service';
                 {{ publisher.name }}
               </mat-option>
             </mat-autocomplete>
-            <a
-              mat-flat-button
+            <button
+              mat-icon-button
               matSuffix
               color="primary"
               [routerLink]="['/admin/publisher/new']"
               title="Add new publisher"
             >
               <mat-icon>add</mat-icon>
-            </a>
+            </button>
             <mat-error
               *ngIf="
                 titleEditForm.controls['publisher']?.errors?.['required'] &&
@@ -119,6 +119,7 @@ import { PublisherService } from '../services/publisher.service';
 
   styles: [
     `
+      /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
       mat-card {
         margin: 30px;
         padding-left: 15px;

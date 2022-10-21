@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, RouterLinkWithHref } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import {
   FormBuilder,
   FormGroup,
@@ -28,12 +28,12 @@ import { PublisherService } from '../services/publisher.service';
     MatIconModule,
     MatInputModule,
     NgIf,
-    RouterLinkWithHref,
+    RouterLink,
     ReactiveFormsModule,
   ],
 
   template: `
-    <mat-card>
+    <mat-card appearance="outlined">
       <mat-card-title>Publisher Edit</mat-card-title>
       <mat-card-content>
         <form *ngIf="publisherEditForm" [formGroup]="publisherEditForm">
@@ -82,27 +82,28 @@ import { PublisherService } from '../services/publisher.service';
 
   styles: [
     `
-      mat-card {
-        margin: 30px;
-        padding-left: 15px;
-        padding-right: 15px;
-        width: 30%;
-      }
-
-      mat-content {
-        width: 100%;
-      }
-
-      mat-form-field {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-      }
-
-      .ml-10 {
-        margin-left: 10px;
-      }
-    `,
+           /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
+           mat-card {
+             margin: 30px;
+             padding-left: 15px;
+             padding-right: 15px;
+             width: 30%;
+           }
+     
+           mat-content {
+             width: 100%;
+           }
+     
+           mat-form-field {
+             flex-direction: column;
+             align-items: flex-start;
+             width: 100%;
+           }
+     
+           .ml-10 {
+             margin-left: 10px;
+           }
+         `,
   ],
 })
 export class PublisherEditComponent implements OnInit, OnDestroy {

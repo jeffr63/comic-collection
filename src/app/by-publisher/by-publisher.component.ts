@@ -32,13 +32,13 @@ import { PublisherService } from '../services/publisher.service';
   `,
   styles: [
     `
-      table {
-        width: 100%;
-      }
-      section {
-        margin: 10px 20px;
-      }
-    `,
+          table {
+            width: 100%;
+          }
+          section {
+            margin: 10px 20px;
+          }
+        `,
   ],
 })
 export class ByPublisherComponent implements OnInit, OnDestroy {

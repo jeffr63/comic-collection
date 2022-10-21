@@ -79,8 +79,8 @@ export class IssueAllListComponent implements OnInit, OnDestroy {
     },
     {
       key: 'url',
-      name: 'Url',
-      width: '200px',
+      name: 'Link',
+      width: '20px',
       type: 'link',
       position: 'left',
     },

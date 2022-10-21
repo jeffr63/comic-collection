@@ -18,7 +18,7 @@ import { MatCardModule } from '@angular/material/card';
       <section>
       <mat-grid-list cols="2">
         <mat-grid-tile>
-          <mat-card>
+          <mat-card appearance="outlined">
             <mat-card-header>
               <mat-card-title color="primary">Issues by Publisher</mat-card-title>
             </mat-card-header>
@@ -36,7 +36,7 @@ import { MatCardModule } from '@angular/material/card';
         </mat-grid-tile>
 
         <mat-grid-tile>
-          <mat-card>
+          <mat-card appearance="outlined">
             <mat-card-header>
               <mat-card-title color="primary">Issues by Title</mat-card-title>
             </mat-card-header>

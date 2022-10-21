@@ -1,11 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLinkWithHref } from '@angular/router';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Location, NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -31,11 +26,11 @@ import { User } from '../models/user';
     MatRadioModule,
     NgIf,
     ReactiveFormsModule,
-    RouterLinkWithHref,
+    RouterLink,
   ],
 
   template: `
-    <mat-card>
+    <mat-card appearance="outlined">
       <mat-card-title>User Edit</mat-card-title>
       <mat-card-content>
         <form *ngIf="userEditForm" [formGroup]="userEditForm">
@@ -61,13 +56,7 @@ import { User } from '../models/user';
 
           <mat-form-field appearance="outline">
             <mat-label for="email">Email</mat-label>
-            <input
-              type="text"
-              id="email"
-              matInput
-              formControlName="email"
-              placeholder="Enter email of user"
-            />
+            <input type="text" id="email" matInput formControlName="email" placeholder="Enter email of user" />
             <mat-error
               *ngIf="
                 userEditForm.controls['name']?.errors?.['required'] &&
@@ -79,18 +68,9 @@ import { User } from '../models/user';
           </mat-form-field>
 
           <label id="role">Role</label>
-          <mat-radio-group
-            aria-labelledby="Role"
-            class="radio-group"
-            id="role"
-            formControlName="role"
-          >
-            <mat-radio-button class="radio-button" value="admin"
-              >Admin</mat-radio-button
-            >
-            <mat-radio-button class="radio-button" value="user"
-              >User</mat-radio-button
-            >
+          <mat-radio-group aria-labelledby="Role" class="radio-group" id="role" formControlName="role">
+            <mat-radio-button class="radio-button" value="admin">Admin</mat-radio-button>
+            <mat-radio-button class="radio-button" value="user">User</mat-radio-button>
           </mat-radio-group>
           <mat-error
             *ngIf="
@@ -104,28 +84,19 @@ import { User } from '../models/user';
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button
-          mat-flat-button
-          color="primary"
-          (click)="save()"
-          title="Save"
-          [disabled]="!userEditForm.valid"
-        >
+        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!userEditForm.valid">
           <mat-icon>save</mat-icon> Save
         </button>
-        <a
-          mat-flat-button
-          color="accent"
-          class="ml-10"
-          [routerLink]="['/admin/users']"
-          ><mat-icon>cancel</mat-icon> Cancel</a
-        >
+        <button mat-flat-button color="accent" class="ml-10" [routerLink]="['/admin/users']">
+          <mat-icon>cancel</mat-icon> Cancel
+        </button>
       </mat-card-actions>
     </mat-card>
   `,
 
   styles: [
     `
+      /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
       mat-card {
         margin: 30px;
         padding-left: 15px;
