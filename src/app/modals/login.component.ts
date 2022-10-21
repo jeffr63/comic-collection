@@ -55,7 +55,7 @@ import { MatInputModule } from '@angular/material/input';
           </mat-form-field>
           <mat-form-field appearance="outline" class="mt-5">
             <mat-label for="email">Password</mat-label>
-            <mat-icon (click)="flag = !flag" matSuffix>{{ flag ? 'visibility' : 'visibility_off' }}</mat-icon>
+            <mat-icon (click)="flag = !flag" matIconSuffix>{{ flag ? 'visibility' : 'visibility_off' }}</mat-icon>
             <input
               type="password"
               id="password"
