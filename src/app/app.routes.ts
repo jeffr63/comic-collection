@@ -22,7 +22,7 @@ export const APP_ROUTES: Routes = [
   {
     path: 'issues',
     title: 'All Issues',
-    loadChildren: () => import('./issues/issue.routes').then((m) => m.ISSUES_ROUTES),
+    loadChildren: () => import('./issues/issue.routes').then((r) => r.ISSUES_ROUTES),
   },
   { path: 'home', title: 'Home', component: DashboardComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
