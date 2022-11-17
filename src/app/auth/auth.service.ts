@@ -20,27 +20,25 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(email: string, password: string) {
-    return this.http
-      .post<any>('http://localhost:3000/login', { email, password })
-      .pipe(
-        map((response) => {
-          // login successful if there's a jwt token in the response and if that token is valid
-          if (response && response.accessToken) {
-            // store user details and jwt token in local storage to keep user logged in between page refreshes
-            const token = this.parseJwt(response.accessToken);
-            const auth: AuthToken = {
-              token: response.accessToken,
-              role: response.user.role,
-              id: response.user.id,
-              expires: token.exp,
-            };
-            localStorage.setItem('tct_auth', JSON.stringify(auth));
-            this.isAuthenticated = true;
-            this.isAdmin = response.user.role === 'admin' ? true : false;
-          }
-          return response;
-        })
-      );
+    return this.http.post<any>('http://localhost:3000/login', { email, password }).pipe(
+      map((response) => {
+        // login successful if there's a jwt token in the response and if that token is valid
+        if (response && response.accessToken) {
+          // store user details and jwt token in local storage to keep user logged in between page refreshes
+          const token = this.parseJwt(response.accessToken);
+          const auth: AuthToken = {
+            token: response.accessToken,
+            role: response.user.role,
+            id: response.user.id,
+            expires: token.exp,
+          };
+          localStorage.setItem('tct_auth', JSON.stringify(auth));
+          this.isAuthenticated = true;
+          this.isAdmin = response.user.role === 'admin' ? true : false;
+        }
+        return response;
+      })
+    );
   }
 
   logout(): void {
@@ -82,5 +80,13 @@ export class AuthService {
     );
 
     return JSON.parse(jsonPayload);
+  }
+
+  isLoggedIn() {
+    return this.isAuthenticated;
+  }
+
+  isLoggedInAsAdmin() {
+    return this.isAuthenticated && this.isAdmin;
   }
 }

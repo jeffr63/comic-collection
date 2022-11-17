@@ -1,7 +1,8 @@
-import { CanActivateAdmin } from '../auth/canActiveateAdmin.guard';
 import { UserResolverService } from '../services/user-resolver.service';
 import { PublisherResolverService } from '../services/publisher-resolver.service';
 import { TitleResolverService } from '../services/title-resolver.service';
+import { inject } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
 
 export const ADMIN_ROUTES = [
   {
@@ -42,6 +43,6 @@ export const ADMIN_ROUTES = [
         loadComponent: () => import('./user-edit.component'),
       },
     ],
-    canActivate: [CanActivateAdmin],
+    canActivate: [() => inject(AuthService).isLoggedInAsAdmin()],
   },
 ];
