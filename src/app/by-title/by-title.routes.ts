@@ -6,16 +6,12 @@ export const BY_TITLE_ROUTES = [
     children: [
       {
         path: '',
-        loadComponent: () =>
-          import('./by-title.component').then((c) => c.ByTitleListComponent),
+        loadComponent: () => import('./by-title.component'),
       },
       {
         path: ':id',
         title: ByTitleResolverService,
-        loadComponent: () =>
-          import('./title-issue-list.component').then(
-            (c) => c.TitleIssueListComponent
-          ),
+        loadComponent: () => import('./title-issue-list.component'),
       },
     ],
   },

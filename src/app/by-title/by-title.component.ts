@@ -39,7 +39,7 @@ import { Column } from '../models/column';
         `,
   ],
 })
-export class ByTitleListComponent implements OnInit, OnDestroy {
+export default class ByTitleListComponent implements OnInit, OnDestroy {
   columns: Column[] = [
     {
       key: 'title',

@@ -1,5 +1,4 @@
 import { CanActivateEdit } from '../auth/canActiveateEdit.guard';
-import { IssueAllListComponent } from './issue-list.component';
 import { IssueResolverService } from './issue-resolver.service';
 
 export const ISSUES_ROUTES = [
@@ -8,14 +7,12 @@ export const ISSUES_ROUTES = [
     children: [
       {
         path: '',
-        loadComponent: () =>
-          import('./issue-list.component').then((c) => c.IssueAllListComponent),
+        loadComponent: () => import('./issue-list.component'),
       },
       {
         path: ':id',
         title: IssueResolverService,
-        loadComponent: () =>
-          import('./issue-edit.component').then((c) => c.IssueEditComponent),
+        loadComponent: () => import('./issue-edit.component'),
         canActivate: [CanActivateEdit],
       },
     ],

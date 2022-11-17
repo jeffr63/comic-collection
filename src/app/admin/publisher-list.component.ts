@@ -48,7 +48,7 @@ import { PublisherService } from '../services/publisher.service';
          `,
   ],
 })
-export class PublisherListComponent implements OnInit, OnDestroy {
+export default class PublisherListComponent implements OnInit, OnDestroy {
   columns: Column[] = [
     {
       key: 'name',

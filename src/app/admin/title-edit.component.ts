@@ -143,7 +143,7 @@ import { PublisherService } from '../services/publisher.service';
     `,
   ],
 })
-export class TitleEditComponent implements OnInit, OnDestroy {
+export default class TitleEditComponent implements OnInit, OnDestroy {
   componentActive = true;
   titleEditForm!: FormGroup;
   publishers$!: Observable<Publisher[]>;

@@ -1,11 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Location, NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -60,53 +55,43 @@ import { PublisherService } from '../services/publisher.service';
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button
-          mat-flat-button
-          color="primary"
-          (click)="save()"
-          title="Save"
-          [disabled]="!publisherEditForm.valid"
-        >
+        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!publisherEditForm.valid">
           <mat-icon>save</mat-icon> Save
         </button>
-        <button
-          mat-flat-button
-          color="accent"
-          class="ml-10"
-          (click)="cancel()"
-          ><mat-icon>cancel</mat-icon> Cancel</button
-        >
+        <button mat-flat-button color="accent" class="ml-10" (click)="cancel()">
+          <mat-icon>cancel</mat-icon> Cancel
+        </button>
       </mat-card-actions>
     </mat-card>
   `,
 
   styles: [
     `
-           /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
-           mat-card {
-             margin: 30px;
-             padding-left: 15px;
-             padding-right: 15px;
-             width: 30%;
-           }
-     
-           mat-content {
-             width: 100%;
-           }
-     
-           mat-form-field {
-             flex-direction: column;
-             align-items: flex-start;
-             width: 100%;
-           }
-     
-           .ml-10 {
-             margin-left: 10px;
-           }
-         `,
+      /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
+      mat-card {
+        margin: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 30%;
+      }
+
+      mat-content {
+        width: 100%;
+      }
+
+      mat-form-field {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      .ml-10 {
+        margin-left: 10px;
+      }
+    `,
   ],
 })
-export class PublisherEditComponent implements OnInit, OnDestroy {
+export default class PublisherEditComponent implements OnInit, OnDestroy {
   componentActive = true;
   publisherEditForm!: FormGroup;
   private publisher = <Publisher>{};

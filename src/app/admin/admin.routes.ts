@@ -9,48 +9,37 @@ export const ADMIN_ROUTES = [
     children: [
       {
         path: '',
-        loadComponent: () =>
-          import('./admin.component').then((m) => m.AdminComponent),
+        loadComponent: () => import('./admin.component'),
       },
       {
         path: 'titles',
         title: 'Titles',
-        loadComponent: () =>
-          import('./title-list.component').then((m) => m.TitleListComponent),
+        loadComponent: () => import('./title-list.component'),
       },
       {
         path: 'title/:id',
         title: TitleResolverService,
-        loadComponent: () =>
-          import('./title-edit.component').then((m) => m.TitleEditComponent),
+        loadComponent: () => import('./title-edit.component'),
       },
       {
         path: 'publishers',
         title: 'Publishes',
-        loadComponent: () =>
-          import('./publisher-list.component').then(
-            (m) => m.PublisherListComponent
-          ),
+        loadComponent: () => import('./publisher-list.component'),
       },
       {
         path: 'publisher/:id',
         title: PublisherResolverService,
-        loadComponent: () =>
-          import('./publisher-edit.component').then(
-            (m) => m.PublisherEditComponent
-          ),
+        loadComponent: () => import('./publisher-edit.component'),
       },
       {
         path: 'users',
         title: 'Users',
-        loadComponent: () =>
-          import('./user-list.component').then((m) => m.UserListComponent),
+        loadComponent: () => import('./user-list.component'),
       },
       {
         path: 'users/:id',
         title: UserResolverService,
-        loadComponent: () =>
-          import('./user-edit.component').then((m) => m.UserEditComponent),
+        loadComponent: () => import('./user-edit.component'),
       },
     ],
     canActivate: [CanActivateAdmin],

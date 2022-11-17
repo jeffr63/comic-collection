@@ -41,7 +41,7 @@ import { NgIf } from '@angular/common';
          `,
   ],
 })
-export class PublisherTitleListComponent implements OnInit, OnDestroy {
+export default class PublisherTitleListComponent implements OnInit, OnDestroy {
   columns: Column[] = [
     {
       key: 'title',

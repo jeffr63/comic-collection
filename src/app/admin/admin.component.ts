@@ -74,6 +74,6 @@ import { Router, RouterLink } from '@angular/router';
     `,
   ],
 })
-export class AdminComponent {
+export default class AdminComponent {
   constructor(router: Router) {}
 }

@@ -47,7 +47,7 @@ import { DeleteComponent } from '../modals/delete.component';
     `,
   ],
 })
-export class TitleIssueListComponent implements OnInit, OnDestroy {
+export default class TitleIssueListComponent implements OnInit, OnDestroy {
   columns: Column[] = [
     {
       key: 'title',

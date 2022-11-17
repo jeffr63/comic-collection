@@ -208,7 +208,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     `,
   ],
 })
-export class IssueEditComponent implements OnInit, OnDestroy {
+export default class IssueEditComponent implements OnInit, OnDestroy {
   loading = false;
   componentActive = true;
   publishers$!: Observable<Publisher[]>;

@@ -131,7 +131,7 @@ import { User } from '../models/user';
     `,
   ],
 })
-export class UserEditComponent implements OnInit, OnDestroy {
+export default class UserEditComponent implements OnInit, OnDestroy {
   componentActive = true;
   user = <User>{};
   userEditForm!: FormGroup;

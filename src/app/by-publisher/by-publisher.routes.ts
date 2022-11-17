@@ -6,18 +6,12 @@ export const BY_PUBLISHER_ROUTES = [
     children: [
       {
         path: '',
-        loadComponent: () =>
-          import('./by-publisher.component').then(
-            (c) => c.ByPublisherComponent
-          ),
+        loadComponent: () => import('./by-publisher.component'),
       },
       {
         path: ':id',
         title: ByPublisherResolverService,
-        loadComponent: () =>
-          import('./publisher-title-list.component').then(
-            (c) => c.PublisherTitleListComponent
-          ),
+        loadComponent: () => import('./publisher-title-list.component'),
       },
     ],
   },

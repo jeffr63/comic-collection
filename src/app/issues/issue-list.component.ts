@@ -46,7 +46,7 @@ import { ModalDataService } from '../modals/modal-data.service';
     `,
   ],
 })
-export class IssueAllListComponent implements OnInit, OnDestroy {
+export default class IssueAllListComponent implements OnInit, OnDestroy {
   columns: Column[] = [
     {
       key: 'title',
