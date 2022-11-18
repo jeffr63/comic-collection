@@ -1,8 +1,10 @@
 import { inject } from '@angular/core';
+import { Route } from '@angular/router';
+
 import { AuthService } from '../auth/auth.service';
 import { IssueResolverService } from './issue-resolver.service';
 
-export const ISSUES_ROUTES = [
+export default [
   {
     path: '',
     children: [
@@ -18,4 +20,4 @@ export const ISSUES_ROUTES = [
       },
     ],
   },
-];
+] as Route[];

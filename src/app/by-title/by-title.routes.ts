@@ -1,6 +1,8 @@
+import { Route } from '@angular/router';
+
 import { ByTitleResolverService } from './by-title-resolver.service';
 
-export const BY_TITLE_ROUTES = [
+export default [
   {
     path: '',
     children: [
@@ -15,4 +17,4 @@ export const BY_TITLE_ROUTES = [
       },
     ],
   },
-];
+] as Route[];

@@ -1,6 +1,8 @@
+import { Route } from '@angular/router';
+
 import { ByPublisherResolverService } from './by-publisher-resolver.service';
 
-export const BY_PUBLISHER_ROUTES = [
+export default [
   {
     path: '',
     children: [
@@ -15,4 +17,4 @@ export const BY_PUBLISHER_ROUTES = [
       },
     ],
   },
-];
+] as Route[];
