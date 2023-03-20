@@ -4,7 +4,7 @@
 
 ## Technologies included
 
-Angular, rxjs, ngrx, ngrx/data, Angular Material, json-server, json-server-auth, lodash, swimlane/ngx-charts
+Angular, Angular Signals, Angular Material, json-server, json-server-auth, lodash, swimlane/ngx-charts
 
 ## JSON-SERVER
 
