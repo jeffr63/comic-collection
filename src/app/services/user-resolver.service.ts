@@ -4,7 +4,7 @@ import {
   Resolve,
   RouterStateSnapshot,
 } from '@angular/router';
-import { map, Observable, Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 import { UserService } from './user.service';
 
@@ -24,7 +24,7 @@ export class UserResolverService implements Resolve<string> {
     if (id == 'new') {
       return 'New User';
     } else {
-      return this.userService.getByKey(id).pipe(map((user) => user.name));
+      return this.userService.getById(id).then((user) => user.name);
     }
   }
 }

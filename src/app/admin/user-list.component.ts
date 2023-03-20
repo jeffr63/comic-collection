@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -10,10 +10,10 @@ import { DisplayTableComponent } from '../shared/display-table.component';
 import { ModalDataService } from '../modals/modal-data.service';
 import { User } from '../models/user';
 import { UserService } from '../services/user.service';
-import { Subject, take, takeUntil, tap } from 'rxjs';
+import { Subject, take } from 'rxjs';
 
 @Component({
-  selector: 'app-user-list',
+  selector: "app-user-list",
   standalone: true,
   imports: [DisplayTableComponent, NgIf],
   template: `
@@ -27,7 +27,7 @@ import { Subject, take, takeUntil, tap } from 'rxjs';
         [paginationSizes]="[5, 10, 25, 100]"
         [defaultPageSize]="10"
         [disableClear]="true"
-        [tableData]="users"
+        [tableData]="users()"
         [tableColumns]="columns"
         (delete)="deleteUser($event)"
         (edit)="editUser($event)"
@@ -45,89 +45,74 @@ import { Subject, take, takeUntil, tap } from 'rxjs';
     `,
   ],
 })
-export default class UserListComponent implements OnInit, OnDestroy {
+export default class UserListComponent implements OnInit {
+  userService = inject(UserService);
+  dialog = inject(MatDialog);
+  modalDataService = inject(ModalDataService);
+  router = inject(Router);
+
   columns: Column[] = [
     {
-      key: 'name',
-      name: 'Name',
-      width: '400px',
-      type: 'sort',
-      position: 'left',
+      key: "name",
+      name: "Name",
+      width: "400px",
+      type: "sort",
+      position: "left",
       sortDefault: true,
     },
     {
-      key: 'email',
-      name: 'Email',
-      width: '400px',
-      type: 'sort',
-      position: 'left',
+      key: "email",
+      name: "Email",
+      width: "400px",
+      type: "sort",
+      position: "left",
     },
     {
-      key: 'role',
-      name: 'Role',
-      width: '150px',
-      type: 'sort',
-      position: 'left',
+      key: "role",
+      name: "Role",
+      width: "150px",
+      type: "sort",
+      position: "left",
     },
     {
-      key: 'action',
-      name: '',
-      width: '50px',
-      type: 'action',
-      position: 'left',
+      key: "action",
+      name: "",
+      width: "50px",
+      type: "action",
+      position: "left",
     },
   ];
-  componentIsDestroyed = new Subject<boolean>();
-  users: User[] = [];
-  users$ = this.userService.entities$
-    .pipe(takeUntil(this.componentIsDestroyed))
-    .pipe(
-      tap((data) => {
-        this.users = data;
-      })
-    )
-    .subscribe();
 
-  constructor(
-    private userService: UserService,
-    private dialog: MatDialog,
-    private modalDataService: ModalDataService,
-    private router: Router
-  ) {}
+  users = signal<User[]>([]);
 
   ngOnInit() {
     this.getAllUsers();
   }
 
-  ngOnDestroy() {
-    this.componentIsDestroyed.next(true);
-    this.componentIsDestroyed.complete();
-  }
-
   deleteUser(id: number) {
     const modalOptions = {
-      title: 'Are you sure you want to delete this user?',
-      body: 'All information associated to this path will be permanently deleted.',
-      warning: 'This operation cannot be undone.',
+      title: "Are you sure you want to delete this user?",
+      body: "All information associated to this path will be permanently deleted.",
+      warning: "This operation cannot be undone.",
     };
     this.modalDataService.setDeleteModalOptions(modalOptions);
-    const dialogRef = this.dialog.open(DeleteComponent, { width: '500px' });
+    const dialogRef = this.dialog.open(DeleteComponent, { width: "500px" });
     dialogRef
       .afterClosed()
       .pipe(take(1))
       .subscribe((result) => {
-        if (result == 'delete') {
-          this.userService.delete(id);
-          //this.getAllUsers();
+        if (result == "delete") {
+          this.userService.delete(id).then(() => this.getAllUsers());
         }
       });
   }
 
   editUser(id: number) {
-    this.router.navigate(['/admin/users', id]);
+    this.router.navigate(["/admin/users", id]);
   }
 
-  getAllUsers(): void {
-    this.userService.getAll();
+  async getAllUsers() {
+    const users = await this.userService.getAll() as unknown as User[];
+    this.users.set(users);    
   }
 }

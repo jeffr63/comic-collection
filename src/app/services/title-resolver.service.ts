@@ -23,7 +23,7 @@ export class TitleResolverService implements Resolve<string> {
     if (id == 'new') {
       return 'New Title';
     } else {
-      return this.titleService.getByKey(id).pipe(map((title) => title.title));
+      return this.titleService.getById(id).then((title) => title.title);
     }
   }
 }

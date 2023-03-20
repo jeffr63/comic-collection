@@ -1,19 +1,19 @@
-import { Route } from '@angular/router';
+import { Route } from "@angular/router";
 
-import { ByTitleResolverService } from './by-title-resolver.service';
+//import { ByTitleResolverService } from './by-title-resolver.service';
 
 export default [
   {
-    path: '',
+    path: "",
     children: [
       {
-        path: '',
-        loadComponent: () => import('./by-title.component'),
+        path: "",
+        loadComponent: () => import("./by-title.component"),
       },
       {
-        path: ':id',
-        title: ByTitleResolverService,
-        loadComponent: () => import('./title-issue-list.component'),
+        path: ":id",
+        //title: ByTitleResolverService,
+        loadComponent: () => import("./title-issue-list.component"),
       },
     ],
   },

@@ -1,5 +1,5 @@
 export interface Issue {
-  id: number | null;
+  id?: number;
   publisher: string;
   title: string;
   issue: number | null;

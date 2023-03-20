@@ -1,18 +1,65 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from "@angular/core";
 
-import { EntityCollectionServiceBase, EntityCollectionServiceElementsFactory } from '@ngrx/data';
+import { User } from "../models/user";
 
-import { User } from '../models/user';
+@Injectable({ providedIn: "root" })
+export class UserService {
+  usersUrl = "http://localhost:3000/users";
 
-@Injectable({ providedIn: 'root' })
-export class UserService extends EntityCollectionServiceBase<User> {
-  constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory, private http: HttpClient) {
-    super('Users', serviceElementsFactory);
+  async add(user: User): Promise<User> {
+    const response = await fetch(this.usersUrl, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+    const newUser = response.json() as unknown as User;
+
+    return newUser;
   }
 
-  patch(id: number, data: any) {
-    let httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.patch<any>(`http://localhost:3000/users/${id}`, data, { headers: httpHeaders });
+  async delete(id: number): Promise<void> {
+    const url = `${this.usersUrl}/${id}`;
+
+    await fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+  }
+
+  async getAll() {
+    const response = await fetch(this.usersUrl);
+    return response.json();
+  }
+
+  async getById(id: number): Promise<any> {
+    if (!id) return {};
+    const url = `${this.usersUrl}/${id}`;
+    const response = await fetch(url);
+    return response.json();
+  }
+
+  async search(term: string): Promise<User[]> {
+    if (!term.trim()) {
+      // if not search term, return empty array.
+      return Promise.resolve([]);
+    }
+
+    return fetch(`${this.usersUrl}?${term}`).then((res) => {
+      return res.json() as unknown as User[];
+    });
+  }
+
+  async update(user: User): Promise<any> {
+    await fetch(`${this.usersUrl}/${user.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
   }
 }

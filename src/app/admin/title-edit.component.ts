@@ -1,24 +1,29 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
-import { AsyncPipe, Location, NgForOf, NgIf } from '@angular/common';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
+import { Component, OnInit, inject, signal } from "@angular/core";
+import { ActivatedRoute, RouterLink } from "@angular/router";
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  ValidatorFn,
+  Validators,
+} from "@angular/forms";
+import { AsyncPipe, Location, NgForOf, NgIf } from "@angular/common";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { MatButtonModule } from "@angular/material/button";
+import { MatCardModule } from "@angular/material/card";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatIconModule } from "@angular/material/icon";
+import { MatInputModule } from "@angular/material/input";
+import { MatSelectModule } from "@angular/material/select";
 
-import { BehaviorSubject, tap, Observable, Subject, takeUntil, take } from 'rxjs';
-
-import { Title } from '../models/title';
-import { TitleService } from '../services/title.service';
-import { Publisher } from '../models/publisher';
-import { PublisherService } from '../services/publisher.service';
+import { Title } from "../models/title";
+import { TitleService } from "../services/title.service";
+import { Publisher } from "../models/publisher";
+import { PublisherService } from "../services/publisher.service";
 
 @Component({
-  selector: 'app-title-edit',
+  selector: "app-title-edit",
   standalone: true,
   imports: [
     AsyncPipe,
@@ -40,7 +45,10 @@ import { PublisherService } from '../services/publisher.service';
       <mat-card-title>Title Edit</mat-card-title>
       <mat-card-content>
         <form *ngIf="titleEditForm" [formGroup]="titleEditForm">
-          <mat-form-field appearance="outline" *ngIf="publishers$ | async as publishers">
+          <mat-form-field
+            appearance="outline"
+            *ngIf="publishers() as publishers"
+          >
             <mat-label>Publisher</mat-label>
             <input
               matInput
@@ -50,8 +58,14 @@ import { PublisherService } from '../services/publisher.service';
               [matAutocomplete]="publisherAuto"
               (keyup)="onAutocompleteKeyUp(inputPublisher.value, publishers)"
             />
-            <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
-              <mat-option *ngFor="let publisher of filteredPublishers$ | async" [value]="publisher.name">
+            <mat-autocomplete
+              #publisherAuto="matAutocomplete"
+              autoActiveFirstOption
+            >
+              <mat-option
+                *ngFor="let publisher of filteredPublishers()"
+                [value]="publisher.name"
+              >
                 {{ publisher.name }}
               </mat-option>
             </mat-autocomplete>
@@ -72,7 +86,9 @@ import { PublisherService } from '../services/publisher.service';
             >
               Publisher is required
             </mat-error>
-            <mat-error *ngIf="titleEditForm.controls['publisher'].errors?.['match']">
+            <mat-error
+              *ngIf="titleEditForm.controls['publisher'].errors?.['match']"
+            >
               Please select a publisher from the list.
             </mat-error>
           </mat-form-field>
@@ -97,7 +113,13 @@ import { PublisherService } from '../services/publisher.service';
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!titleEditForm.valid">
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="save()"
+          title="Save"
+          [disabled]="!titleEditForm.valid"
+        >
           <mat-icon>save</mat-icon> Save
         </button>
         <button
@@ -143,61 +165,46 @@ import { PublisherService } from '../services/publisher.service';
     `,
   ],
 })
-export default class TitleEditComponent implements OnInit, OnDestroy {
-  componentActive = true;
+export default class TitleEditComponent implements OnInit {
+  route = inject(ActivatedRoute);
+  location = inject(Location);
+  titleService = inject(TitleService);
+  fb = inject(FormBuilder);
+  publisherService = inject(PublisherService);
+
+  componentActive = signal<boolean>(true);
   titleEditForm!: FormGroup;
-  publishers$!: Observable<Publisher[]>;
-  filteredPublishers$!: Observable<Publisher[]>;
-  private filteredPublisherSubject = new BehaviorSubject<Publisher[]>([]);
-  private title = <Title>{};
-  private isNew = true;
-  componentIsDestroyed = new Subject<boolean>();
+  publishers = signal<Publisher[]>([]);
+  filteredPublishers = signal<Publisher[]>([]);
+  title = <Title>{};
+  isNew = signal<boolean>(true);
 
-  constructor(
-    private route: ActivatedRoute,
-    private location: Location,
-    private titleService: TitleService,
-    private fb: FormBuilder,
-    private publisherService: PublisherService
-  ) {}
-
-  ngOnInit() {
+  async ngOnInit() {
     this.titleEditForm = this.fb.group({
-      publisher: ['', [Validators.required, this.autocompleteStringValidator()]],
-      title: ['', Validators.required],
+      publisher: [
+        "",
+        [Validators.required, this.autocompleteStringValidator()],
+      ],
+      title: ["", Validators.required],
     });
 
     this.route.params.subscribe((params) => {
-      if (params['id'] !== 'new') {
-        this.isNew = false;
-        this.loadFormValues(params['id']);
+      if (params["id"] !== "new") {
+        this.isNew.set(false);
+        this.loadFormValues(params["id"]);
       }
     });
-    this.filteredPublishers$ = this.filteredPublisherSubject.asObservable();
 
-    this.publisherService.getAll();
-    this.publishers$ = this.publisherService.entities$.pipe(
-      tap((o) => {
-        this.filteredPublisherSubject.next(o);
-      })
-    );
+    const publishers = await this.publisherService.getAll();
+    this.publishers.set(publishers);
+    this.filteredPublishers.set(publishers);
   }
 
-  ngOnDestroy() {
-    this.componentActive = false;
-    this.componentIsDestroyed.next(true);
-    this.componentIsDestroyed.complete();
-  }
-
-  loadFormValues(id: number) {
-    this.titleService
-      .getByKey(id)
-      .pipe(takeUntil(this.componentIsDestroyed))
-      .subscribe((title: Title) => {
-        this.title = { ...title };
-        this.titleEditForm.get('publisher')?.setValue(this.title.publisher);
-        this.titleEditForm.get('title')?.setValue(this.title.title);
-      });
+  async loadFormValues(id: number) {
+    const title = await this.titleService.getById(id);
+    this.title = title;
+    this.titleEditForm.get("publisher")?.setValue(title.publisher);
+    this.titleEditForm.get("title")?.setValue(title.title);
   }
 
   cancel() {
@@ -210,17 +217,21 @@ export default class TitleEditComponent implements OnInit, OnDestroy {
 
   onAutocompleteKeyUp(searchText: string, options: Publisher[]): void {
     const lowerSearchText = searchText?.toLowerCase();
-    this.filteredPublisherSubject.next(
-      !lowerSearchText ? options : options.filter((r) => r.name.toLocaleLowerCase().startsWith(lowerSearchText))
+    this.filteredPublishers.set(
+      !lowerSearchText
+        ? options
+        : options.filter((r) =>
+            r.name.toLocaleLowerCase().startsWith(lowerSearchText)
+          )
     );
   }
 
   save() {
-    const { publisher, title } = this.titleEditForm.getRawValue();
-    console.log(publisher, title);
-    this.title.publisher = publisher;
-    this.title.title = title;
-    if (this.isNew) {
+    const { fpublisher, ftitle } = this.titleEditForm.getRawValue();
+    this.title.publisher = fpublisher;
+    this.title.title = ftitle;
+
+    if (this.isNew()) {
       this.titleService.add(this.title);
     } else {
       this.titleService.update(this.title);
@@ -229,23 +240,26 @@ export default class TitleEditComponent implements OnInit, OnDestroy {
   }
 
   saveNew() {
-    const { publisher, title } = this.titleEditForm.getRawValue();
-    console.log(publisher, title);
-    this.title.publisher = publisher;
-    this.title.title = title;
-
-    if (this.isNew) {
+    const { fpublisher, ftitle } = this.titleEditForm.getRawValue();
+    this.title.publisher = fpublisher;
+    this.title.title = ftitle;
+    if (this.isNew()) {
       this.titleService.add(this.title);
     } else {
       this.titleService.update(this.title);
     }
 
+    this.titleEditForm.patchValue({
+      publisher: fpublisher,
+      title: ftitle,
+    });
+
     // create new title object and set publisher
     this.title = {
-      publisher: publisher,
-      title: '',
-      id: null,
+      publisher: fpublisher,
+      title: "",
     };
+
     this.titleEditForm.patchValue({
       publisher: this.title.publisher,
       title: this.title.title,
@@ -255,18 +269,12 @@ export default class TitleEditComponent implements OnInit, OnDestroy {
   autocompleteStringValidator(): ValidatorFn {
     let selectedItem!: Publisher | undefined;
     return (control: AbstractControl): { [key: string]: any } | null => {
-      console.log(control.value);
-      if (control.value === '') {
+      if (control.value === "") {
         return null;
       }
-      this.publisherService.entities$
-        .pipe(
-          take(1),
-          tap((publishers: Publisher[]) => {
-            selectedItem = publishers.find((publisher: Publisher) => publisher.name === control.value);
-          })
-        )
-        .subscribe();
+      const abc = this.publishers().find(
+        (publisher: Publisher) => publisher.name === control.value
+      );
       if (selectedItem) {
         return null; /* valid option selected */
       }

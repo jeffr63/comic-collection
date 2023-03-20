@@ -1,31 +1,32 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from "@angular/core";
 
-import { Observable, of, Subject, takeUntil } from 'rxjs';
-import * as _ from 'lodash';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import * as _ from "lodash";
+import { NgxChartsModule } from "@swimlane/ngx-charts";
 
-import { Issue, IssueData } from '../models/issue';
-import { IssueService } from '../issues/issue.service';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
+import { Issue, IssueData } from "../models/issue";
+import { IssueService } from "../issues/issue.service";
+import { MatGridListModule } from "@angular/material/grid-list";
+import { MatCardModule } from "@angular/material/card";
 
 @Component({
-  selector: 'app-dashboard',
+  selector: "app-dashboard",
   standalone: true,
   imports: [MatGridListModule, MatCardModule, NgxChartsModule],
 
   template: `
-      <section>
+    <section>
       <mat-grid-list cols="2">
         <mat-grid-tile>
           <mat-card appearance="outlined">
             <mat-card-header>
-              <mat-card-title color="primary">Issues by Publisher</mat-card-title>
+              <mat-card-title color="primary"
+                >Issues by Publisher</mat-card-title
+              >
             </mat-card-header>
             <mat-card-content>
               <ngx-charts-pie-chart
                 [view]="[400, 400]"
-                [results]="publishers$ | async"
+                [results]="publishers()"
                 [labels]="true"
                 [doughnut]="true"
                 [arcWidth]="0.5"
@@ -43,7 +44,7 @@ import { MatCardModule } from '@angular/material/card';
             <mat-card-content>
               <ngx-charts-pie-chart
                 [view]="[400, 400]"
-                [results]="titles$ | async"
+                [results]="titles()"
                 [labels]="true"
                 [doughnut]="true"
                 [arcWidth]="0.5"
@@ -58,31 +59,21 @@ import { MatCardModule } from '@angular/material/card';
 
   styles: [],
 })
-export class DashboardComponent implements OnInit, OnDestroy {
-	publishers$!: Observable<IssueData[]>;
-  titles$!: Observable<IssueData[]>;
-  componentIsDestroyed = new Subject<boolean>();
+export class DashboardComponent implements OnInit {
+  issueService = inject(IssueService);
 
-  constructor(private issueService: IssueService) {}
+  publishers = signal<IssueData[]>([]);
+  titles = signal<IssueData[]>([]);
 
-  ngOnInit() {
-       this.issueService
-         .getAll()
-         .pipe(takeUntil(this.componentIsDestroyed))
-         .subscribe((issues: Issue[]) => {
-           this.publishers$ = this.getByPublisherValue(issues);
-           this.titles$ = this.getByTitleValue(issues);
-         });
+  async ngOnInit() {
+    const issues = await this.issueService.getAll();
+    this.publishers.set(this.getByPublisherValue(issues));
+    this.titles.set(this.getByTitleValue(issues));
   }
 
-  ngOnDestroy(): void {
-    this.componentIsDestroyed.next(true);
-    this.componentIsDestroyed.complete();
-  }
-
-    getByPublisherValue(issues: Issue[]): Observable<IssueData[]> {
+  getByPublisherValue(issues: Issue[]): IssueData[] {
     let byPublisher = _.chain(issues)
-      .groupBy('publisher')
+      .groupBy("publisher")
       .map((values, key) => {
         return {
           name: key,
@@ -96,13 +87,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
         };
       })
       .value();
-    byPublisher = _.orderBy(byPublisher, 'value', 'desc');
-    return of(byPublisher);
+    byPublisher = _.orderBy(byPublisher, "value", "desc");
+    return byPublisher;
   }
 
-  getByTitleValue(issues: Issue[]): Observable<IssueData[]> {
+  getByTitleValue(issues: Issue[]): IssueData[] {
     let byTitle = _.chain(issues)
-      .groupBy('title')
+      .groupBy("title")
       .map((values, key) => {
         return {
           name: key,
@@ -116,7 +107,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         };
       })
       .value();
-    byTitle = _.orderBy(byTitle, 'value', 'desc');
-    return of(byTitle);
+    byTitle = _.orderBy(byTitle, "value", "desc");
+    return byTitle;
   }
 }

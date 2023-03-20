@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Location, NgIf } from '@angular/common';
@@ -131,19 +131,16 @@ import { User } from '../models/user';
     `,
   ],
 })
-export default class UserEditComponent implements OnInit, OnDestroy {
-  componentActive = true;
-  user = <User>{};
+export default class UserEditComponent {
+  route = inject(ActivatedRoute);
+  location = inject(Location);
+  userService = inject(UserService);
+  fb = inject(FormBuilder);
+
+  componentActive = signal<boolean>(true);
+  user = signal<User | null>(null);
   userEditForm!: FormGroup;
-  componentIsDestroyed = new Subject<boolean>();
-
-  constructor(
-    private route: ActivatedRoute,
-    private location: Location,
-    private userService: UserService,
-    private fb: FormBuilder
-  ) {}
-
+ 
   ngOnInit() {
     this.userEditForm = this.fb.group({
       name: ['', Validators.required],
@@ -158,29 +155,21 @@ export default class UserEditComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
-    this.componentActive = false;
-    this.componentIsDestroyed.next(true);
-    this.componentIsDestroyed.complete();
+  async loadFormValues(id: number) {
+    const user = await this.userService.getById(id);
+    this.user.set(user);
+    this.userEditForm.patchValue({
+      name: user.name,
+      email: user.email,
+      role: user.role,
+    });
   }
 
-  loadFormValues(id: number) {
-    this.userService
-      .getByKey(id)
-      .pipe(takeUntil(this.componentIsDestroyed))
-      .subscribe((user: User) => {
-        this.user = { ...user };
-        this.userEditForm.patchValue({
-          name: user.name,
-          email: user.email,
-          role: user.role,
-        });
-      });
-  }
-
-  save() {
+  async save() {
     const patchData = this.userEditForm.getRawValue();
-    this.userService.patch(this.user.id, patchData).pipe(take(1)).subscribe();
+    patchData.id = this.user()?.id;
+    if (!patchData) return;
+    await this.userService.update(patchData);
     this.location.back();
   }
 }
