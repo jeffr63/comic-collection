@@ -1,24 +1,17 @@
-import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  Resolve,
-  RouterStateSnapshot,
-} from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { inject, Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot } from '@angular/router';
 
 import { TitleService } from '../services/title.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ByTitleResolverService implements Resolve<string> {
-  constructor(private titleService: TitleService) {}
+export class ByTitleResolverService {
+  titleService = inject(TitleService);
 
-  resolve(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): string | Observable<string> | Promise<string> {
+  async resolve(route: ActivatedRouteSnapshot) {
     const id = route.paramMap.get('id');
-    return this.titleService.getByKey(id).pipe(map((title) => title.title));
+    const title = await this.titleService.getById(Number(id));
+    return title.title;
   }
 }

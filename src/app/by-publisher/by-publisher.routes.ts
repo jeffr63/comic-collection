@@ -1,19 +1,19 @@
-import { Route } from "@angular/router";
+import { Route } from '@angular/router';
 
-//import { ByPublisherResolverService } from './by-publisher-resolver.service';
+import { ByPublisherResolverService } from './by-publisher-resolver.service';
 
 export default [
   {
-    path: "",
+    path: '',
     children: [
       {
-        path: "",
-        loadComponent: () => import("./by-publisher.component"),
+        path: '',
+        loadComponent: () => import('./by-publisher.component'),
       },
       {
-        path: ":id",
-        //title: ByPublisherResolverService,
-        loadComponent: () => import("./publisher-title-list.component"),
+        path: ':id',
+        title: ByPublisherResolverService,
+        loadComponent: () => import('./publisher-title-list.component'),
       },
     ],
   },

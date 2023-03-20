@@ -1,26 +1,17 @@
-import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  Resolve,
-  RouterStateSnapshot,
-} from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { inject, Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot } from '@angular/router';
 
 import { PublisherService } from '../services/publisher.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ByPublisherResolverService implements Resolve<string> {
-  constructor(private publisherService: PublisherService) {}
+export class ByPublisherResolverService {
+  publisherService = inject(PublisherService);
 
-  resolve(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): string | Observable<string> | Promise<string> {
+  async resolve(route: ActivatedRouteSnapshot) {
     const id = route.paramMap.get('id');
-    return this.publisherService
-      .getByKey(id)
-      .pipe(map((publisher) => publisher.name));
+    const publisher = await this.publisherService.getById(Number(id));
+    return publisher.name;
   }
 }

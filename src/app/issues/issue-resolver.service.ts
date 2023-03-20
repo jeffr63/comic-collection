@@ -1,28 +1,21 @@
-import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  Resolve,
-  RouterStateSnapshot,
-} from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { inject, Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot } from '@angular/router';
 
 import { IssueService } from './issue.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class IssueResolverService implements Resolve<string> {
-  constructor(private issueService: IssueService) {}
+export class IssueResolverService {
+  issueService = inject(IssueService);
 
-  resolve(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): string | Observable<string> | Promise<string> {
+  async resolve(route: ActivatedRouteSnapshot) {
     const id = route.paramMap.get('id');
     if (id == 'new') {
       return 'New Issue';
     } else {
-      return this.issueService.getByKey(id).pipe(map((issue) => issue.title));
+      const issue = await this.issueService.getById(Number(id));
+      return issue.title;
     }
   }
 }
