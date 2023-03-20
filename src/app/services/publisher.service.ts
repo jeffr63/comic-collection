@@ -1,44 +1,44 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
-import { Publisher } from "../models/publisher";
+import { Publisher } from '../models/publisher';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class PublisherService {
-  publushersUrl = "http://localhost:3000/publishers";
+  publushersUrl = 'http://localhost:3000/publishers';
 
   async add(publisher: Publisher): Promise<Publisher> {
     const response = await fetch(this.publushersUrl, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-type": "application/json",
+        'Content-type': 'application/json',
       },
       body: JSON.stringify(publisher),
     });
-    const newTitle = response.json() as unknown as Publisher;
+    const newTitle = (await response.json()) as unknown as Publisher;
 
     return newTitle;
   }
 
-  async delete(id: number): Promise<void> {
+  async delete(id: number) {
     const url = `${this.publushersUrl}/${id}`;
 
     await fetch(url, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: {
-        "Content-type": "application/json",
+        'Content-type': 'application/json',
       },
     });
   }
 
   async getAll() {
     const response = await fetch(this.publushersUrl);
-    return response.json();
+    return await response.json();
   }
 
   async getById(id: number): Promise<any> {
     const url = `${this.publushersUrl}/${id}`;
     const response = await fetch(url);
-    return response.json();
+    return await response.json();
   }
 
   async search(term: string): Promise<Publisher[]> {
@@ -47,18 +47,18 @@ export class PublisherService {
       return Promise.resolve([]);
     }
 
-    return fetch(`${this.publushersUrl}?${term}`).then((res) => {
-      return res.json() as unknown as Publisher[];
-    });
+    const response = await fetch(`${this.publushersUrl}?${term}`);
+    return (await response.json()) as unknown as Publisher[];
   }
 
   async update(publisher: Publisher): Promise<any> {
-    await fetch(`${this.publushersUrl}/${publisher.id}`, {
-      method: "PATCH",
+    const response = await fetch(`${this.publushersUrl}/${publisher.id}`, {
+      method: 'PATCH',
       headers: {
-        "Content-type": "application/json",
+        'Content-type': 'application/json',
       },
       body: JSON.stringify(publisher),
     });
+    return await response.json();
   }
 }

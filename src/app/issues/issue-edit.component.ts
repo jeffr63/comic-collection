@@ -1,33 +1,26 @@
-import { Component, OnInit, inject, signal } from "@angular/core";
-import { ActivatedRoute, RouterLink } from "@angular/router";
-import {
-  AbstractControl,
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  ValidatorFn,
-  Validators,
-} from "@angular/forms";
-import { AsyncPipe, Location, NgForOf, NgIf } from "@angular/common";
-import { MatCardModule } from "@angular/material/card";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatIconModule } from "@angular/material/icon";
-import { MatSelectModule } from "@angular/material/select";
+import { Component, OnInit, inject, signal } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
+import { AsyncPipe, Location, NgForOf, NgIf } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
 
-import { take, takeUntil, tap } from "rxjs";
+import * as _ from 'lodash';
 
-import { Issue } from "../models/issue";
-import { IssueService } from "./issue.service";
-import { Publisher } from "../models/publisher";
-import { PublisherService } from "../services/publisher.service";
-import { Title } from "../models/title";
-import { TitleService } from "../services/title.service";
-import { MatInputModule } from "@angular/material/input";
-import { MatButtonModule } from "@angular/material/button";
-import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { Issue } from '../models/issue';
+import { IssueService } from './issue.service';
+import { Publisher } from '../models/publisher';
+import { PublisherService } from '../services/publisher.service';
+import { Title } from '../models/title';
+import { TitleService } from '../services/title.service';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @Component({
-  selector: "app-issue-edit",
+  selector: 'app-issue-edit',
   standalone: true,
   imports: [
     AsyncPipe,
@@ -49,10 +42,7 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
       <mat-card-title>Issue Edit</mat-card-title>
       <mat-card-content>
         <form *ngIf="issueEditForm" [formGroup]="issueEditForm">
-          <mat-form-field
-            appearance="outline"
-            *ngIf="publishers() as publishers"
-          >
+          <mat-form-field appearance="outline" *ngIf="publishers() as publishers">
             <mat-label for="publisher">Publisher</mat-label>
             <input
               matInput
@@ -60,18 +50,10 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
               #inputPublisher
               formControlName="publisher"
               [matAutocomplete]="publisherAuto"
-              (keyup)="
-                onAutocompleteKeyUpPublisher(inputPublisher.value, publishers)
-              "
+              (keyup)="onAutocompleteKeyUpPublisher(inputPublisher.value, publishers)"
             />
-            <mat-autocomplete
-              #publisherAuto="matAutocomplete"
-              autoActiveFirstOption
-            >
-              <mat-option
-                *ngFor="let publisher of filteredPublishers()"
-                [value]="publisher.name"
-              >
+            <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
+              <mat-option *ngFor="let publisher of filteredPublishers()" [value]="publisher.name">
                 {{ publisher.name }}
               </mat-option>
             </mat-autocomplete>
@@ -83,9 +65,7 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
             >
               Publisher is required
             </mat-error>
-            <mat-error
-              *ngIf="issueEditForm.controls['publisher'].errors?.['match']"
-            >
+            <mat-error *ngIf="issueEditForm.controls['publisher'].errors?.['match']">
               Please select a publisher from the list.
             </mat-error>
           </mat-form-field>
@@ -100,14 +80,8 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
               [matAutocomplete]="titleAuto"
               (keyup)="onAutocompleteKeyUpTitle(inputTitle.value, titles)"
             />
-            <mat-autocomplete
-              #titleAuto="matAutocomplete"
-              autoActiveFirstOption
-            >
-              <mat-option
-                *ngFor="let title of filteredTitles()"
-                [value]="title.title"
-              >
+            <mat-autocomplete #titleAuto="matAutocomplete" autoActiveFirstOption>
+              <mat-option *ngFor="let title of filteredTitles()" [value]="title.title">
                 {{ title.title }}
               </mat-option>
             </mat-autocomplete>
@@ -128,9 +102,7 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
             >
               Title is required
             </mat-error>
-            <mat-error
-              *ngIf="issueEditForm.controls['title'].errors?.['match']"
-            >
+            <mat-error *ngIf="issueEditForm.controls['title'].errors?.['match']">
               Please select a title from the list.
             </mat-error>
           </mat-form-field>
@@ -190,13 +162,7 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button
-          mat-flat-button
-          color="primary"
-          (click)="save()"
-          title="Save"
-          [disabled]="!issueEditForm.valid"
-        >
+        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!issueEditForm.valid">
           <mat-icon>save</mat-icon> Save
         </button>
         <button
@@ -260,47 +226,40 @@ export default class IssueEditComponent implements OnInit {
   issueEditForm!: FormGroup;
   private issue = <Issue>{};
 
-  ngOnInit() {
+  async ngOnInit() {
     this.issueEditForm = this.fb.group({
-      publisher: [
-        "",
-        [Validators.required, this.autocompleteStringPublisherValidator()],
-      ],
-      title: [
-        "",
-        [Validators.required, this.autocompleteStringTitleValidator()],
-      ],
-      issue: ["", Validators.required],
-      coverPrice: ["", Validators.required],
-      url: [""],
+      publisher: ['', [Validators.required, this.autocompleteStringPublisherValidator()]],
+      title: ['', [Validators.required, this.autocompleteStringTitleValidator()]],
+      issue: ['', Validators.required],
+      coverPrice: ['', Validators.required],
+      url: [''],
     });
 
     this.route.params.subscribe((params) => {
-      if (params["id"] !== "new") {
+      if (params['id'] !== 'new') {
         this.isNew.set(false);
-        this.loadFormValues(params["id"]);
+        this.loadFormValues(params['id']);
       }
     });
 
-    const publishers = this.publisherService.getAll() as unknown as Publisher[];
-    this.publishers.set(publishers);
+    const publishers = (await this.publisherService.getAll()) as unknown as Publisher[];
+    const sortedPublishers = _.orderBy(publishers, 'name', 'asc');
+    this.publishers.set(sortedPublishers);
+    this.filteredPublishers.set(sortedPublishers);
 
-    const titles = this.titleService.getAll() as unknown as Title[];
-    this.titles.set(titles);
+    const titles = (await this.titleService.getAll()) as unknown as Title[];
+    const sortedTitles = _.orderBy(titles, 'title', 'asc');
+    this.titles.set(sortedTitles);
+    this.filteredTitles.set(sortedTitles);
   }
 
   autocompleteStringPublisherValidator(): ValidatorFn {
     let selectedItem!: Publisher | undefined;
     return (control: AbstractControl): { [key: string]: any } | null => {
-      console.log(control.value);
-      if (control.value === "") {
+      if (control.value === '') {
         return null;
       }
-      this.publisherService.getAll().then((publishers: Publisher[]) => {
-        selectedItem = publishers.find(
-          (publisher: Publisher) => publisher.name === control.value
-        );
-      });
+      selectedItem = this.publishers().find((publisher: Publisher) => publisher.name === control.value);
       if (selectedItem) {
         return null; /* valid option selected */
       }
@@ -311,16 +270,10 @@ export default class IssueEditComponent implements OnInit {
   autocompleteStringTitleValidator(): ValidatorFn {
     let selectedItem!: Title | undefined;
     return (control: AbstractControl): { [key: string]: any } | null => {
-      console.log(control.value);
-      if (control.value === "") {
+      if (control.value === '') {
         return null;
       }
-      this.titleService.getAll().then((titles: Title[]) => {
-        selectedItem = titles.find(
-          (title: Title) => title.title === control.value
-        );
-      });
-
+      selectedItem = this.titles().find((title: Title) => title.title === control.value);
       if (selectedItem) {
         return null; /* valid option selected */
       }
@@ -352,28 +305,19 @@ export default class IssueEditComponent implements OnInit {
   onAutocompleteKeyUpPublisher(searchText: string, options: Publisher[]): void {
     const lowerSearchText = searchText?.toLowerCase();
     this.filteredPublishers.set(
-      !lowerSearchText
-        ? options
-        : options.filter((r) =>
-            r.name.toLocaleLowerCase().startsWith(lowerSearchText)
-          )
+      !lowerSearchText ? options : options.filter((r) => r.name.toLocaleLowerCase().startsWith(lowerSearchText))
     );
   }
 
   onAutocompleteKeyUpTitle(searchText: string, options: Title[]): void {
     const lowerSearchText = searchText?.toLowerCase();
     this.filteredTitles.set(
-      !lowerSearchText
-        ? options
-        : options.filter((r) =>
-            r.title.toLocaleLowerCase().includes(lowerSearchText)
-          )
+      !lowerSearchText ? options : options.filter((r) => r.title.toLocaleLowerCase().includes(lowerSearchText))
     );
   }
 
   save() {
-    const { publisher, title, issue, coverPrice, url } =
-      this.issueEditForm.getRawValue();
+    const { publisher, title, issue, coverPrice, url } = this.issueEditForm.getRawValue();
     this.issue.publisher = publisher;
     this.issue.title = title;
     this.issue.issue = issue;
@@ -389,8 +333,7 @@ export default class IssueEditComponent implements OnInit {
   }
 
   saveNew() {
-    const { publisher, title, issue, coverPrice, url } =
-      this.issueEditForm.getRawValue();
+    const { publisher, title, issue, coverPrice, url } = this.issueEditForm.getRawValue();
     this.issue.publisher = publisher;
     this.issue.title = title;
     this.issue.issue = issue;

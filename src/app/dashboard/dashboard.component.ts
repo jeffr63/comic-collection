@@ -1,15 +1,15 @@
-import { Component, inject, OnInit, signal } from "@angular/core";
+import { Component, inject, OnInit, signal } from '@angular/core';
 
-import * as _ from "lodash";
-import { NgxChartsModule } from "@swimlane/ngx-charts";
+import * as _ from 'lodash';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
-import { Issue, IssueData } from "../models/issue";
-import { IssueService } from "../issues/issue.service";
-import { MatGridListModule } from "@angular/material/grid-list";
-import { MatCardModule } from "@angular/material/card";
+import { Issue, IssueData } from '../models/issue';
+import { IssueService } from '../issues/issue.service';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
-  selector: "app-dashboard",
+  selector: 'app-dashboard',
   standalone: true,
   imports: [MatGridListModule, MatCardModule, NgxChartsModule],
 
@@ -19,9 +19,7 @@ import { MatCardModule } from "@angular/material/card";
         <mat-grid-tile>
           <mat-card appearance="outlined">
             <mat-card-header>
-              <mat-card-title color="primary"
-                >Issues by Publisher</mat-card-title
-              >
+              <mat-card-title color="primary">Issues by Publisher</mat-card-title>
             </mat-card-header>
             <mat-card-content>
               <ngx-charts-pie-chart
@@ -73,7 +71,7 @@ export class DashboardComponent implements OnInit {
 
   getByPublisherValue(issues: Issue[]): IssueData[] {
     let byPublisher = _.chain(issues)
-      .groupBy("publisher")
+      .groupBy('publisher')
       .map((values, key) => {
         return {
           name: key,
@@ -87,13 +85,13 @@ export class DashboardComponent implements OnInit {
         };
       })
       .value();
-    byPublisher = _.orderBy(byPublisher, "value", "desc");
+    byPublisher = _.orderBy(byPublisher, 'value', 'desc');
     return byPublisher;
   }
 
   getByTitleValue(issues: Issue[]): IssueData[] {
     let byTitle = _.chain(issues)
-      .groupBy("title")
+      .groupBy('title')
       .map((values, key) => {
         return {
           name: key,
@@ -107,7 +105,7 @@ export class DashboardComponent implements OnInit {
         };
       })
       .value();
-    byTitle = _.orderBy(byTitle, "value", "desc");
+    byTitle = _.orderBy(byTitle, 'value', 'desc');
     return byTitle;
   }
 }

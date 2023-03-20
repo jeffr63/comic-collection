@@ -2,43 +2,43 @@ import { Injectable } from '@angular/core';
 
 import { Issue } from '../models/issue';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class IssueService {
-  issuesUrl = "http://localhost:3000/publishers";
+  issuesUrl = 'http://localhost:3000/issues';
 
   async add(issue: Issue): Promise<Issue> {
     const response = await fetch(this.issuesUrl, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-type": "application/json",
+        'Content-type': 'application/json',
       },
       body: JSON.stringify(issue),
     });
-    const newIssue = response.json() as unknown as Issue;
+    const newIssue = (await response.json()) as unknown as Issue;
 
     return newIssue;
   }
 
-  async delete(id: number): Promise<void> {
+  async delete(id: number) {
     const url = `${this.issuesUrl}/${id}`;
 
     await fetch(url, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: {
-        "Content-type": "application/json",
+        'Content-type': 'application/json',
       },
     });
   }
 
   async getAll() {
     const response = await fetch(this.issuesUrl);
-    return response.json();
+    return await response.json();
   }
 
   async getById(id: number): Promise<any> {
     const url = `${this.issuesUrl}/${id}`;
     const response = await fetch(url);
-    return response.json();
+    return await response.json();
   }
 
   async search(term: string): Promise<Issue[]> {
@@ -47,18 +47,18 @@ export class IssueService {
       return Promise.resolve([]);
     }
 
-    return fetch(`${this.issuesUrl}?${term}`).then((res) => {
-      return res.json() as unknown as Issue[];
-    });
+    const response = await fetch(`${this.issuesUrl}?${term}`);
+    return (await response.json()) as unknown as Issue[];
   }
 
   async update(issue: Issue): Promise<any> {
-    await fetch(`${this.issuesUrl}/${issue.id}`, {
-      method: "PATCH",
+    const response = await fetch(`${this.issuesUrl}/${issue.id}`, {
+      method: 'PATCH',
       headers: {
-        "Content-type": "application/json",
+        'Content-type': 'application/json',
       },
       body: JSON.stringify(issue),
     });
+    return await response.json();
   }
 }
