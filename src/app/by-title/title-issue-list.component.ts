@@ -57,7 +57,7 @@ export default class TitleIssueListComponent implements OnInit {
   issueService = inject(IssueService);
   modalDataService = inject(ModalDataService);
   router = inject(Router);
-  
+
   columns: Column[] = [
     {
       key: "title",
@@ -138,11 +138,14 @@ export default class TitleIssueListComponent implements OnInit {
       .pipe(take(1))
       .subscribe((result) => {
         if (result == "delete") {
-          this.issueService.delete(id).then(() => {
-            this.getIssuesForTitle(this.title);
-          });
+          this.delete(id);
         }
       });
+  }
+
+  async delete(id: number) {
+    await this.issueService.delete(id);
+    this.getIssuesForTitle(this.title);
   }
 
   editIssue(id: number) {

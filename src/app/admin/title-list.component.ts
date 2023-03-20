@@ -75,8 +75,8 @@ export default class TitleListComponent implements OnInit {
   ];
   titles = signal<Title[]>([]);
 
-  ngOnInit() {
-    this.getAllTitles();
+  async ngOnInit() {
+    await this.getAllTitles();
   }
 
   deleteTitle(id: number) {
@@ -92,9 +92,14 @@ export default class TitleListComponent implements OnInit {
       .pipe(take(1))
       .subscribe((result) => {
         if (result == "delete") {
-          this.titleService.delete(id).then(() => this.getAllTitles());
+          this.delete(id);
         }
       });
+  }
+
+  async delete(id: number) {
+    await this.titleService.delete(id);
+    this.getAllTitles();
   }
 
   editTitle(id: number) {

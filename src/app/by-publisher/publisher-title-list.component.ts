@@ -1,18 +1,18 @@
-import { Component, inject, OnDestroy, OnInit, signal } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { Subject, take, takeUntil } from "rxjs";
+import { Subject, take, takeUntil } from 'rxjs';
 
-import { Column } from "../models/column";
-import { Publisher } from "../models/publisher";
-import { PublisherService } from "../services/publisher.service";
-import { Title } from "../models/title";
-import { TitleService } from "../services/title.service";
-import { DisplayTableComponent } from "../shared/display-table.component";
-import { NgIf } from "@angular/common";
+import { Column } from '../models/column';
+import { Publisher } from '../models/publisher';
+import { PublisherService } from '../services/publisher.service';
+import { Title } from '../models/title';
+import { TitleService } from '../services/title.service';
+import { DisplayTableComponent } from '../shared/display-table.component';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: "app-publisher-title-list",
+  selector: 'app-publisher-title-list',
   standalone: true,
   imports: [DisplayTableComponent, NgIf],
   template: ` <section class="mt-5">
@@ -49,39 +49,39 @@ export default class PublisherTitleListComponent implements OnInit {
 
   columns: Column[] = [
     {
-      key: "title",
-      name: "Title",
-      width: "300px",
-      type: "sort",
-      position: "left",
+      key: 'title',
+      name: 'Title',
+      width: '300px',
+      type: 'sort',
+      position: 'left',
       sortDefault: true,
     },
     {
-      key: "publisher",
-      name: "Publisher",
-      width: "300px",
-      type: "sort",
-      position: "left",
+      key: 'publisher',
+      name: 'Publisher',
+      width: '300px',
+      type: 'sort',
+      position: 'left',
       sortDefault: false,
     },
     {
-      key: "view",
-      name: "",
-      width: "50px",
-      type: "view",
-      position: "left",
+      key: 'view',
+      name: '',
+      width: '50px',
+      type: 'view',
+      position: 'left',
     },
   ];
 
   titles = signal<Title[]>([]);
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.loadData();
   }
 
   loadData() {
     this.route.params.subscribe((params) => {
-      this.publisherService.getById(params["id"]).then((publisher) => {
+      this.publisherService.getById(params['id']).then((publisher) => {
         this.getTitlesForPublisher(publisher.name);
       });
     });
@@ -93,6 +93,6 @@ export default class PublisherTitleListComponent implements OnInit {
   }
 
   open(id: number) {
-    this.router.navigate(["/by_title", id]);
+    this.router.navigate(['/by_title', id]);
   }
 }

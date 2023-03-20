@@ -13,7 +13,7 @@ import { UserService } from '../services/user.service';
 import { Subject, take } from 'rxjs';
 
 @Component({
-  selector: "app-user-list",
+  selector: 'app-user-list',
   standalone: true,
   imports: [DisplayTableComponent, NgIf],
   template: `
@@ -53,66 +53,71 @@ export default class UserListComponent implements OnInit {
 
   columns: Column[] = [
     {
-      key: "name",
-      name: "Name",
-      width: "400px",
-      type: "sort",
-      position: "left",
+      key: 'name',
+      name: 'Name',
+      width: '400px',
+      type: 'sort',
+      position: 'left',
       sortDefault: true,
     },
     {
-      key: "email",
-      name: "Email",
-      width: "400px",
-      type: "sort",
-      position: "left",
+      key: 'email',
+      name: 'Email',
+      width: '400px',
+      type: 'sort',
+      position: 'left',
     },
     {
-      key: "role",
-      name: "Role",
-      width: "150px",
-      type: "sort",
-      position: "left",
+      key: 'role',
+      name: 'Role',
+      width: '150px',
+      type: 'sort',
+      position: 'left',
     },
     {
-      key: "action",
-      name: "",
-      width: "50px",
-      type: "action",
-      position: "left",
+      key: 'action',
+      name: '',
+      width: '50px',
+      type: 'action',
+      position: 'left',
     },
   ];
 
   users = signal<User[]>([]);
 
-  ngOnInit() {
-    this.getAllUsers();
+  async ngOnInit() {
+    await this.getAllUsers();
   }
 
   deleteUser(id: number) {
     const modalOptions = {
-      title: "Are you sure you want to delete this user?",
-      body: "All information associated to this path will be permanently deleted.",
-      warning: "This operation cannot be undone.",
+      title: 'Are you sure you want to delete this user?',
+      body: 'All information associated to this path will be permanently deleted.',
+      warning: 'This operation cannot be undone.',
     };
     this.modalDataService.setDeleteModalOptions(modalOptions);
-    const dialogRef = this.dialog.open(DeleteComponent, { width: "500px" });
+    const dialogRef = this.dialog.open(DeleteComponent, { width: '500px' });
     dialogRef
       .afterClosed()
       .pipe(take(1))
       .subscribe((result) => {
-        if (result == "delete") {
-          this.userService.delete(id).then(() => this.getAllUsers());
+        if (result == 'delete') {
+          this.delete(id);
         }
       });
   }
 
+  async delete(id: number) {
+    await this.userService.delete(id);
+    this.getAllUsers();
+  }
+
   editUser(id: number) {
-    this.router.navigate(["/admin/users", id]);
+    this.router.navigate(['/admin/users', id]);
   }
 
   async getAllUsers() {
-    const users = await this.userService.getAll() as unknown as User[];
-    this.users.set(users);    
+    const users = (await this.userService.getAll()) as unknown as User[];
+    this.users.set(users);
   }
 }
