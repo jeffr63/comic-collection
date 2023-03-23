@@ -1,23 +1,18 @@
-import { Component, OnInit, signal, inject } from "@angular/core";
-import { ActivatedRoute, RouterLink } from "@angular/router";
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from "@angular/forms";
-import { Location, NgIf } from "@angular/common";
-import { MatButtonModule } from "@angular/material/button";
-import { MatCardModule } from "@angular/material/card";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatIconModule } from "@angular/material/icon";
-import { MatInputModule } from "@angular/material/input";
+import { Component, OnInit, inject } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Location, NgIf } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
-import { Publisher } from "../models/publisher";
-import { PublisherService } from "../services/publisher.service";
+import { Publisher } from '../models/publisher';
+import { PublisherService } from '../services/publisher.service';
 
 @Component({
-  selector: "app-publisher-edit",
+  selector: 'app-publisher-edit',
   standalone: true,
   imports: [
     MatButtonModule,
@@ -58,13 +53,7 @@ import { PublisherService } from "../services/publisher.service";
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button
-          mat-flat-button
-          color="primary"
-          (click)="save()"
-          title="Save"
-          [disabled]="!publisherEditForm.valid"
-        >
+        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!publisherEditForm.valid">
           <mat-icon>save</mat-icon> Save
         </button>
         <button mat-flat-button color="accent" class="ml-10" (click)="cancel()">
@@ -107,33 +96,30 @@ export default class PublisherEditComponent implements OnInit {
   fb = inject(FormBuilder);
 
   publisherEditForm!: FormGroup;
-  componentActive = signal<boolean>(true);
   private publisher = <Publisher>{};
-  private isNew = signal<boolean>(true);
+  private isNew = true;
 
   ngOnInit() {
     this.publisherEditForm = this.fb.group({
-      name: ["", Validators.required],
+      name: ['', Validators.required],
     });
     this.route.params.subscribe((params) => {
-      if (params["id"] !== "new") {
-        this.isNew.set(false);
-        this.loadFormValues(params["id"]);
+      if (params['id'] !== 'new') {
+        this.isNew = false;
+        this.loadFormValues(params['id']);
       }
     });
   }
 
   async loadFormValues(id: number) {
-    const publisher = (await this.publisherService.getById(
-      id
-    )) as unknown as Publisher;
+    const publisher = (await this.publisherService.getById(id)) as unknown as Publisher;
     this.publisher = publisher;
-    this.publisherEditForm?.get("name")?.setValue(publisher.name);
+    this.publisherEditForm?.get('name')?.setValue(publisher.name);
   }
 
   save() {
-    this.publisher.name = this.publisherEditForm.controls["name"].value;
-    if (this.isNew()) {
+    this.publisher.name = this.publisherEditForm.controls['name'].value;
+    if (this.isNew) {
       this.publisherService.add(this.publisher);
     } else {
       this.publisherService.update(this.publisher);
@@ -146,8 +132,8 @@ export default class PublisherEditComponent implements OnInit {
   }
 
   saveNew() {
-    this.publisher.name = this.publisherEditForm.controls["name"].value;
-    if (this.isNew()) {
+    this.publisher.name = this.publisherEditForm.controls['name'].value;
+    if (this.isNew) {
       this.publisherService.add(this.publisher);
     } else {
       this.publisherService.update(this.publisher);
@@ -155,7 +141,7 @@ export default class PublisherEditComponent implements OnInit {
 
     // create new publisher object and set publisher name to blank
     this.publisher = {
-      name: "",
+      name: '',
     };
     this.publisherEditForm.patchValue({
       publisher: this.publisher.name,

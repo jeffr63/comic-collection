@@ -106,8 +106,8 @@ export default class TitleIssueListComponent implements OnInit {
   issues = signal<Issue[]>([]);
   title = "";
 
-  ngOnInit(): void {
-    this.loadData();
+  async ngOnInit() {
+    await this.loadData();
   }
 
   loadData() {

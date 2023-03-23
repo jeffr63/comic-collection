@@ -101,8 +101,8 @@ export default class IssueAllListComponent implements OnInit {
   loading = signal<boolean>(false);
   issues = signal<Issue[]>([]);
 
-  ngOnInit() {
-    this.getAllIssues();
+  async ngOnInit() {
+    await this.getAllIssues();
   }
 
   deleteIssue(id: number) {

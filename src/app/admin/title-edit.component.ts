@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal, computed } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { AsyncPipe, Location, NgForOf, NgIf } from '@angular/common';
@@ -150,12 +150,11 @@ export default class TitleEditComponent implements OnInit {
   fb = inject(FormBuilder);
   publisherService = inject(PublisherService);
 
-  componentActive = signal<boolean>(true);
   titleEditForm!: FormGroup;
   publishers = signal<Publisher[]>([]);
   filteredPublishers = signal<Publisher[]>([]);
-  title = <Title>{};
-  isNew = signal<boolean>(true);
+  private title = <Title>{};
+  isNew = true;
 
   async ngOnInit() {
     this.titleEditForm = this.fb.group({
@@ -163,17 +162,17 @@ export default class TitleEditComponent implements OnInit {
       title: ['', Validators.required],
     });
 
-    this.route.params.subscribe((params) => {
-      if (params['id'] !== 'new') {
-        this.isNew.set(false);
-        this.loadFormValues(params['id']);
-      }
-    });
-
     const publishers = await this.publisherService.getAll();
     const sorted = _.orderBy(publishers, 'name', 'asc');
     this.publishers.set(sorted);
     this.filteredPublishers.set(sorted);
+
+    this.route.params.subscribe((params) => {
+      if (params['id'] !== 'new') {
+        this.isNew = false;
+        this.loadFormValues(params['id']);
+      }
+    });
   }
 
   async loadFormValues(id: number) {
@@ -199,11 +198,11 @@ export default class TitleEditComponent implements OnInit {
   }
 
   save() {
-    const { fpublisher, ftitle } = this.titleEditForm.getRawValue();
-    this.title.publisher = fpublisher;
-    this.title.title = ftitle;
+    const { publisher, title } = this.titleEditForm.getRawValue();
+    this.title.publisher = publisher;
+    this.title.title = title;
 
-    if (this.isNew()) {
+    if (this.isNew) {
       this.titleService.add(this.title);
     } else {
       this.titleService.update(this.title);
@@ -212,23 +211,23 @@ export default class TitleEditComponent implements OnInit {
   }
 
   saveNew() {
-    const { fpublisher, ftitle } = this.titleEditForm.getRawValue();
-    this.title.publisher = fpublisher;
-    this.title.title = ftitle;
-    if (this.isNew()) {
+    const { publisher, title } = this.titleEditForm.getRawValue();
+    this.title.publisher = publisher;
+    this.title.title = title;
+    if (this.isNew) {
       this.titleService.add(this.title);
     } else {
       this.titleService.update(this.title);
     }
 
     this.titleEditForm.patchValue({
-      publisher: fpublisher,
-      title: ftitle,
+      publisher: publisher,
+      title: title,
     });
 
     // create new title object and set publisher
     this.title = {
-      publisher: fpublisher,
+      publisher: publisher,
       title: '',
     };
 

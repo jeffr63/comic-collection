@@ -75,8 +75,8 @@ export default class PublisherTitleListComponent implements OnInit {
 
   titles = signal<Title[]>([]);
 
-  ngOnInit() {
-    this.loadData();
+  async ngOnInit() {
+    await this.loadData();
   }
 
   loadData() {

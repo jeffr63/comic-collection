@@ -137,10 +137,9 @@ export default class UserEditComponent {
   userService = inject(UserService);
   fb = inject(FormBuilder);
 
-  componentActive = signal<boolean>(true);
   user = signal<User | null>(null);
   userEditForm!: FormGroup;
- 
+
   ngOnInit() {
     this.userEditForm = this.fb.group({
       name: ['', Validators.required],

@@ -216,13 +216,11 @@ export default class IssueEditComponent implements OnInit {
   titleService = inject(TitleService);
   fb = inject(FormBuilder);
 
-  loading = signal<boolean>(false);
-  componentActive = signal<boolean>(true);
   publishers = signal<Publisher[]>([]);
   filteredPublishers = signal<Publisher[]>([]);
   titles = signal<Title[]>([]);
   filteredTitles = signal<Title[]>([]);
-  isNew = signal<boolean>(true);
+  isNew = true;
   issueEditForm!: FormGroup;
   private issue = <Issue>{};
 
@@ -235,13 +233,6 @@ export default class IssueEditComponent implements OnInit {
       url: [''],
     });
 
-    this.route.params.subscribe((params) => {
-      if (params['id'] !== 'new') {
-        this.isNew.set(false);
-        this.loadFormValues(params['id']);
-      }
-    });
-
     const publishers = (await this.publisherService.getAll()) as unknown as Publisher[];
     const sortedPublishers = _.orderBy(publishers, 'name', 'asc');
     this.publishers.set(sortedPublishers);
@@ -251,6 +242,13 @@ export default class IssueEditComponent implements OnInit {
     const sortedTitles = _.orderBy(titles, 'title', 'asc');
     this.titles.set(sortedTitles);
     this.filteredTitles.set(sortedTitles);
+
+    this.route.params.subscribe((params) => {
+      if (params['id'] !== 'new') {
+        this.isNew = false;
+        this.loadFormValues(params['id']);
+      }
+    });
   }
 
   autocompleteStringPublisherValidator(): ValidatorFn {
@@ -289,16 +287,16 @@ export default class IssueEditComponent implements OnInit {
     return option;
   }
 
-  loadFormValues(id: number) {
-    this.issueService.getById(id).then((issue: Issue) => {
-      this.issue = { ...issue };
-      this.issueEditForm.patchValue({
-        publisher: issue.publisher,
-        title: issue.title,
-        issue: issue.issue,
-        coverPrice: issue.coverPrice,
-        url: issue.url,
-      });
+  async loadFormValues(id: number) {
+    const issue = await this.issueService.getById(id);
+    this.issue = issue;
+    console.log(this.issue);
+    this.issueEditForm.patchValue({
+      publisher: issue.publisher,
+      title: issue.title,
+      issue: issue.issue,
+      coverPrice: issue.coverPrice,
+      url: issue.url,
     });
   }
 
@@ -324,7 +322,7 @@ export default class IssueEditComponent implements OnInit {
     this.issue.coverPrice = coverPrice;
     this.issue.url = url;
 
-    if (this.isNew()) {
+    if (this.isNew) {
       this.issueService.add(this.issue);
     } else {
       this.issueService.update(this.issue);
@@ -340,7 +338,7 @@ export default class IssueEditComponent implements OnInit {
     this.issue.coverPrice = coverPrice;
     this.issue.url = url;
 
-    if (this.isNew()) {
+    if (this.isNew) {
       this.issueService.add(this.issue);
     } else {
       this.issueService.update(this.issue);
