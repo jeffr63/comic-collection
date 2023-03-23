@@ -1,10 +1,7 @@
 import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Subject, take, takeUntil } from 'rxjs';
-
 import { Column } from '../models/column';
-import { Publisher } from '../models/publisher';
 import { PublisherService } from '../services/publisher.service';
 import { Title } from '../models/title';
 import { TitleService } from '../services/title.service';

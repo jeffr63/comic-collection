@@ -1,9 +1,9 @@
-import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 
-import { Subject, take, takeUntil, tap } from 'rxjs';
+import { take } from 'rxjs';
 
 import { Column } from '../models/column';
 import { DeleteComponent } from '../modals/delete.component';

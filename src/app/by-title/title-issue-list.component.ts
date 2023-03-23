@@ -1,22 +1,21 @@
-import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
 
+import { AuthService } from '../auth/auth.service';
+import { Column } from '../models/column';
+import { DeleteComponent } from '../modals/delete.component';
+import { DisplayTableComponent } from '../shared/display-table.component';
+import { Issue } from '../models/issue';
+import { ModalDataService } from '../modals/modal-data.service';
 import { TitleService } from '../services/title.service';
 import { IssueService } from '../issues/issue.service';
-import { Title } from '../models/title';
-import { Issue } from '../models/issue';
-import { Column } from '../models/column';
-import { DisplayTableComponent } from '../shared/display-table.component';
-import { AuthService } from '../auth/auth.service';
-import { MatDialog } from '@angular/material/dialog';
-import { ModalDataService } from '../modals/modal-data.service';
-import { DeleteComponent } from '../modals/delete.component';
 
 @Component({
-  selector: "app-title-issue-list",
+  selector: 'app-title-issue-list',
   standalone: true,
   imports: [DisplayTableComponent, NgIf],
   template: `
@@ -60,51 +59,51 @@ export default class TitleIssueListComponent implements OnInit {
 
   columns: Column[] = [
     {
-      key: "title",
-      name: "Title",
-      width: "600px",
-      type: "sort",
-      position: "left",
+      key: 'title',
+      name: 'Title',
+      width: '600px',
+      type: 'sort',
+      position: 'left',
       sortDefault: true,
     },
     {
-      key: "publisher",
-      name: "Publisher",
-      width: "400px",
-      type: "sort",
-      position: "left",
+      key: 'publisher',
+      name: 'Publisher',
+      width: '400px',
+      type: 'sort',
+      position: 'left',
     },
     {
-      key: "issue",
-      name: "Issue Number",
-      width: "50px",
-      type: "sort",
-      position: "left",
+      key: 'issue',
+      name: 'Issue Number',
+      width: '50px',
+      type: 'sort',
+      position: 'left',
     },
     {
-      key: "coverPrice",
-      name: "Cover Price",
-      width: "50px",
-      type: "currency_sort",
-      position: "left",
+      key: 'coverPrice',
+      name: 'Cover Price',
+      width: '50px',
+      type: 'currency_sort',
+      position: 'left',
     },
     {
-      key: "url",
-      name: "Link",
-      width: "20px",
-      type: "link",
-      position: "left",
+      key: 'url',
+      name: 'Link',
+      width: '20px',
+      type: 'link',
+      position: 'left',
     },
     {
-      key: "action",
-      name: "",
-      width: "50px",
-      type: "action",
-      position: "left",
+      key: 'action',
+      name: '',
+      width: '50px',
+      type: 'action',
+      position: 'left',
     },
   ];
   issues = signal<Issue[]>([]);
-  title = "";
+  title = '';
 
   async ngOnInit() {
     await this.loadData();
@@ -112,7 +111,7 @@ export default class TitleIssueListComponent implements OnInit {
 
   loadData() {
     this.route.params.subscribe((params) => {
-      this.titleService.getById(params["id"]).then((title) => {
+      this.titleService.getById(params['id']).then((title) => {
         this.title = title.title;
         this.getIssuesForTitle(title.title);
       });
@@ -126,18 +125,18 @@ export default class TitleIssueListComponent implements OnInit {
 
   deleteIssue(id: number) {
     const modalOptions = {
-      title: "Are you sure you want to delete this course?",
-      body: "All information associated to this course will be permanently deleted.",
-      warning: "This operation can not be undone.",
+      title: 'Are you sure you want to delete this course?',
+      body: 'All information associated to this course will be permanently deleted.',
+      warning: 'This operation can not be undone.',
     };
     this.modalDataService.setDeleteModalOptions(modalOptions);
-    const dialogRef = this.dialog.open(DeleteComponent, { width: "500px" });
+    const dialogRef = this.dialog.open(DeleteComponent, { width: '500px' });
 
     dialogRef
       .afterClosed()
       .pipe(take(1))
       .subscribe((result) => {
-        if (result == "delete") {
+        if (result == 'delete') {
           this.delete(id);
         }
       });
@@ -149,10 +148,10 @@ export default class TitleIssueListComponent implements OnInit {
   }
 
   editIssue(id: number) {
-    this.router.navigate(["/issues", id]);
+    this.router.navigate(['/issues', id]);
   }
 
   newIssue() {
-    this.router.navigate(["/issues/new"]);
+    this.router.navigate(['/issues/new']);
   }
 }

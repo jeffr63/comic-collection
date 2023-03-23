@@ -1,16 +1,16 @@
 import { NgIf } from '@angular/common';
-import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MatDialog } from '@angular/material/dialog';
-import { Subject, take, takeUntil } from 'rxjs';
+import { take } from 'rxjs';
 
 import { AuthService } from '../auth/auth.service';
 import { Column } from '../models/column';
-import { Issue } from '../models/issue';
-import { IssueService } from './issue.service';
 import { DeleteComponent } from '../modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table.component';
+import { Issue } from '../models/issue';
+import { IssueService } from './issue.service';
 import { ModalDataService } from '../modals/modal-data.service';
 
 @Component({

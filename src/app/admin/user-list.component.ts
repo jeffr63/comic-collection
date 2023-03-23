@@ -1,8 +1,9 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
-
 import { MatDialog } from '@angular/material/dialog';
+
+import { take } from 'rxjs';
 
 import { Column } from '../models/column';
 import { DeleteComponent } from '../modals/delete.component';
@@ -10,7 +11,6 @@ import { DisplayTableComponent } from '../shared/display-table.component';
 import { ModalDataService } from '../modals/modal-data.service';
 import { User } from '../models/user';
 import { UserService } from '../services/user.service';
-import { Subject, take } from 'rxjs';
 
 @Component({
   selector: 'app-user-list',

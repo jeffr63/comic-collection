@@ -1,14 +1,14 @@
-import { Component, inject, OnDestroy, OnInit, signal } from "@angular/core";
-import { CommonModule, NgIf } from "@angular/common";
-import { DisplayTableComponent } from "../shared/display-table.component";
-import { Title } from "../models/title";
-import { Subject, takeUntil } from "rxjs";
-import { TitleService } from "../services/title.service";
-import { Router } from "@angular/router";
-import { Column } from "../models/column";
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { NgIf } from '@angular/common';
+import { Router } from '@angular/router';
+
+import { Column } from '../models/column';
+import { DisplayTableComponent } from '../shared/display-table.component';
+import { Title } from '../models/title';
+import { TitleService } from '../services/title.service';
 
 @Component({
-  selector: "app-by-title-list",
+  selector: 'app-by-title-list',
   standalone: true,
   imports: [DisplayTableComponent, NgIf],
   template: `
@@ -45,27 +45,27 @@ export default class ByTitleListComponent implements OnInit {
 
   columns: Column[] = [
     {
-      key: "title",
-      name: "Title",
-      width: "300px",
-      type: "sort",
-      position: "left",
+      key: 'title',
+      name: 'Title',
+      width: '300px',
+      type: 'sort',
+      position: 'left',
       sortDefault: true,
     },
     {
-      key: "publisher",
-      name: "Publisher",
-      width: "300px",
-      type: "sort",
-      position: "left",
+      key: 'publisher',
+      name: 'Publisher',
+      width: '300px',
+      type: 'sort',
+      position: 'left',
       sortDefault: false,
     },
     {
-      key: "view",
-      name: "",
-      width: "50px",
-      type: "view",
-      position: "left",
+      key: 'view',
+      name: '',
+      width: '50px',
+      type: 'view',
+      position: 'left',
     },
   ];
   loading = signal(false);
@@ -81,6 +81,6 @@ export default class ByTitleListComponent implements OnInit {
   }
 
   open(id: number) {
-    this.router.navigate(["/by_title", id]);
+    this.router.navigate(['/by_title', id]);
   }
 }
