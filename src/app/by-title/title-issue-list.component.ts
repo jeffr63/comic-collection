@@ -13,6 +13,7 @@ import { Issue } from '../models/issue';
 import { ModalDataService } from '../modals/modal-data.service';
 import { TitleService } from '../services/title.service';
 import { IssueService } from '../issues/issue.service';
+import { Title } from '../models/title';
 
 @Component({
   selector: 'app-title-issue-list',
@@ -105,17 +106,24 @@ export default class TitleIssueListComponent implements OnInit {
   issues = signal<Issue[]>([]);
   title = '';
 
-  async ngOnInit() {
-    await this.loadData();
+  ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id != null) {
+      this.loadData(parseInt(id));
+    }
   }
 
-  loadData() {
-    this.route.params.subscribe((params) => {
-      this.titleService.getById(params['id']).then((title) => {
-        this.title = title.title;
-        this.getIssuesForTitle(title.title);
-      });
-    });
+  async loadData(id: number) {
+    const title = (await this.titleService.getById(id)) as unknown as Title;
+    this.title = title.title;
+    await this.getIssuesForTitle(title.title);
+
+    // this.route.params.subscribe((params) => {
+    //   this.titleService.getById(params['id']).then((title) => {
+    //     this.title = title.title;
+    //     this.getIssuesForTitle(title.title);
+    //   });
+    // });
   }
 
   async getIssuesForTitle(title: string) {

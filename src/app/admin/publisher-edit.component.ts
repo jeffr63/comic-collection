@@ -103,12 +103,17 @@ export default class PublisherEditComponent implements OnInit {
     this.publisherEditForm = this.fb.group({
       name: ['', Validators.required],
     });
-    this.route.params.subscribe((params) => {
-      if (params['id'] !== 'new') {
-        this.isNew = false;
-        this.loadFormValues(params['id']);
-      }
-    });
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id !== 'new' && id != null) {
+      this.isNew = false;
+      this.loadFormValues(parseInt(id));
+    }
+    // this.route.params.subscribe((params) => {
+    // if (params['id'] !== 'new') {
+    //   this.isNew = false;
+    //   this.loadFormValues(params['id']);
+    // }
+    // });
   }
 
   async loadFormValues(id: number) {

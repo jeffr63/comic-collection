@@ -7,6 +7,7 @@ import { Title } from '../models/title';
 import { TitleService } from '../services/title.service';
 import { DisplayTableComponent } from '../shared/display-table.component';
 import { NgIf } from '@angular/common';
+import { Publisher } from '../models/publisher';
 
 @Component({
   selector: 'app-publisher-title-list',
@@ -72,16 +73,16 @@ export default class PublisherTitleListComponent implements OnInit {
 
   titles = signal<Title[]>([]);
 
-  async ngOnInit() {
-    await this.loadData();
+  ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id != null) {
+      this.loadData(parseInt(id));
+    }
   }
 
-  loadData() {
-    this.route.params.subscribe((params) => {
-      this.publisherService.getById(params['id']).then((publisher) => {
-        this.getTitlesForPublisher(publisher.name);
-      });
-    });
+  async loadData(id: number) {
+    const publisher = (await this.publisherService.getById(id)) as unknown as Publisher;
+    this.getTitlesForPublisher(publisher.name);
   }
 
   async getTitlesForPublisher(publisher: string) {

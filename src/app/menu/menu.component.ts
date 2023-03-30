@@ -65,7 +65,7 @@ export class MenuComponent {
       data: { email: this.email, password: this.password },
     });
 
-    dialogRef
+      dialogRef
       .afterClosed()
       .pipe(take(1))
       .subscribe({

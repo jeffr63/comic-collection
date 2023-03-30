@@ -243,12 +243,18 @@ export default class IssueEditComponent implements OnInit {
     this.titles.set(sortedTitles);
     this.filteredTitles.set(sortedTitles);
 
-    this.route.params.subscribe((params) => {
-      if (params['id'] !== 'new') {
-        this.isNew = false;
-        this.loadFormValues(params['id']);
-      }
-    });
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id !== 'new' && id != null) {
+      this.isNew = false;
+      await this.loadFormValues(parseInt(id));
+    }
+
+    // this.route.params.subscribe((params) => {
+    //   if (params['id'] !== 'new') {
+    //     this.isNew = false;
+    //     this.loadFormValues(params['id']);
+    //   }
+    // });
   }
 
   autocompleteStringPublisherValidator(): ValidatorFn {
