@@ -117,13 +117,6 @@ export default class TitleIssueListComponent implements OnInit {
     const title = (await this.titleService.getById(id)) as unknown as Title;
     this.title = title.title;
     await this.getIssuesForTitle(title.title);
-
-    // this.route.params.subscribe((params) => {
-    //   this.titleService.getById(params['id']).then((title) => {
-    //     this.title = title.title;
-    //     this.getIssuesForTitle(title.title);
-    //   });
-    // });
   }
 
   async getIssuesForTitle(title: string) {

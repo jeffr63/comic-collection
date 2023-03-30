@@ -149,12 +149,6 @@ export default class UserEditComponent {
     if (id !== 'new' && id != null) {
       this.loadFormValues(parseInt(id));
     }
-
-    // this.route.params.subscribe((params) => {
-    //   if (params['id'] !== 'new') {
-    //     this.loadFormValues(params['id']);
-    //   }
-    // });
   }
 
   async loadFormValues(id: number) {

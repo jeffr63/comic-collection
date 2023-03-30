@@ -248,13 +248,6 @@ export default class IssueEditComponent implements OnInit {
       this.isNew = false;
       await this.loadFormValues(parseInt(id));
     }
-
-    // this.route.params.subscribe((params) => {
-    //   if (params['id'] !== 'new') {
-    //     this.isNew = false;
-    //     this.loadFormValues(params['id']);
-    //   }
-    // });
   }
 
   autocompleteStringPublisherValidator(): ValidatorFn {
