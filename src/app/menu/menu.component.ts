@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
@@ -26,19 +26,11 @@ import { LoginComponent } from '../modals/login.component';
       <button mat-flat-button color="primary" [routerLink]="['/by_publisher']" id="by_publishers">By Publisher</button>
       <button mat-flat-button color="primary" [routerLink]="['/by_title']" id="by_titles">By Title</button>
       <button mat-flat-button color="primary" [routerLink]="['/issues']" id="courses">All Issues</button>
-      <button mat-flat-button color="primary" *ngIf="auth.isAuthenticated === false" (click)="open()" id="login">
-        Login
-      </button>
-      <button
-        mat-flat-button
-        color="primary"
-        [routerLink]="['/admin']"
-        *ngIf="auth.isAuthenticated && auth.isAdmin"
-        id="admin"
-      >
+      <button mat-flat-button color="primary" *ngIf="!auth.isAuthenticated()" (click)="open()" id="login">Login</button>
+      <button mat-flat-button color="primary" [routerLink]="['/admin']" *ngIf="auth.isLoggedInAsAdmin()" id="admin">
         Admin
       </button>
-      <button mat-flat-button color="primary" *ngIf="auth.isAuthenticated" (click)="logout()" id="logout">
+      <button mat-flat-button color="primary" *ngIf="auth.isAuthenticated()" (click)="logout()" id="logout">
         Logout
       </button>
     </mat-toolbar>
@@ -53,11 +45,13 @@ import { LoginComponent } from '../modals/login.component';
   ],
 })
 export class MenuComponent {
+  public auth = inject(AuthService);
+  private dialog = inject(MatDialog);
+  private router = inject(Router);
+
   public isNavbarCollapsed = true;
   email = '';
   password = '';
-
-  constructor(public auth: AuthService, private dialog: MatDialog, private router: Router) {}
 
   open() {
     const dialogRef = this.dialog.open(LoginComponent, {

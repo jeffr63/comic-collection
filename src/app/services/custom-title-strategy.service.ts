@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { RouterStateSnapshot, TitleStrategy } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
@@ -6,6 +6,8 @@ import { Title } from '@angular/platform-browser';
   providedIn: 'root',
 })
 export class CustomTitleStrategyService extends TitleStrategy {
+  private title = inject(Title);
+
   override updateTitle(snapshot: RouterStateSnapshot): void {
     const title = this.buildTitle(snapshot);
     if (title) {
@@ -13,7 +15,7 @@ export class CustomTitleStrategyService extends TitleStrategy {
     }
   }
 
-  constructor(private title: Title) {
+  constructor() {
     super();
   }
 }

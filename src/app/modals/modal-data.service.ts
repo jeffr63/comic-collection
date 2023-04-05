@@ -10,8 +10,6 @@ export class ModalDataService {
     warning: '',
   };
 
-  constructor() {}
-
   setDeleteModalOptions(options: any) {
     this.deleteModalOptions = options;
   }

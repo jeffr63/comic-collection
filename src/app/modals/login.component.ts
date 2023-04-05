@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
@@ -97,14 +97,15 @@ import { MatInputModule } from '@angular/material/input';
   ],
 })
 export class LoginComponent implements OnInit {
+  public dialogRef = inject(MatDialogRef<LoginComponent>);
+  private fb = inject(FormBuilder);
+
   user = {
     email: '',
     password: '',
   };
   loginForm!: FormGroup;
   flag = true;
-
-  constructor(public dialogRef: MatDialogRef<LoginComponent>, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({

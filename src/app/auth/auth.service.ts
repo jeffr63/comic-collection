@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, computed, signal } from '@angular/core';
 
 class AuthToken {
   token: string = '';
@@ -11,8 +11,10 @@ class AuthToken {
   providedIn: 'root',
 })
 export class AuthService {
-  public isAdmin = false;
-  public isAuthenticated = false;
+  public isAdmin = signal(false);
+  public isAuthenticated = signal(false);
+  public isLoggedIn = computed(() => this.isAuthenticated());
+  public isLoggedInAsAdmin = computed(() => this.isAuthenticated() && this.isAdmin());
 
   async login(email: string, password: string) {
     const body = JSON.stringify({ email: email, password: password });
@@ -36,16 +38,16 @@ export class AuthService {
         expires: token.exp,
       };
       localStorage.setItem('tct_auth', JSON.stringify(auth));
-      this.isAuthenticated = true;
-      this.isAdmin = response.user.role === 'admin' ? true : false;
+      this.isAuthenticated.set(true);
+      this.isAdmin.set(response.user.role === 'admin' ? true : false);
     }
     return response;
   }
 
   logout(): void {
     localStorage.removeItem('tct_auth');
-    this.isAuthenticated = false;
-    this.isAdmin = false;
+    this.isAuthenticated.set(false);
+    this.isAdmin.set(false);
   }
 
   checkLogin() {
@@ -57,8 +59,8 @@ export class AuthService {
 
     let now = Date.now() / 1000;
     if (auth.expires > now) {
-      this.isAuthenticated = true;
-      this.isAdmin = auth.role === 'admin' ? true : false;
+      this.isAuthenticated.set(true);
+      this.isAdmin.set(auth.role === 'admin' ? true : false);
       // !!letting token expire after jwt expires
       // keep logged in for another hour
       // auth.expires = auth.expires + 3600;
@@ -81,13 +83,5 @@ export class AuthService {
     );
 
     return JSON.parse(jsonPayload);
-  }
-
-  isLoggedIn() {
-    return this.isAuthenticated;
-  }
-
-  isLoggedInAsAdmin() {
-    return this.isAuthenticated && this.isAdmin;
   }
 }

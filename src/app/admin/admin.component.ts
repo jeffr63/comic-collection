@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -75,5 +75,5 @@ import { Router, RouterLink } from '@angular/router';
   ],
 })
 export default class AdminComponent {
-  constructor(router: Router) {}
+  public router = inject(Router);
 }

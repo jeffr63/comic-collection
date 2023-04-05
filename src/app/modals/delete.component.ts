@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
@@ -42,13 +42,14 @@ import { ModalDataService } from './modal-data.service';
   ],
 })
 export class DeleteComponent implements OnInit {
+  public dialog = inject(MatDialogRef<DeleteComponent>)
+  private modalDataService = inject(ModalDataService);
+
   modalOptions = {
     title: '',
     body: '',
     warning: '',
   };
-
-  constructor(public dialog: MatDialogRef<DeleteComponent>, private modalDataService: ModalDataService) {}
 
   ngOnInit() {
     this.modalOptions = this.modalDataService.getDeleteModalOtions();
