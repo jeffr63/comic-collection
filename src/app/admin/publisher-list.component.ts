@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
@@ -20,7 +20,7 @@ import { PublisherService } from '../services/publisher.service';
   template: `
     <section class="mt-5">
       <app-display-table
-        *ngIf="publishers"
+        *ngIf="this.publisherService.publishers()"
         [isAuthenticated]="true"
         [isFilterable]="true"
         [includeAdd]="true"
@@ -28,7 +28,7 @@ import { PublisherService } from '../services/publisher.service';
         [paginationSizes]="[5, 10, 25, 100]"
         [defaultPageSize]="10"
         [disableClear]="true"
-        [tableData]="publishers()"
+        [tableData]="this.publisherService.publishers()"
         [tableColumns]="columns"
         (add)="newPublisher()"
         (delete)="deletePublisher($event)"
@@ -66,10 +66,8 @@ export default class PublisherListComponent implements OnInit {
     { key: 'action', name: '', width: '', type: 'action', position: 'left' },
   ];
 
-  publishers = signal<Publisher[]>([]);
-
   async ngOnInit() {
-    await this.getAllPublishers();
+    await this.publisherService.getAll();
   }
 
   deletePublisher(id: number) {
@@ -92,16 +90,10 @@ export default class PublisherListComponent implements OnInit {
 
   async delete(id: number) {
     await this.publisherService.delete(id);
-    this.getAllPublishers();
   }
 
   editPublisher(id: number) {
     this.router.navigate(['/admin/publisher', id]);
-  }
-
-  async getAllPublishers() {
-    const publishers = await this.publisherService.getAll();
-    this.publishers.set(publishers);
   }
 
   newPublisher() {

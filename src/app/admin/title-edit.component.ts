@@ -162,8 +162,8 @@ export default class TitleEditComponent implements OnInit {
       title: ['', Validators.required],
     });
 
-    const publishers = await this.publisherService.getAll();
-    const sorted = _.orderBy(publishers, 'name', 'asc');
+    await this.publisherService.getAll();
+    const sorted = _.orderBy(this.publisherService.publishers(), 'name', 'asc');
     this.publishers.set(sorted);
     this.filteredPublishers.set(sorted);
 

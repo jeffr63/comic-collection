@@ -14,7 +14,7 @@ import { TitleService } from '../services/title.service';
   template: `
     <section class="mt-5">
       <app-display-table
-        *ngIf="titles"
+        *ngIf="titleService.titles()"
         [includeAdd]="false"
         [isAuthenticated]="false"
         [isFilterable]="true"
@@ -22,7 +22,7 @@ import { TitleService } from '../services/title.service';
         [paginationSizes]="[5, 10, 25, 100]"
         [defaultPageSize]="10"
         [disableClear]="true"
-        [tableData]="titles()"
+        [tableData]="titleService.titles()"
         [tableColumns]="columns"
         (open)="open($event)"
       ></app-display-table>
@@ -68,16 +68,9 @@ export default class ByTitleListComponent implements OnInit {
       position: 'left',
     },
   ];
-  loading = signal(false);
-  titles = signal<Title[]>([]);
 
-  ngOnInit(): void {
-    this.getAllTitles();
-  }
-
-  async getAllTitles() {
-    const titles = await this.titleService.getAll();
-    this.titles.set(titles);
+  async ngOnInit() {
+    await this.titleService.getAll();
   }
 
   open(id: number) {

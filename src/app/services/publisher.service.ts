@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 import { Publisher } from '../models/publisher';
 
 @Injectable({ providedIn: 'root' })
 export class PublisherService {
   publushersUrl = 'http://localhost:3000/publishers';
+  public publishers = signal<Publisher[]>([]);
 
   async add(publisher: Publisher): Promise<Publisher> {
     const response = await fetch(this.publushersUrl, {
@@ -14,8 +15,8 @@ export class PublisherService {
       },
       body: JSON.stringify(publisher),
     });
+    await this.getAll();
     const newTitle = (await response.json()) as unknown as Publisher;
-
     return newTitle;
   }
 
@@ -28,11 +29,12 @@ export class PublisherService {
         'Content-type': 'application/json',
       },
     });
+    await this.getAll();
   }
 
   async getAll() {
     const response = await fetch(this.publushersUrl);
-    return await response.json();
+    this.publishers.set(await response.json());
   }
 
   async getById(id: number): Promise<any> {
@@ -59,6 +61,7 @@ export class PublisherService {
       },
       body: JSON.stringify(publisher),
     });
+    await this.getAll();
     return await response.json();
   }
 }

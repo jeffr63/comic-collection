@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 import { User } from '../models/user';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
   usersUrl = 'http://localhost:3000/users';
+  users = signal<User[]>([]);
 
   async add(user: User): Promise<User> {
     const response = await fetch(this.usersUrl, {
@@ -14,8 +15,8 @@ export class UserService {
       },
       body: JSON.stringify(user),
     });
+    await this.getAll();
     const newUser = (await response.json()) as unknown as User;
-
     return newUser;
   }
 
@@ -28,11 +29,12 @@ export class UserService {
         'Content-type': 'application/json',
       },
     });
+    await this.getAll();
   }
 
   async getAll() {
     const response = await fetch(this.usersUrl);
-    return await response.json();
+    this.users.set(await response.json());
   }
 
   async getById(id: number): Promise<any> {
@@ -60,6 +62,7 @@ export class UserService {
       },
       body: JSON.stringify(user),
     });
+    await this.getAll();
     return await response.json();
   }
 }

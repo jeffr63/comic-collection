@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
@@ -9,7 +9,6 @@ import { Column } from '../models/column';
 import { DeleteComponent } from '../modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table.component';
 import { ModalDataService } from '../modals/modal-data.service';
-import { User } from '../models/user';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -19,7 +18,7 @@ import { UserService } from '../services/user.service';
   template: `
     <section class="mt-5">
       <app-display-table
-        *ngIf="users"
+        *ngIf="userService.users()"
         [isAuthenticated]="true"
         [isFilterable]="true"
         [includeAdd]="false"
@@ -27,7 +26,7 @@ import { UserService } from '../services/user.service';
         [paginationSizes]="[5, 10, 25, 100]"
         [defaultPageSize]="10"
         [disableClear]="true"
-        [tableData]="users()"
+        [tableData]="userService.users()"
         [tableColumns]="columns"
         (delete)="deleteUser($event)"
         (edit)="editUser($event)"
@@ -83,10 +82,8 @@ export default class UserListComponent implements OnInit {
     },
   ];
 
-  users = signal<User[]>([]);
-
   async ngOnInit() {
-    await this.getAllUsers();
+    await this.userService.getAll();
   }
 
   deleteUser(id: number) {
@@ -109,15 +106,9 @@ export default class UserListComponent implements OnInit {
 
   async delete(id: number) {
     await this.userService.delete(id);
-    this.getAllUsers();
   }
 
   editUser(id: number) {
     this.router.navigate(['/admin/users', id]);
-  }
-
-  async getAllUsers() {
-    const users = (await this.userService.getAll()) as unknown as User[];
-    this.users.set(users);
   }
 }

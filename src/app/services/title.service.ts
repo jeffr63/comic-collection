@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 import { Title } from '../models/title';
 
 @Injectable({ providedIn: 'root' })
 export class TitleService {
   titlesUrl = 'http://localhost:3000/titles';
+  titles = signal<Title[]>([]);
 
   async add(title: Title): Promise<Title> {
     const response = await fetch(this.titlesUrl, {
@@ -14,8 +15,8 @@ export class TitleService {
       },
       body: JSON.stringify(title),
     });
+    await this.getAll();
     const newTitle = (await response.json()) as unknown as Title;
-
     return newTitle;
   }
 
@@ -28,11 +29,12 @@ export class TitleService {
         'Content-type': 'application/json',
       },
     });
+    await this.getAll();
   }
 
   async getAll() {
     const response = await fetch(this.titlesUrl);
-    return await response.json();
+    this.titles.set(await response.json());
   }
 
   async getById(id: number): Promise<any> {
@@ -59,6 +61,7 @@ export class TitleService {
       },
       body: JSON.stringify(title),
     });
+    await this.getAll();
     return await user.json();
   }
 }

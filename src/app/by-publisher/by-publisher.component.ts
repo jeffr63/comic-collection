@@ -1,20 +1,19 @@
-import { Component, inject, OnInit, signal } from "@angular/core";
-import { NgIf } from "@angular/common";
-import { Router } from "@angular/router";
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
-import { Column } from "../models/column";
-import { DisplayTableComponent } from "../shared/display-table.component";
-import { Publisher } from "../models/publisher";
-import { PublisherService } from "../services/publisher.service";
+import { Column } from '../models/column';
+import { DisplayTableComponent } from '../shared/display-table.component';
+import { PublisherService } from '../services/publisher.service';
 
 @Component({
-  selector: "app-by-publisher",
+  selector: 'app-by-publisher',
   standalone: true,
   imports: [DisplayTableComponent, NgIf],
   template: `
     <section class="mt-5">
       <app-display-table
-        *ngIf="publishers"
+        *ngIf="publisherService.publishers()"
         [includeAdd]="false"
         [isAuthenticated]="false"
         [isFilterable]="true"
@@ -22,7 +21,7 @@ import { PublisherService } from "../services/publisher.service";
         [paginationSizes]="[5, 10, 25, 100]"
         [defaultPageSize]="10"
         [disableClear]="true"
-        [tableData]="publishers()"
+        [tableData]="publisherService.publishers()"
         [tableColumns]="columns"
         (open)="open($event)"
       ></app-display-table>
@@ -45,35 +44,27 @@ export default class ByPublisherComponent implements OnInit {
 
   columns: Column[] = [
     {
-      key: "name",
-      name: "Publisher",
-      width: "300px",
-      type: "sort",
-      position: "left",
+      key: 'name',
+      name: 'Publisher',
+      width: '300px',
+      type: 'sort',
+      position: 'left',
       sortDefault: true,
     },
     {
-      key: "view",
-      name: "",
-      width: "50px",
-      type: "view",
-      position: "left",
+      key: 'view',
+      name: '',
+      width: '50px',
+      type: 'view',
+      position: 'left',
     },
   ];
 
-  loading = signal(false);
-  publishers = signal<Publisher[]>([]);
-
-  ngOnInit(): void {
-    this.getAllPublishers();
-  }
-
-  async getAllPublishers() {
-    const publishers = await this.publisherService.getAll();
-    this.publishers.set(publishers);
+  async ngOnInit() {
+    await this.publisherService.getAll();
   }
 
   open(id: number) {
-    this.router.navigate(["/by_publisher", id]);
+    this.router.navigate(['/by_publisher', id]);
   }
 }
