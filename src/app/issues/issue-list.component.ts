@@ -1,5 +1,5 @@
+import { Component, inject, OnInit } from '@angular/core';
 import { NgIf } from '@angular/common';
-import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MatDialog } from '@angular/material/dialog';
@@ -21,7 +21,7 @@ import { ModalDataService } from '../modals/modal-data.service';
   template: `
     <section class="mt-5">
       <app-display-table
-        *ngIf="issues"
+        *ngIf="issueService.issues()"
         [includeAdd]="true"
         [isAuthenticated]="authService.isAuthenticated()"
         [isFilterable]="true"
@@ -29,7 +29,7 @@ import { ModalDataService } from '../modals/modal-data.service';
         [paginationSizes]="[5, 10, 25, 100]"
         [defaultPageSize]="10"
         [disableClear]="true"
-        [tableData]="issues()"
+        [tableData]="this.issueService.issues()"
         [tableColumns]="columns"
         (add)="newIssue()"
         (delete)="deleteIssue($event)"
@@ -98,8 +98,6 @@ export default class IssueAllListComponent implements OnInit {
       position: 'left',
     },
   ];
-  loading = signal<boolean>(false);
-  issues = signal<Issue[]>([]);
 
   async ngOnInit() {
     await this.getAllIssues();
@@ -134,8 +132,7 @@ export default class IssueAllListComponent implements OnInit {
   }
 
   async getAllIssues() {
-    const issues = await this.issueService.getAll();
-    this.issues.set(issues);
+    await this.issueService.getAll();
   }
 
   newIssue() {

@@ -9,7 +9,6 @@ import { Column } from '../models/column';
 import { DeleteComponent } from '../modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table.component';
 import { ModalDataService } from '../modals/modal-data.service';
-import { Title } from '../models/title';
 import { TitleService } from '../services/title.service';
 
 @Component({

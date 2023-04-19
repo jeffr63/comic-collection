@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 import { Issue } from '../models/issue';
 
 @Injectable({ providedIn: 'root' })
 export class IssueService {
   issuesUrl = 'http://localhost:3000/issues';
+  issues = signal<Issue[]>([]);
 
   async add(issue: Issue): Promise<Issue> {
     const response = await fetch(this.issuesUrl, {
@@ -14,8 +15,8 @@ export class IssueService {
       },
       body: JSON.stringify(issue),
     });
+    await this.getAll();
     const newIssue = (await response.json()) as unknown as Issue;
-
     return newIssue;
   }
 
@@ -28,11 +29,12 @@ export class IssueService {
         'Content-type': 'application/json',
       },
     });
+    await this.getAll();
   }
 
   async getAll() {
     const response = await fetch(this.issuesUrl);
-    return await response.json();
+     this.issues.set(await response.json());
   }
 
   async getById(id: number): Promise<any> {
@@ -59,6 +61,7 @@ export class IssueService {
       },
       body: JSON.stringify(issue),
     });
+    await this.getAll();
     return await response.json();
   }
 }

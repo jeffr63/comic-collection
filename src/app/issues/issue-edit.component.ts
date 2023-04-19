@@ -1,7 +1,7 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
-import { AsyncPipe, Location, NgForOf, NgIf } from '@angular/common';
+import { AsyncPipe, CommonModule, Location, NgForOf, NgIf } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -42,7 +42,7 @@ import { TitleService } from '../services/title.service';
       <mat-card-title>Issue Edit</mat-card-title>
       <mat-card-content>
         <form *ngIf="issueEditForm" [formGroup]="issueEditForm">
-          <mat-form-field appearance="outline" *ngIf="publishers() as publishers">
+          <mat-form-field appearance="outline" *ngIf="this.publisherService.publishers() as publishers">
             <mat-label for="publisher">Publisher</mat-label>
             <input
               matInput
@@ -50,7 +50,7 @@ import { TitleService } from '../services/title.service';
               #inputPublisher
               formControlName="publisher"
               [matAutocomplete]="publisherAuto"
-              (keyup)="onAutocompleteKeyUpPublisher(inputPublisher.value, publishers)"
+              (keyup)="onAutocompleteKeyUpPublisher(inputPublisher.value, this.publisherService.publishers())"
             />
             <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
               <mat-option *ngFor="let publisher of filteredPublishers()" [value]="publisher.name">
@@ -70,7 +70,7 @@ import { TitleService } from '../services/title.service';
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field appearance="outline" *ngIf="titles() as titles">
+          <mat-form-field appearance="outline" *ngIf="this.titleService.titles() as titles">
             <mat-label for="title">Title</mat-label>
             <input
               matInput
@@ -78,7 +78,7 @@ import { TitleService } from '../services/title.service';
               #inputTitle
               formControlName="title"
               [matAutocomplete]="titleAuto"
-              (keyup)="onAutocompleteKeyUpTitle(inputTitle.value, titles)"
+              (keyup)="onAutocompleteKeyUpTitle(inputTitle.value, this.titleService.titles())"
             />
             <mat-autocomplete #titleAuto="matAutocomplete" autoActiveFirstOption>
               <mat-option *ngFor="let title of filteredTitles()" [value]="title.title">
@@ -184,7 +184,6 @@ import { TitleService } from '../services/title.service';
 
   styles: [
     `
-      /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
       mat-card {
         margin: 30px;
         padding-left: 15px;
@@ -216,9 +215,7 @@ export default class IssueEditComponent implements OnInit {
   titleService = inject(TitleService);
   fb = inject(FormBuilder);
 
-  publishers = signal<Publisher[]>([]);
   filteredPublishers = signal<Publisher[]>([]);
-  titles = signal<Title[]>([]);
   filteredTitles = signal<Title[]>([]);
   isNew = true;
   issueEditForm!: FormGroup;
@@ -233,14 +230,12 @@ export default class IssueEditComponent implements OnInit {
       url: [''],
     });
 
-    const publishers = (await this.publisherService.getAll()) as unknown as Publisher[];
-    const sortedPublishers = _.orderBy(publishers, 'name', 'asc');
-    this.publishers.set(sortedPublishers);
+    await this.publisherService.getAll();
+    const sortedPublishers = _.orderBy(this.publisherService.publishers(), 'name', 'asc');
     this.filteredPublishers.set(sortedPublishers);
 
-    const titles = (await this.titleService.getAll()) as unknown as Title[];
-    const sortedTitles = _.orderBy(titles, 'title', 'asc');
-    this.titles.set(sortedTitles);
+    await this.titleService.getAll();
+    const sortedTitles = _.orderBy(this.titleService.titles(), 'title', 'asc');
     this.filteredTitles.set(sortedTitles);
 
     const id = this.route.snapshot.paramMap.get('id');
@@ -256,7 +251,9 @@ export default class IssueEditComponent implements OnInit {
       if (control.value === '') {
         return null;
       }
-      selectedItem = this.publishers().find((publisher: Publisher) => publisher.name === control.value);
+      selectedItem = this.publisherService
+        .publishers()
+        .find((publisher: Publisher) => publisher.name === control.value);
       if (selectedItem) {
         return null; /* valid option selected */
       }
@@ -270,7 +267,7 @@ export default class IssueEditComponent implements OnInit {
       if (control.value === '') {
         return null;
       }
-      selectedItem = this.titles().find((title: Title) => title.title === control.value);
+      selectedItem = this.titleService.titles().find((title: Title) => title.title === control.value);
       if (selectedItem) {
         return null; /* valid option selected */
       }

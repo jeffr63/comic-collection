@@ -40,7 +40,7 @@ import { PublisherService } from '../services/publisher.service';
       <mat-card-title>Title Edit</mat-card-title>
       <mat-card-content>
         <form *ngIf="titleEditForm" [formGroup]="titleEditForm">
-          <mat-form-field appearance="outline" *ngIf="publishers() as publishers">
+          <mat-form-field appearance="outline" *ngIf="this.publisherService.publishers() as publishers">
             <mat-label>Publisher</mat-label>
             <input
               matInput
@@ -48,7 +48,7 @@ import { PublisherService } from '../services/publisher.service';
               #inputPublisher
               formControlName="publisher"
               [matAutocomplete]="publisherAuto"
-              (keyup)="onAutocompleteKeyUp(inputPublisher.value, publishers)"
+              (keyup)="onAutocompleteKeyUp(inputPublisher.value, this.publisherService.publishers())"
             />
             <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
               <mat-option *ngFor="let publisher of filteredPublishers()" [value]="publisher.name">
@@ -151,7 +151,6 @@ export default class TitleEditComponent implements OnInit {
   publisherService = inject(PublisherService);
 
   titleEditForm!: FormGroup;
-  publishers = signal<Publisher[]>([]);
   filteredPublishers = signal<Publisher[]>([]);
   private title = <Title>{};
   isNew = true;
@@ -164,7 +163,6 @@ export default class TitleEditComponent implements OnInit {
 
     await this.publisherService.getAll();
     const sorted = _.orderBy(this.publisherService.publishers(), 'name', 'asc');
-    this.publishers.set(sorted);
     this.filteredPublishers.set(sorted);
 
     const id = this.route.snapshot.paramMap.get('id');
@@ -242,7 +240,9 @@ export default class TitleEditComponent implements OnInit {
       if (control.value === '') {
         return null;
       }
-      selectedItem = this.publishers().find((publisher: Publisher) => publisher.name === control.value);
+      selectedItem = this.publisherService
+        .publishers()
+        .find((publisher: Publisher) => publisher.name === control.value);
       if (selectedItem) {
         return null; /* valid option selected */
       }

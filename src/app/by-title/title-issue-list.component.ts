@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
@@ -9,7 +9,6 @@ import { AuthService } from '../auth/auth.service';
 import { Column } from '../models/column';
 import { DeleteComponent } from '../modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table.component';
-import { Issue } from '../models/issue';
 import { ModalDataService } from '../modals/modal-data.service';
 import { TitleService } from '../services/title.service';
 import { IssueService } from '../issues/issue.service';
@@ -22,7 +21,7 @@ import { Title } from '../models/title';
   template: `
     <section class="mt-5">
       <app-display-table
-        *ngIf="issues"
+        *ngIf="titleIssues"
         [includeAdd]="true"
         [isAuthenticated]="authService.isAuthenticated()"
         [isFilterable]="true"
@@ -30,7 +29,7 @@ import { Title } from '../models/title';
         [paginationSizes]="[5, 10, 25, 100]"
         [defaultPageSize]="10"
         [disableClear]="true"
-        [tableData]="issues()"
+        [tableData]="titleIssues()"
         [tableColumns]="columns"
         (add)="newIssue()"
         (delete)="deleteIssue($event)"
@@ -103,8 +102,10 @@ export default class TitleIssueListComponent implements OnInit {
       position: 'left',
     },
   ];
-  issues = signal<Issue[]>([]);
-  title = '';
+  title = signal('');
+  titleIssues = computed(() => {
+    return this.issueService.issues().filter((issue) => issue.title === this.title());
+  });
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -114,14 +115,9 @@ export default class TitleIssueListComponent implements OnInit {
   }
 
   async loadData(id: number) {
+    await this.issueService.getAll();
     const title = (await this.titleService.getById(id)) as unknown as Title;
-    this.title = title.title;
-    await this.getIssuesForTitle(title.title);
-  }
-
-  async getIssuesForTitle(title: string) {
-    const issues = await this.issueService.search(`title=${title}`);
-    this.issues.set(issues);
+    this.title.set(title.title);
   }
 
   deleteIssue(id: number) {
@@ -145,7 +141,6 @@ export default class TitleIssueListComponent implements OnInit {
 
   async delete(id: number) {
     await this.issueService.delete(id);
-    this.getIssuesForTitle(this.title);
   }
 
   editIssue(id: number) {
