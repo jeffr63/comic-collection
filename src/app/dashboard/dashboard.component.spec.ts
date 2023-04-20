@@ -10,7 +10,7 @@ import { DOMHelperRoutines } from '../../testing/dom.helpers';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { EntityDataModule } from '@ngrx/data';
-import { CourseService } from '../issues/issue.service';
+import { CourseService } from '../services/issue.service';
 import { CourseData } from '../models/issue';
 
 describe('DashboardComponent', () => {
@@ -46,26 +46,24 @@ describe('DashboardComponent', () => {
     Courses: {},
   };
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [DashboardComponent],
-        imports: [
-          BrowserAnimationsModule,
-          NgxChartsModule,
-          HttpClientTestingModule,
-          StoreModule.forRoot({}),
-          EffectsModule.forRoot([]),
-          EntityDataModule.forRoot({
-            entityMetadata: entityMetaData,
-          }),
-        ],
-        providers: [],
-      }).compileComponents();
-      mockCourseService = TestBed.inject(CourseService);
-      spyOn(mockCourseService, 'getAll').and.returnValue(of(mockData));
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [DashboardComponent],
+      imports: [
+        BrowserAnimationsModule,
+        NgxChartsModule,
+        HttpClientTestingModule,
+        StoreModule.forRoot({}),
+        EffectsModule.forRoot([]),
+        EntityDataModule.forRoot({
+          entityMetadata: entityMetaData,
+        }),
+      ],
+      providers: [],
+    }).compileComponents();
+    mockCourseService = TestBed.inject(CourseService);
+    spyOn(mockCourseService, 'getAll').and.returnValue(of(mockData));
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DashboardComponent);

@@ -10,7 +10,7 @@ import { Column } from '../models/column';
 import { DeleteComponent } from '../modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table.component';
 import { Issue } from '../models/issue';
-import { IssueService } from './issue.service';
+import { IssueService } from '../services/issue.service';
 import { ModalDataService } from '../modals/modal-data.service';
 
 @Component({

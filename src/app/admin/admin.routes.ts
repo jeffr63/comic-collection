@@ -2,9 +2,9 @@ import { Route } from '@angular/router';
 import { inject } from '@angular/core';
 
 import { AuthService } from '../auth/auth.service';
-import { PublisherResolverService } from '../services/publisher-resolver.service';
-import { TitleResolverService } from '../services/title-resolver.service';
-import { UserResolverService } from '../services/user-resolver.service';
+import { PublisherResolverService } from '../resolvers/publisher-resolver.service';
+import { TitleResolverService } from '../resolvers/title-resolver.service';
+import { UserResolverService } from '../resolvers/user-resolver.service';
 
 export default [
   {

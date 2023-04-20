@@ -13,7 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import * as _ from 'lodash';
 
 import { Issue } from '../models/issue';
-import { IssueService } from './issue.service';
+import { IssueService } from '../services/issue.service';
 import { Publisher } from '../models/publisher';
 import { PublisherService } from '../services/publisher.service';
 import { Title } from '../models/title';

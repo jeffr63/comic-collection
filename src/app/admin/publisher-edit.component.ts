@@ -21,8 +21,8 @@ import { PublisherService } from '../services/publisher.service';
     MatIconModule,
     MatInputModule,
     NgIf,
-    RouterLink,
     ReactiveFormsModule,
+    RouterLink,
   ],
 
   template: `

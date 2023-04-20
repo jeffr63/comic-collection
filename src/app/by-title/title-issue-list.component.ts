@@ -11,7 +11,7 @@ import { DeleteComponent } from '../modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table.component';
 import { ModalDataService } from '../modals/modal-data.service';
 import { TitleService } from '../services/title.service';
-import { IssueService } from '../issues/issue.service';
+import { IssueService } from '../services/issue.service';
 import { Title } from '../models/title';
 
 @Component({

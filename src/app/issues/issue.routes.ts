@@ -2,7 +2,7 @@ import { inject } from '@angular/core';
 import { Route } from '@angular/router';
 
 import { AuthService } from '../auth/auth.service';
-import { IssueResolverService } from './issue-resolver.service';
+import { IssueResolverService } from '../resolvers/issue-resolver.service';
 
 export default [
   {

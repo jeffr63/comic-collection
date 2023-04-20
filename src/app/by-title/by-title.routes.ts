@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 
-import { ByTitleResolverService } from './by-title-resolver.service';
+import { TitleResolverService } from '../resolvers/title-resolver.service';
 
 export default [
   {
@@ -12,7 +12,7 @@ export default [
       },
       {
         path: ':id',
-        title: ByTitleResolverService,
+        title: TitleResolverService,
         loadComponent: () => import('./title-issue-list.component'),
       },
     ],

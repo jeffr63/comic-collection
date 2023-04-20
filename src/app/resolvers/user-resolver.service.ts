@@ -1,21 +1,21 @@
 import { inject, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 
-import { PublisherService } from './publisher.service';
+import { UserService } from '../services/user.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class PublisherResolverService {
-  publisherService = inject(PublisherService);
+export class UserResolverService {
+  userService = inject(UserService);
 
   async resolve(route: ActivatedRouteSnapshot) {
     const id = route.paramMap.get('id');
     if (id == 'new') {
-      return 'New Publisher';
+      return 'New User';
     } else {
-      const publisher = await this.publisherService.getById(Number(id));
-      return publisher.name;
+      const user = await this.userService.getById(Number(id));
+      return user.name;
     }
   }
 }
