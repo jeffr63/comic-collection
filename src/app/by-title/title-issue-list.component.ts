@@ -23,7 +23,7 @@ import { Title } from '../shared/models/title';
       <app-display-table
         *ngIf="titleIssues"
         [includeAdd]="true"
-        [isAuthenticated]="authService.isAuthenticated()"
+        [isAuthenticated]="authService.isLoggedIn()"
         [isFilterable]="true"
         [isPageable]="true"
         [paginationSizes]="[5, 10, 25, 100]"

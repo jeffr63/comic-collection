@@ -26,13 +26,11 @@ import { LoginComponent } from '../shared/modals/login.component';
       <button mat-flat-button color="primary" [routerLink]="['/by_publisher']" id="by_publishers">By Publisher</button>
       <button mat-flat-button color="primary" [routerLink]="['/by_title']" id="by_titles">By Title</button>
       <button mat-flat-button color="primary" [routerLink]="['/issues']" id="courses">All Issues</button>
-      <button mat-flat-button color="primary" *ngIf="!auth.isAuthenticated()" (click)="open()" id="login">Login</button>
+      <button mat-flat-button color="primary" *ngIf="!auth.isLoggedIn()" (click)="open()" id="login">Login</button>
       <button mat-flat-button color="primary" [routerLink]="['/admin']" *ngIf="auth.isLoggedInAsAdmin()" id="admin">
         Admin
       </button>
-      <button mat-flat-button color="primary" *ngIf="auth.isAuthenticated()" (click)="logout()" id="logout">
-        Logout
-      </button>
+      <button mat-flat-button color="primary" *ngIf="auth.isLoggedIn()" (click)="logout()" id="logout">Logout</button>
     </mat-toolbar>
   `,
 

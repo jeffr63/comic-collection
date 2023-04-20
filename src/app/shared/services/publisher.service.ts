@@ -1,14 +1,15 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, computed, signal } from '@angular/core';
 
 import { Publisher } from '../models/publisher';
 
 @Injectable({ providedIn: 'root' })
 export class PublisherService {
-  publushersUrl = 'http://localhost:3000/publishers';
-  public publishers = signal<Publisher[]>([]);
+  private publishersUrl = 'http://localhost:3000/publishers';
+  private publishers$$$ = signal<Publisher[]>([]);
+  publishers = computed(() => this.publishers$$$());
 
   async add(publisher: Publisher): Promise<Publisher> {
-    const response = await fetch(this.publushersUrl, {
+    const response = await fetch(this.publishersUrl, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -21,7 +22,7 @@ export class PublisherService {
   }
 
   async delete(id: number) {
-    const url = `${this.publushersUrl}/${id}`;
+    const url = `${this.publishersUrl}/${id}`;
 
     await fetch(url, {
       method: 'DELETE',
@@ -33,12 +34,12 @@ export class PublisherService {
   }
 
   async getAll() {
-    const response = await fetch(this.publushersUrl);
-    this.publishers.set(await response.json());
+    const response = await fetch(this.publishersUrl);
+    this.publishers$$$.set(await response.json());
   }
 
   async getById(id: number): Promise<any> {
-    const url = `${this.publushersUrl}/${id}`;
+    const url = `${this.publishersUrl}/${id}`;
     const response = await fetch(url);
     return await response.json();
   }
@@ -49,12 +50,12 @@ export class PublisherService {
       return Promise.resolve([]);
     }
 
-    const response = await fetch(`${this.publushersUrl}?${term}`);
+    const response = await fetch(`${this.publishersUrl}?${term}`);
     return (await response.json()) as unknown as Publisher[];
   }
 
   async update(publisher: Publisher): Promise<any> {
-    const response = await fetch(`${this.publushersUrl}/${publisher.id}`, {
+    const response = await fetch(`${this.publishersUrl}/${publisher.id}`, {
       method: 'PATCH',
       headers: {
         'Content-type': 'application/json',

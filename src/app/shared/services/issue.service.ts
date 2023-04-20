@@ -1,11 +1,12 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, computed, signal } from '@angular/core';
 
 import { Issue } from '../models/issue';
 
 @Injectable({ providedIn: 'root' })
 export class IssueService {
-  issuesUrl = 'http://localhost:3000/issues';
-  issues = signal<Issue[]>([]);
+  private issuesUrl = 'http://localhost:3000/issues';
+  private issues$$$ = signal<Issue[]>([]);
+  issues = computed(() => this.issues$$$());
 
   async add(issue: Issue): Promise<Issue> {
     const response = await fetch(this.issuesUrl, {
@@ -34,7 +35,7 @@ export class IssueService {
 
   async getAll() {
     const response = await fetch(this.issuesUrl);
-    this.issues.set(await response.json());
+    this.issues$$$.set(await response.json());
   }
 
   async getById(id: number): Promise<any> {

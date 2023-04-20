@@ -23,7 +23,7 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
       <app-display-table
         *ngIf="issueService.issues()"
         [includeAdd]="true"
-        [isAuthenticated]="authService.isAuthenticated()"
+        [isAuthenticated]="authService.isLoggedIn()"
         [isFilterable]="true"
         [isPageable]="true"
         [paginationSizes]="[5, 10, 25, 100]"
