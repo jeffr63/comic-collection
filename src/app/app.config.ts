@@ -1,5 +1,5 @@
 import { ApplicationConfig } from '@angular/core';
-import { CustomTitleStrategyService } from './resolvers/custom-title-strategy.service';
+import { CustomTitleStrategyService } from './shared/resolvers/custom-title-strategy.service';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { TitleStrategy, provideRouter } from '@angular/router';
 

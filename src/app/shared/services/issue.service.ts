@@ -34,7 +34,7 @@ export class IssueService {
 
   async getAll() {
     const response = await fetch(this.issuesUrl);
-     this.issues.set(await response.json());
+    this.issues.set(await response.json());
   }
 
   async getById(id: number): Promise<any> {

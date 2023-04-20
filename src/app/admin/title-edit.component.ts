@@ -12,10 +12,10 @@ import { MatSelectModule } from '@angular/material/select';
 
 import * as _ from 'lodash';
 
-import { Title } from '../models/title';
-import { TitleService } from '../services/title.service';
-import { Publisher } from '../models/publisher';
-import { PublisherService } from '../services/publisher.service';
+import { Title } from '../shared/models/title';
+import { TitleService } from '../shared/services/title.service';
+import { Publisher } from '../shared/models/publisher';
+import { PublisherService } from '../shared/services/publisher.service';
 
 @Component({
   selector: 'app-title-edit',

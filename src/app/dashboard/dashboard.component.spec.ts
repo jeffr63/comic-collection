@@ -10,8 +10,8 @@ import { DOMHelperRoutines } from '../../testing/dom.helpers';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { EntityDataModule } from '@ngrx/data';
-import { CourseService } from '../services/issue.service';
-import { CourseData } from '../models/issue';
+import { CourseService } from '../shared/services/issue.service';
+import { CourseData } from '../shared/models/issue';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;

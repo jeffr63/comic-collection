@@ -5,14 +5,14 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
 
-import { AuthService } from '../auth/auth.service';
-import { Column } from '../models/column';
-import { DeleteComponent } from '../modals/delete.component';
-import { DisplayTableComponent } from '../shared/display-table.component';
-import { ModalDataService } from '../modals/modal-data.service';
-import { TitleService } from '../services/title.service';
-import { IssueService } from '../services/issue.service';
-import { Title } from '../models/title';
+import { AuthService } from '../shared/services/auth.service';
+import { Column } from '../shared/models/column';
+import { DeleteComponent } from '../shared/modals/delete.component';
+import { DisplayTableComponent } from '../shared/display-table/display-table.component';
+import { ModalDataService } from '../shared/modals/modal-data.service';
+import { TitleService } from '../shared/services/title.service';
+import { IssueService } from '../shared/services/issue.service';
+import { Title } from '../shared/models/title';
 
 @Component({
   selector: 'app-title-issue-list',

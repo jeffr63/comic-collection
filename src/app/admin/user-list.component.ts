@@ -5,11 +5,11 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
 
-import { Column } from '../models/column';
-import { DeleteComponent } from '../modals/delete.component';
-import { DisplayTableComponent } from '../shared/display-table.component';
-import { ModalDataService } from '../modals/modal-data.service';
-import { UserService } from '../services/user.service';
+import { Column } from '../shared/models/column';
+import { DeleteComponent } from '../shared/modals/delete.component';
+import { DisplayTableComponent } from '../shared/display-table/display-table.component';
+import { ModalDataService } from '../shared/modals/modal-data.service';
+import { UserService } from '../shared/services/user.service';
 
 @Component({
   selector: 'app-user-list',

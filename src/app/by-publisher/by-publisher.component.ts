@@ -2,9 +2,9 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 
-import { Column } from '../models/column';
-import { DisplayTableComponent } from '../shared/display-table.component';
-import { PublisherService } from '../services/publisher.service';
+import { Column } from '../shared/models/column';
+import { DisplayTableComponent } from '../shared/display-table/display-table.component';
+import { PublisherService } from '../shared/services/publisher.service';
 
 @Component({
   selector: 'app-by-publisher',

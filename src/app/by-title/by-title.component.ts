@@ -2,10 +2,10 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 
-import { Column } from '../models/column';
-import { DisplayTableComponent } from '../shared/display-table.component';
-import { Title } from '../models/title';
-import { TitleService } from '../services/title.service';
+import { Column } from '../shared/models/column';
+import { DisplayTableComponent } from '../shared/display-table/display-table.component';
+import { Title } from '../shared/models/title';
+import { TitleService } from '../shared/services/title.service';
 
 @Component({
   selector: 'app-by-title-list',

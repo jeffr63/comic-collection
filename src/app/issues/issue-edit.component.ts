@@ -12,12 +12,12 @@ import { MatSelectModule } from '@angular/material/select';
 
 import * as _ from 'lodash';
 
-import { Issue } from '../models/issue';
-import { IssueService } from '../services/issue.service';
-import { Publisher } from '../models/publisher';
-import { PublisherService } from '../services/publisher.service';
-import { Title } from '../models/title';
-import { TitleService } from '../services/title.service';
+import { Issue } from '../shared/models/issue';
+import { IssueService } from '../shared/services/issue.service';
+import { Publisher } from '../shared/models/publisher';
+import { PublisherService } from '../shared/services/publisher.service';
+import { Title } from '../shared/models/title';
+import { TitleService } from '../shared/services/title.service';
 
 @Component({
   selector: 'app-issue-edit',

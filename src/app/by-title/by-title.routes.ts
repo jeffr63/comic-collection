@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 
-import { TitleResolverService } from '../resolvers/title-resolver.service';
+import { TitleResolverService } from '../shared/resolvers/title-resolver.service';
 
 export default [
   {

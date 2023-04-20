@@ -8,8 +8,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
-import { Publisher } from '../models/publisher';
-import { PublisherService } from '../services/publisher.service';
+import { Publisher } from '../shared/models/publisher';
+import { PublisherService } from '../shared/services/publisher.service';
 
 @Component({
   selector: 'app-publisher-edit',

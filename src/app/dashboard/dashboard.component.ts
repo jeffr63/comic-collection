@@ -3,8 +3,8 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import * as _ from 'lodash';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
-import { Issue, IssueData } from '../models/issue';
-import { IssueService } from '../services/issue.service';
+import { Issue, IssueData } from '../shared/models/issue';
+import { IssueService } from '../shared/services/issue.service';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 

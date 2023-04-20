@@ -5,12 +5,12 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
 
-import { Column } from '../models/column';
-import { DeleteComponent } from '../modals/delete.component';
-import { DisplayTableComponent } from '../shared/display-table.component';
-import { ModalDataService } from '../modals/modal-data.service';
-import { Publisher } from '../models/publisher';
-import { PublisherService } from '../services/publisher.service';
+import { Column } from '../shared/models/column';
+import { DeleteComponent } from '../shared/modals/delete.component';
+import { DisplayTableComponent } from '../shared/display-table/display-table.component';
+import { ModalDataService } from '../shared/modals/modal-data.service';
+import { Publisher } from '../shared/models/publisher';
+import { PublisherService } from '../shared/services/publisher.service';
 
 @Component({
   selector: 'app-publisher-list',

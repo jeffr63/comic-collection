@@ -1,12 +1,12 @@
 import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Column } from '../models/column';
-import { PublisherService } from '../services/publisher.service';
-import { TitleService } from '../services/title.service';
-import { DisplayTableComponent } from '../shared/display-table.component';
+import { Column } from '../shared/models/column';
+import { PublisherService } from '../shared/services/publisher.service';
+import { TitleService } from '../shared/services/title.service';
+import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { NgIf } from '@angular/common';
-import { Publisher } from '../models/publisher';
+import { Publisher } from '../shared/models/publisher';
 
 @Component({
   selector: 'app-publisher-title-list',

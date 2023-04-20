@@ -1,8 +1,8 @@
 import { inject } from '@angular/core';
 import { Route } from '@angular/router';
 
-import { AuthService } from '../auth/auth.service';
-import { IssueResolverService } from '../resolvers/issue-resolver.service';
+import { AuthService } from '../shared/services/auth.service';
+import { IssueResolverService } from '../shared/resolvers/issue-resolver.service';
 
 export default [
   {

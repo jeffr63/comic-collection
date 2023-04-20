@@ -9,8 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 
-import { UserService } from '../services/user.service';
-import { User } from '../models/user';
+import { UserService } from '../shared/services/user.service';
+import { User } from '../shared/models/user';
 
 @Component({
   selector: 'app-user-edit',

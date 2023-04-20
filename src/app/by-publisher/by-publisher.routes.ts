@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 
-import { PublisherResolverService } from '../resolvers/publisher-resolver.service';
+import { PublisherResolverService } from '../shared/resolvers/publisher-resolver.service';
 
 export default [
   {
