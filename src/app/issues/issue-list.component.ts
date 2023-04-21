@@ -9,7 +9,6 @@ import { AuthService } from '../shared/services/auth.service';
 import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { Issue } from '../shared/models/issue';
 import { IssueService } from '../shared/services/issue.service';
 import { ModalDataService } from '../shared/modals/modal-data.service';
 

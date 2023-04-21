@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Location, NgIf } from '@angular/common';
@@ -129,7 +129,7 @@ import { User } from '../shared/models/user';
     `,
   ],
 })
-export default class UserEditComponent {
+export default class UserEditComponent implements OnInit {
   route = inject(ActivatedRoute);
   location = inject(Location);
   userService = inject(UserService);
