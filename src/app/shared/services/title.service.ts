@@ -4,12 +4,12 @@ import { Title } from '../models/title';
 
 @Injectable({ providedIn: 'root' })
 export class TitleService {
-  private titlesUrl = 'http://localhost:3000/titles';
-  private titles$$$ = signal<Title[]>([]);
-  titles = computed(() => this.titles$$$());
+  #titlesUrl = 'http://localhost:3000/titles';
+  #titles = signal<Title[]>([]);
+  titles = computed(this.#titles);
 
   async add(title: Title): Promise<Title> {
-    const response = await fetch(this.titlesUrl, {
+    const response = await fetch(this.#titlesUrl, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -22,7 +22,7 @@ export class TitleService {
   }
 
   async delete(id: number) {
-    const url = `${this.titlesUrl}/${id}`;
+    const url = `${this.#titlesUrl}/${id}`;
 
     await fetch(url, {
       method: 'DELETE',
@@ -34,12 +34,12 @@ export class TitleService {
   }
 
   async getAll() {
-    const response = await fetch(this.titlesUrl);
-    this.titles$$$.set(await response.json());
+    const response = await fetch(this.#titlesUrl);
+    this.#titles.set(await response.json());
   }
 
   async getById(id: number): Promise<any> {
-    const url = `${this.titlesUrl}/${id}`;
+    const url = `${this.#titlesUrl}/${id}`;
     const response = await fetch(url);
     return await response.json();
   }
@@ -50,12 +50,12 @@ export class TitleService {
       return Promise.resolve([]);
     }
 
-    const response = await fetch(`${this.titlesUrl}?${term}`);
+    const response = await fetch(`${this.#titlesUrl}?${term}`);
     return (await response.json()) as unknown as Title[];
   }
 
   async update(title: Title): Promise<any> {
-    const user = await fetch(`${this.titlesUrl}/${title.id}`, {
+    const user = await fetch(`${this.#titlesUrl}/${title.id}`, {
       method: 'PATCH',
       headers: {
         'Content-type': 'application/json',

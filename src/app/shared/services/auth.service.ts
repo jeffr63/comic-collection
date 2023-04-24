@@ -11,10 +11,10 @@ class AuthToken {
   providedIn: 'root',
 })
 export class AuthService {
-  private isAdmin$$$ = signal(false);
-  private isLoggedIn$$$ = signal(false);
-  isLoggedIn = computed(() => this.isLoggedIn$$$());
-  isLoggedInAsAdmin = computed(() => this.isLoggedIn$$$() && this.isAdmin$$$());
+  #isAdmin = signal(false);
+  #isLoggedIn = signal(false);
+  isLoggedIn = computed(this.#isLoggedIn);
+  isLoggedInAsAdmin = computed(() => this.#isLoggedIn() && this.#isAdmin());
 
   async login(email: string, password: string) {
     const body = JSON.stringify({ email: email, password: password });
@@ -38,16 +38,16 @@ export class AuthService {
         expires: token.exp,
       };
       localStorage.setItem('tct_auth', JSON.stringify(auth));
-      this.isLoggedIn$$$.set(true);
-      this.isAdmin$$$.set(response.user.role === 'admin' ? true : false);
+      this.#isLoggedIn.set(true);
+      this.#isAdmin.set(response.user.role === 'admin' ? true : false);
     }
     return response;
   }
 
   logout(): void {
     localStorage.removeItem('tct_auth');
-    this.isLoggedIn$$$.set(false);
-    this.isAdmin$$$.set(false);
+    this.#isLoggedIn.set(false);
+    this.#isAdmin.set(false);
   }
 
   checkLogin() {
@@ -59,8 +59,8 @@ export class AuthService {
 
     let now = Date.now() / 1000;
     if (auth.expires > now) {
-      this.isLoggedIn$$$.set(true);
-      this.isAdmin$$$.set(auth.role === 'admin' ? true : false);
+      this.#isLoggedIn.set(true);
+      this.#isAdmin.set(auth.role === 'admin' ? true : false);
       // !!letting token expire after jwt expires
       // keep logged in for another hour
       // auth.expires = auth.expires + 3600;

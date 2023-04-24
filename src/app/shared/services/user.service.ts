@@ -4,12 +4,12 @@ import { User } from '../models/user';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private usersUrl = 'http://localhost:3000/users';
-  private users$$$ = signal<User[]>([]);
-  users = computed(() => this.users$$$());
+  #usersUrl = 'http://localhost:3000/users';
+  #users = signal<User[]>([]);
+  users = computed(this.#users);
 
   async add(user: User): Promise<User> {
-    const response = await fetch(this.usersUrl, {
+    const response = await fetch(this.#usersUrl, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -22,7 +22,7 @@ export class UserService {
   }
 
   async delete(id: number): Promise<void> {
-    const url = `${this.usersUrl}/${id}`;
+    const url = `${this.#usersUrl}/${id}`;
 
     await fetch(url, {
       method: 'DELETE',
@@ -34,13 +34,13 @@ export class UserService {
   }
 
   async getAll() {
-    const response = await fetch(this.usersUrl);
-    this.users$$$.set(await response.json());
+    const response = await fetch(this.#usersUrl);
+    this.#users.set(await response.json());
   }
 
   async getById(id: number): Promise<any> {
     if (!id) return {};
-    const url = `${this.usersUrl}/${id}`;
+    const url = `${this.#usersUrl}/${id}`;
     const response = await fetch(url);
     return await response.json();
   }
@@ -51,12 +51,12 @@ export class UserService {
       return Promise.resolve([]);
     }
 
-    const user = await fetch(`${this.usersUrl}?${term}`);
+    const user = await fetch(`${this.#usersUrl}?${term}`);
     return (await user.json()) as unknown as User[];
   }
 
   async update(user: User): Promise<any> {
-    const response = await fetch(`${this.usersUrl}/${user.id}`, {
+    const response = await fetch(`${this.#usersUrl}/${user.id}`, {
       method: 'PATCH',
       headers: {
         'Content-type': 'application/json',
