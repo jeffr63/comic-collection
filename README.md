@@ -1,15 +1,16 @@
 # ComicCollection
 
-[Angular CLI](https://github.com/angular/angular-cli) version 14.2
+[Angular CLI](https://github.com/angular/angular-cli) version 16.0.0-rc.1
 
 ## Technologies included
 
 Angular, Angular Signals, Angular Material, json-server, json-server-auth, lodash, swimlane/ngx-charts
 
-## JSON-SERVER
+## JSON-SERVER and JSON-SERVER-AUTH
 
 1. npm install -g json-server
-2. run "npm run api" to start json-server
+2. npm install -g json-server-auth
+3. run "npm run api" to start json-server
 
 ## Development server
 

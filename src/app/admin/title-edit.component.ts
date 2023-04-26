@@ -59,7 +59,7 @@ import { PublisherService } from '../shared/services/publisher.service';
               mat-icon-button
               matIconSuffix
               color="primary"
-              [routerLink]="['/admin/publisher/new']"
+              routerLink="/admin/publisher/new"
               title="Add new publisher"
             >
               <mat-icon>add</mat-icon>

@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Location, NgIf } from '@angular/common';
@@ -85,7 +85,7 @@ import { User } from '../shared/models/user';
         <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!userEditForm.valid">
           <mat-icon>save</mat-icon> Save
         </button>
-        <button mat-flat-button color="accent" class="ml-10" [routerLink]="['/admin/users']">
+        <button mat-flat-button color="accent" class="ml-10" routerLink="/admin/users">
           <mat-icon>cancel</mat-icon> Cancel
         </button>
       </mat-card-actions>
@@ -135,7 +135,7 @@ export default class UserEditComponent implements OnInit {
   userService = inject(UserService);
   fb = inject(FormBuilder);
 
-  user = signal<User | null>(null);
+  user = <User>{};
   userEditForm!: FormGroup;
 
   ngOnInit() {
@@ -153,7 +153,7 @@ export default class UserEditComponent implements OnInit {
 
   async loadFormValues(id: number) {
     const user = await this.userService.getById(id);
-    this.user.set(user);
+    this.user = user;
     this.userEditForm.patchValue({
       name: user.name,
       email: user.email,
@@ -163,7 +163,7 @@ export default class UserEditComponent implements OnInit {
 
   async save() {
     const patchData = this.userEditForm.getRawValue();
-    patchData.id = this.user()?.id;
+    patchData.id = this.user?.id;
     if (!patchData) return;
     await this.userService.update(patchData);
     this.location.back();

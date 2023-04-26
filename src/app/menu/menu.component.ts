@@ -18,16 +18,16 @@ import { LoginComponent } from '../shared/modals/login.component';
 
   template: `
     <mat-toolbar color="primary">
-      <button mat-flat-button color="primary" [routerLink]="['/']">
+      <button mat-flat-button color="primary" routerLink="/">
         <span style="font-size:20px">Comic Collection</span>
       </button>
       <span style="flex: 1 1 auto"></span>
-      <button mat-flat-button color="primary" [routerLink]="['/']" id="home">Home</button>
-      <button mat-flat-button color="primary" [routerLink]="['/by_publisher']" id="by_publishers">By Publisher</button>
-      <button mat-flat-button color="primary" [routerLink]="['/by_title']" id="by_titles">By Title</button>
-      <button mat-flat-button color="primary" [routerLink]="['/issues']" id="courses">All Issues</button>
+      <button mat-flat-button color="primary" routerLink="/" id="home">Home</button>
+      <button mat-flat-button color="primary" routerLink="/by_publisher" id="by_publishers">By Publisher</button>
+      <button mat-flat-button color="primary" routerLink="/by_title" id="by_titles">By Title</button>
+      <button mat-flat-button color="primary" routerLink="/issues" id="courses">All Issues</button>
       <button mat-flat-button color="primary" *ngIf="!auth.isLoggedIn()" (click)="open()" id="login">Login</button>
-      <button mat-flat-button color="primary" [routerLink]="['/admin']" *ngIf="auth.isLoggedInAsAdmin()" id="admin">
+      <button mat-flat-button color="primary" routerLink="/admin" *ngIf="auth.isLoggedInAsAdmin()" id="admin">
         Admin
       </button>
       <button mat-flat-button color="primary" *ngIf="auth.isLoggedIn()" (click)="logout()" id="logout">Logout</button>

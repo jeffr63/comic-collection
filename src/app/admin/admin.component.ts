@@ -23,7 +23,7 @@ import { Router, RouterLink } from '@angular/router';
             </mat-card-header>
             <mat-card-content>
               <p>Pre-selections for the Publisher field on Issue and Title edit forms.</p>
-              <button mat-flat-button color="primary" class="center" [routerLink]="['/admin/publishers']">
+              <button mat-flat-button color="primary" class="center" routerLink="/admin/publishers">
                 Edit Publishers
               </button>
             </mat-card-content>
@@ -37,7 +37,7 @@ import { Router, RouterLink } from '@angular/router';
             </mat-card-header>
             <mat-card-content>
               <p class="card-text">Pre-selections for the Title field on Issue edit form.</p>
-              <button mat-flat-button color="primary" [routerLink]="['/admin/titles']">Edit Title</button>
+              <button mat-flat-button color="primary" routerLink="/admin/titles">Edit Title</button>
             </mat-card-content>
           </mat-card>
         </mat-grid-tile>
@@ -49,7 +49,7 @@ import { Router, RouterLink } from '@angular/router';
             </mat-card-header>
             <mat-card-content>
               <p class="card-text">Current users.</p>
-              <button mat-flat-button color="primary" [routerLink]="['/admin/users']">Edit Users</button>
+              <button mat-flat-button color="primary" routerLink="/admin/users">Edit Users</button>
             </mat-card-content>
           </mat-card>
         </mat-grid-tile>

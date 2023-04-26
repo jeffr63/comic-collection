@@ -1,7 +1,7 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
-import { AsyncPipe, CommonModule, Location, NgForOf, NgIf } from '@angular/common';
+import { AsyncPipe, Location, NgForOf, NgIf } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -36,7 +36,6 @@ import { TitleService } from '../shared/services/title.service';
     ReactiveFormsModule,
     RouterLink,
   ],
-
   template: `
     <mat-card appearance="outlined">
       <mat-card-title>Issue Edit</mat-card-title>
@@ -85,13 +84,7 @@ import { TitleService } from '../shared/services/title.service';
                 {{ title.title }}
               </mat-option>
             </mat-autocomplete>
-            <button
-              mat-icon-button
-              matIconSuffix
-              color="primary"
-              [routerLink]="['/admin/title/new']"
-              title="Add new title"
-            >
+            <button mat-icon-button matIconSuffix color="primary" routerLink="/admin/title/new" title="Add new title">
               <mat-icon>add</mat-icon>
             </button>
             <mat-error
