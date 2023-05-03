@@ -115,7 +115,9 @@ export default class TitleIssueListComponent implements OnInit {
   }
 
   async loadData(id: number) {
-    await this.issueService.getAll();
+    if (this.issueService.issues().length === 0) {
+      await this.issueService.getAll();
+    }
     const title = (await this.titleService.getById(id)) as unknown as Title;
     this.title.set(title.title);
   }

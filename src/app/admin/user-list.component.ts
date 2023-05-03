@@ -83,7 +83,9 @@ export default class UserListComponent implements OnInit {
   ];
 
   async ngOnInit() {
-    await this.userService.getAll();
+    if (this.userService.users().length === 0) {
+      await this.userService.getAll();
+    }
   }
 
   deleteUser(id: number) {

@@ -74,7 +74,9 @@ export default class TitleListComponent implements OnInit {
   ];
 
   async ngOnInit() {
-    await this.titleService.getAll();
+    if (this.titleService.titles().length === 0) {
+      await this.titleService.getAll();
+    }
   }
 
   deleteTitle(id: number) {

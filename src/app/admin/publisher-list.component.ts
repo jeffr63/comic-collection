@@ -67,7 +67,9 @@ export default class PublisherListComponent implements OnInit {
   ];
 
   async ngOnInit() {
-    await this.publisherService.getAll();
+    if (this.publisherService.publishers().length === 0) {
+      await this.publisherService.getAll();
+    }
   }
 
   deletePublisher(id: number) {

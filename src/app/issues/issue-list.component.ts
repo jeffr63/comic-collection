@@ -99,7 +99,9 @@ export default class IssueAllListComponent implements OnInit {
   ];
 
   async ngOnInit() {
-    await this.getAllIssues();
+    if (this.issueService.issues().length === 0) {
+      await this.issueService.getAll();
+    }
   }
 
   deleteIssue(id: number) {
@@ -123,15 +125,10 @@ export default class IssueAllListComponent implements OnInit {
 
   async delete(id: number) {
     await this.issueService.delete(id);
-    this.getAllIssues();
   }
 
   editIssue(id: number) {
     this.router.navigate(['/issues', id]);
-  }
-
-  async getAllIssues() {
-    await this.issueService.getAll();
   }
 
   newIssue() {

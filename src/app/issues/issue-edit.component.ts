@@ -223,11 +223,15 @@ export default class IssueEditComponent implements OnInit {
       url: [''],
     });
 
-    await this.publisherService.getAll();
+    if (this.publisherService.publishers().length === 0) {
+      await this.publisherService.getAll();
+    }
     const sortedPublishers = _.orderBy(this.publisherService.publishers(), 'name', 'asc');
     this.filteredPublishers.set(sortedPublishers);
 
-    await this.titleService.getAll();
+    if (this.titleService.titles().length === 0) {
+      await this.titleService.getAll();
+    }
     const sortedTitles = _.orderBy(this.titleService.titles(), 'title', 'asc');
     this.filteredTitles.set(sortedTitles);
 

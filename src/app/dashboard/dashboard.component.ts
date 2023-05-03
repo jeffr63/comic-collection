@@ -64,7 +64,9 @@ export class DashboardComponent implements OnInit {
   titles = signal<IssueData[]>([]);
 
   async ngOnInit() {
-    await this.issueService.getAll();
+    if (this.issueService.issues().length === 0) {
+      await this.issueService.getAll();
+    }
     this.publishers.set(this.getByPublisherValue(this.issueService.issues()));
     this.titles.set(this.getByTitleValue(this.issueService.issues()));
   }

@@ -70,7 +70,9 @@ export default class ByTitleListComponent implements OnInit {
   ];
 
   async ngOnInit() {
-    await this.titleService.getAll();
+    if (this.titleService.titles().length === 0) {
+      await this.titleService.getAll();
+    }
   }
 
   open(id: number) {
