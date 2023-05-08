@@ -1,5 +1,5 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Component, Input, OnInit, inject, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { AsyncPipe, Location, NgForOf, NgIf } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -144,16 +144,17 @@ import { PublisherService } from '../shared/services/publisher.service';
   ],
 })
 export default class TitleEditComponent implements OnInit {
-  route = inject(ActivatedRoute);
-  location = inject(Location);
-  titleService = inject(TitleService);
   fb = inject(FormBuilder);
+  location = inject(Location);
   publisherService = inject(PublisherService);
+  titleService = inject(TitleService);
 
-  titleEditForm!: FormGroup;
+  @Input() id?: string;
+
   filteredPublishers = signal<Publisher[]>([]);
-  private title = <Title>{};
   isNew = true;
+  title = <Title>{};
+  titleEditForm!: FormGroup;
 
   async ngOnInit() {
     this.titleEditForm = this.fb.group({
@@ -167,10 +168,9 @@ export default class TitleEditComponent implements OnInit {
     const sorted = _.orderBy(this.publisherService.publishers(), 'name', 'asc');
     this.filteredPublishers.set(sorted);
 
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id !== 'new' && id != null) {
+    if (this.id !== 'new' && this.id != undefined) {
       this.isNew = false;
-      this.loadFormValues(parseInt(id));
+      this.loadFormValues(parseInt(this.id));
     }
   }
 

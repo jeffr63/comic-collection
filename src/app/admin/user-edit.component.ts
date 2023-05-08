@@ -1,5 +1,5 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Component, Input, OnInit, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Location, NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
@@ -130,10 +130,11 @@ import { User } from '../shared/models/user';
   ],
 })
 export default class UserEditComponent implements OnInit {
-  route = inject(ActivatedRoute);
+  fb = inject(FormBuilder);
   location = inject(Location);
   userService = inject(UserService);
-  fb = inject(FormBuilder);
+
+  @Input() id?: string;
 
   user = <User>{};
   userEditForm!: FormGroup;
@@ -145,9 +146,8 @@ export default class UserEditComponent implements OnInit {
       role: ['', Validators.required],
     });
 
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id !== 'new' && id != null) {
-      this.loadFormValues(parseInt(id));
+    if (this.id !== 'new' && this.id != undefined) {
+      this.loadFormValues(parseInt(this.id));
     }
   }
 

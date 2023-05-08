@@ -1,5 +1,5 @@
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, computed, inject, Input, OnInit, signal } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Column } from '../shared/models/column';
 import { PublisherService } from '../shared/services/publisher.service';
@@ -39,10 +39,9 @@ import { Publisher } from '../shared/models/publisher';
   ],
 })
 export default class PublisherTitleListComponent implements OnInit {
-  route = inject(ActivatedRoute);
   publisherService = inject(PublisherService);
-  titleService = inject(TitleService);
   router = inject(Router);
+  titleService = inject(TitleService);
 
   columns: Column[] = [
     {
@@ -70,15 +69,16 @@ export default class PublisherTitleListComponent implements OnInit {
     },
   ];
 
+  @Input() id?: string;
+
   publisher = signal('');
   titles = computed(() => {
     return this.titleService.titles().filter((title) => title.publisher === this.publisher());
   });
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id != null) {
-      this.loadData(parseInt(id));
+    if (this.id != undefined) {
+      this.loadData(parseInt(this.id));
     }
   }
 

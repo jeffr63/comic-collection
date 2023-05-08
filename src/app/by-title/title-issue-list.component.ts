@@ -1,6 +1,6 @@
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, Input, OnInit, signal } from '@angular/core';
 import { NgIf } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
@@ -50,12 +50,11 @@ import { Title } from '../shared/models/title';
 })
 export default class TitleIssueListComponent implements OnInit {
   authService = inject(AuthService);
-  route = inject(ActivatedRoute);
   dialog = inject(MatDialog);
-  titleService = inject(TitleService);
   issueService = inject(IssueService);
   modalDataService = inject(ModalDataService);
   router = inject(Router);
+  titleService = inject(TitleService);
 
   columns: Column[] = [
     {
@@ -102,15 +101,17 @@ export default class TitleIssueListComponent implements OnInit {
       position: 'left',
     },
   ];
+
+  @Input() id?: string;
+
   title = signal('');
   titleIssues = computed(() => {
     return this.issueService.issues().filter((issue) => issue.title === this.title());
   });
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id != null) {
-      this.loadData(parseInt(id));
+    if (this.id != undefined) {
+      this.loadData(parseInt(this.id));
     }
   }
 

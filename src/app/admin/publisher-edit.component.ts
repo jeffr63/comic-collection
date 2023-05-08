@@ -1,5 +1,5 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Component, Input, OnInit, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Location, NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
@@ -90,23 +90,24 @@ import { PublisherService } from '../shared/services/publisher.service';
   ],
 })
 export default class PublisherEditComponent implements OnInit {
-  route = inject(ActivatedRoute);
+  fb = inject(FormBuilder);
   location = inject(Location);
   publisherService = inject(PublisherService);
-  fb = inject(FormBuilder);
 
+  @Input() id?: string;
+
+  isNew = true;
+  publisher = <Publisher>{};
   publisherEditForm!: FormGroup;
-  private publisher = <Publisher>{};
-  private isNew = true;
 
   ngOnInit() {
     this.publisherEditForm = this.fb.group({
       name: ['', Validators.required],
     });
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id !== 'new' && id != null) {
+
+    if (this.id !== 'new' && this.id != undefined) {
       this.isNew = false;
-      this.loadFormValues(parseInt(id));
+      this.loadFormValues(parseInt(this.id));
     }
   }
 

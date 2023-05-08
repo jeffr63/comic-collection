@@ -1,5 +1,5 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Component, Input, OnInit, inject, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { AsyncPipe, Location, NgForOf, NgIf } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -201,12 +201,13 @@ import { TitleService } from '../shared/services/title.service';
   ],
 })
 export default class IssueEditComponent implements OnInit {
-  route = inject(ActivatedRoute);
+  fb = inject(FormBuilder);
   location = inject(Location);
   issueService = inject(IssueService);
   publisherService = inject(PublisherService);
   titleService = inject(TitleService);
-  fb = inject(FormBuilder);
+
+  @Input() id?: string;
 
   filteredPublishers = signal<Publisher[]>([]);
   filteredTitles = signal<Title[]>([]);
@@ -235,10 +236,9 @@ export default class IssueEditComponent implements OnInit {
     const sortedTitles = _.orderBy(this.titleService.titles(), 'title', 'asc');
     this.filteredTitles.set(sortedTitles);
 
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id !== 'new' && id != null) {
+    if (this.id !== 'new' && this.id != undefined) {
       this.isNew = false;
-      await this.loadFormValues(parseInt(id));
+      await this.loadFormValues(parseInt(this.id));
     }
   }
 
