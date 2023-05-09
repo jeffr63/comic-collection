@@ -207,7 +207,7 @@ export class DisplayTableComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort, { static: true }) matSort!: MatSort;
 
   // this property needs to have a setter, to dynamically get changes from parent component
-  @Input() set tableData(data: any[]) {
+  @Input({ required: true }) set tableData(data: any[]) {
     this.setTableDataSource(data);
   }
   @Input() isAuthenticated = false;
@@ -217,7 +217,7 @@ export class DisplayTableComponent implements OnInit, AfterViewInit {
   @Input() paginationSizes: number[] = [5, 10, 15];
   @Input() defaultPageSize = this.paginationSizes[1];
   @Input() disableClear = false;
-  @Input() tableColumns: Column[] = [];
+  @Input({ required: true }) tableColumns: Column[] = [];
 
   @Output() add: EventEmitter<any> = new EventEmitter();
   @Output() delete: EventEmitter<number> = new EventEmitter();
