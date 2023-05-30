@@ -60,15 +60,16 @@ import { MatCardModule } from '@angular/material/card';
 export class DashboardComponent implements OnInit {
   issueService = inject(IssueService);
 
+  issues = this.issueService.issues;
   publishers = signal<IssueData[]>([]);
   titles = signal<IssueData[]>([]);
 
   async ngOnInit() {
-    if (this.issueService.issues().length === 0) {
+    if (this.issues().length === 0) {
       await this.issueService.getAll();
     }
-    this.publishers.set(this.getByPublisherValue(this.issueService.issues()));
-    this.titles.set(this.getByTitleValue(this.issueService.issues()));
+    this.publishers.set(this.getByPublisherValue(this.issues()));
+    this.titles.set(this.getByTitleValue(this.issues()));
   }
 
   getByPublisherValue(issues: Issue[]): IssueData[] {

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,7 @@ import { PublisherService } from '../shared/services/publisher.service';
   template: `
     <section class="mt-5">
       <app-display-table
-        *ngIf="publisherService.publishers()"
+        *ngIf="publishers()"
         [includeAdd]="false"
         [isAuthenticated]="false"
         [isFilterable]="true"
@@ -21,7 +21,7 @@ import { PublisherService } from '../shared/services/publisher.service';
         [paginationSizes]="[5, 10, 25, 100]"
         [defaultPageSize]="10"
         [disableClear]="true"
-        [tableData]="publisherService.publishers()"
+        [tableData]="publishers()"
         [tableColumns]="columns"
         (open)="open($event)"
       ></app-display-table>
@@ -42,6 +42,8 @@ export default class ByPublisherComponent implements OnInit {
   publisherService = inject(PublisherService);
   router = inject(Router);
 
+  publishers = this.publisherService.publishers;
+
   columns: Column[] = [
     {
       key: 'name',
@@ -61,7 +63,7 @@ export default class ByPublisherComponent implements OnInit {
   ];
 
   async ngOnInit() {
-    if (this.publisherService.publishers().length === 0) {
+    if (this.publishers().length === 0) {
       await this.publisherService.getAll();
     }
   }

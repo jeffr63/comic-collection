@@ -41,7 +41,7 @@ import { TitleService } from '../shared/services/title.service';
       <mat-card-title>Issue Edit</mat-card-title>
       <mat-card-content>
         <form *ngIf="issueEditForm" [formGroup]="issueEditForm">
-          <mat-form-field appearance="outline" *ngIf="this.publisherService.publishers() as publishers">
+          <mat-form-field appearance="outline" *ngIf="publishers() as publishers">
             <mat-label for="publisher">Publisher</mat-label>
             <input
               matInput
@@ -49,7 +49,7 @@ import { TitleService } from '../shared/services/title.service';
               #inputPublisher
               formControlName="publisher"
               [matAutocomplete]="publisherAuto"
-              (keyup)="onAutocompleteKeyUpPublisher(inputPublisher.value, this.publisherService.publishers())"
+              (keyup)="onAutocompleteKeyUpPublisher(inputPublisher.value, publishers)"
             />
             <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
               <mat-option *ngFor="let publisher of filteredPublishers()" [value]="publisher.name">
@@ -69,7 +69,7 @@ import { TitleService } from '../shared/services/title.service';
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field appearance="outline" *ngIf="this.titleService.titles() as titles">
+          <mat-form-field appearance="outline" *ngIf="titles() as titles">
             <mat-label for="title">Title</mat-label>
             <input
               matInput
@@ -77,7 +77,7 @@ import { TitleService } from '../shared/services/title.service';
               #inputTitle
               formControlName="title"
               [matAutocomplete]="titleAuto"
-              (keyup)="onAutocompleteKeyUpTitle(inputTitle.value, this.titleService.titles())"
+              (keyup)="onAutocompleteKeyUpTitle(inputTitle.value, titles)"
             />
             <mat-autocomplete #titleAuto="matAutocomplete" autoActiveFirstOption>
               <mat-option *ngFor="let title of filteredTitles()" [value]="title.title">
@@ -211,9 +211,12 @@ export default class IssueEditComponent implements OnInit {
 
   filteredPublishers = signal<Publisher[]>([]);
   filteredTitles = signal<Title[]>([]);
+  issues = this.issueService.issues;
   isNew = true;
   issueEditForm!: FormGroup;
   private issue = <Issue>{};
+  publishers = this.publisherService.publishers;
+  titles = this.titleService.titles;
 
   async ngOnInit() {
     this.issueEditForm = this.fb.group({
@@ -224,16 +227,16 @@ export default class IssueEditComponent implements OnInit {
       url: [''],
     });
 
-    if (this.publisherService.publishers().length === 0) {
+    if (this.publishers().length === 0) {
       await this.publisherService.getAll();
     }
-    const sortedPublishers = _.orderBy(this.publisherService.publishers(), 'name', 'asc');
+    const sortedPublishers = _.orderBy(this.publishers(), 'name', 'asc');
     this.filteredPublishers.set(sortedPublishers);
 
-    if (this.titleService.titles().length === 0) {
+    if (this.titles().length === 0) {
       await this.titleService.getAll();
     }
-    const sortedTitles = _.orderBy(this.titleService.titles(), 'title', 'asc');
+    const sortedTitles = _.orderBy(this.titles(), 'title', 'asc');
     this.filteredTitles.set(sortedTitles);
 
     if (this.id !== 'new' && this.id != undefined) {
@@ -248,8 +251,7 @@ export default class IssueEditComponent implements OnInit {
       if (control.value === '') {
         return null;
       }
-      selectedItem = this.publisherService
-        .publishers()
+      selectedItem = this.publishers()
         .find((publisher: Publisher) => publisher.name === control.value);
       if (selectedItem) {
         return null; /* valid option selected */
@@ -264,7 +266,7 @@ export default class IssueEditComponent implements OnInit {
       if (control.value === '') {
         return null;
       }
-      selectedItem = this.titleService.titles().find((title: Title) => title.title === control.value);
+      selectedItem = this.titles().find((title: Title) => title.title === control.value);
       if (selectedItem) {
         return null; /* valid option selected */
       }

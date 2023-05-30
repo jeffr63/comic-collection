@@ -18,7 +18,7 @@ import { UserService } from '../shared/services/user.service';
   template: `
     <section class="mt-5">
       <app-display-table
-        *ngIf="userService.users()"
+        *ngIf="users()"
         [isAuthenticated]="true"
         [isFilterable]="true"
         [includeAdd]="false"
@@ -26,7 +26,7 @@ import { UserService } from '../shared/services/user.service';
         [paginationSizes]="[5, 10, 25, 100]"
         [defaultPageSize]="10"
         [disableClear]="true"
-        [tableData]="userService.users()"
+        [tableData]="users()"
         [tableColumns]="columns"
         (delete)="deleteUser($event)"
         (edit)="editUser($event)"
@@ -49,6 +49,8 @@ export default class UserListComponent implements OnInit {
   dialog = inject(MatDialog);
   modalDataService = inject(ModalDataService);
   router = inject(Router);
+
+  users = this.userService.users;
 
   columns: Column[] = [
     {
@@ -83,7 +85,7 @@ export default class UserListComponent implements OnInit {
   ];
 
   async ngOnInit() {
-    if (this.userService.users().length === 0) {
+    if (this.users().length === 0) {
       await this.userService.getAll();
     }
   }

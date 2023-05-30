@@ -9,7 +9,6 @@ import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { ModalDataService } from '../shared/modals/modal-data.service';
-import { Publisher } from '../shared/models/publisher';
 import { PublisherService } from '../shared/services/publisher.service';
 
 @Component({
@@ -20,7 +19,7 @@ import { PublisherService } from '../shared/services/publisher.service';
   template: `
     <section class="mt-5">
       <app-display-table
-        *ngIf="this.publisherService.publishers()"
+        *ngIf="publishers()"
         [isAuthenticated]="true"
         [isFilterable]="true"
         [includeAdd]="true"
@@ -28,7 +27,7 @@ import { PublisherService } from '../shared/services/publisher.service';
         [paginationSizes]="[5, 10, 25, 100]"
         [defaultPageSize]="10"
         [disableClear]="true"
-        [tableData]="this.publisherService.publishers()"
+        [tableData]="publishers()"
         [tableColumns]="columns"
         (add)="newPublisher()"
         (delete)="deletePublisher($event)"
@@ -54,6 +53,8 @@ export default class PublisherListComponent implements OnInit {
   modalDataService = inject(ModalDataService);
   router = inject(Router);
 
+  publishers = this.publisherService.publishers;
+
   columns: Column[] = [
     {
       key: 'name',
@@ -67,7 +68,7 @@ export default class PublisherListComponent implements OnInit {
   ];
 
   async ngOnInit() {
-    if (this.publisherService.publishers().length === 0) {
+    if (this.publishers().length === 0) {
       await this.publisherService.getAll();
     }
   }

@@ -19,7 +19,7 @@ import { TitleService } from '../shared/services/title.service';
   template: `
     <section class="mt-5">
       <app-display-table
-        *ngIf="titleService.titles()"
+        *ngIf="titles()"
         [isAuthenticated]="true"
         [isFilterable]="true"
         [includeAdd]="true"
@@ -27,7 +27,7 @@ import { TitleService } from '../shared/services/title.service';
         [paginationSizes]="[5, 10, 25, 100]"
         [defaultPageSize]="10"
         [disableClear]="true"
-        [tableData]="titleService.titles()"
+        [tableData]="titles()"
         [tableColumns]="columns"
         (add)="newTitle()"
         (delete)="deleteTitle($event)"
@@ -53,6 +53,8 @@ export default class TitleListComponent implements OnInit {
   modalDataService = inject(ModalDataService);
   router = inject(Router);
 
+  titles = this.titleService.titles;
+
   columns: Column[] = [
     {
       key: 'title',
@@ -74,7 +76,7 @@ export default class TitleListComponent implements OnInit {
   ];
 
   async ngOnInit() {
-    if (this.titleService.titles().length === 0) {
+    if (this.titles().length === 0) {
       await this.titleService.getAll();
     }
   }

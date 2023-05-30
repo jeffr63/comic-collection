@@ -26,11 +26,11 @@ import { LoginComponent } from '../shared/modals/login.component';
       <button mat-flat-button color="primary" routerLink="/by_publisher" id="by_publishers">By Publisher</button>
       <button mat-flat-button color="primary" routerLink="/by_title" id="by_titles">By Title</button>
       <button mat-flat-button color="primary" routerLink="/issues" id="courses">All Issues</button>
-      <button mat-flat-button color="primary" *ngIf="!auth.isLoggedIn()" (click)="open()" id="login">Login</button>
-      <button mat-flat-button color="primary" routerLink="/admin" *ngIf="auth.isLoggedInAsAdmin()" id="admin">
+      <button mat-flat-button color="primary" *ngIf="!isLoggedIn()" (click)="open()" id="login">Login</button>
+      <button mat-flat-button color="primary" routerLink="/admin" *ngIf="isLoggedInAsAdmin()" id="admin">
         Admin
       </button>
-      <button mat-flat-button color="primary" *ngIf="auth.isLoggedIn()" (click)="logout()" id="logout">Logout</button>
+      <button mat-flat-button color="primary" *ngIf="isLoggedIn()" (click)="logout()" id="logout">Logout</button>
     </mat-toolbar>
   `,
 
@@ -43,11 +43,13 @@ import { LoginComponent } from '../shared/modals/login.component';
   ],
 })
 export class MenuComponent {
-  public auth = inject(AuthService);
+  private authService = inject(AuthService);
   private dialog = inject(MatDialog);
   private router = inject(Router);
 
-  public isNavbarCollapsed = true;
+  isLoggedIn = this.authService.isLoggedIn;
+  isLoggedInAsAdmin = this.authService.isLoggedInAsAdmin;
+  isNavbarCollapsed = true;
   email = '';
   password = '';
 
@@ -62,13 +64,13 @@ export class MenuComponent {
       .pipe(take(1))
       .subscribe({
         next: (result) => {
-          this.auth.login(result.email, result.password);
+          this.authService.login(result.email, result.password);
         },
       });
   }
 
   logout() {
-    this.auth.logout();
+    this.authService.logout();
     this.router.navigate(['/']);
   }
 }

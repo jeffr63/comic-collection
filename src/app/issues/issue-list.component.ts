@@ -20,15 +20,15 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
   template: `
     <section class="mt-5">
       <app-display-table
-        *ngIf="issueService.issues()"
+        *ngIf="issues()"
         [includeAdd]="true"
-        [isAuthenticated]="authService.isLoggedIn()"
+        [isAuthenticated]="isLoggedIn()"
         [isFilterable]="true"
         [isPageable]="true"
         [paginationSizes]="[5, 10, 25, 100]"
         [defaultPageSize]="10"
         [disableClear]="true"
-        [tableData]="this.issueService.issues()"
+        [tableData]="issues()"
         [tableColumns]="columns"
         (add)="newIssue()"
         (delete)="deleteIssue($event)"
@@ -51,6 +51,9 @@ export default class IssueAllListComponent implements OnInit {
   authService = inject(AuthService);
   modalDataService = inject(ModalDataService);
   router = inject(Router);
+
+  isLoggedIn = this.authService.isLoggedIn;
+  issues = this.issueService.issues;
 
   columns: Column[] = [
     {
@@ -99,7 +102,7 @@ export default class IssueAllListComponent implements OnInit {
   ];
 
   async ngOnInit() {
-    if (this.issueService.issues().length === 0) {
+    if (this.issues().length === 0) {
       await this.issueService.getAll();
     }
   }

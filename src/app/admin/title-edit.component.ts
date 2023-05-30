@@ -40,7 +40,7 @@ import { PublisherService } from '../shared/services/publisher.service';
       <mat-card-title>Title Edit</mat-card-title>
       <mat-card-content>
         <form *ngIf="titleEditForm" [formGroup]="titleEditForm">
-          <mat-form-field appearance="outline" *ngIf="this.publisherService.publishers() as publishers">
+          <mat-form-field appearance="outline" *ngIf="publishers() as publishers">
             <mat-label>Publisher</mat-label>
             <input
               matInput
@@ -48,7 +48,7 @@ import { PublisherService } from '../shared/services/publisher.service';
               #inputPublisher
               formControlName="publisher"
               [matAutocomplete]="publisherAuto"
-              (keyup)="onAutocompleteKeyUp(inputPublisher.value, this.publisherService.publishers())"
+              (keyup)="onAutocompleteKeyUp(inputPublisher.value, publishers)"
             />
             <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
               <mat-option *ngFor="let publisher of filteredPublishers()" [value]="publisher.name">
@@ -151,6 +151,7 @@ export default class TitleEditComponent implements OnInit {
 
   @Input() id?: string;
 
+  publishers = this.publisherService.publishers;
   filteredPublishers = signal<Publisher[]>([]);
   isNew = true;
   title = <Title>{};
@@ -162,10 +163,10 @@ export default class TitleEditComponent implements OnInit {
       title: ['', Validators.required],
     });
 
-    if (this.publisherService.publishers().length === 0) {
+    if (this.publishers().length === 0) {
       await this.publisherService.getAll();
     }
-    const sorted = _.orderBy(this.publisherService.publishers(), 'name', 'asc');
+    const sorted = _.orderBy(this.publishers(), 'name', 'asc');
     this.filteredPublishers.set(sorted);
 
     if (this.id !== 'new' && this.id != undefined) {
@@ -242,9 +243,7 @@ export default class TitleEditComponent implements OnInit {
       if (control.value === '') {
         return null;
       }
-      selectedItem = this.publisherService
-        .publishers()
-        .find((publisher: Publisher) => publisher.name === control.value);
+      selectedItem = this.publishers().find((publisher: Publisher) => publisher.name === control.value);
       if (selectedItem) {
         return null; /* valid option selected */
       }

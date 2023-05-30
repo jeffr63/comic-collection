@@ -1,10 +1,9 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 
 import { Column } from '../shared/models/column';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { Title } from '../shared/models/title';
 import { TitleService } from '../shared/services/title.service';
 
 @Component({
@@ -14,7 +13,7 @@ import { TitleService } from '../shared/services/title.service';
   template: `
     <section class="mt-5">
       <app-display-table
-        *ngIf="titleService.titles()"
+        *ngIf="titles()"
         [includeAdd]="false"
         [isAuthenticated]="false"
         [isFilterable]="true"
@@ -22,7 +21,7 @@ import { TitleService } from '../shared/services/title.service';
         [paginationSizes]="[5, 10, 25, 100]"
         [defaultPageSize]="10"
         [disableClear]="true"
-        [tableData]="titleService.titles()"
+        [tableData]="titles()"
         [tableColumns]="columns"
         (open)="open($event)"
       ></app-display-table>
@@ -42,6 +41,8 @@ import { TitleService } from '../shared/services/title.service';
 export default class ByTitleListComponent implements OnInit {
   titleService = inject(TitleService);
   router = inject(Router);
+
+  titles = this.titleService.titles;
 
   columns: Column[] = [
     {
@@ -70,7 +71,7 @@ export default class ByTitleListComponent implements OnInit {
   ];
 
   async ngOnInit() {
-    if (this.titleService.titles().length === 0) {
+    if (this.titles().length === 0) {
       await this.titleService.getAll();
     }
   }

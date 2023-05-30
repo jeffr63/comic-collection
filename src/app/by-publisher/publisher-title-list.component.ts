@@ -43,6 +43,14 @@ export default class PublisherTitleListComponent implements OnInit {
   router = inject(Router);
   titleService = inject(TitleService);
 
+  @Input() id?: string;
+
+  publisher = signal('');
+  allTitles = this.titleService.titles
+  titles = computed(() => {
+    return this.allTitles().filter((title) => title.publisher === this.publisher());
+  });
+
   columns: Column[] = [
     {
       key: 'title',
@@ -69,13 +77,6 @@ export default class PublisherTitleListComponent implements OnInit {
     },
   ];
 
-  @Input() id?: string;
-
-  publisher = signal('');
-  titles = computed(() => {
-    return this.titleService.titles().filter((title) => title.publisher === this.publisher());
-  });
-
   ngOnInit() {
     if (this.id != undefined) {
       this.loadData(parseInt(this.id));
@@ -83,7 +84,7 @@ export default class PublisherTitleListComponent implements OnInit {
   }
 
   async loadData(id: number) {
-    if (this.titleService.titles().length === 0) {
+    if (this.allTitles().length === 0) {
       await this.titleService.getAll();
     }
     const publisher = (await this.publisherService.getById(id)) as unknown as Publisher;

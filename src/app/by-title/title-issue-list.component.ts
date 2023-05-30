@@ -23,7 +23,7 @@ import { Title } from '../shared/models/title';
       <app-display-table
         *ngIf="titleIssues"
         [includeAdd]="true"
-        [isAuthenticated]="authService.isLoggedIn()"
+        [isAuthenticated]="isLoggedIn()"
         [isFilterable]="true"
         [isPageable]="true"
         [paginationSizes]="[5, 10, 25, 100]"
@@ -55,6 +55,15 @@ export default class TitleIssueListComponent implements OnInit {
   modalDataService = inject(ModalDataService);
   router = inject(Router);
   titleService = inject(TitleService);
+
+  @Input() id?: string;
+
+  isLoggedIn = this.authService.isLoggedIn;
+  issues = this.issueService.issues;
+  title = signal('');
+  titleIssues = computed(() => {
+    return this.issues().filter((issue) => issue.title === this.title());
+  });
 
   columns: Column[] = [
     {
@@ -102,13 +111,6 @@ export default class TitleIssueListComponent implements OnInit {
     },
   ];
 
-  @Input() id?: string;
-
-  title = signal('');
-  titleIssues = computed(() => {
-    return this.issueService.issues().filter((issue) => issue.title === this.title());
-  });
-
   ngOnInit() {
     if (this.id != undefined) {
       this.loadData(parseInt(this.id));
@@ -116,7 +118,7 @@ export default class TitleIssueListComponent implements OnInit {
   }
 
   async loadData(id: number) {
-    if (this.issueService.issues().length === 0) {
+    if (this.issues().length === 0) {
       await this.issueService.getAll();
     }
     const title = (await this.titleService.getById(id)) as unknown as Title;
