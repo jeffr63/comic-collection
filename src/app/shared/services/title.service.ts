@@ -6,7 +6,7 @@ import { Title } from '../models/title';
 export class TitleService {
   #titlesUrl = 'http://localhost:3000/titles';
   #titles = signal<Title[]>([]);
-  titles = computed(this.#titles);
+  titles = this.#titles.asReadonly();
 
   async add(title: Title): Promise<Title> {
     const response = await fetch(this.#titlesUrl, {

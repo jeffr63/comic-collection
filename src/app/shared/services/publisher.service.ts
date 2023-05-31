@@ -6,7 +6,7 @@ import { Publisher } from '../models/publisher';
 export class PublisherService {
   #publishersUrl = 'http://localhost:3000/publishers';
   #publishers = signal<Publisher[]>([]);
-  publishers = computed(this.#publishers);
+  publishers = this.#publishers.asReadonly();
 
   async add(publisher: Publisher): Promise<Publisher> {
     const response = await fetch(this.#publishersUrl, {

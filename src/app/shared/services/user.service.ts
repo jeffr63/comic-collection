@@ -6,7 +6,7 @@ import { User } from '../models/user';
 export class UserService {
   #usersUrl = 'http://localhost:3000/users';
   #users = signal<User[]>([]);
-  users = computed(this.#users);
+  users = this.#users.asReadonly();
 
   async add(user: User): Promise<User> {
     const response = await fetch(this.#usersUrl, {

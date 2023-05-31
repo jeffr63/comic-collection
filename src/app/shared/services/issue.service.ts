@@ -6,7 +6,7 @@ import { Issue } from '../models/issue';
 export class IssueService {
   #issuesUrl = 'http://localhost:3000/issues';
   #issues = signal<Issue[]>([]);
-  issues = computed(this.#issues);
+  issues = this.#issues.asReadonly();
 
   async add(issue: Issue): Promise<Issue> {
     const response = await fetch(this.#issuesUrl, {

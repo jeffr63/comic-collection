@@ -13,7 +13,7 @@ class AuthToken {
 export class AuthService {
   #isAdmin = signal(false);
   #isLoggedIn = signal(false);
-  isLoggedIn = computed(this.#isLoggedIn);
+  isLoggedIn = this.#isLoggedIn.asReadonly();
   isLoggedInAsAdmin = computed(() => this.#isLoggedIn() && this.#isAdmin());
 
   async login(email: string, password: string) {
