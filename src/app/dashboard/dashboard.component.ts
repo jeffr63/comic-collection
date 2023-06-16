@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 
 import * as _ from 'lodash';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -61,54 +61,12 @@ export class DashboardComponent implements OnInit {
   issueService = inject(IssueService);
 
   issues = this.issueService.issues;
-  publishers = signal<IssueData[]>([]);
-  titles = signal<IssueData[]>([]);
+  publishers = this.issueService.publishers;
+  titles = this.issueService.titles;
 
   async ngOnInit() {
     if (this.issues().length === 0) {
       await this.issueService.getAll();
     }
-    this.publishers.set(this.getByPublisherValue(this.issues()));
-    this.titles.set(this.getByTitleValue(this.issues()));
-  }
-
-  getByPublisherValue(issues: Issue[]): IssueData[] {
-    let byPublisher = _.chain(issues)
-      .groupBy('publisher')
-      .map((values, key) => {
-        return {
-          name: key,
-          value: _.reduce(
-            values,
-            function (value, number) {
-              return value + 1;
-            },
-            0
-          ),
-        };
-      })
-      .value();
-    byPublisher = _.orderBy(byPublisher, 'value', 'desc');
-    return byPublisher;
-  }
-
-  getByTitleValue(issues: Issue[]): IssueData[] {
-    let byTitle = _.chain(issues)
-      .groupBy('title')
-      .map((values, key) => {
-        return {
-          name: key,
-          value: _.reduce(
-            values,
-            function (value, number) {
-              return value + 1;
-            },
-            0
-          ),
-        };
-      })
-      .value();
-    byTitle = _.orderBy(byTitle, 'value', 'desc');
-    return byTitle;
   }
 }

@@ -1,12 +1,16 @@
 import { Injectable, computed, signal } from '@angular/core';
 
-import { Issue } from '../models/issue';
+import * as _ from 'lodash';
+
+import { Issue, IssueData } from '../models/issue';
 
 @Injectable({ providedIn: 'root' })
 export class IssueService {
   #issuesUrl = 'http://localhost:3000/issues';
   #issues = signal<Issue[]>([]);
   issues = this.#issues.asReadonly();
+  publishers = computed(() => this.getByPublisherValue(this.#issues()));
+  titles = computed(() => this.getByTitleValue(this.#issues()));
 
   async add(issue: Issue): Promise<Issue> {
     const response = await fetch(this.#issuesUrl, {
@@ -64,5 +68,45 @@ export class IssueService {
     });
     await this.getAll();
     return await response.json();
+  }
+
+  getByPublisherValue(issues: Issue[]): IssueData[] {
+    let byPublisher = _.chain(issues)
+      .groupBy('publisher')
+      .map((values, key) => {
+        return {
+          name: key,
+          value: _.reduce(
+            values,
+            function (value, number) {
+              return value + 1;
+            },
+            0
+          ),
+        };
+      })
+      .value();
+    byPublisher = _.orderBy(byPublisher, 'value', 'desc');
+    return byPublisher;
+  }
+
+  getByTitleValue(issues: Issue[]): IssueData[] {
+    let byTitle = _.chain(issues)
+      .groupBy('title')
+      .map((values, key) => {
+        return {
+          name: key,
+          value: _.reduce(
+            values,
+            function (value, number) {
+              return value + 1;
+            },
+            0
+          ),
+        };
+      })
+      .value();
+    byTitle = _.orderBy(byTitle, 'value', 'desc');
+    return byTitle;
   }
 }
