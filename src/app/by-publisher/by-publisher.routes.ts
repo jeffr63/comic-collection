@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 
-import { PublisherResolverService } from '../shared/resolvers/publisher-resolver.service';
+import { publisherNameResolver } from '../shared/resolvers/publisher-resolver.service';
 
 export default [
   {
@@ -12,7 +12,7 @@ export default [
       },
       {
         path: ':id',
-        title: PublisherResolverService,
+        title: publisherNameResolver,
         loadComponent: () => import('./publisher-title-list.component'),
       },
     ],
