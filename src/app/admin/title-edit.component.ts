@@ -51,7 +51,7 @@ import { PublisherService } from '../shared/services/publisher.service';
               (keyup)="onAutocompleteKeyUp(inputPublisher.value, publishers)"
             />
             <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
-              <mat-option *ngFor="let publisher of filteredPublishers()" [value]="publisher.name">
+              <mat-option *ngFor="let publisher of filteredPublishers(); trackBy: trackById" [value]="publisher.name">
                 {{ publisher.name }}
               </mat-option>
             </mat-autocomplete>
@@ -235,6 +235,10 @@ export default class TitleEditComponent implements OnInit {
       publisher: this.title.publisher,
       title: this.title.title,
     });
+  }
+
+  public trackById(index: number, publisher: Publisher) {
+    return publisher.id;
   }
 
   autocompleteStringValidator(): ValidatorFn {

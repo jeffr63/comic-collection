@@ -52,7 +52,7 @@ import { TitleService } from '../shared/services/title.service';
               (keyup)="onAutocompleteKeyUpPublisher(inputPublisher.value, publishers)"
             />
             <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
-              <mat-option *ngFor="let publisher of filteredPublishers()" [value]="publisher.name">
+              <mat-option *ngFor="let publisher of filteredPublishers(); trackBy: publisherId" [value]="publisher.name">
                 {{ publisher.name }}
               </mat-option>
             </mat-autocomplete>
@@ -80,7 +80,7 @@ import { TitleService } from '../shared/services/title.service';
               (keyup)="onAutocompleteKeyUpTitle(inputTitle.value, titles)"
             />
             <mat-autocomplete #titleAuto="matAutocomplete" autoActiveFirstOption>
-              <mat-option *ngFor="let title of filteredTitles()" [value]="title.title">
+              <mat-option *ngFor="let title of filteredTitles(); trackBy: titleId" [value]="title.title">
                 {{ title.title }}
               </mat-option>
             </mat-autocomplete>
@@ -251,8 +251,7 @@ export default class IssueEditComponent implements OnInit {
       if (control.value === '') {
         return null;
       }
-      selectedItem = this.publishers()
-        .find((publisher: Publisher) => publisher.name === control.value);
+      selectedItem = this.publishers().find((publisher: Publisher) => publisher.name === control.value);
       if (selectedItem) {
         return null; /* valid option selected */
       }
@@ -355,5 +354,13 @@ export default class IssueEditComponent implements OnInit {
       issue: this.issue.issue,
       url: this.issue.url,
     });
+  }
+
+  public publisherId(index: number, publisher: Publisher) {
+    return publisher.id;
+  }
+
+  public titleId(index: number, title: Title) {
+    return title.id;
   }
 }

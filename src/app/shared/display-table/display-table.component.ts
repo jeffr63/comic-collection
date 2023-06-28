@@ -51,7 +51,7 @@ import { Column } from '../models/column';
 
       <!-- Table -->
       <table mat-table [dataSource]="tableDataSource" matSort class="mat-elevation-z8">
-        <ng-container [matColumnDef]="column.key" *ngFor="let column of tableColumns">
+        <ng-container [matColumnDef]="column.key" *ngFor="let column of tableColumns; trackBy: trackById">
           <ng-container *ngIf="column.type === 'sort'">
             <th
               mat-header-cell
@@ -270,5 +270,9 @@ export class DisplayTableComponent implements OnInit, AfterViewInit {
 
   emitOpen(id: number) {
     this.open.emit(id);
+  }
+
+  public trackById(index: number, item: any) {
+    return item?.id;
   }
 }
