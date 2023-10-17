@@ -1,5 +1,4 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -14,12 +13,12 @@ import { TitleService } from '../shared/services/title.service';
 @Component({
   selector: 'app-source-list',
   standalone: true,
-  imports: [DisplayTableComponent, NgIf],
+  imports: [DisplayTableComponent],
 
   template: `
     <section class="mt-5">
+      @if (titles()) {
       <app-display-table
-        *ngIf="titles()"
         [isAuthenticated]="true"
         [isFilterable]="true"
         [includeAdd]="true"
@@ -32,7 +31,8 @@ import { TitleService } from '../shared/services/title.service';
         (add)="newTitle()"
         (delete)="deleteTitle($event)"
         (edit)="editTitle($event)"
-      ></app-display-table>
+      />
+      }
     </section>
   `,
 

@@ -1,5 +1,4 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -14,11 +13,11 @@ import { UserService } from '../shared/services/user.service';
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [DisplayTableComponent, NgIf],
+  imports: [DisplayTableComponent],
   template: `
     <section class="mt-5">
+      @if (users()) {
       <app-display-table
-        *ngIf="users()"
         [isAuthenticated]="true"
         [isFilterable]="true"
         [includeAdd]="false"
@@ -30,7 +29,8 @@ import { UserService } from '../shared/services/user.service';
         [tableColumns]="columns"
         (delete)="deleteUser($event)"
         (edit)="editUser($event)"
-      ></app-display-table>
+      />
+      }
     </section>
   `,
   styles: [

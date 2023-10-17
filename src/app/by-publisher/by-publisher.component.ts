@@ -1,5 +1,4 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 
 import { Column } from '../shared/models/column';
@@ -9,11 +8,11 @@ import { PublisherService } from '../shared/services/publisher.service';
 @Component({
   selector: 'app-by-publisher',
   standalone: true,
-  imports: [DisplayTableComponent, NgIf],
+  imports: [DisplayTableComponent],
   template: `
     <section class="mt-5">
+      @if (publishers()) {
       <app-display-table
-        *ngIf="publishers()"
         [includeAdd]="false"
         [isAuthenticated]="false"
         [isFilterable]="true"
@@ -24,7 +23,8 @@ import { PublisherService } from '../shared/services/publisher.service';
         [tableData]="publishers()"
         [tableColumns]="columns"
         (open)="open($event)"
-      ></app-display-table>
+      />
+      }
     </section>
   `,
   styles: [

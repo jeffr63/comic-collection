@@ -1,5 +1,4 @@
 import { Component, computed, inject, Input, OnInit, signal } from '@angular/core';
-import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -17,11 +16,11 @@ import { Title } from '../shared/models/title';
 @Component({
   selector: 'app-title-issue-list',
   standalone: true,
-  imports: [DisplayTableComponent, NgIf],
+  imports: [DisplayTableComponent],
   template: `
     <section class="mt-5">
+      @if (titleIssues()) {
       <app-display-table
-        *ngIf="titleIssues"
         [includeAdd]="true"
         [isAuthenticated]="isLoggedIn()"
         [isFilterable]="true"
@@ -34,7 +33,8 @@ import { Title } from '../shared/models/title';
         (add)="newIssue()"
         (delete)="deleteIssue($event)"
         (edit)="editIssue($event)"
-      ></app-display-table>
+      />
+      }
     </section>
   `,
   styles: [

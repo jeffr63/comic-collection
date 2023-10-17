@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -14,7 +13,7 @@ import { LoginComponent } from '../shared/modals/login.component';
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [MatDialogModule, MatIconModule, MatToolbarModule, MatButtonModule, NgIf, RouterLink],
+  imports: [MatDialogModule, MatIconModule, MatToolbarModule, MatButtonModule, RouterLink],
 
   template: `
     <mat-toolbar color="primary">
@@ -26,9 +25,13 @@ import { LoginComponent } from '../shared/modals/login.component';
       <button mat-flat-button color="primary" routerLink="/by_publisher" id="by_publishers">By Publisher</button>
       <button mat-flat-button color="primary" routerLink="/by_title" id="by_titles">By Title</button>
       <button mat-flat-button color="primary" routerLink="/issues" id="courses">All Issues</button>
-      <button mat-flat-button color="primary" *ngIf="!isLoggedIn()" (click)="open()" id="login">Login</button>
-      <button mat-flat-button color="primary" routerLink="/admin" *ngIf="isLoggedInAsAdmin()" id="admin">Admin</button>
-      <button mat-flat-button color="primary" *ngIf="isLoggedIn()" (click)="logout()" id="logout">Logout</button>
+      @if (!isLoggedIn()) {
+      <button mat-flat-button color="primary" (click)="open()" id="login">Login</button>
+      } @if (isLoggedInAsAdmin()) {
+      <button mat-flat-button color="primary" routerLink="/admin" id="admin">Admin</button>
+      } @if (isLoggedIn()) {
+      <button mat-flat-button color="primary" (click)="logout()" id="logout">Logout</button>
+      }
     </mat-toolbar>
   `,
 

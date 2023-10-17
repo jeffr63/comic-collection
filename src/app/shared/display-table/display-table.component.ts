@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CurrencyPipe, NgClass } from '@angular/common';
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -22,37 +22,38 @@ import { Column } from '../models/column';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    CommonModule,
+    CurrencyPipe,
+    NgClass,
   ],
   template: `
     <ng-container>
       <!-- Filter -->
-      <ng-container *ngIf="isFilterable">
+      @if (isFilterable) {
+      <ng-container>
         <mat-form-field appearance="outline">
           <mat-label>Filter </mat-label>
           <input matInput (keyup)="applyFilter($event)" placeholder="filter" />
         </mat-form-field>
       </ng-container>
+      }
 
       <!-- Add Button -->
-      <ng-container *ngIf="includeAdd">
-        <a
-          mat-mini-fab
-          color="primary"
-          title="Add new"
-          aria-label="Add new"
-          class="ml-5 fl1"
-          *ngIf="isAuthenticated"
-          (click)="emitAdd()"
-        >
+      @if (includeAdd) {
+      <ng-container>
+        @if (isAuthenticated) {
+        <a mat-mini-fab color="primary" title="Add new" aria-label="Add new" class="ml-5 fl1" (click)="emitAdd()">
           <mat-icon>add</mat-icon>
         </a>
+        }
       </ng-container>
+      }
 
       <!-- Table -->
       <table mat-table [dataSource]="tableDataSource" matSort class="mat-elevation-z8">
-        <ng-container [matColumnDef]="column.key" *ngFor="let column of tableColumns; trackBy: trackById">
-          <ng-container *ngIf="column.type === 'sort'">
+        @for (column of tableColumns; track column) {
+        <ng-container [matColumnDef]="column.key">
+          @switch (column.type) { @case ('sort') {
+          <ng-container>
             <th
               mat-header-cell
               *matHeaderCellDef
@@ -67,7 +68,8 @@ import { Column } from '../models/column';
               {{ element[column.key] }}
             </td>
           </ng-container>
-          <ng-container *ngIf="column.type === 'currency_sort'">
+          } @case ('currency_sort') {
+          <ng-container>
             <th
               mat-header-cell
               *matHeaderCellDef
@@ -82,7 +84,8 @@ import { Column } from '../models/column';
               {{ element[column.key] | currency }}
             </td>
           </ng-container>
-          <ng-container *ngIf="column.type === ''">
+          } @case ('link') {
+          <ng-container>
             <th
               mat-header-cell
               *matHeaderCellDef
@@ -92,23 +95,13 @@ import { Column } from '../models/column';
               {{ column.name }}
             </th>
             <td mat-cell *matCellDef="let element">
-              {{ element[column.key] }}
+              @if (element[column.key]) {
+              <a href="{{ element[column.key] }}"><mat-icon>link</mat-icon></a>
+              }
             </td>
           </ng-container>
-          <ng-container *ngIf="column.type === 'link'">
-            <th
-              mat-header-cell
-              *matHeaderCellDef
-              [class.text-right]="column.position === 'right'"
-              style="min-width: {{ column.width }}"
-            >
-              {{ column.name }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              <a *ngIf="element[column.key]" href="{{ element[column.key] }}"><mat-icon>link</mat-icon></a>
-            </td>
-          </ng-container>
-          <ng-container *ngIf="column.type === 'action'">
+          } @case ('action') {
+          <ng-container>
             <th
               mat-header-cell
               *matHeaderCellDef
@@ -116,27 +109,18 @@ import { Column } from '../models/column';
               style="min-width: {{ column.width }}"
             ></th>
             <td mat-cell *matCellDef="let element">
-              <button
-                mat-icon-button
-                color="primary"
-                (click)="emitEdit(element.id)"
-                title="Edit"
-                *ngIf="isAuthenticated"
-              >
+              @if (isAuthenticated) {
+              <button mat-icon-button color="primary" (click)="emitEdit(element.id)" title="Edit">
                 <mat-icon>edit</mat-icon>
               </button>
-              <button
-                mat-icon-button
-                color="warn"
-                (click)="emitDelete(element.id)"
-                title="Delete"
-                *ngIf="isAuthenticated"
-              >
+              <button mat-icon-button color="warn" (click)="emitDelete(element.id)" title="Delete">
                 <mat-icon>delete</mat-icon>
               </button>
+              }
             </td>
           </ng-container>
-          <ng-container *ngIf="column.type === 'view'">
+          } @case ('view') {
+          <ng-container>
             <th
               mat-header-cell
               *matHeaderCellDef
@@ -149,7 +133,23 @@ import { Column } from '../models/column';
               </button>
             </td>
           </ng-container>
+          } @default {
+          <ng-container>
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              [class.text-right]="column.position === 'right'"
+              style="min-width: {{ column.width }}"
+            >
+              {{ column.name }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element[column.key] }}
+            </td>
+          </ng-container>
+          } }
         </ng-container>
+        }
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns; let even = even" [ngClass]="{ gray: even }"></tr>
@@ -160,13 +160,10 @@ import { Column } from '../models/column';
       </table>
 
       <!-- Pagination -->
-      <mat-paginator
-        *ngIf="isPageable"
-        [pageSizeOptions]="paginationSizes"
-        [pageSize]="defaultPageSize"
-        showFirstLastButtons
-      >
+      @if (isPageable) {
+      <mat-paginator [pageSizeOptions]="paginationSizes" [pageSize]="defaultPageSize" showFirstLastButtons>
       </mat-paginator>
+      }
     </ng-container>
   `,
   styles: [
@@ -239,7 +236,7 @@ export class DisplayTableComponent implements OnInit, AfterViewInit {
     this.totalColumns = columnNames.length;
   }
 
-  // we need this, in order to make pagination work with *ngIf
+  // we need this, in order to make pagination work with if block
   ngAfterViewInit(): void {
     this.tableDataSource.paginator = this.matPaginator;
   }
@@ -270,9 +267,5 @@ export class DisplayTableComponent implements OnInit, AfterViewInit {
 
   emitOpen(id: number) {
     this.open.emit(id);
-  }
-
-  public trackById(index: number, item: any) {
-    return item?.id;
   }
 }

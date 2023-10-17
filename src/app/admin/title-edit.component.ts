@@ -30,7 +30,6 @@ import { PublisherService } from '../shared/services/publisher.service';
     MatInputModule,
     MatSelectModule,
     NgIf,
-    NgForOf,
     ReactiveFormsModule,
     RouterLink,
   ],
@@ -39,8 +38,10 @@ import { PublisherService } from '../shared/services/publisher.service';
     <mat-card appearance="outlined">
       <mat-card-title>Title Edit</mat-card-title>
       <mat-card-content>
-        <form *ngIf="titleEditForm" [formGroup]="titleEditForm">
-          <mat-form-field appearance="outline" *ngIf="publishers() as publishers">
+        @if (titleEditForm) {
+        <form [formGroup]="titleEditForm">
+          @if (publishers()) {
+          <mat-form-field appearance="outline">
             <mat-label>Publisher</mat-label>
             <input
               matInput
@@ -48,12 +49,14 @@ import { PublisherService } from '../shared/services/publisher.service';
               #inputPublisher
               formControlName="publisher"
               [matAutocomplete]="publisherAuto"
-              (keyup)="onAutocompleteKeyUp(inputPublisher.value, publishers)"
+              (keyup)="onAutocompleteKeyUp(inputPublisher.value, publishers())"
             />
             <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
-              <mat-option *ngFor="let publisher of filteredPublishers(); trackBy: trackById" [value]="publisher.name">
+              @for (publisher of filteredPublishers(); track publisher.id) {
+              <mat-option [value]="publisher.name">
                 {{ publisher.name }}
               </mat-option>
+              }
             </mat-autocomplete>
             <button
               mat-icon-button
@@ -64,18 +67,13 @@ import { PublisherService } from '../shared/services/publisher.service';
             >
               <mat-icon>add</mat-icon>
             </button>
-            <mat-error
-              *ngIf="
-                titleEditForm.controls['publisher']?.errors?.['required'] &&
-                titleEditForm.controls['publisher']?.touched
-              "
-            >
-              Publisher is required
-            </mat-error>
-            <mat-error *ngIf="titleEditForm.controls['publisher'].errors?.['match']">
-              Please select a publisher from the list.
-            </mat-error>
           </mat-form-field>
+          @if (titleEditForm.controls['publisher'].errors?.['required'] && titleEditForm.controls['publisher'].touched)
+          {
+          <mat-error> Publisher is required </mat-error>
+          } @if (titleEditForm.controls['publisher'].errors?.['match']) {
+          <mat-error> Please select a publisher from the list. </mat-error>
+          } }
 
           <mat-form-field appearance="outline">
             <mat-label for="title">Title</mat-label>
@@ -88,12 +86,16 @@ import { PublisherService } from '../shared/services/publisher.service';
               placeholder="Enter title of comic"
             />
             <mat-error
-              *ngIf="titleEditForm.controls['title'].errors?.['required'] && titleEditForm.controls['title']?.touched"
+              *ngIf="titleEditForm.controls['title'].errors?.['required'] && titleEditForm.controls['title'].touched"
             >
-              Title is required
+              Title is required using *ngIf
             </mat-error>
+            @if (titleEditForm.controls['title'].errors?.['required'] && titleEditForm.controls['title'].touched) {
+            <mat-error> Title is required using if block </mat-error>
+            }
           </mat-form-field>
         </form>
+        }
       </mat-card-content>
 
       <mat-card-actions align="end">
@@ -235,10 +237,6 @@ export default class TitleEditComponent implements OnInit {
       publisher: this.title.publisher,
       title: this.title.title,
     });
-  }
-
-  public trackById(index: number, publisher: Publisher) {
-    return publisher.id;
   }
 
   autocompleteStringValidator(): ValidatorFn {

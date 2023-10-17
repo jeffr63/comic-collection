@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Location, NgIf } from '@angular/common';
+import { Location } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -20,7 +20,6 @@ import { PublisherService } from '../shared/services/publisher.service';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    NgIf,
     ReactiveFormsModule,
     RouterLink,
   ],
@@ -29,7 +28,8 @@ import { PublisherService } from '../shared/services/publisher.service';
     <mat-card appearance="outlined">
       <mat-card-title>Publisher Edit</mat-card-title>
       <mat-card-content>
-        <form *ngIf="publisherEditForm" [formGroup]="publisherEditForm">
+        @if (publisherEditForm) {
+        <form [formGroup]="publisherEditForm">
           <mat-form-field appearance="outline">
             <mat-label for="name">Publisher Name</mat-label>
             <input
@@ -40,16 +40,13 @@ import { PublisherService } from '../shared/services/publisher.service';
               formControlName="name"
               placeholder="Enter name of publisher"
             />
-            <mat-error
-              *ngIf="
-                publisherEditForm.controls['name']?.errors?.['required'] &&
-                publisherEditForm.controls['name']?.touched
-              "
-            >
-              Publisher name is required
-            </mat-error>
+            @if (publisherEditForm.controls['name'].errors?.['required'] && publisherEditForm.controls['name'].touched)
+            {
+            <mat-error> Publisher name is required </mat-error>
+            }
           </mat-form-field>
         </form>
+        }
       </mat-card-content>
 
       <mat-card-actions align="end">

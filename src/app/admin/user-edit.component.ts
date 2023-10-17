@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Location, NgIf } from '@angular/common';
+import { Location } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,7 +22,6 @@ import { User } from '../shared/models/user';
     MatIconModule,
     MatInputModule,
     MatRadioModule,
-    NgIf,
     ReactiveFormsModule,
     RouterLink,
   ],
@@ -31,7 +30,8 @@ import { User } from '../shared/models/user';
     <mat-card appearance="outlined">
       <mat-card-title>User Edit</mat-card-title>
       <mat-card-content>
-        <form *ngIf="userEditForm" [formGroup]="userEditForm">
+        @if (userEditForm) {
+        <form [formGroup]="userEditForm">
           <mat-form-field appearance="outline">
             <mat-label for="name">Name</mat-label>
             <input
@@ -42,27 +42,17 @@ import { User } from '../shared/models/user';
               formControlName="name"
               placeholder="Enter name of user"
             />
-            <mat-error
-              *ngIf="
-                userEditForm.controls['name']?.errors?.['required'] &&
-                userEditForm.controls['name']?.touched
-              "
-            >
-              Name is required
-            </mat-error>
+            @if (userEditForm.controls['name'].errors?.['required'] && userEditForm.controls['name'].touched) {
+            <mat-error> Name is required </mat-error>
+            }
           </mat-form-field>
 
           <mat-form-field appearance="outline">
             <mat-label for="email">Email</mat-label>
             <input type="text" id="email" matInput formControlName="email" placeholder="Enter email of user" />
-            <mat-error
-              *ngIf="
-                userEditForm.controls['name']?.errors?.['required'] &&
-                userEditForm.controls['name']?.touched
-              "
-            >
-              Email is required
-            </mat-error>
+            @if (userEditForm.controls['name'].errors?.['required'] && userEditForm.controls['name'].touched) {
+            <mat-error> Email is required </mat-error>
+            }
           </mat-form-field>
 
           <label id="role">Role</label>
@@ -70,15 +60,11 @@ import { User } from '../shared/models/user';
             <mat-radio-button class="radio-button" value="admin">Admin</mat-radio-button>
             <mat-radio-button class="radio-button" value="user">User</mat-radio-button>
           </mat-radio-group>
-          <mat-error
-            *ngIf="
-              userEditForm.controls['role']?.errors?.['required'] &&
-              userEditForm.controls['role']?.touched
-            "
-          >
-            Role is required
-          </mat-error>
+          @if (userEditForm.controls['role'].errors?.['required'] && userEditForm.controls['role'].touched) {
+          <mat-error> Role is required </mat-error>
+          }
         </form>
+        }
       </mat-card-content>
 
       <mat-card-actions align="end">

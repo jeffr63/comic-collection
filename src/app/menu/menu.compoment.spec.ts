@@ -6,7 +6,6 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { NgIf } from '@angular/common';
 import { signal } from '@angular/core';
 
 class MockAuthService {
@@ -31,7 +30,7 @@ describe('MenuComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [MenuComponent, MatDialogModule, MatIconModule, MatToolbarModule, MatButtonModule, NgIf, RouterLink],
+      imports: [MenuComponent, MatDialogModule, MatIconModule, MatToolbarModule, MatButtonModule, RouterLink],
       providers: [
         provideRouter([]),
         { provide: AuthService, useClass: MockAuthService },
@@ -54,5 +53,5 @@ describe('MenuComponent', () => {
   it('should open login dialog when login is clicked', () => {
     const loginbtn = fixture.nativeElement.querySelector('#login');
     loginbtn.click();
-  })
+  });
 });

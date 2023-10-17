@@ -1,5 +1,4 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 
 import { MatDialog } from '@angular/material/dialog';
@@ -15,12 +14,12 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
 @Component({
   selector: 'app-issue-all-list',
   standalone: true,
-  imports: [DisplayTableComponent, NgIf],
+  imports: [DisplayTableComponent],
 
   template: `
     <section class="mt-5">
+      @if (issues()) {
       <app-display-table
-        *ngIf="issues()"
         [includeAdd]="true"
         [isAuthenticated]="isLoggedIn()"
         [isFilterable]="true"
@@ -33,7 +32,8 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
         (add)="newIssue()"
         (delete)="deleteIssue($event)"
         (edit)="editIssue($event)"
-      ></app-display-table>
+      />
+      }
     </section>
   `,
 

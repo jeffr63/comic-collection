@@ -2,14 +2,13 @@ import { Component, OnInit, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { NgIf } from '@angular/common';
 
 import { ModalDataService } from './modal-data.service';
 
 @Component({
   selector: 'app-delete',
   standalone: true,
-  imports: [MatDialogModule, MatIconModule, MatButtonModule, NgIf],
+  imports: [MatDialogModule, MatIconModule, MatButtonModule],
 
   template: `
     <div style="margin:10px">
@@ -20,7 +19,9 @@ import { ModalDataService } from './modal-data.service';
         </p>
         <p>
           {{ modalOptions.body }}
-          <span class="text-danger" *ngIf="modalOptions.warning">{{ modalOptions.warning }}</span>
+          @if (modalOptions.warning) {
+          <span class="text-danger">{{ modalOptions.warning }}</span>
+          }
         </p>
       </mat-dialog-content>
       <mat-dialog-actions align="end">
@@ -42,7 +43,7 @@ import { ModalDataService } from './modal-data.service';
   ],
 })
 export class DeleteComponent implements OnInit {
-  public dialog = inject(MatDialogRef<DeleteComponent>)
+  public dialog = inject(MatDialogRef<DeleteComponent>);
   private modalDataService = inject(ModalDataService);
 
   modalOptions = {

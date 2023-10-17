@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
-import { AsyncPipe, Location, NgForOf, NgIf } from '@angular/common';
+import { AsyncPipe, Location } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -31,8 +31,6 @@ import { TitleService } from '../shared/services/title.service';
     MatInputModule,
     MatIconModule,
     MatSelectModule,
-    NgForOf,
-    NgIf,
     ReactiveFormsModule,
     RouterLink,
   ],
@@ -40,8 +38,10 @@ import { TitleService } from '../shared/services/title.service';
     <mat-card appearance="outlined">
       <mat-card-title>Issue Edit</mat-card-title>
       <mat-card-content>
-        <form *ngIf="issueEditForm" [formGroup]="issueEditForm">
-          <mat-form-field appearance="outline" *ngIf="publishers() as publishers">
+        @if (issueEditForm) {
+        <form [formGroup]="issueEditForm">
+          @if (publishers()) {
+          <mat-form-field appearance="outline">
             <mat-label for="publisher">Publisher</mat-label>
             <input
               matInput
@@ -49,27 +49,24 @@ import { TitleService } from '../shared/services/title.service';
               #inputPublisher
               formControlName="publisher"
               [matAutocomplete]="publisherAuto"
-              (keyup)="onAutocompleteKeyUpPublisher(inputPublisher.value, publishers)"
+              (keyup)="onAutocompleteKeyUpPublisher(inputPublisher.value, publishers())"
             />
             <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
-              <mat-option *ngFor="let publisher of filteredPublishers(); trackBy: publisherId" [value]="publisher.name">
+              @for (publisher of filteredPublishers(); track publisher.id) {
+              <mat-option [value]="publisher.name">
                 {{ publisher.name }}
               </mat-option>
+              }
             </mat-autocomplete>
-            <mat-error
-              *ngIf="
-                issueEditForm.controls['publisher']?.errors?.['required'] &&
-                issueEditForm.controls['publisher']?.touched
-              "
-            >
-              Publisher is required
-            </mat-error>
-            <mat-error *ngIf="issueEditForm.controls['publisher'].errors?.['match']">
-              Please select a publisher from the list.
-            </mat-error>
+            @if (issueEditForm.controls['publisher'].errors?.['required'] &&
+            issueEditForm.controls['publisher'].touched) {
+            <mat-error> Publisher is required </mat-error>
+            } @if (issueEditForm.controls['publisher'].errors?.['match']) {
+            <mat-error> Please select a publisher from the list. </mat-error>
+            }
           </mat-form-field>
-
-          <mat-form-field appearance="outline" *ngIf="titles() as titles">
+          } @if (titles()) {
+          <mat-form-field appearance="outline">
             <mat-label for="title">Title</mat-label>
             <input
               matInput
@@ -77,28 +74,25 @@ import { TitleService } from '../shared/services/title.service';
               #inputTitle
               formControlName="title"
               [matAutocomplete]="titleAuto"
-              (keyup)="onAutocompleteKeyUpTitle(inputTitle.value, titles)"
+              (keyup)="onAutocompleteKeyUpTitle(inputTitle.value, titles())"
             />
             <mat-autocomplete #titleAuto="matAutocomplete" autoActiveFirstOption>
-              <mat-option *ngFor="let title of filteredTitles(); trackBy: titleId" [value]="title.title">
+              @for (title of filteredTitles(); track title.id) {
+              <mat-option [value]="title.title">
                 {{ title.title }}
               </mat-option>
+              }
             </mat-autocomplete>
             <button mat-icon-button matIconSuffix color="primary" routerLink="/admin/title/new" title="Add new title">
               <mat-icon>add</mat-icon>
             </button>
-            <mat-error
-              *ngIf="
-                issueEditForm.controls['title']?.errors?.['required'] &&
-                issueEditForm.controls['title']?.touched
-              "
-            >
-              Title is required
-            </mat-error>
-            <mat-error *ngIf="issueEditForm.controls['title'].errors?.['match']">
-              Please select a title from the list.
-            </mat-error>
+            @if (issueEditForm.controls['title'].errors?.['required'] && issueEditForm.controls['title'].touched) {
+            <mat-error> Title is required </mat-error>
+            } @if (issueEditForm.controls['title'].errors?.['match']) {
+            <mat-error> Please select a title from the list. </mat-error>
+            }
           </mat-form-field>
+          }
 
           <mat-form-field appearance="outline">
             <mat-label for="issue">Issue Number</mat-label>
@@ -110,14 +104,9 @@ import { TitleService } from '../shared/services/title.service';
               formControlName="issue"
               placeholder="Enter issue number of comic"
             />
-            <mat-error
-              *ngIf="
-                issueEditForm.controls['issue']?.errors?.['required'] &&
-                issueEditForm.controls['issue']?.touched
-              "
-            >
-              Issue Number is required
-            </mat-error>
+            @if (issueEditForm.controls['issue'].errors?.['required'] && issueEditForm.controls['issue'].touched) {
+            <mat-error> Issue Number is required </mat-error>
+            }
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -130,14 +119,10 @@ import { TitleService } from '../shared/services/title.service';
               formControlName="coverPrice"
               placeholder="Enter cover price of comic"
             />
-            <mat-error
-              *ngIf="
-                issueEditForm.controls['coverPrice']?.errors?.['required'] &&
-                issueEditForm.controls['coverPrice']?.touched
-              "
-            >
-              Cover Price is required
-            </mat-error>
+            @if (issueEditForm.controls['coverPrice'].errors?.['required'] &&
+            issueEditForm.controls['coverPrice'].touched) {
+            <mat-error> Cover Price is required </mat-error>
+            }
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -152,6 +137,7 @@ import { TitleService } from '../shared/services/title.service';
             />
           </mat-form-field>
         </form>
+        }
       </mat-card-content>
 
       <mat-card-actions align="end">

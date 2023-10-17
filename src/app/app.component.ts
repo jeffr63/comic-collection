@@ -10,14 +10,15 @@ import { MenuComponent } from './menu/menu.component';
   imports: [MenuComponent, RouterOutlet],
 
   template: `
-    <app-menu></app-menu>
+    <app-menu />
     <main>
-      <router-outlet></router-outlet>
+      <router-outlet />
     </main>
   `,
   styles: [],
 })
 export class AppComponent implements OnInit {
+  abc = true;
   private authService = inject(AuthService);
 
   ngOnInit() {

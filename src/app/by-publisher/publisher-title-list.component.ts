@@ -5,16 +5,15 @@ import { Column } from '../shared/models/column';
 import { PublisherService } from '../shared/services/publisher.service';
 import { TitleService } from '../shared/services/title.service';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { NgIf } from '@angular/common';
 import { Publisher } from '../shared/models/publisher';
 
 @Component({
   selector: 'app-publisher-title-list',
   standalone: true,
-  imports: [DisplayTableComponent, NgIf],
+  imports: [DisplayTableComponent],
   template: ` <section class="mt-5">
+    @if (titles()) {
     <app-display-table
-      *ngIf="titles()"
       [includeAdd]="false"
       [isAuthenticated]="false"
       [isFilterable]="true"
@@ -25,7 +24,8 @@ import { Publisher } from '../shared/models/publisher';
       [tableData]="titles()"
       [tableColumns]="columns"
       (open)="open($event)"
-    ></app-display-table>
+    />
+    }
   </section>`,
   styles: [
     `
@@ -46,7 +46,7 @@ export default class PublisherTitleListComponent implements OnInit {
   @Input() id?: string;
 
   publisher = signal('');
-  allTitles = this.titleService.titles
+  allTitles = this.titleService.titles;
   titles = computed(() => {
     return this.allTitles().filter((title) => title.publisher === this.publisher());
   });

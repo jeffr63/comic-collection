@@ -1,6 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { NgIf } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
@@ -14,12 +13,12 @@ import { PublisherService } from '../shared/services/publisher.service';
 @Component({
   selector: 'app-publisher-list',
   standalone: true,
-  imports: [DisplayTableComponent, NgIf, RouterLink],
+  imports: [DisplayTableComponent, RouterLink],
 
   template: `
     <section class="mt-5">
+      @if (publishers()) {}
       <app-display-table
-        *ngIf="publishers()"
         [isAuthenticated]="true"
         [isFilterable]="true"
         [includeAdd]="true"
@@ -32,7 +31,7 @@ import { PublisherService } from '../shared/services/publisher.service';
         (add)="newPublisher()"
         (delete)="deletePublisher($event)"
         (edit)="editPublisher($event)"
-      ></app-display-table>
+      />
     </section>
   `,
 
