@@ -49,8 +49,7 @@ import { PublisherService } from '../shared/services/publisher.service';
               #inputPublisher
               formControlName="publisher"
               [matAutocomplete]="publisherAuto"
-              (keyup)="onAutocompleteKeyUp(inputPublisher.value, publishers())"
-            />
+              (keyup)="onAutocompleteKeyUp(inputPublisher.value, publishers())" />
             <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
               @for (publisher of filteredPublishers(); track publisher.id) {
               <mat-option [value]="publisher.name">
@@ -63,17 +62,17 @@ import { PublisherService } from '../shared/services/publisher.service';
               matIconSuffix
               color="primary"
               routerLink="/admin/publisher/new"
-              title="Add new publisher"
-            >
+              title="Add new publisher">
               <mat-icon>add</mat-icon>
             </button>
+            @if (titleEditForm.controls['publisher'].errors?.['required'] &&
+            titleEditForm.controls['publisher'].touched) {
+            <mat-error> Publisher is required </mat-error>
+            } @if (titleEditForm.controls['publisher'].errors?.['match']) {
+            <mat-error> Please select a publisher from the list. </mat-error>
+            }
           </mat-form-field>
-          @if (titleEditForm.controls['publisher'].errors?.['required'] && titleEditForm.controls['publisher'].touched)
-          {
-          <mat-error> Publisher is required </mat-error>
-          } @if (titleEditForm.controls['publisher'].errors?.['match']) {
-          <mat-error> Please select a publisher from the list. </mat-error>
-          } }
+          }
 
           <mat-form-field appearance="outline">
             <mat-label for="title">Title</mat-label>
@@ -83,11 +82,9 @@ import { PublisherService } from '../shared/services/publisher.service';
               id="title"
               matInput
               formControlName="title"
-              placeholder="Enter title of comic"
-            />
+              placeholder="Enter title of comic" />
             <mat-error
-              *ngIf="titleEditForm.controls['title'].errors?.['required'] && titleEditForm.controls['title'].touched"
-            >
+              *ngIf="titleEditForm.controls['title'].errors?.['required'] && titleEditForm.controls['title'].touched">
               Title is required using *ngIf
             </mat-error>
             @if (titleEditForm.controls['title'].errors?.['required'] && titleEditForm.controls['title'].touched) {
@@ -108,8 +105,7 @@ import { PublisherService } from '../shared/services/publisher.service';
           (click)="saveNew()"
           title="Save"
           [disabled]="!titleEditForm.valid"
-          class="ml-10"
-        >
+          class="ml-10">
           <mat-icon>add_task</mat-icon> Save & New
         </button>
         <button mat-flat-button color="accent" class="ml-10" (click)="cancel()">

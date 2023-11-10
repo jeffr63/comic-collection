@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -9,7 +10,15 @@ import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatDialogModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+  ],
 
   template: `
     <div style="margin:10px">
@@ -25,8 +34,7 @@ import { MatInputModule } from '@angular/material/input';
               id="email"
               matInput
               formControlName="email"
-              placeholder="Enter email address"
-            />
+              placeholder="Enter email address" />
             @if (loginForm.controls['email'].errors?.['required'] && loginForm.controls['email'].touched) {
             <mat-error> Email is required </mat-error>
             } @if (loginForm.controls['email'].errors?.['email'] && loginForm.controls['email'].touched) {
@@ -41,8 +49,7 @@ import { MatInputModule } from '@angular/material/input';
               id="password"
               matInput
               formControlName="password"
-              [type]="flag ? 'password' : 'text'"
-            />
+              [type]="flag ? 'password' : 'text'" />
             @if (loginForm.controls['password'].errors?.['required'] && loginForm.controls['password'].touched) {
             <mat-error> Password is required </mat-error>
             }

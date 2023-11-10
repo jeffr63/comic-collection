@@ -38,8 +38,7 @@ import { PublisherService } from '../shared/services/publisher.service';
               id="title"
               matInput
               formControlName="name"
-              placeholder="Enter name of publisher"
-            />
+              placeholder="Enter name of publisher" />
             @if (publisherEditForm.controls['name'].errors?.['required'] && publisherEditForm.controls['name'].touched)
             {
             <mat-error> Publisher name is required </mat-error>

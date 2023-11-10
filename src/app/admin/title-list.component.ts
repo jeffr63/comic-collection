@@ -30,8 +30,7 @@ import { TitleService } from '../shared/services/title.service';
         [tableColumns]="columns"
         (add)="newTitle()"
         (delete)="deleteTitle($event)"
-        (edit)="editTitle($event)"
-      />
+        (edit)="editTitle($event)" />
       }
     </section>
   `,
