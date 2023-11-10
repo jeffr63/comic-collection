@@ -270,7 +270,6 @@ export default class IssueEditComponent implements OnInit {
   async loadFormValues(id: number) {
     const issue = await this.issueService.getById(id);
     this.issue = issue;
-    console.log(this.issue);
     this.issueEditForm.patchValue({
       publisher: issue.publisher,
       title: issue.title,

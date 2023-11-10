@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
-import { AsyncPipe, Location, NgForOf, NgIf } from '@angular/common';
+import { AsyncPipe, Location } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -29,7 +29,6 @@ import { PublisherService } from '../shared/services/publisher.service';
     MatIconModule,
     MatInputModule,
     MatSelectModule,
-    NgIf,
     ReactiveFormsModule,
     RouterLink,
   ],
@@ -83,12 +82,8 @@ import { PublisherService } from '../shared/services/publisher.service';
               matInput
               formControlName="title"
               placeholder="Enter title of comic" />
-            <mat-error
-              *ngIf="titleEditForm.controls['title'].errors?.['required'] && titleEditForm.controls['title'].touched">
-              Title is required using *ngIf
-            </mat-error>
             @if (titleEditForm.controls['title'].errors?.['required'] && titleEditForm.controls['title'].touched) {
-            <mat-error> Title is required using if block </mat-error>
+            <mat-error> Title is required</mat-error>
             }
           </mat-form-field>
         </form>
