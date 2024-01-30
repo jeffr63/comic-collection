@@ -46,9 +46,9 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
   ],
 })
 export default class IssueAllListComponent implements OnInit {
-  issueService = inject(IssueService);
-  dialog = inject(MatDialog);
   authService = inject(AuthService);
+  dialog = inject(MatDialog);
+  issueService = inject(IssueService);
   modalDataService = inject(ModalDataService);
   router = inject(Router);
 

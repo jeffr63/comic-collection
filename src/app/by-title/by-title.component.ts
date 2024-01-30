@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Column } from '../shared/models/column';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { TitleService } from '../shared/services/title.service';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-by-title-list',
@@ -14,7 +15,7 @@ import { TitleService } from '../shared/services/title.service';
       @if (titles()) {
       <app-display-table
         [includeAdd]="false"
-        [isAuthenticated]="false"
+        [isAuthenticated]="isAuthenticated()"
         [isFilterable]="true"
         [isPageable]="true"
         [paginationSizes]="[5, 10, 25, 100]"
@@ -22,8 +23,7 @@ import { TitleService } from '../shared/services/title.service';
         [disableClear]="true"
         [tableData]="titles()"
         [tableColumns]="columns"
-        (open)="open($event)"
-       />
+        (open)="open($event)" />
       }
     </section>
   `,
@@ -39,9 +39,11 @@ import { TitleService } from '../shared/services/title.service';
   ],
 })
 export default class ByTitleListComponent implements OnInit {
+  authService = inject(AuthService);
   titleService = inject(TitleService);
   router = inject(Router);
 
+  isAuthenticated = this.authService.isLoggedIn;
   titles = this.titleService.titles;
 
   columns: Column[] = [

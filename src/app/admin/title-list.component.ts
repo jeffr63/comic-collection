@@ -9,6 +9,7 @@ import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { ModalDataService } from '../shared/modals/modal-data.service';
 import { TitleService } from '../shared/services/title.service';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-source-list',
@@ -19,7 +20,7 @@ import { TitleService } from '../shared/services/title.service';
     <section class="mt-5">
       @if (titles()) {
       <app-display-table
-        [isAuthenticated]="true"
+        [isAuthenticated]="isAuthenticated()"
         [isFilterable]="true"
         [includeAdd]="true"
         [isPageable]="true"
@@ -47,11 +48,13 @@ import { TitleService } from '../shared/services/title.service';
   ],
 })
 export default class TitleListComponent implements OnInit {
-  titleService = inject(TitleService);
+  authService = inject(AuthService);
   dialog = inject(MatDialog);
   modalDataService = inject(ModalDataService);
   router = inject(Router);
+  titleService = inject(TitleService);
 
+  isAuthenticated = this.authService.isLoggedInAsAdmin;
   titles = this.titleService.titles;
 
   columns: Column[] = [

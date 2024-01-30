@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
 
+import { AuthService } from '../shared/services/auth.service';
 import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
@@ -19,7 +20,7 @@ import { PublisherService } from '../shared/services/publisher.service';
     <section class="mt-5">
       @if (publishers()) {}
       <app-display-table
-        [isAuthenticated]="true"
+        [isAuthenticated]="isAuthenticated()"
         [isFilterable]="true"
         [includeAdd]="true"
         [isPageable]="true"
@@ -30,8 +31,7 @@ import { PublisherService } from '../shared/services/publisher.service';
         [tableColumns]="columns"
         (add)="newPublisher()"
         (delete)="deletePublisher($event)"
-        (edit)="editPublisher($event)"
-      />
+        (edit)="editPublisher($event)" />
     </section>
   `,
 
@@ -47,11 +47,13 @@ import { PublisherService } from '../shared/services/publisher.service';
   ],
 })
 export default class PublisherListComponent implements OnInit {
-  publisherService = inject(PublisherService);
+  authService = inject(AuthService);
   dialog = inject(MatDialog);
   modalDataService = inject(ModalDataService);
+  publisherService = inject(PublisherService);
   router = inject(Router);
 
+  isAuthenticated = this.authService.isLoggedInAsAdmin;
   publishers = this.publisherService.publishers;
 
   columns: Column[] = [

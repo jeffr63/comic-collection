@@ -1,5 +1,16 @@
 import { CurrencyPipe, NgClass } from '@angular/common';
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+  computed,
+  effect,
+  input,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -40,7 +51,7 @@ import { Column } from '../models/column';
       <!-- Add Button -->
       @if (includeAdd) {
       <ng-container>
-        @if (isAuthenticated) {
+        @if (isAuthenticated()) {
         <a mat-mini-fab color="primary" title="Add new" aria-label="Add new" class="ml-5 fl1" (click)="emitAdd()">
           <mat-icon>add</mat-icon>
         </a>
@@ -60,8 +71,7 @@ import { Column } from '../models/column';
               mat-sort-header
               [class.text-right]="column.position === 'right'"
               [arrowPosition]="column.position === 'right' ? 'before' : 'after'"
-              style="min-width: {{ column.width }}"
-            >
+              style="min-width: {{ column.width }}">
               {{ column.name }}
             </th>
             <td mat-cell *matCellDef="let element">
@@ -76,8 +86,7 @@ import { Column } from '../models/column';
               mat-sort-header
               [class.text-right]="column.position === 'right'"
               [arrowPosition]="column.position === 'right' ? 'before' : 'after'"
-              style="min-width: {{ column.width }}"
-            >
+              style="min-width: {{ column.width }}">
               {{ column.name }}
             </th>
             <td mat-cell *matCellDef="let element">
@@ -90,8 +99,7 @@ import { Column } from '../models/column';
               mat-header-cell
               *matHeaderCellDef
               [class.text-right]="column.position === 'right'"
-              style="min-width: {{ column.width }}"
-            >
+              style="min-width: {{ column.width }}">
               {{ column.name }}
             </th>
             <td mat-cell *matCellDef="let element">
@@ -106,10 +114,9 @@ import { Column } from '../models/column';
               mat-header-cell
               *matHeaderCellDef
               [class.text-right]="column.position === 'right'"
-              style="min-width: {{ column.width }}"
-            ></th>
+              style="min-width: {{ column.width }}"></th>
             <td mat-cell *matCellDef="let element">
-              @if (isAuthenticated) {
+              @if (isAuthenticated()) {
               <button mat-icon-button color="primary" (click)="emitEdit(element.id)" title="Edit">
                 <mat-icon>edit</mat-icon>
               </button>
@@ -125,8 +132,7 @@ import { Column } from '../models/column';
               mat-header-cell
               *matHeaderCellDef
               [class.text-right]="column.position === 'right'"
-              style="min-width: {{ column.width }}"
-            ></th>
+              style="min-width: {{ column.width }}"></th>
             <td mat-cell *matCellDef="let element">
               <button mat-icon-button color="primary" (click)="emitOpen(element.id)" title="View">
                 <mat-icon>view_list</mat-icon>
@@ -139,8 +145,7 @@ import { Column } from '../models/column';
               mat-header-cell
               *matHeaderCellDef
               [class.text-right]="column.position === 'right'"
-              style="min-width: {{ column.width }}"
-            >
+              style="min-width: {{ column.width }}">
               {{ column.name }}
             </th>
             <td mat-cell *matCellDef="let element">
@@ -196,33 +201,34 @@ import { Column } from '../models/column';
   ],
 })
 export class DisplayTableComponent implements OnInit, AfterViewInit {
-  public tableDataSource = new MatTableDataSource([]);
-  public displayedColumns: string[] = [];
-  totalColumns: number = 1;
-
-  @ViewChild(MatPaginator, { static: false }) matPaginator!: MatPaginator;
-  @ViewChild(MatSort, { static: true }) matSort!: MatSort;
-
-  // this property needs to have a setter, to dynamically get changes from parent component
-  @Input({ required: true }) set tableData(data: any[]) {
-    this.setTableDataSource(data);
-  }
-  @Input() isAuthenticated = false;
+  // input parms
+  isAuthenticated = input(false);
+  @Input() defaultPageSize = 10;
+  @Input() disableClear = false;
   @Input() isFilterable = false;
   @Input() isPageable = false;
   @Input() includeAdd = false;
   @Input() paginationSizes: number[] = [5, 10, 15];
-  @Input() defaultPageSize = this.paginationSizes[1];
-  @Input() disableClear = false;
   @Input({ required: true }) tableColumns: Column[] = [];
+  tableData = input.required<any[]>();
+  public tableDataSource = new MatTableDataSource([]);
 
+  // output parms
   @Output() add: EventEmitter<any> = new EventEmitter();
   @Output() delete: EventEmitter<number> = new EventEmitter();
   @Output() edit: EventEmitter<number> = new EventEmitter();
   @Output() open: EventEmitter<number> = new EventEmitter();
 
+  // computed values
+  @ViewChild(MatPaginator, { static: false }) matPaginator!: MatPaginator;
+  @ViewChild(MatSort, { static: true }) matSort!: MatSort;
+  public displayedColumns: String[] = [];
+
+  constructor() {
+    effect(() => this.setTableDataSource(this.tableData()));
+  }
+
   ngOnInit(): void {
-    const columnNames = this.tableColumns.map((column: Column) => column.key);
     let defaultSort = '';
     this.tableColumns.map((column: Column) => {
       if (column.sortDefault) {
@@ -232,20 +238,12 @@ export class DisplayTableComponent implements OnInit, AfterViewInit {
     if (defaultSort !== '') {
       this.matSort.sort({ id: defaultSort, start: 'asc' } as MatSortable);
     }
-    this.displayedColumns = columnNames;
-    this.totalColumns = columnNames.length;
+    this.displayedColumns = this.tableColumns.map((column: Column) => column.key);
   }
 
   // we need this, in order to make pagination work with if block
   ngAfterViewInit(): void {
     this.tableDataSource.paginator = this.matPaginator;
-  }
-
-  setTableDataSource(data: any) {
-    this.tableDataSource = new MatTableDataSource(data);
-    this.tableDataSource.paginator = this.matPaginator;
-    this.matSort.disableClear = this.disableClear;
-    this.tableDataSource.sort = this.matSort;
   }
 
   applyFilter(event: Event) {
@@ -267,5 +265,12 @@ export class DisplayTableComponent implements OnInit, AfterViewInit {
 
   emitOpen(id: number) {
     this.open.emit(id);
+  }
+
+  setTableDataSource(data: any) {
+    this.tableDataSource = new MatTableDataSource(data);
+    this.tableDataSource.paginator = this.matPaginator;
+    this.matSort.disableClear = this.disableClear;
+    this.tableDataSource.sort = this.matSort;
   }
 }

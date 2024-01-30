@@ -6,6 +6,7 @@ import { PublisherService } from '../shared/services/publisher.service';
 import { TitleService } from '../shared/services/title.service';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { Publisher } from '../shared/models/publisher';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-publisher-title-list',
@@ -15,7 +16,7 @@ import { Publisher } from '../shared/models/publisher';
     @if (titles()) {
     <app-display-table
       [includeAdd]="false"
-      [isAuthenticated]="false"
+      [isAuthenticated]="isAuthenticated()"
       [isFilterable]="true"
       [isPageable]="true"
       [paginationSizes]="[5, 10, 25, 100]"
@@ -23,8 +24,7 @@ import { Publisher } from '../shared/models/publisher';
       [disableClear]="true"
       [tableData]="titles()"
       [tableColumns]="columns"
-      (open)="open($event)"
-    />
+      (open)="open($event)" />
     }
   </section>`,
   styles: [
@@ -39,14 +39,15 @@ import { Publisher } from '../shared/models/publisher';
   ],
 })
 export default class PublisherTitleListComponent implements OnInit {
+  authService = inject(AuthService);
   publisherService = inject(PublisherService);
   router = inject(Router);
   titleService = inject(TitleService);
 
   @Input() id?: string;
-
-  publisher = signal('');
+  isAuthenticated = this.authService.isLoggedIn;
   allTitles = this.titleService.titles;
+  publisher = signal('');
   titles = computed(() => {
     return this.allTitles().filter((title) => title.publisher === this.publisher());
   });

@@ -9,6 +9,7 @@ import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { ModalDataService } from '../shared/modals/modal-data.service';
 import { UserService } from '../shared/services/user.service';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-user-list',
@@ -18,7 +19,7 @@ import { UserService } from '../shared/services/user.service';
     <section class="mt-5">
       @if (users()) {
       <app-display-table
-        [isAuthenticated]="true"
+        [isAuthenticated]="isAuthenticated()"
         [isFilterable]="true"
         [includeAdd]="false"
         [isPageable]="true"
@@ -28,8 +29,7 @@ import { UserService } from '../shared/services/user.service';
         [tableData]="users()"
         [tableColumns]="columns"
         (delete)="deleteUser($event)"
-        (edit)="editUser($event)"
-      />
+        (edit)="editUser($event)" />
       }
     </section>
   `,
@@ -45,11 +45,13 @@ import { UserService } from '../shared/services/user.service';
   ],
 })
 export default class UserListComponent implements OnInit {
-  userService = inject(UserService);
+  authService = inject(AuthService);
   dialog = inject(MatDialog);
   modalDataService = inject(ModalDataService);
   router = inject(Router);
+  userService = inject(UserService);
 
+  isAuthenticated = this.authService.isLoggedInAsAdmin;
   users = this.userService.users;
 
   columns: Column[] = [

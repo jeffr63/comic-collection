@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Column } from '../shared/models/column';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { PublisherService } from '../shared/services/publisher.service';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-by-publisher',
@@ -14,7 +15,7 @@ import { PublisherService } from '../shared/services/publisher.service';
       @if (publishers()) {
       <app-display-table
         [includeAdd]="false"
-        [isAuthenticated]="false"
+        [isAuthenticated]="isAuthenticated()"
         [isFilterable]="true"
         [isPageable]="true"
         [paginationSizes]="[5, 10, 25, 100]"
@@ -22,8 +23,7 @@ import { PublisherService } from '../shared/services/publisher.service';
         [disableClear]="true"
         [tableData]="publishers()"
         [tableColumns]="columns"
-        (open)="open($event)"
-      />
+        (open)="open($event)" />
       }
     </section>
   `,
@@ -39,9 +39,11 @@ import { PublisherService } from '../shared/services/publisher.service';
   ],
 })
 export default class ByPublisherComponent implements OnInit {
+  authService = inject(AuthService);
   publisherService = inject(PublisherService);
   router = inject(Router);
 
+  isAuthenticated = this.authService.isLoggedIn;
   publishers = this.publisherService.publishers;
 
   columns: Column[] = [
