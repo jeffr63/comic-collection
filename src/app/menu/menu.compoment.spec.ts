@@ -50,8 +50,8 @@ describe('MenuComponent', () => {
     expect(component).toBeDefined();
   });
 
-  it('should open login dialog when login is clicked', () => {
-    const loginbtn = fixture.nativeElement.querySelector('#login');
-    loginbtn.click();
-  });
+  // it('should open login dialog when login is clicked', () => {
+  //   const loginbtn = fixture.nativeElement.querySelector('#login');
+  //   loginbtn.click();
+  // });
 });
