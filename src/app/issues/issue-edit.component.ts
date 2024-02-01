@@ -49,8 +49,7 @@ import { TitleService } from '../shared/services/title.service';
               #inputPublisher
               formControlName="publisher"
               [matAutocomplete]="publisherAuto"
-              (keyup)="onAutocompleteKeyUpPublisher(inputPublisher.value, publishers())"
-            />
+              (keyup)="onAutocompleteKeyUpPublisher(inputPublisher.value, publishers())" />
             <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
               @for (publisher of filteredPublishers(); track publisher.id) {
               <mat-option [value]="publisher.name">
@@ -74,8 +73,7 @@ import { TitleService } from '../shared/services/title.service';
               #inputTitle
               formControlName="title"
               [matAutocomplete]="titleAuto"
-              (keyup)="onAutocompleteKeyUpTitle(inputTitle.value, titles())"
-            />
+              (keyup)="onAutocompleteKeyUpTitle(inputTitle.value, titles())" />
             <mat-autocomplete #titleAuto="matAutocomplete" autoActiveFirstOption>
               @for (title of filteredTitles(); track title.id) {
               <mat-option [value]="title.title">
@@ -102,8 +100,7 @@ import { TitleService } from '../shared/services/title.service';
               id="issue"
               matInput
               formControlName="issue"
-              placeholder="Enter issue number of comic"
-            />
+              placeholder="Enter issue number of comic" />
             @if (issueEditForm.controls['issue'].errors?.['required'] && issueEditForm.controls['issue'].touched) {
             <mat-error> Issue Number is required </mat-error>
             }
@@ -117,8 +114,7 @@ import { TitleService } from '../shared/services/title.service';
               id="coverPrice"
               matInput
               formControlName="coverPrice"
-              placeholder="Enter cover price of comic"
-            />
+              placeholder="Enter cover price of comic" />
             @if (issueEditForm.controls['coverPrice'].errors?.['required'] &&
             issueEditForm.controls['coverPrice'].touched) {
             <mat-error> Cover Price is required </mat-error>
@@ -133,8 +129,7 @@ import { TitleService } from '../shared/services/title.service';
               id="url"
               matInput
               formControlName="url"
-              placeholder="Enter url to comic page"
-            />
+              placeholder="Enter url to comic page" />
           </mat-form-field>
         </form>
         }
@@ -150,8 +145,7 @@ import { TitleService } from '../shared/services/title.service';
           (click)="saveNew()"
           title="Save"
           [disabled]="!issueEditForm.valid"
-          class="ml-10"
-        >
+          class="ml-10">
           <mat-icon>add_task</mat-icon> Save & New
         </button>
         <button mat-flat-button color="accent" (click)="cancel()" class="ml-10">

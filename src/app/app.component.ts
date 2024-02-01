@@ -18,7 +18,6 @@ import { MenuComponent } from './menu/menu.component';
   styles: [],
 })
 export class AppComponent implements OnInit {
-  abc = true;
   private authService = inject(AuthService);
 
   ngOnInit() {
