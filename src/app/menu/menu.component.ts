@@ -26,7 +26,7 @@ import { LoginComponent } from '../shared/modals/login.component';
       <button mat-flat-button color="primary" routerLink="/by_title" id="by_titles">By Title</button>
       <button mat-flat-button color="primary" routerLink="/issues" id="courses">All Issues</button>
       @if (!isLoggedIn()) {
-      <button mat-flat-button color="primary" (click)="open()" id="login">Login</button>
+      <button mat-flat-button color="primary" (click)="login()" id="login">Login</button>
       } @if (isLoggedInAsAdmin()) {
       <button mat-flat-button color="primary" routerLink="/admin" id="admin">Admin</button>
       } @if (isLoggedIn()) {
@@ -54,7 +54,7 @@ export class MenuComponent {
   email = '';
   password = '';
 
-  open() {
+  login() {
     const dialogRef = this.dialog.open(LoginComponent, {
       width: '500px',
       data: { email: this.email, password: this.password },

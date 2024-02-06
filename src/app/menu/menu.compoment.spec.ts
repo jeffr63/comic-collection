@@ -2,56 +2,72 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { MenuComponent } from './menu.component';
 import { Router, RouterLink, provideRouter } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { signal } from '@angular/core';
+import { DebugElement, signal } from '@angular/core';
+import { of } from 'rxjs';
 
-class MockAuthService {
+class AuthServiceMock {
   isLoggedIn = signal(false);
   isLoggedInAsAdmin = signal(false);
-  login() {}
+  login(email: string, password: string) {}
   logout() {}
 }
 
-class MockMatDialog {
-  open() {}
-  afterClose() {}
-  close() {}
+const mockData = { email: 'test', password: '123' };
+
+export class MatDialogMock {
+  open() {
+    return {
+      afterClosed: () => of(mockData),
+    };
+  }
 }
 
-describe('MenuComponent', () => {
+fdescribe('MenuComponent', () => {
   let fixture: ComponentFixture<MenuComponent>;
   let component: MenuComponent;
-  let authService;
+  let authService: AuthService;
   let router: Router;
   let dialog: MatDialog;
+  let debugElement: DebugElement;
+  let element: HTMLElement;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [MenuComponent, MatDialogModule, MatIconModule, MatToolbarModule, MatButtonModule, RouterLink],
       providers: [
         provideRouter([]),
-        { provide: AuthService, useClass: MockAuthService },
-        { provide: MatDialog, useClass: MockMatDialog },
+        { provide: AuthService, useClass: AuthServiceMock },
+        { provide: MatDialog, useClass: MatDialogMock },
       ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(MenuComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    debugElement = fixture.debugElement;
+    element = debugElement.nativeElement;
     authService = TestBed.inject(AuthService);
     router = TestBed.inject(Router);
     dialog = TestBed.inject(MatDialog);
+
+    fixture.detectChanges();
   }));
 
   it('should create', () => {
     expect(component).toBeDefined();
   });
 
-  // it('should open login dialog when login is clicked', () => {
-  //   const loginbtn = fixture.nativeElement.querySelector('#login');
-  //   loginbtn.click();
-  // });
+  // it('should open login dialog and call authService login when open method is called', waitForAsync(() => {
+  //   const dialogSpy = spyOn(dialog, 'open').and.callThrough();
+  //   const loginSpy = spyOn(authService, 'login').and.callThrough();
+
+  //   component.open();
+  //   fixture.detectChanges();
+
+  //   expect(dialogSpy).toHaveBeenCalled();
+  //   expect(loginSpy).toHaveBeenCalledWith('test', '123');
+  // }));
 });
