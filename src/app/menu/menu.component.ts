@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { Router, RouterLink } from '@angular/router';
 
-import { take } from 'rxjs';
+import { Observable, take } from 'rxjs';
 
 import { AuthService } from '../shared/services/auth.service';
 import { LoginComponent } from '../shared/modals/login.component';
@@ -48,6 +48,7 @@ export class MenuComponent {
   private dialog = inject(MatDialog);
   private router = inject(Router);
 
+  dialogRef!: MatDialogRef<LoginComponent, { email: string; password: string }>;
   isLoggedIn = this.authService.isLoggedIn;
   isLoggedInAsAdmin = this.authService.isLoggedInAsAdmin;
   isNavbarCollapsed = true;
@@ -55,17 +56,19 @@ export class MenuComponent {
   password = '';
 
   login() {
-    const dialogRef = this.dialog.open(LoginComponent, {
+    this.dialogRef = this.dialog.open(LoginComponent, {
       width: '500px',
       data: { email: this.email, password: this.password },
     });
 
-    dialogRef
+    this.dialogRef
       .afterClosed()
       .pipe(take(1))
       .subscribe({
         next: (result) => {
-          this.authService.login(result.email, result.password);
+          if (result) {
+            this.authService.login(result.email, result.password);
+          }
         },
       });
   }
