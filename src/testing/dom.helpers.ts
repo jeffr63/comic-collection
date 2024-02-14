@@ -7,7 +7,12 @@ export class DOMHelperRoutines<T> {
     this.fixture = fixture;
   }
 
-  queryFirst(tagName: string): string {
+  queryTestId(id: string) {
+    const queryString = `[data-testid = "{$id}"]`;
+    return this.fixture.debugElement.query(By.css(queryString));
+  }
+
+  queryFirst(tagName: string) {
     const element = this.fixture.debugElement.query(By.css(tagName));
     if (element) {
       return element.nativeElement.textContent;

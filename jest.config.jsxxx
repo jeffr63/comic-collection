@@ -1,0 +1,8 @@
+module.exports = {
+  preset: 'jest-preset-angular',
+  setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
+  "transform": {
+     "^.+\\.(ts|html)$": "<rootDir>/node_modules/jest-preset-angular/preprocessor.js",
+     "^.+\\.js$": "babel-jest"
+  }
+};

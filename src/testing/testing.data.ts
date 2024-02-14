@@ -46,3 +46,28 @@ export const publisherData = [
     value: 1,
   },
 ];
+
+export const userData = [
+  {
+    email: 'abc.com',
+    password: '123',
+    name: 'abc',
+    role: 'admin',
+    id: 1,
+  },
+  {
+    email: 'def.com',
+    password: '456',
+    name: 'def',
+    role: 'editor',
+    id: 2,
+  },
+];
+
+export const newUser = {
+  email: 'ghi.com',
+  password: '789',
+  name: 'ghi',
+  role: 'editor',
+  id: 2,
+};
