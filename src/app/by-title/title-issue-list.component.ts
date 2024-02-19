@@ -32,8 +32,7 @@ import { Title } from '../shared/models/title';
         [tableColumns]="columns"
         (add)="newIssue()"
         (delete)="deleteIssue($event)"
-        (edit)="editIssue($event)"
-      />
+        (edit)="editIssue($event)" />
       }
     </section>
   `,

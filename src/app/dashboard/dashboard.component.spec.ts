@@ -14,7 +14,7 @@ const issueServiceStub = {
   issues: signal(fakeIssueData).asReadonly,
   titles: signal(fakeIssueTitlesData).asReadonly,
   publishers: signal(fakeIssuePublishersData).asReadonly,
-  getAll() {},
+  getAll: jest.fn(),
 };
 
 describe('DashboardComponent', () => {
@@ -31,11 +31,11 @@ describe('DashboardComponent', () => {
     component = fixture.componentInstance;
   });
 
-  describe('HTML test', () => {
-    it('should create', () => {
-      expect(component).toBeTruthy();
-    });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 
+  describe('HTML test', () => {
     it('should contain one section tag', () => {
       const elements = fixture.debugElement.queryAll(By.css('section'));
       expect(elements.length).toBe(1);
@@ -58,11 +58,11 @@ describe('DashboardComponent', () => {
   });
 
   describe('NgOnInit test', () => {
-    // it('execute getAll to be called on Init', () => {
-    //   const getAllSpy = jest.spyOn(issueServiceStub, 'getAll');
-    //   component.ngOnInit();
-    //   expect(getAllSpy).toHaveBeenCalled();
-    // });
+    it('execute getAll to be called on Init', async () => {
+      const getAllSpy = jest.spyOn(issueServiceStub, 'getAll');
+      await component.ngOnInit();
+      expect(getAllSpy).toHaveBeenCalled();
+    });
 
     it('should declare the issues signal property', () => {
       component.issues = issueServiceStub.issues();

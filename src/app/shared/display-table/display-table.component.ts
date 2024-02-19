@@ -1,16 +1,5 @@
 import { CurrencyPipe, NgClass } from '@angular/common';
-import {
-  AfterViewInit,
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  ViewChild,
-  computed,
-  effect,
-  input,
-} from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild, effect, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
