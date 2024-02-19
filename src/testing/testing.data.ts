@@ -1,8 +1,13 @@
-export const issueData = [
+import { Title } from 'src/app/shared/models/title';
+import { Issue, IssueData } from 'src/app/shared/models/issue';
+import { Publisher } from 'src/app/shared/models/publisher';
+import { User } from 'src/app/shared/models/user';
+
+export const fakeIssueData: Issue[] = [
   {
     id: 1,
     publisher: 'p1',
-    title: 'abc',
+    title: 't1',
     issue: 1,
     coverPrice: 1,
     url: '',
@@ -10,7 +15,7 @@ export const issueData = [
   {
     id: 2,
     publisher: 'p1',
-    title: 'abc',
+    title: 't1',
     issue: 2,
     coverPrice: 1,
     url: '',
@@ -18,36 +23,68 @@ export const issueData = [
   {
     id: 3,
     publisher: 'p2',
-    title: 'def',
+    title: 't2',
     issue: 1,
     coverPrice: 2,
     url: '',
   },
 ];
 
-export const titleData = [
+export const fakeIssuePublishersData: IssueData[] = [
+  { name: 'p1', value: 2 },
+  { name: 'p2', value: 1 },
+];
+
+export const fakeIssueTitlesData: IssueData[] = [
+  { name: 't1', value: 2 },
+  { name: 't2', value: 1 },
+];
+
+export const fakeIssue: Issue = {
+  publisher: 'p4',
+  title: 't4',
+  issue: 1,
+  coverPrice: 1,
+  url: '',
+  id: 4,
+};
+
+export const fakeTitleData: Title[] = [
   {
-    name: 'abc',
-    value: 2,
+    publisher: 'p1',
+    title: 't1',
+    id: 1,
   },
   {
-    name: 'def',
-    value: 1,
+    publisher: 'p2',
+    title: 't2',
+    id: 2,
   },
 ];
 
-export const publisherData = [
+export const fakeTitle: Title = {
+  publisher: 'p3',
+  title: 't3',
+  id: 3,
+};
+
+export const fakePublisherData: Publisher[] = [
   {
     name: 'p1',
-    value: 2,
+    id: 1,
   },
   {
     name: 'p2',
-    value: 1,
+    id: 2,
   },
 ];
 
-export const userData = [
+export const fakePublisher: Publisher = {
+  name: 'p3',
+  id: 3,
+};
+
+export const fakeUserData: User[] = [
   {
     email: 'abc.com',
     password: '123',
@@ -64,10 +101,10 @@ export const userData = [
   },
 ];
 
-export const newUser = {
+export const fakeUser: User = {
   email: 'ghi.com',
   password: '789',
   name: 'ghi',
   role: 'editor',
-  id: 2,
+  id: 3,
 };

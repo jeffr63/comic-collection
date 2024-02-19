@@ -1,10 +1,10 @@
 export interface Issue {
-  id?: number;
   publisher: string;
   title: string;
   issue: number | null;
   coverPrice: number;
   url: string;
+  id?: number | null;
 }
 
 export interface IssueData {

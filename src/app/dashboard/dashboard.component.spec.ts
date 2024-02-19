@@ -8,12 +8,12 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { DashboardComponent } from './dashboard.component';
 import { IssueService } from '../shared/services/issue.service';
-import { issueData, publisherData, titleData } from '../../testing/testing.data';
+import { fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData } from '../../testing/testing.data';
 
 const issueServiceStub = {
-  issues: signal(issueData).asReadonly,
-  titles: signal(titleData).asReadonly,
-  publishers: signal(publisherData).asReadonly,
+  issues: signal(fakeIssueData).asReadonly,
+  titles: signal(fakeIssueTitlesData).asReadonly,
+  publishers: signal(fakeIssuePublishersData).asReadonly,
   getAll() {},
 };
 
@@ -66,17 +66,17 @@ describe('DashboardComponent', () => {
 
     it('should declare the issues signal property', () => {
       component.issues = issueServiceStub.issues();
-      expect(component.issues()).toEqual(issueData);
+      expect(component.issues()).toEqual(fakeIssueData);
     });
 
     it('should declare the publishers signal property', () => {
       component.publishers = issueServiceStub.publishers();
-      expect(component.publishers()).toEqual(publisherData);
+      expect(component.publishers()).toEqual(fakeIssuePublishersData);
     });
 
     it('should declare the titles signal property', () => {
       component.titles = issueServiceStub.titles();
-      expect(component.titles()).toEqual(titleData);
+      expect(component.titles()).toEqual(fakeIssueTitlesData);
     });
   });
 });
