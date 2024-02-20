@@ -1,7 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
-import { RouterTestingModule } from '@angular/router/testing';
-import { By } from '@angular/platform-browser';
 
 import { IssueService } from '../shared/services/issue.service';
 import { fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData, fakeTitle } from '../../testing/testing.data';
@@ -10,11 +8,14 @@ import { AuthService } from '../shared/services/auth.service';
 import { TitleService } from '../shared/services/title.service';
 import { ModalDataService } from '../shared/modals/modal-data.service';
 import { Router } from '@angular/router';
+import { Dialog } from '@angular/cdk/dialog';
+import { of } from 'rxjs';
+import { MatDialogRef } from '@angular/material/dialog';
+import { DeleteComponent } from '../shared/modals/delete.component';
 
 const authServiceStub = {
   isLoggedIn: signal(false),
 };
-const dialogStub = {};
 const issueServiceStub = {
   issues: signal(fakeIssueData).asReadonly,
   titles: signal(fakeIssueTitlesData).asReadonly,
@@ -22,12 +23,18 @@ const issueServiceStub = {
   getAll: jest.fn(),
   delete: jest.fn(),
 };
-const modalDataServiceStub = {};
+const modalDataServiceStub = {
+  setDeleteModalOptions: jest.fn(),
+};
 const titleServiceStub = {
   getById: jest.fn(),
 };
 const routerStub = {
   navigate: jest.fn(),
+};
+const dialogStub = {
+  open: jest.fn(),
+  afterClose: jest.fn(),
 };
 
 describe('TitleIssueListComponent', () => {
@@ -38,6 +45,7 @@ describe('TitleIssueListComponent', () => {
     await TestBed.configureTestingModule({
       imports: [TitleIssueListComponent],
       providers: [
+        { provide: Dialog, useValue: dialogStub },
         { provide: Router, useValue: routerStub },
         { provide: AuthService, useValue: authServiceStub },
         { provide: IssueService, useValue: issueServiceStub },
@@ -127,6 +135,4 @@ describe('TitleIssueListComponent', () => {
       navigateSpy.mockClear();
     });
   });
-
-  //jest.spyOn(router, 'navigate').mockReturnValue(null); and then expect(router.navigate).toHaveBeenCalledWith(['/news']);
 });

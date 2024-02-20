@@ -1,6 +1,6 @@
-import { Component, computed, inject, Input, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, input, Input, numberAttribute, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
 
@@ -55,8 +55,9 @@ export default class TitleIssueListComponent implements OnInit {
   router = inject(Router);
   titleService = inject(TitleService);
 
-  @Input() id?: string;
+  @Input({ transform: numberAttribute }) id = 0;
 
+  dialogRef!: MatDialogRef<DeleteComponent, any>;
   isLoggedIn = this.authService.isLoggedIn;
   issues = this.issueService.issues;
   title = signal('');
@@ -111,8 +112,8 @@ export default class TitleIssueListComponent implements OnInit {
   ];
 
   ngOnInit() {
-    if (this.id != undefined) {
-      this.loadData(parseInt(this.id));
+    if (this.id != 0) {
+      this.loadData(this.id);
     }
   }
 
@@ -131,9 +132,9 @@ export default class TitleIssueListComponent implements OnInit {
       warning: 'This operation can not be undone.',
     };
     this.modalDataService.setDeleteModalOptions(modalOptions);
-    const dialogRef = this.dialog.open(DeleteComponent, { width: '500px' });
+    this.dialogRef = this.dialog.open(DeleteComponent, { width: '500px' });
 
-    dialogRef
+    this.dialogRef
       .afterClosed()
       .pipe(take(1))
       .subscribe((result) => {
