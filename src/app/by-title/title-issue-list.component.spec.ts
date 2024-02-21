@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
 
 import { IssueService } from '../shared/services/issue.service';
@@ -9,9 +9,6 @@ import { TitleService } from '../shared/services/title.service';
 import { ModalDataService } from '../shared/modals/modal-data.service';
 import { Router } from '@angular/router';
 import { Dialog } from '@angular/cdk/dialog';
-import { of } from 'rxjs';
-import { MatDialogRef } from '@angular/material/dialog';
-import { DeleteComponent } from '../shared/modals/delete.component';
 
 const authServiceStub = {
   isLoggedIn: signal(false),
@@ -56,10 +53,23 @@ describe('TitleIssueListComponent', () => {
     }).compileComponents();
     fixture = TestBed.createComponent(TitleIssueListComponent);
     component = fixture.componentInstance;
+    component.id = 1;
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('ngOnit', () => {
+    it('should call loadData on init', () => {
+      const loadDataSpy = jest.spyOn(component, 'loadData');
+
+      component.ngOnInit();
+
+      expect(loadDataSpy).toHaveBeenCalledTimes(1);
+
+      loadDataSpy.mockClear();
+    });
   });
 
   describe('loadData', () => {
