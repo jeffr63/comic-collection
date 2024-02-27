@@ -1,5 +1,16 @@
 import { CurrencyPipe, NgClass } from '@angular/common';
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild, effect, input } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+  effect,
+  input,
+  viewChild,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -155,7 +166,7 @@ import { Column } from '../models/column';
 
       <!-- Pagination -->
       @if (isPageable) {
-      <mat-paginator [pageSizeOptions]="paginationSizes" [pageSize]="defaultPageSize" showFirstLastButtons>
+      <mat-paginator #paginator [pageSizeOptions]="paginationSizes" [pageSize]="defaultPageSize" showFirstLastButtons>
       </mat-paginator>
       }
     </ng-container>
@@ -189,7 +200,7 @@ import { Column } from '../models/column';
     `,
   ],
 })
-export class DisplayTableComponent implements OnInit, AfterViewInit {
+export class DisplayTableComponent implements OnInit {
   // input parms
   isAuthenticated = input(false);
   @Input() defaultPageSize = 10;
@@ -209,12 +220,13 @@ export class DisplayTableComponent implements OnInit, AfterViewInit {
   @Output() open: EventEmitter<number> = new EventEmitter();
 
   // computed values
-  @ViewChild(MatPaginator, { static: false }) matPaginator!: MatPaginator;
-  @ViewChild(MatSort, { static: true }) matSort!: MatSort;
+  matPaginator = viewChild.required<MatPaginator>('paginator');
+  matSort = viewChild.required(MatSort);
   public displayedColumns: String[] = [];
 
   constructor() {
     effect(() => this.setTableDataSource(this.tableData()));
+    effect(() => (this.tableDataSource.paginator = this.matPaginator()));
   }
 
   ngOnInit(): void {
@@ -225,14 +237,9 @@ export class DisplayTableComponent implements OnInit, AfterViewInit {
       }
     });
     if (defaultSort !== '') {
-      this.matSort.sort({ id: defaultSort, start: 'asc' } as MatSortable);
+      this.matSort().sort({ id: defaultSort, start: 'asc' } as MatSortable);
     }
     this.displayedColumns = this.tableColumns.map((column: Column) => column.key);
-  }
-
-  // we need this, in order to make pagination work with if block
-  ngAfterViewInit(): void {
-    this.tableDataSource.paginator = this.matPaginator;
   }
 
   applyFilter(event: Event) {
@@ -258,8 +265,8 @@ export class DisplayTableComponent implements OnInit, AfterViewInit {
 
   setTableDataSource(data: any) {
     this.tableDataSource = new MatTableDataSource(data);
-    this.tableDataSource.paginator = this.matPaginator;
-    this.matSort.disableClear = this.disableClear;
-    this.tableDataSource.sort = this.matSort;
+    this.tableDataSource.paginator = this.matPaginator();
+    this.matSort().disableClear = this.disableClear;
+    this.tableDataSource.sort = this.matSort();
   }
 }
