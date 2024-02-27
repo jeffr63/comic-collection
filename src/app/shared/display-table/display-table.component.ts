@@ -166,7 +166,7 @@ import { Column } from '../models/column';
 
       <!-- Pagination -->
       @if (isPageable) {
-      <mat-paginator #paginator [pageSizeOptions]="paginationSizes" [pageSize]="defaultPageSize" showFirstLastButtons>
+      <mat-paginator [pageSizeOptions]="paginationSizes" [pageSize]="defaultPageSize" showFirstLastButtons>
       </mat-paginator>
       }
     </ng-container>
@@ -219,14 +219,14 @@ export class DisplayTableComponent implements OnInit {
   @Output() edit: EventEmitter<number> = new EventEmitter();
   @Output() open: EventEmitter<number> = new EventEmitter();
 
-  // computed values
-  matPaginator = viewChild.required<MatPaginator>('paginator');
+  // signals and computed values
+  matPaginator = viewChild(MatPaginator);
   matSort = viewChild.required(MatSort);
   public displayedColumns: String[] = [];
 
   constructor() {
     effect(() => this.setTableDataSource(this.tableData()));
-    effect(() => (this.tableDataSource.paginator = this.matPaginator()));
+    effect(() => (this.tableDataSource.paginator = this.matPaginator()!));
   }
 
   ngOnInit(): void {
@@ -265,7 +265,7 @@ export class DisplayTableComponent implements OnInit {
 
   setTableDataSource(data: any) {
     this.tableDataSource = new MatTableDataSource(data);
-    this.tableDataSource.paginator = this.matPaginator();
+    this.tableDataSource.paginator = this.matPaginator()!;
     this.matSort().disableClear = this.disableClear;
     this.tableDataSource.sort = this.matSort();
   }
