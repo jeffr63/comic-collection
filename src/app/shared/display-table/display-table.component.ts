@@ -1,5 +1,5 @@
 import { CurrencyPipe, NgClass } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output, effect, input, output, viewChild } from '@angular/core';
+import { Component, Input, OnInit, effect, input, output, viewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -189,7 +189,7 @@ import { Column } from '../models/column';
     `,
   ],
 })
-export class DisplayTableComponent implements OnInit {
+export class DisplayTableComponent<TData> implements OnInit {
   // input parms
   isAuthenticated = input(false);
   @Input() defaultPageSize = 10;
@@ -199,11 +199,11 @@ export class DisplayTableComponent implements OnInit {
   @Input() includeAdd = false;
   @Input() paginationSizes: number[] = [5, 10, 15];
   @Input({ required: true }) tableColumns: Column[] = [];
-  tableData = input.required<any[]>();
+  tableData = input.required<TData[]>();
   public tableDataSource = new MatTableDataSource([]);
 
   // output parms
-  add = output<number>();
+  add = output();
   delete = output<number>();
   edit = output<number>();
   open = output<number>();
@@ -237,7 +237,7 @@ export class DisplayTableComponent implements OnInit {
   }
 
   emitAdd() {
-    this.add.emit(0);
+    this.add.emit();
   }
 
   emitDelete(id: number) {
