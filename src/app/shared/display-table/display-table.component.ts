@@ -50,7 +50,7 @@ import { Column } from '../models/column';
 
       <!-- Table -->
       <table mat-table [dataSource]="tableDataSource" matSort class="mat-elevation-z8">
-        @for (column of tableColumns(); track column) {
+        @for (column of tableColumns(); track $index) {
         <ng-container [matColumnDef]="column.key">
           @switch (column.type) { @case ('sort') {
           <ng-container>
