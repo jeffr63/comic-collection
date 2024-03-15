@@ -1,5 +1,5 @@
 import { CurrencyPipe, NgClass } from '@angular/common';
-import { Component, Input, OnInit, effect, input, output, viewChild } from '@angular/core';
+import { Component, Input, OnInit, computed, effect, input, output, viewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -28,7 +28,7 @@ import { Column } from '../models/column';
   template: `
     <ng-container>
       <!-- Filter -->
-      @if (isFilterable) {
+      @if (isFilterable()) {
       <ng-container>
         <mat-form-field appearance="outline">
           <mat-label>Filter </mat-label>
@@ -38,7 +38,7 @@ import { Column } from '../models/column';
       }
 
       <!-- Add Button -->
-      @if (includeAdd) {
+      @if (includeAdd()) {
       <ng-container>
         @if (isAuthenticated()) {
         <a mat-mini-fab color="primary" title="Add new" aria-label="Add new" class="ml-5 fl1" (click)="emitAdd()">
@@ -50,7 +50,7 @@ import { Column } from '../models/column';
 
       <!-- Table -->
       <table mat-table [dataSource]="tableDataSource" matSort class="mat-elevation-z8">
-        @for (column of tableColumns; track column) {
+        @for (column of tableColumns(); track column) {
         <ng-container [matColumnDef]="column.key">
           @switch (column.type) { @case ('sort') {
           <ng-container>
@@ -145,8 +145,8 @@ import { Column } from '../models/column';
         </ng-container>
         }
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns; let even = even" [ngClass]="{ gray: even }"></tr>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns()"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns(); let even = even" [ngClass]="{ gray: even }"></tr>
 
         <tr class="mat-row" *matNoDataRow>
           <td class="mat-cell" colspan="5">No data matching the filter</td>
@@ -154,8 +154,8 @@ import { Column } from '../models/column';
       </table>
 
       <!-- Pagination -->
-      @if (isPageable) {
-      <mat-paginator [pageSizeOptions]="paginationSizes" [pageSize]="defaultPageSize" showFirstLastButtons>
+      @if (isPageable()) {
+      <mat-paginator [pageSizeOptions]="paginationSizes()" [pageSize]="defaultPageSize()" showFirstLastButtons>
       </mat-paginator>
       }
     </ng-container>
@@ -192,13 +192,13 @@ import { Column } from '../models/column';
 export class DisplayTableComponent<TData> implements OnInit {
   // input parms
   isAuthenticated = input(false);
-  @Input() defaultPageSize = 10;
-  @Input() disableClear = false;
-  @Input() isFilterable = false;
-  @Input() isPageable = false;
-  @Input() includeAdd = false;
-  @Input() paginationSizes: number[] = [5, 10, 15];
-  @Input({ required: true }) tableColumns: Column[] = [];
+  defaultPageSize = input(10);
+  disableClear = input(false);
+  isFilterable = input(false);
+  isPageable = input(false);
+  includeAdd = input(false);
+  paginationSizes = input<number[]>([5, 10, 15]);
+  tableColumns = input.required<Column[]>();
   tableData = input.required<TData[]>();
   public tableDataSource = new MatTableDataSource([]);
 
@@ -211,7 +211,7 @@ export class DisplayTableComponent<TData> implements OnInit {
   // signals and computed values
   matPaginator = viewChild(MatPaginator);
   matSort = viewChild.required(MatSort);
-  public displayedColumns: String[] = [];
+  public displayedColumns = computed<String[]>(() => this.tableColumns().map((column: Column) => column.key));
 
   constructor() {
     effect(() => this.setTableDataSource(this.tableData()));
@@ -220,7 +220,7 @@ export class DisplayTableComponent<TData> implements OnInit {
 
   ngOnInit(): void {
     let defaultSort = '';
-    this.tableColumns.map((column: Column) => {
+    this.tableColumns().map((column: Column) => {
       if (column.sortDefault) {
         defaultSort = column.key;
       }
@@ -228,7 +228,6 @@ export class DisplayTableComponent<TData> implements OnInit {
     if (defaultSort !== '') {
       this.matSort().sort({ id: defaultSort, start: 'asc' } as MatSortable);
     }
-    this.displayedColumns = this.tableColumns.map((column: Column) => column.key);
   }
 
   applyFilter(event: Event) {
@@ -255,7 +254,7 @@ export class DisplayTableComponent<TData> implements OnInit {
   setTableDataSource(data: any) {
     this.tableDataSource = new MatTableDataSource(data);
     this.tableDataSource.paginator = this.matPaginator()!;
-    this.matSort().disableClear = this.disableClear;
+    this.matSort().disableClear = this.disableClear();
     this.tableDataSource.sort = this.matSort();
   }
 }
