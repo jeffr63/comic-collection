@@ -1,16 +1,5 @@
 import { CurrencyPipe, NgClass } from '@angular/common';
-import {
-  AfterViewInit,
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  ViewChild,
-  effect,
-  input,
-  viewChild,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, effect, input, output, viewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -214,10 +203,10 @@ export class DisplayTableComponent implements OnInit {
   public tableDataSource = new MatTableDataSource([]);
 
   // output parms
-  @Output() add: EventEmitter<any> = new EventEmitter();
-  @Output() delete: EventEmitter<number> = new EventEmitter();
-  @Output() edit: EventEmitter<number> = new EventEmitter();
-  @Output() open: EventEmitter<number> = new EventEmitter();
+  add = output<number>();
+  delete = output<number>();
+  edit = output<number>();
+  open = output<number>();
 
   // signals and computed values
   matPaginator = viewChild(MatPaginator);
@@ -248,7 +237,7 @@ export class DisplayTableComponent implements OnInit {
   }
 
   emitAdd() {
-    this.add.emit();
+    this.add.emit(0);
   }
 
   emitDelete(id: number) {

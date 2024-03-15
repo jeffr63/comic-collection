@@ -10,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
-import * as _ from 'lodash';
+import { orderBy } from 'lodash';
 
 import { Title } from '../shared/models/title';
 import { TitleService } from '../shared/services/title.service';
@@ -159,7 +159,7 @@ export default class TitleEditComponent implements OnInit {
     if (this.publishers().length === 0) {
       await this.publisherService.getAll();
     }
-    const sorted = _.orderBy(this.publishers(), 'name', 'asc');
+    const sorted = orderBy(this.publishers(), 'name', 'asc');
     this.filteredPublishers.set(sorted);
 
     if (this.id !== 'new' && this.id != undefined) {

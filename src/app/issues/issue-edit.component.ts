@@ -10,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
-import * as _ from 'lodash';
+import { orderBy } from 'lodash';
 
 import { Issue } from '../shared/models/issue';
 import { IssueService } from '../shared/services/issue.service';
@@ -210,13 +210,13 @@ export default class IssueEditComponent implements OnInit {
     if (this.publishers().length === 0) {
       await this.publisherService.getAll();
     }
-    const sortedPublishers = _.orderBy(this.publishers(), 'name', 'asc');
+    const sortedPublishers = orderBy(this.publishers(), 'name', 'asc');
     this.filteredPublishers.set(sortedPublishers);
 
     if (this.titles().length === 0) {
       await this.titleService.getAll();
     }
-    const sortedTitles = _.orderBy(this.titles(), 'title', 'asc');
+    const sortedTitles = orderBy(this.titles(), 'title', 'asc');
     this.filteredTitles.set(sortedTitles);
 
     if (this.id !== 'new' && this.id != undefined) {

@@ -1,6 +1,6 @@
 import { Injectable, computed, signal } from '@angular/core';
 
-import * as _ from 'lodash';
+import { orderBy, chain, reduce } from 'lodash';
 
 import { Issue, IssueData } from '../models/issue';
 
@@ -71,12 +71,12 @@ export class IssueService {
   }
 
   getByPublisherValue(issues: Issue[]): IssueData[] {
-    let byPublisher = _.chain(issues)
+    let byPublisher = chain(issues)
       .groupBy('publisher')
       .map((values, key) => {
         return {
           name: key,
-          value: _.reduce(
+          value: reduce(
             values,
             function (value, number) {
               return value + 1;
@@ -86,17 +86,17 @@ export class IssueService {
         };
       })
       .value();
-    byPublisher = _.orderBy(byPublisher, 'value', 'desc');
+    byPublisher = orderBy(byPublisher, 'value', 'desc');
     return byPublisher;
   }
 
   getByTitleValue(issues: Issue[]): IssueData[] {
-    let byTitle = _.chain(issues)
+    let byTitle = chain(issues)
       .groupBy('title')
       .map((values, key) => {
         return {
           name: key,
-          value: _.reduce(
+          value: reduce(
             values,
             function (value, number) {
               return value + 1;
@@ -106,7 +106,7 @@ export class IssueService {
         };
       })
       .value();
-    byTitle = _.orderBy(byTitle, 'value', 'desc');
+    byTitle = orderBy(byTitle, 'value', 'desc');
     return byTitle;
   }
 }
