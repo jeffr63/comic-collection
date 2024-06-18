@@ -1,13 +1,14 @@
-import { ApplicationConfig } from '@angular/core';
-import { CustomTitleStrategyService } from './shared/resolvers/custom-title-strategy.service';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { TitleStrategy, provideRouter, withComponentInputBinding } from '@angular/router';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+import { CustomTitleStrategyService } from './shared/resolvers/custom-title-strategy.service';
 import { APP_ROUTES } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideAnimations(),
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideAnimationsAsync(),
     { provide: TitleStrategy, useClass: CustomTitleStrategyService },
     provideRouter(APP_ROUTES, withComponentInputBinding()),
   ],
