@@ -23,9 +23,7 @@ import { Router, RouterLink } from '@angular/router';
             </mat-card-header>
             <mat-card-content>
               <p>Pre-selections for the Publisher field on Issue and Title edit forms.</p>
-              <button mat-flat-button color="primary" class="center" routerLink="/admin/publishers">
-                Edit Publishers
-              </button>
+              <button mat-flat-button color="primary" class="center" routerLink="/admin/publishers">Edit Publishers</button>
             </mat-card-content>
           </mat-card>
         </mat-grid-tile>

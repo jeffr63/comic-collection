@@ -35,9 +35,12 @@ import { MatInputModule } from '@angular/material/input';
               matInput
               formControlName="email"
               placeholder="Enter email address" />
+            <!-- email required error -->
             @if (loginForm.controls['email'].errors?.['required'] && loginForm.controls['email'].touched) {
             <mat-error> Email is required </mat-error>
-            } @if (loginForm.controls['email'].errors?.['email'] && loginForm.controls['email'].touched) {
+            }
+          <!-- invalid email error -->
+            @if (loginForm.controls['email'].errors?.['email'] && loginForm.controls['email'].touched) {
             <mat-error> Must enter valid email </mat-error>
             }
           </mat-form-field>

@@ -25,11 +25,16 @@ import { LoginComponent } from '../shared/modals/login.component';
       <button mat-flat-button color="primary" routerLink="/by_publisher" id="by_publishers">By Publisher</button>
       <button mat-flat-button color="primary" routerLink="/by_title" id="by_titles">By Title</button>
       <button mat-flat-button color="primary" routerLink="/issues" id="courses">All Issues</button>
+      <!-- show login button if logged out -->
       @if (!isLoggedIn()) {
       <button mat-flat-button color="primary" (click)="login()" id="login">Login</button>
-      } @if (isLoggedInAsAdmin()) {
+      }
+      <!-- show admin button if logged in as admin -->
+      @if (isLoggedInAsAdmin()) {
       <button mat-flat-button color="primary" routerLink="/admin" id="admin">Admin</button>
-      } @if (isLoggedIn()) {
+      }
+      <!-- show logout button if logged in -->
+      @if (isLoggedIn()) {
       <button mat-flat-button color="primary" (click)="logout()" id="logout">Logout</button>
       }
     </mat-toolbar>

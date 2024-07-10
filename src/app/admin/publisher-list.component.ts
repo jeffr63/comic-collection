@@ -18,7 +18,7 @@ import { PublisherService } from '../shared/services/publisher.service';
 
   template: `
     <section class="mt-5">
-      @if (publishers()) {}
+      @if (publishers()) {
       <app-display-table
         [isAuthenticated]="isAuthenticated()"
         [isFilterable]="true"
@@ -32,6 +32,7 @@ import { PublisherService } from '../shared/services/publisher.service';
         (add)="newPublisher()"
         (delete)="deletePublisher($event)"
         (edit)="editPublisher($event)" />
+      }
     </section>
   `,
 

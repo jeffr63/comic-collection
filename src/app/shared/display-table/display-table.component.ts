@@ -26,139 +26,120 @@ import { Column } from '../models/column';
     NgClass,
   ],
   template: `
-    <ng-container>
-      <!-- Filter -->
-      @if (isFilterable()) {
-      <ng-container>
-        <mat-form-field appearance="outline">
-          <mat-label>Filter </mat-label>
-          <input matInput (keyup)="applyFilter($event)" placeholder="filter" />
-        </mat-form-field>
+    <!-- Filter -->
+    @if (isFilterable()) {
+    <mat-form-field appearance="outline">
+      <mat-label>Filter </mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="filter" />
+    </mat-form-field>
+    }
+
+    <!-- Add Button -->
+    @if (includeAdd() && isAuthenticated()) {
+    <a mat-mini-fab color="primary" title="Add new" aria-label="Add new" class="ml-5 fl1" (click)="emitAdd()">
+      <mat-icon>add</mat-icon>
+    </a>
+    }
+
+    <!-- Table -->
+    <table mat-table [dataSource]="tableDataSource" matSort class="mat-elevation-z8">
+      @for (column of tableColumns(); track $index) {
+      <ng-container [matColumnDef]="column.key">
+        @switch (column.type) { @case ('sort') {
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          [class.text-right]="column.position === 'right'"
+          [arrowPosition]="column.position === 'right' ? 'before' : 'after'"
+          style="min-width: {{ column.width }}">
+          {{ column.name }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element[column.key] }}
+        </td>
+        } @case ('currency_sort') {
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          [class.text-right]="column.position === 'right'"
+          [arrowPosition]="column.position === 'right' ? 'before' : 'after'"
+          style="min-width: {{ column.width }}">
+          {{ column.name }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element[column.key] | currency }}
+        </td>
+        } @case ('link') {
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          [class.text-right]="column.position === 'right'"
+          style="min-width: {{ column.width }}">
+          {{ column.name }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          @if (element[column.key]) {
+          <a href="{{ element[column.key] }}"><mat-icon>link</mat-icon></a>
+          }
+        </td>
+        } @case ('action') {
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          [class.text-right]="column.position === 'right'"
+          style="min-width: {{ column.width }}"></th>
+        <td mat-cell *matCellDef="let element">
+          @if (isAuthenticated()) {
+          <button mat-icon-button color="primary" (click)="emitEdit(element.id)" title="Edit">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="emitDelete(element.id)" title="Delete">
+            <mat-icon>delete</mat-icon>
+          </button>
+          }
+        </td>
+        } @case ('view') {
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          [class.text-right]="column.position === 'right'"
+          style="min-width: {{ column.width }}"></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="primary" (click)="emitOpen(element.id)" title="View">
+            <mat-icon>view_list</mat-icon>
+          </button>
+        </td>
+        } @default {
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          [class.text-right]="column.position === 'right'"
+          style="min-width: {{ column.width }}">
+          {{ column.name }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element[column.key] }}
+        </td>
+        } }
       </ng-container>
       }
 
-      <!-- Add Button -->
-      @if (includeAdd()) {
-      <ng-container>
-        @if (isAuthenticated()) {
-        <a mat-mini-fab color="primary" title="Add new" aria-label="Add new" class="ml-5 fl1" (click)="emitAdd()">
-          <mat-icon>add</mat-icon>
-        </a>
-        }
-      </ng-container>
-      }
+      <tr mat-header-row *matHeaderRowDef="displayedColumns()"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns(); let even = even" [ngClass]="{ gray: even }"></tr>
 
-      <!-- Table -->
-      <table mat-table [dataSource]="tableDataSource" matSort class="mat-elevation-z8">
-        @for (column of tableColumns(); track $index) {
-        <ng-container [matColumnDef]="column.key">
-          @switch (column.type) { @case ('sort') {
-          <ng-container>
-            <th
-              mat-header-cell
-              *matHeaderCellDef
-              mat-sort-header
-              [class.text-right]="column.position === 'right'"
-              [arrowPosition]="column.position === 'right' ? 'before' : 'after'"
-              style="min-width: {{ column.width }}">
-              {{ column.name }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              {{ element[column.key] }}
-            </td>
-          </ng-container>
-          } @case ('currency_sort') {
-          <ng-container>
-            <th
-              mat-header-cell
-              *matHeaderCellDef
-              mat-sort-header
-              [class.text-right]="column.position === 'right'"
-              [arrowPosition]="column.position === 'right' ? 'before' : 'after'"
-              style="min-width: {{ column.width }}">
-              {{ column.name }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              {{ element[column.key] | currency }}
-            </td>
-          </ng-container>
-          } @case ('link') {
-          <ng-container>
-            <th
-              mat-header-cell
-              *matHeaderCellDef
-              [class.text-right]="column.position === 'right'"
-              style="min-width: {{ column.width }}">
-              {{ column.name }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              @if (element[column.key]) {
-              <a href="{{ element[column.key] }}"><mat-icon>link</mat-icon></a>
-              }
-            </td>
-          </ng-container>
-          } @case ('action') {
-          <ng-container>
-            <th
-              mat-header-cell
-              *matHeaderCellDef
-              [class.text-right]="column.position === 'right'"
-              style="min-width: {{ column.width }}"></th>
-            <td mat-cell *matCellDef="let element">
-              @if (isAuthenticated()) {
-              <button mat-icon-button color="primary" (click)="emitEdit(element.id)" title="Edit">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-icon-button color="warn" (click)="emitDelete(element.id)" title="Delete">
-                <mat-icon>delete</mat-icon>
-              </button>
-              }
-            </td>
-          </ng-container>
-          } @case ('view') {
-          <ng-container>
-            <th
-              mat-header-cell
-              *matHeaderCellDef
-              [class.text-right]="column.position === 'right'"
-              style="min-width: {{ column.width }}"></th>
-            <td mat-cell *matCellDef="let element">
-              <button mat-icon-button color="primary" (click)="emitOpen(element.id)" title="View">
-                <mat-icon>view_list</mat-icon>
-              </button>
-            </td>
-          </ng-container>
-          } @default {
-          <ng-container>
-            <th
-              mat-header-cell
-              *matHeaderCellDef
-              [class.text-right]="column.position === 'right'"
-              style="min-width: {{ column.width }}">
-              {{ column.name }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              {{ element[column.key] }}
-            </td>
-          </ng-container>
-          } }
-        </ng-container>
-        }
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="5">No data matching the filter</td>
+      </tr>
+    </table>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns()"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns(); let even = even" [ngClass]="{ gray: even }"></tr>
-
-        <tr class="mat-row" *matNoDataRow>
-          <td class="mat-cell" colspan="5">No data matching the filter</td>
-        </tr>
-      </table>
-
-      <!-- Pagination -->
-      @if (isPageable()) {
-      <mat-paginator [pageSizeOptions]="paginationSizes()" [pageSize]="defaultPageSize()" showFirstLastButtons>
-      </mat-paginator>
-      }
-    </ng-container>
+    <!-- Pagination -->
+    @if (isPageable()) {
+    <mat-paginator [pageSizeOptions]="paginationSizes()" [pageSize]="defaultPageSize()" showFirstLastButtons>
+    </mat-paginator>
+    }
+    <!-- </ng-container> -->
   `,
   styles: [
     `
