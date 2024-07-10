@@ -1,4 +1,4 @@
-import { Component, computed, inject, Input, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Column } from '../shared/models/column';
@@ -44,7 +44,7 @@ export default class PublisherTitleListComponent implements OnInit {
   router = inject(Router);
   titleService = inject(TitleService);
 
-  @Input() id?: string;
+  id = input<string>();
   isAuthenticated = this.authService.isLoggedIn;
   allTitles = this.titleService.titles;
   publisher = signal('');
@@ -79,8 +79,8 @@ export default class PublisherTitleListComponent implements OnInit {
   ];
 
   ngOnInit() {
-    if (this.id != undefined) {
-      this.loadData(parseInt(this.id));
+    if (this.id() !== 'new' && this.id() != undefined) {
+      this.loadData(+this.id());
     }
   }
 

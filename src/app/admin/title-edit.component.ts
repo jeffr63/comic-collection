@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { AsyncPipe, Location } from '@angular/common';
@@ -142,7 +142,7 @@ export default class TitleEditComponent implements OnInit {
   publisherService = inject(PublisherService);
   titleService = inject(TitleService);
 
-  @Input() id?: string;
+  id = input<string>();
 
   publishers = this.publisherService.publishers;
   filteredPublishers = signal<Publisher[]>([]);
@@ -162,9 +162,9 @@ export default class TitleEditComponent implements OnInit {
     const sorted = orderBy(this.publishers(), 'name', 'asc');
     this.filteredPublishers.set(sorted);
 
-    if (this.id !== 'new' && this.id != undefined) {
+    if (this.id() !== 'new' && this.id() != undefined) {
       this.isNew = false;
-      this.loadFormValues(parseInt(this.id));
+      this.loadFormValues(+this.id());
     }
   }
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
@@ -90,7 +90,7 @@ export default class PublisherEditComponent implements OnInit {
   location = inject(Location);
   publisherService = inject(PublisherService);
 
-  @Input() id?: string;
+  id = input<string>();
 
   isNew = true;
   publisher = <Publisher>{};
@@ -101,9 +101,9 @@ export default class PublisherEditComponent implements OnInit {
       name: ['', Validators.required],
     });
 
-    if (this.id !== 'new' && this.id != undefined) {
+    if (this.id() !== 'new' && this.id() != undefined) {
       this.isNew = false;
-      this.loadFormValues(parseInt(this.id));
+      this.loadFormValues(+this.id());
     }
   }
 

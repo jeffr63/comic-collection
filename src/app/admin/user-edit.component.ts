@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
@@ -40,8 +40,7 @@ import { User } from '../shared/models/user';
               id="name"
               matInput
               formControlName="name"
-              placeholder="Enter name of user"
-            />
+              placeholder="Enter name of user" />
             @if (userEditForm.controls['name'].errors?.['required'] && userEditForm.controls['name'].touched) {
             <mat-error> Name is required </mat-error>
             }
@@ -120,20 +119,20 @@ export default class UserEditComponent implements OnInit {
   location = inject(Location);
   userService = inject(UserService);
 
-  @Input() id?: string;
+  id = input<string>();
 
   user = <User>{};
   userEditForm!: FormGroup;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.userEditForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       role: ['', Validators.required],
     });
 
-    if (this.id !== 'new' && this.id != undefined) {
-      this.loadFormValues(parseInt(this.id));
+    if (this.id() !== 'new' && this.id() != undefined) {
+      this.loadFormValues(+this.id());
     }
   }
 

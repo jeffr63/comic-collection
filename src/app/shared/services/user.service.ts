@@ -38,11 +38,13 @@ export class UserService {
     this.#users.set(await response.json());
   }
 
-  async getById(id: number): Promise<any> {
-    if (!id) return {};
+  async getById(id: number): Promise<User> {
+    if (!id) {
+      return Promise.resolve({} as User);
+    }
     const url = `${this.#usersUrl}/${id}`;
     const response = await fetch(url);
-    return await response.json();
+    return (await response.json()) as unknown as User;
   }
 
   async search(term: string): Promise<User[]> {
@@ -55,7 +57,7 @@ export class UserService {
     return (await user.json()) as unknown as User[];
   }
 
-  async update(user: User): Promise<any> {
+  async update(user: User): Promise<User> {
     const response = await fetch(`${this.#usersUrl}/${user.id}`, {
       method: 'PATCH',
       headers: {

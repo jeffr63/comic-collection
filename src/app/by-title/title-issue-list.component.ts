@@ -1,4 +1,4 @@
-import { Component, computed, inject, input, Input, numberAttribute, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
@@ -55,7 +55,7 @@ export default class TitleIssueListComponent implements OnInit {
   router = inject(Router);
   titleService = inject(TitleService);
 
-  @Input({ transform: numberAttribute }) id = 0;
+  id = input<string>();
 
   dialogRef!: MatDialogRef<DeleteComponent, any>;
   isLoggedIn = this.authService.isLoggedIn;
@@ -112,8 +112,8 @@ export default class TitleIssueListComponent implements OnInit {
   ];
 
   ngOnInit() {
-    if (this.id != 0) {
-      this.loadData(this.id);
+    if (this.id() != 'new') {
+      this.loadData(+this.id());
     }
   }
 
