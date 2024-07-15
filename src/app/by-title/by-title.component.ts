@@ -39,14 +39,14 @@ import { AuthService } from '../shared/services/auth.service';
   ],
 })
 export default class ByTitleListComponent implements OnInit {
-  authService = inject(AuthService);
-  titleService = inject(TitleService);
-  router = inject(Router);
+  readonly #authService = inject(AuthService);
+  readonly #titleService = inject(TitleService);
+  readonly #router = inject(Router);
 
-  isAuthenticated = this.authService.isLoggedIn;
-  titles = this.titleService.titles;
+  protected readonly isAuthenticated = this.#authService.isLoggedIn;
+  protected readonly titles = this.#titleService.titles;
 
-  columns: Column[] = [
+  protected readonly columns: Column[] = [
     {
       key: 'title',
       name: 'Title',
@@ -74,11 +74,11 @@ export default class ByTitleListComponent implements OnInit {
 
   async ngOnInit() {
     if (this.titles().length === 0) {
-      await this.titleService.getAll();
+      await this.#titleService.getAll();
     }
   }
 
-  open(id: number) {
-    this.router.navigate(['/by_title', id]);
+  protected open(id: number) {
+    this.#router.navigate(['/by_title', id]);
   }
 }

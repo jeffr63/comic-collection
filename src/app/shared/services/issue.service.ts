@@ -6,13 +6,13 @@ import { Issue, IssueData } from '../models/issue';
 
 @Injectable({ providedIn: 'root' })
 export class IssueService {
-  #issuesUrl = 'http://localhost:3000/issues';
-  #issues = signal<Issue[]>([]);
-  issues = this.#issues.asReadonly();
-  publishers = computed(() => this.getByPublisherValue(this.#issues()));
-  titles = computed(() => this.getByTitleValue(this.#issues()));
+  readonly #issuesUrl = 'http://localhost:3000/issues';
+  readonly #issues = signal<Issue[]>([]);
+  public readonly issues = this.#issues.asReadonly();
+  public readonly publishers = computed(() => this.getByPublisherValue(this.#issues()));
+  public readonly titles = computed(() => this.getByTitleValue(this.#issues()));
 
-  async add(issue: Issue): Promise<Issue> {
+  public async add(issue: Issue): Promise<Issue> {
     const response = await fetch(this.#issuesUrl, {
       method: 'POST',
       headers: {
@@ -25,7 +25,7 @@ export class IssueService {
     return newIssue;
   }
 
-  async delete(id: number) {
+  public async delete(id: number) {
     const url = `${this.#issuesUrl}/${id}`;
 
     await fetch(url, {
@@ -37,18 +37,18 @@ export class IssueService {
     await this.getAll();
   }
 
-  async getAll() {
+  public async getAll() {
     const response = await fetch(this.#issuesUrl);
     this.#issues.set(await response.json());
   }
 
-  async getById(id: number): Promise<any> {
+  public async getById(id: number): Promise<any> {
     const url = `${this.#issuesUrl}/${id}`;
     const response = await fetch(url);
     return await response.json();
   }
 
-  async search(term: string): Promise<Issue[]> {
+  private async search(term: string): Promise<Issue[]> {
     if (!term.trim()) {
       // if not search term, return empty array.
       return Promise.resolve([]);
@@ -58,7 +58,7 @@ export class IssueService {
     return (await response.json()) as unknown as Issue[];
   }
 
-  async update(issue: Issue): Promise<any> {
+  public async update(issue: Issue): Promise<any> {
     const response = await fetch(`${this.#issuesUrl}/${issue.id}`, {
       method: 'PATCH',
       headers: {
@@ -70,7 +70,7 @@ export class IssueService {
     return await response.json();
   }
 
-  getByPublisherValue(issues: Issue[]): IssueData[] {
+  private getByPublisherValue(issues: Issue[]): IssueData[] {
     let byPublisher = chain(issues)
       .groupBy('publisher')
       .map((values, key) => {
@@ -90,7 +90,7 @@ export class IssueService {
     return byPublisher;
   }
 
-  getByTitleValue(issues: Issue[]): IssueData[] {
+  private getByTitleValue(issues: Issue[]): IssueData[] {
     let byTitle = chain(issues)
       .groupBy('title')
       .map((values, key) => {

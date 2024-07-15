@@ -39,14 +39,14 @@ import { AuthService } from '../shared/services/auth.service';
   ],
 })
 export default class ByPublisherComponent implements OnInit {
-  authService = inject(AuthService);
-  publisherService = inject(PublisherService);
-  router = inject(Router);
+  readonly #authService = inject(AuthService);
+  readonly #publisherService = inject(PublisherService);
+  readonly #router = inject(Router);
 
-  isAuthenticated = this.authService.isLoggedIn;
-  publishers = this.publisherService.publishers;
+  protected readonly isAuthenticated = this.#authService.isLoggedIn;
+  protected readonly publishers = this.#publisherService.publishers;
 
-  columns: Column[] = [
+  protected readonly columns: Column[] = [
     {
       key: 'name',
       name: 'Publisher',
@@ -66,11 +66,11 @@ export default class ByPublisherComponent implements OnInit {
 
   async ngOnInit() {
     if (this.publishers().length === 0) {
-      await this.publisherService.getAll();
+      await this.#publisherService.getAll();
     }
   }
 
-  open(id: number) {
-    this.router.navigate(['/by_publisher', id]);
+  protected open(id: number) {
+    this.#router.navigate(['/by_publisher', id]);
   }
 }

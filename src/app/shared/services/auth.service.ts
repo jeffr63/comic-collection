@@ -11,12 +11,12 @@ class AuthToken {
   providedIn: 'root',
 })
 export class AuthService {
-  #isAdmin = signal(false);
-  #isLoggedIn = signal(false);
-  isLoggedIn = this.#isLoggedIn.asReadonly();
-  isLoggedInAsAdmin = computed(() => this.#isLoggedIn() && this.#isAdmin());
+  readonly #isAdmin = signal(false);
+  readonly #isLoggedIn = signal(false);
+  public readonly isLoggedIn = this.#isLoggedIn.asReadonly();
+  public readonly isLoggedInAsAdmin = computed(() => this.#isLoggedIn() && this.#isAdmin());
 
-  async login(email: string, password: string) {
+  public async login(email: string, password: string) {
     const body = JSON.stringify({ email: email, password: password });
     const res = await fetch('http://localhost:3000/login', {
       method: 'POST',
@@ -44,13 +44,13 @@ export class AuthService {
     return response;
   }
 
-  logout(): void {
+  public logout(): void {
     localStorage.removeItem('tct_auth');
     this.#isLoggedIn.set(false);
     this.#isAdmin.set(false);
   }
 
-  checkLogin() {
+  public checkLogin() {
     const tct_auth = localStorage.getItem('tct_auth');
     if (!tct_auth) return;
 

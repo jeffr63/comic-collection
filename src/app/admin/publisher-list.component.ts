@@ -48,16 +48,16 @@ import { PublisherService } from '../shared/services/publisher.service';
   ],
 })
 export default class PublisherListComponent implements OnInit {
-  authService = inject(AuthService);
-  dialog = inject(MatDialog);
-  modalDataService = inject(ModalDataService);
-  publisherService = inject(PublisherService);
-  router = inject(Router);
+  readonly #authService = inject(AuthService);
+  readonly #dialog = inject(MatDialog);
+  readonly #modalDataService = inject(ModalDataService);
+  readonly #publisherService = inject(PublisherService);
+  readonly #router = inject(Router);
 
-  isAuthenticated = this.authService.isLoggedInAsAdmin;
-  publishers = this.publisherService.publishers;
+  protected readonly isAuthenticated = this.#authService.isLoggedInAsAdmin;
+  protected publishers = this.#publisherService.publishers;
 
-  columns: Column[] = [
+  protected readonly columns: Column[] = [
     {
       key: 'name',
       name: 'Publisher',
@@ -71,18 +71,18 @@ export default class PublisherListComponent implements OnInit {
 
   async ngOnInit() {
     if (this.publishers().length === 0) {
-      await this.publisherService.getAll();
+      await this.#publisherService.getAll();
     }
   }
 
-  deletePublisher(id: number) {
+  protected deletePublisher(id: number) {
     const modalOptions = {
       title: 'Are you sure you want to delete this publisher',
       body: 'All information associated to this publisher will be permanently deleted.',
       warning: 'This operation cannot be undone.',
     };
-    this.modalDataService.setDeleteModalOptions(modalOptions);
-    const dialogRef = this.dialog.open(DeleteComponent, { width: '500px' });
+    this.#modalDataService.setDeleteModalOptions(modalOptions);
+    const dialogRef = this.#dialog.open(DeleteComponent, { width: '500px' });
     dialogRef
       .afterClosed()
       .pipe(take(1))
@@ -93,15 +93,15 @@ export default class PublisherListComponent implements OnInit {
       });
   }
 
-  async delete(id: number) {
-    await this.publisherService.delete(id);
+  private async delete(id: number) {
+    await this.#publisherService.delete(id);
   }
 
-  editPublisher(id: number) {
-    this.router.navigate(['/admin/publisher', id]);
+  protected editPublisher(id: number) {
+    this.#router.navigate(['/admin/publisher', id]);
   }
 
-  newPublisher() {
-    this.router.navigate(['/admin/publisher/new']);
+  protected newPublisher() {
+    this.#router.navigate(['/admin/publisher/new']);
   }
 }

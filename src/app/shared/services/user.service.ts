@@ -4,11 +4,11 @@ import { User } from '../models/user';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  #usersUrl = 'http://localhost:3000/users';
-  #users = signal<User[]>([]);
-  users = this.#users.asReadonly();
+  readonly #usersUrl = 'http://localhost:3000/users';
+  readonly #users = signal<User[]>([]);
+  public readonly users = this.#users.asReadonly();
 
-  async add(user: User): Promise<User> {
+  public async add(user: User): Promise<User> {
     const response = await fetch(this.#usersUrl, {
       method: 'POST',
       headers: {
@@ -21,7 +21,7 @@ export class UserService {
     return newUser;
   }
 
-  async delete(id: number): Promise<void> {
+  public async delete(id: number): Promise<void> {
     const url = `${this.#usersUrl}/${id}`;
 
     await fetch(url, {
@@ -33,12 +33,12 @@ export class UserService {
     await this.getAll();
   }
 
-  async getAll() {
+  public async getAll() {
     const response = await fetch(this.#usersUrl);
     this.#users.set(await response.json());
   }
 
-  async getById(id: number): Promise<User> {
+  public async getById(id: number): Promise<User> {
     if (!id) {
       return Promise.resolve({} as User);
     }
@@ -47,7 +47,7 @@ export class UserService {
     return (await response.json()) as unknown as User;
   }
 
-  async search(term: string): Promise<User[]> {
+  private async search(term: string): Promise<User[]> {
     if (!term.trim()) {
       // if not search term, return empty array.
       return Promise.resolve([]);
@@ -57,7 +57,7 @@ export class UserService {
     return (await user.json()) as unknown as User[];
   }
 
-  async update(user: User): Promise<User> {
+  public async update(user: User): Promise<User> {
     const response = await fetch(`${this.#usersUrl}/${user.id}`, {
       method: 'PATCH',
       headers: {

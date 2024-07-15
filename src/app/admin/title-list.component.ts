@@ -48,16 +48,16 @@ import { AuthService } from '../shared/services/auth.service';
   ],
 })
 export default class TitleListComponent implements OnInit {
-  authService = inject(AuthService);
-  dialog = inject(MatDialog);
-  modalDataService = inject(ModalDataService);
-  router = inject(Router);
-  titleService = inject(TitleService);
+  readonly #authService = inject(AuthService);
+  readonly #dialog = inject(MatDialog);
+  readonly #modalDataService = inject(ModalDataService);
+  readonly #router = inject(Router);
+  readonly #titleService = inject(TitleService);
 
-  isAuthenticated = this.authService.isLoggedInAsAdmin;
-  titles = this.titleService.titles;
+  protected readonly isAuthenticated = this.#authService.isLoggedInAsAdmin;
+  protected readonly titles = this.#titleService.titles;
 
-  columns: Column[] = [
+  protected readonly columns: Column[] = [
     {
       key: 'title',
       name: 'Title',
@@ -79,18 +79,18 @@ export default class TitleListComponent implements OnInit {
 
   async ngOnInit() {
     if (this.titles().length === 0) {
-      await this.titleService.getAll();
+      await this.#titleService.getAll();
     }
   }
 
-  deleteTitle(id: number) {
+  protected deleteTitle(id: number) {
     const modalOptions = {
       title: 'Are you sure you want to delete this title?',
       body: 'All information associated to this title will be permanently deleted.',
       warning: 'This operation cannot be undone.',
     };
-    this.modalDataService.setDeleteModalOptions(modalOptions);
-    const dialogRef = this.dialog.open(DeleteComponent, { width: '500px' });
+    this.#modalDataService.setDeleteModalOptions(modalOptions);
+    const dialogRef = this.#dialog.open(DeleteComponent, { width: '500px' });
     dialogRef
       .afterClosed()
       .pipe(take(1))
@@ -101,15 +101,15 @@ export default class TitleListComponent implements OnInit {
       });
   }
 
-  async delete(id: number) {
-    await this.titleService.delete(id);
+  protected async delete(id: number) {
+    await this.#titleService.delete(id);
   }
 
-  editTitle(id: number) {
-    this.router.navigate(['/admin/title', id]);
+  protected editTitle(id: number) {
+    this.#router.navigate(['/admin/title', id]);
   }
 
-  newTitle() {
-    this.router.navigate(['/admin/title/new']);
+  protected newTitle() {
+    this.#router.navigate(['/admin/title/new']);
   }
 }

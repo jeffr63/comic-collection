@@ -48,24 +48,24 @@ import { Title } from '../shared/models/title';
   ],
 })
 export default class TitleIssueListComponent implements OnInit {
-  authService = inject(AuthService);
-  dialog = inject(MatDialog);
-  issueService = inject(IssueService);
-  modalDataService = inject(ModalDataService);
-  router = inject(Router);
-  titleService = inject(TitleService);
+  readonly #authService = inject(AuthService);
+  readonly #dialog = inject(MatDialog);
+  readonly #issueService = inject(IssueService);
+  readonly #modalDataService = inject(ModalDataService);
+  readonly #router = inject(Router);
+  readonly #titleService = inject(TitleService);
 
-  id = input<string>();
+  protected readonly id = input<string>();
 
-  dialogRef!: MatDialogRef<DeleteComponent, any>;
-  isLoggedIn = this.authService.isLoggedIn;
-  issues = this.issueService.issues;
-  title = signal('');
-  titleIssues = computed(() => {
+  #dialogRef!: MatDialogRef<DeleteComponent, any>;
+  protected readonly isLoggedIn = this.#authService.isLoggedIn;
+  protected readonly issues = this.#issueService.issues;
+  protected readonly title = signal('');
+  protected readonly titleIssues = computed(() => {
     return this.issues().filter((issue) => issue.title === this.title());
   });
 
-  columns: Column[] = [
+  protected readonly columns: Column[] = [
     {
       key: 'title',
       name: 'Title',
@@ -117,24 +117,24 @@ export default class TitleIssueListComponent implements OnInit {
     }
   }
 
-  async loadData(id: number) {
+  private async loadData(id: number) {
     if (this.issues().length === 0) {
-      await this.issueService.getAll();
+      await this.#issueService.getAll();
     }
-    const title = (await this.titleService.getById(id)) as unknown as Title;
+    const title = (await this.#titleService.getById(id)) as unknown as Title;
     this.title.set(title.title);
   }
 
-  deleteIssue(id: number) {
+  protected deleteIssue(id: number) {
     const modalOptions = {
       title: 'Are you sure you want to delete this course?',
       body: 'All information associated to this course will be permanently deleted.',
       warning: 'This operation can not be undone.',
     };
-    this.modalDataService.setDeleteModalOptions(modalOptions);
-    this.dialogRef = this.dialog.open(DeleteComponent, { width: '500px' });
+    this.#modalDataService.setDeleteModalOptions(modalOptions);
+    this.#dialogRef = this.#dialog.open(DeleteComponent, { width: '500px' });
 
-    this.dialogRef
+    this.#dialogRef
       .afterClosed()
       .pipe(take(1))
       .subscribe((result) => {
@@ -144,15 +144,15 @@ export default class TitleIssueListComponent implements OnInit {
       });
   }
 
-  async delete(id: number) {
-    await this.issueService.delete(id);
+  private async delete(id: number) {
+    await this.#issueService.delete(id);
   }
 
-  editIssue(id: number) {
-    this.router.navigate(['/issues', id]);
+  protected editIssue(id: number) {
+    this.#router.navigate(['/issues', id]);
   }
 
-  newIssue() {
-    this.router.navigate(['/issues/new']);
+  protected newIssue() {
+    this.#router.navigate(['/issues/new']);
   }
 }

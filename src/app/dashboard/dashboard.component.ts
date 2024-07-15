@@ -20,14 +20,7 @@ import { MatCardModule } from '@angular/material/card';
               <mat-card-title color="primary">Issues by Publisher</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-              <ngx-charts-pie-chart
-                [view]="[400, 400]"
-                [results]="publishers()"
-                [labels]="true"
-                [doughnut]="true"
-                [arcWidth]="0.5"
-              >
-              </ngx-charts-pie-chart>
+              <ngx-charts-pie-chart [view]="[400, 400]" [results]="publishers()" [labels]="true" [doughnut]="true" [arcWidth]="0.5"> </ngx-charts-pie-chart>
             </mat-card-content>
           </mat-card>
         </mat-grid-tile>
@@ -38,14 +31,7 @@ import { MatCardModule } from '@angular/material/card';
               <mat-card-title color="primary">Issues by Title</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-              <ngx-charts-pie-chart
-                [view]="[400, 400]"
-                [results]="titles()"
-                [labels]="true"
-                [doughnut]="true"
-                [arcWidth]="0.5"
-              >
-              </ngx-charts-pie-chart>
+              <ngx-charts-pie-chart [view]="[400, 400]" [results]="titles()" [labels]="true" [doughnut]="true" [arcWidth]="0.5"> </ngx-charts-pie-chart>
             </mat-card-content>
           </mat-card>
         </mat-grid-tile>
@@ -56,15 +42,15 @@ import { MatCardModule } from '@angular/material/card';
   styles: [],
 })
 export class DashboardComponent implements OnInit {
-  issueService = inject(IssueService);
+  readonly #issueService = inject(IssueService);
 
-  issues = this.issueService.issues;
-  publishers = this.issueService.publishers;
-  titles = this.issueService.titles;
+  protected readonly issues = this.#issueService.issues;
+  protected readonly publishers = this.#issueService.publishers;
+  protected readonly titles = this.#issueService.titles;
 
   async ngOnInit() {
     if (this.issues().length === 0) {
-      await this.issueService.getAll();
+      await this.#issueService.getAll();
     }
   }
 }

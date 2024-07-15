@@ -39,20 +39,20 @@ import { AuthService } from '../shared/services/auth.service';
   ],
 })
 export default class PublisherTitleListComponent implements OnInit {
-  authService = inject(AuthService);
-  publisherService = inject(PublisherService);
-  router = inject(Router);
-  titleService = inject(TitleService);
+  readonly #authService = inject(AuthService);
+  readonly #publisherService = inject(PublisherService);
+  readonly #router = inject(Router);
+  readonly #titleService = inject(TitleService);
 
-  id = input<string>();
-  isAuthenticated = this.authService.isLoggedIn;
-  allTitles = this.titleService.titles;
-  publisher = signal('');
-  titles = computed(() => {
+  protected readonly id = input<string>();
+  protected readonly isAuthenticated = this.#authService.isLoggedIn;
+  protected readonly allTitles = this.#titleService.titles;
+  protected readonly publisher = signal('');
+  protected readonly titles = computed(() => {
     return this.allTitles().filter((title) => title.publisher === this.publisher());
   });
 
-  columns: Column[] = [
+  protected readonly columns: Column[] = [
     {
       key: 'title',
       name: 'Title',
@@ -84,15 +84,15 @@ export default class PublisherTitleListComponent implements OnInit {
     }
   }
 
-  async loadData(id: number) {
+  private async loadData(id: number) {
     if (this.allTitles().length === 0) {
-      await this.titleService.getAll();
+      await this.#titleService.getAll();
     }
-    const publisher = (await this.publisherService.getById(id)) as unknown as Publisher;
+    const publisher = (await this.#publisherService.getById(id)) as unknown as Publisher;
     this.publisher.set(publisher.name);
   }
 
-  open(id: number) {
-    this.router.navigate(['/by_title', id]);
+  protected open(id: number) {
+    this.#router.navigate(['/by_title', id]);
   }
 }

@@ -14,15 +14,7 @@ import { PublisherService } from '../shared/services/publisher.service';
 @Component({
   selector: 'app-publisher-edit',
   standalone: true,
-  imports: [
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    RouterLink,
-  ],
+  imports: [MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, ReactiveFormsModule, RouterLink],
 
   template: `
     <mat-card appearance="outlined">
@@ -32,15 +24,8 @@ import { PublisherService } from '../shared/services/publisher.service';
         <form [formGroup]="publisherEditForm">
           <mat-form-field appearance="outline">
             <mat-label for="name">Publisher Name</mat-label>
-            <input
-              ngbAutofocus
-              type="text"
-              id="title"
-              matInput
-              formControlName="name"
-              placeholder="Enter name of publisher" />
-            @if (publisherEditForm.controls['name'].errors?.['required'] && publisherEditForm.controls['name'].touched)
-            {
+            <input ngbAutofocus type="text" id="title" matInput formControlName="name" placeholder="Enter name of publisher" />
+            @if (publisherEditForm.controls['name'].errors?.['required'] && publisherEditForm.controls['name'].touched) {
             <mat-error> Publisher name is required </mat-error>
             }
           </mat-form-field>
@@ -49,12 +34,8 @@ import { PublisherService } from '../shared/services/publisher.service';
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!publisherEditForm.valid">
-          <mat-icon>save</mat-icon> Save
-        </button>
-        <button mat-flat-button color="accent" class="ml-10" (click)="cancel()">
-          <mat-icon>cancel</mat-icon> Cancel
-        </button>
+        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!publisherEditForm.valid"><mat-icon>save</mat-icon> Save</button>
+        <button mat-flat-button color="accent" class="ml-10" (click)="cancel()"><mat-icon>cancel</mat-icon> Cancel</button>
       </mat-card-actions>
     </mat-card>
   `,
@@ -86,61 +67,61 @@ import { PublisherService } from '../shared/services/publisher.service';
   ],
 })
 export default class PublisherEditComponent implements OnInit {
-  fb = inject(FormBuilder);
-  location = inject(Location);
-  publisherService = inject(PublisherService);
+  readonly #fb = inject(FormBuilder);
+  readonly #location = inject(Location);
+  readonly #publisherService = inject(PublisherService);
 
-  id = input<string>();
+  protected readonly id = input<string>();
 
-  isNew = true;
-  publisher = <Publisher>{};
-  publisherEditForm!: FormGroup;
+  #isNew = true;
+  #publisher = <Publisher>{};
+  protected publisherEditForm!: FormGroup;
 
   ngOnInit() {
-    this.publisherEditForm = this.fb.group({
+    this.publisherEditForm = this.#fb.group({
       name: ['', Validators.required],
     });
 
     if (this.id() !== 'new' && this.id() != undefined) {
-      this.isNew = false;
+      this.#isNew = false;
       this.loadFormValues(+this.id());
     }
   }
 
-  async loadFormValues(id: number) {
-    const publisher = (await this.publisherService.getById(id)) as unknown as Publisher;
-    this.publisher = publisher;
+  protected async loadFormValues(id: number) {
+    const publisher = (await this.#publisherService.getById(id)) as unknown as Publisher;
+    this.#publisher = publisher;
     this.publisherEditForm?.get('name')?.setValue(publisher.name);
   }
 
-  save() {
-    this.publisher.name = this.publisherEditForm.controls['name'].value;
-    if (this.isNew) {
-      this.publisherService.add(this.publisher);
+  protected save() {
+    this.#publisher.name = this.publisherEditForm.controls['name'].value;
+    if (this.#isNew) {
+      this.#publisherService.add(this.#publisher);
     } else {
-      this.publisherService.update(this.publisher);
+      this.#publisherService.update(this.#publisher);
     }
-    this.location.back();
+    this.#location.back();
   }
 
-  cancel() {
-    this.location.back();
+  protected cancel() {
+    this.#location.back();
   }
 
-  saveNew() {
-    this.publisher.name = this.publisherEditForm.controls['name'].value;
-    if (this.isNew) {
-      this.publisherService.add(this.publisher);
+  private saveNew() {
+    this.#publisher.name = this.publisherEditForm.controls['name'].value;
+    if (this.#isNew) {
+      this.#publisherService.add(this.#publisher);
     } else {
-      this.publisherService.update(this.publisher);
+      this.#publisherService.update(this.#publisher);
     }
 
     // create new publisher object and set publisher name to blank
-    this.publisher = {
+    this.#publisher = {
       name: '',
     };
     this.publisherEditForm.patchValue({
-      publisher: this.publisher.name,
+      publisher: this.#publisher.name,
     });
   }
 }

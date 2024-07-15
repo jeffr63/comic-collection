@@ -73,5 +73,5 @@ import { Router, RouterLink } from '@angular/router';
   ],
 })
 export default class AdminComponent {
-  public router = inject(Router);
+  protected readonly router = inject(Router);
 }

@@ -18,9 +18,9 @@ import { MenuComponent } from './menu/menu.component';
   styles: [],
 })
 export class AppComponent implements OnInit {
-  private authService = inject(AuthService);
+  readonly #authService = inject(AuthService);
 
   ngOnInit() {
-    this.authService.checkLogin();
+    this.#authService.checkLogin();
   }
 }

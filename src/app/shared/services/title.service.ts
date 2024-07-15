@@ -4,11 +4,11 @@ import { Title } from '../models/title';
 
 @Injectable({ providedIn: 'root' })
 export class TitleService {
-  #titlesUrl = 'http://localhost:3000/titles';
-  #titles = signal<Title[]>([]);
-  titles = this.#titles.asReadonly();
+  readonly #titlesUrl = 'http://localhost:3000/titles';
+  readonly #titles = signal<Title[]>([]);
+  public readonly titles = this.#titles.asReadonly();
 
-  async add(title: Title): Promise<Title> {
+  public async add(title: Title): Promise<Title> {
     const response = await fetch(this.#titlesUrl, {
       method: 'POST',
       headers: {
@@ -21,7 +21,7 @@ export class TitleService {
     return newTitle;
   }
 
-  async delete(id: number) {
+  public async delete(id: number) {
     const url = `${this.#titlesUrl}/${id}`;
 
     await fetch(url, {
@@ -33,18 +33,18 @@ export class TitleService {
     await this.getAll();
   }
 
-  async getAll() {
+  public async getAll() {
     const response = await fetch(this.#titlesUrl);
     this.#titles.set(await response.json());
   }
 
-  async getById(id: number): Promise<any> {
+  public async getById(id: number): Promise<any> {
     const url = `${this.#titlesUrl}/${id}`;
     const response = await fetch(url);
     return await response.json();
   }
 
-  async search(term: string): Promise<Title[]> {
+  private async search(term: string): Promise<Title[]> {
     if (!term.trim()) {
       // if not search term, return empty array.
       return Promise.resolve([]);
@@ -54,7 +54,7 @@ export class TitleService {
     return (await response.json()) as unknown as Title[];
   }
 
-  async update(title: Title): Promise<any> {
+  public async update(title: Title): Promise<any> {
     const user = await fetch(`${this.#titlesUrl}/${title.id}`, {
       method: 'PATCH',
       headers: {

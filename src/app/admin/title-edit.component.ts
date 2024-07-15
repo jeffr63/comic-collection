@@ -101,78 +101,78 @@ import { PublisherService } from '../shared/services/publisher.service';
   ],
 })
 export default class TitleEditComponent implements OnInit {
-  fb = inject(FormBuilder);
-  location = inject(Location);
-  publisherService = inject(PublisherService);
-  titleService = inject(TitleService);
+  readonly #fb = inject(FormBuilder);
+  readonly #location = inject(Location);
+  readonly #publisherService = inject(PublisherService);
+  readonly #titleService = inject(TitleService);
 
-  id = input<string>();
+  protected readonly id = input<string>();
 
-  publishers = this.publisherService.publishers;
-  filteredPublishers = signal<Publisher[]>([]);
-  isNew = true;
-  title = <Title>{};
-  titleEditForm!: FormGroup;
+  protected readonly publishers = this.#publisherService.publishers;
+  protected readonly filteredPublishers = signal<Publisher[]>([]);
+  #isNew = true;
+  #title = <Title>{};
+  protected titleEditForm!: FormGroup;
 
   async ngOnInit() {
-    this.titleEditForm = this.fb.group({
+    this.titleEditForm = this.#fb.group({
       publisher: ['', [Validators.required, this.autocompleteStringValidator()]],
       title: ['', Validators.required],
     });
 
     if (this.publishers().length === 0) {
-      await this.publisherService.getAll();
+      await this.#publisherService.getAll();
     }
     const sorted = orderBy(this.publishers(), 'name', 'asc');
     this.filteredPublishers.set(sorted);
 
     if (this.id() !== 'new' && this.id() != undefined) {
-      this.isNew = false;
+      this.#isNew = false;
       this.loadFormValues(+this.id());
     }
   }
 
-  async loadFormValues(id: number) {
-    const title = await this.titleService.getById(id);
-    this.title = title;
+  private async loadFormValues(id: number) {
+    const title = await this.#titleService.getById(id);
+    this.#title = title;
     this.titleEditForm.get('publisher')?.setValue(title.publisher);
     this.titleEditForm.get('title')?.setValue(title.title);
   }
 
-  cancel() {
-    this.location.back();
+  protected cancel() {
+    this.#location.back();
   }
 
-  getAutoCompleteDisplayValue(option: string): string {
+  private getAutoCompleteDisplayValue(option: string): string {
     return option;
   }
 
-  onAutocompleteKeyUp(searchText: string, options: Publisher[]): void {
+  protected onAutocompleteKeyUp(searchText: string, options: Publisher[]): void {
     const lowerSearchText = searchText?.toLowerCase();
     this.filteredPublishers.set(!lowerSearchText ? options : options.filter((r) => r.name.toLocaleLowerCase().startsWith(lowerSearchText)));
   }
 
-  save() {
+  protected save() {
     const { publisher, title } = this.titleEditForm.getRawValue();
-    this.title.publisher = publisher;
-    this.title.title = title;
+    this.#title.publisher = publisher;
+    this.#title.title = title;
 
-    if (this.isNew) {
-      this.titleService.add(this.title);
+    if (this.#isNew) {
+      this.#titleService.add(this.#title);
     } else {
-      this.titleService.update(this.title);
+      this.#titleService.update(this.#title);
     }
-    this.location.back();
+    this.#location.back();
   }
 
-  saveNew() {
+  protected saveNew() {
     const { publisher, title } = this.titleEditForm.getRawValue();
-    this.title.publisher = publisher;
-    this.title.title = title;
-    if (this.isNew) {
-      this.titleService.add(this.title);
+    this.#title.publisher = publisher;
+    this.#title.title = title;
+    if (this.#isNew) {
+      this.#titleService.add(this.#title);
     } else {
-      this.titleService.update(this.title);
+      this.#titleService.update(this.#title);
     }
 
     this.titleEditForm.patchValue({
@@ -181,18 +181,18 @@ export default class TitleEditComponent implements OnInit {
     });
 
     // create new title object and set publisher
-    this.title = {
+    this.#title = {
       publisher: publisher,
       title: '',
     };
 
     this.titleEditForm.patchValue({
-      publisher: this.title.publisher,
-      title: this.title.title,
+      publisher: this.#title.publisher,
+      title: this.#title.title,
     });
   }
 
-  autocompleteStringValidator(): ValidatorFn {
+  private autocompleteStringValidator(): ValidatorFn {
     let selectedItem!: Publisher | undefined;
     return (control: AbstractControl): { [key: string]: any } | null => {
       if (control.value === '') {
