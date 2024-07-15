@@ -204,7 +204,7 @@ export class DisplayTableComponent<TData> implements OnInit {
     this.open.emit(id);
   }
 
-  setTableDataSource(data: any) {
+  setTableDataSource(data: TData[]) {
     this.tableDataSource = new MatTableDataSource(data);
     this.tableDataSource.paginator = this.matPaginator()!;
     this.matSort().disableClear = this.disableClear();

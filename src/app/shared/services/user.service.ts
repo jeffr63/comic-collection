@@ -8,7 +8,7 @@ export class UserService {
   readonly #users = signal<User[]>([]);
   public readonly users = this.#users.asReadonly();
 
-  public async add(user: User): Promise<User> {
+  public async add(user: User): Promise<User | undefined> {
     const response = await fetch(this.#usersUrl, {
       method: 'POST',
       headers: {
@@ -17,7 +17,7 @@ export class UserService {
       body: JSON.stringify(user),
     });
     await this.getAll();
-    const newUser = (await response.json()) as unknown as User;
+    const newUser = (await response.json()) ?? {};
     return newUser;
   }
 
@@ -38,13 +38,13 @@ export class UserService {
     this.#users.set(await response.json());
   }
 
-  public async getById(id: number): Promise<User> {
+  public async getById(id: number): Promise<User | undefined> {
     if (!id) {
       return Promise.resolve({} as User);
     }
     const url = `${this.#usersUrl}/${id}`;
     const response = await fetch(url);
-    return (await response.json()) as unknown as User;
+    return (await response.json()) ?? {};
   }
 
   private async search(term: string): Promise<User[]> {
@@ -54,10 +54,10 @@ export class UserService {
     }
 
     const user = await fetch(`${this.#usersUrl}?${term}`);
-    return (await user.json()) as unknown as User[];
+    return (await user.json()) ?? [];
   }
 
-  public async update(user: User): Promise<User> {
+  public async update(user: User): Promise<User | undefined> {
     const response = await fetch(`${this.#usersUrl}/${user.id}`, {
       method: 'PATCH',
       headers: {
@@ -66,6 +66,6 @@ export class UserService {
       body: JSON.stringify(user),
     });
     await this.getAll();
-    return await response.json();
+    return (await response.json()) ?? {};
   }
 }

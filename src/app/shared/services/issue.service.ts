@@ -12,7 +12,7 @@ export class IssueService {
   public readonly publishers = computed(() => this.getByPublisherValue(this.#issues()));
   public readonly titles = computed(() => this.getByTitleValue(this.#issues()));
 
-  public async add(issue: Issue): Promise<Issue> {
+  public async add(issue: Issue): Promise<Issue | undefined> {
     const response = await fetch(this.#issuesUrl, {
       method: 'POST',
       headers: {
@@ -21,7 +21,7 @@ export class IssueService {
       body: JSON.stringify(issue),
     });
     await this.getAll();
-    const newIssue = (await response.json()) as unknown as Issue;
+    const newIssue = (await response.json()) ?? {};
     return newIssue;
   }
 
@@ -42,23 +42,23 @@ export class IssueService {
     this.#issues.set(await response.json());
   }
 
-  public async getById(id: number): Promise<any> {
+  public async getById(id: number): Promise<Issue | undefined> {
     const url = `${this.#issuesUrl}/${id}`;
     const response = await fetch(url);
-    return await response.json();
+    return (await response.json()) ?? {};
   }
 
   private async search(term: string): Promise<Issue[]> {
     if (!term.trim()) {
       // if not search term, return empty array.
-      return Promise.resolve([]);
+      return Promise.resolve([]) ?? [];
     }
 
     const response = await fetch(`${this.#issuesUrl}?${term}`);
-    return (await response.json()) as unknown as Issue[];
+    return (await response.json()) ?? [];
   }
 
-  public async update(issue: Issue): Promise<any> {
+  public async update(issue: Issue): Promise<Issue | undefined> {
     const response = await fetch(`${this.#issuesUrl}/${issue.id}`, {
       method: 'PATCH',
       headers: {
@@ -67,7 +67,7 @@ export class IssueService {
       body: JSON.stringify(issue),
     });
     await this.getAll();
-    return await response.json();
+    return (await response.json()) ?? {};
   }
 
   private getByPublisherValue(issues: Issue[]): IssueData[] {

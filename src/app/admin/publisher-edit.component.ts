@@ -89,7 +89,7 @@ export default class PublisherEditComponent implements OnInit {
   }
 
   protected async loadFormValues(id: number) {
-    const publisher = (await this.#publisherService.getById(id)) as unknown as Publisher;
+    const publisher = await this.#publisherService.getById(id);
     this.#publisher = publisher;
     this.publisherEditForm?.get('name')?.setValue(publisher.name);
   }

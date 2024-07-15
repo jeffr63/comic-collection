@@ -8,7 +8,7 @@ export class TitleService {
   readonly #titles = signal<Title[]>([]);
   public readonly titles = this.#titles.asReadonly();
 
-  public async add(title: Title): Promise<Title> {
+  public async add(title: Title): Promise<Title | undefined> {
     const response = await fetch(this.#titlesUrl, {
       method: 'POST',
       headers: {
@@ -17,7 +17,7 @@ export class TitleService {
       body: JSON.stringify(title),
     });
     await this.getAll();
-    const newTitle = (await response.json()) as unknown as Title;
+    const newTitle = (await response.json()) ?? {};
     return newTitle;
   }
 
@@ -38,10 +38,10 @@ export class TitleService {
     this.#titles.set(await response.json());
   }
 
-  public async getById(id: number): Promise<any> {
+  public async getById(id: number): Promise<Title | undefined> {
     const url = `${this.#titlesUrl}/${id}`;
     const response = await fetch(url);
-    return await response.json();
+    return (await response.json()) ?? {};
   }
 
   private async search(term: string): Promise<Title[]> {
@@ -51,10 +51,10 @@ export class TitleService {
     }
 
     const response = await fetch(`${this.#titlesUrl}?${term}`);
-    return (await response.json()) as unknown as Title[];
+    return (await response.json()) ?? [];
   }
 
-  public async update(title: Title): Promise<any> {
+  public async update(title: Title): Promise<Title | undefined> {
     const user = await fetch(`${this.#titlesUrl}/${title.id}`, {
       method: 'PATCH',
       headers: {
@@ -63,6 +63,6 @@ export class TitleService {
       body: JSON.stringify(title),
     });
     await this.getAll();
-    return await user.json();
+    return (await user.json()) ?? {};
   }
 }

@@ -8,7 +8,7 @@ export class PublisherService {
   #publishers = signal<Publisher[]>([]);
   public readonly publishers = this.#publishers.asReadonly();
 
-  public async add(publisher: Publisher): Promise<Publisher> {
+  public async add(publisher: Publisher): Promise<Publisher | undefined> {
     const response = await fetch(this.#publishersUrl, {
       method: 'POST',
       headers: {
@@ -17,7 +17,7 @@ export class PublisherService {
       body: JSON.stringify(publisher),
     });
     await this.getAll();
-    const newTitle = (await response.json()) as unknown as Publisher;
+    const newTitle = (await response.json()) ?? undefined;
     return newTitle;
   }
 
@@ -38,23 +38,23 @@ export class PublisherService {
     this.#publishers.set(await response.json());
   }
 
-  public async getById(id: number): Promise<any> {
+  public async getById(id: number): Promise<Publisher | undefined> {
     const url = `${this.#publishersUrl}/${id}`;
     const response = await fetch(url);
-    return await response.json();
+    return (await response.json()) ?? {};
   }
 
   private async search(term: string): Promise<Publisher[]> {
     if (!term.trim()) {
       // if not search term, return empty array.
-      return Promise.resolve([]);
+      return Promise.resolve([]) ?? [];
     }
 
     const response = await fetch(`${this.#publishersUrl}?${term}`);
-    return (await response.json()) as unknown as Publisher[];
+    return (await response.json()) ?? [];
   }
 
-  public async update(publisher: Publisher): Promise<any> {
+  public async update(publisher: Publisher): Promise<Publisher | undefined> {
     const response = await fetch(`${this.#publishersUrl}/${publisher.id}`, {
       method: 'PATCH',
       headers: {
@@ -63,6 +63,6 @@ export class PublisherService {
       body: JSON.stringify(publisher),
     });
     await this.getAll();
-    return await response.json();
+    return (await response.json()) ?? {};
   }
 }
