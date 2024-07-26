@@ -10,8 +10,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
-import { orderBy } from 'lodash';
-
 import { Issue } from '../shared/models/issue';
 import { IssueService } from '../shared/services/issue.service';
 import { Publisher } from '../shared/models/publisher';
@@ -22,7 +20,18 @@ import { TitleService } from '../shared/services/title.service';
 @Component({
   selector: 'app-issue-edit',
   standalone: true,
-  imports: [AsyncPipe, MatAutocompleteModule, MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatIconModule, MatSelectModule, ReactiveFormsModule, RouterLink],
+  imports: [
+    AsyncPipe,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    RouterLink,
+  ],
   template: `
     <mat-card appearance="outlined">
       <mat-card-title>Issue Edit</mat-card-title>
@@ -33,7 +42,13 @@ import { TitleService } from '../shared/services/title.service';
           @if (publishers()) {
           <mat-form-field appearance="outline">
             <mat-label for="publisher">Publisher</mat-label>
-            <input matInput id="publisher" #inputPublisher formControlName="publisher" [matAutocomplete]="publisherAuto" (keyup)="onAutocompleteKeyUpPublisher(inputPublisher.value, publishers())" />
+            <input
+              matInput
+              id="publisher"
+              #inputPublisher
+              formControlName="publisher"
+              [matAutocomplete]="publisherAuto"
+              (keyup)="onAutocompleteKeyUpPublisher(inputPublisher.value, publishers())" />
             <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
               @for (publisher of filteredPublishers(); track publisher.id) {
               <mat-option [value]="publisher.name">
@@ -42,7 +57,8 @@ import { TitleService } from '../shared/services/title.service';
               }
             </mat-autocomplete>
             <!-- publisher required error  -->
-            @if (issueEditForm.controls['publisher'].errors?.['required'] && issueEditForm.controls['publisher'].touched) {
+            @if (issueEditForm.controls['publisher'].errors?.['required'] &&
+            issueEditForm.controls['publisher'].touched) {
             <mat-error> Publisher is required </mat-error>
             }
             <!-- select publisher from list error -->
@@ -56,7 +72,13 @@ import { TitleService } from '../shared/services/title.service';
           @if (titles()) {
           <mat-form-field appearance="outline">
             <mat-label for="title">Title</mat-label>
-            <input matInput id="title" #inputTitle formControlName="title" [matAutocomplete]="titleAuto" (keyup)="onAutocompleteKeyUpTitle(inputTitle.value, titles())" />
+            <input
+              matInput
+              id="title"
+              #inputTitle
+              formControlName="title"
+              [matAutocomplete]="titleAuto"
+              (keyup)="onAutocompleteKeyUpTitle(inputTitle.value, titles())" />
             <mat-autocomplete #titleAuto="matAutocomplete" autoActiveFirstOption>
               @for (title of filteredTitles(); track title.id) {
               <mat-option [value]="title.title">
@@ -80,7 +102,13 @@ import { TitleService } from '../shared/services/title.service';
 
           <mat-form-field appearance="outline">
             <mat-label for="issue">Issue Number</mat-label>
-            <input ngbAutofocus type="text" id="issue" matInput formControlName="issue" placeholder="Enter issue number of comic" />
+            <input
+              ngbAutofocus
+              type="text"
+              id="issue"
+              matInput
+              formControlName="issue"
+              placeholder="Enter issue number of comic" />
             @if (issueEditForm.controls['issue'].errors?.['required'] && issueEditForm.controls['issue'].touched) {
             <mat-error> Issue Number is required </mat-error>
             }
@@ -88,24 +116,49 @@ import { TitleService } from '../shared/services/title.service';
 
           <mat-form-field appearance="outline">
             <mat-label for="coverPrice">Cover Price</mat-label>
-            <input ngbAutofocus type="number" id="coverPrice" matInput formControlName="coverPrice" placeholder="Enter cover price of comic" />
-            @if (issueEditForm.controls['coverPrice'].errors?.['required'] && issueEditForm.controls['coverPrice'].touched) {
+            <input
+              ngbAutofocus
+              type="number"
+              id="coverPrice"
+              matInput
+              formControlName="coverPrice"
+              placeholder="Enter cover price of comic" />
+            @if (issueEditForm.controls['coverPrice'].errors?.['required'] &&
+            issueEditForm.controls['coverPrice'].touched) {
             <mat-error> Cover Price is required </mat-error>
             }
           </mat-form-field>
 
           <mat-form-field appearance="outline">
             <mat-label for="url">Url</mat-label>
-            <input ngbAutofocus type="text" id="url" matInput formControlName="url" placeholder="Enter url to comic page" />
+            <input
+              ngbAutofocus
+              type="text"
+              id="url"
+              matInput
+              formControlName="url"
+              placeholder="Enter url to comic page" />
           </mat-form-field>
         </form>
         }
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!issueEditForm.valid"><mat-icon>save</mat-icon> Save</button>
-        <button mat-flat-button color="warn" (click)="saveNew()" title="Save" [disabled]="!issueEditForm.valid" class="ml-10"><mat-icon>add_task</mat-icon> Save & New</button>
-        <button mat-flat-button color="accent" (click)="cancel()" class="ml-10"><mat-icon>cancel</mat-icon> Cancel</button>
+        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!issueEditForm.valid">
+          <mat-icon>save</mat-icon> Save
+        </button>
+        <button
+          mat-flat-button
+          color="warn"
+          (click)="saveNew()"
+          title="Save"
+          [disabled]="!issueEditForm.valid"
+          class="ml-10">
+          <mat-icon>add_task</mat-icon> Save & New
+        </button>
+        <button mat-flat-button color="accent" (click)="cancel()" class="ml-10">
+          <mat-icon>cancel</mat-icon> Cancel
+        </button>
       </mat-card-actions>
     </mat-card>
   `,
@@ -165,13 +218,25 @@ export default class IssueEditComponent implements OnInit {
     if (this.publishers().length === 0) {
       await this.#publisherService.getAll();
     }
-    const sortedPublishers = orderBy(this.publishers(), 'name', 'asc');
+    //const sortedPublishers = orderBy(this.publishers(), 'name', 'asc');
+    let sortedPublishers = [...this.publishers()];
+    sortedPublishers.sort((a, b) => {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
     this.filteredPublishers.set(sortedPublishers);
 
     if (this.titles().length === 0) {
       await this.#titleService.getAll();
     }
-    const sortedTitles = orderBy(this.titles(), 'title', 'asc');
+    //const sortedTitles = orderBy(this.titles(), 'title', 'asc');
+    let sortedTitles = [...this.titles()];
+    sortedTitles.sort((a, b) => {
+      if (a.title < b.title) return -1;
+      if (a.title > b.title) return 1;
+      return 0;
+    });
     this.filteredTitles.set(sortedTitles);
 
     if (this.id() !== 'new' && this.id() != undefined) {
@@ -230,12 +295,16 @@ export default class IssueEditComponent implements OnInit {
 
   protected onAutocompleteKeyUpPublisher(searchText: string, options: Publisher[]): void {
     const lowerSearchText = searchText?.toLowerCase();
-    this.filteredPublishers.set(!lowerSearchText ? options : options.filter((r) => r.name.toLocaleLowerCase().startsWith(lowerSearchText)));
+    this.filteredPublishers.set(
+      !lowerSearchText ? options : options.filter((r) => r.name.toLocaleLowerCase().startsWith(lowerSearchText))
+    );
   }
 
   protected onAutocompleteKeyUpTitle(searchText: string, options: Title[]): void {
     const lowerSearchText = searchText?.toLowerCase();
-    this.filteredTitles.set(!lowerSearchText ? options : options.filter((r) => r.title.toLocaleLowerCase().includes(lowerSearchText)));
+    this.filteredTitles.set(
+      !lowerSearchText ? options : options.filter((r) => r.title.toLocaleLowerCase().includes(lowerSearchText))
+    );
   }
 
   protected save() {

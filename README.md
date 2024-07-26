@@ -4,7 +4,7 @@
 
 ## Technologies included
 
-Angular, Angular Signals, Angular Material, json-server, json-server-auth, lodash, swimlane/ngx-charts
+Angular, Angular Signals, Angular Material, json-server, json-server-auth, swimlane/ngx-charts
 
 ## JSON-SERVER and JSON-SERVER-AUTH
 

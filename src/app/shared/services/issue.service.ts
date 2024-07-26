@@ -1,7 +1,5 @@
 import { Injectable, computed, signal } from '@angular/core';
 
-import { orderBy, chain, reduce } from 'lodash';
-
 import { Issue, IssueData } from '../models/issue';
 
 @Injectable({ providedIn: 'root' })
@@ -71,42 +69,38 @@ export class IssueService {
   }
 
   private getByPublisherValue(issues: Issue[]): IssueData[] {
-    let byPublisher = chain(issues)
-      .groupBy('publisher')
-      .map((values, key) => {
-        return {
-          name: key,
-          value: reduce(
-            values,
-            function (value, number) {
-              return value + 1;
-            },
-            0
-          ),
-        };
-      })
-      .value();
-    byPublisher = orderBy(byPublisher, 'value', 'desc');
+    let byPublisher: IssueData[] = [];
+    issues.reduce((res, issue) => {
+      if (!res[issue.publisher]) {
+        res[issue.publisher] = { name: issue.publisher, value: 0 };
+        byPublisher.push(res[issue.publisher]);
+      }
+      res[issue.publisher].value += 1;
+      return res;
+    }, {});
+    byPublisher.sort((a, b) => {
+      if (a.value < b.value) return 1;
+      if (a.value > b.value) return -1;
+      return 0;
+    });
     return byPublisher;
   }
 
   private getByTitleValue(issues: Issue[]): IssueData[] {
-    let byTitle = chain(issues)
-      .groupBy('title')
-      .map((values, key) => {
-        return {
-          name: key,
-          value: reduce(
-            values,
-            function (value, number) {
-              return value + 1;
-            },
-            0
-          ),
-        };
-      })
-      .value();
-    byTitle = orderBy(byTitle, 'value', 'desc');
+    let byTitle: IssueData[] = [];
+    issues.reduce((res, issue) => {
+      if (!res[issue.title]) {
+        res[issue.title] = { name: issue.title, value: 0 };
+        byTitle.push(res[issue.title]);
+      }
+      res[issue.title].value += 1;
+      return res;
+    }, {});
+    byTitle.sort((a, b) => {
+      if (a.value < b.value) return 1;
+      if (a.value > b.value) return -1;
+      return 0;
+    });
     return byTitle;
   }
 }
