@@ -14,7 +14,15 @@ import { PublisherService } from '../shared/services/publisher.service';
 @Component({
   selector: 'app-publisher-edit',
   standalone: true,
-  imports: [MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, ReactiveFormsModule, RouterLink],
+  imports: [
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    RouterLink,
+  ],
 
   template: `
     <mat-card appearance="outlined">
@@ -24,8 +32,16 @@ import { PublisherService } from '../shared/services/publisher.service';
         <form [formGroup]="publisherEditForm">
           <mat-form-field appearance="outline">
             <mat-label for="name">Publisher Name</mat-label>
-            <input ngbAutofocus type="text" id="title" matInput formControlName="name" placeholder="Enter name of publisher" />
-            @if (publisherEditForm.controls['name'].errors?.['required'] && publisherEditForm.controls['name'].touched) {
+            <input
+              ngbAutofocus
+              type="text"
+              id="title"
+              matInput
+              formControlName="name"
+              placeholder="Enter name of publisher" />
+            @let fname = publisherEditForm.controls.name;
+            <!-- publisher required error -->
+            @if (fname.errors?.required && fname.touched) {
             <mat-error> Publisher name is required </mat-error>
             }
           </mat-form-field>
@@ -34,8 +50,12 @@ import { PublisherService } from '../shared/services/publisher.service';
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!publisherEditForm.valid"><mat-icon>save</mat-icon> Save</button>
-        <button mat-flat-button color="accent" class="ml-10" (click)="cancel()"><mat-icon>cancel</mat-icon> Cancel</button>
+        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!publisherEditForm.valid">
+          <mat-icon>save</mat-icon> Save
+        </button>
+        <button mat-flat-button color="accent" class="ml-10" (click)="cancel()">
+          <mat-icon>cancel</mat-icon> Cancel
+        </button>
       </mat-card-actions>
     </mat-card>
   `,

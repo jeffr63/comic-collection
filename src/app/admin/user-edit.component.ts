@@ -15,7 +15,16 @@ import { User } from '../shared/models/user';
 @Component({
   selector: 'app-user-edit',
   standalone: true,
-  imports: [MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatRadioModule, ReactiveFormsModule, RouterLink],
+  imports: [
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    RouterLink,
+  ],
 
   template: `
     <mat-card appearance="outlined">
@@ -25,8 +34,16 @@ import { User } from '../shared/models/user';
         <form [formGroup]="userEditForm">
           <mat-form-field appearance="outline">
             <mat-label for="name">Name</mat-label>
-            <input ngbAutofocus type="text" id="name" matInput formControlName="name" placeholder="Enter name of user" />
-            @if (userEditForm.controls['name'].errors?.['required'] && userEditForm.controls['name'].touched) {
+            <input
+              ngbAutofocus
+              type="text"
+              id="name"
+              matInput
+              formControlName="name"
+              placeholder="Enter name of user" />
+            @let fname = userEditForm.controls.name;
+            <!-- name required error -->
+            @if (fname.errors?.['required'] && fname.touched) {
             <mat-error> Name is required </mat-error>
             }
           </mat-form-field>
@@ -34,7 +51,9 @@ import { User } from '../shared/models/user';
           <mat-form-field appearance="outline">
             <mat-label for="email">Email</mat-label>
             <input type="text" id="email" matInput formControlName="email" placeholder="Enter email of user" />
-            @if (userEditForm.controls['name'].errors?.['required'] && userEditForm.controls['name'].touched) {
+            @let femail = userEditForm.controls.name;
+            <!-- email required error -->
+            @if (femail.errors?.['required'] && femail.touched) {
             <mat-error> Email is required </mat-error>
             }
           </mat-form-field>
@@ -44,7 +63,9 @@ import { User } from '../shared/models/user';
             <mat-radio-button class="radio-button" value="admin">Admin</mat-radio-button>
             <mat-radio-button class="radio-button" value="user">User</mat-radio-button>
           </mat-radio-group>
-          @if (userEditForm.controls['role'].errors?.['required'] && userEditForm.controls['role'].touched) {
+          @let frole = userEditForm.controls.role;
+          <!-- role required error -->
+          @if (frole.errors?.['required'] && frole.touched) {
           <mat-error> Role is required </mat-error>
           }
         </form>
@@ -52,8 +73,12 @@ import { User } from '../shared/models/user';
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!userEditForm.valid"><mat-icon>save</mat-icon> Save</button>
-        <button mat-flat-button color="accent" class="ml-10" routerLink="/admin/users"><mat-icon>cancel</mat-icon> Cancel</button>
+        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!userEditForm.valid">
+          <mat-icon>save</mat-icon> Save
+        </button>
+        <button mat-flat-button color="accent" class="ml-10" routerLink="/admin/users">
+          <mat-icon>cancel</mat-icon> Cancel
+        </button>
       </mat-card-actions>
     </mat-card>
   `,

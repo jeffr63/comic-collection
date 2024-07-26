@@ -56,13 +56,13 @@ import { TitleService } from '../shared/services/title.service';
               </mat-option>
               }
             </mat-autocomplete>
+            @let fpublisher = issueEditForm.controls.publisher;
             <!-- publisher required error  -->
-            @if (issueEditForm.controls['publisher'].errors?.['required'] &&
-            issueEditForm.controls['publisher'].touched) {
+            @if (fpublisher.errors?.['required'] && fpublisher.touched) {
             <mat-error> Publisher is required </mat-error>
             }
             <!-- select publisher from list error -->
-            @if (issueEditForm.controls['publisher'].errors?.['match']) {
+            @if (fpublisher.errors?.['match']) {
             <mat-error> Please select a publisher from the list. </mat-error>
             }
           </mat-form-field>
@@ -89,12 +89,13 @@ import { TitleService } from '../shared/services/title.service';
             <button mat-icon-button matIconSuffix color="primary" routerLink="/admin/title/new" title="Add new title">
               <mat-icon>add</mat-icon>
             </button>
+            @let ftitle = issueEditForm.controls.title;
             <!-- title required error -->
-            @if (issueEditForm.controls['title'].errors?.['required'] && issueEditForm.controls['title'].touched) {
+            @if (ftitle.errors?.['required'] && ftitle.touched) {
             <mat-error> Title is required </mat-error>
             }
             <!-- select title from list error -->
-            @if (issueEditForm.controls['title'].errors?.['match']) {
+            @if (ftitle.errors?.['match']) {
             <mat-error> Please select a title from the list. </mat-error>
             }
           </mat-form-field>
@@ -109,7 +110,9 @@ import { TitleService } from '../shared/services/title.service';
               matInput
               formControlName="issue"
               placeholder="Enter issue number of comic" />
-            @if (issueEditForm.controls['issue'].errors?.['required'] && issueEditForm.controls['issue'].touched) {
+            @let fissue = issueEditForm.controls.issue;
+            <!-- issue required error -->
+            @if (fissue.errors?.['required'] && fissue.touched) {
             <mat-error> Issue Number is required </mat-error>
             }
           </mat-form-field>
@@ -123,8 +126,9 @@ import { TitleService } from '../shared/services/title.service';
               matInput
               formControlName="coverPrice"
               placeholder="Enter cover price of comic" />
-            @if (issueEditForm.controls['coverPrice'].errors?.['required'] &&
-            issueEditForm.controls['coverPrice'].touched) {
+            @let fcoverPrice = issueEditForm.controls.coverPrice;
+            <!-- cover price required error -->
+            @if (fcoverPrice.errors?.['required'] && fcoverPrice.touched) {
             <mat-error> Cover Price is required </mat-error>
             }
           </mat-form-field>
@@ -144,16 +148,11 @@ import { TitleService } from '../shared/services/title.service';
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!issueEditForm.valid">
+        @let disabled = !issueEditForm.valid;
+        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="disabled">
           <mat-icon>save</mat-icon> Save
         </button>
-        <button
-          mat-flat-button
-          color="warn"
-          (click)="saveNew()"
-          title="Save"
-          [disabled]="!issueEditForm.valid"
-          class="ml-10">
+        <button mat-flat-button color="warn" (click)="saveNew()" title="Save" [disabled]="disabled" class="ml-10">
           <mat-icon>add_task</mat-icon> Save & New
         </button>
         <button mat-flat-button color="accent" (click)="cancel()" class="ml-10">

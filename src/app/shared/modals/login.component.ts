@@ -35,12 +35,13 @@ import { MatInputModule } from '@angular/material/input';
               matInput
               formControlName="email"
               placeholder="Enter email address" />
+            @let femail = loginForm.controls.email;
             <!-- email required error -->
-            @if (loginForm.controls['email'].errors?.['required'] && loginForm.controls['email'].touched) {
+            @if (femail.errors?.['required'] && femail.touched) {
             <mat-error> Email is required </mat-error>
             }
-          <!-- invalid email error -->
-            @if (loginForm.controls['email'].errors?.['email'] && loginForm.controls['email'].touched) {
+            <!-- invalid email error -->
+            @if (femail.errors?.['email'] && femail.touched) {
             <mat-error> Must enter valid email </mat-error>
             }
           </mat-form-field>
@@ -53,7 +54,9 @@ import { MatInputModule } from '@angular/material/input';
               matInput
               formControlName="password"
               [type]="flag ? 'password' : 'text'" />
-            @if (loginForm.controls['password'].errors?.['required'] && loginForm.controls['password'].touched) {
+            @let fpassword = loginForm.controls.password;
+            <!-- password required error -->
+            @if (fpassword.errors?.['required'] && fpassword.touched) {
             <mat-error> Password is required </mat-error>
             }
           </mat-form-field>

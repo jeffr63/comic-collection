@@ -63,14 +63,13 @@ import { PublisherService } from '../shared/services/publisher.service';
               <mat-icon>add</mat-icon>
             </button>
 
+            @let fname = titleEditForm.controls.publisher;
             <!-- publisher required error -->
-            @if (titleEditForm.controls['publisher'].errors?.['required'] &&
-            titleEditForm.controls['publisher'].touched) {
+            @if (fname.errors?.['required'] && fname.touched) {
             <mat-error> Publisher is required </mat-error>
             }
-
             <!-- select publisher from list error -->
-            @if (titleEditForm.controls['publisher'].errors?.['match']) {
+            @if (fname.errors?.['match']) {
             <mat-error> Please select a publisher from the list. </mat-error>
             }
           </mat-form-field>
@@ -85,7 +84,9 @@ import { PublisherService } from '../shared/services/publisher.service';
               matInput
               formControlName="title"
               placeholder="Enter title of comic" />
-            @if (titleEditForm.controls['title'].errors?.['required'] && titleEditForm.controls['title'].touched) {
+            @let ftitle = titleEditForm.controls.title;
+            <!-- title required error -->
+            @if (ftitle.errors?.['required'] && ftitle.touched) {
             <mat-error> Title is required</mat-error>
             }
           </mat-form-field>
@@ -94,16 +95,11 @@ import { PublisherService } from '../shared/services/publisher.service';
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!titleEditForm.valid">
+        @let disabled = !titleEditForm.valid;
+        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="disabled">
           <mat-icon>save</mat-icon> Save
         </button>
-        <button
-          mat-flat-button
-          color="warn"
-          (click)="saveNew()"
-          title="Save"
-          [disabled]="!titleEditForm.valid"
-          class="ml-10">
+        <button mat-flat-button color="warn" (click)="saveNew()" title="Save" [disabled]="disabled" class="ml-10">
           <mat-icon>add_task</mat-icon> Save & New
         </button>
         <button mat-flat-button color="accent" class="ml-10" (click)="cancel()">
