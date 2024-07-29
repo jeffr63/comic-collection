@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AuthStore } from '../shared/store/auth.store';
 import { Column } from '../shared/models/column';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { PublisherService } from '../shared/services/publisher.service';
-import { AuthService } from '../shared/services/auth.service';
+import { PublisherStore } from '../shared/store/publisher.store';
 
 @Component({
   selector: 'app-by-publisher',
@@ -39,12 +40,13 @@ import { AuthService } from '../shared/services/auth.service';
   ],
 })
 export default class ByPublisherComponent implements OnInit {
-  readonly #authService = inject(AuthService);
+  readonly #authStore = inject(AuthStore);
   readonly #publisherService = inject(PublisherService);
+  readonly #publisherStore = inject(PublisherStore);
   readonly #router = inject(Router);
 
-  protected readonly isAuthenticated = this.#authService.isLoggedIn;
-  protected readonly publishers = this.#publisherService.publishers;
+  protected readonly isAuthenticated = this.#authStore.isLoggedIn;
+  protected readonly publishers = this.#publisherStore.publishers;
 
   protected readonly columns: Column[] = [
     {

@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { Route } from '@angular/router';
 
-import { AuthService } from '../shared/services/auth.service';
+import { AuthStore } from '../shared/store/auth.store';
 import { issueTitleResolver } from '../shared/resolvers/issue-resolver.service';
 
 export default [
@@ -16,7 +16,7 @@ export default [
         path: ':id',
         title: issueTitleResolver,
         loadComponent: () => import('./issue-edit.component'),
-        canActivate: [() => inject(AuthService).isLoggedIn()],
+        canActivate: [() => inject(AuthStore).isLoggedIn()],
       },
     ],
   },

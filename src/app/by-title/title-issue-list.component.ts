@@ -4,7 +4,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
 
-import { AuthService } from '../shared/services/auth.service';
+import { AuthStore } from '../shared/store/auth.store';
 import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
@@ -12,6 +12,7 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
 import { TitleService } from '../shared/services/title.service';
 import { IssueService } from '../shared/services/issue.service';
 import { Title } from '../shared/models/title';
+import { IssueStore } from '../shared/store/issue.store';
 
 @Component({
   selector: 'app-title-issue-list',
@@ -48,9 +49,10 @@ import { Title } from '../shared/models/title';
   ],
 })
 export default class TitleIssueListComponent implements OnInit {
-  readonly #authService = inject(AuthService);
+  readonly #authStore = inject(AuthStore);
   readonly #dialog = inject(MatDialog);
   readonly #issueService = inject(IssueService);
+  readonly #issueStore = inject(IssueStore);
   readonly #modalDataService = inject(ModalDataService);
   readonly #router = inject(Router);
   readonly #titleService = inject(TitleService);
@@ -58,8 +60,8 @@ export default class TitleIssueListComponent implements OnInit {
   protected readonly id = input<string>();
 
   #dialogRef!: MatDialogRef<DeleteComponent, any>;
-  protected readonly isLoggedIn = this.#authService.isLoggedIn;
-  protected readonly issues = this.#issueService.issues;
+  protected readonly isLoggedIn = this.#authStore.isLoggedIn;
+  protected readonly issues = this.#issueStore.issues;
   protected readonly title = signal('');
   protected readonly titleIssues = computed(() => {
     return this.issues().filter((issue) => issue.title === this.title());

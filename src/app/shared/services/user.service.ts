@@ -1,12 +1,13 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 
 import { User } from '../models/user';
+import { UserStore } from '../store/user.store';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
+  readonly #userStore = inject(UserStore);
+
   readonly #usersUrl = 'http://localhost:3000/users';
-  readonly #users = signal<User[]>([]);
-  public readonly users = this.#users.asReadonly();
 
   public async add(user: User): Promise<User | undefined> {
     const response = await fetch(this.#usersUrl, {
@@ -35,7 +36,7 @@ export class UserService {
 
   public async getAll() {
     const response = await fetch(this.#usersUrl);
-    this.#users.set(await response.json());
+    this.#userStore.setUsers(await response.json());
   }
 
   public async getById(id: number): Promise<User | undefined> {

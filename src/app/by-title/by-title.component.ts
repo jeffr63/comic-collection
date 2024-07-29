@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AuthStore } from '../shared/store/auth.store';
 import { Column } from '../shared/models/column';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { TitleService } from '../shared/services/title.service';
-import { AuthService } from '../shared/services/auth.service';
+import { TitleStore } from '../shared/store/title.store';
 
 @Component({
   selector: 'app-by-title-list',
@@ -39,12 +40,13 @@ import { AuthService } from '../shared/services/auth.service';
   ],
 })
 export default class ByTitleListComponent implements OnInit {
-  readonly #authService = inject(AuthService);
-  readonly #titleService = inject(TitleService);
+  readonly #authStore = inject(AuthStore);
   readonly #router = inject(Router);
+  readonly #titleService = inject(TitleService);
+  readonly #titleStore = inject(TitleStore);
 
-  protected readonly isAuthenticated = this.#authService.isLoggedIn;
-  protected readonly titles = this.#titleService.titles;
+  protected readonly isAuthenticated = this.#authStore.isLoggedIn;
+  protected readonly titles = this.#titleStore.titles;
 
   protected readonly columns: Column[] = [
     {

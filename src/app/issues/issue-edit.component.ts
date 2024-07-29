@@ -16,6 +16,9 @@ import { Publisher } from '../shared/models/publisher';
 import { PublisherService } from '../shared/services/publisher.service';
 import { Title } from '../shared/models/title';
 import { TitleService } from '../shared/services/title.service';
+import { IssueStore } from '../shared/store/issue.store';
+import { PublisherStore } from '../shared/store/publisher.store';
+import { TitleStore } from '../shared/store/title.store';
 
 @Component({
   selector: 'app-issue-edit',
@@ -191,19 +194,22 @@ export default class IssueEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
   readonly #location = inject(Location);
   readonly #issueService = inject(IssueService);
+  readonly #issueStore = inject(IssueStore);
   readonly #publisherService = inject(PublisherService);
+  readonly #publisherStore = inject(PublisherStore);
   readonly #titleService = inject(TitleService);
+  readonly #titleStore = inject(TitleStore);
 
   protected readonly id = input<string>();
 
   protected readonly filteredPublishers = signal<Publisher[]>([]);
   protected readonly filteredTitles = signal<Title[]>([]);
-  protected readonly issues = this.#issueService.issues;
+  protected readonly issues = this.#issueStore.issues;
   #isNew = true;
   protected issueEditForm!: FormGroup;
   #issue = <Issue>{};
-  protected readonly publishers = this.#publisherService.publishers;
-  protected readonly titles = this.#titleService.titles;
+  protected readonly publishers = this.#publisherStore.publishers;
+  protected readonly titles = this.#titleStore.titles;
 
   async ngOnInit() {
     this.issueEditForm = this.#fb.group({

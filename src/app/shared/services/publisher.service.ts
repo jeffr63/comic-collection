@@ -1,12 +1,13 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 
 import { Publisher } from '../models/publisher';
+import { PublisherStore } from '../store/publisher.store';
 
 @Injectable({ providedIn: 'root' })
 export class PublisherService {
+  readonly #publisherStore = inject(PublisherStore);
+
   #publishersUrl = 'http://localhost:3000/publishers';
-  #publishers = signal<Publisher[]>([]);
-  public readonly publishers = this.#publishers.asReadonly();
 
   public async add(publisher: Publisher): Promise<Publisher | undefined> {
     const response = await fetch(this.#publishersUrl, {
@@ -35,7 +36,7 @@ export class PublisherService {
 
   public async getAll() {
     const response = await fetch(this.#publishersUrl);
-    this.#publishers.set(await response.json());
+    this.#publisherStore.setPublishers(await response.json());
   }
 
   public async getById(id: number): Promise<Publisher | undefined> {

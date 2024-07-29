@@ -4,12 +4,13 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
 
+import { AuthStore } from '../shared/store/auth.store';
 import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { ModalDataService } from '../shared/modals/modal-data.service';
 import { UserService } from '../shared/services/user.service';
-import { AuthService } from '../shared/services/auth.service';
+import { UserStore } from '../shared/store/user.store';
 
 @Component({
   selector: 'app-user-list',
@@ -45,14 +46,15 @@ import { AuthService } from '../shared/services/auth.service';
   ],
 })
 export default class UserListComponent implements OnInit {
-  readonly #authService = inject(AuthService);
+  readonly #authStore = inject(AuthStore);
   readonly #dialog = inject(MatDialog);
   readonly #modalDataService = inject(ModalDataService);
   readonly #router = inject(Router);
   readonly #userService = inject(UserService);
+  readonly #userStore = inject(UserStore);
 
-  protected readonly isAuthenticated = this.#authService.isLoggedInAsAdmin;
-  protected readonly users = this.#userService.users;
+  protected readonly isAuthenticated = this.#authStore.isLoggedInAsAdmin;
+  protected readonly users = this.#userStore.users;
 
   protected readonly columns: Column[] = [
     {

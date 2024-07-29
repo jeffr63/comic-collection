@@ -5,10 +5,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { Router, RouterLink } from '@angular/router';
 
-import { Observable, take } from 'rxjs';
+import { take } from 'rxjs';
 
 import { AuthService } from '../shared/services/auth.service';
 import { LoginComponent } from '../shared/modals/login.component';
+import { AuthStore } from '../shared/store/auth.store';
 
 @Component({
   selector: 'app-menu',
@@ -49,19 +50,20 @@ import { LoginComponent } from '../shared/modals/login.component';
   ],
 })
 export class MenuComponent {
-  private authService = inject(AuthService);
-  private dialog = inject(MatDialog);
-  private router = inject(Router);
+  readonly #authService = inject(AuthService);
+  readonly #authStore = inject(AuthStore);
+  readonly #dialog = inject(MatDialog);
+  readonly #router = inject(Router);
 
   dialogRef!: MatDialogRef<LoginComponent, { email: string; password: string }>;
-  isLoggedIn = this.authService.isLoggedIn;
-  isLoggedInAsAdmin = this.authService.isLoggedInAsAdmin;
+  isLoggedIn = this.#authStore.isLoggedIn;
+  isLoggedInAsAdmin = this.#authStore.isLoggedInAsAdmin;
   isNavbarCollapsed = true;
   email = '';
   password = '';
 
   login() {
-    this.dialogRef = this.dialog.open(LoginComponent, {
+    this.dialogRef = this.#dialog.open(LoginComponent, {
       width: '500px',
       data: { email: this.email, password: this.password },
     });
@@ -72,14 +74,14 @@ export class MenuComponent {
       .subscribe({
         next: (result) => {
           if (result) {
-            this.authService.login(result.email, result.password);
+            this.#authService.login(result.email, result.password);
           }
         },
       });
   }
 
   logout() {
-    this.authService.logout();
-    this.router.navigate(['/']);
+    this.#authService.logout();
+    this.#router.navigate(['/']);
   }
 }

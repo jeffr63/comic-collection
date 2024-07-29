@@ -14,6 +14,7 @@ import { Title } from '../shared/models/title';
 import { TitleService } from '../shared/services/title.service';
 import { Publisher } from '../shared/models/publisher';
 import { PublisherService } from '../shared/services/publisher.service';
+import { PublisherStore } from '../shared/store/publisher.store';
 
 @Component({
   selector: 'app-title-edit',
@@ -139,11 +140,12 @@ export default class TitleEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
   readonly #location = inject(Location);
   readonly #publisherService = inject(PublisherService);
+  readonly #publisherStore = inject(PublisherStore);
   readonly #titleService = inject(TitleService);
 
   protected readonly id = input<string>();
 
-  protected readonly publishers = this.#publisherService.publishers;
+  protected readonly publishers = this.#publisherStore.publishers;
   protected readonly filteredPublishers = signal<Publisher[]>([]);
   #isNew = true;
   #title = <Title>{};

@@ -1,12 +1,13 @@
 import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AuthStore } from '../shared/store/auth.store';
 import { Column } from '../shared/models/column';
-import { PublisherService } from '../shared/services/publisher.service';
-import { TitleService } from '../shared/services/title.service';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { Publisher } from '../shared/models/publisher';
-import { AuthService } from '../shared/services/auth.service';
+import { PublisherService } from '../shared/services/publisher.service';
+import { TitleService } from '../shared/services/title.service';
+import { TitleStore } from '../shared/store/title.store';
 
 @Component({
   selector: 'app-publisher-title-list',
@@ -39,14 +40,15 @@ import { AuthService } from '../shared/services/auth.service';
   ],
 })
 export default class PublisherTitleListComponent implements OnInit {
-  readonly #authService = inject(AuthService);
+  readonly #authStore = inject(AuthStore);
   readonly #publisherService = inject(PublisherService);
   readonly #router = inject(Router);
   readonly #titleService = inject(TitleService);
+  readonly #titleStore = inject(TitleStore);
 
   protected readonly id = input<string>();
-  protected readonly isAuthenticated = this.#authService.isLoggedIn;
-  protected readonly allTitles = this.#titleService.titles;
+  protected readonly isAuthenticated = this.#authStore.isLoggedIn;
+  protected readonly allTitles = this.#titleStore.titles;
   protected readonly publisher = signal('');
   protected readonly titles = computed(() => {
     return this.allTitles().filter((title) => title.publisher === this.publisher());

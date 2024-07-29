@@ -4,12 +4,13 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { take } from 'rxjs';
 
-import { AuthService } from '../shared/services/auth.service';
+import { AuthStore } from '../shared/store/auth.store';
 import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { IssueService } from '../shared/services/issue.service';
 import { ModalDataService } from '../shared/modals/modal-data.service';
+import { IssueStore } from '../shared/store/issue.store';
 
 @Component({
   selector: 'app-issue-all-list',
@@ -31,8 +32,7 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
         [tableColumns]="columns"
         (add)="newIssue()"
         (delete)="deleteIssue($event)"
-        (edit)="editIssue($event)"
-      />
+        (edit)="editIssue($event)" />
       }
     </section>
   `,
@@ -46,14 +46,15 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
   ],
 })
 export default class IssueAllListComponent implements OnInit {
-  authService = inject(AuthService);
-  dialog = inject(MatDialog);
-  issueService = inject(IssueService);
-  modalDataService = inject(ModalDataService);
-  router = inject(Router);
+  readonly #authStore = inject(AuthStore);
+  readonly #dialog = inject(MatDialog);
+  readonly #issueService = inject(IssueService);
+  readonly #issueStore = inject(IssueStore);
+  readonly #modalDataService = inject(ModalDataService);
+  readonly #router = inject(Router);
 
-  isLoggedIn = this.authService.isLoggedIn;
-  issues = this.issueService.issues;
+  isLoggedIn = this.#authStore.isLoggedIn;
+  issues = this.#issueStore.issues;
 
   columns: Column[] = [
     {
@@ -103,7 +104,7 @@ export default class IssueAllListComponent implements OnInit {
 
   async ngOnInit() {
     if (this.issues().length === 0) {
-      await this.issueService.getAll();
+      await this.#issueService.getAll();
     }
   }
 
@@ -113,8 +114,8 @@ export default class IssueAllListComponent implements OnInit {
       body: 'All information associated to this course will be permanently deleted.',
       warning: 'This operation can not be undone.',
     };
-    this.modalDataService.setDeleteModalOptions(modalOptions);
-    const dialogRef = this.dialog.open(DeleteComponent, { width: '500px' });
+    this.#modalDataService.setDeleteModalOptions(modalOptions);
+    const dialogRef = this.#dialog.open(DeleteComponent, { width: '500px' });
 
     dialogRef
       .afterClosed()
@@ -127,14 +128,14 @@ export default class IssueAllListComponent implements OnInit {
   }
 
   async delete(id: number) {
-    await this.issueService.delete(id);
+    await this.#issueService.delete(id);
   }
 
   editIssue(id: number) {
-    this.router.navigate(['/issues', id]);
+    this.#router.navigate(['/issues', id]);
   }
 
   newIssue() {
-    this.router.navigate(['/issues/new']);
+    this.#router.navigate(['/issues/new']);
   }
 }

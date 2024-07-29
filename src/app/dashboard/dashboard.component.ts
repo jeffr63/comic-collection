@@ -1,10 +1,11 @@
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { IssueService } from '../shared/services/issue.service';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { IssueStore } from '../shared/store/issue.store';
 
 @Component({
   selector: 'app-dashboard',
@@ -43,10 +44,11 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class DashboardComponent implements OnInit {
   readonly #issueService = inject(IssueService);
+  readonly #issueStore = inject(IssueStore);
 
-  protected readonly issues = this.#issueService.issues;
-  protected readonly publishers = this.#issueService.publishers;
-  protected readonly titles = this.#issueService.titles;
+  protected readonly issues = this.#issueStore.issues;
+  protected readonly publishers = this.#issueStore.publishers;
+  protected readonly titles = this.#issueStore.titles;
 
   async ngOnInit() {
     if (this.issues().length === 0) {
