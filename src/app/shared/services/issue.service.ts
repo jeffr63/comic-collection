@@ -1,12 +1,9 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import { Issue, IssueData } from '../models/issue';
-import { IssueStore } from '../store/issue.store';
+import { Issue } from '../models/issue';
 
 @Injectable({ providedIn: 'root' })
 export class IssueService {
-  readonly #issueStore = inject(IssueStore);
-
   readonly #issuesUrl = 'http://localhost:3000/issues';
 
   public async add(issue: Issue): Promise<Issue | undefined> {
@@ -17,7 +14,7 @@ export class IssueService {
       },
       body: JSON.stringify(issue),
     });
-    await this.getAll();
+
     const newIssue = (await response.json()) ?? {};
     return newIssue;
   }
@@ -31,12 +28,11 @@ export class IssueService {
         'Content-type': 'application/json',
       },
     });
-    await this.getAll();
   }
 
-  public async getAll() {
+  public async getAll(): Promise<Issue[]> {
     const response = await fetch(this.#issuesUrl);
-    this.#issueStore.setIssues(await response.json());
+    return await response.json();
   }
 
   public async getById(id: number): Promise<Issue | undefined> {
@@ -46,11 +42,6 @@ export class IssueService {
   }
 
   public async search(term: string): Promise<Issue[]> {
-    if (!term.trim()) {
-      // if not search term, return empty array.
-      return Promise.resolve([]) ?? [];
-    }
-
     const response = await fetch(`${this.#issuesUrl}?${term}`);
     return (await response.json()) ?? [];
   }
@@ -63,7 +54,6 @@ export class IssueService {
       },
       body: JSON.stringify(issue),
     });
-    await this.getAll();
     return (await response.json()) ?? {};
   }
 }

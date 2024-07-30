@@ -9,7 +9,6 @@ import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { ModalDataService } from '../shared/modals/modal-data.service';
-import { UserService } from '../shared/services/user.service';
 import { UserStore } from '../shared/store/user.store';
 
 @Component({
@@ -50,7 +49,6 @@ export default class UserListComponent implements OnInit {
   readonly #dialog = inject(MatDialog);
   readonly #modalDataService = inject(ModalDataService);
   readonly #router = inject(Router);
-  readonly #userService = inject(UserService);
   readonly #userStore = inject(UserStore);
 
   protected readonly isAuthenticated = this.#authStore.isLoggedInAsAdmin;
@@ -90,7 +88,7 @@ export default class UserListComponent implements OnInit {
 
   async ngOnInit() {
     if (this.users().length === 0) {
-      await this.#userService.getAll();
+      await this.#userStore.getAll();
     }
   }
 
@@ -113,7 +111,7 @@ export default class UserListComponent implements OnInit {
   }
 
   private async delete(id: number) {
-    await this.#userService.delete(id);
+    await this.#userStore.delete(id);
   }
 
   protected editUser(id: number) {

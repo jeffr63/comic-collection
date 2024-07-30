@@ -5,8 +5,7 @@ import { AuthStore } from '../shared/store/auth.store';
 import { Column } from '../shared/models/column';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { Publisher } from '../shared/models/publisher';
-import { PublisherService } from '../shared/services/publisher.service';
-import { TitleService } from '../shared/services/title.service';
+import { PublisherStore } from '../shared/store/publisher.store';
 import { TitleStore } from '../shared/store/title.store';
 
 @Component({
@@ -41,9 +40,8 @@ import { TitleStore } from '../shared/store/title.store';
 })
 export default class PublisherTitleListComponent implements OnInit {
   readonly #authStore = inject(AuthStore);
-  readonly #publisherService = inject(PublisherService);
+  readonly #publisherStore = inject(PublisherStore);
   readonly #router = inject(Router);
-  readonly #titleService = inject(TitleService);
   readonly #titleStore = inject(TitleStore);
 
   protected readonly id = input<string>();
@@ -88,9 +86,9 @@ export default class PublisherTitleListComponent implements OnInit {
 
   private async loadData(id: number) {
     if (this.allTitles().length === 0) {
-      await this.#titleService.getAll();
+      await this.#titleStore.getAll();
     }
-    const publisher = (await this.#publisherService.getById(id)) as unknown as Publisher;
+    const publisher = (await this.#publisherStore.getById(id)) as unknown as Publisher;
     this.publisher.set(publisher.name);
   }
 

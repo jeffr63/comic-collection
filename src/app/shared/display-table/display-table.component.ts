@@ -1,7 +1,6 @@
 import { CurrencyPipe, NgClass } from '@angular/common';
 import { Component, OnInit, computed, effect, input, output, viewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -14,7 +13,17 @@ import { Column } from '../models/column';
 @Component({
   selector: 'app-display-table',
   standalone: true,
-  imports: [MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatPaginatorModule, MatSortModule, MatTableModule, CurrencyPipe, NgClass],
+  imports: [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
+    CurrencyPipe,
+    NgClass,
+  ],
   template: `
     <!-- Filter -->
     @if (isFilterable()) {
@@ -62,7 +71,11 @@ import { Column } from '../models/column';
           {{ element[column.key] | currency }}
         </td>
         } @case ('link') {
-        <th mat-header-cell *matHeaderCellDef [class.text-right]="column.position === 'right'" style="min-width: {{ column.width }}">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          [class.text-right]="column.position === 'right'"
+          style="min-width: {{ column.width }}">
           {{ column.name }}
         </th>
         <td mat-cell *matCellDef="let element">
@@ -71,7 +84,11 @@ import { Column } from '../models/column';
           }
         </td>
         } @case ('action') {
-        <th mat-header-cell *matHeaderCellDef [class.text-right]="column.position === 'right'" style="min-width: {{ column.width }}"></th>
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          [class.text-right]="column.position === 'right'"
+          style="min-width: {{ column.width }}"></th>
         <td mat-cell *matCellDef="let element">
           @if (isAuthenticated()) {
           <button mat-icon-button color="primary" (click)="emitEdit(element.id)" title="Edit">
@@ -83,14 +100,22 @@ import { Column } from '../models/column';
           }
         </td>
         } @case ('view') {
-        <th mat-header-cell *matHeaderCellDef [class.text-right]="column.position === 'right'" style="min-width: {{ column.width }}"></th>
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          [class.text-right]="column.position === 'right'"
+          style="min-width: {{ column.width }}"></th>
         <td mat-cell *matCellDef="let element">
           <button mat-icon-button color="primary" (click)="emitOpen(element.id)" title="View">
             <mat-icon>view_list</mat-icon>
           </button>
         </td>
         } @default {
-        <th mat-header-cell *matHeaderCellDef [class.text-right]="column.position === 'right'" style="min-width: {{ column.width }}">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          [class.text-right]="column.position === 'right'"
+          style="min-width: {{ column.width }}">
           {{ column.name }}
         </th>
         <td mat-cell *matCellDef="let element">
@@ -110,7 +135,8 @@ import { Column } from '../models/column';
 
     <!-- Pagination -->
     @if (isPageable()) {
-    <mat-paginator [pageSizeOptions]="paginationSizes()" [pageSize]="defaultPageSize()" showFirstLastButtons> </mat-paginator>
+    <mat-paginator [pageSizeOptions]="paginationSizes()" [pageSize]="defaultPageSize()" showFirstLastButtons>
+    </mat-paginator>
     }
   `,
   styles: [

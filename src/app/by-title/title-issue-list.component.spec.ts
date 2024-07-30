@@ -4,8 +4,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
 import { IssueService } from '../shared/services/issue.service';
 import { fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData, fakeTitle } from '../../testing/testing.data';
 import TitleIssueListComponent from './title-issue-list.component';
-import { AuthService } from '../shared/services/auth.service';
-import { TitleService } from '../shared/services/title.service';
+import { AuthStore } from '../shared/store/auth.store';
 import { ModalDataService } from '../shared/modals/modal-data.service';
 import { Router } from '@angular/router';
 import { Dialog } from '@angular/cdk/dialog';
@@ -44,10 +43,10 @@ describe('TitleIssueListComponent', () => {
       providers: [
         { provide: Dialog, useValue: dialogStub },
         { provide: Router, useValue: routerStub },
-        { provide: AuthService, useValue: authServiceStub },
+        { provide: AuthStore, useValue: authServiceStub },
         { provide: IssueService, useValue: issueServiceStub },
         { provide: ModalDataService, useValue: modalDataServiceStub },
-        { provide: TitleService, useValue: titleServiceStub },
+        { provide: TitleStore, useValue: titleServiceStub },
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();

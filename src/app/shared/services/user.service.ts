@@ -1,12 +1,9 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import { User } from '../models/user';
-import { UserStore } from '../store/user.store';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  readonly #userStore = inject(UserStore);
-
   readonly #usersUrl = 'http://localhost:3000/users';
 
   public async add(user: User): Promise<User | undefined> {
@@ -17,7 +14,6 @@ export class UserService {
       },
       body: JSON.stringify(user),
     });
-    await this.getAll();
     const newUser = (await response.json()) ?? {};
     return newUser;
   }
@@ -31,12 +27,11 @@ export class UserService {
         'Content-type': 'application/json',
       },
     });
-    await this.getAll();
   }
 
-  public async getAll() {
+  public async getAll(): Promise<User[]> {
     const response = await fetch(this.#usersUrl);
-    this.#userStore.setUsers(await response.json());
+    return (await response.json()) ?? [];
   }
 
   public async getById(id: number): Promise<User | undefined> {
@@ -48,12 +43,7 @@ export class UserService {
     return (await response.json()) ?? {};
   }
 
-  private async search(term: string): Promise<User[]> {
-    if (!term.trim()) {
-      // if not search term, return empty array.
-      return Promise.resolve([]);
-    }
-
+  public async search(term: string): Promise<User[]> {
     const user = await fetch(`${this.#usersUrl}?${term}`);
     return (await user.json()) ?? [];
   }
@@ -66,7 +56,6 @@ export class UserService {
       },
       body: JSON.stringify(user),
     });
-    await this.getAll();
     return (await response.json()) ?? {};
   }
 }

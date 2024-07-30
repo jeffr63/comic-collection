@@ -1,20 +1,9 @@
-import { Injectable, inject } from '@angular/core';
-
-import { AuthStore } from '../store/auth.store';
-
-class AuthToken {
-  token: string = '';
-  role: string = '';
-  id: number = 0;
-  expires: number = 0;
-}
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  readonly #authStore = inject(AuthStore);
-
   public async login(email: string, password: string) {
     const body = JSON.stringify({ email: email, password: password });
     const res = await fetch('http://localhost:3000/login', {
@@ -24,64 +13,6 @@ export class AuthService {
       },
       body: body,
     });
-    const response = await res.json();
-
-    // login successful if there's a jwt token in the response and if that token is valid
-    if (response && response.accessToken) {
-      // store user details and jwt token in local storage to keep user logged in between page refreshes
-      const token = this.parseJwt(response.accessToken);
-      const auth: AuthToken = {
-        token: response.accessToken,
-        role: response.user.role,
-        id: response.user.id,
-        expires: token.exp,
-      };
-      localStorage.setItem('tct_auth', JSON.stringify(auth));
-      this.#authStore.setIsLoggedIn(true);
-      this.#authStore.setIsAdmin(response.user.role === 'admin' ? true : false);
-    }
-    return response;
-  }
-
-  public logout(): void {
-    localStorage.removeItem('tct_auth');
-    this.#authStore.setIsLoggedIn(false);
-    this.#authStore.setIsAdmin(false);
-  }
-
-  public checkLogin() {
-    const tct_auth = localStorage.getItem('tct_auth');
-    if (!tct_auth) return;
-
-    let auth: AuthToken = JSON.parse(tct_auth);
-    if (!auth) return;
-
-    let now = Date.now() / 1000;
-    if (auth.expires > now) {
-      this.#authStore.setIsLoggedIn(true);
-      this.#authStore.setIsAdmin(auth.role === 'admin' ? true : false);
-      // !!letting token expire after jwt expires
-      // keep logged in for another hour
-      // auth.expires = auth.expires + 3600;
-      // localStorage.setItem('tct_auth', JSON.stringify(auth));
-    } else {
-      this.logout();
-    }
-  }
-
-  parseJwt(token: string) {
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    var jsonPayload = decodeURIComponent(
-      window
-        .atob(base64)
-        .split('')
-        .map(function (c) {
-          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        })
-        .join('')
-    );
-
-    return JSON.parse(jsonPayload);
+    return await res.json();
   }
 }

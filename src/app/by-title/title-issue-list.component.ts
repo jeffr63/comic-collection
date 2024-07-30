@@ -8,11 +8,10 @@ import { AuthStore } from '../shared/store/auth.store';
 import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { ModalDataService } from '../shared/modals/modal-data.service';
-import { TitleService } from '../shared/services/title.service';
-import { IssueService } from '../shared/services/issue.service';
-import { Title } from '../shared/models/title';
 import { IssueStore } from '../shared/store/issue.store';
+import { ModalDataService } from '../shared/modals/modal-data.service';
+import { Title } from '../shared/models/title';
+import { TitleStore } from '../shared/store/title.store';
 
 @Component({
   selector: 'app-title-issue-list',
@@ -51,11 +50,10 @@ import { IssueStore } from '../shared/store/issue.store';
 export default class TitleIssueListComponent implements OnInit {
   readonly #authStore = inject(AuthStore);
   readonly #dialog = inject(MatDialog);
-  readonly #issueService = inject(IssueService);
   readonly #issueStore = inject(IssueStore);
   readonly #modalDataService = inject(ModalDataService);
   readonly #router = inject(Router);
-  readonly #titleService = inject(TitleService);
+  readonly #titleStore = inject(TitleStore);
 
   protected readonly id = input<string>();
 
@@ -121,9 +119,9 @@ export default class TitleIssueListComponent implements OnInit {
 
   private async loadData(id: number) {
     if (this.issues().length === 0) {
-      await this.#issueService.getAll();
+      await this.#issueStore.getAll();
     }
-    const title = (await this.#titleService.getById(id)) as unknown as Title;
+    const title = (await this.#titleStore.getById(id)) as unknown as Title;
     this.title.set(title.title);
   }
 
@@ -147,7 +145,7 @@ export default class TitleIssueListComponent implements OnInit {
   }
 
   private async delete(id: number) {
-    await this.#issueService.delete(id);
+    await this.#issueStore.delete(id);
   }
 
   protected editIssue(id: number) {

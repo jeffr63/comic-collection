@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { AuthStore } from '../shared/store/auth.store';
 import { Column } from '../shared/models/column';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { PublisherService } from '../shared/services/publisher.service';
 import { PublisherStore } from '../shared/store/publisher.store';
 
 @Component({
@@ -41,7 +40,6 @@ import { PublisherStore } from '../shared/store/publisher.store';
 })
 export default class ByPublisherComponent implements OnInit {
   readonly #authStore = inject(AuthStore);
-  readonly #publisherService = inject(PublisherService);
   readonly #publisherStore = inject(PublisherStore);
   readonly #router = inject(Router);
 
@@ -68,7 +66,7 @@ export default class ByPublisherComponent implements OnInit {
 
   async ngOnInit() {
     if (this.publishers().length === 0) {
-      await this.#publisherService.getAll();
+      await this.#publisherStore.getAll();
     }
   }
 

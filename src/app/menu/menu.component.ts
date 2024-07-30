@@ -7,9 +7,8 @@ import { Router, RouterLink } from '@angular/router';
 
 import { take } from 'rxjs';
 
-import { AuthService } from '../shared/services/auth.service';
-import { LoginComponent } from '../shared/modals/login.component';
 import { AuthStore } from '../shared/store/auth.store';
+import { LoginComponent } from '../shared/modals/login.component';
 
 @Component({
   selector: 'app-menu',
@@ -50,7 +49,6 @@ import { AuthStore } from '../shared/store/auth.store';
   ],
 })
 export class MenuComponent {
-  readonly #authService = inject(AuthService);
   readonly #authStore = inject(AuthStore);
   readonly #dialog = inject(MatDialog);
   readonly #router = inject(Router);
@@ -74,14 +72,14 @@ export class MenuComponent {
       .subscribe({
         next: (result) => {
           if (result) {
-            this.#authService.login(result.email, result.password);
+            this.#authStore.login(result.email, result.password);
           }
         },
       });
   }
 
   logout() {
-    this.#authService.logout();
+    this.#authStore.logout();
     this.#router.navigate(['/']);
   }
 }

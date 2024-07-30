@@ -9,7 +9,6 @@ import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { ModalDataService } from '../shared/modals/modal-data.service';
-import { TitleService } from '../shared/services/title.service';
 import { TitleStore } from '../shared/store/title.store';
 
 @Component({
@@ -53,7 +52,6 @@ export default class TitleListComponent implements OnInit {
   readonly #dialog = inject(MatDialog);
   readonly #modalDataService = inject(ModalDataService);
   readonly #router = inject(Router);
-  readonly #titleService = inject(TitleService);
   readonly #titleStore = inject(TitleStore);
 
   protected readonly isAuthenticated = this.#authStore.isLoggedInAsAdmin;
@@ -81,7 +79,7 @@ export default class TitleListComponent implements OnInit {
 
   async ngOnInit() {
     if (this.titles().length === 0) {
-      await this.#titleService.getAll();
+      await this.#titleStore.getAll();
     }
   }
 
@@ -104,7 +102,7 @@ export default class TitleListComponent implements OnInit {
   }
 
   protected async delete(id: number) {
-    await this.#titleService.delete(id);
+    await this.#titleStore.delete(id);
   }
 
   protected editTitle(id: number) {

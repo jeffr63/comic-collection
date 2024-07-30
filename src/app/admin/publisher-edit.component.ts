@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 import { Publisher } from '../shared/models/publisher';
-import { PublisherService } from '../shared/services/publisher.service';
+import { PublisherStore } from '../shared/store/publisher.store';
 
 @Component({
   selector: 'app-publisher-edit',
@@ -89,7 +89,7 @@ import { PublisherService } from '../shared/services/publisher.service';
 export default class PublisherEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
   readonly #location = inject(Location);
-  readonly #publisherService = inject(PublisherService);
+  readonly #publisherStore = inject(PublisherStore);
 
   protected readonly id = input<string>();
 
@@ -109,7 +109,7 @@ export default class PublisherEditComponent implements OnInit {
   }
 
   protected async loadFormValues(id: number) {
-    const publisher = await this.#publisherService.getById(id);
+    const publisher = await this.#publisherStore.getById(id);
     this.#publisher = publisher;
     this.publisherEditForm?.get('name')?.setValue(publisher.name);
   }
@@ -117,9 +117,9 @@ export default class PublisherEditComponent implements OnInit {
   protected save() {
     this.#publisher.name = this.publisherEditForm.controls['name'].value;
     if (this.#isNew) {
-      this.#publisherService.add(this.#publisher);
+      this.#publisherStore.add(this.#publisher);
     } else {
-      this.#publisherService.update(this.#publisher);
+      this.#publisherStore.update(this.#publisher);
     }
     this.#location.back();
   }
@@ -131,9 +131,9 @@ export default class PublisherEditComponent implements OnInit {
   private saveNew() {
     this.#publisher.name = this.publisherEditForm.controls['name'].value;
     if (this.#isNew) {
-      this.#publisherService.add(this.#publisher);
+      this.#publisherStore.add(this.#publisher);
     } else {
-      this.#publisherService.update(this.#publisher);
+      this.#publisherStore.update(this.#publisher);
     }
 
     // create new publisher object and set publisher name to blank

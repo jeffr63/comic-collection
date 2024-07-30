@@ -1,12 +1,9 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import { Publisher } from '../models/publisher';
-import { PublisherStore } from '../store/publisher.store';
 
 @Injectable({ providedIn: 'root' })
 export class PublisherService {
-  readonly #publisherStore = inject(PublisherStore);
-
   #publishersUrl = 'http://localhost:3000/publishers';
 
   public async add(publisher: Publisher): Promise<Publisher | undefined> {
@@ -17,7 +14,6 @@ export class PublisherService {
       },
       body: JSON.stringify(publisher),
     });
-    await this.getAll();
     const newTitle = (await response.json()) ?? undefined;
     return newTitle;
   }
@@ -31,12 +27,11 @@ export class PublisherService {
         'Content-type': 'application/json',
       },
     });
-    await this.getAll();
   }
 
-  public async getAll() {
+  public async getAll(): Promise<Publisher[]> {
     const response = await fetch(this.#publishersUrl);
-    this.#publisherStore.setPublishers(await response.json());
+    return await response.json();
   }
 
   public async getById(id: number): Promise<Publisher | undefined> {
@@ -45,12 +40,7 @@ export class PublisherService {
     return (await response.json()) ?? {};
   }
 
-  private async search(term: string): Promise<Publisher[]> {
-    if (!term.trim()) {
-      // if not search term, return empty array.
-      return Promise.resolve([]) ?? [];
-    }
-
+  public async search(term: string): Promise<Publisher[]> {
     const response = await fetch(`${this.#publishersUrl}?${term}`);
     return (await response.json()) ?? [];
   }
@@ -63,7 +53,6 @@ export class PublisherService {
       },
       body: JSON.stringify(publisher),
     });
-    await this.getAll();
     return (await response.json()) ?? {};
   }
 }

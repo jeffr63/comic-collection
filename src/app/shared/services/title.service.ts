@@ -1,12 +1,9 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import { Title } from '../models/title';
-import { TitleStore } from '../store/title.store';
 
 @Injectable({ providedIn: 'root' })
 export class TitleService {
-  readonly #titleStore = inject(TitleStore);
-
   readonly #titlesUrl = 'http://localhost:3000/titles';
 
   public async add(title: Title): Promise<Title | undefined> {
@@ -17,9 +14,7 @@ export class TitleService {
       },
       body: JSON.stringify(title),
     });
-    await this.getAll();
-    const newTitle = (await response.json()) ?? {};
-    return newTitle;
+    return (await response.json()) ?? {};
   }
 
   public async delete(id: number) {
@@ -31,12 +26,11 @@ export class TitleService {
         'Content-type': 'application/json',
       },
     });
-    await this.getAll();
   }
 
-  public async getAll() {
+  public async getAll(): Promise<Title[]> {
     const response = await fetch(this.#titlesUrl);
-    this.#titleStore.setTitles(await response.json());
+    return (await response.json()) ?? [];
   }
 
   public async getById(id: number): Promise<Title | undefined> {
@@ -45,12 +39,7 @@ export class TitleService {
     return (await response.json()) ?? {};
   }
 
-  private async search(term: string): Promise<Title[]> {
-    if (!term.trim()) {
-      // if not search term, return empty array.
-      return Promise.resolve([]);
-    }
-
+  public async search(term: string): Promise<Title[]> {
     const response = await fetch(`${this.#titlesUrl}?${term}`);
     return (await response.json()) ?? [];
   }
@@ -63,7 +52,6 @@ export class TitleService {
       },
       body: JSON.stringify(title),
     });
-    await this.getAll();
     return (await user.json()) ?? {};
   }
 }

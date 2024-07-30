@@ -10,11 +10,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
-import { Title } from '../shared/models/title';
-import { TitleService } from '../shared/services/title.service';
 import { Publisher } from '../shared/models/publisher';
-import { PublisherService } from '../shared/services/publisher.service';
 import { PublisherStore } from '../shared/store/publisher.store';
+import { Title } from '../shared/models/title';
+import { TitleStore } from '../shared/store/title.store';
 
 @Component({
   selector: 'app-title-edit',
@@ -139,9 +138,8 @@ import { PublisherStore } from '../shared/store/publisher.store';
 export default class TitleEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
   readonly #location = inject(Location);
-  readonly #publisherService = inject(PublisherService);
   readonly #publisherStore = inject(PublisherStore);
-  readonly #titleService = inject(TitleService);
+  readonly #titleStore = inject(TitleStore);
 
   protected readonly id = input<string>();
 
@@ -158,7 +156,7 @@ export default class TitleEditComponent implements OnInit {
     });
 
     if (this.publishers().length === 0) {
-      await this.#publisherService.getAll();
+      await this.#publisherStore.getAll();
     }
     let sorted = [...this.publishers()];
     sorted.sort((a, b) => {
@@ -175,7 +173,7 @@ export default class TitleEditComponent implements OnInit {
   }
 
   private async loadFormValues(id: number) {
-    const title = await this.#titleService.getById(id);
+    const title = await this.#titleStore.getById(id);
     this.#title = title;
     this.titleEditForm.get('publisher')?.setValue(title.publisher);
     this.titleEditForm.get('title')?.setValue(title.title);
@@ -202,9 +200,9 @@ export default class TitleEditComponent implements OnInit {
     this.#title.title = title;
 
     if (this.#isNew) {
-      this.#titleService.add(this.#title);
+      this.#titleStore.add(this.#title);
     } else {
-      this.#titleService.update(this.#title);
+      this.#titleStore.update(this.#title);
     }
     this.#location.back();
   }
@@ -214,9 +212,9 @@ export default class TitleEditComponent implements OnInit {
     this.#title.publisher = publisher;
     this.#title.title = title;
     if (this.#isNew) {
-      this.#titleService.add(this.#title);
+      this.#titleStore.add(this.#title);
     } else {
-      this.#titleService.update(this.#title);
+      this.#titleStore.update(this.#title);
     }
 
     this.titleEditForm.patchValue({

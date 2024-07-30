@@ -1,14 +1,14 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, ResolveFn } from '@angular/router';
 
-import { UserService } from '../services/user.service';
+import { UserStore } from '../store/user.store';
 
 export const userNameResolver: ResolveFn<string> = async (route: ActivatedRouteSnapshot) => {
   const id = route.paramMap.get('id');
   if (id == 'new') {
     return 'New User';
   } else {
-    const user = await inject(UserService).getById(Number(id));
+    const user = await inject(UserStore).getById(Number(id));
     return user.name;
   }
 };

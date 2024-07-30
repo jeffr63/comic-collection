@@ -11,13 +11,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
 import { Issue } from '../shared/models/issue';
-import { IssueService } from '../shared/services/issue.service';
-import { Publisher } from '../shared/models/publisher';
-import { PublisherService } from '../shared/services/publisher.service';
-import { Title } from '../shared/models/title';
-import { TitleService } from '../shared/services/title.service';
 import { IssueStore } from '../shared/store/issue.store';
+import { Publisher } from '../shared/models/publisher';
 import { PublisherStore } from '../shared/store/publisher.store';
+import { Title } from '../shared/models/title';
 import { TitleStore } from '../shared/store/title.store';
 
 @Component({
@@ -193,11 +190,8 @@ import { TitleStore } from '../shared/store/title.store';
 export default class IssueEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
   readonly #location = inject(Location);
-  readonly #issueService = inject(IssueService);
   readonly #issueStore = inject(IssueStore);
-  readonly #publisherService = inject(PublisherService);
   readonly #publisherStore = inject(PublisherStore);
-  readonly #titleService = inject(TitleService);
   readonly #titleStore = inject(TitleStore);
 
   protected readonly id = input<string>();
@@ -221,7 +215,7 @@ export default class IssueEditComponent implements OnInit {
     });
 
     if (this.publishers().length === 0) {
-      await this.#publisherService.getAll();
+      await this.#publisherStore.getAll();
     }
     //const sortedPublishers = orderBy(this.publishers(), 'name', 'asc');
     let sortedPublishers = [...this.publishers()];
@@ -233,7 +227,7 @@ export default class IssueEditComponent implements OnInit {
     this.filteredPublishers.set(sortedPublishers);
 
     if (this.titles().length === 0) {
-      await this.#titleService.getAll();
+      await this.#titleStore.getAll();
     }
     //const sortedTitles = orderBy(this.titles(), 'title', 'asc');
     let sortedTitles = [...this.titles()];
@@ -287,7 +281,7 @@ export default class IssueEditComponent implements OnInit {
   }
 
   private async loadFormValues(id: number) {
-    const issue = await this.#issueService.getById(id);
+    const issue = await this.#issueStore.getById(id);
     this.#issue = issue;
     this.issueEditForm.patchValue({
       publisher: issue.publisher,
@@ -321,9 +315,9 @@ export default class IssueEditComponent implements OnInit {
     this.#issue.url = url;
 
     if (this.#isNew) {
-      this.#issueService.add(this.#issue);
+      this.#issueStore.add(this.#issue);
     } else {
-      this.#issueService.update(this.#issue);
+      this.#issueStore.update(this.#issue);
     }
     this.#location.back();
   }
@@ -337,9 +331,9 @@ export default class IssueEditComponent implements OnInit {
     this.#issue.url = url;
 
     if (this.#isNew) {
-      this.#issueService.add(this.#issue);
+      this.#issueStore.add(this.#issue);
     } else {
-      this.#issueService.update(this.#issue);
+      this.#issueStore.update(this.#issue);
     }
 
     // create new issue object and set publisher, title and coverPrice values

@@ -9,8 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 
-import { UserService } from '../shared/services/user.service';
 import { User } from '../shared/models/user';
+import { UserStore } from '../shared/store/user.store';
 
 @Component({
   selector: 'app-user-edit',
@@ -123,7 +123,7 @@ import { User } from '../shared/models/user';
 export default class UserEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
   readonly #location = inject(Location);
-  readonly #userService = inject(UserService);
+  readonly #userStore = inject(UserStore);
 
   protected readonly id = input<string>();
 
@@ -143,7 +143,7 @@ export default class UserEditComponent implements OnInit {
   }
 
   private async loadFormValues(id: number) {
-    const user = await this.#userService.getById(id);
+    const user = await this.#userStore.getById(id);
     this.#user = user;
     this.userEditForm.patchValue({
       name: user.name,
@@ -156,7 +156,7 @@ export default class UserEditComponent implements OnInit {
     const patchData = this.userEditForm.getRawValue();
     patchData.id = this.#user?.id;
     if (!patchData) return;
-    await this.#userService.update(patchData);
+    await this.#userStore.update(patchData);
     this.#location.back();
   }
 }

@@ -3,46 +3,46 @@ import { TestBed } from '@angular/core/testing';
 import fetchMock from 'jest-fetch-mock';
 
 import { fakeIssue, fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData } from '../../../testing/testing.data';
-import { IssueService } from './issue.service';
+import { IssueStore } from './issue.store';
 
 describe('IssueService', () => {
-  let service: IssueService;
+  let store: IssueStore;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [IssueService],
+      providers: [IssueStore],
     });
-    service = TestBed.inject(IssueService);
+    store = TestBed.inject(IssueStore);
     fetchMock.resetMocks();
   });
 
   it('creates a service', () => {
-    expect(service).toBeTruthy();
+    expect(store).toBeTruthy();
   });
 
   describe('getAll', () => {
     it('should call fetch', async () => {
       fetchMock.mockResponseOnce(JSON.stringify(fakeIssueData));
-      await service.getAll();
+      await store.getAll();
       expect(fetch).toHaveBeenCalled();
     });
 
     it('should set the issues signal with fetched data', async () => {
       fetchMock.mockResponseOnce(JSON.stringify(fakeIssueData));
-      await service.getAll();
-      expect(service.issues()).toEqual(fakeIssueData);
+      await store.getAll();
+      expect(store.issues()).toEqual(fakeIssueData);
     });
 
     it('should compute the publishers signal with fetched data', async () => {
       fetchMock.mockResponseOnce(JSON.stringify(fakeIssueData));
-      await service.getAll();
-      expect(service.publishers()).toEqual(fakeIssuePublishersData);
+      await store.getAll();
+      expect(store.publishers()).toEqual(fakeIssuePublishersData);
     });
 
     it('should compute the titles signal with fetched data', async () => {
       fetchMock.mockResponseOnce(JSON.stringify(fakeIssueData));
-      await service.getAll();
-      expect(service.titles()).toEqual(fakeIssueTitlesData);
+      await store.getAll();
+      expect(store.titles()).toEqual(fakeIssueTitlesData);
     });
   });
 
@@ -53,17 +53,17 @@ describe('IssueService', () => {
         [JSON.stringify(fakeIssue), { status: 200 }],
         [JSON.stringify(fakeIssueData), { status: 200 }]
       );
-      await service.add(fakeIssue);
+      await store.add(fakeIssue);
       expect(fetch).toHaveBeenCalled();
     });
 
     it('should call getAll', async () => {
-      const getAllSpy = jest.spyOn(service, 'getAll');
+      const getAllSpy = jest.spyOn(store, 'getAll');
       fetchMock.mockResponses(
         [JSON.stringify(fakeIssue), { status: 200 }],
         [JSON.stringify(fakeIssueData), { status: 200 }]
       );
-      await service.add(fakeIssue);
+      await store.add(fakeIssue);
       expect(getAllSpy).toHaveBeenCalled();
     });
 
@@ -72,7 +72,7 @@ describe('IssueService', () => {
         [JSON.stringify(fakeIssue), { status: 200 }],
         [JSON.stringify(fakeIssueData), { status: 200 }]
       );
-      const returnedUser = await service.add(fakeIssue);
+      const returnedUser = await store.add(fakeIssue);
       expect(returnedUser).toEqual(fakeIssue);
     });
   });
@@ -81,14 +81,14 @@ describe('IssueService', () => {
   describe('delete', () => {
     it('should call fetch', async () => {
       fetchMock.mockResponses([JSON.stringify(3), { status: 200 }], [JSON.stringify(fakeIssueData), { status: 200 }]);
-      await service.delete(3);
+      await store.delete(3);
       expect(fetch).toHaveBeenCalled();
     });
 
     it('should call getAll', async () => {
-      const getAllSpy = jest.spyOn(service, 'getAll');
+      const getAllSpy = jest.spyOn(store, 'getAll');
       fetchMock.mockResponses([JSON.stringify(3), { status: 200 }], [JSON.stringify(fakeIssueData), { status: 200 }]);
-      await service.delete(3);
+      await store.delete(3);
       expect(getAllSpy).toHaveBeenCalled();
     });
   });
@@ -97,13 +97,13 @@ describe('IssueService', () => {
   describe('getById', () => {
     it('should call fetch', async () => {
       fetchMock.mockResponseOnce(JSON.stringify(fakeIssue));
-      await service.getById(1);
+      await store.getById(1);
       expect(fetch).toHaveBeenCalled();
     });
 
     it('should return issue data', async () => {
       fetchMock.mockResponseOnce(JSON.stringify(fakeIssue));
-      const result = await service.getById(1);
+      const result = await store.getById(1);
       expect(result).toEqual(fakeIssue);
     });
   });
@@ -112,13 +112,13 @@ describe('IssueService', () => {
   describe('search', () => {
     it('should call fetch', async () => {
       fetchMock.mockResponseOnce(JSON.stringify(fakeIssueData));
-      await service.search('abc');
+      await store.search('abc');
       expect(fetch).toHaveBeenCalled();
     });
 
     it('should return array of search result issues', async () => {
       fetchMock.mockResponseOnce(JSON.stringify(fakeIssueData));
-      const result = await service.search('abc');
+      const result = await store.search('abc');
       expect(result).toEqual(fakeIssueData);
     });
   });
@@ -130,17 +130,17 @@ describe('IssueService', () => {
         [JSON.stringify(fakeIssue), { status: 200 }],
         [JSON.stringify(fakeIssueData), { status: 200 }]
       );
-      await service.update(fakeIssue);
+      await store.update(fakeIssue);
       expect(fetch).toHaveBeenCalled();
     });
 
     it('should call getAll', async () => {
-      const getAllSpy = jest.spyOn(service, 'getAll');
+      const getAllSpy = jest.spyOn(store, 'getAll');
       fetchMock.mockResponses(
         [JSON.stringify(fakeIssue), { status: 200 }],
         [JSON.stringify(fakeIssueData), { status: 200 }]
       );
-      await service.update(fakeIssue);
+      await store.update(fakeIssue);
       expect(getAllSpy).toHaveBeenCalled();
     });
 
@@ -149,19 +149,19 @@ describe('IssueService', () => {
         [JSON.stringify(fakeIssue), { status: 200 }],
         [JSON.stringify(fakeIssueData), { status: 200 }]
       );
-      const result = await service.update(fakeIssue);
+      const result = await store.update(fakeIssue);
       expect(result).toEqual(fakeIssue);
     });
   });
 
   describe('helper methods', () => {
     it('getByPublisherValue method should return transformed issue data', () => {
-      const result = service.getByPublisherValue(fakeIssueData);
+      const result = store.getByPublisherValue(fakeIssueData);
       expect(result).toEqual(fakeIssuePublishersData);
     });
 
     it('getByTitleValue method should return transformed issue data', () => {
-      const result = service.getByTitleValue(fakeIssueData);
+      const result = store.getByTitleValue(fakeIssueData);
       expect(result).toEqual(fakeIssueTitlesData);
     });
   });

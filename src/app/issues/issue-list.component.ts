@@ -8,9 +8,8 @@ import { AuthStore } from '../shared/store/auth.store';
 import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { IssueService } from '../shared/services/issue.service';
-import { ModalDataService } from '../shared/modals/modal-data.service';
 import { IssueStore } from '../shared/store/issue.store';
+import { ModalDataService } from '../shared/modals/modal-data.service';
 
 @Component({
   selector: 'app-issue-all-list',
@@ -48,7 +47,6 @@ import { IssueStore } from '../shared/store/issue.store';
 export default class IssueAllListComponent implements OnInit {
   readonly #authStore = inject(AuthStore);
   readonly #dialog = inject(MatDialog);
-  readonly #issueService = inject(IssueService);
   readonly #issueStore = inject(IssueStore);
   readonly #modalDataService = inject(ModalDataService);
   readonly #router = inject(Router);
@@ -104,7 +102,7 @@ export default class IssueAllListComponent implements OnInit {
 
   async ngOnInit() {
     if (this.issues().length === 0) {
-      await this.#issueService.getAll();
+      await this.#issueStore.getAll();
     }
   }
 
@@ -128,7 +126,7 @@ export default class IssueAllListComponent implements OnInit {
   }
 
   async delete(id: number) {
-    await this.#issueService.delete(id);
+    await this.#issueStore.delete(id);
   }
 
   editIssue(id: number) {

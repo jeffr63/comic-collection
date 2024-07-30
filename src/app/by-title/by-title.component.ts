@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { AuthStore } from '../shared/store/auth.store';
 import { Column } from '../shared/models/column';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { TitleService } from '../shared/services/title.service';
 import { TitleStore } from '../shared/store/title.store';
 
 @Component({
@@ -42,7 +41,6 @@ import { TitleStore } from '../shared/store/title.store';
 export default class ByTitleListComponent implements OnInit {
   readonly #authStore = inject(AuthStore);
   readonly #router = inject(Router);
-  readonly #titleService = inject(TitleService);
   readonly #titleStore = inject(TitleStore);
 
   protected readonly isAuthenticated = this.#authStore.isLoggedIn;
@@ -76,7 +74,7 @@ export default class ByTitleListComponent implements OnInit {
 
   async ngOnInit() {
     if (this.titles().length === 0) {
-      await this.#titleService.getAll();
+      await this.#titleStore.getAll();
     }
   }
 
