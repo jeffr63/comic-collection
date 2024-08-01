@@ -5,7 +5,7 @@ import { UserService } from '../services/user.service';
 @Injectable({
   providedIn: 'root',
 })
-export class UserStore {
+export class UserFacade {
   readonly #userService = inject(UserService);
 
   readonly #users = signal<User[]>([]);
@@ -32,7 +32,7 @@ export class UserStore {
     return await this.#userService.getById(id);
   }
 
-  private async search(term: string): Promise<User[]> {
+  public async search(term: string): Promise<User[]> {
     if (!term.trim()) {
       // if not search term, return empty array.
       return Promise.resolve([]);

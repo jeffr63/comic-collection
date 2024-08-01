@@ -4,14 +4,14 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
 
-import { AuthStore } from '../shared/store/auth.store';
+import { AuthFacade } from '../shared/facades/auth.facade';
 import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { IssueStore } from '../shared/store/issue.store';
+import { IssueFacade } from '../shared/facades/issue.facade';
 import { ModalDataService } from '../shared/modals/modal-data.service';
 import { Title } from '../shared/models/title';
-import { TitleStore } from '../shared/store/title.store';
+import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
   selector: 'app-title-issue-list',
@@ -48,19 +48,19 @@ import { TitleStore } from '../shared/store/title.store';
   ],
 })
 export default class TitleIssueListComponent implements OnInit {
-  readonly #authStore = inject(AuthStore);
+  readonly #authStore = inject(AuthFacade);
   readonly #dialog = inject(MatDialog);
-  readonly #issueStore = inject(IssueStore);
+  readonly #issueStore = inject(IssueFacade);
   readonly #modalDataService = inject(ModalDataService);
   readonly #router = inject(Router);
-  readonly #titleStore = inject(TitleStore);
+  readonly #titleStore = inject(TitleFacade);
 
-  protected readonly id = input<string>();
+  public id = input<string>();
 
   #dialogRef!: MatDialogRef<DeleteComponent, any>;
   protected readonly isLoggedIn = this.#authStore.isLoggedIn;
   protected readonly issues = this.#issueStore.issues;
-  protected readonly title = signal('');
+  public readonly title = signal('');
   protected readonly titleIssues = computed(() => {
     return this.issues().filter((issue) => issue.title === this.title());
   });
@@ -117,7 +117,7 @@ export default class TitleIssueListComponent implements OnInit {
     }
   }
 
-  private async loadData(id: number) {
+  public async loadData(id: number) {
     if (this.issues().length === 0) {
       await this.#issueStore.getAll();
     }
@@ -125,7 +125,7 @@ export default class TitleIssueListComponent implements OnInit {
     this.title.set(title.title);
   }
 
-  protected deleteIssue(id: number) {
+  public deleteIssue(id: number) {
     const modalOptions = {
       title: 'Are you sure you want to delete this course?',
       body: 'All information associated to this course will be permanently deleted.',
@@ -144,15 +144,15 @@ export default class TitleIssueListComponent implements OnInit {
       });
   }
 
-  private async delete(id: number) {
+  public async delete(id: number) {
     await this.#issueStore.delete(id);
   }
 
-  protected editIssue(id: number) {
+  public editIssue(id: number) {
     this.#router.navigate(['/issues', id]);
   }
 
-  protected newIssue() {
+  public newIssue() {
     this.#router.navigate(['/issues/new']);
   }
 }

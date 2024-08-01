@@ -11,7 +11,7 @@ class AuthToken {
 @Injectable({
   providedIn: 'root',
 })
-export class AuthStore {
+export class AuthFacade {
   readonly #authService = inject(AuthService);
 
   readonly #isAdmin = signal(false);

@@ -6,13 +6,12 @@ import { PublisherService } from '../services/publisher.service';
 @Injectable({
   providedIn: 'root',
 })
-export class PublisherStore {
+export class PublisherFacade {
   readonly #publisherService = inject(PublisherService);
 
   #publishers = signal<Publisher[]>([]);
 
   public readonly publishers = this.#publishers.asReadonly();
-
 
   public async add(publisher: Publisher): Promise<Publisher | undefined> {
     const newTitle = await this.#publisherService.add(publisher);
@@ -34,13 +33,13 @@ export class PublisherStore {
     return await this.#publisherService.getById(id);
   }
 
-  private async search(term: string): Promise<Publisher[]> {
+  public async search(term: string): Promise<Publisher[]> {
     if (!term.trim()) {
       // if not search term, return empty array.
       return Promise.resolve([]) ?? [];
     }
 
-    return (await this.#publisherService.search(term));
+    return await this.#publisherService.search(term);
   }
 
   public async update(publisher: Publisher): Promise<Publisher | undefined> {

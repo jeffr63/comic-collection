@@ -10,7 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 
 import { User } from '../shared/models/user';
-import { UserStore } from '../shared/store/user.store';
+import { UserFacade } from '../shared/facades/user.facade';
 
 @Component({
   selector: 'app-user-edit',
@@ -123,7 +123,7 @@ import { UserStore } from '../shared/store/user.store';
 export default class UserEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
   readonly #location = inject(Location);
-  readonly #userStore = inject(UserStore);
+  readonly #userStore = inject(UserFacade);
 
   protected readonly id = input<string>();
 

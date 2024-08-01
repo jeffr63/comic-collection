@@ -1,10 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthStore } from '../shared/store/auth.store';
+import { AuthFacade } from '../shared/facades/auth.facade';
 import { Column } from '../shared/models/column';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { PublisherStore } from '../shared/store/publisher.store';
+import { PublisherFacade } from '../shared/facades/publisher.facade';
 
 @Component({
   selector: 'app-by-publisher',
@@ -39,8 +39,8 @@ import { PublisherStore } from '../shared/store/publisher.store';
   ],
 })
 export default class ByPublisherComponent implements OnInit {
-  readonly #authStore = inject(AuthStore);
-  readonly #publisherStore = inject(PublisherStore);
+  readonly #authStore = inject(AuthFacade);
+  readonly #publisherStore = inject(PublisherFacade);
   readonly #router = inject(Router);
 
   protected readonly isAuthenticated = this.#authStore.isLoggedIn;

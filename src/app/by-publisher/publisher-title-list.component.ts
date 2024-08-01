@@ -1,12 +1,12 @@
 import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthStore } from '../shared/store/auth.store';
+import { AuthFacade } from '../shared/facades/auth.facade';
 import { Column } from '../shared/models/column';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { Publisher } from '../shared/models/publisher';
-import { PublisherStore } from '../shared/store/publisher.store';
-import { TitleStore } from '../shared/store/title.store';
+import { PublisherFacade } from '../shared/facades/publisher.facade';
+import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
   selector: 'app-publisher-title-list',
@@ -39,10 +39,10 @@ import { TitleStore } from '../shared/store/title.store';
   ],
 })
 export default class PublisherTitleListComponent implements OnInit {
-  readonly #authStore = inject(AuthStore);
-  readonly #publisherStore = inject(PublisherStore);
+  readonly #authStore = inject(AuthFacade);
+  readonly #publisherStore = inject(PublisherFacade);
   readonly #router = inject(Router);
-  readonly #titleStore = inject(TitleStore);
+  readonly #titleStore = inject(TitleFacade);
 
   protected readonly id = input<string>();
   protected readonly isAuthenticated = this.#authStore.isLoggedIn;

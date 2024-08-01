@@ -1,10 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthStore } from '../shared/store/auth.store';
+import { AuthFacade } from '../shared/facades/auth.facade';
 import { Column } from '../shared/models/column';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { TitleStore } from '../shared/store/title.store';
+import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
   selector: 'app-by-title-list',
@@ -39,9 +39,9 @@ import { TitleStore } from '../shared/store/title.store';
   ],
 })
 export default class ByTitleListComponent implements OnInit {
-  readonly #authStore = inject(AuthStore);
+  readonly #authStore = inject(AuthFacade);
   readonly #router = inject(Router);
-  readonly #titleStore = inject(TitleStore);
+  readonly #titleStore = inject(TitleFacade);
 
   protected readonly isAuthenticated = this.#authStore.isLoggedIn;
   protected readonly titles = this.#titleStore.titles;

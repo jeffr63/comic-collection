@@ -1,12 +1,14 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 
+import { describe, expect, test } from '@jest/globals';
+
 import { Issue, IssueData } from '../models/issue';
 import { IssueService } from '../services/issue.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class IssueStore {
+export class IssueFacade {
   readonly #issueService = inject(IssueService);
 
   readonly #issues = signal<Issue[]>([]);

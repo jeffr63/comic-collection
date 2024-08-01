@@ -1,7 +1,7 @@
 import { Route } from '@angular/router';
 import { inject } from '@angular/core';
 
-import { AuthStore } from '../shared/store/auth.store';
+import { AuthFacade } from '../shared/facades/auth.facade';
 import { publisherNameResolver } from '../shared/resolvers/publisher-resolver.service';
 import { titleTitleResolver } from '../shared/resolvers/title-resolver.service';
 import { userNameResolver } from '../shared/resolvers/user-resolver.service';
@@ -45,6 +45,6 @@ export default [
         loadComponent: () => import('./user-edit.component'),
       },
     ],
-    canActivate: [() => inject(AuthStore).isLoggedInAsAdmin()],
+    canActivate: [() => inject(AuthFacade).isLoggedInAsAdmin()],
   },
 ] as Route[];

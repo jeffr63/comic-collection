@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 import { Publisher } from '../shared/models/publisher';
-import { PublisherStore } from '../shared/store/publisher.store';
+import { PublisherFacade } from '../shared/facades/publisher.facade';
 
 @Component({
   selector: 'app-publisher-edit',
@@ -89,7 +89,7 @@ import { PublisherStore } from '../shared/store/publisher.store';
 export default class PublisherEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
   readonly #location = inject(Location);
-  readonly #publisherStore = inject(PublisherStore);
+  readonly #publisherStore = inject(PublisherFacade);
 
   protected readonly id = input<string>();
 

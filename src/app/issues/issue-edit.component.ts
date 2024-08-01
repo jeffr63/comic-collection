@@ -11,11 +11,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
 import { Issue } from '../shared/models/issue';
-import { IssueStore } from '../shared/store/issue.store';
+import { IssueFacade } from '../shared/facades/issue.facade';
 import { Publisher } from '../shared/models/publisher';
-import { PublisherStore } from '../shared/store/publisher.store';
+import { PublisherFacade } from '../shared/facades/publisher.facade';
 import { Title } from '../shared/models/title';
-import { TitleStore } from '../shared/store/title.store';
+import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
   selector: 'app-issue-edit',
@@ -190,9 +190,9 @@ import { TitleStore } from '../shared/store/title.store';
 export default class IssueEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
   readonly #location = inject(Location);
-  readonly #issueStore = inject(IssueStore);
-  readonly #publisherStore = inject(PublisherStore);
-  readonly #titleStore = inject(TitleStore);
+  readonly #issueStore = inject(IssueFacade);
+  readonly #publisherStore = inject(PublisherFacade);
+  readonly #titleStore = inject(TitleFacade);
 
   protected readonly id = input<string>();
 

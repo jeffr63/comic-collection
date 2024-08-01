@@ -4,12 +4,12 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
 
-import { AuthStore } from '../shared/store/auth.store';
+import { AuthFacade } from '../shared/facades/auth.facade';
 import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { ModalDataService } from '../shared/modals/modal-data.service';
-import { TitleStore } from '../shared/store/title.store';
+import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
   selector: 'app-source-list',
@@ -48,11 +48,11 @@ import { TitleStore } from '../shared/store/title.store';
   ],
 })
 export default class TitleListComponent implements OnInit {
-  readonly #authStore = inject(AuthStore);
+  readonly #authStore = inject(AuthFacade);
   readonly #dialog = inject(MatDialog);
   readonly #modalDataService = inject(ModalDataService);
   readonly #router = inject(Router);
-  readonly #titleStore = inject(TitleStore);
+  readonly #titleStore = inject(TitleFacade);
 
   protected readonly isAuthenticated = this.#authStore.isLoggedInAsAdmin;
   protected readonly titles = this.#titleStore.titles;

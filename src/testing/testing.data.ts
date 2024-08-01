@@ -1,7 +1,7 @@
-import { Title } from 'src/app/shared/models/title';
-import { Issue, IssueData } from 'src/app/shared/models/issue';
-import { Publisher } from 'src/app/shared/models/publisher';
-import { User } from 'src/app/shared/models/user';
+import { Issue, IssueData } from '../app/shared/models/issue';
+import { Publisher } from '../app/shared/models/publisher';
+import { Title } from '../app/shared/models/title';
+import { User } from '../app/shared/models/user';
 
 export const fakeIssueData: Issue[] = [
   {

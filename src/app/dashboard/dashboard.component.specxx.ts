@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
+import { describe, expect, jest } from '@jest/globals';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { DashboardComponent } from './dashboard.component';

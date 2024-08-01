@@ -7,7 +7,7 @@ import { Router, RouterLink } from '@angular/router';
 
 import { take } from 'rxjs';
 
-import { AuthStore } from '../shared/store/auth.store';
+import { AuthFacade } from '../shared/facades/auth.facade';
 import { LoginComponent } from '../shared/modals/login.component';
 
 @Component({
@@ -49,7 +49,7 @@ import { LoginComponent } from '../shared/modals/login.component';
   ],
 })
 export class MenuComponent {
-  readonly #authStore = inject(AuthStore);
+  readonly #authStore = inject(AuthFacade);
   readonly #dialog = inject(MatDialog);
   readonly #router = inject(Router);
 

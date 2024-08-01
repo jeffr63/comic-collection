@@ -5,7 +5,7 @@ import { TitleService } from '../services/title.service';
 @Injectable({
   providedIn: 'root',
 })
-export class TitleStore {
+export class TitleFacade {
   readonly #titleService = inject(TitleService);
 
   readonly #titles = signal<Title[]>([]);
@@ -32,12 +32,12 @@ export class TitleStore {
     return await this.#titleService.getById(id);
   }
 
-  private async search(term: string): Promise<Title[]> {
+  public async search(term: string): Promise<Title[]> {
     if (!term.trim()) {
       // if not search term, return empty array.
       return Promise.resolve([]);
     }
-    return (await this.#titleService.search(term));
+    return await this.#titleService.search(term);
   }
 
   public async update(title: Title): Promise<Title | undefined> {

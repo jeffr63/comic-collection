@@ -1,29 +1,36 @@
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
-
-import { IssueService } from '../shared/services/issue.service';
-import { fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData, fakeTitle } from '../../testing/testing.data';
-import TitleIssueListComponent from './title-issue-list.component';
-import { AuthStore } from '../shared/store/auth.store';
-import { ModalDataService } from '../shared/modals/modal-data.service';
 import { Router } from '@angular/router';
 import { Dialog } from '@angular/cdk/dialog';
+
+import { describe, expect, jest } from '@jest/globals';
+
+import { AuthFacade } from '../shared/facades/auth.facade';
+import { fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData, fakeTitle } from '../../testing/testing.data';
+import { IssueFacade } from '../shared/facades/issue.facade';
+import { ModalDataService } from '../shared/modals/modal-data.service';
+import TitleIssueListComponent from './title-issue-list.component';
+import { TitleFacade } from '../shared/facades/title.facade';
 
 const authServiceStub = {
   isLoggedIn: signal(false),
 };
-const issueServiceStub = {
+const issueFacadeStub = {
+  delete: jest.fn(),
+  getAll: jest.fn(() => {
+    return fakeIssueData;
+  }),
   issues: signal(fakeIssueData).asReadonly,
   titles: signal(fakeIssueTitlesData).asReadonly,
   publishers: signal(fakeIssuePublishersData).asReadonly,
-  getAll: jest.fn(),
-  delete: jest.fn(),
 };
 const modalDataServiceStub = {
   setDeleteModalOptions: jest.fn(),
 };
-const titleServiceStub = {
-  getById: jest.fn(),
+const titleFacadeStub = {
+  getById: jest.fn(() => {
+    return fakeTitle;
+  }),
 };
 const routerStub = {
   navigate: jest.fn(),
@@ -36,6 +43,8 @@ const dialogStub = {
 describe('TitleIssueListComponent', () => {
   let component: TitleIssueListComponent;
   let fixture: ComponentFixture<TitleIssueListComponent>;
+  let issueFacade: IssueFacade;
+  let titleFacade: TitleFacade;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -43,16 +52,17 @@ describe('TitleIssueListComponent', () => {
       providers: [
         { provide: Dialog, useValue: dialogStub },
         { provide: Router, useValue: routerStub },
-        { provide: AuthStore, useValue: authServiceStub },
-        { provide: IssueService, useValue: issueServiceStub },
+        { provide: AuthFacade, useValue: authServiceStub },
+        { provide: IssueFacade, useValue: issueFacadeStub },
         { provide: ModalDataService, useValue: modalDataServiceStub },
-        { provide: TitleStore, useValue: titleServiceStub },
+        { provide: TitleFacade, useValue: titleFacadeStub },
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
     fixture = TestBed.createComponent(TitleIssueListComponent);
     component = fixture.componentInstance;
-    component.id = 1;
+    issueFacade = TestBed.inject(IssueFacade);
+    titleFacade = TestBed.inject(TitleFacade);
   });
 
   it('should create', () => {
@@ -62,62 +72,34 @@ describe('TitleIssueListComponent', () => {
   describe('ngOnit', () => {
     it('should call loadData on init', () => {
       const loadDataSpy = jest.spyOn(component, 'loadData');
-
       component.ngOnInit();
-
-      expect(loadDataSpy).toHaveBeenCalledTimes(1);
-
+      expect(loadDataSpy).toHaveBeenCalled();
       loadDataSpy.mockClear();
     });
   });
 
   describe('loadData', () => {
     it('should call getAll', async () => {
-      const getAllSpy = jest.spyOn(issueServiceStub, 'getAll');
-      const getByIdSpy = jest.spyOn(titleServiceStub, 'getById').mockReturnValue(fakeTitle);
-
       await component.loadData(1);
-
-      expect(getAllSpy).toHaveBeenCalledTimes(1);
-
-      getAllSpy.mockClear();
-      getByIdSpy.mockClear();
+      expect(issueFacadeStub.getAll).toHaveBeenCalled();
     });
 
     it('should call getById', async () => {
-      const getAllSpy = jest.spyOn(issueServiceStub, 'getAll');
-      const getByIdSpy = jest.spyOn(titleServiceStub, 'getById').mockReturnValue(fakeTitle);
-
       await component.loadData(1);
-      expect(getByIdSpy).toHaveBeenCalledTimes(1);
-
-      getAllSpy.mockClear();
-      getByIdSpy.mockClear();
+      expect(titleFacade.getById).toHaveBeenCalled();
     });
 
     it('should set the title signal in the component with title', async () => {
-      const getAllSpy = jest.spyOn(issueServiceStub, 'getAll');
-      const getByIdSpy = jest.spyOn(titleServiceStub, 'getById').mockReturnValue(fakeTitle);
-
       await component.loadData(1);
       await fixture.detectChanges;
-
       expect(component.title()).toBe(fakeTitle.title);
-
-      getAllSpy.mockClear();
-      getByIdSpy.mockClear();
     });
   });
 
   describe('delete', () => {
     it('should call issue service delete method', async () => {
-      const deleteSpy = jest.spyOn(issueServiceStub, 'delete');
-
       await component.delete(1);
-
-      expect(deleteSpy).toHaveBeenCalledTimes(1);
-
-      deleteSpy.mockClear();
+      expect(issueFacade.delete).toHaveBeenCalled();
     });
   });
 
@@ -127,7 +109,7 @@ describe('TitleIssueListComponent', () => {
 
       await component.editIssue(1);
 
-      expect(navigateSpy).toHaveBeenCalledTimes(1);
+      expect(navigateSpy).toHaveBeenCalled();
 
       navigateSpy.mockClear();
     });

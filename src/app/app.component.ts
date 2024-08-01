@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { AuthStore } from './shared/store/auth.store';
+import { AuthFacade } from './shared/facades/auth.facade';
 import { MenuComponent } from './menu/menu.component';
 
 @Component({
@@ -18,7 +18,7 @@ import { MenuComponent } from './menu/menu.component';
   styles: [],
 })
 export class AppComponent implements OnInit {
-  readonly #authStore = inject(AuthStore);
+  readonly #authStore = inject(AuthFacade);
 
   ngOnInit() {
     this.#authStore.checkLogin();

@@ -4,12 +4,12 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
 
-import { AuthStore } from '../shared/store/auth.store';
+import { AuthFacade } from '../shared/facades/auth.facade';
 import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { ModalDataService } from '../shared/modals/modal-data.service';
-import { PublisherStore } from '../shared/store/publisher.store';
+import { PublisherFacade } from '../shared/facades/publisher.facade';
 
 @Component({
   selector: 'app-publisher-list',
@@ -48,10 +48,10 @@ import { PublisherStore } from '../shared/store/publisher.store';
   ],
 })
 export default class PublisherListComponent implements OnInit {
-  readonly #authStore = inject(AuthStore);
+  readonly #authStore = inject(AuthFacade);
   readonly #dialog = inject(MatDialog);
   readonly #modalDataService = inject(ModalDataService);
-  readonly #publisherStore = inject(PublisherStore);
+  readonly #publisherStore = inject(PublisherFacade);
   readonly #router = inject(Router);
 
   protected readonly isAuthenticated = this.#authStore.isLoggedInAsAdmin;

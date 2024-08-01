@@ -11,9 +11,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
 import { Publisher } from '../shared/models/publisher';
-import { PublisherStore } from '../shared/store/publisher.store';
+import { PublisherFacade } from '../shared/facades/publisher.facade';
 import { Title } from '../shared/models/title';
-import { TitleStore } from '../shared/store/title.store';
+import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
   selector: 'app-title-edit',
@@ -138,8 +138,8 @@ import { TitleStore } from '../shared/store/title.store';
 export default class TitleEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
   readonly #location = inject(Location);
-  readonly #publisherStore = inject(PublisherStore);
-  readonly #titleStore = inject(TitleStore);
+  readonly #publisherStore = inject(PublisherFacade);
+  readonly #titleStore = inject(TitleFacade);
 
   protected readonly id = input<string>();
 

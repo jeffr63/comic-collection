@@ -4,7 +4,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
-import { IssueStore } from '../shared/store/issue.store';
+import { IssueFacade } from '../shared/facades/issue.facade';
 
 @Component({
   selector: 'app-dashboard',
@@ -54,11 +54,11 @@ import { IssueStore } from '../shared/store/issue.store';
   styles: [],
 })
 export class DashboardComponent implements OnInit {
-  readonly #issueStore = inject(IssueStore);
+  readonly #issueStore = inject(IssueFacade);
 
-  protected readonly issues = this.#issueStore.issues;
-  protected readonly publishers = this.#issueStore.publishers;
-  protected readonly titles = this.#issueStore.titles;
+  issues = this.#issueStore.issues;
+  publishers = this.#issueStore.publishers;
+  titles = this.#issueStore.titles;
 
   async ngOnInit() {
     if (this.issues().length === 0) {
