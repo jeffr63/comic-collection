@@ -1,61 +1,35 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 
 import { User } from '../models/user';
+import { DataService } from './data.service';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
+  #dataService = inject(DataService);
+
   readonly #usersUrl = 'http://localhost:3000/users';
 
   public async add(user: User): Promise<User | undefined> {
-    const response = await fetch(this.#usersUrl, {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(user),
-    });
-    const newUser = (await response.json()) ?? {};
-    return newUser;
+    return this.#dataService.add<User>(user, this.#usersUrl);
   }
 
   public async delete(id: number): Promise<void> {
-    const url = `${this.#usersUrl}/${id}`;
-
-    await fetch(url, {
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json',
-      },
-    });
+    this.#dataService.delete(id, this.#usersUrl);
   }
 
   public async getAll(): Promise<User[]> {
-    const response = await fetch(this.#usersUrl);
-    return (await response.json()) ?? [];
+    return this.#dataService.getAll<User[]>(this.#usersUrl);
   }
 
   public async getById(id: number): Promise<User | undefined> {
-    if (!id) {
-      return Promise.resolve({} as User);
-    }
-    const url = `${this.#usersUrl}/${id}`;
-    const response = await fetch(url);
-    return (await response.json()) ?? {};
+    return this.#dataService.getById(id, this.#usersUrl);
   }
 
   public async search(term: string): Promise<User[]> {
-    const user = await fetch(`${this.#usersUrl}?${term}`);
-    return (await user.json()) ?? [];
+    return this.#dataService.search<User[]>(term, this.#usersUrl);
   }
 
   public async update(user: User): Promise<User | undefined> {
-    const response = await fetch(`${this.#usersUrl}/${user.id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(user),
-    });
-    return (await response.json()) ?? {};
+    return this.#dataService.update<User>(user.id, user, this.#usersUrl);
   }
 }

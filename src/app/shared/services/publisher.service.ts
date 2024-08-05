@@ -1,58 +1,35 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 
 import { Publisher } from '../models/publisher';
+import { DataService } from './data.service';
 
 @Injectable({ providedIn: 'root' })
 export class PublisherService {
+  #dataService = inject(DataService);
+
   #publishersUrl = 'http://localhost:3000/publishers';
 
   public async add(publisher: Publisher): Promise<Publisher | undefined> {
-    const response = await fetch(this.#publishersUrl, {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(publisher),
-    });
-    const newTitle = (await response.json()) ?? undefined;
-    return newTitle;
+    return this.#dataService.add<Publisher>(publisher, this.#publishersUrl);
   }
 
   public async delete(id: number) {
-    const url = `${this.#publishersUrl}/${id}`;
-
-    await fetch(url, {
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json',
-      },
-    });
+    this.#dataService.delete(id, this.#publishersUrl);
   }
 
   public async getAll(): Promise<Publisher[]> {
-    const response = await fetch(this.#publishersUrl);
-    return await response.json();
+    return this.#dataService.getAll<Publisher[]>(this.#publishersUrl);
   }
 
   public async getById(id: number): Promise<Publisher | undefined> {
-    const url = `${this.#publishersUrl}/${id}`;
-    const response = await fetch(url);
-    return (await response.json()) ?? {};
+    return this.#dataService.getById<Publisher>(id, this.#publishersUrl);
   }
 
   public async search(term: string): Promise<Publisher[]> {
-    const response = await fetch(`${this.#publishersUrl}?${term}`);
-    return (await response.json()) ?? [];
+    return this.#dataService.search<Publisher[]>(term, this.#publishersUrl);
   }
 
   public async update(publisher: Publisher): Promise<Publisher | undefined> {
-    const response = await fetch(`${this.#publishersUrl}/${publisher.id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(publisher),
-    });
-    return (await response.json()) ?? {};
+    return this.#dataService.update(publisher.id, publisher, this.#publishersUrl);
   }
 }

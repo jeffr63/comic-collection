@@ -1,59 +1,35 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 
 import { Issue } from '../models/issue';
+import { DataService } from './data.service';
 
 @Injectable({ providedIn: 'root' })
 export class IssueService {
+  #dataService = inject(DataService);
+
   readonly #issuesUrl = 'http://localhost:3000/issues';
 
   public async add(issue: Issue): Promise<Issue | undefined> {
-    const response = await fetch(this.#issuesUrl, {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(issue),
-    });
-
-    const newIssue = (await response.json()) ?? {};
-    return newIssue;
+    return this.#dataService.add<Issue>(issue, this.#issuesUrl);
   }
 
   public async delete(id: number) {
-    const url = `${this.#issuesUrl}/${id}`;
-
-    await fetch(url, {
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json',
-      },
-    });
+    this.#dataService.delete(id, this.#issuesUrl);
   }
 
   public async getAll(): Promise<Issue[]> {
-    const response = await fetch(this.#issuesUrl);
-    return await response.json();
+    return this.#dataService.getAll<Issue[]>(this.#issuesUrl);
   }
 
   public async getById(id: number): Promise<Issue | undefined> {
-    const url = `${this.#issuesUrl}/${id}`;
-    const response = await fetch(url);
-    return (await response.json()) ?? {};
+    return this.#dataService.getById<Issue>(id, this.#issuesUrl);
   }
 
   public async search(term: string): Promise<Issue[]> {
-    const response = await fetch(`${this.#issuesUrl}?${term}`);
-    return (await response.json()) ?? [];
+    return this.#dataService.search<Issue[]>(term, this.#issuesUrl);
   }
 
   public async update(issue: Issue): Promise<Issue | undefined> {
-    const response = await fetch(`${this.#issuesUrl}/${issue.id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(issue),
-    });
-    return (await response.json()) ?? {};
+    return this.#dataService.update<Issue>(issue.id, issue, this.#issuesUrl);
   }
 }
