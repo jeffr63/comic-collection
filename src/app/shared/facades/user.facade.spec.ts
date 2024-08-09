@@ -5,47 +5,46 @@ import { describe, expect, jest } from '@jest/globals';
 import { fakeUser, fakeUserData } from '../../../testing/testing.data';
 import { UserService } from '../services/user.service';
 import { UserFacade } from './user.facade';
-
-const userServiceStub = {
-  add: jest.fn(() => {
-    return fakeUser;
-  }),
-  delete: jest.fn(),
-  getAll: jest.fn(() => {
-    return fakeUserData;
-  }),
-  getById: jest.fn(() => {
-    return fakeUser;
-  }),
-  search: jest.fn(() => {
-    return fakeUserData;
-  }),
-  update: jest.fn(() => {
-    return fakeUser;
-  }),
-};
+import { User } from '../models/user';
 
 describe('userService', () => {
   let facade: UserFacade;
-  let service: UserService;
+
+  const userServiceStub = {
+    add: jest.fn((user: User) => {
+      return fakeUser;
+    }),
+    delete: jest.fn((id: number) => {}),
+    getAll: jest.fn(() => {
+      return fakeUserData;
+    }),
+    getById: jest.fn((id: number) => {
+      return fakeUser;
+    }),
+    search: jest.fn((term: string) => {
+      return fakeUserData;
+    }),
+    update: jest.fn((user: User) => {
+      return fakeUser;
+    }),
+  };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [{ provide: UserService, useValue: userServiceStub }],
     });
     facade = TestBed.inject(UserFacade);
-    service = TestBed.inject(UserService);
   });
 
   it('creates a service', () => {
-    expect(service).toBeTruthy();
+    expect(facade).toBeTruthy();
   });
 
   //getall
   describe('getAll', () => {
     it('should call user service getAll', async () => {
       await facade.getAll();
-      expect(service.getAll).toHaveBeenCalled();
+      expect(userServiceStub.getAll).toHaveBeenCalled();
     });
 
     it('should set the users signal with fetched data', async () => {
@@ -56,9 +55,9 @@ describe('userService', () => {
 
   // //add
   describe('add', () => {
-    it('should call user service add', async () => {
+    it('should call user service add with passed user', async () => {
       await facade.add(fakeUser);
-      expect(service.add).toBeCalledWith(fakeUser);
+      expect(userServiceStub.add).toBeCalledWith(fakeUser);
     });
 
     it('should call getAll', async () => {
@@ -75,9 +74,9 @@ describe('userService', () => {
 
   //delete
   describe('delete', () => {
-    it('should call fetch', async () => {
+    it('should call user service delete with passed id', async () => {
       await facade.delete(3);
-      expect(service.delete).toBeCalledWith(3);
+      expect(userServiceStub.delete).toBeCalledWith(3);
     });
 
     it('should call getAll', async () => {
@@ -89,9 +88,9 @@ describe('userService', () => {
 
   //getById
   describe('getById', () => {
-    it('should call fetch', async () => {
+    it('should call user service getById with passed id', async () => {
       await facade.getById(1);
-      expect(service.getById).toBeCalledWith(1);
+      expect(userServiceStub.getById).toBeCalledWith(1);
     });
 
     it('should return user data', async () => {
@@ -102,9 +101,9 @@ describe('userService', () => {
 
   //search
   describe('search', () => {
-    it('should call fetch', async () => {
+    it('should call user service search with passed search term', async () => {
       await facade.search('abc');
-      expect(service.search).toBeCalledWith('abc');
+      expect(userServiceStub.search).toBeCalledWith('abc');
     });
 
     it('should return array of search result users', async () => {
@@ -115,19 +114,19 @@ describe('userService', () => {
 
   //update
   describe('update', () => {
-    it('should call fetch', async () => {
+    it('should call user service update with passed user', async () => {
       await facade.update(fakeUser);
-      expect(service.update).toBeCalledWith(fakeUser);
+      expect(userServiceStub.update).toBeCalledWith(fakeUser);
     });
 
-    it('should getAll', async () => {
+    it('should call getAll', async () => {
       const getAllSpy = jest.spyOn(facade, 'getAll');
       await facade.update(fakeUser);
       expect(getAllSpy).toHaveBeenCalled();
     });
 
     it('should return user data', async () => {
-      const result = await service.update(fakeUser);
+      const result = await facade.update(fakeUser);
       expect(result).toEqual(fakeUser);
     });
   });

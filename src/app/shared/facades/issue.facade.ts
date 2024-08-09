@@ -17,10 +17,6 @@ export class IssueFacade {
   public readonly publishers = computed(() => this.getByPublisherValue(this.#issues()));
   public readonly titles = computed(() => this.getByTitleValue(this.#issues()));
 
-  public setIssues(value: Issue[]) {
-    this.#issues.set(value);
-  }
-
   public async add(issue: Issue): Promise<Issue | undefined> {
     const newIssue = await this.#issueService.add(issue);
     await this.getAll();

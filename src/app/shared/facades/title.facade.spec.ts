@@ -5,36 +5,35 @@ import { describe, expect, jest } from '@jest/globals';
 import { fakeTitle, fakeTitleData } from '../../../testing/testing.data';
 import { TitleService } from '../services/title.service';
 import { TitleFacade } from './title.facade';
-
-const titleServiceStub = {
-  add: jest.fn(() => {
-    return fakeTitle;
-  }),
-  delete: jest.fn(),
-  getAll: jest.fn(() => {
-    return fakeTitleData;
-  }),
-  getById: jest.fn(() => {
-    return fakeTitle;
-  }),
-  search: jest.fn(() => {
-    return fakeTitleData;
-  }),
-  update: jest.fn(() => {
-    return fakeTitle;
-  }),
-};
+import { Title } from '@angular/platform-browser';
 
 describe('TitleFacade', () => {
   let facade: TitleFacade;
-  let service: TitleService;
+
+  const titleServiceStub = {
+    add: jest.fn(() => {
+      return fakeTitle;
+    }),
+    delete: jest.fn((id) => {}),
+    getAll: jest.fn(() => {
+      return fakeTitleData;
+    }),
+    getById: jest.fn((id: number) => {
+      return fakeTitle;
+    }),
+    search: jest.fn((term: string) => {
+      return fakeTitleData;
+    }),
+    update: jest.fn((title: Title) => {
+      return fakeTitle;
+    }),
+  };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [{ provide: TitleService, useValue: titleServiceStub }],
     });
     facade = TestBed.inject(TitleFacade);
-    service = TestBed.inject(TitleService);
   });
 
   it('creates a facade service', () => {
@@ -45,7 +44,7 @@ describe('TitleFacade', () => {
   describe('getAll', () => {
     it('should set call title service getAll', async () => {
       await facade.getAll();
-      expect(service.getAll).toHaveBeenCalled();
+      expect(titleServiceStub.getAll).toHaveBeenCalled();
     });
 
     it('should set the titles signal with fetched data', async () => {
@@ -56,9 +55,9 @@ describe('TitleFacade', () => {
 
   //add
   describe('add', () => {
-    it('should call title service add', async () => {
+    it('should call title service add with passed title', async () => {
       await facade.add(fakeTitle);
-      expect(service.add).toBeCalledWith(fakeTitle);
+      expect(titleServiceStub.add).toBeCalledWith(fakeTitle);
     });
 
     it('should call getAll', async () => {
@@ -75,9 +74,9 @@ describe('TitleFacade', () => {
 
   //delete
   describe('delete', () => {
-    it('should call title service delete', async () => {
+    it('should call title service delete with passed id', async () => {
       await facade.delete(3);
-      expect(service.delete).toBeCalledWith(3);
+      expect(titleServiceStub.delete).toBeCalledWith(3);
     });
 
     it('should call getAll', async () => {
@@ -89,35 +88,35 @@ describe('TitleFacade', () => {
 
   //getById
   describe('getById', () => {
-    it('should call title service getById', async () => {
+    it('should call title service getById with passed id', async () => {
       await facade.getById(1);
-      expect(service.getById).toHaveBeenCalled();
+      expect(titleServiceStub.getById).toHaveBeenCalled();
     });
 
     it('should return title data', async () => {
-      const result = await service.getById(1);
+      const result = await titleServiceStub.getById(1);
       expect(result).toEqual(fakeTitle);
     });
   });
 
   //search
   describe('search', () => {
-    it('should call title service search', async () => {
+    it('should call title service search with passed search term', async () => {
       await facade.search('abc');
-      expect(service.search).toBeCalledWith('abc');
+      expect(titleServiceStub.search).toBeCalledWith('abc');
     });
 
     it('should return array of search result titles', async () => {
-      const result = await service.search('abc');
+      const result = await titleServiceStub.search('abc');
       expect(result).toEqual(fakeTitleData);
     });
   });
 
   //update
   describe('update', () => {
-    it('should call title service update', async () => {
+    it('should call title service update with passed title', async () => {
       await facade.update(fakeTitle);
-      expect(service.update).toBeCalledWith(fakeTitle);
+      expect(titleServiceStub.update).toBeCalledWith(fakeTitle);
     });
 
     it('should call getAll', async () => {
@@ -127,7 +126,7 @@ describe('TitleFacade', () => {
     });
 
     it('should return title data', async () => {
-      const result = await service.update(fakeTitle);
+      const result = await facade.update(fakeTitle);
       expect(result).toEqual(fakeTitle);
     });
   });

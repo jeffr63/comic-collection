@@ -3,6 +3,32 @@ import { Publisher } from '../app/shared/models/publisher';
 import { Title } from '../app/shared/models/title';
 import { User } from '../app/shared/models/user';
 
+export const fakeAuthTokenDecoded = { email: 'admin@comics.com', iat: 1723060397, exp: 1723063997, sub: '1' };
+export const fakeAuthTokenEncoded =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGNvbWljcy5jb20iLCJpYXQiOjIwMDAwMDAwMDAsImV4cCI6MjAwMDAwMDAwMCwic3ViIjoiMSJ9.h0uNfbN2OK4aoKqP93VSJYzmJ_E-hcqCtAn1My8tA_M';
+export const fakeAuthTokenEncodedExpired =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGNvbWljcy5jb20iLCJpYXQiOjEwMDAwMDAwMDAsImV4cCI6MTAwMDAwMDAwMCwic3ViIjoiMSJ9._eqYZx2yCV2yrY1eSRZDXSQ-RXUGyuPD2oS9-BZ1eOQ';
+
+export const fakeAuthResponse = {
+  accessToken: fakeAuthTokenEncoded,
+  user: {
+    email: 'admin@comics.com',
+    name: 'Administrator',
+    role: 'admin',
+    id: 1,
+  },
+};
+
+export const fakeAuthResponseUser = {
+  accessToken: fakeAuthTokenEncoded,
+  user: {
+    email: 'user@comics.com',
+    name: 'user',
+    role: 'user',
+    id: 2,
+  },
+};
+
 export const fakeIssueData: Issue[] = [
   {
     id: 1,

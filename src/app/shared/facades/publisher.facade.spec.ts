@@ -5,36 +5,35 @@ import { describe, expect, jest } from '@jest/globals';
 import { fakePublisher, fakePublisherData } from '../../../testing/testing.data';
 import { PublisherService } from '../services/publisher.service';
 import { PublisherFacade } from './publisher.facade';
-
-const publisherServiceStub = {
-  add: jest.fn(() => {
-    return fakePublisher;
-  }),
-  delete: jest.fn(),
-  getAll: jest.fn(() => {
-    return fakePublisherData;
-  }),
-  getById: jest.fn(() => {
-    return fakePublisher;
-  }),
-  search: jest.fn(() => {
-    return fakePublisherData;
-  }),
-  update: jest.fn(() => {
-    return fakePublisher;
-  }),
-};
+import { Publisher } from '../models/publisher';
 
 describe('PublisherFacade', () => {
   let facade: PublisherFacade;
-  let service: PublisherService;
+
+  const publisherServiceStub = {
+    add: jest.fn(() => {
+      return fakePublisher;
+    }),
+    delete: jest.fn(),
+    getAll: jest.fn(() => {
+      return fakePublisherData;
+    }),
+    getById: jest.fn((id: number) => {
+      return fakePublisher;
+    }),
+    search: jest.fn((term: string) => {
+      return fakePublisherData;
+    }),
+    update: jest.fn((publisher: Publisher) => {
+      return fakePublisher;
+    }),
+  };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [{ provide: PublisherService, useValue: publisherServiceStub }],
     });
     facade = TestBed.inject(PublisherFacade);
-    service = TestBed.inject(PublisherService);
   });
 
   it('creates a facade service', () => {
@@ -45,7 +44,7 @@ describe('PublisherFacade', () => {
   describe('getAll', () => {
     it('should set call publisher service getAll', async () => {
       await facade.getAll();
-      expect(service.getAll).toHaveBeenCalled();
+      expect(publisherServiceStub.getAll).toHaveBeenCalled();
     });
 
     it('should set the publishers signal with fetched data', async () => {
@@ -56,9 +55,9 @@ describe('PublisherFacade', () => {
 
   //add
   describe('add', () => {
-    it('should call publisher service add', async () => {
+    it('should call publisher service add with passed publisher', async () => {
       await facade.add(fakePublisher);
-      expect(service.add).toBeCalledWith(fakePublisher);
+      expect(publisherServiceStub.add).toBeCalledWith(fakePublisher);
     });
 
     it('should call getAll', async () => {
@@ -75,9 +74,9 @@ describe('PublisherFacade', () => {
 
   //delete
   describe('delete', () => {
-    it('should call publisher service delete', async () => {
+    it('should call publisher service delete with passed id', async () => {
       await facade.delete(3);
-      expect(service.delete).toBeCalledWith(3);
+      expect(publisherServiceStub.delete).toBeCalledWith(3);
     });
 
     it('should call getAll', async () => {
@@ -89,35 +88,35 @@ describe('PublisherFacade', () => {
 
   //getById
   describe('getById', () => {
-    it('should call publisher service getById', async () => {
+    it('should call publisher service getById with passed id', async () => {
       await facade.getById(1);
-      expect(service.getById).toHaveBeenCalled();
+      expect(publisherServiceStub.getById).toHaveBeenCalled();
     });
 
     it('should return publisher data', async () => {
-      const result = await service.getById(1);
+      const result = await publisherServiceStub.getById(1);
       expect(result).toEqual(fakePublisher);
     });
   });
 
   //search
   describe('search', () => {
-    it('should call publisher service search', async () => {
+    it('should call publisher service search with passed search term', async () => {
       await facade.search('abc');
-      expect(service.search).toBeCalledWith('abc');
+      expect(publisherServiceStub.search).toBeCalledWith('abc');
     });
 
     it('should return array of search result publishers', async () => {
-      const result = await service.search('abc');
+      const result = await publisherServiceStub.search('abc');
       expect(result).toEqual(fakePublisherData);
     });
   });
 
   //update
   describe('update', () => {
-    it('should call publisher service update', async () => {
+    it('should call publisher service update with passed id', async () => {
       await facade.update(fakePublisher);
-      expect(service.update).toBeCalledWith(fakePublisher);
+      expect(publisherServiceStub.update).toBeCalledWith(fakePublisher);
     });
 
     it('should call getAll', async () => {
@@ -127,7 +126,7 @@ describe('PublisherFacade', () => {
     });
 
     it('should return publisher data', async () => {
-      const result = await service.update(fakePublisher);
+      const result = await facade.update(fakePublisher);
       expect(result).toEqual(fakePublisher);
     });
   });

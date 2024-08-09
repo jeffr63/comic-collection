@@ -8,24 +8,28 @@ import { describe, expect, jest } from '@jest/globals';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { DashboardComponent } from './dashboard.component';
-import { IssueService } from '../shared/services/issue.service';
 import { fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData } from '../../testing/testing.data';
+import { IssueFacade } from '../shared/facades/issue.facade';
 
-const issueServiceStub = {
-  issues: signal(fakeIssueData).asReadonly,
-  titles: signal(fakeIssueTitlesData).asReadonly,
-  publishers: signal(fakeIssuePublishersData).asReadonly,
-  getAll: jest.fn(),
-};
+/* Todo: fix issue with Jest and NgxChartsModule */
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
 
+  const issueFacadeStub = {
+    issues: signal(fakeIssueData).asReadonly,
+    titles: signal(fakeIssueTitlesData).asReadonly,
+    publishers: signal(fakeIssuePublishersData).asReadonly,
+    getAll: jest.fn(),
+  };
+
+  
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [DashboardComponent, MatGridListModule, MatCardModule, NgxChartsModule],
-      providers: [{ provide: IssueService, useValue: issueServiceStub }],
+      providers: [{ provide: IssueFacade, useValue: issueFacadeStub }],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
     fixture = TestBed.createComponent(DashboardComponent);
@@ -60,23 +64,22 @@ describe('DashboardComponent', () => {
 
   describe('NgOnInit test', () => {
     it('execute getAll to be called on Init', async () => {
-      const getAllSpy = jest.spyOn(issueServiceStub, 'getAll');
       await component.ngOnInit();
-      expect(getAllSpy).toHaveBeenCalled();
+      expect(issueFacadeStub).toHaveBeenCalled();
     });
 
     it('should declare the issues signal property', () => {
-      component.issues = issueServiceStub.issues();
+      component.issues = issueFacadeStub.issues();
       expect(component.issues()).toEqual(fakeIssueData);
     });
 
     it('should declare the publishers signal property', () => {
-      component.publishers = issueServiceStub.publishers();
+      component.publishers = issueFacadeStub.publishers();
       expect(component.publishers()).toEqual(fakeIssuePublishersData);
     });
 
     it('should declare the titles signal property', () => {
-      component.titles = issueServiceStub.titles();
+      component.titles = issueFacadeStub.titles();
       expect(component.titles()).toEqual(fakeIssueTitlesData);
     });
   });

@@ -5,36 +5,35 @@ import { describe, expect, jest } from '@jest/globals';
 import { fakeIssue, fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData } from '../../../testing/testing.data';
 import { IssueService } from '../services/issue.service';
 import { IssueFacade } from './issue.facade';
-
-const issueServiceStub = {
-  add: jest.fn(() => {
-    return fakeIssue;
-  }),
-  delete: jest.fn(),
-  getAll: jest.fn(() => {
-    return fakeIssueData;
-  }),
-  getById: jest.fn(() => {
-    return fakeIssue;
-  }),
-  search: jest.fn(() => {
-    return fakeIssueData;
-  }),
-  update: jest.fn(() => {
-    return fakeIssue;
-  }),
-};
+import { Issue } from '../models/issue';
 
 describe('Issuefacade', () => {
   let facade: IssueFacade;
-  let service: IssueService;
+
+  const issueServiceStub = {
+    add: jest.fn(() => {
+      return fakeIssue;
+    }),
+    delete: jest.fn(),
+    getAll: jest.fn(() => {
+      return fakeIssueData;
+    }),
+    getById: jest.fn((id: number) => {
+      return fakeIssue;
+    }),
+    search: jest.fn((term: string) => {
+      return fakeIssueData;
+    }),
+    update: jest.fn((issue: Issue) => {
+      return fakeIssue;
+    }),
+  };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [{ provide: IssueService, useValue: issueServiceStub }],
     });
     facade = TestBed.inject(IssueFacade);
-    service = TestBed.inject(IssueService);
   });
 
   it('creates a facade service', () => {
@@ -44,7 +43,7 @@ describe('Issuefacade', () => {
   describe('getAll', () => {
     it('should call issue service getAll', async () => {
       await facade.getAll();
-      expect(service.getAll).toHaveBeenCalled();
+      expect(issueServiceStub.getAll).toHaveBeenCalled();
     });
 
     it('should set the issues signal with fetched data', async () => {
@@ -65,9 +64,9 @@ describe('Issuefacade', () => {
 
   //add
   describe('add', () => {
-    it('should call issue service add', async () => {
+    it('should call issue service add with passed issue', async () => {
       await facade.add(fakeIssue);
-      expect(service.add).toBeCalledWith(fakeIssue);
+      expect(issueServiceStub.add).toBeCalledWith(fakeIssue);
     });
 
     it('should call getAll', async () => {
@@ -84,9 +83,9 @@ describe('Issuefacade', () => {
 
   //delete
   describe('delete', () => {
-    it('should call fetch', async () => {
+    it('should call issue service delete with passed id', async () => {
       await facade.delete(3);
-      expect(service.delete).toBeCalledWith(3);
+      expect(issueServiceStub.delete).toBeCalledWith(3);
     });
 
     it('should call getAll', async () => {
@@ -98,9 +97,9 @@ describe('Issuefacade', () => {
 
   //getById
   describe('getById', () => {
-    it('should call fetch', async () => {
+    it('should call issue service with passed id', async () => {
       await facade.getById(1);
-      expect(service.getById).toBeCalledWith(1);
+      expect(issueServiceStub.getById).toBeCalledWith(1);
     });
 
     it('should return issue data', async () => {
@@ -111,9 +110,9 @@ describe('Issuefacade', () => {
 
   //search
   describe('search', () => {
-    it('should call issue service search', async () => {
+    it('should call issue service search with passed search term', async () => {
       await facade.search('abc');
-      expect(service.search).toBeCalledWith('abc');
+      expect(issueServiceStub.search).toBeCalledWith('abc');
     });
 
     it('should return array of search result issues', async () => {
@@ -124,9 +123,9 @@ describe('Issuefacade', () => {
 
   //update
   describe('update', () => {
-    it('should call issue service update', async () => {
+    it('should call issue service update with passed issue', async () => {
       await facade.update(fakeIssue);
-      expect(service.update).toBeCalledWith(fakeIssue);
+      expect(issueServiceStub.update).toBeCalledWith(fakeIssue);
     });
 
     it('should call getAll', async () => {
