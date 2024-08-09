@@ -36,7 +36,7 @@ export class PublisherFacade {
   public async search(term: string): Promise<Publisher[]> {
     if (!term.trim()) {
       // if not search term, return empty array.
-      return Promise.resolve([]) ?? [];
+      return Promise.resolve([]);
     }
 
     return await this.#publisherService.search(term);

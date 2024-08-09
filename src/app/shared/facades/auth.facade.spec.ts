@@ -54,6 +54,15 @@ describe('AuthFacade', () => {
       await facade.login('email@test.com', '1234');
       expect(facade.isLoggedInAsAdmin()).toBe(true);
     });
+
+    it('should not set login if invalid response from service', () => {
+      const login = jest
+        .spyOn(authServiceStub, 'login')
+        .mockReturnValue(Promise.resolve({ accessToken: null, user: { email: '', name: '', role: '', id: 0 } }));
+      facade.logout();
+      facade.login('', '');
+      expect(facade.isLoggedIn()).toBe(false);
+    });
   });
 
   //logout

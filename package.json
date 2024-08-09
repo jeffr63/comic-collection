@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "npx jest --watch",
-    "test:coverage": "npx jest --converage --verbose",
+    "test:coverage": "npx jest --coverage --verbose",
     "api": "json-server-auth --watch data\\db.json"
   },
   "private": true,

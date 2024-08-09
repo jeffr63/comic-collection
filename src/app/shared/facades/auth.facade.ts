@@ -1,12 +1,6 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-
-class AuthToken {
-  token: string = '';
-  role: string = '';
-  id: number = 0;
-  expires: number = 0;
-}
+import { AuthToken } from '../models/auth';
 
 @Injectable({
   providedIn: 'root',

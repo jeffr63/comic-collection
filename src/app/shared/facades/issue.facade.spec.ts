@@ -119,6 +119,11 @@ describe('Issuefacade', () => {
       const result = await facade.search('abc');
       expect(result).toEqual(fakeIssueData);
     });
+
+    it('shoud return empty array when search term is blank', async () => {
+      const result = await facade.search('');
+      expect(result).toEqual([]);
+    });
   });
 
   //update
@@ -140,6 +145,7 @@ describe('Issuefacade', () => {
     });
   });
 
+  // helper methods
   describe('helper methods', () => {
     it('getByPublisherValue method should return transformed issue data', () => {
       const result = facade.getByPublisherValue(fakeIssueData);

@@ -94,7 +94,7 @@ describe('PublisherFacade', () => {
     });
 
     it('should return publisher data', async () => {
-      const result = await publisherServiceStub.getById(1);
+      const result = await facade.getById(1);
       expect(result).toEqual(fakePublisher);
     });
   });
@@ -107,8 +107,13 @@ describe('PublisherFacade', () => {
     });
 
     it('should return array of search result publishers', async () => {
-      const result = await publisherServiceStub.search('abc');
+      const result = await facade.search('abc');
       expect(result).toEqual(fakePublisherData);
+    });
+
+    it('shoud return empty array when search term is blank', async () => {
+      const result = await facade.search('');
+      expect(result).toEqual([]);
     });
   });
 

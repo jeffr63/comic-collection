@@ -3,9 +3,9 @@ import { TestBed } from '@angular/core/testing';
 import { describe, expect, jest } from '@jest/globals';
 
 import { fakeUser, fakeUserData } from '../../../testing/testing.data';
-import { UserService } from '../services/user.service';
-import { UserFacade } from './user.facade';
 import { User } from '../models/user';
+import { UserFacade } from './user.facade';
+import { UserService } from '../services/user.service';
 
 describe('userService', () => {
   let facade: UserFacade;
@@ -109,6 +109,11 @@ describe('userService', () => {
     it('should return array of search result users', async () => {
       const result = await facade.search('abc');
       expect(result).toEqual(fakeUserData);
+    });
+
+    it('shoud return empty array when search term is blank', async () => {
+      const result = await facade.search('');
+      expect(result).toEqual([]);
     });
   });
 

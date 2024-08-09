@@ -94,7 +94,7 @@ describe('TitleFacade', () => {
     });
 
     it('should return title data', async () => {
-      const result = await titleServiceStub.getById(1);
+      const result = await facade.getById(1);
       expect(result).toEqual(fakeTitle);
     });
   });
@@ -107,8 +107,13 @@ describe('TitleFacade', () => {
     });
 
     it('should return array of search result titles', async () => {
-      const result = await titleServiceStub.search('abc');
+      const result = await facade.search('abc');
       expect(result).toEqual(fakeTitleData);
+    });
+
+    it('shoud return empty array when search term is blank', async () => {
+      const result = await facade.search('');
+      expect(result).toEqual([]);
     });
   });
 
