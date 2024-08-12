@@ -14,7 +14,7 @@ export class ModalDataService {
     this.#deleteModalOptions = options;
   }
 
-  getDeleteModalOtions(): any {
+  getDeleteModalOptions(): any {
     return this.#deleteModalOptions;
   }
 }

@@ -53,6 +53,6 @@ export class DeleteComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.modalOptions = this.modalDataService.getDeleteModalOtions();
+    this.modalOptions = this.modalDataService.getDeleteModalOptions();
   }
 }
