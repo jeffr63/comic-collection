@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ComponentRef, CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { Dialog } from '@angular/cdk/dialog';
 
@@ -12,11 +12,11 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
 import TitleIssueListComponent from './title-issue-list.component';
 import { TitleFacade } from '../shared/facades/title.facade';
 import { DeleteComponent } from '../shared/modals/delete.component';
-import { MatDialogConfig } from '@angular/material/dialog';
 
 describe('TitleIssueListComponent', () => {
   let component: TitleIssueListComponent;
   let fixture: ComponentFixture<TitleIssueListComponent>;
+  let dialog: Dialog;
 
   const authServiceStub = {
     isLoggedIn: signal(false),
@@ -46,18 +46,13 @@ describe('TitleIssueListComponent', () => {
     navigate: jest.fn(),
   };
 
-  const dialogStub = {
-    open: jest.fn((component: ComponentRef<DeleteComponent>, config: MatDialogConfig) => {}),
-    afterClose: jest.fn(),
-  };
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TitleIssueListComponent, DeleteComponent],
       providers: [
+        Dialog,
         { provide: AuthFacade, useValue: authServiceStub },
         { provide: IssueFacade, useValue: issueFacadeStub },
-        { provide: Dialog, useValue: dialogStub },
         { provide: ModalDataService, useValue: modalDataServiceStub },
         { provide: Router, useValue: routerStub },
         { provide: TitleFacade, useValue: titleFacadeStub },
@@ -66,6 +61,7 @@ describe('TitleIssueListComponent', () => {
     }).compileComponents();
     fixture = TestBed.createComponent(TitleIssueListComponent);
     component = fixture.componentInstance;
+    dialog = TestBed.inject(Dialog);
   });
 
   it('should create', () => {
@@ -99,18 +95,13 @@ describe('TitleIssueListComponent', () => {
     });
   });
 
-  // describe('deleteIssue', () => {
-  //   it('should call modal open', () => {
-  //     const dialog = jest.spyOn(dialogStub, 'open'); //({ afterClosed: () => of(true) });
-  //     component.deleteIssue(1);
-  //     expect(dialog).toBeCalled();
-  //   });
-
-  //     it('should call modal afterClose', () => {
-  //       component.deleteIssue(1);
-  //       expect(dialogStub.afterClose).toBeCalled();
-  //     });
-  // });
+  describe('deleteIssue', () => {
+    it('should call modal open', () => {
+      const dialogOpenSpy = jest.spyOn(dialog, 'open');
+      component.deleteIssue(1);
+      expect(dialogOpenSpy).toBeCalled();
+    });
+  });
 
   describe('delete', () => {
     it('should call issue service delete method', async () => {

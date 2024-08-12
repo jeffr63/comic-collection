@@ -13,8 +13,6 @@ export class AuthService {
       },
       body: body,
     });
-    const response = await res.json();
-    console.log(response);
     return await res.json();
   }
 }
