@@ -12,10 +12,9 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
 import { UserFacade } from '../shared/facades/user.facade';
 
 @Component({
-  selector: 'app-user-list',
-  standalone: true,
-  imports: [DisplayTableComponent],
-  template: `
+    selector: 'app-user-list',
+    imports: [DisplayTableComponent],
+    template: `
     <section class="mt-5">
       @if (users()) {
       <app-display-table
@@ -33,8 +32,8 @@ import { UserFacade } from '../shared/facades/user.facade';
       }
     </section>
   `,
-  styles: [
-    `
+    styles: [
+        `
       table {
         width: 100%;
       }
@@ -42,7 +41,7 @@ import { UserFacade } from '../shared/facades/user.facade';
         margin: 10px 20px;
       }
     `,
-  ],
+    ]
 })
 export default class UserListComponent implements OnInit {
   readonly #authStore = inject(AuthFacade);

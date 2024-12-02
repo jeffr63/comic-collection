@@ -7,10 +7,9 @@ import { DisplayTableComponent } from '../shared/display-table/display-table.com
 import { PublisherFacade } from '../shared/facades/publisher.facade';
 
 @Component({
-  selector: 'app-by-publisher',
-  standalone: true,
-  imports: [DisplayTableComponent],
-  template: `
+    selector: 'app-by-publisher',
+    imports: [DisplayTableComponent],
+    template: `
     <section class="mt-5">
       @if (publishers()) {
       <app-display-table
@@ -27,8 +26,8 @@ import { PublisherFacade } from '../shared/facades/publisher.facade';
       }
     </section>
   `,
-  styles: [
-    `
+    styles: [
+        `
       table {
         width: 100%;
       }
@@ -36,7 +35,7 @@ import { PublisherFacade } from '../shared/facades/publisher.facade';
         margin: 10px 20px;
       }
     `,
-  ],
+    ]
 })
 export default class ByPublisherComponent implements OnInit {
   readonly #authStore = inject(AuthFacade);

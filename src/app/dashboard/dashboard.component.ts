@@ -7,11 +7,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { IssueFacade } from '../shared/facades/issue.facade';
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
-  imports: [MatGridListModule, MatCardModule, NgxChartsModule],
-
-  template: `
+    selector: 'app-dashboard',
+    imports: [MatGridListModule, MatCardModule, NgxChartsModule],
+    template: `
     <section>
       <mat-grid-list cols="2">
         <mat-grid-tile>
@@ -50,8 +48,7 @@ import { IssueFacade } from '../shared/facades/issue.facade';
       </mat-grid-list>
     </section>
   `,
-
-  styles: [],
+    styles: []
 })
 export class DashboardComponent implements OnInit {
   readonly #issueStore = inject(IssueFacade);

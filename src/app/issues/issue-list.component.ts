@@ -12,11 +12,9 @@ import { IssueFacade } from '../shared/facades/issue.facade';
 import { ModalDataService } from '../shared/modals/modal-data.service';
 
 @Component({
-  selector: 'app-issue-all-list',
-  standalone: true,
-  imports: [DisplayTableComponent],
-
-  template: `
+    selector: 'app-issue-all-list',
+    imports: [DisplayTableComponent],
+    template: `
     <section class="mt-5">
       @if (issues()) {
       <app-display-table
@@ -35,14 +33,13 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
       }
     </section>
   `,
-
-  styles: [
-    `
+    styles: [
+        `
       section {
         margin: 10px 20px;
       }
     `,
-  ],
+    ]
 })
 export default class IssueAllListComponent implements OnInit {
   readonly #authStore = inject(AuthFacade);

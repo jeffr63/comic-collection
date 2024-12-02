@@ -7,10 +7,9 @@ import { DisplayTableComponent } from '../shared/display-table/display-table.com
 import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
-  selector: 'app-by-title-list',
-  standalone: true,
-  imports: [DisplayTableComponent],
-  template: `
+    selector: 'app-by-title-list',
+    imports: [DisplayTableComponent],
+    template: `
     <section class="mt-5">
       @if (titles()) {
       <app-display-table
@@ -27,8 +26,8 @@ import { TitleFacade } from '../shared/facades/title.facade';
       }
     </section>
   `,
-  styles: [
-    `
+    styles: [
+        `
       table {
         width: 100%;
       }
@@ -36,7 +35,7 @@ import { TitleFacade } from '../shared/facades/title.facade';
         margin: 10px 20px;
       }
     `,
-  ],
+    ]
 })
 export default class ByTitleListComponent implements OnInit {
   readonly #authStore = inject(AuthFacade);

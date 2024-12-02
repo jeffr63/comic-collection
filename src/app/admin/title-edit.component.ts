@@ -1,7 +1,7 @@
 import { Component, OnInit, inject, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
-import { AsyncPipe, Location } from '@angular/common';
+import { Location } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -16,10 +16,8 @@ import { Title } from '../shared/models/title';
 import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
-  selector: 'app-title-edit',
-  standalone: true,
-  imports: [
-    AsyncPipe,
+    selector: 'app-title-edit',
+    imports: [
     MatAutocompleteModule,
     MatButtonModule,
     MatCardModule,
@@ -28,10 +26,9 @@ import { TitleFacade } from '../shared/facades/title.facade';
     MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
-    RouterLink,
-  ],
-
-  template: `
+    RouterLink
+],
+    template: `
     <mat-card appearance="outlined">
       <mat-card-title>Title Edit</mat-card-title>
       <mat-card-content>
@@ -108,9 +105,8 @@ import { TitleFacade } from '../shared/facades/title.facade';
       </mat-card-actions>
     </mat-card>
   `,
-
-  styles: [
-    `
+    styles: [
+        `
       /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
       mat-card {
         margin: 30px;
@@ -133,7 +129,7 @@ import { TitleFacade } from '../shared/facades/title.facade';
         margin-left: 10px;
       }
     `,
-  ],
+    ]
 })
 export default class TitleEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);

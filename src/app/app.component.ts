@@ -5,17 +5,15 @@ import { AuthFacade } from './shared/facades/auth.facade';
 import { MenuComponent } from './menu/menu.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [MenuComponent, RouterOutlet],
-
-  template: `
+    selector: 'app-root',
+    imports: [MenuComponent, RouterOutlet],
+    template: `
     <app-menu />
     <main>
       <router-outlet />
     </main>
   `,
-  styles: [],
+    styles: []
 })
 export class AppComponent implements OnInit {
   readonly #authStore = inject(AuthFacade);

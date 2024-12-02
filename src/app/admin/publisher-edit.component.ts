@@ -1,5 +1,4 @@
 import { Component, OnInit, inject, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,19 +11,16 @@ import { Publisher } from '../shared/models/publisher';
 import { PublisherFacade } from '../shared/facades/publisher.facade';
 
 @Component({
-  selector: 'app-publisher-edit',
-  standalone: true,
-  imports: [
+    selector: 'app-publisher-edit',
+    imports: [
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    ReactiveFormsModule,
-    RouterLink,
-  ],
-
-  template: `
+    ReactiveFormsModule
+],
+    template: `
     <mat-card appearance="outlined">
       <mat-card-title>Publisher Edit</mat-card-title>
       <mat-card-content>
@@ -59,9 +55,8 @@ import { PublisherFacade } from '../shared/facades/publisher.facade';
       </mat-card-actions>
     </mat-card>
   `,
-
-  styles: [
-    `
+    styles: [
+        `
       /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
       mat-card {
         margin: 30px;
@@ -84,7 +79,7 @@ import { PublisherFacade } from '../shared/facades/publisher.facade';
         margin-left: 10px;
       }
     `,
-  ],
+    ]
 })
 export default class PublisherEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);

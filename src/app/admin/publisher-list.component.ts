@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
@@ -12,11 +12,9 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
 import { PublisherFacade } from '../shared/facades/publisher.facade';
 
 @Component({
-  selector: 'app-publisher-list',
-  standalone: true,
-  imports: [DisplayTableComponent, RouterLink],
-
-  template: `
+    selector: 'app-publisher-list',
+    imports: [DisplayTableComponent],
+    template: `
     <section class="mt-5">
       @if (publishers()) {
       <app-display-table
@@ -35,9 +33,8 @@ import { PublisherFacade } from '../shared/facades/publisher.facade';
       }
     </section>
   `,
-
-  styles: [
-    `
+    styles: [
+        `
       table {
         width: 100%;
       }
@@ -45,7 +42,7 @@ import { PublisherFacade } from '../shared/facades/publisher.facade';
         margin: 10px 20px;
       }
     `,
-  ],
+    ]
 })
 export default class PublisherListComponent implements OnInit {
   readonly #authStore = inject(AuthFacade);

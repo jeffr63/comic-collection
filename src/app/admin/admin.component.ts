@@ -5,11 +5,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-admin',
-  standalone: true,
-  imports: [MatButtonModule, MatGridListModule, MatCardModule, RouterLink],
-
-  template: `
+    selector: 'app-admin',
+    imports: [MatButtonModule, MatGridListModule, MatCardModule, RouterLink],
+    template: `
     <section>
       <div class="header">
         <h1 class="mat-display-2">Administration</h1>
@@ -54,9 +52,8 @@ import { Router, RouterLink } from '@angular/router';
       </mat-grid-list>
     </section>
   `,
-
-  styles: [
-    `
+    styles: [
+        `
       /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
       mat-card {
         width: 80%;
@@ -70,7 +67,7 @@ import { Router, RouterLink } from '@angular/router';
         margin: 10px;
       }
     `,
-  ],
+    ]
 })
 export default class AdminComponent {
   protected readonly router = inject(Router);

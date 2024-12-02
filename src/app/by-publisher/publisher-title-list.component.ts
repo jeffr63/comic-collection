@@ -9,10 +9,9 @@ import { PublisherFacade } from '../shared/facades/publisher.facade';
 import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
-  selector: 'app-publisher-title-list',
-  standalone: true,
-  imports: [DisplayTableComponent],
-  template: ` <section class="mt-5">
+    selector: 'app-publisher-title-list',
+    imports: [DisplayTableComponent],
+    template: ` <section class="mt-5">
     @if (titles()) {
     <app-display-table
       [includeAdd]="false"
@@ -27,8 +26,8 @@ import { TitleFacade } from '../shared/facades/title.facade';
       (open)="open($event)" />
     }
   </section>`,
-  styles: [
-    `
+    styles: [
+        `
       table {
         width: 100%;
       }
@@ -36,7 +35,7 @@ import { TitleFacade } from '../shared/facades/title.facade';
         margin: 10px 20px;
       }
     `,
-  ],
+    ]
 })
 export default class PublisherTitleListComponent implements OnInit {
   readonly #authStore = inject(AuthFacade);

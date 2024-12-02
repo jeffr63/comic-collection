@@ -1,7 +1,7 @@
 import { Component, OnInit, inject, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
-import { AsyncPipe, Location } from '@angular/common';
+import { Location } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -18,10 +18,8 @@ import { Title } from '../shared/models/title';
 import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
-  selector: 'app-issue-edit',
-  standalone: true,
-  imports: [
-    AsyncPipe,
+    selector: 'app-issue-edit',
+    imports: [
     MatAutocompleteModule,
     MatButtonModule,
     MatCardModule,
@@ -30,9 +28,9 @@ import { TitleFacade } from '../shared/facades/title.facade';
     MatIconModule,
     MatSelectModule,
     ReactiveFormsModule,
-    RouterLink,
-  ],
-  template: `
+    RouterLink
+],
+    template: `
     <mat-card appearance="outlined">
       <mat-card-title>Issue Edit</mat-card-title>
       <mat-card-content>
@@ -161,9 +159,8 @@ import { TitleFacade } from '../shared/facades/title.facade';
       </mat-card-actions>
     </mat-card>
   `,
-
-  styles: [
-    `
+    styles: [
+        `
       mat-card {
         margin: 30px;
         padding-left: 15px;
@@ -185,7 +182,7 @@ import { TitleFacade } from '../shared/facades/title.facade';
         margin-left: 10px;
       }
     `,
-  ],
+    ]
 })
 export default class IssueEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
