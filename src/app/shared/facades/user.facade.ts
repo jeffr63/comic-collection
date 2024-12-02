@@ -1,4 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, resource, signal } from '@angular/core';
 import { User } from '../models/user';
 import { UserService } from '../services/user.service';
 
@@ -8,13 +8,15 @@ import { UserService } from '../services/user.service';
 export class UserFacade {
   readonly #userService = inject(UserService);
 
-  readonly #users = signal<User[]>([]);
+  readonly #users = resource({
+    loader: async () => await this.#userService.getAll(),
+  });
 
-  public readonly users = this.#users.asReadonly();
+  public readonly users = computed(() => this.#users.value());
 
   public async add(user: User): Promise<User | undefined> {
     const newUser = await this.#userService.add(user);
-    await this.getAll();
+    this.#users.reload();
     return newUser;
   }
 
@@ -23,12 +25,7 @@ export class UserFacade {
       return;
     }
     await this.#userService.delete(id);
-    await this.getAll();
-  }
-
-  public async getAll() {
-    const response = await this.#userService.getAll();
-    this.#users.set(response);
+    this.#users.reload();
   }
 
   public async getById(id: number): Promise<User | undefined> {
@@ -48,7 +45,7 @@ export class UserFacade {
 
   public async update(user: User): Promise<User | undefined> {
     const response = await this.#userService.update(user);
-    await this.getAll();
+    this.#users.reload();
     return response;
   }
 }

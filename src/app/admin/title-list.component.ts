@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -12,9 +12,9 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
 import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
-    selector: 'app-source-list',
-    imports: [DisplayTableComponent],
-    template: `
+  selector: 'app-source-list',
+  imports: [DisplayTableComponent],
+  template: `
     <section class="mt-5">
       @if (titles()) {
       <app-display-table
@@ -33,8 +33,8 @@ import { TitleFacade } from '../shared/facades/title.facade';
       }
     </section>
   `,
-    styles: [
-        `
+  styles: [
+    `
       table {
         width: 100%;
       }
@@ -42,9 +42,9 @@ import { TitleFacade } from '../shared/facades/title.facade';
         margin: 10px 20px;
       }
     `,
-    ]
+  ],
 })
-export default class TitleListComponent implements OnInit {
+export default class TitleListComponent {
   readonly #authStore = inject(AuthFacade);
   readonly #dialog = inject(MatDialog);
   readonly #modalDataService = inject(ModalDataService);
@@ -73,12 +73,6 @@ export default class TitleListComponent implements OnInit {
     },
     { key: 'action', name: '', width: '', type: 'action', position: 'left' },
   ];
-
-  async ngOnInit() {
-    if (this.titles().length === 0) {
-      await this.#titleStore.getAll();
-    }
-  }
 
   protected deleteTitle(id: number) {
     const modalOptions = {

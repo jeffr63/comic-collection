@@ -1,4 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, resource, signal } from '@angular/core';
 
 import { Publisher } from '../models/publisher';
 import { PublisherService } from '../services/publisher.service';
@@ -9,24 +9,21 @@ import { PublisherService } from '../services/publisher.service';
 export class PublisherFacade {
   readonly #publisherService = inject(PublisherService);
 
-  #publishers = signal<Publisher[]>([]);
+  #publishers = resource({
+    loader: async () => await this.#publisherService.getAll(),
+  });
 
-  public readonly publishers = this.#publishers.asReadonly();
+  public readonly publishers = computed(() => this.#publishers.value());
 
   public async add(publisher: Publisher): Promise<Publisher | undefined> {
     const newTitle = await this.#publisherService.add(publisher);
-    await this.getAll();
+    this.#publishers.reload();
     return newTitle;
   }
 
   public async delete(id: number) {
     await this.#publisherService.delete(id);
-    await this.getAll();
-  }
-
-  public async getAll() {
-    const response = await this.#publisherService.getAll();
-    this.#publishers.set(response);
+    this.#publishers.reload();
   }
 
   public async getById(id: number): Promise<Publisher | undefined> {
@@ -44,7 +41,7 @@ export class PublisherFacade {
 
   public async update(publisher: Publisher): Promise<Publisher | undefined> {
     const response = await this.#publisherService.update(publisher);
-    await this.getAll();
+    this.#publishers.reload();
     return response;
   }
 }

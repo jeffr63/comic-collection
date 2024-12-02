@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MatDialog } from '@angular/material/dialog';
@@ -12,9 +12,9 @@ import { IssueFacade } from '../shared/facades/issue.facade';
 import { ModalDataService } from '../shared/modals/modal-data.service';
 
 @Component({
-    selector: 'app-issue-all-list',
-    imports: [DisplayTableComponent],
-    template: `
+  selector: 'app-issue-all-list',
+  imports: [DisplayTableComponent],
+  template: `
     <section class="mt-5">
       @if (issues()) {
       <app-display-table
@@ -33,15 +33,15 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
       }
     </section>
   `,
-    styles: [
-        `
+  styles: [
+    `
       section {
         margin: 10px 20px;
       }
     `,
-    ]
+  ],
 })
-export default class IssueAllListComponent implements OnInit {
+export default class IssueAllListComponent {
   readonly #authStore = inject(AuthFacade);
   readonly #dialog = inject(MatDialog);
   readonly #issueStore = inject(IssueFacade);
@@ -96,12 +96,6 @@ export default class IssueAllListComponent implements OnInit {
       position: 'left',
     },
   ];
-
-  async ngOnInit() {
-    if (this.issues().length === 0) {
-      await this.#issueStore.getAll();
-    }
-  }
 
   deleteIssue(id: number) {
     const modalOptions = {

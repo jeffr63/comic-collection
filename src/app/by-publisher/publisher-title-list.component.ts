@@ -84,9 +84,6 @@ export default class PublisherTitleListComponent implements OnInit {
   }
 
   private async loadData(id: number) {
-    if (this.allTitles().length === 0) {
-      await this.#titleStore.getAll();
-    }
     const publisher = (await this.#publisherStore.getById(id)) as unknown as Publisher;
     this.publisher.set(publisher.name);
   }

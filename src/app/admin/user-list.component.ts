@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -12,9 +12,9 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
 import { UserFacade } from '../shared/facades/user.facade';
 
 @Component({
-    selector: 'app-user-list',
-    imports: [DisplayTableComponent],
-    template: `
+  selector: 'app-user-list',
+  imports: [DisplayTableComponent],
+  template: `
     <section class="mt-5">
       @if (users()) {
       <app-display-table
@@ -32,8 +32,8 @@ import { UserFacade } from '../shared/facades/user.facade';
       }
     </section>
   `,
-    styles: [
-        `
+  styles: [
+    `
       table {
         width: 100%;
       }
@@ -41,9 +41,9 @@ import { UserFacade } from '../shared/facades/user.facade';
         margin: 10px 20px;
       }
     `,
-    ]
+  ],
 })
-export default class UserListComponent implements OnInit {
+export default class UserListComponent {
   readonly #authStore = inject(AuthFacade);
   readonly #dialog = inject(MatDialog);
   readonly #modalDataService = inject(ModalDataService);
@@ -84,12 +84,6 @@ export default class UserListComponent implements OnInit {
       position: 'left',
     },
   ];
-
-  async ngOnInit() {
-    if (this.users().length === 0) {
-      await this.#userStore.getAll();
-    }
-  }
 
   protected deleteUser(id: number) {
     const modalOptions = {

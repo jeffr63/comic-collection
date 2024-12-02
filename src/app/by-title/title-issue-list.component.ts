@@ -14,9 +14,9 @@ import { Title } from '../shared/models/title';
 import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
-    selector: 'app-title-issue-list',
-    imports: [DisplayTableComponent],
-    template: `
+  selector: 'app-title-issue-list',
+  imports: [DisplayTableComponent],
+  template: `
     <section class="mt-5">
       @if (titleIssues()) {
       <app-display-table
@@ -35,8 +35,8 @@ import { TitleFacade } from '../shared/facades/title.facade';
       }
     </section>
   `,
-    styles: [
-        `
+  styles: [
+    `
       table {
         width: 100%;
       }
@@ -44,7 +44,7 @@ import { TitleFacade } from '../shared/facades/title.facade';
         margin: 10px 20px;
       }
     `,
-    ]
+  ],
 })
 export default class TitleIssueListComponent implements OnInit {
   readonly #authStore = inject(AuthFacade);
@@ -117,9 +117,6 @@ export default class TitleIssueListComponent implements OnInit {
   }
 
   public async loadData(id: number) {
-    if (this.issues().length === 0) {
-      await this.#issueStore.getAll();
-    }
     const title = (await this.#titleStore.getById(id)) as unknown as Title;
     this.title.set(title.title);
   }

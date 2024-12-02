@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -12,9 +12,9 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
 import { PublisherFacade } from '../shared/facades/publisher.facade';
 
 @Component({
-    selector: 'app-publisher-list',
-    imports: [DisplayTableComponent],
-    template: `
+  selector: 'app-publisher-list',
+  imports: [DisplayTableComponent],
+  template: `
     <section class="mt-5">
       @if (publishers()) {
       <app-display-table
@@ -33,8 +33,8 @@ import { PublisherFacade } from '../shared/facades/publisher.facade';
       }
     </section>
   `,
-    styles: [
-        `
+  styles: [
+    `
       table {
         width: 100%;
       }
@@ -42,9 +42,9 @@ import { PublisherFacade } from '../shared/facades/publisher.facade';
         margin: 10px 20px;
       }
     `,
-    ]
+  ],
 })
-export default class PublisherListComponent implements OnInit {
+export default class PublisherListComponent {
   readonly #authStore = inject(AuthFacade);
   readonly #dialog = inject(MatDialog);
   readonly #modalDataService = inject(ModalDataService);
@@ -65,12 +65,6 @@ export default class PublisherListComponent implements OnInit {
     },
     { key: 'action', name: '', width: '', type: 'action', position: 'left' },
   ];
-
-  async ngOnInit() {
-    if (this.publishers().length === 0) {
-      await this.#publisherStore.getAll();
-    }
-  }
 
   protected deletePublisher(id: number) {
     const modalOptions = {

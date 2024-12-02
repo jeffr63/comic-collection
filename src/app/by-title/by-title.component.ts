@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthFacade } from '../shared/facades/auth.facade';
@@ -7,9 +7,9 @@ import { DisplayTableComponent } from '../shared/display-table/display-table.com
 import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
-    selector: 'app-by-title-list',
-    imports: [DisplayTableComponent],
-    template: `
+  selector: 'app-by-title-list',
+  imports: [DisplayTableComponent],
+  template: `
     <section class="mt-5">
       @if (titles()) {
       <app-display-table
@@ -26,8 +26,8 @@ import { TitleFacade } from '../shared/facades/title.facade';
       }
     </section>
   `,
-    styles: [
-        `
+  styles: [
+    `
       table {
         width: 100%;
       }
@@ -35,9 +35,9 @@ import { TitleFacade } from '../shared/facades/title.facade';
         margin: 10px 20px;
       }
     `,
-    ]
+  ],
 })
-export default class ByTitleListComponent implements OnInit {
+export default class ByTitleListComponent {
   readonly #authStore = inject(AuthFacade);
   readonly #router = inject(Router);
   readonly #titleStore = inject(TitleFacade);
@@ -70,12 +70,6 @@ export default class ByTitleListComponent implements OnInit {
       position: 'left',
     },
   ];
-
-  async ngOnInit() {
-    if (this.titles().length === 0) {
-      await this.#titleStore.getAll();
-    }
-  }
 
   protected open(id: number) {
     this.#router.navigate(['/by_title', id]);

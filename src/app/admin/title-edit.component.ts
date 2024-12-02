@@ -16,8 +16,8 @@ import { Title } from '../shared/models/title';
 import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
-    selector: 'app-title-edit',
-    imports: [
+  selector: 'app-title-edit',
+  imports: [
     MatAutocompleteModule,
     MatButtonModule,
     MatCardModule,
@@ -26,9 +26,9 @@ import { TitleFacade } from '../shared/facades/title.facade';
     MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
-    RouterLink
-],
-    template: `
+    RouterLink,
+  ],
+  template: `
     <mat-card appearance="outlined">
       <mat-card-title>Title Edit</mat-card-title>
       <mat-card-content>
@@ -105,8 +105,8 @@ import { TitleFacade } from '../shared/facades/title.facade';
       </mat-card-actions>
     </mat-card>
   `,
-    styles: [
-        `
+  styles: [
+    `
       /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
       mat-card {
         margin: 30px;
@@ -129,7 +129,7 @@ import { TitleFacade } from '../shared/facades/title.facade';
         margin-left: 10px;
       }
     `,
-    ]
+  ],
 })
 export default class TitleEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
@@ -151,9 +151,6 @@ export default class TitleEditComponent implements OnInit {
       title: ['', Validators.required],
     });
 
-    if (this.publishers().length === 0) {
-      await this.#publisherStore.getAll();
-    }
     let sorted = [...this.publishers()];
     sorted.sort((a, b) => {
       if (a.name < b.name) return -1;

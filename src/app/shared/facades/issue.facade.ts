@@ -1,4 +1,4 @@
-import { computed, inject, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, resource, signal } from '@angular/core';
 
 import { Issue, IssueData } from '../models/issue';
 import { IssueService } from '../services/issue.service';
@@ -9,27 +9,30 @@ import { IssueService } from '../services/issue.service';
 export class IssueFacade {
   readonly #issueService = inject(IssueService);
 
-  readonly #issues = signal<Issue[]>([]);
+  //readonly #issues = signal<Issue[]>([]);
+  readonly #issues = resource({
+    loader: async () => await this.#issueService.getAll(),
+  });
 
-  public readonly issues = this.#issues.asReadonly();
-  public readonly publishers = computed(() => this.getByPublisherValue(this.#issues()));
-  public readonly titles = computed(() => this.getByTitleValue(this.#issues()));
+  public readonly issues = computed(() => this.#issues.value());
+  public readonly publishers = computed(() => this.getByPublisherValue(this.#issues.value()));
+  public readonly titles = computed(() => this.getByTitleValue(this.#issues.value()));
 
   public async add(issue: Issue): Promise<Issue | undefined> {
     const newIssue = await this.#issueService.add(issue);
-    await this.getAll();
+    this.#issues.reload();
     return newIssue;
   }
 
   public async delete(id: number) {
     await this.#issueService.delete(id);
-    await this.getAll();
+    this.#issues.reload();
   }
 
-  public async getAll() {
-    const response = await this.#issueService.getAll();
-    this.#issues.set(response);
-  }
+  // public async getAll() {
+  //   const response = await this.#issueService.getAll();
+  //   this.#issues.set(response);
+  // }
 
   public async getById(id: number): Promise<Issue | undefined> {
     return await this.#issueService.getById(id);
@@ -46,11 +49,12 @@ export class IssueFacade {
 
   public async update(issue: Issue): Promise<Issue | undefined> {
     const response = await this.#issueService.update(issue);
-    await this.getAll();
+    this.#issues.reload();
     return response;
   }
 
   public getByPublisherValue(issues: Issue[]): IssueData[] {
+    if (!issues) return [];
     let byPublisher: IssueData[] = [];
     issues.reduce((res, issue) => {
       if (!res[issue.publisher]) {
@@ -69,6 +73,7 @@ export class IssueFacade {
   }
 
   public getByTitleValue(issues: Issue[]): IssueData[] {
+    if (!issues) return [];
     let byTitle: IssueData[] = [];
     issues.reduce((res, issue) => {
       if (!res[issue.title]) {

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthFacade } from '../shared/facades/auth.facade';
@@ -7,9 +7,9 @@ import { DisplayTableComponent } from '../shared/display-table/display-table.com
 import { PublisherFacade } from '../shared/facades/publisher.facade';
 
 @Component({
-    selector: 'app-by-publisher',
-    imports: [DisplayTableComponent],
-    template: `
+  selector: 'app-by-publisher',
+  imports: [DisplayTableComponent],
+  template: `
     <section class="mt-5">
       @if (publishers()) {
       <app-display-table
@@ -26,8 +26,8 @@ import { PublisherFacade } from '../shared/facades/publisher.facade';
       }
     </section>
   `,
-    styles: [
-        `
+  styles: [
+    `
       table {
         width: 100%;
       }
@@ -35,9 +35,9 @@ import { PublisherFacade } from '../shared/facades/publisher.facade';
         margin: 10px 20px;
       }
     `,
-    ]
+  ],
 })
-export default class ByPublisherComponent implements OnInit {
+export default class ByPublisherComponent {
   readonly #authStore = inject(AuthFacade);
   readonly #publisherStore = inject(PublisherFacade);
   readonly #router = inject(Router);
@@ -62,12 +62,6 @@ export default class ByPublisherComponent implements OnInit {
       position: 'left',
     },
   ];
-
-  async ngOnInit() {
-    if (this.publishers().length === 0) {
-      await this.#publisherStore.getAll();
-    }
-  }
 
   protected open(id: number) {
     this.#router.navigate(['/by_publisher', id]);

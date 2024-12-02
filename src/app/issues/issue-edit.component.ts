@@ -18,8 +18,8 @@ import { Title } from '../shared/models/title';
 import { TitleFacade } from '../shared/facades/title.facade';
 
 @Component({
-    selector: 'app-issue-edit',
-    imports: [
+  selector: 'app-issue-edit',
+  imports: [
     MatAutocompleteModule,
     MatButtonModule,
     MatCardModule,
@@ -28,9 +28,9 @@ import { TitleFacade } from '../shared/facades/title.facade';
     MatIconModule,
     MatSelectModule,
     ReactiveFormsModule,
-    RouterLink
-],
-    template: `
+    RouterLink,
+  ],
+  template: `
     <mat-card appearance="outlined">
       <mat-card-title>Issue Edit</mat-card-title>
       <mat-card-content>
@@ -159,8 +159,8 @@ import { TitleFacade } from '../shared/facades/title.facade';
       </mat-card-actions>
     </mat-card>
   `,
-    styles: [
-        `
+  styles: [
+    `
       mat-card {
         margin: 30px;
         padding-left: 15px;
@@ -182,7 +182,7 @@ import { TitleFacade } from '../shared/facades/title.facade';
         margin-left: 10px;
       }
     `,
-    ]
+  ],
 })
 export default class IssueEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
@@ -211,9 +211,6 @@ export default class IssueEditComponent implements OnInit {
       url: [''],
     });
 
-    if (this.publishers().length === 0) {
-      await this.#publisherStore.getAll();
-    }
     //const sortedPublishers = orderBy(this.publishers(), 'name', 'asc');
     let sortedPublishers = [...this.publishers()];
     sortedPublishers.sort((a, b) => {
@@ -223,9 +220,6 @@ export default class IssueEditComponent implements OnInit {
     });
     this.filteredPublishers.set(sortedPublishers);
 
-    if (this.titles().length === 0) {
-      await this.#titleStore.getAll();
-    }
     //const sortedTitles = orderBy(this.titles(), 'title', 'asc');
     let sortedTitles = [...this.titles()];
     sortedTitles.sort((a, b) => {

@@ -1,4 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, resource, signal } from '@angular/core';
 import { Title } from '../models/title';
 import { TitleService } from '../services/title.service';
 
@@ -8,24 +8,21 @@ import { TitleService } from '../services/title.service';
 export class TitleFacade {
   readonly #titleService = inject(TitleService);
 
-  readonly #titles = signal<Title[]>([]);
+  readonly #titles = resource({
+    loader: async () => await this.#titleService.getAll(),
+  });
 
-  public readonly titles = this.#titles.asReadonly();
+  public readonly titles = computed(() => this.#titles.value());
 
   public async add(title: Title): Promise<Title | undefined> {
     const newTitle = await this.#titleService.add(title);
-    await this.getAll();
+    this.#titles.reload();
     return newTitle;
   }
 
   public async delete(id: number) {
     await this.#titleService.delete(id);
-    await this.getAll();
-  }
-
-  public async getAll() {
-    const response = await this.#titleService.getAll();
-    this.#titles.set(response);
+    this.#titles.reload();
   }
 
   public async getById(id: number): Promise<Title | undefined> {
@@ -42,7 +39,7 @@ export class TitleFacade {
 
   public async update(title: Title): Promise<Title | undefined> {
     const response = this.#titleService.update(title);
-    await this.getAll();
+    this.#titles.reload();
     return response;
   }
 }
