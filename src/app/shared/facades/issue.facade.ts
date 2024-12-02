@@ -22,7 +22,7 @@ export class IssueFacade {
   }
 
   public async delete(id: number) {
-    this.#issueService.delete(id);
+    await this.#issueService.delete(id);
     await this.getAll();
   }
 
