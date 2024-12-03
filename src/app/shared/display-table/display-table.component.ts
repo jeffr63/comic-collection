@@ -204,12 +204,12 @@ export class DisplayTableComponent<TData> implements OnInit {
       }
     });
     if (defaultSort !== '') {
-      this.matSort().sort({ id: defaultSort, start: 'asc' } as MatSortable);
+      this.matSort().sort(<MatSortable>{ id: defaultSort, start: 'asc' });
     }
   }
 
   applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
+    const filterValue = (<HTMLInputElement> event.target).value;
     this.tableDataSource.filter = filterValue.trim().toLowerCase();
   }
 

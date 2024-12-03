@@ -30,10 +30,6 @@ export class TitleFacade {
   }
 
   public async search(term: string): Promise<Title[]> {
-    if (!term.trim()) {
-      // if not search term, return empty array.
-      return Promise.resolve([]);
-    }
     return await this.#titleService.search(term);
   }
 

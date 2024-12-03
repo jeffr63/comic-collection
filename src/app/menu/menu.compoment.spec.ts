@@ -79,10 +79,10 @@ describe('MenuComponent', () => {
 
     const labels = document.getElementsByTagName('label');
 
-    const email = labels[0] as HTMLLabelElement;
+    const email = <HTMLLabelElement> labels[0];
     expect(email.textContent).toEqual('Email Address');
 
-    const password = document.getElementsByTagName('label')[1] as HTMLLabelElement;
+    const password = <HTMLLabelElement> document.getElementsByTagName('label')[1];
     expect(password.textContent).toEqual('Password');
   });
 });

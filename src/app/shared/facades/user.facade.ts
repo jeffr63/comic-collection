@@ -21,25 +21,15 @@ export class UserFacade {
   }
 
   public async delete(id: number): Promise<void> {
-    if (!id) {
-      return;
-    }
     await this.#userService.delete(id);
     this.#users.reload();
   }
 
   public async getById(id: number): Promise<User | undefined> {
-    if (!id) {
-      return Promise.resolve({} as User);
-    }
     return await this.#userService.getById(id);
   }
 
   public async search(term: string): Promise<User[]> {
-    if (!term.trim()) {
-      // if not search term, return empty array.
-      return Promise.resolve([]);
-    }
     return await this.#userService.search(term);
   }
 
