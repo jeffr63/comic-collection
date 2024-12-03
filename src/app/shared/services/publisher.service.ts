@@ -9,7 +9,7 @@ export class PublisherService {
 
   #publishersUrl = 'http://localhost:3000/publishers';
 
-  public async add(publisher: Publisher): Promise<Publisher | undefined> {
+  public async add(publisher: Publisher): Promise<Publisher> {
     return await this.#dataService.add<Publisher>(publisher, this.#publishersUrl);
   }
 
@@ -21,7 +21,7 @@ export class PublisherService {
     return await this.#dataService.getAll<Publisher[]>(this.#publishersUrl);
   }
 
-  public async getById(id: number): Promise<Publisher | undefined> {
+  public async getById(id: number): Promise<Publisher> {
     return await this.#dataService.getById<Publisher>(id, this.#publishersUrl);
   }
 
@@ -29,7 +29,7 @@ export class PublisherService {
     return await this.#dataService.search<Publisher[]>(term, this.#publishersUrl);
   }
 
-  public async update(publisher: Publisher): Promise<Publisher | undefined> {
+  public async update(publisher: Publisher): Promise<Publisher> {
     return await this.#dataService.update(publisher.id, publisher, this.#publishersUrl);
   }
 }

@@ -9,7 +9,7 @@ export class IssueService {
 
   readonly #issuesUrl = 'http://localhost:3000/issues';
 
-  public async add(issue: Issue): Promise<Issue | undefined> {
+  public async add(issue: Issue): Promise<Issue> {
     return await this.#dataService.add<Issue>(issue, this.#issuesUrl);
   }
 
@@ -22,7 +22,7 @@ export class IssueService {
     return issues;
   }
 
-  public async getById(id: number): Promise<Issue | undefined> {
+  public async getById(id: number): Promise<Issue> {
     return await this.#dataService.getById<Issue>(id, this.#issuesUrl);
   }
 
@@ -30,7 +30,7 @@ export class IssueService {
     return await this.#dataService.search<Issue[]>(term, this.#issuesUrl);
   }
 
-  public async update(issue: Issue): Promise<Issue | undefined> {
+  public async update(issue: Issue): Promise<Issue> {
     return await this.#dataService.update<Issue>(issue.id, issue, this.#issuesUrl);
   }
 }

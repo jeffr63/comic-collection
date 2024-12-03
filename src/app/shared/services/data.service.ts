@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
-  public async add<T>(data: T, url: string): Promise<T | undefined> {
+  public async add<T>(data: T, url: string): Promise<T> {
     if (!data || !url) {
       return <T>{};
     }
@@ -16,7 +16,7 @@ export class DataService {
         body: JSON.stringify(data),
       });
 
-      return (await response.json()) ?? {};
+      return (await response.json()) ?? <T>{};
     } catch (e) {
       return <T>{};
     }
@@ -42,20 +42,20 @@ export class DataService {
 
     try {
       const response = await fetch(url);
-      return (await response.json()) ?? [];
+      return (await response.json()) ?? <T>[];
     } catch (e) {
       return <T>[];
     }
   }
 
-  public async getById<T>(id: number, url: string): Promise<T | undefined> {
+  public async getById<T>(id: number, url: string): Promise<T> {
     if (!id || !url) {
       return <T>{};
     }
 
     try {
       const response = await fetch(`${url}/${id}`);
-      return (await response.json()) ?? {};
+      return (await response.json()) ?? <T>{};
     } catch (e) {
       return <T>{};
     }
@@ -68,13 +68,13 @@ export class DataService {
 
     try {
       const response = await fetch(`${url}?${term}`);
-      return (await response.json()) ?? [];
+      return (await response.json()) ?? <T>[];
     } catch (e) {
       return <T>[];
     }
   }
 
-  public async update<T>(id: number, data: T, url: string): Promise<T | undefined> {
+  public async update<T>(id: number, data: T, url: string): Promise<T> {
     if (!id || !data || !url) {
       return <T>{};
     }
@@ -87,7 +87,7 @@ export class DataService {
         },
         body: JSON.stringify(data),
       });
-      return (await response.json()) ?? {};
+      return (await response.json()) ?? <T>{};
     } catch (e) {
       return <T>{};
     }
