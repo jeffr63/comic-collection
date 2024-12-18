@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, input } from '@angular/core';
+import { Component, OnInit, inject, input, resource, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
@@ -13,18 +13,18 @@ import { User } from '../shared/models/user';
 import { UserFacade } from '../shared/facades/user.facade';
 
 @Component({
-    selector: 'app-user-edit',
-    imports: [
-        MatButtonModule,
-        MatCardModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatRadioModule,
-        ReactiveFormsModule,
-        RouterLink,
-    ],
-    template: `
+  selector: 'app-user-edit',
+  imports: [
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    RouterLink,
+  ],
+  template: `
     <mat-card appearance="outlined">
       <mat-card-title>User Edit</mat-card-title>
       <mat-card-content>
@@ -80,8 +80,8 @@ import { UserFacade } from '../shared/facades/user.facade';
       </mat-card-actions>
     </mat-card>
   `,
-    styles: [
-        `
+  styles: [
+    `
       /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
       mat-card {
         margin: 30px;
@@ -115,7 +115,7 @@ import { UserFacade } from '../shared/facades/user.facade';
         margin: 5px;
       }
     `,
-    ]
+  ],
 })
 export default class UserEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
@@ -123,8 +123,16 @@ export default class UserEditComponent implements OnInit {
   readonly #userStore = inject(UserFacade);
 
   protected readonly id = input<string>();
+  readonly #user = resource<User, string>({
+    request: this.id,
+    loader: async ({ request: id }) => {
+      if (id === 'new') return { name: '', email: '', password: '', role: '' };
+      const user = await this.#userStore.getById(+id);
+      this.loadFormValues(user);
+      return user;
+    },
+  });
 
-  #user = <User>{};
   protected userEditForm!: FormGroup;
 
   ngOnInit(): void {
@@ -133,15 +141,9 @@ export default class UserEditComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       role: ['', Validators.required],
     });
-
-    if (this.id() !== 'new' && this.id() != undefined) {
-      this.loadFormValues(+this.id());
-    }
   }
 
-  private async loadFormValues(id: number) {
-    const user = await this.#userStore.getById(id);
-    this.#user = user;
+  private loadFormValues(user: User) {
     this.userEditForm.patchValue({
       name: user.name,
       email: user.email,
@@ -151,7 +153,7 @@ export default class UserEditComponent implements OnInit {
 
   protected async save() {
     const patchData = this.userEditForm.getRawValue();
-    patchData.id = this.#user?.id;
+    patchData.id = this.#user.value()?.id;
     if (!patchData) return;
     await this.#userStore.update(patchData);
     this.#location.back();

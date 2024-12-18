@@ -11,7 +11,16 @@ export class TitleFacade {
   readonly #titles = resource({
     loader: async () => await this.#titleService.getAll(),
   });
-
+  sortedTitles = computed(() => {
+    let sorted = this.#titles.value();
+    if (!sorted || sorted.length === 0) return [];
+    sorted.sort((a, b) => {
+      if (a.title < b.title) return -1;
+      if (a.title > b.title) return 1;
+      return 0;
+    });
+    return sorted;
+  });
   public readonly titles = computed(() => this.#titles.value());
 
   public async add(title: Title): Promise<Title | undefined> {

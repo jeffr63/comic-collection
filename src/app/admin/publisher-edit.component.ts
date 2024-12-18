@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, input } from '@angular/core';
+import { Component, OnInit, inject, input, resource, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,16 +11,9 @@ import { Publisher } from '../shared/models/publisher';
 import { PublisherFacade } from '../shared/facades/publisher.facade';
 
 @Component({
-    selector: 'app-publisher-edit',
-    imports: [
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    ReactiveFormsModule
-],
-    template: `
+  selector: 'app-publisher-edit',
+  imports: [MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, ReactiveFormsModule],
+  template: `
     <mat-card appearance="outlined">
       <mat-card-title>Publisher Edit</mat-card-title>
       <mat-card-content>
@@ -49,14 +42,23 @@ import { PublisherFacade } from '../shared/facades/publisher.facade';
         <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!publisherEditForm.valid">
           <mat-icon>save</mat-icon> Save
         </button>
+        <button
+          mat-flat-button
+          color="warn"
+          (click)="saveNew()"
+          title="Save"
+          [disabled]="!publisherEditForm.valid"
+          class="ml-10">
+          <mat-icon>add_task</mat-icon> Save & New
+        </button>
         <button mat-flat-button color="accent" class="ml-10" (click)="cancel()">
           <mat-icon>cancel</mat-icon> Cancel
         </button>
       </mat-card-actions>
     </mat-card>
   `,
-    styles: [
-        `
+  styles: [
+    `
       /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
       mat-card {
         margin: 30px;
@@ -79,7 +81,7 @@ import { PublisherFacade } from '../shared/facades/publisher.facade';
         margin-left: 10px;
       }
     `,
-    ]
+  ],
 })
 export default class PublisherEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
@@ -87,34 +89,35 @@ export default class PublisherEditComponent implements OnInit {
   readonly #publisherStore = inject(PublisherFacade);
 
   protected readonly id = input<string>();
-
-  #isNew = true;
-  #publisher = <Publisher>{};
+  readonly #isNew = signal(true);
+  readonly #publisher = resource<Publisher, string>({
+    request: this.id,
+    loader: async ({ request: id }) => {
+      if (id === 'new') return { name: '' };
+      const publisher = await this.#publisherStore.getById(+id);
+      this.loadFormValues(publisher);
+      return publisher;
+    },
+  });
   protected publisherEditForm!: FormGroup;
 
   ngOnInit() {
-    this.publisherEditForm = this.#fb.group({
-      name: ['', Validators.required],
-    });
-
-    if (this.id() !== 'new' && this.id() != undefined) {
-      this.#isNew = false;
-      this.loadFormValues(+this.id());
+    this.publisherEditForm = this.#fb.group({ name: ['', Validators.required] });
+    if (this.id() !== 'new' || this.id() == undefined) {
+      this.#isNew.set(false);
     }
   }
 
-  protected async loadFormValues(id: number) {
-    const publisher = await this.#publisherStore.getById(id);
-    this.#publisher = publisher;
+  protected loadFormValues(publisher: Publisher) {
     this.publisherEditForm?.get('name')?.setValue(publisher.name);
   }
 
   protected save() {
-    this.#publisher.name = this.publisherEditForm.controls['name'].value;
-    if (this.#isNew) {
-      this.#publisherStore.add(this.#publisher);
+    this.#publisher.value().name = this.publisherEditForm.controls['name'].value;
+    if (this.#isNew()) {
+      this.#publisherStore.add(this.#publisher.value());
     } else {
-      this.#publisherStore.update(this.#publisher);
+      this.#publisherStore.update(this.#publisher.value());
     }
     this.#location.back();
   }
@@ -123,20 +126,17 @@ export default class PublisherEditComponent implements OnInit {
     this.#location.back();
   }
 
-  private saveNew() {
-    this.#publisher.name = this.publisherEditForm.controls['name'].value;
-    if (this.#isNew) {
-      this.#publisherStore.add(this.#publisher);
+  protected saveNew() {
+    this.#publisher.value().name = this.publisherEditForm.controls['name'].value;
+    if (this.#isNew()) {
+      this.#publisherStore.add(this.#publisher.value());
     } else {
-      this.#publisherStore.update(this.#publisher);
+      this.#publisherStore.update(this.#publisher.value());
     }
 
-    // create new publisher object and set publisher name to blank
-    this.#publisher = {
-      name: '',
-    };
-    this.publisherEditForm.patchValue({
-      publisher: this.#publisher.name,
-    });
+    // clear publisher object, clear form object, reset flag to new
+    this.#publisher.set({ name: '' });
+    this.publisherEditForm.patchValue({ name: '' });
+    this.#isNew.set(true);
   }
 }

@@ -14,6 +14,16 @@ export class PublisherFacade {
   });
 
   public readonly publishers = computed(() => this.#publishers.value());
+  sortedPublishers = computed(() => {
+    let sorted = this.#publishers.value();
+    if (!sorted || sorted.length === 0) return [];
+    sorted.sort((a, b) => {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
+    return sorted;
+  });
 
   public async add(publisher: Publisher): Promise<Publisher | undefined> {
     const newTitle = await this.#publisherService.add(publisher);

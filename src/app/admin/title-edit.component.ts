@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, input, signal } from '@angular/core';
+import { Component, OnInit, inject, input, linkedSignal, resource, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
@@ -138,11 +138,28 @@ export default class TitleEditComponent implements OnInit {
   readonly #titleStore = inject(TitleFacade);
 
   protected readonly id = input<string>();
-
-  protected readonly publishers = this.#publisherStore.publishers;
-  protected readonly filteredPublishers = signal<Publisher[]>([]);
-  #isNew = true;
-  #title = <Title>{};
+  readonly #isNew = signal(true);
+  protected readonly publisherFilter = signal<string>('');
+  protected readonly publishers = this.#publisherStore.sortedPublishers;
+  protected readonly filteredPublishers = linkedSignal({
+    source: () => {
+      this.publishers(), this.publisherFilter();
+    },
+    computation: () => {
+      return this.publisherFilter() == ''
+        ? this.publishers()
+        : this.publishers().filter((r) => r.name.toLocaleLowerCase().startsWith(this.publisherFilter()));
+    },
+  });
+  readonly #title = resource<Title, string>({
+    request: this.id,
+    loader: async ({ request: id }) => {
+      if (id === 'new') return { publisher: '', title: '' };
+      const title = await this.#titleStore.getById(+id);
+      this.loadFormValues(title);
+      return title;
+    },
+  });
   protected titleEditForm!: FormGroup;
 
   async ngOnInit() {
@@ -150,24 +167,12 @@ export default class TitleEditComponent implements OnInit {
       publisher: ['', [Validators.required, this.autocompleteStringValidator()]],
       title: ['', Validators.required],
     });
-
-    let sorted = [...this.publishers()];
-    sorted.sort((a, b) => {
-      if (a.name < b.name) return -1;
-      if (a.name > b.name) return 1;
-      return 0;
-    });
-    this.filteredPublishers.set(sorted);
-
     if (this.id() !== 'new' && this.id() != undefined) {
-      this.#isNew = false;
-      this.loadFormValues(+this.id());
+      this.#isNew.set(false);
     }
   }
 
-  private async loadFormValues(id: number) {
-    const title = await this.#titleStore.getById(id);
-    this.#title = title;
+  private loadFormValues(title: Title) {
     this.titleEditForm.get('publisher')?.setValue(title.publisher);
     this.titleEditForm.get('title')?.setValue(title.title);
   }
@@ -176,38 +181,31 @@ export default class TitleEditComponent implements OnInit {
     this.#location.back();
   }
 
-  private getAutoCompleteDisplayValue(option: string): string {
-    return option;
-  }
-
   protected onAutocompleteKeyUp(searchText: string, options: Publisher[]): void {
-    const lowerSearchText = searchText?.toLowerCase();
-    this.filteredPublishers.set(
-      !lowerSearchText ? options : options.filter((r) => r.name.toLocaleLowerCase().startsWith(lowerSearchText))
-    );
+    this.publisherFilter.set(searchText?.toLowerCase());
   }
 
   protected save() {
     const { publisher, title } = this.titleEditForm.getRawValue();
-    this.#title.publisher = publisher;
-    this.#title.title = title;
+    this.#title.value().publisher = publisher;
+    this.#title.value().title = title;
 
     if (this.#isNew) {
-      this.#titleStore.add(this.#title);
+      this.#titleStore.add(this.#title.value());
     } else {
-      this.#titleStore.update(this.#title);
+      this.#titleStore.update(this.#title.value());
     }
     this.#location.back();
   }
 
   protected saveNew() {
     const { publisher, title } = this.titleEditForm.getRawValue();
-    this.#title.publisher = publisher;
-    this.#title.title = title;
+    this.#title.value().publisher = publisher;
+    this.#title.value().title = title;
     if (this.#isNew) {
-      this.#titleStore.add(this.#title);
+      this.#titleStore.add(this.#title.value());
     } else {
-      this.#titleStore.update(this.#title);
+      this.#titleStore.update(this.#title.value());
     }
 
     this.titleEditForm.patchValue({
@@ -216,15 +214,9 @@ export default class TitleEditComponent implements OnInit {
     });
 
     // create new title object and set publisher
-    this.#title = {
-      publisher: publisher,
-      title: '',
-    };
-
-    this.titleEditForm.patchValue({
-      publisher: this.#title.publisher,
-      title: this.#title.title,
-    });
+    this.#title.set({ publisher: publisher, title: '' });
+    this.titleEditForm.patchValue({ publisher: this.#title.value().publisher, title: '' });
+    this.#isNew.set(true);
   }
 
   private autocompleteStringValidator(): ValidatorFn {

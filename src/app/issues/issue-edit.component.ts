@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, input, signal } from '@angular/core';
+import { Component, OnInit, inject, input, linkedSignal, resource, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
@@ -186,21 +186,48 @@ import { TitleFacade } from '../shared/facades/title.facade';
 })
 export default class IssueEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
-  readonly #location = inject(Location);
   readonly #issueStore = inject(IssueFacade);
+  readonly #location = inject(Location);
   readonly #publisherStore = inject(PublisherFacade);
   readonly #titleStore = inject(TitleFacade);
 
   protected readonly id = input<string>();
+  readonly #isNew = signal(true);
+  readonly #issue = resource<Issue, string>({
+    request: this.id,
+    loader: async ({ request: id }) => {
+      if (id === 'new') return { publisher: '', title: '', issue: null, coverPrice: null, url: '' };
+      const issue = await this.#issueStore.getById(+id);
+      this.loadFormValues(issue);
+      return issue;
+    },
+  });
+  protected readonly publisherFilter = signal('');
+  protected readonly publishers = this.#publisherStore.sortedPublishers;
+  protected readonly filteredPublishers = linkedSignal({
+    source: () => {
+      this.publishers(), this.publisherFilter();
+    },
+    computation: () => {
+      return this.publisherFilter() == ''
+        ? this.publishers()
+        : this.publishers().filter((r) => r.name.toLocaleLowerCase().startsWith(this.publisherFilter()));
+    },
+  });
+  protected readonly titleFilter = signal('');
+  protected readonly titles = this.#titleStore.sortedTitles;
+  protected readonly filteredTitles = linkedSignal({
+    source: () => {
+      this.titles(), this.titleFilter();
+    },
+    computation: () => {
+      return this.titleFilter() == ''
+        ? this.titles()
+        : this.titles().filter((r) => r.title.toLocaleLowerCase().startsWith(this.titleFilter()));
+    },
+  });
 
-  protected readonly filteredPublishers = signal<Publisher[]>([]);
-  protected readonly filteredTitles = signal<Title[]>([]);
-  protected readonly issues = this.#issueStore.issues;
-  #isNew = true;
   protected issueEditForm!: FormGroup;
-  #issue = <Issue>{};
-  protected readonly publishers = this.#publisherStore.publishers;
-  protected readonly titles = this.#titleStore.titles;
 
   async ngOnInit() {
     this.issueEditForm = this.#fb.group({
@@ -210,28 +237,8 @@ export default class IssueEditComponent implements OnInit {
       coverPrice: ['', Validators.required],
       url: [''],
     });
-
-    //const sortedPublishers = orderBy(this.publishers(), 'name', 'asc');
-    let sortedPublishers = [...this.publishers()];
-    sortedPublishers.sort((a, b) => {
-      if (a.name < b.name) return -1;
-      if (a.name > b.name) return 1;
-      return 0;
-    });
-    this.filteredPublishers.set(sortedPublishers);
-
-    //const sortedTitles = orderBy(this.titles(), 'title', 'asc');
-    let sortedTitles = [...this.titles()];
-    sortedTitles.sort((a, b) => {
-      if (a.title < b.title) return -1;
-      if (a.title > b.title) return 1;
-      return 0;
-    });
-    this.filteredTitles.set(sortedTitles);
-
     if (this.id() !== 'new' && this.id() != undefined) {
-      this.#isNew = false;
-      await this.loadFormValues(+this.id());
+      this.#isNew.set(false);
     }
   }
 
@@ -267,13 +274,7 @@ export default class IssueEditComponent implements OnInit {
     this.#location.back();
   }
 
-  private getAutoCompleteDisplayValue(option: string): string {
-    return option;
-  }
-
-  private async loadFormValues(id: number) {
-    const issue = await this.#issueStore.getById(id);
-    this.#issue = issue;
+  private async loadFormValues(issue: Issue) {
     this.issueEditForm.patchValue({
       publisher: issue.publisher,
       title: issue.title,
@@ -284,65 +285,60 @@ export default class IssueEditComponent implements OnInit {
   }
 
   protected onAutocompleteKeyUpPublisher(searchText: string, options: Publisher[]): void {
-    const lowerSearchText = searchText?.toLowerCase();
-    this.filteredPublishers.set(
-      !lowerSearchText ? options : options.filter((r) => r.name.toLocaleLowerCase().startsWith(lowerSearchText))
-    );
+    this.publisherFilter.set(searchText?.toLowerCase());
   }
 
   protected onAutocompleteKeyUpTitle(searchText: string, options: Title[]): void {
-    const lowerSearchText = searchText?.toLowerCase();
-    this.filteredTitles.set(
-      !lowerSearchText ? options : options.filter((r) => r.title.toLocaleLowerCase().includes(lowerSearchText))
-    );
+    this.titleFilter.set(searchText?.toLowerCase());
   }
 
   protected save() {
     const { publisher, title, issue, coverPrice, url } = this.issueEditForm.getRawValue();
-    this.#issue.publisher = publisher;
-    this.#issue.title = title;
-    this.#issue.issue = issue;
-    this.#issue.coverPrice = coverPrice;
-    this.#issue.url = url;
+    this.#issue.value().publisher = publisher;
+    this.#issue.value().title = title;
+    this.#issue.value().issue = issue;
+    this.#issue.value().coverPrice = coverPrice;
+    this.#issue.value().url = url;
 
     if (this.#isNew) {
-      this.#issueStore.add(this.#issue);
+      this.#issueStore.add(this.#issue.value());
     } else {
-      this.#issueStore.update(this.#issue);
+      this.#issueStore.update(this.#issue.value());
     }
     this.#location.back();
   }
 
   protected saveNew() {
     const { publisher, title, issue, coverPrice, url } = this.issueEditForm.getRawValue();
-    this.#issue.publisher = publisher;
-    this.#issue.title = title;
-    this.#issue.issue = issue;
-    this.#issue.coverPrice = coverPrice;
-    this.#issue.url = url;
+    this.#issue.value().publisher = publisher;
+    this.#issue.value().title = title;
+    this.#issue.value().issue = issue;
+    this.#issue.value().coverPrice = coverPrice;
+    this.#issue.value().url = url;
 
     if (this.#isNew) {
-      this.#issueStore.add(this.#issue);
+      this.#issueStore.add(this.#issue.value());
     } else {
-      this.#issueStore.update(this.#issue);
+      this.#issueStore.update(this.#issue.value());
     }
 
     // create new issue object and set publisher, title and coverPrice values
-    this.#issue = {
+    this.#issue.set({
       publisher: publisher,
       title: title,
       coverPrice: coverPrice,
       url: url,
       //id: null,
       issue: null,
-    };
-    this.issueEditForm.patchValue({
-      publisher: this.#issue.publisher,
-      title: this.#issue.title,
-      coverPrice: this.#issue.coverPrice,
-      issue: this.#issue.issue,
-      url: this.#issue.url,
     });
+    this.issueEditForm.patchValue({
+      publisher: this.#issue.value().publisher,
+      title: this.#issue.value().title,
+      coverPrice: this.#issue.value().coverPrice,
+      issue: this.#issue.value().issue,
+      url: this.#issue.value().url,
+    });
+    this.#isNew.set(true);
   }
 
   protected publisherId(index: number, publisher: Publisher) {
