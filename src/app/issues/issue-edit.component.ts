@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, input, linkedSignal, resource, signal } from '@angular/core';
+import { Component, OnInit, computed, inject, input, resource, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
@@ -37,7 +37,7 @@ import { TitleFacade } from '../shared/facades/title.facade';
         @if (issueEditForm) {
         <form [formGroup]="issueEditForm">
           <!-- publishers dropdown -->
-          @if (publishers()) {
+          @if (filteredPublishers()) {
           <mat-form-field appearance="outline">
             <mat-label for="publisher">Publisher</mat-label>
             <input
@@ -46,7 +46,7 @@ import { TitleFacade } from '../shared/facades/title.facade';
               #inputPublisher
               formControlName="publisher"
               [matAutocomplete]="publisherAuto"
-              (keyup)="onAutocompleteKeyUpPublisher(inputPublisher.value, publishers())" />
+              (keyup)="onAutocompleteKeyUpPublisher(inputPublisher.value, filteredPublishers())" />
             <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
               @for (publisher of filteredPublishers(); track publisher.id) {
               <mat-option [value]="publisher.name">
@@ -67,7 +67,7 @@ import { TitleFacade } from '../shared/facades/title.facade';
           }
 
           <!-- titles dropdown -->
-          @if (titles()) {
+          @if (filteredTitles()) {
           <mat-form-field appearance="outline">
             <mat-label for="title">Title</mat-label>
             <input
@@ -76,7 +76,7 @@ import { TitleFacade } from '../shared/facades/title.facade';
               #inputTitle
               formControlName="title"
               [matAutocomplete]="titleAuto"
-              (keyup)="onAutocompleteKeyUpTitle(inputTitle.value, titles())" />
+              (keyup)="onAutocompleteKeyUpTitle(inputTitle.value, filteredTitles())" />
             <mat-autocomplete #titleAuto="matAutocomplete" autoActiveFirstOption>
               @for (title of filteredTitles(); track title.id) {
               <mat-option [value]="title.title">
@@ -203,30 +203,19 @@ export default class IssueEditComponent implements OnInit {
     },
   });
   protected readonly publisherFilter = signal('');
-  protected readonly publishers = this.#publisherStore.sortedPublishers;
-  protected readonly filteredPublishers = linkedSignal({
-    source: () => {
-      this.publishers(), this.publisherFilter();
-    },
-    computation: () => {
-      return this.publisherFilter() == ''
-        ? this.publishers()
-        : this.publishers().filter((r) => r.name.toLocaleLowerCase().startsWith(this.publisherFilter()));
-    },
+  readonly #publishers = this.#publisherStore.sortedPublishers;
+  protected readonly filteredPublishers = computed(() => {
+    return this.publisherFilter() == ''
+      ? this.#publishers()
+      : this.#publishers().filter((r) => r.name.toLocaleLowerCase().startsWith(this.publisherFilter()));
   });
   protected readonly titleFilter = signal('');
-  protected readonly titles = this.#titleStore.sortedTitles;
-  protected readonly filteredTitles = linkedSignal({
-    source: () => {
-      this.titles(), this.titleFilter();
-    },
-    computation: () => {
-      return this.titleFilter() == ''
-        ? this.titles()
-        : this.titles().filter((r) => r.title.toLocaleLowerCase().startsWith(this.titleFilter()));
-    },
+  readonly #titles = this.#titleStore.sortedTitles;
+  protected readonly filteredTitles = computed(() => {
+    return this.titleFilter() == ''
+      ? this.#titles()
+      : this.#titles().filter((r) => r.title.toLocaleLowerCase().startsWith(this.titleFilter()));
   });
-
   protected issueEditForm!: FormGroup;
 
   async ngOnInit() {
@@ -248,7 +237,7 @@ export default class IssueEditComponent implements OnInit {
       if (control.value === '') {
         return null;
       }
-      selectedItem = this.publishers().find((publisher: Publisher) => publisher.name === control.value);
+      selectedItem = this.#publishers().find((publisher: Publisher) => publisher.name === control.value);
       if (selectedItem) {
         return null; /* valid option selected */
       }
@@ -262,7 +251,7 @@ export default class IssueEditComponent implements OnInit {
       if (control.value === '') {
         return null;
       }
-      selectedItem = this.titles().find((title: Title) => title.title === control.value);
+      selectedItem = this.#titles().find((title: Title) => title.title === control.value);
       if (selectedItem) {
         return null; /* valid option selected */
       }

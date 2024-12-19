@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, input, linkedSignal, resource, signal } from '@angular/core';
+import { Component, OnInit, computed, inject, input, resource, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
@@ -34,7 +34,7 @@ import { TitleFacade } from '../shared/facades/title.facade';
       <mat-card-content>
         @if (titleEditForm) {
         <form [formGroup]="titleEditForm">
-          @if (publishers()) {
+          @if (filteredPublishers()) {
           <mat-form-field appearance="outline">
             <mat-label>Publisher</mat-label>
             <input
@@ -43,7 +43,7 @@ import { TitleFacade } from '../shared/facades/title.facade';
               #inputPublisher
               formControlName="publisher"
               [matAutocomplete]="publisherAuto"
-              (keyup)="onAutocompleteKeyUp(inputPublisher.value, publishers())" />
+              (keyup)="onAutocompleteKeyUp(inputPublisher.value, filteredPublishers())" />
             <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
               @for (publisher of filteredPublishers(); track publisher.id) {
               <mat-option [value]="publisher.name">
@@ -140,16 +140,11 @@ export default class TitleEditComponent implements OnInit {
   protected readonly id = input<string>();
   readonly #isNew = signal(true);
   protected readonly publisherFilter = signal<string>('');
-  protected readonly publishers = this.#publisherStore.sortedPublishers;
-  protected readonly filteredPublishers = linkedSignal({
-    source: () => {
-      this.publishers(), this.publisherFilter();
-    },
-    computation: () => {
-      return this.publisherFilter() == ''
-        ? this.publishers()
-        : this.publishers().filter((r) => r.name.toLocaleLowerCase().startsWith(this.publisherFilter()));
-    },
+  readonly #publishers = this.#publisherStore.sortedPublishers;
+  protected readonly filteredPublishers = computed(() => {
+    return this.publisherFilter() == ''
+      ? this.#publishers()
+      : this.#publishers().filter((r) => r.name.toLocaleLowerCase().startsWith(this.publisherFilter()));
   });
   readonly #title = resource<Title, string>({
     request: this.id,
@@ -225,7 +220,7 @@ export default class TitleEditComponent implements OnInit {
       if (control.value === '') {
         return null;
       }
-      selectedItem = this.publishers().find((publisher: Publisher) => publisher.name === control.value);
+      selectedItem = this.#publishers().find((publisher: Publisher) => publisher.name === control.value);
       if (selectedItem) {
         return null; /* valid option selected */
       }
