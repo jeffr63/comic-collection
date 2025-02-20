@@ -5,9 +5,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
-    selector: 'app-admin',
-    imports: [MatButtonModule, MatGridListModule, MatCardModule, RouterLink],
-    template: `
+  selector: 'app-admin',
+  imports: [MatButtonModule, MatGridListModule, MatCardModule, RouterLink],
+  template: `
     <section>
       <div class="header">
         <h1 class="mat-display-2">Administration</h1>
@@ -21,7 +21,9 @@ import { Router, RouterLink } from '@angular/router';
             </mat-card-header>
             <mat-card-content>
               <p>Pre-selections for the Publisher field on Issue and Title edit forms.</p>
-              <button mat-flat-button color="primary" class="center" routerLink="/admin/publishers">Edit Publishers</button>
+              <button mat-flat-button color="primary" class="center" routerLink="/admin/publishers">
+                Edit Publishers
+              </button>
             </mat-card-content>
           </mat-card>
         </mat-grid-tile>
@@ -52,9 +54,8 @@ import { Router, RouterLink } from '@angular/router';
       </mat-grid-list>
     </section>
   `,
-    styles: [
-        `
-      /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
+  styles: [
+    `
       mat-card {
         width: 80%;
         margin: 0 auto;
@@ -67,7 +68,7 @@ import { Router, RouterLink } from '@angular/router';
         margin: 10px;
       }
     `,
-    ]
+  ],
 })
 export default class AdminComponent {
   protected readonly router = inject(Router);

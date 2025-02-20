@@ -59,7 +59,6 @@ import { PublisherDataService } from '../shared/services/publisher-data.service'
   `,
   styles: [
     `
-      /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
       mat-card {
         margin: 30px;
         padding-left: 15px;
