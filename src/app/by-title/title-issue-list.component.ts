@@ -4,14 +4,14 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
 
-import { AuthFacade } from '../shared/facades/auth.facade';
+import { AuthDataService } from '../shared/services/auth-data.service';
 import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { IssueFacade } from '../shared/facades/issue.facade';
+import { IssueDataService } from '../shared/services/issue-data.service';
 import { ModalDataService } from '../shared/modals/modal-data.service';
 import { Title } from '../shared/models/title';
-import { TitleFacade } from '../shared/facades/title.facade';
+import { TitleDataService } from '../shared/services/title-data.service';
 
 @Component({
   selector: 'app-title-issue-list',
@@ -47,12 +47,12 @@ import { TitleFacade } from '../shared/facades/title.facade';
   ],
 })
 export default class TitleIssueListComponent implements OnInit {
-  readonly #authStore = inject(AuthFacade);
+  readonly #authStore = inject(AuthDataService);
   readonly #dialog = inject(MatDialog);
-  readonly #issueStore = inject(IssueFacade);
+  readonly #issueStore = inject(IssueDataService);
   readonly #modalDataService = inject(ModalDataService);
   readonly #router = inject(Router);
-  readonly #titleStore = inject(TitleFacade);
+  readonly #titleStore = inject(TitleDataService);
 
   public id = input<string>();
 
@@ -117,7 +117,7 @@ export default class TitleIssueListComponent implements OnInit {
   }
 
   public async loadData(id: number) {
-    const title = <Title>(await this.#titleStore.getById(id));
+    const title = <Title>await this.#titleStore.getById(id);
     this.title.set(title.title);
   }
 

@@ -1,20 +1,17 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 import { AuthToken } from '../models/auth';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthFacade {
-  readonly #authService = inject(AuthService);
-
+export class AuthDataService {
   readonly #isAdmin = signal(false);
   readonly #isLoggedIn = signal(false);
   public readonly isLoggedIn = this.#isLoggedIn.asReadonly();
   public readonly isLoggedInAsAdmin = computed(() => this.#isLoggedIn() && this.#isAdmin());
 
   public async login(email: string, password: string) {
-    const response = await this.#authService.login(email, password);
+    const response = await this.userLogin(email, password);
 
     // login successful if there's a jwt token in the response and if that token is valid
     if (response && response.accessToken) {
@@ -72,5 +69,17 @@ export class AuthFacade {
         .join('')
     );
     return JSON.parse(jsonPayload);
+  }
+
+  public async userLogin(email: string, password: string) {
+    const body = JSON.stringify({ email: email, password: password });
+    const res = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: body,
+    });
+    return await res.json();
   }
 }

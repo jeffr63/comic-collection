@@ -1,16 +1,18 @@
-import { computed, inject, Injectable, resource, signal } from '@angular/core';
+import { computed, inject, Injectable, resource } from '@angular/core';
 
+import { DataService } from './data.service';
 import { Issue, IssueData } from '../models/issue';
-import { IssueService } from '../services/issue.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class IssueFacade {
-  readonly #issueService = inject(IssueService);
+export class IssueDataService {
+  readonly #dataService = inject(DataService);
+
+  readonly #issuesUrl = 'http://localhost:3000/issues';
 
   readonly #issues = resource({
-    loader: async () => await this.#issueService.getAll(),
+    loader: async () => await this.#dataService.getAll<Issue[]>(this.#issuesUrl),
   });
 
   public readonly issues = computed(() => this.#issues.value());
@@ -18,26 +20,26 @@ export class IssueFacade {
   public readonly titles = computed(() => this.getByTitleValue(this.#issues.value()));
 
   public async add(issue: Issue): Promise<Issue | undefined> {
-    const newIssue = await this.#issueService.add(issue);
+    const newIssue = await this.#dataService.add<Issue>(issue, this.#issuesUrl);
     this.#issues.reload();
     return newIssue;
   }
 
   public async delete(id: number) {
-    await this.#issueService.delete(id);
+    await this.#dataService.delete(id, this.#issuesUrl);
     this.#issues.reload();
   }
 
   public async getById(id: number): Promise<Issue | undefined> {
-    return await this.#issueService.getById(id);
+    return await this.#dataService.getById<Issue>(id, this.#issuesUrl);
   }
 
   public async search(term: string): Promise<Issue[]> {
-     return await this.#issueService.search(term);
+    return await this.#dataService.search<Issue[]>(term, this.#issuesUrl);
   }
 
   public async update(issue: Issue): Promise<Issue | undefined> {
-    const response = await this.#issueService.update(issue);
+    const response = await this.#dataService.update<Issue>(issue.id, issue, this.#issuesUrl);
     this.#issues.reload();
     return response;
   }

@@ -1,17 +1,16 @@
 import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthFacade } from '../shared/facades/auth.facade';
+import { AuthDataService } from '../shared/services/auth-data.service';
 import { Column } from '../shared/models/column';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { Publisher } from '../shared/models/publisher';
-import { PublisherFacade } from '../shared/facades/publisher.facade';
-import { TitleFacade } from '../shared/facades/title.facade';
+import { PublisherDataService } from '../shared/services/publisher-data.service';
+import { TitleDataService } from '../shared/services/title-data.service';
 
 @Component({
-    selector: 'app-publisher-title-list',
-    imports: [DisplayTableComponent],
-    template: ` <section class="mt-5">
+  selector: 'app-publisher-title-list',
+  imports: [DisplayTableComponent],
+  template: ` <section class="mt-5">
     @if (titles()) {
     <app-display-table
       [includeAdd]="false"
@@ -26,8 +25,8 @@ import { TitleFacade } from '../shared/facades/title.facade';
       (open)="open($event)" />
     }
   </section>`,
-    styles: [
-        `
+  styles: [
+    `
       table {
         width: 100%;
       }
@@ -35,13 +34,13 @@ import { TitleFacade } from '../shared/facades/title.facade';
         margin: 10px 20px;
       }
     `,
-    ]
+  ],
 })
 export default class PublisherTitleListComponent implements OnInit {
-  readonly #authStore = inject(AuthFacade);
-  readonly #publisherStore = inject(PublisherFacade);
+  readonly #authStore = inject(AuthDataService);
+  readonly #publisherStore = inject(PublisherDataService);
   readonly #router = inject(Router);
-  readonly #titleStore = inject(TitleFacade);
+  readonly #titleStore = inject(TitleDataService);
 
   protected readonly id = input<string>();
   protected readonly isAuthenticated = this.#authStore.isLoggedIn;

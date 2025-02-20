@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { take } from 'rxjs';
 
-import { AuthFacade } from '../shared/facades/auth.facade';
+import { AuthDataService } from '../shared/services/auth-data.service';
 import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { IssueFacade } from '../shared/facades/issue.facade';
+import { IssueDataService } from '../shared/services/issue-data.service';
 import { ModalDataService } from '../shared/modals/modal-data.service';
 
 @Component({
@@ -42,9 +42,9 @@ import { ModalDataService } from '../shared/modals/modal-data.service';
   ],
 })
 export default class IssueAllListComponent {
-  readonly #authStore = inject(AuthFacade);
+  readonly #authStore = inject(AuthDataService);
   readonly #dialog = inject(MatDialog);
-  readonly #issueStore = inject(IssueFacade);
+  readonly #issueStore = inject(IssueDataService);
   readonly #modalDataService = inject(ModalDataService);
   readonly #router = inject(Router);
 

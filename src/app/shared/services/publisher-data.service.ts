@@ -1,16 +1,18 @@
 import { computed, inject, Injectable, resource, signal } from '@angular/core';
 
+import { DataService } from './data.service';
 import { Publisher } from '../models/publisher';
-import { PublisherService } from '../services/publisher.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class PublisherFacade {
-  readonly #publisherService = inject(PublisherService);
+export class PublisherDataService {
+  readonly #dataService = inject(DataService);
+
+  #publishersUrl = 'http://localhost:3000/publishers';
 
   #publishers = resource({
-    loader: async () => await this.#publisherService.getAll(),
+    loader: async () => await this.#dataService.getAll<Publisher[]>(this.#publishersUrl),
   });
 
   public readonly publishers = computed(() => this.#publishers.value());
@@ -26,26 +28,26 @@ export class PublisherFacade {
   });
 
   public async add(publisher: Publisher): Promise<Publisher | undefined> {
-    const newTitle = await this.#publisherService.add(publisher);
+    const newTitle = await this.#dataService.add<Publisher>(publisher, this.#publishersUrl);
     this.#publishers.reload();
     return newTitle;
   }
 
   public async delete(id: number) {
-    await this.#publisherService.delete(id);
+    await this.#dataService.delete(id, this.#publishersUrl);
     this.#publishers.reload();
   }
 
   public async getById(id: number): Promise<Publisher | undefined> {
-    return await this.#publisherService.getById(id);
+    return await this.#dataService.getById<Publisher>(id, this.#publishersUrl);
   }
 
   public async search(term: string): Promise<Publisher[]> {
-    return await this.#publisherService.search(term);
+    return await this.#dataService.search<Publisher[]>(term, this.#publishersUrl);
   }
 
   public async update(publisher: Publisher): Promise<Publisher | undefined> {
-    const response = await this.#publisherService.update(publisher);
+    const response = await this.#dataService.update(publisher.id, publisher, this.#publishersUrl);
     this.#publishers.reload();
     return response;
   }

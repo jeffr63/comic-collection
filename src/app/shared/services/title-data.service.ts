@@ -1,15 +1,17 @@
 import { computed, inject, Injectable, resource, signal } from '@angular/core';
 import { Title } from '../models/title';
-import { TitleService } from '../services/title.service';
+import { DataService } from '../services/data.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class TitleFacade {
-  readonly #titleService = inject(TitleService);
+export class TitleDataService {
+  //readonly #titleService = inject(TitleService);
+  readonly #dataService = inject(DataService);
 
+  readonly #titlesUrl = 'http://localhost:3000/titles';
   readonly #titles = resource({
-    loader: async () => await this.#titleService.getAll(),
+    loader: async () => await this.#dataService.getAll<Title[]>(this.#titlesUrl),
   });
   sortedTitles = computed(() => {
     let sorted = this.#titles.value();
@@ -24,26 +26,26 @@ export class TitleFacade {
   public readonly titles = computed(() => this.#titles.value());
 
   public async add(title: Title): Promise<Title | undefined> {
-    const newTitle = await this.#titleService.add(title);
+    const newTitle = await this.#dataService.add<Title>(title, this.#titlesUrl);
     this.#titles.reload();
     return newTitle;
   }
 
   public async delete(id: number) {
-    await this.#titleService.delete(id);
+    await this.#dataService.delete(id, this.#titlesUrl);
     this.#titles.reload();
   }
 
   public async getById(id: number): Promise<Title | undefined> {
-    return await this.#titleService.getById(id);
+    return await this.#dataService.getById<Title>(id, this.#titlesUrl);
   }
 
   public async search(term: string): Promise<Title[]> {
-    return await this.#titleService.search(term);
+    return await this.#dataService.search<Title[]>(term, this.#titlesUrl);
   }
 
   public async update(title: Title): Promise<Title | undefined> {
-    const response = this.#titleService.update(title);
+    const response = await this.#dataService.update<Title>(title.id, title, this.#titlesUrl);
     this.#titles.reload();
     return response;
   }

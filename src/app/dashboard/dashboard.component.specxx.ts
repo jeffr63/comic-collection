@@ -9,7 +9,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { DashboardComponent } from './dashboard.component';
 import { fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData } from '../../testing/testing.data';
-import { IssueFacade } from '../shared/facades/issue.facade';
+import { IssueDataService } from '../shared/services/issue-data.service';
 
 /* Todo: fix issue with Jest and NgxChartsModule */
 
@@ -24,12 +24,10 @@ describe('DashboardComponent', () => {
     getAll: jest.fn(),
   };
 
-  
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [DashboardComponent, MatGridListModule, MatCardModule, NgxChartsModule],
-      providers: [{ provide: IssueFacade, useValue: issueFacadeStub }],
+      providers: [{ provide: IssueDataService, useValue: issueFacadeStub }],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
     fixture = TestBed.createComponent(DashboardComponent);

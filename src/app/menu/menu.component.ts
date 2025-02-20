@@ -7,13 +7,13 @@ import { Router, RouterLink } from '@angular/router';
 
 import { take } from 'rxjs';
 
-import { AuthFacade } from '../shared/facades/auth.facade';
+import { AuthDataService } from '../shared/services/auth-data.service';
 import { LoginComponent } from '../shared/modals/login.component';
 
 @Component({
-    selector: 'app-menu',
-    imports: [MatDialogModule, MatIconModule, MatToolbarModule, MatButtonModule, RouterLink],
-    template: `
+  selector: 'app-menu',
+  imports: [MatDialogModule, MatIconModule, MatToolbarModule, MatButtonModule, RouterLink],
+  template: `
     <mat-toolbar color="primary">
       <button mat-flat-button color="primary" routerLink="/">
         <span style="font-size:20px">Comic Collection</span>
@@ -37,16 +37,16 @@ import { LoginComponent } from '../shared/modals/login.component';
       }
     </mat-toolbar>
   `,
-    styles: [
-        `
+  styles: [
+    `
       div .nav-item {
         cursor: pointer;
       }
     `,
-    ]
+  ],
 })
 export class MenuComponent {
-  readonly #authStore = inject(AuthFacade);
+  readonly #authStore = inject(AuthDataService);
   readonly #dialog = inject(MatDialog);
   readonly #router = inject(Router);
 

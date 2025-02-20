@@ -13,7 +13,7 @@ import { of } from 'rxjs';
 import { describe, expect, jest } from '@jest/globals';
 
 import { MenuComponent } from './menu.component';
-import { AuthService } from '../shared/services/auth.service';
+import { AuthDataService } from '../shared/services/auth-data.service';
 
 describe('MenuComponent', () => {
   let fixture: ComponentFixture<MenuComponent>;
@@ -31,7 +31,7 @@ describe('MenuComponent', () => {
         RouterLink,
         NoopAnimationsModule,
       ],
-      providers: [provideRouter([]), MatDialog, AuthService],
+      providers: [provideRouter([]), MatDialog, AuthDataService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(MenuComponent);
@@ -45,7 +45,7 @@ describe('MenuComponent', () => {
   });
 
   it('should open a login dialog when login method is called', async () => {
-    const authService = TestBed.inject(AuthService);
+    const authService = TestBed.inject(AuthDataService);
     jest.spyOn(authService, 'login');
 
     component.login();
@@ -57,7 +57,7 @@ describe('MenuComponent', () => {
   });
 
   it('should load the login dialog with title of Login', async () => {
-    const authService = TestBed.inject(AuthService);
+    const authService = TestBed.inject(AuthDataService);
     jest.spyOn(authService, 'login');
 
     component.login();
@@ -68,7 +68,7 @@ describe('MenuComponent', () => {
   });
 
   it('should display two input fields with labels Email Address and Password', async () => {
-    const authService = TestBed.inject(AuthService);
+    const authService = TestBed.inject(AuthDataService);
     jest.spyOn(authService, 'login');
 
     component.login();
@@ -79,10 +79,10 @@ describe('MenuComponent', () => {
 
     const labels = document.getElementsByTagName('label');
 
-    const email = <HTMLLabelElement> labels[0];
+    const email = <HTMLLabelElement>labels[0];
     expect(email.textContent).toEqual('Email Address');
 
-    const password = <HTMLLabelElement> document.getElementsByTagName('label')[1];
+    const password = <HTMLLabelElement>document.getElementsByTagName('label')[1];
     expect(password.textContent).toEqual('Password');
   });
 });

@@ -1,40 +1,42 @@
 import { computed, inject, Injectable, resource, signal } from '@angular/core';
 import { User } from '../models/user';
-import { UserService } from '../services/user.service';
+import { DataService } from '../services/data.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UserFacade {
-  readonly #userService = inject(UserService);
+export class UserDataService {
+  readonly #dataService = inject(DataService);
+
+  readonly #usersUrl = 'http://localhost:3000/users';
 
   readonly #users = resource({
-    loader: async () => await this.#userService.getAll(),
+    loader: async () => await this.#dataService.getAll<User[]>(this.#usersUrl),
   });
 
   public readonly users = computed(() => this.#users.value());
 
   public async add(user: User): Promise<User | undefined> {
-    const newUser = await this.#userService.add(user);
+    const newUser = await this.#dataService.add<User>(user, this.#usersUrl);
     this.#users.reload();
     return newUser;
   }
 
   public async delete(id: number): Promise<void> {
-    await this.#userService.delete(id);
+    await this.#dataService.delete(id, this.#usersUrl);
     this.#users.reload();
   }
 
   public async getById(id: number): Promise<User | undefined> {
-    return await this.#userService.getById(id);
+    return await this.#dataService.getById(id, this.#usersUrl);
   }
 
   public async search(term: string): Promise<User[]> {
-    return await this.#userService.search(term);
+    return await this.#dataService.search<User[]>(term, this.#usersUrl);
   }
 
   public async update(user: User): Promise<User | undefined> {
-    const response = await this.#userService.update(user);
+    const response = await this.#dataService.update<User>(user.id, user, this.#usersUrl);
     this.#users.reload();
     return response;
   }

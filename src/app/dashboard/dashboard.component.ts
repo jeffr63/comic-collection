@@ -4,7 +4,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
-import { IssueFacade } from '../shared/facades/issue.facade';
+import { IssueDataService } from '../shared/services/issue-data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -51,7 +51,7 @@ import { IssueFacade } from '../shared/facades/issue.facade';
   styles: [],
 })
 export class DashboardComponent {
-  readonly #issueStore = inject(IssueFacade);
+  readonly #issueStore = inject(IssueDataService);
 
   issues = this.#issueStore.issues;
   publishers = this.#issueStore.publishers;

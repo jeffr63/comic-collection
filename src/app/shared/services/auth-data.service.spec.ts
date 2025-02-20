@@ -2,88 +2,95 @@ import { TestBed } from '@angular/core/testing';
 
 import { describe, expect, jest } from '@jest/globals';
 
-import { AuthFacade } from './auth.facade';
-import { AuthService } from '../services/auth.service';
+import { AuthDataService } from './auth-data.service';
 import { fakeAuthResponse, fakeAuthTokenEncoded, fakeAuthTokenEncodedExpired } from '../../../testing/testing.data';
 
-describe('AuthFacade', () => {
-  let facade: AuthFacade;
-
-  const authServiceStub = {
-    login: jest.fn((email: string, password: string) => {
-      return Promise.resolve(fakeAuthResponse);
-    }),
-  };
+describe('Authservice', () => {
+  let service: AuthDataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [{ provide: AuthService, useValue: authServiceStub }],
+      providers: [],
     });
-    facade = TestBed.inject(AuthFacade);
+    service = TestBed.inject(AuthDataService);
   });
 
-  it('creates a facade service', () => {
-    expect(facade).toBeTruthy();
+  it('creates a service', () => {
+    expect(service).toBeTruthy();
   });
 
   //login
   describe('login', () => {
     it('should call auth service login passing email and password', () => {
-      facade.login('email@test.com', '1234');
-      expect(authServiceStub.login).toBeCalledWith('email@test.com', '1234');
+      const userLoginSpy = jest.spyOn(service, 'userLogin').mockReturnValue(Promise.resolve(fakeAuthResponse));
+      service.login('email@test.com', '1234');
+      expect(userLoginSpy).toBeCalledWith('email@test.com', '1234');
     });
 
     it('should call parseJWT token', async () => {
-      const parseJWTspy = jest.spyOn(facade, 'parseJwt');
-      await facade.login('email@test.com', '1234');
+      const parseJWTspy = jest.spyOn(service, 'parseJwt');
+      const userLoginSpy = jest.spyOn(service, 'userLogin').mockReturnValue(Promise.resolve(fakeAuthResponse));
+      await service.login('email@test.com', '1234');
       expect(parseJWTspy).toBeCalledWith(fakeAuthResponse.accessToken);
     });
 
     it('shoud set local tct_auth local storage', async () => {
-      await facade.login('email@test.com', '1234');
+      const userLoginSpy = jest.spyOn(service, 'userLogin').mockReturnValue(Promise.resolve(fakeAuthResponse));
+      await service.login('email@test.com', '1234');
       const tct_auth = JSON.parse(localStorage.getItem('tct_auth'));
       expect(tct_auth.id).toBe(1);
     });
 
     it('should set the isLoggedIn signal value', async () => {
-      await facade.login('email@test.com', '1234');
-      expect(facade.isLoggedIn()).toBe(true);
+      const userLoginSpy = jest.spyOn(service, 'userLogin').mockReturnValue(Promise.resolve(fakeAuthResponse));
+      await service.login('email@test.com', '1234');
+      expect(service.isLoggedIn()).toBe(true);
     });
 
     it('should set the isLoggedInAsAdmin signal value', async () => {
-      await facade.login('email@test.com', '1234');
-      expect(facade.isLoggedInAsAdmin()).toBe(true);
+      const userLoginSpy = jest.spyOn(service, 'userLogin').mockReturnValue(Promise.resolve(fakeAuthResponse));
+      await service.login('email@test.com', '1234');
+      expect(service.isLoggedInAsAdmin()).toBe(true);
     });
 
     it('should not set login if invalid response from service', () => {
-      const login = jest
-        .spyOn(authServiceStub, 'login')
+      const userLoginSpy = jest
+        .spyOn(service, 'userLogin')
         .mockReturnValue(Promise.resolve({ accessToken: null, user: { email: '', name: '', role: '', id: 0 } }));
-      facade.logout();
-      facade.login('', '');
-      expect(facade.isLoggedIn()).toBe(false);
+      service.logout();
+      service.login('', '');
+      expect(service.isLoggedIn()).toBe(false);
     });
   });
 
   //logout
   describe('logout', () => {
     it('should remove the local store value', async () => {
-      await facade.login('email@test.com', '1234');
-      facade.logout();
+      const userLoginSpy = jest
+        .spyOn(service, 'userLogin')
+        .mockReturnValue(Promise.resolve({ accessToken: null, user: { email: '', name: '', role: '', id: 0 } }));
+      await service.login('email@test.com', '1234');
+      service.logout();
       const tct_auth = JSON.parse(localStorage.getItem('tct_auth'));
       expect(tct_auth).toBe(null);
     });
 
     it('should set isLoggedIn signal to false', async () => {
-      await facade.login('email@test.com', '1234');
-      facade.logout();
-      expect(facade.isLoggedIn()).toBe(false);
+      const userLoginSpy = jest
+        .spyOn(service, 'userLogin')
+        .mockReturnValue(Promise.resolve({ accessToken: null, user: { email: '', name: '', role: '', id: 0 } }));
+      await service.login('email@test.com', '1234');
+      service.logout();
+      expect(service.isLoggedIn()).toBe(false);
     });
 
     it('should set isLoggedInAsAdmin signal to false', async () => {
-      await facade.login('email@test.com', '1234');
-      facade.logout();
-      expect(facade.isLoggedInAsAdmin()).toBe(false);
+      const userLoginSpy = jest
+        .spyOn(service, 'userLogin')
+        .mockReturnValue(Promise.resolve({ accessToken: null, user: { email: '', name: '', role: '', id: 0 } }));
+      await service.login('email@test.com', '1234');
+      service.logout();
+      expect(service.isLoggedInAsAdmin()).toBe(false);
     });
   });
 
@@ -97,8 +104,8 @@ describe('AuthFacade', () => {
         expires: 2000000000,
       };
       localStorage.setItem('tct_auth', JSON.stringify(auth));
-      await facade.checkLogin();
-      expect(facade.isLoggedIn()).toBe(true);
+      await service.checkLogin();
+      expect(service.isLoggedIn()).toBe(true);
     });
 
     it('should call set isLoggedInAdmin signal to true if role is admin', async () => {
@@ -109,8 +116,8 @@ describe('AuthFacade', () => {
         expires: 2000000000,
       };
       localStorage.setItem('tct_auth', JSON.stringify(auth));
-      await facade.checkLogin();
-      expect(facade.isLoggedInAsAdmin()).toBe(true);
+      await service.checkLogin();
+      expect(service.isLoggedInAsAdmin()).toBe(true);
     });
 
     it('should call set isLoggedInAdmin signal to false if role is not admin', async () => {
@@ -121,12 +128,12 @@ describe('AuthFacade', () => {
         expires: 2000000000,
       };
       localStorage.setItem('tct_auth', JSON.stringify(auth));
-      await facade.checkLogin();
-      expect(facade.isLoggedInAsAdmin()).toBe(false);
+      await service.checkLogin();
+      expect(service.isLoggedInAsAdmin()).toBe(false);
     });
 
     it('should call logout if local storeage token is expired', async () => {
-      const logoutSpy = jest.spyOn(facade, 'logout');
+      const logoutSpy = jest.spyOn(service, 'logout');
       const auth = {
         token: fakeAuthTokenEncodedExpired,
         role: 'admin',
@@ -134,7 +141,7 @@ describe('AuthFacade', () => {
         expires: 1000000000,
       };
       localStorage.setItem('tct_auth', JSON.stringify(auth));
-      await facade.checkLogin();
+      await service.checkLogin();
       expect(logoutSpy).toBeCalled();
     });
   });
@@ -148,7 +155,7 @@ describe('AuthFacade', () => {
         exp: 2000000000,
         sub: '1',
       };
-      const token = facade.parseJwt(fakeAuthTokenEncoded);
+      const token = service.parseJwt(fakeAuthTokenEncoded);
       expect(token).toEqual(result);
     });
   });

@@ -4,12 +4,12 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
 
-import { AuthFacade } from '../shared/facades/auth.facade';
+import { AuthDataService } from '../shared/services/auth-data.service';
 import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
 import { ModalDataService } from '../shared/modals/modal-data.service';
-import { UserFacade } from '../shared/facades/user.facade';
+import { UserDataService } from '../shared/services/user-data.service';
 
 @Component({
   selector: 'app-user-list',
@@ -44,11 +44,11 @@ import { UserFacade } from '../shared/facades/user.facade';
   ],
 })
 export default class UserListComponent {
-  readonly #authStore = inject(AuthFacade);
+  readonly #authStore = inject(AuthDataService);
   readonly #dialog = inject(MatDialog);
   readonly #modalDataService = inject(ModalDataService);
   readonly #router = inject(Router);
-  readonly #userStore = inject(UserFacade);
+  readonly #userStore = inject(UserDataService);
 
   protected readonly isAuthenticated = this.#authStore.isLoggedInAsAdmin;
   protected readonly users = this.#userStore.users;

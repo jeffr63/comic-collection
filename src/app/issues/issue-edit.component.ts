@@ -11,11 +11,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
 import { Issue } from '../shared/models/issue';
-import { IssueFacade } from '../shared/facades/issue.facade';
+import { IssueDataService } from '../shared/services/issue-data.service';
 import { Publisher } from '../shared/models/publisher';
-import { PublisherFacade } from '../shared/facades/publisher.facade';
+import { PublisherDataService } from '../shared/services/publisher-data.service';
 import { Title } from '../shared/models/title';
-import { TitleFacade } from '../shared/facades/title.facade';
+import { TitleDataService } from '../shared/services/title-data.service';
 
 @Component({
   selector: 'app-issue-edit',
@@ -186,10 +186,10 @@ import { TitleFacade } from '../shared/facades/title.facade';
 })
 export default class IssueEditComponent implements OnInit {
   readonly #fb = inject(FormBuilder);
-  readonly #issueStore = inject(IssueFacade);
+  readonly #issueStore = inject(IssueDataService);
   readonly #location = inject(Location);
-  readonly #publisherStore = inject(PublisherFacade);
-  readonly #titleStore = inject(TitleFacade);
+  readonly #publisherStore = inject(PublisherDataService);
+  readonly #titleStore = inject(TitleDataService);
 
   protected readonly id = input<string>();
   readonly #isNew = signal(true);
