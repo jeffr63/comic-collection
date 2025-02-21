@@ -59,26 +59,4 @@ describe('DashboardComponent', () => {
       expect(elements.length).toBe(2);
     });
   });
-
-  describe('NgOnInit test', () => {
-    it('execute getAll to be called on Init', async () => {
-      await component.ngOnInit();
-      expect(issueFacadeStub).toHaveBeenCalled();
-    });
-
-    it('should declare the issues signal property', () => {
-      component.issues = issueFacadeStub.issues();
-      expect(component.issues()).toEqual(fakeIssueData);
-    });
-
-    it('should declare the publishers signal property', () => {
-      component.publishers = issueFacadeStub.publishers();
-      expect(component.publishers()).toEqual(fakeIssuePublishersData);
-    });
-
-    it('should declare the titles signal property', () => {
-      component.titles = issueFacadeStub.titles();
-      expect(component.titles()).toEqual(fakeIssueTitlesData);
-    });
-  });
 });

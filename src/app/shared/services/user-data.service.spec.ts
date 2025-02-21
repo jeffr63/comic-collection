@@ -2,17 +2,21 @@ import { TestBed } from '@angular/core/testing';
 
 import { describe, expect, jest } from '@jest/globals';
 
+import { DataService } from './data.service';
 import { fakeUser, fakeUserData } from '../../../testing/testing.data';
 import { User } from '../models/user';
 import { UserDataService } from './user-data.service';
-import { DataService } from './data.service';
 
 describe('UserDataService', () => {
   let service: UserDataService;
+
   const url = 'http://localhost:3000/users';
 
   const dataServiceStub = {
     add: jest.fn((data: User, url: string) => {
+      return fakeUser;
+    }),
+    addx: jest.fn((data: User, url: string) => {
       return fakeUser;
     }),
     delete: jest.fn((id: number, url: string) => {}),
@@ -44,9 +48,25 @@ describe('UserDataService', () => {
     expect(service).toBeTruthy();
   });
 
+  // initiazation
+  describe('initialization', () => {
+    it('should call the data service getAll method with passed url', () => {
+      TestBed.flushEffects();
+      expect(dataServiceStub.getAll).toBeCalledWith(url);
+    });
+
+    // it('should initialize users signal with values', async () => {
+    //   const service1 = TestBed.inject(UserDataService);
+    //   const dataService1 = TestBed.inject(DataService);
+    //   const getAllSpy = jest.spyOn(dataService1, 'getAll').mockReturnValue(Promise.resolve(fakeUserData));
+    //   TestBed.flushEffects();
+    //   expect(service1.users()).toBe(fakeUserData);
+    // });
+  });
+
   //add
   describe('add', () => {
-    it('should call user service add with passed user', async () => {
+    it('should call data service add method with passed user and url', async () => {
       await service.add(fakeUser);
       expect(dataServiceStub.add).toBeCalledWith(fakeUser, url);
     });

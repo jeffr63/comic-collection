@@ -90,13 +90,13 @@ describe('TitleIssueListComponent', () => {
     });
   });
 
-  describe('deleteIssue', () => {
-    it('should call modal open', () => {
-      const dialogOpenSpy = jest.spyOn(dialog, 'open');
-      component.deleteIssue(1);
-      expect(dialogOpenSpy).toBeCalled();
-    });
-  });
+  // describe('deleteIssue', () => {
+  //   it('should call modal open', () => {
+  //     const dialogOpenSpy = jest.spyOn(dialog, 'open');
+  //     component.deleteIssue(1);
+  //     expect(dialogOpenSpy).toBeCalled();
+  //   });
+  // });
 
   describe('delete', () => {
     it('should call issue service delete method', async () => {

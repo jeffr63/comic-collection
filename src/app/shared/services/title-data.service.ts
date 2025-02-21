@@ -10,9 +10,13 @@ export class TitleDataService {
   readonly #dataService = inject(DataService);
 
   readonly #titlesUrl = 'http://localhost:3000/titles';
+
   readonly #titles = resource({
     loader: async () => await this.#dataService.getAll<Title[]>(this.#titlesUrl),
   });
+
+  public readonly titles = this.#titles.value.asReadonly();
+
   sortedTitles = computed(() => {
     let sorted = this.#titles.value();
     if (!sorted || sorted.length === 0) return [];
@@ -23,7 +27,6 @@ export class TitleDataService {
     });
     return sorted;
   });
-  public readonly titles = computed(() => this.#titles.value());
 
   public async add(title: Title): Promise<Title | undefined> {
     const newTitle = await this.#dataService.add<Title>(title, this.#titlesUrl);

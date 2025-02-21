@@ -14,7 +14,7 @@ export class UserDataService {
     loader: async () => await this.#dataService.getAll<User[]>(this.#usersUrl),
   });
 
-  public readonly users = computed(() => this.#users.value());
+  public readonly users = this.#users.value.asReadonly();
 
   public async add(user: User): Promise<User | undefined> {
     const newUser = await this.#dataService.add<User>(user, this.#usersUrl);

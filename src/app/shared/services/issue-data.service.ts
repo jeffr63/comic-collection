@@ -15,8 +15,10 @@ export class IssueDataService {
     loader: async () => await this.#dataService.getAll<Issue[]>(this.#issuesUrl),
   });
 
-  public readonly issues = computed(() => this.#issues.value());
+  public readonly issues = this.#issues.value.asReadonly();
+
   public readonly publishers = computed(() => this.getByPublisherValue(this.#issues.value()));
+
   public readonly titles = computed(() => this.getByTitleValue(this.#issues.value()));
 
   public async add(issue: Issue): Promise<Issue | undefined> {

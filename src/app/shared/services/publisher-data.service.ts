@@ -15,7 +15,8 @@ export class PublisherDataService {
     loader: async () => await this.#dataService.getAll<Publisher[]>(this.#publishersUrl),
   });
 
-  public readonly publishers = computed(() => this.#publishers.value());
+  public readonly publishers = this.#publishers.value.asReadonly();
+
   sortedPublishers = computed(() => {
     let sorted = this.#publishers.value();
     if (!sorted || sorted.length === 0) return [];

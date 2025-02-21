@@ -6,8 +6,11 @@ import { AuthToken } from '../models/auth';
 })
 export class AuthDataService {
   readonly #isAdmin = signal(false);
+
   readonly #isLoggedIn = signal(false);
+
   public readonly isLoggedIn = this.#isLoggedIn.asReadonly();
+
   public readonly isLoggedInAsAdmin = computed(() => this.#isLoggedIn() && this.#isAdmin());
 
   public async login(email: string, password: string) {
