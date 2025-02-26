@@ -4,7 +4,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
-import { IssueDataService } from '../shared/services/issue-data.service';
+import { IssueDataService } from '../shared/services/issue/issue-data.service';
 
 @Component({
   selector: 'app-dashboard',

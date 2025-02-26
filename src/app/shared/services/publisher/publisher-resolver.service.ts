@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, ResolveFn } from '@angular/router';
 
-import { PublisherDataService } from '../services/publisher-data.service';
+import { PublisherDataService } from './publisher-data.service';
 
 export const publisherNameResolver: ResolveFn<string> = async (route: ActivatedRouteSnapshot) => {
   const id = route.paramMap.get('id');

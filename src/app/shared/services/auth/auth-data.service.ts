@@ -1,5 +1,5 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
-import { AuthToken } from '../models/auth';
+import { AuthToken } from '../../models/auth';
 
 @Injectable({
   providedIn: 'root',

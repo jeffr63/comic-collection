@@ -1,6 +1,6 @@
 import { computed, inject, Injectable, resource, signal } from '@angular/core';
-import { Title } from '../models/title';
-import { DataService } from '../services/data.service';
+import { Title } from '../../models/title';
+import { DataService } from '../common/data.service';
 
 @Injectable({
   providedIn: 'root',

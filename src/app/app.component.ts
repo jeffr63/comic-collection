@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { AuthDataService } from './shared/services/auth-data.service';
+import { AuthDataService } from './shared/services/auth/auth-data.service';
 import { MenuComponent } from './menu/menu.component';
 
 @Component({

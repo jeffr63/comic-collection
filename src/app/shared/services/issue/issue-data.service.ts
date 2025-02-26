@@ -1,7 +1,7 @@
 import { computed, inject, Injectable, resource } from '@angular/core';
 
-import { DataService } from './data.service';
-import { Issue, IssueData } from '../models/issue';
+import { DataService } from '../common/data.service';
+import { Issue, IssueData } from '../../models/issue';
 
 @Injectable({
   providedIn: 'root',

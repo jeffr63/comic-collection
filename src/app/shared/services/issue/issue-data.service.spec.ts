@@ -2,10 +2,15 @@ import { TestBed } from '@angular/core/testing';
 
 import { describe, expect, jest } from '@jest/globals';
 
-import { DataService } from './data.service';
-import { fakeIssue, fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData } from '../../../testing/testing.data';
+import { DataService } from '../common/data.service';
+import {
+  fakeIssue,
+  fakeIssueData,
+  fakeIssuePublishersData,
+  fakeIssueTitlesData,
+} from '../../../../testing/testing.data';
 import { IssueDataService } from './issue-data.service';
-import { Issue } from '../models/issue';
+import { Issue } from '../../models/issue';
 
 describe('IssueDataService', () => {
   let service: IssueDataService;

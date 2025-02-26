@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, ResolveFn } from '@angular/router';
 
-import { IssueDataService } from '../services/issue-data.service';
+import { IssueDataService } from './issue-data.service';
 
 export const issueTitleResolver: ResolveFn<string> = async (route: ActivatedRouteSnapshot) => {
   const id = route.paramMap.get('id');

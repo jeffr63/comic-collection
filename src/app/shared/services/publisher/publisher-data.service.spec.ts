@@ -2,10 +2,10 @@ import { TestBed } from '@angular/core/testing';
 
 import { describe, expect, jest } from '@jest/globals';
 
-import { fakePublisher, fakePublisherData } from '../../../testing/testing.data';
+import { fakePublisher, fakePublisherData } from '../../../../testing/testing.data';
 import { PublisherDataService } from './publisher-data.service';
-import { Publisher } from '../models/publisher';
-import { DataService } from './data.service';
+import { Publisher } from '../../models/publisher';
+import { DataService } from '../common/data.service';
 
 describe('Publisherservice', () => {
   let service: PublisherDataService;

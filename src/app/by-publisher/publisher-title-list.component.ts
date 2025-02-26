@@ -1,11 +1,11 @@
 import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthDataService } from '../shared/services/auth-data.service';
+import { AuthDataService } from '../shared/services/auth/auth-data.service';
 import { Column } from '../shared/models/column';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { PublisherDataService } from '../shared/services/publisher-data.service';
-import { TitleDataService } from '../shared/services/title-data.service';
+import { PublisherDataService } from '../shared/services/publisher/publisher-data.service';
+import { TitleDataService } from '../shared/services/title/title-data.service';
 
 @Component({
   selector: 'app-publisher-title-list',

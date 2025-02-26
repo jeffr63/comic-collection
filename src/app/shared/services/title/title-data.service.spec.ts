@@ -2,8 +2,8 @@ import { TestBed } from '@angular/core/testing';
 
 import { describe, expect, jest } from '@jest/globals';
 
-import { DataService } from './data.service';
-import { fakeTitle, fakeTitleData } from '../../../testing/testing.data';
+import { DataService } from '../common/data.service';
+import { fakeTitle, fakeTitleData } from '../../../../testing/testing.data';
 import { TitleDataService } from './title-data.service';
 import { Title } from '@angular/platform-browser';
 

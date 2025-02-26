@@ -4,12 +4,12 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { take } from 'rxjs';
 
-import { AuthDataService } from '../shared/services/auth-data.service';
-import { Column } from '../shared/models/column';
-import { DeleteComponent } from '../shared/modals/delete.component';
-import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { ModalDataService } from '../shared/modals/modal-data.service';
-import { UserDataService } from '../shared/services/user-data.service';
+import { AuthDataService } from '../../shared/services/auth/auth-data.service';
+import { Column } from '../../shared/models/column';
+import { DeleteComponent } from '../../shared/modals/delete.component';
+import { DisplayTableComponent } from '../../shared/display-table/display-table.component';
+import { ModalDataService } from '../../shared/modals/modal-data.service';
+import { UserDataService } from '../../shared/services/user/user-data.service';
 
 @Component({
   selector: 'app-user-list',

@@ -34,7 +34,7 @@ import { Column } from '../models/column';
 
     <!-- Add Button -->
     @if (includeAdd() && isAuthenticated()) {
-    <a mat-mini-fab color="primary" title="Add new" aria-label="Add new" class="ml-5 fl1" (click)="emitAdd()">
+    <a mat-mini-fab color="primary" title="Add new" aria-label="Add new" class="ml-5 fl1" (click)="add.emit()">
       <mat-icon>add</mat-icon>
     </a>
     }
@@ -90,10 +90,10 @@ import { Column } from '../models/column';
           style="min-width: {{ column.width }}"></th>
         <td mat-cell *matCellDef="let element">
           @if (isAuthenticated()) {
-          <button mat-icon-button color="primary" (click)="emitEdit(element.id)" title="Edit">
+          <button mat-icon-button color="primary" (click)="edit.emit(element.id)" title="Edit">
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-icon-button color="warn" (click)="emitDelete(element.id)" title="Delete">
+          <button mat-icon-button color="warn" (click)="delete.emit(element.id)" title="Delete">
             <mat-icon>delete</mat-icon>
           </button>
           }
@@ -105,7 +105,7 @@ import { Column } from '../models/column';
           [class.text-right]="column.position === 'right'"
           style="min-width: {{ column.width }}"></th>
         <td mat-cell *matCellDef="let element">
-          <button mat-icon-button color="primary" (click)="emitOpen(element.id)" title="View">
+          <button mat-icon-button color="primary" (click)="open.emit(element.id)" title="View">
             <mat-icon>view_list</mat-icon>
           </button>
         </td>
@@ -211,22 +211,6 @@ export class DisplayTableComponent<TData> implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (<HTMLInputElement> event.target).value;
     this.tableDataSource.filter = filterValue.trim().toLowerCase();
-  }
-
-  emitAdd() {
-    this.add.emit();
-  }
-
-  emitDelete(id: number) {
-    this.delete.emit(id);
-  }
-
-  emitEdit(id: number) {
-    this.edit.emit(id);
-  }
-
-  emitOpen(id: number) {
-    this.open.emit(id);
   }
 
   setTableDataSource(data: TData[]) {

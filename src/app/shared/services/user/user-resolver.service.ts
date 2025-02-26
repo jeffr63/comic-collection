@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, ResolveFn } from '@angular/router';
 
-import { UserDataService } from '../services/user-data.service';
+import { UserDataService } from './user-data.service';
 
 export const userNameResolver: ResolveFn<string> = async (route: ActivatedRouteSnapshot) => {
   const id = route.paramMap.get('id');

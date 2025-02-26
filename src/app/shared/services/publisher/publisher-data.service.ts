@@ -1,7 +1,7 @@
 import { computed, inject, Injectable, resource, signal } from '@angular/core';
 
-import { DataService } from './data.service';
-import { Publisher } from '../models/publisher';
+import { DataService } from '../common/data.service';
+import { Publisher } from '../../models/publisher';
 
 @Injectable({
   providedIn: 'root',

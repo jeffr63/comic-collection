@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { describe, expect, jest } from '@jest/globals';
 
 import { AuthDataService } from './auth-data.service';
-import { fakeAuthResponse, fakeAuthTokenEncoded, fakeAuthTokenEncodedExpired } from '../../../testing/testing.data';
+import { fakeAuthResponse, fakeAuthTokenEncoded, fakeAuthTokenEncodedExpired } from '../../../../testing/testing.data';
 
 describe('Authservice', () => {
   let service: AuthDataService;

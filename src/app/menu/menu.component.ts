@@ -1,49 +1,23 @@
 import { Component, inject } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { Router, RouterLink } from '@angular/router';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 import { take } from 'rxjs';
 
-import { AuthDataService } from '../shared/services/auth-data.service';
+import { AuthDataService } from '../shared/services/auth/auth-data.service';
 import { LoginComponent } from '../shared/modals/login.component';
+import { MenuToolbarComponent } from './menu-toolbar.component';
 
 @Component({
   selector: 'app-menu',
-  imports: [MatDialogModule, MatIconModule, MatToolbarModule, MatButtonModule, RouterLink],
+  imports: [MenuToolbarComponent],
   template: `
-    <mat-toolbar color="primary">
-      <button mat-flat-button color="primary" routerLink="/">
-        <span style="font-size:20px">Comic Collection</span>
-      </button>
-      <span style="flex: 1 1 auto"></span>
-      <button mat-flat-button color="primary" routerLink="/" id="home">Home</button>
-      <button mat-flat-button color="primary" routerLink="/by_publisher" id="by_publishers">By Publisher</button>
-      <button mat-flat-button color="primary" routerLink="/by_title" id="by_titles">By Title</button>
-      <button mat-flat-button color="primary" routerLink="/issues" id="courses">All Issues</button>
-      <!-- show login button if logged out -->
-      @if (!isLoggedIn()) {
-      <button mat-flat-button color="primary" (click)="login()" id="login">Login</button>
-      }
-      <!-- show admin button if logged in as admin -->
-      @if (isLoggedInAsAdmin()) {
-      <button mat-flat-button color="primary" routerLink="/admin" id="admin">Admin</button>
-      }
-      <!-- show logout button if logged in -->
-      @if (isLoggedIn()) {
-      <button mat-flat-button color="primary" (click)="logout()" id="logout">Logout</button>
-      }
-    </mat-toolbar>
+    <app-menu-toolbar
+      [isLoggedIn]="isLoggedIn()"
+      [isLoggedInAsAdmin]="isLoggedInAsAdmin()"
+      (login)="login()"
+      (logout)="logout()" />
   `,
-  styles: [
-    `
-      div .nav-item {
-        cursor: pointer;
-      }
-    `,
-  ],
 })
 export class MenuComponent {
   readonly #authStore = inject(AuthDataService);

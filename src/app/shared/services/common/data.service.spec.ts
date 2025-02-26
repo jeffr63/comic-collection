@@ -4,8 +4,8 @@ import { describe, expect } from '@jest/globals';
 import fetch from 'jest-fetch-mock';
 
 import { DataService } from './data.service';
-import { fakeIssue, fakeIssueData } from '../../../testing/testing.data';
-import { Issue } from '../models/issue';
+import { fakeIssue, fakeIssueData } from '../../../../testing/testing.data';
+import { Issue } from '../../models/issue';
 
 describe('DataService', () => {
   let service: DataService;

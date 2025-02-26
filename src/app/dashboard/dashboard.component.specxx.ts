@@ -9,7 +9,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { DashboardComponent } from './dashboard.component';
 import { fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData } from '../../testing/testing.data';
-import { IssueDataService } from '../shared/services/issue-data.service';
+import { IssueDataService } from '../shared/services/issue/issue-data.service';
 
 /* Todo: fix issue with Jest and NgxChartsModule */
 

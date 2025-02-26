@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, ResolveFn } from '@angular/router';
 
-import { TitleDataService } from '../services/title-data.service';
+import { TitleDataService } from './title-data.service';
 
 export const titleTitleResolver: ResolveFn<string> = async (route: ActivatedRouteSnapshot) => {
   const id = route.paramMap.get('id');

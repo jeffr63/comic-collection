@@ -13,7 +13,7 @@ import { of } from 'rxjs';
 import { describe, expect, jest } from '@jest/globals';
 
 import { MenuComponent } from './menu.component';
-import { AuthDataService } from '../shared/services/auth-data.service';
+import { AuthDataService } from '../shared/services/auth/auth-data.service';
 
 describe('MenuComponent', () => {
   let fixture: ComponentFixture<MenuComponent>;

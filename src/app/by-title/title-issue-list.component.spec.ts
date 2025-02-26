@@ -5,12 +5,12 @@ import { Dialog } from '@angular/cdk/dialog';
 
 import { describe, expect, jest } from '@jest/globals';
 
-import { AuthDataService } from '../shared/services/auth-data.service';
+import { AuthDataService } from '../shared/services/auth/auth-data.service';
 import { fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData, fakeTitle } from '../../testing/testing.data';
-import { IssueDataService } from '../shared/services/issue-data.service';
+import { IssueDataService } from '../shared/services/issue/issue-data.service';
 import { ModalDataService } from '../shared/modals/modal-data.service';
 import TitleIssueListComponent from './title-issue-list.component';
-import { TitleDataService } from '../shared/services/title-data.service';
+import { TitleDataService } from '../shared/services/title/title-data.service';
 import { DeleteComponent } from '../shared/modals/delete.component';
 
 describe('TitleIssueListComponent', () => {

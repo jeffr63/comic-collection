@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { take } from 'rxjs';
 
-import { AuthDataService } from '../shared/services/auth-data.service';
+import { AuthDataService } from '../shared/services/auth/auth-data.service';
 import { Column } from '../shared/models/column';
 import { DeleteComponent } from '../shared/modals/delete.component';
 import { DisplayTableComponent } from '../shared/display-table/display-table.component';
-import { IssueDataService } from '../shared/services/issue-data.service';
+import { IssueDataService } from '../shared/services/issue/issue-data.service';
 import { ModalDataService } from '../shared/modals/modal-data.service';
 
 @Component({

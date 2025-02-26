@@ -1,7 +1,5 @@
-import { Component, OnInit, inject, input, resource, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Location } from '@angular/common';
+import { Component, model, output } from '@angular/core';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -9,11 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 
-import { User } from '../shared/models/user';
-import { UserDataService } from '../shared/services/user-data.service';
-
 @Component({
-  selector: 'app-user-edit',
+  selector: 'app-user-edit-card',
   imports: [
     MatButtonModule,
     MatCardModule,
@@ -22,14 +17,13 @@ import { UserDataService } from '../shared/services/user-data.service';
     MatInputModule,
     MatRadioModule,
     ReactiveFormsModule,
-    RouterLink,
   ],
   template: `
     <mat-card appearance="outlined">
       <mat-card-title>User Edit</mat-card-title>
       <mat-card-content>
         @if (userEditForm) {
-        <form [formGroup]="userEditForm">
+        <form [formGroup]="userEditForm()">
           <mat-form-field appearance="outline">
             <mat-label for="name">Name</mat-label>
             <input
@@ -39,7 +33,7 @@ import { UserDataService } from '../shared/services/user-data.service';
               matInput
               formControlName="name"
               placeholder="Enter name of user" />
-            @let fname = userEditForm.controls.name;
+            @let fname = userEditForm().controls.name;
             <!-- name required error -->
             @if (fname.errors?.['required'] && fname.touched) {
             <mat-error> Name is required </mat-error>
@@ -49,7 +43,7 @@ import { UserDataService } from '../shared/services/user-data.service';
           <mat-form-field appearance="outline">
             <mat-label for="email">Email</mat-label>
             <input type="text" id="email" matInput formControlName="email" placeholder="Enter email of user" />
-            @let femail = userEditForm.controls.name;
+            @let femail = userEditForm().controls.name;
             <!-- email required error -->
             @if (femail.errors?.['required'] && femail.touched) {
             <mat-error> Email is required </mat-error>
@@ -61,7 +55,7 @@ import { UserDataService } from '../shared/services/user-data.service';
             <mat-radio-button class="radio-button" value="admin">Admin</mat-radio-button>
             <mat-radio-button class="radio-button" value="user">User</mat-radio-button>
           </mat-radio-group>
-          @let frole = userEditForm.controls.role;
+          @let frole = userEditForm().controls.role;
           <!-- role required error -->
           @if (frole.errors?.['required'] && frole.touched) {
           <mat-error> Role is required </mat-error>
@@ -71,7 +65,7 @@ import { UserDataService } from '../shared/services/user-data.service';
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button mat-flat-button color="primary" (click)="save()" title="Save" [disabled]="!userEditForm.valid">
+        <button mat-flat-button color="primary" (click)="save.emit()" title="Save" [disabled]="!userEditForm().valid">
           <mat-icon>save</mat-icon> Save
         </button>
         <button mat-flat-button color="accent" class="ml-10" routerLink="/admin/users">
@@ -80,8 +74,7 @@ import { UserDataService } from '../shared/services/user-data.service';
       </mat-card-actions>
     </mat-card>
   `,
-  styles: [
-    `
+  styles: `
       mat-card {
         margin: 30px;
         padding-left: 15px;
@@ -114,47 +107,8 @@ import { UserDataService } from '../shared/services/user-data.service';
         margin: 5px;
       }
     `,
-  ],
 })
-export default class UserEditComponent implements OnInit {
-  readonly #fb = inject(FormBuilder);
-  readonly #location = inject(Location);
-  readonly #userStore = inject(UserDataService);
-
-  protected readonly id = input<string>();
-  readonly #user = resource<User, string>({
-    request: this.id,
-    loader: async ({ request: id }) => {
-      if (id === 'new') return { name: '', email: '', password: '', role: '' };
-      const user = await this.#userStore.getById(+id);
-      this.loadFormValues(user);
-      return user;
-    },
-  });
-
-  protected userEditForm!: FormGroup;
-
-  ngOnInit(): void {
-    this.userEditForm = this.#fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      role: ['', Validators.required],
-    });
-  }
-
-  private loadFormValues(user: User) {
-    this.userEditForm.patchValue({
-      name: user.name,
-      email: user.email,
-      role: user.role,
-    });
-  }
-
-  protected async save() {
-    const patchData = this.userEditForm.getRawValue();
-    patchData.id = this.#user.value()?.id;
-    if (!patchData) return;
-    await this.#userStore.update(patchData);
-    this.#location.back();
-  }
+export class UserEditCardComponent {
+  userEditForm = model.required<FormGroup>();
+  save = output();
 }
