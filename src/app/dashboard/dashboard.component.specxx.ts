@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 import { describe, expect } from '@jest/globals';
 
@@ -7,10 +7,14 @@ import { DashboardComponent } from './dashboard.component';
 import { fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData } from '../../testing/testing.data';
 import { IssueDataService } from '../shared/services/issue/issue-data.service';
 import { DashboardContentComponent } from './dashboard-content.component';
-import { appConfig } from '../app.config';
+import { Issue, IssueData } from '../shared/models/issue';
 
 @Component({ selector: 'app-dashboard-content', template: '' })
-export class MockDashboardContentComponent {}
+export class MockDashboardContentComponent {
+  issues = input<Issue[]>([]);
+  titles = input<IssueData[]>([]);
+  publishers = input<IssueData[]>([]);
+}
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -22,23 +26,34 @@ describe('DashboardComponent', () => {
     publishers: signal(fakeIssuePublishersData).asReadonly,
   };
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule(
-      Object.assign({}, appConfig, {
-        imports: [DashboardComponent, DashboardContentComponent],
-        providers: [{ provide: IssueDataService, useValue: issueDataServiceStub }],
-        schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      })
-    )
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [],
+      providers: [{ provide: IssueDataService, useValue: issueDataServiceStub }],
+    })
       .overrideComponent(DashboardComponent, {
         remove: { imports: [DashboardContentComponent] },
         add: { imports: [MockDashboardContentComponent] },
       })
       .compileComponents();
     fixture = TestBed.createComponent(DashboardComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  fit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have issues data', () => {
+    expect(component.issues()).toEqual(fakeIssueData);
+  });
+
+  it('should have titles data', () => {
+    expect(component.titles()).toEqual(fakeIssueTitlesData);
+  });
+
+  it('should have publishers data', () => {
+    expect(component.publishers()).toEqual(fakeIssuePublishersData);
   });
 });
