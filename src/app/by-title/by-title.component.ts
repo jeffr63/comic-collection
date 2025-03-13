@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { AuthDataService } from '../shared/services/auth/auth-data.service';
 import { Column } from '../shared/models/column';
-import { DisplayTableComponent } from '../shared/display-table/display-table.component';
+import { DisplayTableComponent } from '../shared/components/display-table.component';
 import { TitleDataService } from '../shared/services/title/title-data.service';
 
 @Component({
