@@ -7,7 +7,7 @@ import { take } from 'rxjs';
 import { AuthDataService } from '../../shared/services/auth/auth-data.service';
 import { Column } from '../../shared/models/column';
 import { DeleteComponent } from '../../shared/modals/delete.component';
-import { DisplayTableComponent } from '../../shared/display-table/display-table.component';
+import { DisplayTableComponent } from '../../shared/components/display-table.component';
 import { ModalDataService } from '../../shared/modals/modal-data.service';
 import { UserDataService } from '../../shared/services/user/user-data.service';
 
