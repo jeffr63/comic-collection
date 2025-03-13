@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 
-import { DashboardContentComponent } from './dashboard-content.component';
 import { IssueDataService } from '../shared/services/issue/issue-data.service';
+import { DashboardContentComponent } from './dashboard-content.component';
 
 @Component({
   selector: 'app-dashboard',

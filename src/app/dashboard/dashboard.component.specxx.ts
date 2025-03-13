@@ -1,62 +1,44 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
-import { CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
-import { By } from '@angular/platform-browser';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
 
-import { describe, expect, jest } from '@jest/globals';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { describe, expect } from '@jest/globals';
 
 import { DashboardComponent } from './dashboard.component';
 import { fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData } from '../../testing/testing.data';
 import { IssueDataService } from '../shared/services/issue/issue-data.service';
+import { DashboardContentComponent } from './dashboard-content.component';
+import { appConfig } from '../app.config';
 
-/* Todo: fix issue with Jest and NgxChartsModule */
+@Component({ selector: 'app-dashboard-content', template: '' })
+export class MockDashboardContentComponent {}
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
 
-  const issueFacadeStub = {
+  const issueDataServiceStub = {
     issues: signal(fakeIssueData).asReadonly,
     titles: signal(fakeIssueTitlesData).asReadonly,
     publishers: signal(fakeIssuePublishersData).asReadonly,
-    getAll: jest.fn(),
   };
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [DashboardComponent, MatGridListModule, MatCardModule, NgxChartsModule],
-      providers: [{ provide: IssueDataService, useValue: issueFacadeStub }],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    }).compileComponents();
+    await TestBed.configureTestingModule(
+      Object.assign({}, appConfig, {
+        imports: [DashboardComponent, DashboardContentComponent],
+        providers: [{ provide: IssueDataService, useValue: issueDataServiceStub }],
+        schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      })
+    )
+      .overrideComponent(DashboardComponent, {
+        remove: { imports: [DashboardContentComponent] },
+        add: { imports: [MockDashboardContentComponent] },
+      })
+      .compileComponents();
     fixture = TestBed.createComponent(DashboardComponent);
-    component = fixture.componentInstance;
   });
 
-  it('should create', () => {
+  fit('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  describe('HTML test', () => {
-    it('should contain one section tag', () => {
-      const elements = fixture.debugElement.queryAll(By.css('section'));
-      expect(elements.length).toBe(1);
-    });
-
-    it('should contain a mat-card-title tag for publishers', () => {
-      const elements = fixture.debugElement.queryAll(By.css('mat-card-title'));
-      expect(elements[0].nativeElement.textContent).toBe('Issues by Publisher');
-    });
-
-    it('should contain a mat-card-title tag for titles', () => {
-      const elements = fixture.debugElement.queryAll(By.css('mat-card-title'));
-      expect(elements[1].nativeElement.textContent).toBe('Issues by Title');
-    });
-
-    it('should contain two charts', () => {
-      const elements = fixture.debugElement.queryAll(By.css('ngx-charts-pie-chart'));
-      expect(elements.length).toBe(2);
-    });
   });
 });

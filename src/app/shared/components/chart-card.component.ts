@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { IssueData } from '../models/issue';
