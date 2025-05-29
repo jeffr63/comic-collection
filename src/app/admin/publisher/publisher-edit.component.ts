@@ -25,8 +25,8 @@ export default class PublisherEditComponent implements OnInit {
   protected readonly id = input<string>();
   readonly #isNew = signal(true);
   readonly #publisher = resource<Publisher, string>({
-    request: this.id,
-    loader: async ({ request: id }) => {
+    params: this.id,
+    loader: async ({ params: id }) => {
       if (id === 'new') return { name: '' };
       const publisher = await this.#publisherStore.getById(+id);
       this.loadFormValues(publisher);
