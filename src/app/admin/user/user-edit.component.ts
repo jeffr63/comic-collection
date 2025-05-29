@@ -18,8 +18,8 @@ export default class UserEditComponent implements OnInit {
 
   protected readonly id = input<string>();
   readonly #user = resource<User, string>({
-    request: this.id,
-    loader: async ({ request: id }) => {
+    params: this.id,
+    loader: async ({ params: id }) => {
       if (id === 'new') return { name: '', email: '', password: '', role: '' };
       const user = await this.#userStore.getById(+id);
       this.loadFormValues(user);

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,14 +10,13 @@ import { MatInputModule } from '@angular/material/input';
 @Component({
     selector: 'app-login',
     imports: [
-        CommonModule,
-        MatButtonModule,
-        MatIconModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatDialogModule,
-        ReactiveFormsModule,
-    ],
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    ReactiveFormsModule
+],
     template: `
     <div style="margin:10px">
       <h2 mat-dialog-title>Login</h2>

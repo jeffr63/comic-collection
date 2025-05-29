@@ -37,8 +37,8 @@ export default class TitleEditComponent implements OnInit {
       : this.#publishers().filter((r) => r.name.toLocaleLowerCase().startsWith(this.publisherFilter()));
   });
   readonly #title = resource<Title, string>({
-    request: this.id,
-    loader: async ({ request: id }) => {
+    params: this.id,
+    loader: async ({ params: id }) => {
       if (id === 'new') return { publisher: '', title: '' };
       const title = await this.#titleStore.getById(+id);
       this.loadFormValues(title);

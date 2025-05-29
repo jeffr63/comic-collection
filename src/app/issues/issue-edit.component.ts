@@ -41,8 +41,8 @@ export default class IssueEditComponent implements OnInit {
   protected readonly id = input<string>();
   readonly #isNew = signal(true);
   readonly #issue = resource<Issue, string>({
-    request: this.id,
-    loader: async ({ request: id }) => {
+    params: this.id,
+    loader: async ({ params: id }) => {
       if (id === 'new') return { publisher: '', title: '', issue: null, coverPrice: null, url: '' };
       const issue = await this.#issueStore.getById(+id);
       this.loadFormValues(issue);
