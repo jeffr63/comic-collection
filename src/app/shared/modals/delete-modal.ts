@@ -18,7 +18,7 @@ import { ModalService } from './modal-service';
         <p>
           {{ modalOptions.body }}
           @if (modalOptions.warning) {
-          <span class="text-danger">{{ modalOptions.warning }}</span>
+            <span class="text-danger">{{ modalOptions.warning }}</span>
           }
         </p>
       </mat-dialog-content>

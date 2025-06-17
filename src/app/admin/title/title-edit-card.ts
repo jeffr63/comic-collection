@@ -28,61 +28,61 @@ import { Publisher } from '../../shared/models/publisher-interface';
       <mat-card-title>Title Edit</mat-card-title>
       <mat-card-content>
         @if (titleEditForm) {
-        <form [formGroup]="titleEditForm()">
-          @if (filteredPublishers()) {
-          <mat-form-field appearance="outline">
-            <mat-label>Publisher</mat-label>
-            <input
-              matInput
-              id="publisher"
-              #inputPublisher
-              formControlName="publisher"
-              [matAutocomplete]="publisherAuto"
-              (keyup)="onAutocompleteKeyUp.emit(inputPublisher.value)" />
-            <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
-              @for (publisher of filteredPublishers(); track publisher.id) {
-              <mat-option [value]="publisher.name">
-                {{ publisher.name }}
-              </mat-option>
+          <form [formGroup]="titleEditForm()">
+            @if (filteredPublishers()) {
+              <mat-form-field appearance="outline">
+                <mat-label>Publisher</mat-label>
+                <input
+                  matInput
+                  id="publisher"
+                  #inputPublisher
+                  formControlName="publisher"
+                  [matAutocomplete]="publisherAuto"
+                  (keyup)="onAutocompleteKeyUp.emit(inputPublisher.value)" />
+                <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
+                  @for (publisher of filteredPublishers(); track publisher.id) {
+                    <mat-option [value]="publisher.name">
+                      {{ publisher.name }}
+                    </mat-option>
+                  }
+                </mat-autocomplete>
+                <button
+                  mat-icon-button
+                  matIconSuffix
+                  color="primary"
+                  routerLink="/admin/publisher/new"
+                  title="Add new publisher">
+                  <mat-icon>add</mat-icon>
+                </button>
+
+                @let fname = titleEditForm().controls.publisher;
+                <!-- publisher required error -->
+                @if (fname.errors?.['required'] && fname.touched) {
+                  <mat-error> Publisher is required </mat-error>
+                }
+                <!-- select publisher from list error -->
+                @if (fname.errors?.['match']) {
+                  <mat-error> Please select a publisher from the list. </mat-error>
+                }
+              </mat-form-field>
+            }
+
+            <mat-form-field appearance="outline">
+              <mat-label for="title">Title</mat-label>
+              <input
+                ngbAutofocus
+                type="text"
+                id="title"
+                matInput
+                formControlName="title"
+                placeholder="Enter title of comic" />
+              @let ftitle = titleEditForm().controls.title;
+              <!-- title required error -->
+              @if (ftitle.errors?.['required'] && ftitle.touched) {
+                <mat-error> Title is required</mat-error>
               }
-            </mat-autocomplete>
-            <button
-              mat-icon-button
-              matIconSuffix
-              color="primary"
-              routerLink="/admin/publisher/new"
-              title="Add new publisher">
-              <mat-icon>add</mat-icon>
-            </button>
-
-            @let fname = titleEditForm().controls.publisher;
-            <!-- publisher required error -->
-            @if (fname.errors?.['required'] && fname.touched) {
-            <mat-error> Publisher is required </mat-error>
-            }
-            <!-- select publisher from list error -->
-            @if (fname.errors?.['match']) {
-            <mat-error> Please select a publisher from the list. </mat-error>
-            }
-          </mat-form-field>
-          }
-
-          <mat-form-field appearance="outline">
-            <mat-label for="title">Title</mat-label>
-            <input
-              ngbAutofocus
-              type="text"
-              id="title"
-              matInput
-              formControlName="title"
-              placeholder="Enter title of comic" />
-            @let ftitle = titleEditForm().controls.title;
-            <!-- title required error -->
-            @if (ftitle.errors?.['required'] && ftitle.touched) {
-            <mat-error> Title is required</mat-error>
-            }
-          </mat-form-field>
-        </form>
+            </mat-form-field>
+          </form>
         }
       </mat-card-content>
 
@@ -101,27 +101,27 @@ import { Publisher } from '../../shared/models/publisher-interface';
     </mat-card>
   `,
   styles: `
-      mat-card {
-        margin: 30px;
-        padding-left: 15px;
-        padding-right: 15px;
-        width: 35%;
-      }
+    mat-card {
+      margin: 30px;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 35%;
+    }
 
-      mat-content {
-        width: 100%;
-      }
+    mat-content {
+      width: 100%;
+    }
 
-      mat-form-field {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-      }
+    mat-form-field {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
 
-      .ml-10 {
-        margin-left: 10px;
-      }
-    `,
+    .ml-10 {
+      margin-left: 10px;
+    }
+  `,
 })
 export class TitleEditCard {
   titleEditForm = model.required<FormGroup>();

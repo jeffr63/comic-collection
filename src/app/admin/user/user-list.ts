@@ -18,18 +18,18 @@ import { UserData } from '../../shared/services/user/user-data';
   template: `
     <section class="mt-5">
       @if (users()) {
-      <app-display-table
-        [isAuthenticated]="isAuthenticated()"
-        [isFilterable]="true"
-        [includeAdd]="false"
-        [isPageable]="true"
-        [paginationSizes]="[5, 10, 25, 100]"
-        [defaultPageSize]="10"
-        [disableClear]="true"
-        [tableData]="users()"
-        [tableColumns]="columns"
-        (delete)="deleteUser($event)"
-        (edit)="editUser($event)" />
+        <app-display-table
+          [isAuthenticated]="isAuthenticated()"
+          [isFilterable]="true"
+          [includeAdd]="false"
+          [isPageable]="true"
+          [paginationSizes]="[5, 10, 25, 100]"
+          [defaultPageSize]="10"
+          [disableClear]="true"
+          [tableData]="users()"
+          [tableColumns]="columns"
+          (delete)="deleteUser($event)"
+          (edit)="editUser($event)" />
       }
     </section>
   `,

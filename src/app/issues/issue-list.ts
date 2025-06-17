@@ -17,19 +17,19 @@ import { ModalService } from '../shared/modals/modal-service';
   template: `
     <section class="mt-5">
       @if (issues()) {
-      <app-display-table
-        [includeAdd]="true"
-        [isAuthenticated]="isLoggedIn()"
-        [isFilterable]="true"
-        [isPageable]="true"
-        [paginationSizes]="[5, 10, 25, 100]"
-        [defaultPageSize]="10"
-        [disableClear]="true"
-        [tableData]="issues()"
-        [tableColumns]="columns"
-        (add)="newIssue()"
-        (delete)="deleteIssue($event)"
-        (edit)="editIssue($event)" />
+        <app-display-table
+          [includeAdd]="true"
+          [isAuthenticated]="isLoggedIn()"
+          [isFilterable]="true"
+          [isPageable]="true"
+          [paginationSizes]="[5, 10, 25, 100]"
+          [defaultPageSize]="10"
+          [disableClear]="true"
+          [tableData]="issues()"
+          [tableColumns]="columns"
+          (add)="newIssue()"
+          (delete)="deleteIssue($event)"
+          (edit)="editIssue($event)" />
       }
     </section>
   `,

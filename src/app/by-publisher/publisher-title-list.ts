@@ -12,17 +12,17 @@ import { TitleData } from '../shared/services/title/title-data';
   imports: [DisplayTable],
   template: ` <section class="mt-5">
     @if (titles()) {
-    <app-display-table
-      [includeAdd]="false"
-      [isAuthenticated]="isAuthenticated()"
-      [isFilterable]="true"
-      [isPageable]="true"
-      [paginationSizes]="[5, 10, 25, 100]"
-      [defaultPageSize]="10"
-      [disableClear]="true"
-      [tableData]="titles()"
-      [tableColumns]="columns"
-      (open)="open($event)" />
+      <app-display-table
+        [includeAdd]="false"
+        [isAuthenticated]="isAuthenticated()"
+        [isFilterable]="true"
+        [isPageable]="true"
+        [paginationSizes]="[5, 10, 25, 100]"
+        [defaultPageSize]="10"
+        [disableClear]="true"
+        [tableData]="titles()"
+        [tableColumns]="columns"
+        (open)="open($event)" />
     }
   </section>`,
   styles: [

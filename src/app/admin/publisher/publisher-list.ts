@@ -18,19 +18,19 @@ import { PublisherData } from '../../shared/services/publisher/publisher-data';
   template: `
     <section class="mt-5">
       @if (publishers()) {
-      <app-display-table
-        [isAuthenticated]="isAuthenticated()"
-        [isFilterable]="true"
-        [includeAdd]="true"
-        [isPageable]="true"
-        [paginationSizes]="[5, 10, 25, 100]"
-        [defaultPageSize]="10"
-        [disableClear]="true"
-        [tableData]="publishers()"
-        [tableColumns]="columns"
-        (add)="newPublisher()"
-        (delete)="deletePublisher($event)"
-        (edit)="editPublisher($event)" />
+        <app-display-table
+          [isAuthenticated]="isAuthenticated()"
+          [isFilterable]="true"
+          [includeAdd]="true"
+          [isPageable]="true"
+          [paginationSizes]="[5, 10, 25, 100]"
+          [defaultPageSize]="10"
+          [disableClear]="true"
+          [tableData]="publishers()"
+          [tableColumns]="columns"
+          (add)="newPublisher()"
+          (delete)="deletePublisher($event)"
+          (edit)="editPublisher($event)" />
       }
     </section>
   `,

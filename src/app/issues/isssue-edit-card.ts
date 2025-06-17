@@ -30,113 +30,118 @@ import { Title } from '../shared/models/title-interface';
       <mat-card-title>Issue Edit</mat-card-title>
       <mat-card-content>
         @if (issueEditForm) {
-        <form [formGroup]="issueEditForm()">
-          <!-- publishers dropdown -->
-          @if (filteredPublishers()) {
-          <mat-form-field appearance="outline">
-            <mat-label for="publisher">Publisher</mat-label>
-            <input
-              matInput
-              id="publisher"
-              #inputPublisher
-              formControlName="publisher"
-              [matAutocomplete]="publisherAuto"
-              (keyup)="onAutocompleteKeyUpPublisher.emit(inputPublisher.value)" />
-            <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
-              @for (publisher of filteredPublishers(); track publisher.id) {
-              <mat-option [value]="publisher.name">
-                {{ publisher.name }}
-              </mat-option>
+          <form [formGroup]="issueEditForm()">
+            <!-- publishers dropdown -->
+            @if (filteredPublishers()) {
+              <mat-form-field appearance="outline">
+                <mat-label for="publisher">Publisher</mat-label>
+                <input
+                  matInput
+                  id="publisher"
+                  #inputPublisher
+                  formControlName="publisher"
+                  [matAutocomplete]="publisherAuto"
+                  (keyup)="onAutocompleteKeyUpPublisher.emit(inputPublisher.value)" />
+                <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
+                  @for (publisher of filteredPublishers(); track publisher.id) {
+                    <mat-option [value]="publisher.name">
+                      {{ publisher.name }}
+                    </mat-option>
+                  }
+                </mat-autocomplete>
+                @let fpublisher = issueEditForm().controls.publisher;
+                <!-- publisher required error  -->
+                @if (fpublisher.errors?.['required'] && fpublisher.touched) {
+                  <mat-error> Publisher is required </mat-error>
+                }
+                <!-- select publisher from list error -->
+                @if (fpublisher.errors?.['match']) {
+                  <mat-error> Please select a publisher from the list. </mat-error>
+                }
+              </mat-form-field>
+            }
+
+            <!-- titles dropdown -->
+            @if (filteredTitles()) {
+              <mat-form-field appearance="outline">
+                <mat-label for="title">Title</mat-label>
+                <input
+                  matInput
+                  id="title"
+                  #inputTitle
+                  formControlName="title"
+                  [matAutocomplete]="titleAuto"
+                  (keyup)="onAutocompleteKeyUpTitle.emit(inputTitle.value)" />
+                <mat-autocomplete #titleAuto="matAutocomplete" autoActiveFirstOption>
+                  @for (title of filteredTitles(); track title.id) {
+                    <mat-option [value]="title.title">
+                      {{ title.title }}
+                    </mat-option>
+                  }
+                </mat-autocomplete>
+                <button
+                  mat-icon-button
+                  matIconSuffix
+                  color="primary"
+                  routerLink="/admin/title/new"
+                  title="Add new title">
+                  <mat-icon>add</mat-icon>
+                </button>
+                @let ftitle = issueEditForm().controls.title;
+                <!-- title required error -->
+                @if (ftitle.errors?.['required'] && ftitle.touched) {
+                  <mat-error> Title is required </mat-error>
+                }
+                <!-- select title from list error -->
+                @if (ftitle.errors?.['match']) {
+                  <mat-error> Please select a title from the list. </mat-error>
+                }
+              </mat-form-field>
+            }
+
+            <mat-form-field appearance="outline">
+              <mat-label for="issue">Issue Number</mat-label>
+              <input
+                ngbAutofocus
+                type="text"
+                id="issue"
+                matInput
+                formControlName="issue"
+                placeholder="Enter issue number of comic" />
+              @let fissue = issueEditForm().controls.issue;
+              <!-- issue required error -->
+              @if (fissue.errors?.['required'] && fissue.touched) {
+                <mat-error> Issue Number is required </mat-error>
               }
-            </mat-autocomplete>
-            @let fpublisher = issueEditForm().controls.publisher;
-            <!-- publisher required error  -->
-            @if (fpublisher.errors?.['required'] && fpublisher.touched) {
-            <mat-error> Publisher is required </mat-error>
-            }
-            <!-- select publisher from list error -->
-            @if (fpublisher.errors?.['match']) {
-            <mat-error> Please select a publisher from the list. </mat-error>
-            }
-          </mat-form-field>
-          }
+            </mat-form-field>
 
-          <!-- titles dropdown -->
-          @if (filteredTitles()) {
-          <mat-form-field appearance="outline">
-            <mat-label for="title">Title</mat-label>
-            <input
-              matInput
-              id="title"
-              #inputTitle
-              formControlName="title"
-              [matAutocomplete]="titleAuto"
-              (keyup)="onAutocompleteKeyUpTitle.emit(inputTitle.value)" />
-            <mat-autocomplete #titleAuto="matAutocomplete" autoActiveFirstOption>
-              @for (title of filteredTitles(); track title.id) {
-              <mat-option [value]="title.title">
-                {{ title.title }}
-              </mat-option>
+            <mat-form-field appearance="outline">
+              <mat-label for="coverPrice">Cover Price</mat-label>
+              <input
+                ngbAutofocus
+                type="number"
+                id="coverPrice"
+                matInput
+                formControlName="coverPrice"
+                placeholder="Enter cover price of comic" />
+              @let fcoverPrice = issueEditForm().controls.coverPrice;
+              <!-- cover price required error -->
+              @if (fcoverPrice.errors?.['required'] && fcoverPrice.touched) {
+                <mat-error> Cover Price is required </mat-error>
               }
-            </mat-autocomplete>
-            <button mat-icon-button matIconSuffix color="primary" routerLink="/admin/title/new" title="Add new title">
-              <mat-icon>add</mat-icon>
-            </button>
-            @let ftitle = issueEditForm().controls.title;
-            <!-- title required error -->
-            @if (ftitle.errors?.['required'] && ftitle.touched) {
-            <mat-error> Title is required </mat-error>
-            }
-            <!-- select title from list error -->
-            @if (ftitle.errors?.['match']) {
-            <mat-error> Please select a title from the list. </mat-error>
-            }
-          </mat-form-field>
-          }
+            </mat-form-field>
 
-          <mat-form-field appearance="outline">
-            <mat-label for="issue">Issue Number</mat-label>
-            <input
-              ngbAutofocus
-              type="text"
-              id="issue"
-              matInput
-              formControlName="issue"
-              placeholder="Enter issue number of comic" />
-            @let fissue = issueEditForm().controls.issue;
-            <!-- issue required error -->
-            @if (fissue.errors?.['required'] && fissue.touched) {
-            <mat-error> Issue Number is required </mat-error>
-            }
-          </mat-form-field>
-
-          <mat-form-field appearance="outline">
-            <mat-label for="coverPrice">Cover Price</mat-label>
-            <input
-              ngbAutofocus
-              type="number"
-              id="coverPrice"
-              matInput
-              formControlName="coverPrice"
-              placeholder="Enter cover price of comic" />
-            @let fcoverPrice = issueEditForm().controls.coverPrice;
-            <!-- cover price required error -->
-            @if (fcoverPrice.errors?.['required'] && fcoverPrice.touched) {
-            <mat-error> Cover Price is required </mat-error>
-            }
-          </mat-form-field>
-
-          <mat-form-field appearance="outline">
-            <mat-label for="url">Url</mat-label>
-            <input
-              ngbAutofocus
-              type="text"
-              id="url"
-              matInput
-              formControlName="url"
-              placeholder="Enter url to comic page" />
-          </mat-form-field>
-        </form>
+            <mat-form-field appearance="outline">
+              <mat-label for="url">Url</mat-label>
+              <input
+                ngbAutofocus
+                type="text"
+                id="url"
+                matInput
+                formControlName="url"
+                placeholder="Enter url to comic page" />
+            </mat-form-field>
+          </form>
         }
       </mat-card-content>
 
@@ -155,27 +160,27 @@ import { Title } from '../shared/models/title-interface';
     </mat-card>
   `,
   styles: `
-      mat-card {
-        margin: 30px;
-        padding-left: 15px;
-        padding-right: 15px;
-        width: 40%;
-      }
+    mat-card {
+      margin: 30px;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 40%;
+    }
 
-      mat-content {
-        width: 100%;
-      }
+    mat-content {
+      width: 100%;
+    }
 
-      mat-form-field {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-      }
+    mat-form-field {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
 
-      .ml-10 {
-        margin-left: 10px;
-      }
-    `,
+    .ml-10 {
+      margin-left: 10px;
+    }
+  `,
 })
 export class IsssueEditCard {
   issueEditForm = model.required<FormGroup>();

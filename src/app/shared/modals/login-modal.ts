@@ -27,11 +27,11 @@ import { MatInputModule } from '@angular/material/input';
             @let femail = loginForm.controls.email;
             <!-- email required error -->
             @if (femail.errors?.['required'] && femail.touched) {
-            <mat-error> Email is required </mat-error>
+              <mat-error> Email is required </mat-error>
             }
             <!-- invalid email error -->
             @if (femail.errors?.['email'] && femail.touched) {
-            <mat-error> Must enter valid email </mat-error>
+              <mat-error> Must enter valid email </mat-error>
             }
           </mat-form-field>
           <mat-form-field appearance="outline" class="mt-5">
@@ -46,7 +46,7 @@ import { MatInputModule } from '@angular/material/input';
             @let fpassword = loginForm.controls.password;
             <!-- password required error -->
             @if (fpassword.errors?.['required'] && fpassword.touched) {
-            <mat-error> Password is required </mat-error>
+              <mat-error> Password is required </mat-error>
             }
           </mat-form-field>
         </form>

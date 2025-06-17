@@ -15,23 +15,23 @@ import { MatInputModule } from '@angular/material/input';
       <mat-card-title>Publisher Edit</mat-card-title>
       <mat-card-content>
         @if (publisherEditForm) {
-        <form [formGroup]="publisherEditForm()">
-          <mat-form-field appearance="outline">
-            <mat-label for="name">Publisher Name</mat-label>
-            <input
-              ngbAutofocus
-              type="text"
-              id="title"
-              matInput
-              formControlName="name"
-              placeholder="Enter name of publisher" />
-            @let fname = publisherEditForm().controls.name;
-            <!-- publisher required error -->
-            @if (fname.errors?.required && fname.touched) {
-            <mat-error> Publisher name is required </mat-error>
-            }
-          </mat-form-field>
-        </form>
+          <form [formGroup]="publisherEditForm()">
+            <mat-form-field appearance="outline">
+              <mat-label for="name">Publisher Name</mat-label>
+              <input
+                ngbAutofocus
+                type="text"
+                id="title"
+                matInput
+                formControlName="name"
+                placeholder="Enter name of publisher" />
+              @let fname = publisherEditForm().controls.name;
+              <!-- publisher required error -->
+              @if (fname.errors?.required && fname.touched) {
+                <mat-error> Publisher name is required </mat-error>
+              }
+            </mat-form-field>
+          </form>
         }
       </mat-card-content>
 
@@ -60,27 +60,27 @@ import { MatInputModule } from '@angular/material/input';
     </mat-card>
   `,
   styles: `
-      mat-card {
-        margin: 30px;
-        padding-left: 15px;
-        padding-right: 15px;
-        width: 30%;
-      }
+    mat-card {
+      margin: 30px;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 30%;
+    }
 
-      mat-content {
-        width: 100%;
-      }
+    mat-content {
+      width: 100%;
+    }
 
-      mat-form-field {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-      }
+    mat-form-field {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
 
-      .ml-10 {
-        margin-left: 10px;
-      }
-    `,
+    .ml-10 {
+      margin-left: 10px;
+    }
+  `,
 })
 export class PublisherEditCard {
   publisherEditForm = model.required<FormGroup>();

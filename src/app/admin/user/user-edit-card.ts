@@ -24,44 +24,44 @@ import { MatRadioModule } from '@angular/material/radio';
       <mat-card-title>User Edit</mat-card-title>
       <mat-card-content>
         @if (userEditForm) {
-        <form [formGroup]="userEditForm()">
-          <mat-form-field appearance="outline">
-            <mat-label for="name">Name</mat-label>
-            <input
-              ngbAutofocus
-              type="text"
-              id="name"
-              matInput
-              formControlName="name"
-              placeholder="Enter name of user" />
-            @let fname = userEditForm().controls.name;
-            <!-- name required error -->
-            @if (fname.errors?.['required'] && fname.touched) {
-            <mat-error> Name is required </mat-error>
-            }
-          </mat-form-field>
+          <form [formGroup]="userEditForm()">
+            <mat-form-field appearance="outline">
+              <mat-label for="name">Name</mat-label>
+              <input
+                ngbAutofocus
+                type="text"
+                id="name"
+                matInput
+                formControlName="name"
+                placeholder="Enter name of user" />
+              @let fname = userEditForm().controls.name;
+              <!-- name required error -->
+              @if (fname.errors?.['required'] && fname.touched) {
+                <mat-error> Name is required </mat-error>
+              }
+            </mat-form-field>
 
-          <mat-form-field appearance="outline">
-            <mat-label for="email">Email</mat-label>
-            <input type="text" id="email" matInput formControlName="email" placeholder="Enter email of user" />
-            @let femail = userEditForm().controls.name;
-            <!-- email required error -->
-            @if (femail.errors?.['required'] && femail.touched) {
-            <mat-error> Email is required </mat-error>
-            }
-          </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label for="email">Email</mat-label>
+              <input type="text" id="email" matInput formControlName="email" placeholder="Enter email of user" />
+              @let femail = userEditForm().controls.name;
+              <!-- email required error -->
+              @if (femail.errors?.['required'] && femail.touched) {
+                <mat-error> Email is required </mat-error>
+              }
+            </mat-form-field>
 
-          <label id="role">Role</label>
-          <mat-radio-group aria-labelledby="Role" class="radio-group" id="role" formControlName="role">
-            <mat-radio-button class="radio-button" value="admin">Admin</mat-radio-button>
-            <mat-radio-button class="radio-button" value="user">User</mat-radio-button>
-          </mat-radio-group>
-          @let frole = userEditForm().controls.role;
-          <!-- role required error -->
-          @if (frole.errors?.['required'] && frole.touched) {
-          <mat-error> Role is required </mat-error>
-          }
-        </form>
+            <label id="role">Role</label>
+            <mat-radio-group aria-labelledby="Role" class="radio-group" id="role" formControlName="role">
+              <mat-radio-button class="radio-button" value="admin">Admin</mat-radio-button>
+              <mat-radio-button class="radio-button" value="user">User</mat-radio-button>
+            </mat-radio-group>
+            @let frole = userEditForm().controls.role;
+            <!-- role required error -->
+            @if (frole.errors?.['required'] && frole.touched) {
+              <mat-error> Role is required </mat-error>
+            }
+          </form>
         }
       </mat-card-content>
 
@@ -76,38 +76,38 @@ import { MatRadioModule } from '@angular/material/radio';
     </mat-card>
   `,
   styles: `
-      mat-card {
-        margin: 30px;
-        padding-left: 15px;
-        padding-right: 15px;
-        width: 30%;
-      }
+    mat-card {
+      margin: 30px;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 30%;
+    }
 
-      mat-content {
-        width: 100%;
-      }
+    mat-content {
+      width: 100%;
+    }
 
-      mat-form-field {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-      }
+    mat-form-field {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
 
-      .ml-10 {
-        margin-left: 10px;
-      }
+    .ml-10 {
+      margin-left: 10px;
+    }
 
-      .radio-group {
-        display: flex;
-        flex-direction: column;
-        margin: 15px 0;
-        align-items: flex-start;
-      }
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      margin: 15px 0;
+      align-items: flex-start;
+    }
 
-      .radio-button {
-        margin: 5px;
-      }
-    `,
+    .radio-button {
+      margin: 5px;
+    }
+  `,
 })
 export class UserEditCard {
   userEditForm = model.required<FormGroup>();

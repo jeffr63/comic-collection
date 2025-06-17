@@ -20,19 +20,19 @@ import { TitleData } from '../shared/services/title/title-data';
   template: `
     <section class="mt-5">
       @if (titleIssues()) {
-      <app-display-table
-        [includeAdd]="true"
-        [isAuthenticated]="isLoggedIn()"
-        [isFilterable]="true"
-        [isPageable]="true"
-        [paginationSizes]="[5, 10, 25, 100]"
-        [defaultPageSize]="10"
-        [disableClear]="true"
-        [tableData]="titleIssues()"
-        [tableColumns]="columns"
-        (add)="newIssue()"
-        (delete)="deleteIssue($event)"
-        (edit)="editIssue($event)" />
+        <app-display-table
+          [includeAdd]="true"
+          [isAuthenticated]="isLoggedIn()"
+          [isFilterable]="true"
+          [isPageable]="true"
+          [paginationSizes]="[5, 10, 25, 100]"
+          [defaultPageSize]="10"
+          [disableClear]="true"
+          [tableData]="titleIssues()"
+          [tableColumns]="columns"
+          (add)="newIssue()"
+          (delete)="deleteIssue($event)"
+          (edit)="editIssue($event)" />
       }
     </section>
   `,

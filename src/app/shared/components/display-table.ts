@@ -27,102 +27,109 @@ import { Column } from '../models/column-interface';
   template: `
     <!-- Filter -->
     @if (isFilterable()) {
-    <mat-form-field appearance="outline">
-      <mat-label>Filter </mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="filter" />
-    </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Filter </mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="filter" />
+      </mat-form-field>
     }
 
     <!-- Add Button -->
     @if (includeAdd() && isAuthenticated()) {
-    <a mat-mini-fab color="primary" title="Add new" aria-label="Add new" class="ml-5 fl1" (click)="add.emit()">
-      <mat-icon>add</mat-icon>
-    </a>
+      <a mat-mini-fab color="primary" title="Add new" aria-label="Add new" class="ml-5 fl1" (click)="add.emit()">
+        <mat-icon>add</mat-icon>
+      </a>
     }
 
     <!-- Table -->
     <table mat-table [dataSource]="tableDataSource" matSort class="mat-elevation-z8">
       @for (column of tableColumns(); track $index) {
-      <ng-container [matColumnDef]="column.key">
-        @switch (column.type) { @case ('sort') {
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          [class.text-right]="column.position === 'right'"
-          [arrowPosition]="column.position === 'right' ? 'before' : 'after'"
-          style="min-width: {{ column.width }}">
-          {{ column.name }}
-        </th>
-        <td mat-cell *matCellDef="let element">
-          {{ element[column.key] }}
-        </td>
-        } @case ('currency_sort') {
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          [class.text-right]="column.position === 'right'"
-          [arrowPosition]="column.position === 'right' ? 'before' : 'after'"
-          style="min-width: {{ column.width }}">
-          {{ column.name }}
-        </th>
-        <td mat-cell *matCellDef="let element">
-          {{ element[column.key] | currency }}
-        </td>
-        } @case ('link') {
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          [class.text-right]="column.position === 'right'"
-          style="min-width: {{ column.width }}">
-          {{ column.name }}
-        </th>
-        <td mat-cell *matCellDef="let element">
-          @if (element[column.key]) {
-          <a href="{{ element[column.key] }}"><mat-icon>link</mat-icon></a>
+        <ng-container [matColumnDef]="column.key">
+          @switch (column.type) {
+            @case ('sort') {
+              <th
+                mat-header-cell
+                *matHeaderCellDef
+                mat-sort-header
+                [class.text-right]="column.position === 'right'"
+                [arrowPosition]="column.position === 'right' ? 'before' : 'after'"
+                style="min-width: {{ column.width }}">
+                {{ column.name }}
+              </th>
+              <td mat-cell *matCellDef="let element">
+                {{ element[column.key] }}
+              </td>
+            }
+            @case ('currency_sort') {
+              <th
+                mat-header-cell
+                *matHeaderCellDef
+                mat-sort-header
+                [class.text-right]="column.position === 'right'"
+                [arrowPosition]="column.position === 'right' ? 'before' : 'after'"
+                style="min-width: {{ column.width }}">
+                {{ column.name }}
+              </th>
+              <td mat-cell *matCellDef="let element">
+                {{ element[column.key] | currency }}
+              </td>
+            }
+            @case ('link') {
+              <th
+                mat-header-cell
+                *matHeaderCellDef
+                [class.text-right]="column.position === 'right'"
+                style="min-width: {{ column.width }}">
+                {{ column.name }}
+              </th>
+              <td mat-cell *matCellDef="let element">
+                @if (element[column.key]) {
+                  <a href="{{ element[column.key] }}"><mat-icon>link</mat-icon></a>
+                }
+              </td>
+            }
+            @case ('action') {
+              <th
+                mat-header-cell
+                *matHeaderCellDef
+                [class.text-right]="column.position === 'right'"
+                style="min-width: {{ column.width }}"></th>
+              <td mat-cell *matCellDef="let element">
+                @if (isAuthenticated()) {
+                  <button mat-icon-button color="primary" (click)="edit.emit(element.id)" title="Edit">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button mat-icon-button color="warn" (click)="delete.emit(element.id)" title="Delete">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                }
+              </td>
+            }
+            @case ('view') {
+              <th
+                mat-header-cell
+                *matHeaderCellDef
+                [class.text-right]="column.position === 'right'"
+                style="min-width: {{ column.width }}"></th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="primary" (click)="open.emit(element.id)" title="View">
+                  <mat-icon>view_list</mat-icon>
+                </button>
+              </td>
+            }
+            @default {
+              <th
+                mat-header-cell
+                *matHeaderCellDef
+                [class.text-right]="column.position === 'right'"
+                style="min-width: {{ column.width }}">
+                {{ column.name }}
+              </th>
+              <td mat-cell *matCellDef="let element">
+                {{ element[column.key] }}
+              </td>
+            }
           }
-        </td>
-        } @case ('action') {
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          [class.text-right]="column.position === 'right'"
-          style="min-width: {{ column.width }}"></th>
-        <td mat-cell *matCellDef="let element">
-          @if (isAuthenticated()) {
-          <button mat-icon-button color="primary" (click)="edit.emit(element.id)" title="Edit">
-            <mat-icon>edit</mat-icon>
-          </button>
-          <button mat-icon-button color="warn" (click)="delete.emit(element.id)" title="Delete">
-            <mat-icon>delete</mat-icon>
-          </button>
-          }
-        </td>
-        } @case ('view') {
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          [class.text-right]="column.position === 'right'"
-          style="min-width: {{ column.width }}"></th>
-        <td mat-cell *matCellDef="let element">
-          <button mat-icon-button color="primary" (click)="open.emit(element.id)" title="View">
-            <mat-icon>view_list</mat-icon>
-          </button>
-        </td>
-        } @default {
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          [class.text-right]="column.position === 'right'"
-          style="min-width: {{ column.width }}">
-          {{ column.name }}
-        </th>
-        <td mat-cell *matCellDef="let element">
-          {{ element[column.key] }}
-        </td>
-        } }
-      </ng-container>
+        </ng-container>
       }
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns()"></tr>
@@ -135,8 +142,8 @@ import { Column } from '../models/column-interface';
 
     <!-- Pagination -->
     @if (isPageable()) {
-    <mat-paginator [pageSizeOptions]="paginationSizes()" [pageSize]="defaultPageSize()" showFirstLastButtons>
-    </mat-paginator>
+      <mat-paginator [pageSizeOptions]="paginationSizes()" [pageSize]="defaultPageSize()" showFirstLastButtons>
+      </mat-paginator>
     }
   `,
   styles: [

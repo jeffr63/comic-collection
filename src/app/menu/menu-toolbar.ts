@@ -20,22 +20,22 @@ import { RouterLink } from '@angular/router';
       <button mat-flat-button color="primary" routerLink="/issues" id="courses">All Issues</button>
       <!-- show login button if logged out -->
       @if (!isLoggedIn()) {
-      <button mat-flat-button color="primary" (click)="login.emit()" id="login">Login</button>
+        <button mat-flat-button color="primary" (click)="login.emit()" id="login">Login</button>
       }
       <!-- show admin button if logged in as admin -->
       @if (isLoggedInAsAdmin()) {
-      <button mat-flat-button color="primary" routerLink="/admin" id="admin">Admin</button>
+        <button mat-flat-button color="primary" routerLink="/admin" id="admin">Admin</button>
       }
       <!-- show logout button if logged in -->
       @if (isLoggedIn()) {
-      <button mat-flat-button color="primary" (click)="logout.emit()" id="logout">Logout</button>
+        <button mat-flat-button color="primary" (click)="logout.emit()" id="logout">Logout</button>
       }
     </mat-toolbar>
   `,
   styles: `
-        div .nav-item {
-        cursor: pointer;
-      }
+    div .nav-item {
+      cursor: pointer;
+    }
   `,
 })
 export class MenuToolbar {
