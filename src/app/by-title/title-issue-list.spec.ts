@@ -3,11 +3,11 @@ import { CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { Dialog } from '@angular/cdk/dialog';
 
-import { describe, expect, jest } from '@jest/globals';
+import { describe, expect, beforeEach, it, vi } from 'vitest';
 
 import { AuthService } from '../shared/services/auth/auth-service';
 import { fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData, fakeTitle } from '../../testing/testing-data';
-import { IssueChartData } from '../shared/services/issue/issue-data';
+import { IssueData } from '../shared/services/issue/issue-data';
 import { ModalService } from '../shared/modals/modal-service';
 import TitleIssueList from './title-issue-list';
 import { TitleData } from '../shared/services/title/title-data';
@@ -23,8 +23,8 @@ describe('TitleIssueListComponent', () => {
   };
 
   const issueDataStub = {
-    delete: jest.fn((id) => {}),
-    getAll: jest.fn(() => {
+    delete: vi.fn((id) => {}),
+    getAll: vi.fn(() => {
       return fakeIssueData;
     }),
     issues: signal(fakeIssueData).asReadonly,
@@ -33,17 +33,17 @@ describe('TitleIssueListComponent', () => {
   };
 
   const modalServiceStub = {
-    setDeleteModalOptions: jest.fn(),
+    setDeleteModalOptions: vi.fn(),
   };
 
   const titleDataStub = {
-    getById: jest.fn((id: number) => {
+    getById: vi.fn((id: number) => {
       return fakeTitle;
     }),
   };
 
   const routerStub = {
-    navigate: jest.fn(),
+    navigate: vi.fn(),
   };
 
   beforeEach(async () => {
@@ -70,7 +70,7 @@ describe('TitleIssueListComponent', () => {
 
   describe('ngOnit', () => {
     it('should call loadData on init', () => {
-      const loadDataSpy = jest.spyOn(component, 'loadData');
+      const loadDataSpy = vi.spyOn(component, 'loadData');
       component.ngOnInit();
       expect(loadDataSpy).toHaveBeenCalled();
       loadDataSpy.mockClear();
@@ -92,7 +92,7 @@ describe('TitleIssueListComponent', () => {
 
   // describe('deleteIssue', () => {
   //   it('should call modal open', () => {
-  //     const dialogOpenSpy = jest.spyOn(dialog, 'open');
+  //     const dialogOpenSpy = vi.spyOn(dialog, 'open');
   //     component.deleteIssue(1);
   //     expect(dialogOpenSpy).toBeCalled();
   //   });

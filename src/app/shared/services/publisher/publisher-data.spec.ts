@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { describe, expect, jest } from '@jest/globals';
+import { expect, vi, beforeEach, describe, it } from 'vitest';
 
 import { fakePublisher, fakePublisherData } from '../../../../testing/testing-data';
 import { PublisherData } from './publisher-data';
@@ -13,23 +13,23 @@ describe('Publisherservice', () => {
   const url = 'http://localhost:3000/publishers';
 
   const dataServiceStub = {
-    add: jest.fn((data: Publisher, url: string) => {
+    add: vi.fn((data: Publisher, url: string) => {
       return fakePublisher;
     }),
-    delete: jest.fn((id: number, url: string) => {}),
-    getAll: jest.fn((url: string) => {
+    delete: vi.fn((id: number, url: string) => {}),
+    getAll: vi.fn((url: string) => {
       return fakePublisherData;
     }),
-    getById: jest.fn((id: number, url: string) => {
+    getById: vi.fn((id: number, url: string) => {
       return fakePublisher;
     }),
-    search: jest.fn((term: string, url: string) => {
+    search: vi.fn((term: string, url: string) => {
       if (term === '' || url === '') {
         return [];
       }
       return fakePublisherData;
     }),
-    update: jest.fn((id: number, data: Publisher, url: string) => {
+    update: vi.fn((id: number, data: Publisher, url: string) => {
       return fakePublisher;
     }),
   };

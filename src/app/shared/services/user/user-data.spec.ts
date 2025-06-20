@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { describe, expect, jest } from '@jest/globals';
+import { expect, beforeEach, vi, describe, it } from 'vitest';
 
 import { DataService } from '../common/data-service';
 import { fakeUser, fakeUserData } from '../../../../testing/testing-data';
@@ -13,26 +13,26 @@ describe('UserDataService', () => {
   const url = 'http://localhost:3000/users';
 
   const dataServiceStub = {
-    add: jest.fn((data: User, url: string) => {
+    add: vi.fn((data: User, url: string) => {
       return fakeUser;
     }),
-    addx: jest.fn((data: User, url: string) => {
+    addx: vi.fn((data: User, url: string) => {
       return fakeUser;
     }),
-    delete: jest.fn((id: number, url: string) => {}),
-    getAll: jest.fn((url: string) => {
+    delete: vi.fn((id: number, url: string) => {}),
+    getAll: vi.fn((url: string) => {
       return fakeUserData;
     }),
-    getById: jest.fn((id: number, url: string) => {
+    getById: vi.fn((id: number, url: string) => {
       return fakeUser;
     }),
-    search: jest.fn((term: string, url: string) => {
+    search: vi.fn((term: string, url: string) => {
       if (term === '' || url === '') {
         return [];
       }
       return fakeUserData;
     }),
-    update: jest.fn((id: number, data: User, url: string) => {
+    update: vi.fn((id: number, data: User, url: string) => {
       return fakeUser;
     }),
   };
@@ -48,18 +48,18 @@ describe('UserDataService', () => {
     expect(service).toBeTruthy();
   });
 
-  // initiazation
+  // initialization
   describe('initialization', () => {
     it('should call the data service getAll method with passed url', () => {
-      TestBed.flushEffects();
+      TestBed.tick();
       expect(dataServiceStub.getAll).toBeCalledWith(url);
     });
 
     // it('should initialize users signal with values', async () => {
-    //   const service1 = TestBed.inject(UserDataService);
+    //   const service1 = TestBed.inject(UserData);
     //   const dataService1 = TestBed.inject(DataService);
-    //   const getAllSpy = jest.spyOn(dataService1, 'getAll').mockReturnValue(Promise.resolve(fakeUserData));
-    //   TestBed.flushEffects();
+    //   const getAllSpy = vi.spyOn(dataService1, 'getAll').mockReturnValue(Promise.resolve(fakeUserData));
+    //   TestBed.tick();
     //   expect(service1.users()).toBe(fakeUserData);
     // });
   });

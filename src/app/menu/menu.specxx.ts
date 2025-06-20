@@ -10,7 +10,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 
 import { of } from 'rxjs';
-import { describe, expect, jest } from '@jest/globals';
+import { expect, beforeEach, vi } from 'vitest';
+import { describe, it } from 'jasmine-core';
 
 import { Menu } from './menu';
 import { AuthService } from '../shared/services/auth/auth-service';
@@ -46,10 +47,10 @@ describe('MenuComponent', () => {
 
   it('should open a login dialog when login method is called', async () => {
     const authService = TestBed.inject(AuthService);
-    jest.spyOn(authService, 'login');
+    vi.spyOn(authService, 'login');
 
     component.login();
-    jest.spyOn(component.dialogRef, 'afterClosed').mockReturnValue(of({ email: 'test', password: '123' }));
+    vi.spyOn(component.dialogRef, 'afterClosed').mockReturnValue(of({ email: 'test', password: '123' }));
     const dialogs = await loader.getAllHarnesses(MatDialogHarness);
 
     expect(component.dialogRef).toBeDefined();
@@ -58,10 +59,10 @@ describe('MenuComponent', () => {
 
   it('should load the login dialog with title of Login', async () => {
     const authService = TestBed.inject(AuthService);
-    jest.spyOn(authService, 'login');
+    vi.spyOn(authService, 'login');
 
     component.login();
-    jest.spyOn(component.dialogRef, 'afterClosed').mockReturnValue(of({ email: 'test', password: '123' }));
+    vi.spyOn(component.dialogRef, 'afterClosed').mockReturnValue(of({ email: 'test', password: '123' }));
     const dialogs = await loader.getAllHarnesses(MatDialogHarness);
 
     expect(await dialogs[0].getTitleText()).toBe('Login');
@@ -69,10 +70,10 @@ describe('MenuComponent', () => {
 
   it('should display two input fields with labels Email Address and Password', async () => {
     const authService = TestBed.inject(AuthService);
-    jest.spyOn(authService, 'login');
+    vi.spyOn(authService, 'login');
 
     component.login();
-    jest.spyOn(component.dialogRef, 'afterClosed').mockReturnValue(of({ email: 'test', password: '123' }));
+    vi.spyOn(component.dialogRef, 'afterClosed').mockReturnValue(of({ email: 'test', password: '123' }));
     await loader.getAllHarnesses(MatDialogHarness);
 
     expect(document.getElementsByTagName('input').length).toBe(2);

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { describe, expect, jest } from '@jest/globals';
+import { expect, beforeEach, vi, describe, it } from 'vitest';
 
 import { DataService } from '../common/data-service';
 import { fakeTitle, fakeTitleData } from '../../../../testing/testing-data';
@@ -12,23 +12,23 @@ describe('TitleDataService', () => {
   const url = 'http://localhost:3000/titles';
 
   const dataServiceStub = {
-    add: jest.fn((data: Title, url: string) => {
+    add: vi.fn((data: Title, url: string) => {
       return fakeTitle;
     }),
-    delete: jest.fn((id: number, url: string) => {}),
-    getAll: jest.fn((url: string) => {
+    delete: vi.fn((id: number, url: string) => {}),
+    getAll: vi.fn((url: string) => {
       return fakeTitleData;
     }),
-    getById: jest.fn((id: number, url: string) => {
+    getById: vi.fn((id: number, url: string) => {
       return fakeTitle;
     }),
-    search: jest.fn((term: string, url: string) => {
+    search: vi.fn((term: string, url: string) => {
       if (term === '' || url === '') {
         return [];
       }
       return fakeTitleData;
     }),
-    update: jest.fn((id: number, data: Title, url: string) => {
+    update: vi.fn((id: number, data: Title, url: string) => {
       return fakeTitle;
     }),
   };

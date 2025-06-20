@@ -1,13 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, input, signal } from '@angular/core';
 
-import { describe, expect } from '@jest/globals';
+import { expect, beforeEach } from 'vitest';
+import { describe, it } from 'jasmine-core';
 
 import { Dashboard } from './dashboard';
 import { fakeIssueData, fakeIssuePublishersData, fakeIssueTitlesData } from '../../testing/testing-data';
-import { IssueChartData } from '../shared/services/issue/issue-data';
 import { DashboardContent } from './dashboard-content';
 import { Issue, IssueChartData } from '../shared/models/issue-interface';
+import { IssueData } from '../shared/services/issue/issue-data';
 
 @Component({ selector: 'app-dashboard-content', template: '' })
 export class MockDashboardContentComponent {

@@ -1,40 +1,40 @@
 import { TestBed } from '@angular/core/testing';
 
-import { describe, expect, jest } from '@jest/globals';
+import { expect, beforeEach, vi, describe, it } from 'vitest';
 
-import { DataService } from '../common/data-service';
 import {
   fakeIssue,
   fakeIssueData,
   fakeIssuePublishersData,
   fakeIssueTitlesData,
 } from '../../../../testing/testing-data';
-import { IssueChartData } from './issue-data';
-import { Issue } from '../../models/issue-interface';
+import { Issue, IssueChartData } from '../../models/issue-interface';
+import { IssueData } from '../issue/issue-data';
+import { DataService } from '../common/data-service';
 
 describe('IssueDataService', () => {
-  let service: IssueChartData;
+  let service: IssueData;
 
   const url = 'http://localhost:3000/issues';
 
   const dataServiceStub = {
-    add: jest.fn((data: Issue, url: string) => {
+    add: vi.fn((data: Issue, url: string) => {
       return fakeIssue;
     }),
-    delete: jest.fn((id: number, url: string) => {}),
-    getAll: jest.fn((url: string) => {
+    delete: vi.fn((id: number, url: string) => {}),
+    getAll: vi.fn((url: string) => {
       return fakeIssueData;
     }),
-    getById: jest.fn((id: number, url: string) => {
+    getById: vi.fn((id: number, url: string) => {
       return fakeIssue;
     }),
-    search: jest.fn((term: string, url: string) => {
+    search: vi.fn((term: string, url: string) => {
       if (term === '' || url === '') {
         return [];
       }
       return fakeIssueData;
     }),
-    update: jest.fn((id: number, data: Issue, url: string) => {
+    update: vi.fn((id: number, data: Issue, url: string) => {
       return fakeIssue;
     }),
   };
