@@ -6,6 +6,7 @@ import { DataService } from '../common/data-service';
 import { fakeUser, fakeUserData } from '../../../../testing/testing-data';
 import { User } from '../../models/user-interface';
 import { UserData } from './user-data';
+import { ApplicationRef } from '@angular/core';
 
 describe('UserDataService', () => {
   let service: UserData;
@@ -55,13 +56,12 @@ describe('UserDataService', () => {
       expect(dataServiceStub.getAll).toBeCalledWith(url);
     });
 
-    // it('should initialize users signal with values', async () => {
-    //   const service1 = TestBed.inject(UserData);
-    //   const dataService1 = TestBed.inject(DataService);
-    //   const getAllSpy = vi.spyOn(dataService1, 'getAll').mockReturnValue(Promise.resolve(fakeUserData));
-    //   TestBed.tick();
-    //   expect(service1.users()).toBe(fakeUserData);
-    // });
+    it('should initialize users signal with values', async () => {
+      const dataService = TestBed.inject(DataService);
+      vi.spyOn(dataService, 'getAll').mockReturnValue(Promise.resolve(fakeUserData));
+      await TestBed.inject(ApplicationRef).whenStable();
+      expect(service.users()).toBe(fakeUserData);
+    });
   });
 
   //add
