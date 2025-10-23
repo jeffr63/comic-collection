@@ -1,4 +1,4 @@
-import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
@@ -36,16 +36,15 @@ import { TitleData } from '../shared/services/title/title-data';
       }
     </section>
   `,
-  styles: [
-    `
-      table {
-        width: 100%;
-      }
-      section {
-        margin: 10px 20px;
-      }
-    `,
-  ],
+  styles: `
+    table {
+      width: 100%;
+    }
+    section {
+      margin: 10px 20px;
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class TitleIssueList implements OnInit {
   readonly #authStore = inject(AuthService);

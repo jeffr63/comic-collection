@@ -1,4 +1,4 @@
-import { Component, input, model, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, model, output } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
@@ -29,7 +29,7 @@ import { Title } from '../shared/models/title-interface';
     <mat-card appearance="outlined">
       <mat-card-title>Issue Edit</mat-card-title>
       <mat-card-content>
-        @if (issueEditForm) {
+        @if (issueEditForm()) {
           <form [formGroup]="issueEditForm()">
             <!-- publishers dropdown -->
             @if (filteredPublishers()) {
@@ -181,6 +181,7 @@ import { Title } from '../shared/models/title-interface';
       margin-left: 10px;
     }
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IsssueEditCard {
   issueEditForm = model.required<FormGroup>();

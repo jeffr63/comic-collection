@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
@@ -57,21 +57,20 @@ import { MatInputModule } from '@angular/material/input';
       </mat-dialog-actions>
     </div>
   `,
-  styles: [
-    `
-      mat-form-field {
-        width: 100%;
-      }
+  styles: `
+    mat-form-field {
+      width: 100%;
+    }
 
-      .mt-5 {
-        margin-top: 5px;
-      }
+    .mt-5 {
+      margin-top: 5px;
+    }
 
-      .ml-8 {
-        margin-left: 8px;
-      }
-    `,
-  ],
+    .ml-8 {
+      margin-left: 8px;
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginModal implements OnInit {
   public dialogRef = inject(MatDialogRef<LoginModal>);

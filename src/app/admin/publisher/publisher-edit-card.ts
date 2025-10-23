@@ -1,4 +1,4 @@
-import { Component, model, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, model, output } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -14,7 +14,7 @@ import { MatInputModule } from '@angular/material/input';
     <mat-card appearance="outlined">
       <mat-card-title>Publisher Edit</mat-card-title>
       <mat-card-content>
-        @if (publisherEditForm) {
+        @if (publisherEditForm()) {
           <form [formGroup]="publisherEditForm()">
             <mat-form-field appearance="outline">
               <mat-label for="name">Publisher Name</mat-label>
@@ -81,6 +81,7 @@ import { MatInputModule } from '@angular/material/input';
       margin-left: 10px;
     }
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PublisherEditCard {
   publisherEditForm = model.required<FormGroup>();

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MatDialog } from '@angular/material/dialog';
@@ -33,16 +33,15 @@ import { UserData } from '../../shared/services/user/user-data';
       }
     </section>
   `,
-  styles: [
-    `
-      table {
-        width: 100%;
-      }
-      section {
-        margin: 10px 20px;
-      }
-    `,
-  ],
+  styles: `
+    table {
+      width: 100%;
+    }
+    section {
+      margin: 10px 20px;
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class UserList {
   readonly #authStore = inject(AuthService);

@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, input, resource } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject, input, resource } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 
@@ -10,6 +10,7 @@ import { UserEditCard } from './user-edit-card';
   selector: 'app-user-edit',
   imports: [UserEditCard],
   template: `<app-user-edit-card [(userEditForm)]="userEditForm" (save)="save()" />`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class UserEdit implements OnInit {
   readonly #fb = inject(FormBuilder);

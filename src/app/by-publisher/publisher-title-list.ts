@@ -1,4 +1,4 @@
-import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../shared/services/auth/auth-service';
@@ -25,16 +25,15 @@ import { TitleData } from '../shared/services/title/title-data';
         (open)="open($event)" />
     }
   </section>`,
-  styles: [
-    `
-      table {
-        width: 100%;
-      }
-      section {
-        margin: 10px 20px;
-      }
-    `,
-  ],
+  styles: `
+    table {
+      width: 100%;
+    }
+    section {
+      margin: 10px 20px;
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class PublisherTitleList implements OnInit {
   readonly #authStore = inject(AuthService);

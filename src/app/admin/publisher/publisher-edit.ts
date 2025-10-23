@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, input, resource, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject, input, resource, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 
@@ -16,6 +16,7 @@ import { PublisherEditCard } from './publisher-edit-card';
       (save)="save()"
       (saveNew)="saveNew()" />
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class PublisherEdit implements OnInit {
   readonly #fb = inject(FormBuilder);

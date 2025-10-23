@@ -1,4 +1,4 @@
-import { Component, model, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, model, output } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -23,7 +23,7 @@ import { MatRadioModule } from '@angular/material/radio';
     <mat-card appearance="outlined">
       <mat-card-title>User Edit</mat-card-title>
       <mat-card-content>
-        @if (userEditForm) {
+        @if (userEditForm()) {
           <form [formGroup]="userEditForm()">
             <mat-form-field appearance="outline">
               <mat-label for="name">Name</mat-label>
@@ -108,6 +108,7 @@ import { MatRadioModule } from '@angular/material/radio';
       margin: 5px;
     }
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserEditCard {
   userEditForm = model.required<FormGroup>();

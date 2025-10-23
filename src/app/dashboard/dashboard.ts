@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { DashboardContent } from './dashboard-content';
 import { IssueData } from '../shared/services/issue/issue-data';
@@ -7,6 +7,7 @@ import { IssueData } from '../shared/services/issue/issue-data';
   selector: 'app-dashboard',
   imports: [DashboardContent],
   template: `<app-dashboard-content [publishers]="publishers()" [titles]="titles()" />`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Dashboard {
   readonly #issueStore = inject(IssueData);

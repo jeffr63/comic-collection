@@ -1,4 +1,4 @@
-import { Component, OnInit, computed, inject, input, resource, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, computed, inject, input, resource, signal } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 
@@ -12,6 +12,7 @@ import { TitleData } from '../shared/services/title/title-data';
 
 @Component({
   selector: 'app-issue-edit',
+  imports: [IsssueEditCard],
   template: `<app-isssue-edit-card
     [(issueEditForm)]="issueEditForm"
     [filteredPublishers]="filteredPublishers()"
@@ -21,7 +22,7 @@ import { TitleData } from '../shared/services/title/title-data';
     (saveNew)="saveNew()"
     (onAutocompleteKeyUpPublisher)="onAutocompleteKeyUpPublisher($event)"
     (onAutocompleteKeyUpTitle)="onAutocompleteKeyUpTitle($event)" />`,
-  imports: [IsssueEditCard],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class IssueEdit implements OnInit {
   readonly #fb = inject(FormBuilder);

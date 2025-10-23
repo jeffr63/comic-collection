@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
@@ -37,6 +37,7 @@ import { RouterLink } from '@angular/router';
       cursor: pointer;
     }
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuToolbar {
   isLoggedIn = input(false);

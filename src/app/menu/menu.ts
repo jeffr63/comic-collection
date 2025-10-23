@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
@@ -18,6 +18,7 @@ import { MenuToolbar } from './menu-toolbar';
       (login)="login()"
       (logout)="logout()" />
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Menu {
   readonly #authStore = inject(AuthService);

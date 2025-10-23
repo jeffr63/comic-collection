@@ -1,4 +1,4 @@
-import { Component, input, model, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, model, output } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -27,7 +27,7 @@ import { Publisher } from '../../shared/models/publisher-interface';
     <mat-card appearance="outlined">
       <mat-card-title>Title Edit</mat-card-title>
       <mat-card-content>
-        @if (titleEditForm) {
+        @if (titleEditForm()) {
           <form [formGroup]="titleEditForm()">
             @if (filteredPublishers()) {
               <mat-form-field appearance="outline">
@@ -122,6 +122,7 @@ import { Publisher } from '../../shared/models/publisher-interface';
       margin-left: 10px;
     }
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TitleEditCard {
   titleEditForm = model.required<FormGroup>();

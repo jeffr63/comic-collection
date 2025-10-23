@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 import { MatCardModule } from '@angular/material/card';
 
@@ -20,7 +20,7 @@ import { IssueChartData } from '../models/issue-interface';
       </mat-card-content>
     </mat-card>
   `,
-  styles: ``,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChartCard {
   data = input.required<IssueChartData[]>();

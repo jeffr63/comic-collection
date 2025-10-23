@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
@@ -32,13 +32,12 @@ import { ModalService } from './modal-service';
       </mat-dialog-actions>
     </div>
   `,
-  styles: [
-    `
-      .ml-10 {
-        margin-left: 10px;
-      }
-    `,
-  ],
+  styles: `
+    .ml-10 {
+      margin-left: 10px;
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DeleteModal implements OnInit {
   public dialog = inject(MatDialogRef<DeleteModal>);

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 import { MatGridListModule } from '@angular/material/grid-list';
 
@@ -21,7 +21,7 @@ import { IssueChartData } from '../shared/models/issue-interface';
       </mat-grid-list>
     </section>
   `,
-  styles: ``,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardContent {
   publishers = input.required<IssueChartData[]>();

@@ -1,5 +1,5 @@
 import { CurrencyPipe, NgClass } from '@angular/common';
-import { Component, OnInit, computed, effect, input, output, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, computed, effect, input, output, viewChild } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -146,34 +146,33 @@ import { Column } from '../models/column-interface';
       </mat-paginator>
     }
   `,
-  styles: [
-    `
-      table {
-        width: 100%;
-      }
-      th,
-      td {
-        padding: 10px !important;
-      }
-      mat-form-field {
-        width: 40%;
-      }
-      .text-right {
-        text-align: right !important;
-      }
-      .ml-5 {
-        margin-left: 5px;
-      }
-      .fl1 {
-        float: right;
-        vertical-align: middle;
-      }
-      .mat-mdc-form-field {
-        font-size: 14px;
-        width: 80%;
-      }
-    `,
-  ],
+  styles: `
+    table {
+      width: 100%;
+    }
+    th,
+    td {
+      padding: 10px !important;
+    }
+    mat-form-field {
+      width: 40%;
+    }
+    .text-right {
+      text-align: right !important;
+    }
+    .ml-5 {
+      margin-left: 5px;
+    }
+    .fl1 {
+      float: right;
+      vertical-align: middle;
+    }
+    .mat-mdc-form-field {
+      font-size: 14px;
+      width: 80%;
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DisplayTable<TData> implements OnInit {
   // input parms

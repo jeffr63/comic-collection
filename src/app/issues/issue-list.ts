@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MatDialog } from '@angular/material/dialog';
@@ -33,13 +33,12 @@ import { ModalService } from '../shared/modals/modal-service';
       }
     </section>
   `,
-  styles: [
-    `
-      section {
-        margin: 10px 20px;
-      }
-    `,
-  ],
+  styles: `
+    section {
+      margin: 10px 20px;
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class IssueAllList {
   readonly #authStore = inject(AuthService);

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -15,35 +15,34 @@ import { MatGridListModule } from '@angular/material/grid-list';
       </div>
 
       <mat-grid-list cols="3">
-        @for(card of cards; track card) {
-        <mat-grid-tile>
-          <mat-card appearance="outlined">
-            <mat-card-header>
-              <mat-card-title color="primary">{{ card.title }}</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-              <p>{{ card.content }}</p>
-              <button mat-flat-button color="primary" class="center" (click)="redirectTo(card.redirectTo)">
-                {{ card.buttonLabel }}
-              </button>
-            </mat-card-content>
-          </mat-card>
-        </mat-grid-tile>
+        @for (card of cards; track card) {
+          <mat-grid-tile>
+            <mat-card appearance="outlined">
+              <mat-card-header>
+                <mat-card-title color="primary">{{ card.title }}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p>{{ card.content }}</p>
+                <button mat-flat-button color="primary" class="center" (click)="redirectTo(card.redirectTo)">
+                  {{ card.buttonLabel }}
+                </button>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
         }
       </mat-grid-list>
     </section>
   `,
-  styles: [
-    `
-      mat-card {
-        width: 80%;
-        margin: 0 auto;
-      }
-      section {
-        margin: 10px;
-      }
-    `,
-  ],
+  styles: `
+    mat-card {
+      width: 80%;
+      margin: 0 auto;
+    }
+    section {
+      margin: 10px;
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class AdminComponent {
   readonly #router = inject(Router);
