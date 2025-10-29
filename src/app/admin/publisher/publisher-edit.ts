@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject, input, resource, signal } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { form, required } from '@angular/forms/signals';
 
 import { Publisher } from '../../shared/models/publisher-interface';
 import { PublisherData } from '../../shared/services/publisher/publisher-data';
@@ -8,19 +8,12 @@ import { PublisherEditCard } from './publisher-edit-card';
 
 @Component({
   selector: 'app-publisher-edit',
-  imports: [ReactiveFormsModule, PublisherEditCard],
-  template: `
-    <app-publisher-edit-card
-      [(publisherEditForm)]="publisherEditForm"
-      (cancel)="cancel()"
-      (save)="save()"
-      (saveNew)="saveNew()" />
-  `,
+  imports: [PublisherEditCard],
+  template: ` <app-publisher-edit-card [form]="form" (cancel)="cancel()" (save)="save()" (saveNew)="saveNew()" /> `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class PublisherEdit implements OnInit {
-  readonly #fb = inject(FormBuilder);
-  readonly #location = inject(Location);
+  readonly #router = inject(Router);
   readonly #publisherStore = inject(PublisherData);
 
   protected readonly id = input<string>();
@@ -30,48 +23,42 @@ export default class PublisherEdit implements OnInit {
     loader: async ({ params: id }) => {
       if (id === 'new') return { name: '' };
       const publisher = await this.#publisherStore.getById(+id);
-      this.loadFormValues(publisher);
       return publisher;
     },
   });
-  protected publisherEditForm!: FormGroup;
+
+  readonly form = form(this.#publisher.value, (path) => {
+    required(path.name, { message: 'Please enter publisher name' });
+  });
 
   ngOnInit() {
-    this.publisherEditForm = this.#fb.group({ name: ['', Validators.required] });
     if (this.id() !== 'new' || this.id() == undefined) {
       this.#isNew.set(false);
     }
   }
 
-  protected loadFormValues(publisher: Publisher) {
-    this.publisherEditForm?.get('name')?.setValue(publisher.name);
-  }
-
   protected save() {
-    this.#publisher.value().name = this.publisherEditForm.controls['name'].value;
     if (this.#isNew()) {
       this.#publisherStore.add(this.#publisher.value());
     } else {
       this.#publisherStore.update(this.#publisher.value());
     }
-    this.#location.back();
+    this.#router.navigateByUrl('/admin/publishers');
   }
 
   protected cancel() {
-    this.#location.back();
+    this.#router.navigateByUrl('/admin/publishers');
   }
 
   protected saveNew() {
-    this.#publisher.value().name = this.publisherEditForm.controls['name'].value;
     if (this.#isNew()) {
       this.#publisherStore.add(this.#publisher.value());
     } else {
       this.#publisherStore.update(this.#publisher.value());
     }
-
-    // clear publisher object, clear form object, reset flag to new
-    this.#publisher.set({ name: '' });
-    this.publisherEditForm.patchValue({ name: '' });
+    this.#publisher.set({ id: null, name: '' });
     this.#isNew.set(true);
+    this.form().reset();
+    this.#router.navigateByUrl('/admin/publisher/new');
   }
 }
