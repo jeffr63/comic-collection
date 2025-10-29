@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, input, model, output } from '@angular/core';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+import { Field, FieldTree, ValidationError } from '@angular/forms/signals';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,6 +10,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
 import { Publisher } from '../../shared/models/publisher-interface';
+import { Title } from '../../shared/models/title-interface';
+import { toErrorMessages } from '../../shared/services/common/error-service';
 
 @Component({
   selector: 'app-title-edit-card',
@@ -21,14 +23,14 @@ import { Publisher } from '../../shared/models/publisher-interface';
     MatIconModule,
     MatInputModule,
     MatSelectModule,
-    ReactiveFormsModule,
+    Field,
   ],
   template: `
     <mat-card appearance="outlined">
       <mat-card-title>Title Edit</mat-card-title>
       <mat-card-content>
-        @if (titleEditForm()) {
-          <form [formGroup]="titleEditForm()">
+        @if (form()) {
+          <form>
             @if (filteredPublishers()) {
               <mat-form-field appearance="outline">
                 <mat-label>Publisher</mat-label>
@@ -36,7 +38,7 @@ import { Publisher } from '../../shared/models/publisher-interface';
                   matInput
                   id="publisher"
                   #inputPublisher
-                  formControlName="publisher"
+                  [field]="form().publisher"
                   [matAutocomplete]="publisherAuto"
                   (keyup)="onAutocompleteKeyUp.emit(inputPublisher.value)" />
                 <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
@@ -55,14 +57,10 @@ import { Publisher } from '../../shared/models/publisher-interface';
                   <mat-icon>add</mat-icon>
                 </button>
 
-                @let fname = titleEditForm().controls.publisher;
+                @let fpub = form().publisher();
                 <!-- publisher required error -->
-                @if (fname.errors?.['required'] && fname.touched) {
-                  <mat-error> Publisher is required </mat-error>
-                }
-                <!-- select publisher from list error -->
-                @if (fname.errors?.['match']) {
-                  <mat-error> Please select a publisher from the list. </mat-error>
+                @if (fpub.errors() && fpub.touched()) {
+                  <mat-error>{{ generateErrors(fpub.errors()) }}</mat-error>
                 }
               </mat-form-field>
             }
@@ -74,12 +72,12 @@ import { Publisher } from '../../shared/models/publisher-interface';
                 type="text"
                 id="title"
                 matInput
-                formControlName="title"
+                [field]="form().title"
                 placeholder="Enter title of comic" />
-              @let ftitle = titleEditForm().controls.title;
+              @let ftitle = form().title();
               <!-- title required error -->
-              @if (ftitle.errors?.['required'] && ftitle.touched) {
-                <mat-error> Title is required</mat-error>
+              @if (ftitle.errors() && ftitle.touched()) {
+                <mat-error>{{ generateErrors(ftitle.errors()) }}</mat-error>
               }
             </mat-form-field>
           </form>
@@ -87,7 +85,7 @@ import { Publisher } from '../../shared/models/publisher-interface';
       </mat-card-content>
 
       <mat-card-actions align="end">
-        @let disabled = !titleEditForm().valid;
+        @let disabled = form()().invalid();
         <button mat-flat-button color="primary" (click)="save.emit()" title="Save" [disabled]="disabled">
           <mat-icon>save</mat-icon> Save
         </button>
@@ -125,10 +123,14 @@ import { Publisher } from '../../shared/models/publisher-interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TitleEditCard {
-  titleEditForm = model.required<FormGroup>();
+  form = input.required<FieldTree<Title>>();
   filteredPublishers = input.required<Publisher[]>();
   cancel = output();
   save = output();
   saveNew = output();
   onAutocompleteKeyUp = output<string>();
+
+  generateErrors(errors: ValidationError[]) {
+    return toErrorMessages(errors);
+  }
 }

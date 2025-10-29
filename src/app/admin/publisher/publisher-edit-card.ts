@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
-import { Field, FieldTree } from '@angular/forms/signals';
+import { Field, FieldTree, ValidationError } from '@angular/forms/signals';
 
 import { MatButton } from '@angular/material/button';
 import { MatCard, MatCardActions, MatCardContent, MatCardTitle } from '@angular/material/card';
@@ -8,7 +8,7 @@ import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
 
 import { Publisher } from '../../shared/models/publisher-interface';
-import { ErrorService } from '../../shared/services/common/error-service';
+import { toErrorMessages } from '../../shared/services/common/error-service';
 
 @Component({
   selector: 'app-publisher-edit-card',
@@ -41,7 +41,7 @@ import { ErrorService } from '../../shared/services/common/error-service';
                 [field]="form().name"
                 placeholder="Enter name of publisher" />
               @if (form().name().errors() && form().name().touched()) {
-                <mat-error>{{ errorService.toErrorMessages(form().name().errors()) }}</mat-error>
+                <mat-error>{{ generateErrors(form().name().errors()) }}</mat-error>
               }
             </mat-form-field>
           </form>
@@ -87,10 +87,12 @@ import { ErrorService } from '../../shared/services/common/error-service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PublisherEditCard {
-  errorService = inject(ErrorService);
-
   form = input.required<FieldTree<Publisher>>();
   cancel = output();
   save = output();
   saveNew = output();
+
+  generateErrors(errors: ValidationError[]) {
+    return toErrorMessages(errors);
+  }
 }
