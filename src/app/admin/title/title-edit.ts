@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, computed, inject, input, resource, signal } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, computed, inject, input, resource, signal } from '@angular/core';
 
 import { Publisher } from '../../shared/models/publisher-interface';
 import { PublisherData } from '../../shared/services/publisher/publisher-data';
@@ -8,6 +7,7 @@ import { TitleData } from '../../shared/services/title/title-data';
 import { TitleEditCard } from './title-edit-card';
 import { Router } from '@angular/router';
 import { form, required } from '@angular/forms/signals';
+//import { validatePublisher } from '../../shared/services/common/validators';
 
 @Component({
   selector: 'app-title-edit',
@@ -51,6 +51,7 @@ export default class TitleEdit {
   readonly form = form(this.#title.value, (path) => {
     required(path.publisher, { message: 'Please select the publisher name' });
     required(path.title, { message: 'Please enter the title' });
+    //TODO: validatePublisher(path.publisher, this.#publishers);  // error goes into infinite loop on error condition.
   });
 
   protected cancel() {
@@ -77,9 +78,8 @@ export default class TitleEdit {
       this.#titleStore.update(this.#title.value());
     }
 
-    // create set publisher
     this.form().reset();
-    this.#title.update((prevTitle) => ({ ...prevTitle, id: null, title: '' }));
+    this.#titleStore.saveLastPublisher(this.#title.value().publisher);
     this.#router.navigateByUrl('/admin/title/new');
   }
 }
