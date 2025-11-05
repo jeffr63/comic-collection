@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, resource, signal } from '@angular/core';
+import { FieldPath, form, required, submit } from '@angular/forms/signals';
+import { Router } from '@angular/router';
 
-import { Publisher } from '../../shared/models/publisher-interface';
+//import { Publisher } from '../../shared/models/publisher-interface';
 import { PublisherData } from '../../shared/services/publisher/publisher-data';
 import { Title } from '../../shared/models/title-interface';
 import { TitleData } from '../../shared/services/title/title-data';
 import { TitleEditCard } from './title-edit-card';
-import { Router } from '@angular/router';
-import { customError, form, required, validate } from '@angular/forms/signals';
 //import { validatePublisher } from '../../shared/services/common/validators';
 
 @Component({
@@ -48,22 +48,21 @@ export default class TitleEdit {
     },
   });
 
-  readonly form = form(this.#title.value, (path) => {
+  readonly form = form(this.#title.value, (path: FieldPath<Title>) => {
     required(path.publisher, { message: 'Please select the publisher name' });
     required(path.title, { message: 'Please enter the title' });
-    //TODO: validatePublisher(path.publisher, this.#publishers);  // error goes into infinite loop on error condition.
+    // TODO: error goes into infinite loop on error condition.
+    // validatePublisher(path.publisher, this.#publishers);
     // validate(path.publisher, (ctx) => {
     //   const value = ctx.value();
     //   if (value == '') {
     //     return null;
     //   }
-
-    //   let selectedItem!: Publisher | undefined;
-    //   selectedItem = this.#publishers().find((publisher: Publisher) => publisher.name === value);
-    //   if (!selectedItem) {
-    //     return customError({ kind: 'publisher', value });
+    //   const selectedItem: Publisher = this.#publishers().find((p: Publisher) => p.name === value);
+    //   if (selectedItem) {
+    //     return null; /* valid option selected */
     //   }
-    //   return null; /* valid option selected */
+    //   return customError({ kind: 'publisher', value });
     // });
   });
 
@@ -75,24 +74,37 @@ export default class TitleEdit {
     this.publisherFilter.set(searchText?.toLowerCase());
   }
 
-  protected save() {
-    if (this.#isNew()) {
-      this.#titleStore.add(this.#title.value());
-    } else {
-      this.#titleStore.update(this.#title.value());
-    }
-    this.#router.navigateByUrl('/admin/titles');
+  protected async save() {
+    await submit(this.form, async (form) => {
+      try {
+        if (this.#isNew()) {
+          await this.#titleStore.add(form().value());
+        } else {
+          await this.#titleStore.update(form().value());
+        }
+        this.#router.navigateByUrl('/admin/titles');
+        return undefined;
+      } catch (error) {
+        return [{ kind: 'save', message: 'Error saving title. Please try again.' }];
+      }
+    });
   }
 
-  protected saveNew() {
-    if (this.#isNew()) {
-      this.#titleStore.add(this.#title.value());
-    } else {
-      this.#titleStore.update(this.#title.value());
-    }
-
-    this.form().reset();
-    this.#titleStore.saveLastPublisher(this.#title.value().publisher);
-    this.#router.navigateByUrl('/admin/title/new');
+  protected async saveNew() {
+    await submit(this.form, async (form) => {
+      try {
+        if (this.#isNew()) {
+          await this.#titleStore.add(form().value());
+        } else {
+          await this.#titleStore.update(form().value());
+        }
+        this.form().reset();
+        this.#titleStore.saveLastPublisher(this.#title.value().publisher);
+        this.#router.navigateByUrl('/admin/title/new');
+        return undefined;
+      } catch (error) {
+        return [{ kind: 'save', message: 'Error saving title. Please try again.' }];
+      }
+    });
   }
 }
