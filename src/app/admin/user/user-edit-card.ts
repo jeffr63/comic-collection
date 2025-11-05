@@ -64,7 +64,7 @@ import { toErrorMessages } from '../../shared/services/common/error-service';
             @let frole = form().role();
             <!-- role required error -->
             @if (frole.invalid() && frole.touched()) {
-              <mat-error> Role is required </mat-error>
+              <mat-error>{{ generateErrors(frole.errors()) }}</mat-error>
             }
           </form>
         }

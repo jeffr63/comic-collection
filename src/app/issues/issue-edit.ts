@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, computed, inject, input, resource, signal } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, ValidatorFn, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 
 import { Issue } from '../shared/models/issue-interface';
@@ -9,12 +9,13 @@ import { Publisher } from '../shared/models/publisher-interface';
 import { PublisherData } from '../shared/services/publisher/publisher-data';
 import { Title } from '../shared/models/title-interface';
 import { TitleData } from '../shared/services/title/title-data';
+import { form, min, required } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-issue-edit',
   imports: [IsssueEditCard],
   template: `<app-isssue-edit-card
-    [(issueEditForm)]="issueEditForm"
+    [form]="form"
     [filteredPublishers]="filteredPublishers()"
     [filteredTitles]="filteredTitles()"
     (cancel)="cancel()"
@@ -25,7 +26,6 @@ import { TitleData } from '../shared/services/title/title-data';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class IssueEdit implements OnInit {
-  readonly #fb = inject(FormBuilder);
   readonly #issueStore = inject(IssueData);
   readonly #location = inject(Location);
   readonly #publisherStore = inject(PublisherData);
@@ -38,7 +38,6 @@ export default class IssueEdit implements OnInit {
     loader: async ({ params: id }) => {
       if (id === 'new') return { publisher: '', title: '', issue: null, coverPrice: null, url: '' };
       const issue = await this.#issueStore.getById(+id);
-      this.loadFormValues(issue);
       return issue;
     },
   });
@@ -56,16 +55,16 @@ export default class IssueEdit implements OnInit {
       ? this.#titles()
       : this.#titles().filter((r) => r.title.toLocaleLowerCase().startsWith(this.titleFilter()));
   });
-  protected issueEditForm!: FormGroup;
+
+  readonly form = form(this.#issue.value, (path) => {
+    required(path.publisher, { message: 'Please select the publisher' });
+    required(path.title, { message: 'Please select the title' });
+    required(path.issue, { message: 'Please enter the issue number' });
+    required(path.coverPrice, { message: 'Please enter the cover price' });
+    min(path.coverPrice, 0, { message: 'Cover price must be a positive number' });
+  });
 
   async ngOnInit() {
-    this.issueEditForm = this.#fb.group({
-      publisher: ['', [Validators.required, this.autocompleteStringPublisherValidator()]],
-      title: ['', [Validators.required, this.autocompleteStringTitleValidator()]],
-      issue: ['', Validators.required],
-      coverPrice: ['', Validators.required],
-      url: [''],
-    });
     if (this.id() !== 'new' && this.id() != undefined) {
       this.#isNew.set(false);
     }
@@ -103,16 +102,6 @@ export default class IssueEdit implements OnInit {
     this.#location.back();
   }
 
-  private async loadFormValues(issue: Issue) {
-    this.issueEditForm.patchValue({
-      publisher: issue.publisher,
-      title: issue.title,
-      issue: issue.issue,
-      coverPrice: issue.coverPrice,
-      url: issue.url,
-    });
-  }
-
   protected onAutocompleteKeyUpPublisher(searchText: string): void {
     this.publisherFilter.set(searchText?.toLowerCase());
   }
@@ -122,13 +111,6 @@ export default class IssueEdit implements OnInit {
   }
 
   protected save() {
-    const { publisher, title, issue, coverPrice, url } = this.issueEditForm.getRawValue();
-    this.#issue.value().publisher = publisher;
-    this.#issue.value().title = title;
-    this.#issue.value().issue = issue;
-    this.#issue.value().coverPrice = coverPrice;
-    this.#issue.value().url = url;
-
     if (this.#isNew()) {
       this.#issueStore.add(this.#issue.value());
     } else {
@@ -138,13 +120,6 @@ export default class IssueEdit implements OnInit {
   }
 
   protected saveNew() {
-    const { publisher, title, issue, coverPrice, url } = this.issueEditForm.getRawValue();
-    this.#issue.value().publisher = publisher;
-    this.#issue.value().title = title;
-    this.#issue.value().issue = issue;
-    this.#issue.value().coverPrice = coverPrice;
-    this.#issue.value().url = url;
-
     if (this.#isNew()) {
       this.#issueStore.add(this.#issue.value());
     } else {
@@ -153,19 +128,11 @@ export default class IssueEdit implements OnInit {
 
     // create new issue object and set publisher, title and coverPrice values
     this.#issue.set({
-      publisher: publisher,
-      title: title,
-      coverPrice: coverPrice,
-      url: url,
-      //id: null,
-      issue: null,
-    });
-    this.issueEditForm.patchValue({
       publisher: this.#issue.value().publisher,
       title: this.#issue.value().title,
       coverPrice: this.#issue.value().coverPrice,
-      issue: this.#issue.value().issue,
       url: this.#issue.value().url,
+      issue: null,
     });
     this.#isNew.set(true);
   }

@@ -1,5 +1,7 @@
-import { ChangeDetectionStrategy, Component, input, model, output } from '@angular/core';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+import { Field, FieldTree, ValidationError } from '@angular/forms/signals';
+import { RouterLink } from '@angular/router';
+
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -7,10 +9,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { RouterLink } from '@angular/router';
 
 import { Publisher } from '../shared/models/publisher-interface';
 import { Title } from '../shared/models/title-interface';
+import { Issue } from '../shared/models/issue-interface';
+import { toErrorMessages } from '../shared/services/common/error-service';
 
 @Component({
   selector: 'app-isssue-edit-card',
@@ -22,15 +25,15 @@ import { Title } from '../shared/models/title-interface';
     MatInputModule,
     MatIconModule,
     MatSelectModule,
-    ReactiveFormsModule,
     RouterLink,
+    Field,
   ],
   template: `
     <mat-card appearance="outlined">
       <mat-card-title>Issue Edit</mat-card-title>
       <mat-card-content>
-        @if (issueEditForm()) {
-          <form [formGroup]="issueEditForm()">
+        @if (form()) {
+          <form>
             <!-- publishers dropdown -->
             @if (filteredPublishers()) {
               <mat-form-field appearance="outline">
@@ -39,7 +42,7 @@ import { Title } from '../shared/models/title-interface';
                   matInput
                   id="publisher"
                   #inputPublisher
-                  formControlName="publisher"
+                  [field]="form().publisher"
                   [matAutocomplete]="publisherAuto"
                   (keyup)="onAutocompleteKeyUpPublisher.emit(inputPublisher.value)" />
                 <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
@@ -49,14 +52,10 @@ import { Title } from '../shared/models/title-interface';
                     </mat-option>
                   }
                 </mat-autocomplete>
-                @let fpublisher = issueEditForm().controls.publisher;
+                @let fpublisher = form().publisher();
                 <!-- publisher required error  -->
-                @if (fpublisher.errors?.['required'] && fpublisher.touched) {
-                  <mat-error> Publisher is required </mat-error>
-                }
-                <!-- select publisher from list error -->
-                @if (fpublisher.errors?.['match']) {
-                  <mat-error> Please select a publisher from the list. </mat-error>
+                @if (fpublisher.invalid() && fpublisher.touched()) {
+                  <mat-error>{{ generateErrors(fpublisher.errors()) }}</mat-error>
                 }
               </mat-form-field>
             }
@@ -69,7 +68,7 @@ import { Title } from '../shared/models/title-interface';
                   matInput
                   id="title"
                   #inputTitle
-                  formControlName="title"
+                  [field]="form().title"
                   [matAutocomplete]="titleAuto"
                   (keyup)="onAutocompleteKeyUpTitle.emit(inputTitle.value)" />
                 <mat-autocomplete #titleAuto="matAutocomplete" autoActiveFirstOption>
@@ -87,14 +86,10 @@ import { Title } from '../shared/models/title-interface';
                   title="Add new title">
                   <mat-icon>add</mat-icon>
                 </button>
-                @let ftitle = issueEditForm().controls.title;
+                @let ftitle = form().title();
                 <!-- title required error -->
-                @if (ftitle.errors?.['required'] && ftitle.touched) {
-                  <mat-error> Title is required </mat-error>
-                }
-                <!-- select title from list error -->
-                @if (ftitle.errors?.['match']) {
-                  <mat-error> Please select a title from the list. </mat-error>
+                @if (ftitle.invalid() && ftitle.touched()) {
+                  <mat-error>{{ generateErrors(ftitle.errors()) }}</mat-error>
                 }
               </mat-form-field>
             }
@@ -106,12 +101,12 @@ import { Title } from '../shared/models/title-interface';
                 type="text"
                 id="issue"
                 matInput
-                formControlName="issue"
+                [field]="form().issue"
                 placeholder="Enter issue number of comic" />
-              @let fissue = issueEditForm().controls.issue;
+              @let fissue = form().issue();
               <!-- issue required error -->
-              @if (fissue.errors?.['required'] && fissue.touched) {
-                <mat-error> Issue Number is required </mat-error>
+              @if (fissue.invalid() && fissue.touched()) {
+                <mat-error>{{ generateErrors(fissue.errors()) }}</mat-error>
               }
             </mat-form-field>
 
@@ -119,15 +114,15 @@ import { Title } from '../shared/models/title-interface';
               <mat-label for="coverPrice">Cover Price</mat-label>
               <input
                 ngbAutofocus
-                type="number"
+                type="text"
                 id="coverPrice"
                 matInput
-                formControlName="coverPrice"
+                [field]="form().coverPrice"
                 placeholder="Enter cover price of comic" />
-              @let fcoverPrice = issueEditForm().controls.coverPrice;
+              @let fcoverPrice = form().coverPrice();
               <!-- cover price required error -->
-              @if (fcoverPrice.errors?.['required'] && fcoverPrice.touched) {
-                <mat-error> Cover Price is required </mat-error>
+              @if (fcoverPrice.invalid() && fcoverPrice.touched()) {
+                <mat-error>{{ generateErrors(fcoverPrice.errors()) }}</mat-error>
               }
             </mat-form-field>
 
@@ -146,7 +141,7 @@ import { Title } from '../shared/models/title-interface';
       </mat-card-content>
 
       <mat-card-actions align="end">
-        @let disabled = !issueEditForm().valid;
+        @let disabled = form()().invalid();
         <button mat-flat-button color="primary" (click)="save.emit()" title="Save" [disabled]="disabled">
           <mat-icon>save</mat-icon> Save
         </button>
@@ -184,7 +179,7 @@ import { Title } from '../shared/models/title-interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IsssueEditCard {
-  issueEditForm = model.required<FormGroup>();
+  form = input.required<FieldTree<Issue>>();
   filteredPublishers = input.required<Publisher[]>();
   filteredTitles = input.required<Title[]>();
   cancel = output();
@@ -192,4 +187,8 @@ export class IsssueEditCard {
   onAutocompleteKeyUpTitle = output<string>();
   save = output();
   saveNew = output();
+
+  generateErrors(errors: ValidationError[]) {
+    return toErrorMessages(errors);
+  }
 }
