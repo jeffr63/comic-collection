@@ -6,7 +6,7 @@ import { Title } from '../../shared/models/title-interface';
 import { TitleData } from '../../shared/services/title/title-data';
 import { TitleEditCard } from './title-edit-card';
 import { Router } from '@angular/router';
-import { form, required } from '@angular/forms/signals';
+import { customError, form, required, validate } from '@angular/forms/signals';
 //import { validatePublisher } from '../../shared/services/common/validators';
 
 @Component({
@@ -52,6 +52,19 @@ export default class TitleEdit {
     required(path.publisher, { message: 'Please select the publisher name' });
     required(path.title, { message: 'Please enter the title' });
     //TODO: validatePublisher(path.publisher, this.#publishers);  // error goes into infinite loop on error condition.
+    // validate(path.publisher, (ctx) => {
+    //   const value = ctx.value();
+    //   if (value == '') {
+    //     return null;
+    //   }
+
+    //   let selectedItem!: Publisher | undefined;
+    //   selectedItem = this.#publishers().find((publisher: Publisher) => publisher.name === value);
+    //   if (!selectedItem) {
+    //     return customError({ kind: 'publisher', value });
+    //   }
+    //   return null; /* valid option selected */
+    // });
   });
 
   protected cancel() {

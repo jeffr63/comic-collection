@@ -40,8 +40,9 @@ import { toErrorMessages } from '../../shared/services/common/error-service';
                 matInput
                 [field]="form().name"
                 placeholder="Enter name of publisher" />
-              @if (form().name().errors() && form().name().touched()) {
-                <mat-error>{{ generateErrors(form().name().errors()) }}</mat-error>
+              @let fname = form().name();
+              @if (fname.invalid() && fname.touched()) {
+                <mat-error>{{ generateErrors(fname.errors()) }}</mat-error>
               }
             </mat-form-field>
           </form>

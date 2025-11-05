@@ -59,7 +59,7 @@ import { toErrorMessages } from '../../shared/services/common/error-service';
 
                 @let fpub = form().publisher();
                 <!-- publisher required error -->
-                @if (fpub.errors() && fpub.touched()) {
+                @if (fpub.invalid() && fpub.touched()) {
                   <mat-error>{{ generateErrors(fpub.errors()) }}</mat-error>
                 }
               </mat-form-field>
@@ -76,7 +76,7 @@ import { toErrorMessages } from '../../shared/services/common/error-service';
                 placeholder="Enter title of comic" />
               @let ftitle = form().title();
               <!-- title required error -->
-              @if (ftitle.errors() && ftitle.touched()) {
+              @if (ftitle.invalid() && ftitle.touched()) {
                 <mat-error>{{ generateErrors(ftitle.errors()) }}</mat-error>
               }
             </mat-form-field>

@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, model, output } from '@angular/core';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+import { Field, FieldTree, ValidationError } from '@angular/forms/signals';
+import { RouterLink } from '@angular/router';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -7,6 +8,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+
+import { User } from '../../shared/models/user-interface';
+import { toErrorMessages } from '../../shared/services/common/error-service';
 
 @Component({
   selector: 'app-user-edit-card',
@@ -17,14 +21,15 @@ import { MatRadioModule } from '@angular/material/radio';
     MatIconModule,
     MatInputModule,
     MatRadioModule,
-    ReactiveFormsModule,
+    Field,
+    RouterLink,
   ],
   template: `
     <mat-card appearance="outlined">
       <mat-card-title>User Edit</mat-card-title>
       <mat-card-content>
-        @if (userEditForm()) {
-          <form [formGroup]="userEditForm()">
+        @if (form()) {
+          <form>
             <mat-form-field appearance="outline">
               <mat-label for="name">Name</mat-label>
               <input
@@ -32,33 +37,33 @@ import { MatRadioModule } from '@angular/material/radio';
                 type="text"
                 id="name"
                 matInput
-                formControlName="name"
+                [field]="form().name"
                 placeholder="Enter name of user" />
-              @let fname = userEditForm().controls.name;
+              @let fname = form().name();
               <!-- name required error -->
-              @if (fname.errors?.['required'] && fname.touched) {
-                <mat-error> Name is required </mat-error>
+              @if (fname.invalid() && fname.touched()) {
+                <mat-error>{{ generateErrors(fname.errors()) }}</mat-error>
               }
             </mat-form-field>
 
             <mat-form-field appearance="outline">
               <mat-label for="email">Email</mat-label>
-              <input type="text" id="email" matInput formControlName="email" placeholder="Enter email of user" />
-              @let femail = userEditForm().controls.name;
+              <input type="text" id="email" matInput [field]="form().email" placeholder="Enter email of user" />
+              @let femail = form().email();
               <!-- email required error -->
-              @if (femail.errors?.['required'] && femail.touched) {
-                <mat-error> Email is required </mat-error>
+              @if (femail.invalid() && femail.touched()) {
+                <mat-error>{{ generateErrors(femail.errors()) }}</mat-error>
               }
             </mat-form-field>
 
             <label id="role">Role</label>
-            <mat-radio-group aria-labelledby="Role" class="radio-group" id="role" formControlName="role">
+            <mat-radio-group aria-labelledby="Role" class="radio-group" id="role" [field]="form().role">
               <mat-radio-button class="radio-button" value="admin">Admin</mat-radio-button>
               <mat-radio-button class="radio-button" value="user">User</mat-radio-button>
             </mat-radio-group>
-            @let frole = userEditForm().controls.role;
+            @let frole = form().role();
             <!-- role required error -->
-            @if (frole.errors?.['required'] && frole.touched) {
+            @if (frole.invalid() && frole.touched()) {
               <mat-error> Role is required </mat-error>
             }
           </form>
@@ -66,7 +71,7 @@ import { MatRadioModule } from '@angular/material/radio';
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button mat-flat-button color="primary" (click)="save.emit()" title="Save" [disabled]="!userEditForm().valid">
+        <button mat-flat-button color="primary" (click)="save.emit()" title="Save" [disabled]="form()().invalid()">
           <mat-icon>save</mat-icon> Save
         </button>
         <button mat-flat-button color="accent" class="ml-10" routerLink="/admin/users">
@@ -111,6 +116,10 @@ import { MatRadioModule } from '@angular/material/radio';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserEditCard {
-  userEditForm = model.required<FormGroup>();
+  form = input.required<FieldTree<User>>();
   save = output();
+
+  generateErrors(errors: ValidationError[]) {
+    return toErrorMessages(errors);
+  }
 }
