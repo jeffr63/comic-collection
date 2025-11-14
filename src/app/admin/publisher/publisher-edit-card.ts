@@ -1,14 +1,14 @@
-import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
-import { Field, FieldTree, ValidationError } from '@angular/forms/signals';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+import { Field, FieldTree } from '@angular/forms/signals';
 
 import { MatButton } from '@angular/material/button';
 import { MatCard, MatCardActions, MatCardContent, MatCardTitle } from '@angular/material/card';
-import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
 
 import { Publisher } from '../../shared/models/publisher-interface';
-import { toErrorMessages } from '../../shared/services/common/error-service';
+import { ValidationErrors } from '../../shared/components/validation-errors';
 
 @Component({
   selector: 'app-publisher-edit-card',
@@ -18,12 +18,12 @@ import { toErrorMessages } from '../../shared/services/common/error-service';
     MatCardActions,
     MatCardContent,
     MatCardTitle,
-    MatError,
     MatFormField,
     MatIcon,
     MatInput,
     MatLabel,
     Field,
+    ValidationErrors,
   ],
   template: `
     <mat-card appearance="outlined">
@@ -42,7 +42,7 @@ import { toErrorMessages } from '../../shared/services/common/error-service';
                 placeholder="Enter name of publisher" />
               @let fname = form().name();
               @if (fname.invalid() && fname.touched()) {
-                <mat-error>{{ generateErrors(fname.errors()) }}</mat-error>
+                <app-validation-errors matError [errors]="fname.errors()" />
               }
             </mat-form-field>
           </form>
@@ -92,8 +92,4 @@ export class PublisherEditCard {
   cancel = output();
   save = output();
   saveNew = output();
-
-  generateErrors(errors: ValidationError[]) {
-    return toErrorMessages(errors);
-  }
 }

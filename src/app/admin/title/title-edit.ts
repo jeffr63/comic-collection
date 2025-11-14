@@ -1,13 +1,12 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, resource, signal } from '@angular/core';
-import { FieldPath, form, required, submit } from '@angular/forms/signals';
+import { customError, form, required, submit, validate } from '@angular/forms/signals';
 import { Router } from '@angular/router';
 
-//import { Publisher } from '../../shared/models/publisher-interface';
+import { Publisher } from '../../shared/models/publisher-interface';
 import { PublisherData } from '../../shared/services/publisher/publisher-data';
 import { Title } from '../../shared/models/title-interface';
 import { TitleData } from '../../shared/services/title/title-data';
 import { TitleEditCard } from './title-edit-card';
-//import { validatePublisher } from '../../shared/services/common/validators';
 
 @Component({
   selector: 'app-title-edit',
@@ -48,22 +47,20 @@ export default class TitleEdit {
     },
   });
 
-  readonly form = form(this.#title.value, (path: FieldPath<Title>) => {
+  readonly form = form(this.#title.value, (path) => {
     required(path.publisher, { message: 'Please select the publisher name' });
     required(path.title, { message: 'Please enter the title' });
-    // TODO: error goes into infinite loop on error condition.
-    // validatePublisher(path.publisher, this.#publishers);
-    // validate(path.publisher, (ctx) => {
-    //   const value = ctx.value();
-    //   if (value == '') {
-    //     return null;
-    //   }
-    //   const selectedItem: Publisher = this.#publishers().find((p: Publisher) => p.name === value);
-    //   if (selectedItem) {
-    //     return null; /* valid option selected */
-    //   }
-    //   return customError({ kind: 'publisher', value });
-    // });
+    validate(path.publisher, (ctx) => {
+      const value = ctx.value();
+      if (value == '') {
+        return null;
+      }
+      const selectedItem: Publisher = this.#publishers().find((p: Publisher) => p.name === value);
+      if (selectedItem) {
+        return null; /* valid option selected */
+      }
+      return customError({ kind: 'publisher', value });
+    });
   });
 
   protected cancel() {

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
-import { Field, FieldTree, ValidationError } from '@angular/forms/signals';
+import { Field, FieldTree } from '@angular/forms/signals';
 import { RouterLink } from '@angular/router';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -13,7 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { Publisher } from '../shared/models/publisher-interface';
 import { Title } from '../shared/models/title-interface';
 import { Issue } from '../shared/models/issue-interface';
-import { toErrorMessages } from '../shared/services/common/error-service';
+import { ValidationErrors } from '../shared/components/validation-errors';
 
 @Component({
   selector: 'app-isssue-edit-card',
@@ -27,6 +27,7 @@ import { toErrorMessages } from '../shared/services/common/error-service';
     MatSelectModule,
     RouterLink,
     Field,
+    ValidationErrors,
   ],
   template: `
     <mat-card appearance="outlined">
@@ -55,7 +56,7 @@ import { toErrorMessages } from '../shared/services/common/error-service';
                 @let fpublisher = form().publisher();
                 <!-- publisher required error  -->
                 @if (fpublisher.invalid() && fpublisher.touched()) {
-                  <mat-error>{{ generateErrors(fpublisher.errors()) }}</mat-error>
+                  <app-validation-errors matError [errors]="fpublisher.errors()" />
                 }
               </mat-form-field>
             }
@@ -89,7 +90,7 @@ import { toErrorMessages } from '../shared/services/common/error-service';
                 @let ftitle = form().title();
                 <!-- title required error -->
                 @if (ftitle.invalid() && ftitle.touched()) {
-                  <mat-error>{{ generateErrors(ftitle.errors()) }}</mat-error>
+                  <app-validation-errors matError [errors]="ftitle.errors()" />
                 }
               </mat-form-field>
             }
@@ -98,7 +99,7 @@ import { toErrorMessages } from '../shared/services/common/error-service';
               <mat-label for="issue">Issue Number</mat-label>
               <input
                 ngbAutofocus
-                type="text"
+                type="number"
                 id="issue"
                 matInput
                 [field]="form().issue"
@@ -106,7 +107,7 @@ import { toErrorMessages } from '../shared/services/common/error-service';
               @let fissue = form().issue();
               <!-- issue required error -->
               @if (fissue.invalid() && fissue.touched()) {
-                <mat-error>{{ generateErrors(fissue.errors()) }}</mat-error>
+                <app-validation-errors matError [errors]="fissue.errors()" />
               }
             </mat-form-field>
 
@@ -114,7 +115,7 @@ import { toErrorMessages } from '../shared/services/common/error-service';
               <mat-label for="coverPrice">Cover Price</mat-label>
               <input
                 ngbAutofocus
-                type="text"
+                type="number"
                 id="coverPrice"
                 matInput
                 [field]="form().coverPrice"
@@ -122,7 +123,7 @@ import { toErrorMessages } from '../shared/services/common/error-service';
               @let fcoverPrice = form().coverPrice();
               <!-- cover price required error -->
               @if (fcoverPrice.invalid() && fcoverPrice.touched()) {
-                <mat-error>{{ generateErrors(fcoverPrice.errors()) }}</mat-error>
+                <app-validation-errors matError [errors]="fcoverPrice.errors()" />
               }
             </mat-form-field>
 
@@ -187,8 +188,4 @@ export class IsssueEditCard {
   onAutocompleteKeyUpTitle = output<string>();
   save = output();
   saveNew = output();
-
-  generateErrors(errors: ValidationError[]) {
-    return toErrorMessages(errors);
-  }
 }

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
-import { Field, FieldTree, ValidationError } from '@angular/forms/signals';
+import { Field, FieldTree } from '@angular/forms/signals';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,7 +11,7 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { Publisher } from '../../shared/models/publisher-interface';
 import { Title } from '../../shared/models/title-interface';
-import { toErrorMessages } from '../../shared/services/common/error-service';
+import { ValidationErrors } from '../../shared/components/validation-errors';
 
 @Component({
   selector: 'app-title-edit-card',
@@ -24,6 +24,7 @@ import { toErrorMessages } from '../../shared/services/common/error-service';
     MatInputModule,
     MatSelectModule,
     Field,
+    ValidationErrors,
   ],
   template: `
     <mat-card appearance="outlined">
@@ -60,7 +61,7 @@ import { toErrorMessages } from '../../shared/services/common/error-service';
                 @let fpub = form().publisher();
                 <!-- publisher required error -->
                 @if (fpub.invalid() && fpub.touched()) {
-                  <mat-error>{{ generateErrors(fpub.errors()) }}</mat-error>
+                  <app-validation-errors matError [errors]="fpub.errors()" />
                 }
               </mat-form-field>
             }
@@ -77,7 +78,7 @@ import { toErrorMessages } from '../../shared/services/common/error-service';
               @let ftitle = form().title();
               <!-- title required error -->
               @if (ftitle.invalid() && ftitle.touched()) {
-                <mat-error>{{ generateErrors(ftitle.errors()) }}</mat-error>
+                <app-validation-errors matError [errors]="ftitle.errors()" />
               }
             </mat-form-field>
           </form>
@@ -129,8 +130,4 @@ export class TitleEditCard {
   save = output();
   saveNew = output();
   onAutocompleteKeyUp = output<string>();
-
-  generateErrors(errors: ValidationError[]) {
-    return toErrorMessages(errors);
-  }
 }

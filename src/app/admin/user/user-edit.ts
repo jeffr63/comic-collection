@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit, inject, input, resource } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, inject, input, resource } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Location } from '@angular/common';
+import { email, form, required } from '@angular/forms/signals';
 
 import { User } from '../../shared/models/user-interface';
 import { UserData } from '../../shared/services/user/user-data';
 import { UserEditCard } from './user-edit-card';
-import { email, form, required } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-user-edit',
@@ -22,7 +22,7 @@ export default class UserEdit {
   readonly #user = resource<User, string>({
     params: this.id,
     loader: async ({ params: id }) => {
-      if (id === 'new') return { name: '', email: '', password: '', role: '' };
+      if (id === 'new') return { name: '', email: '', password: '', userrole: '' };
       const user = await this.#userStore.getById(+id);
       return user;
     },
@@ -32,7 +32,7 @@ export default class UserEdit {
     required(path.name, { message: 'Please enter the user name' });
     required(path.email, { message: 'Please enter the user email' });
     email(path.email, { message: 'Please enter a valid email' });
-    required(path.role, { message: 'Please select role' });
+    required(path.userrole, { message: 'Please select role' });
   });
 
   protected async save() {

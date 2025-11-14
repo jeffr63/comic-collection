@@ -1,28 +1,33 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
-import { Field, FieldTree, ValidationError } from '@angular/forms/signals';
+import { Field, FieldTree } from '@angular/forms/signals';
 import { RouterLink } from '@angular/router';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
+import { MatButton } from '@angular/material/button';
+import { MatCard, MatCardActions, MatCardContent, MatCardTitle } from '@angular/material/card';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatIcon } from '@angular/material/icon';
+import { MatInput } from '@angular/material/input';
 
 import { User } from '../../shared/models/user-interface';
-import { toErrorMessages } from '../../shared/services/common/error-service';
+import { ValidationErrors } from '../../shared/components/validation-errors';
 
 @Component({
   selector: 'app-user-edit-card',
   imports: [
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    MatRadioModule,
+    MatButton,
+    MatCard,
+    MatCardActions,
+    MatCardTitle,
+    MatCardContent,
+    MatFormField,
+    MatIcon,
+    MatInput,
+    MatLabel,
+    // MatRadio,
+    // MatRadioGroup,
     Field,
     RouterLink,
+    ValidationErrors,
   ],
   template: `
     <mat-card appearance="outlined">
@@ -42,7 +47,7 @@ import { toErrorMessages } from '../../shared/services/common/error-service';
               @let fname = form().name();
               <!-- name required error -->
               @if (fname.invalid() && fname.touched()) {
-                <mat-error>{{ generateErrors(fname.errors()) }}</mat-error>
+                <app-validation-errors matError [errors]="fname.errors()" />
               }
             </mat-form-field>
 
@@ -52,19 +57,30 @@ import { toErrorMessages } from '../../shared/services/common/error-service';
               @let femail = form().email();
               <!-- email required error -->
               @if (femail.invalid() && femail.touched()) {
-                <mat-error>{{ generateErrors(femail.errors()) }}</mat-error>
+                <app-validation-errors matError [errors]="femail.errors()" />
               }
             </mat-form-field>
 
             <label id="role">Role</label>
-            <mat-radio-group aria-labelledby="Role" class="radio-group" id="role" [field]="form().role">
+            <!-- <mat-radio-group aria-labelledby="Role" class="radio-group" id="role" [field]="form().userrole">
               <mat-radio-button class="radio-button" value="admin">Admin</mat-radio-button>
               <mat-radio-button class="radio-button" value="user">User</mat-radio-button>
             </mat-radio-group>
-            @let frole = form().role();
+            <label> -->
+            <div class="radio-group">
+              <label>
+                <input type="radio" value="admin" [field]="form().userrole" />
+                Admin
+              </label>
+              <label>
+                <input type="radio" value="user" [field]="form().userrole" />
+                User
+              </label>
+            </div>
+            @let frole = form().userrole();
             <!-- role required error -->
             @if (frole.invalid() && frole.touched()) {
-              <mat-error>{{ generateErrors(frole.errors()) }}</mat-error>
+              <app-validation-errors matError [errors]="frole.errors()" />
             }
           </form>
         }
@@ -118,8 +134,4 @@ import { toErrorMessages } from '../../shared/services/common/error-service';
 export class UserEditCard {
   form = input.required<FieldTree<User>>();
   save = output();
-
-  generateErrors(errors: ValidationError[]) {
-    return toErrorMessages(errors);
-  }
 }

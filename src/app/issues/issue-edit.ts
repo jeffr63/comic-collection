@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit, computed, inject, input, resource, signal } from '@angular/core';
-import { AbstractControl, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, ValidatorFn } from '@angular/forms';
 import { Location } from '@angular/common';
+import { customError, form, min, required, validate } from '@angular/forms/signals';
 
 import { Issue } from '../shared/models/issue-interface';
 import { IssueData } from '../shared/services/issue/issue-data';
@@ -9,7 +10,6 @@ import { Publisher } from '../shared/models/publisher-interface';
 import { PublisherData } from '../shared/services/publisher/publisher-data';
 import { Title } from '../shared/models/title-interface';
 import { TitleData } from '../shared/services/title/title-data';
-import { form, min, required } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-issue-edit',
@@ -62,6 +62,28 @@ export default class IssueEdit implements OnInit {
     required(path.issue, { message: 'Please enter the issue number' });
     required(path.coverPrice, { message: 'Please enter the cover price' });
     min(path.coverPrice, 0, { message: 'Cover price must be a positive number' });
+    validate(path.publisher, (ctx) => {
+      const value = ctx.value();
+      if (value == '') {
+        return null;
+      }
+      const selectedItem: Publisher = this.#publishers().find((p: Publisher) => p.name === value);
+      if (selectedItem) {
+        return null; /* valid option selected */
+      }
+      return customError({ kind: 'publisher', value });
+    });
+    validate(path.title, (ctx) => {
+      const value = ctx.value();
+      if (value == '') {
+        return null;
+      }
+      const selectedItem: Title = this.#titles().find((t: Title) => t.title === value);
+      if (selectedItem) {
+        return null; /* valid option selected */
+      }
+      return customError({ kind: 'title', value });
+    });
   });
 
   async ngOnInit() {
