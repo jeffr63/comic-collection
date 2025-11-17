@@ -35,12 +35,6 @@ export class ValidationErrors {
         const eMax = error as MaxValidationError;
         message = `Maximum amount: ${eMax.max}`;
         break;
-      case 'publisher':
-        message = 'Please select the publisher name';
-        break;
-      case 'title':
-        message = 'Please select the title name';
-        break;
       default:
         message = error.kind ?? 'Validation Error';
     }

@@ -59,7 +59,7 @@ export default class TitleEdit {
       if (selectedItem) {
         return null; /* valid option selected */
       }
-      return customError({ kind: 'publisher', value });
+      return customError({ kind: 'invalid-publisher', message: 'Please select publisher name from the list' });
     });
   });
 

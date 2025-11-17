@@ -71,7 +71,7 @@ export default class IssueEdit implements OnInit {
       if (selectedItem) {
         return null; /* valid option selected */
       }
-      return customError({ kind: 'publisher', value });
+      return customError({ kind: 'invalid-publisher', message: 'Please select the publisher name from the list' });
     });
     validate(path.title, (ctx) => {
       const value = ctx.value();
@@ -82,7 +82,7 @@ export default class IssueEdit implements OnInit {
       if (selectedItem) {
         return null; /* valid option selected */
       }
-      return customError({ kind: 'title', value });
+      return customError({ kind: 'invalid-title', message: 'Please select the title name from the list' });
     });
   });
 
