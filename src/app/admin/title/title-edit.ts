@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, resource, signal } from '@angular/core';
-import { customError, form, required, submit, validate } from '@angular/forms/signals';
+import { form, submit } from '@angular/forms/signals';
 import { Router } from '@angular/router';
 
-import { Publisher } from '../../shared/models/publisher-interface';
 import { PublisherData } from '../../shared/services/publisher/publisher-data';
-import { Title } from '../../shared/models/title-interface';
+import { Title, TITLE_EDIT_SCHEMA } from '../../shared/models/title-interface';
 import { TitleData } from '../../shared/services/title/title-data';
 import { TitleEditCard } from './title-edit-card';
 
@@ -32,6 +31,7 @@ export default class TitleEdit {
 
   protected readonly publisherFilter = signal<string>('');
   readonly #publishers = this.#publisherStore.sortedPublishers;
+
   protected readonly filteredPublishers = computed(() => {
     return this.publisherFilter() == ''
       ? this.#publishers()
@@ -47,21 +47,7 @@ export default class TitleEdit {
     },
   });
 
-  readonly form = form(this.#title.value, (path) => {
-    required(path.publisher, { message: 'Please select the publisher name' });
-    required(path.title, { message: 'Please enter the title' });
-    validate(path.publisher, (ctx) => {
-      const value = ctx.value();
-      if (value == '') {
-        return null;
-      }
-      const selectedItem: Publisher = this.#publishers().find((p: Publisher) => p.name === value);
-      if (selectedItem) {
-        return null; /* valid option selected */
-      }
-      return customError({ kind: 'invalid-publisher', message: 'Please select publisher name from the list' });
-    });
-  });
+  readonly form = form(this.#title.value, TITLE_EDIT_SCHEMA);
 
   protected cancel() {
     this.#router.navigateByUrl('/admin/titles');

@@ -59,4 +59,12 @@ export class TitleData {
   public saveLastPublisher(publisher: string) {
     this.#savedPublisher.set(publisher);
   }
+
+  public async checkTitleExists(title: string): Promise<boolean> {
+    const selectedItem: Title = this.#titles.value().find((t: Title) => t.title === title);
+    if (selectedItem) {
+      return true;
+    }
+    return false;
+  }
 }

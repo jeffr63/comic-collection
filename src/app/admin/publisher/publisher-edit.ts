@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject, input, resource, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { form, required } from '@angular/forms/signals';
+import { form } from '@angular/forms/signals';
 
-import { Publisher } from '../../shared/models/publisher-interface';
+import { Publisher, PUBLISHER_EDIT_SCHEMA } from '../../shared/models/publisher-interface';
 import { PublisherData } from '../../shared/services/publisher/publisher-data';
 import { PublisherEditCard } from './publisher-edit-card';
 
@@ -18,6 +18,7 @@ export default class PublisherEdit implements OnInit {
 
   protected readonly id = input<string>();
   readonly #isNew = signal(true);
+
   readonly #publisher = resource<Publisher, string>({
     params: this.id,
     loader: async ({ params: id }) => {
@@ -27,9 +28,7 @@ export default class PublisherEdit implements OnInit {
     },
   });
 
-  readonly form = form(this.#publisher.value, (path) => {
-    required(path.name, { message: 'Please enter publisher name' });
-  });
+  readonly form = form(this.#publisher.value, PUBLISHER_EDIT_SCHEMA);
 
   ngOnInit() {
     if (this.id() !== 'new' || this.id() == undefined) {

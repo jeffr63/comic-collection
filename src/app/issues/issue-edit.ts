@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit, computed, inject, input, resource, signal } from '@angular/core';
-import { AbstractControl, ValidatorFn } from '@angular/forms';
 import { Location } from '@angular/common';
-import { customError, form, min, required, validate } from '@angular/forms/signals';
+import { form } from '@angular/forms/signals';
 
-import { Issue } from '../shared/models/issue-interface';
+import { Issue, ISSUE_EDIT_SCHEMA } from '../shared/models/issue-interface';
 import { IssueData } from '../shared/services/issue/issue-data';
 import { IsssueEditCard } from './isssue-edit-card';
 import { Publisher } from '../shared/models/publisher-interface';
@@ -33,6 +32,7 @@ export default class IssueEdit implements OnInit {
 
   protected readonly id = input<string>();
   readonly #isNew = signal(true);
+
   readonly #issue = resource<Issue, string>({
     params: this.id,
     loader: async ({ params: id }) => {
@@ -41,6 +41,7 @@ export default class IssueEdit implements OnInit {
       return issue;
     },
   });
+
   protected readonly publisherFilter = signal('');
   readonly #publishers = this.#publisherStore.sortedPublishers;
   protected readonly filteredPublishers = computed(() => {
@@ -48,6 +49,7 @@ export default class IssueEdit implements OnInit {
       ? this.#publishers()
       : this.#publishers().filter((r) => r.name.toLocaleLowerCase().startsWith(this.publisherFilter()));
   });
+
   protected readonly titleFilter = signal('');
   readonly #titles = this.#titleStore.sortedTitles;
   protected readonly filteredTitles = computed(() => {
@@ -56,68 +58,12 @@ export default class IssueEdit implements OnInit {
       : this.#titles().filter((r) => r.title.toLocaleLowerCase().startsWith(this.titleFilter()));
   });
 
-  readonly form = form(this.#issue.value, (path) => {
-    required(path.publisher, { message: 'Please select the publisher' });
-    required(path.title, { message: 'Please select the title' });
-    required(path.issue, { message: 'Please enter the issue number' });
-    required(path.coverPrice, { message: 'Please enter the cover price' });
-    min(path.coverPrice, 0, { message: 'Cover price must be a positive number' });
-    validate(path.publisher, (ctx) => {
-      const value = ctx.value();
-      if (value == '') {
-        return null;
-      }
-      const selectedItem: Publisher = this.#publishers().find((p: Publisher) => p.name === value);
-      if (selectedItem) {
-        return null; /* valid option selected */
-      }
-      return customError({ kind: 'invalid-publisher', message: 'Please select the publisher name from the list' });
-    });
-    validate(path.title, (ctx) => {
-      const value = ctx.value();
-      if (value == '') {
-        return null;
-      }
-      const selectedItem: Title = this.#titles().find((t: Title) => t.title === value);
-      if (selectedItem) {
-        return null; /* valid option selected */
-      }
-      return customError({ kind: 'invalid-title', message: 'Please select the title name from the list' });
-    });
-  });
+  readonly form = form(this.#issue.value, ISSUE_EDIT_SCHEMA);
 
   async ngOnInit() {
     if (this.id() !== 'new' && this.id() != undefined) {
       this.#isNew.set(false);
     }
-  }
-
-  private autocompleteStringPublisherValidator(): ValidatorFn {
-    let selectedItem!: Publisher | undefined;
-    return (control: AbstractControl): { [key: string]: any } | null => {
-      if (control.value === '') {
-        return null;
-      }
-      selectedItem = this.#publishers().find((publisher: Publisher) => publisher.name === control.value);
-      if (selectedItem) {
-        return null; /* valid option selected */
-      }
-      return { match: { value: control.value } };
-    };
-  }
-
-  private autocompleteStringTitleValidator(): ValidatorFn {
-    let selectedItem!: Title | undefined;
-    return (control: AbstractControl): { [key: string]: any } | null => {
-      if (control.value === '') {
-        return null;
-      }
-      selectedItem = this.#titles().find((title: Title) => title.title === control.value);
-      if (selectedItem) {
-        return null; /* valid option selected */
-      }
-      return { match: { value: control.value } };
-    };
   }
 
   protected cancel() {

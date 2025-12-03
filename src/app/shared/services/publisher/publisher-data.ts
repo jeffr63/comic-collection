@@ -2,6 +2,7 @@ import { computed, inject, Injectable, resource, signal } from '@angular/core';
 
 import { DataService } from '../common/data-service';
 import { Publisher } from '../../models/publisher-interface';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -51,5 +52,14 @@ export class PublisherData {
     const response = await this.#dataService.update(publisher.id, publisher, this.#publishersUrl);
     this.#publishers.reload();
     return response;
+  }
+
+  public async checkPublisherExists(publisherName: string): Promise<boolean> {
+    console.log(publisherName);
+    const selectedItem: Publisher = this.#publishers.value().find((p: Publisher) => p.name === publisherName);
+    if (selectedItem) {
+      return true; /* valid option selected */
+    }
+    return false;
   }
 }

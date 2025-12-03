@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, inject, input, resource } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Location } from '@angular/common';
-import { email, form, required } from '@angular/forms/signals';
+import { form } from '@angular/forms/signals';
 
-import { User } from '../../shared/models/user-interface';
+import { User, USER_EDIT_SCHEMA } from '../../shared/models/user-interface';
 import { UserData } from '../../shared/services/user/user-data';
 import { UserEditCard } from './user-edit-card';
 
@@ -28,12 +28,7 @@ export default class UserEdit {
     },
   });
 
-  readonly form = form(this.#user.value, (path) => {
-    required(path.name, { message: 'Please enter the user name' });
-    required(path.email, { message: 'Please enter the user email' });
-    email(path.email, { message: 'Please enter a valid email' });
-    required(path.userrole, { message: 'Please select role' });
-  });
+  readonly form = form(this.#user.value, USER_EDIT_SCHEMA);
 
   protected async save() {
     await this.#userStore.update(this.#user.value());
