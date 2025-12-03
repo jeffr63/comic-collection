@@ -1,31 +1,27 @@
-import { ChangeDetectionStrategy, Component, OnInit, computed, inject, input, resource, signal } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
-import { Location } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, inject, input, resource, signal } from '@angular/core';
+import { form, submit } from '@angular/forms/signals';
+import { Router } from '@angular/router';
 
-import { Publisher } from '../../shared/models/publisher-interface';
 import { PublisherData } from '../../shared/services/publisher/publisher-data';
-import { Title } from '../../shared/models/title-interface';
+import { Title, TITLE_EDIT_SCHEMA } from '../../shared/models/title-interface';
 import { TitleData } from '../../shared/services/title/title-data';
 import { TitleEditCard } from './title-edit-card';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-title-edit',
   imports: [TitleEditCard],
   template: `
     <app-title-edit-card
-      [(titleEditForm)]="titleEditForm"
+      [form]="form"
       [filteredPublishers]="filteredPublishers()"
       (cancel)="cancel()"
       (save)="save()"
       (saveNew)="saveNew()"
       (onAutocompleteKeyUp)="onAutocompleteKeyUp($event)" />
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class TitleEdit implements OnInit {
-  readonly #fb = inject(FormBuilder);
-  readonly #location = inject(Location);
+export default class TitleEdit {
   readonly #publisherStore = inject(PublisherData);
   readonly #titleStore = inject(TitleData);
   readonly #router = inject(Router);
@@ -35,6 +31,7 @@ export default class TitleEdit implements OnInit {
 
   protected readonly publisherFilter = signal<string>('');
   readonly #publishers = this.#publisherStore.sortedPublishers;
+
   protected readonly filteredPublishers = computed(() => {
     return this.publisherFilter() == ''
       ? this.#publishers()
@@ -46,77 +43,51 @@ export default class TitleEdit implements OnInit {
     loader: async ({ params: id }) => {
       if (id === 'new') return { publisher: '', title: '' };
       const title = await this.#titleStore.getById(+id);
-      this.loadFormValues(title);
       return title;
     },
   });
 
-  protected titleEditForm!: FormGroup;
-
-  ngOnInit() {
-    this.titleEditForm = this.#fb.group({
-      publisher: ['', [Validators.required, this.autocompleteStringValidator()]],
-      title: ['', Validators.required],
-    });
-  }
-
-  private loadFormValues(title: Title) {
-    this.titleEditForm.get('publisher')?.setValue(title.publisher);
-    this.titleEditForm.get('title')?.setValue(title.title);
-  }
+  readonly form = form(this.#title.value, TITLE_EDIT_SCHEMA);
 
   protected cancel() {
-    this.#location.back();
+    this.#router.navigateByUrl('/admin/titles');
   }
 
   protected onAutocompleteKeyUp(searchText: string) {
     this.publisherFilter.set(searchText?.toLowerCase());
   }
 
-  protected save() {
-    const { publisher, title } = this.titleEditForm.getRawValue();
-    this.#title.value().publisher = publisher;
-    this.#title.value().title = title;
-
-    if (this.#isNew()) {
-      this.#titleStore.add(this.#title.value());
-    } else {
-      this.#titleStore.update(this.#title.value());
-    }
-    this.#router.navigateByUrl('/admin/titles');
-  }
-
-  protected saveNew() {
-    const { publisher, title } = this.titleEditForm.getRawValue();
-    this.#title.value().publisher = publisher;
-    this.#title.value().title = title;
-    if (this.#isNew()) {
-      this.#titleStore.add(this.#title.value());
-    } else {
-      this.#titleStore.update(this.#title.value());
-    }
-
-    this.titleEditForm.patchValue({
-      publisher: publisher,
-      title: title,
+  protected async save() {
+    await submit(this.form, async (form) => {
+      try {
+        if (this.#isNew()) {
+          await this.#titleStore.add(form().value());
+        } else {
+          await this.#titleStore.update(form().value());
+        }
+        this.#router.navigateByUrl('/admin/titles');
+        return undefined;
+      } catch (error) {
+        return [{ kind: 'save', message: 'Error saving title. Please try again.' }];
+      }
     });
-
-    // create set publisher
-    this.titleEditForm.patchValue({ publisher: this.#title.value().publisher, title: '' });
-    this.#router.navigateByUrl('/admin/title/new');
   }
 
-  private autocompleteStringValidator(): ValidatorFn {
-    let selectedItem!: Publisher | undefined;
-    return (control: AbstractControl): { [key: string]: any } | null => {
-      if (control.value === '') {
-        return null;
+  protected async saveNew() {
+    await submit(this.form, async (form) => {
+      try {
+        if (this.#isNew()) {
+          await this.#titleStore.add(form().value());
+        } else {
+          await this.#titleStore.update(form().value());
+        }
+        this.form().reset();
+        this.#titleStore.saveLastPublisher(this.#title.value().publisher);
+        this.#router.navigateByUrl('/admin/title/new');
+        return undefined;
+      } catch (error) {
+        return [{ kind: 'save', message: 'Error saving title. Please try again.' }];
       }
-      selectedItem = this.#publishers().find((publisher: Publisher) => publisher.name === control.value);
-      if (selectedItem) {
-        return null; /* valid option selected */
-      }
-      return { match: { value: control.value } };
-    };
+    });
   }
 }

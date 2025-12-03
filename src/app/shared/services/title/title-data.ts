@@ -28,6 +28,9 @@ export class TitleData {
     return sorted;
   });
 
+  readonly #savedPublisher = signal<string>('');
+  public savedPublisher = this.#savedPublisher.asReadonly;
+
   public async add(title: Title): Promise<Title | undefined> {
     const newTitle = await this.#dataService.add<Title>(title, this.#titlesUrl);
     this.#titles.reload();
@@ -51,5 +54,17 @@ export class TitleData {
     const response = await this.#dataService.update<Title>(title.id, title, this.#titlesUrl);
     this.#titles.reload();
     return response;
+  }
+
+  public saveLastPublisher(publisher: string) {
+    this.#savedPublisher.set(publisher);
+  }
+
+  public async checkTitleExists(title: string): Promise<boolean> {
+    const selectedItem: Title = this.#titles.value().find((t: Title) => t.title === title);
+    if (selectedItem) {
+      return true;
+    }
+    return false;
   }
 }

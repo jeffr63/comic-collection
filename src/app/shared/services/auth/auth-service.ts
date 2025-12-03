@@ -22,13 +22,13 @@ export class AuthService {
       const token = this.parseJwt(response.accessToken);
       const auth: AuthToken = {
         token: response.accessToken,
-        role: response.user.role,
+        role: response.user.userrole,
         id: response.user.id,
         expires: token.exp,
       };
       localStorage.setItem('tct_auth', JSON.stringify(auth));
       this.#isLoggedIn.set(true);
-      this.#isAdmin.set(response.user.role === 'admin' ? true : false);
+      this.#isAdmin.set(response.user.userrole === 'admin' ? true : false);
     }
     return response;
   }

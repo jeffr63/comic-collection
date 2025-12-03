@@ -1,18 +1,19 @@
-import { ChangeDetectionStrategy, Component, OnInit, inject, input, resource } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, inject, input, resource } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Location } from '@angular/common';
+import { form } from '@angular/forms/signals';
 
-import { User } from '../../shared/models/user-interface';
+import { User, USER_EDIT_SCHEMA } from '../../shared/models/user-interface';
 import { UserData } from '../../shared/services/user/user-data';
 import { UserEditCard } from './user-edit-card';
 
 @Component({
   selector: 'app-user-edit',
   imports: [UserEditCard],
-  template: `<app-user-edit-card [(userEditForm)]="userEditForm" (save)="save()" />`,
+  template: `<app-user-edit-card [form]="form" (save)="save()" />`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class UserEdit implements OnInit {
+export default class UserEdit {
   readonly #fb = inject(FormBuilder);
   readonly #location = inject(Location);
   readonly #userStore = inject(UserData);
@@ -21,36 +22,16 @@ export default class UserEdit implements OnInit {
   readonly #user = resource<User, string>({
     params: this.id,
     loader: async ({ params: id }) => {
-      if (id === 'new') return { name: '', email: '', password: '', role: '' };
+      if (id === 'new') return { name: '', email: '', password: '', userrole: '' };
       const user = await this.#userStore.getById(+id);
-      this.loadFormValues(user);
       return user;
     },
   });
 
-  protected userEditForm!: FormGroup;
-
-  ngOnInit(): void {
-    this.userEditForm = this.#fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      role: ['', Validators.required],
-    });
-  }
-
-  private loadFormValues(user: User) {
-    this.userEditForm.patchValue({
-      name: user.name,
-      email: user.email,
-      role: user.role,
-    });
-  }
+  readonly form = form(this.#user.value, USER_EDIT_SCHEMA);
 
   protected async save() {
-    const patchData = this.userEditForm.getRawValue();
-    patchData.id = this.#user.value()?.id;
-    if (!patchData) return;
-    await this.#userStore.update(patchData);
+    await this.#userStore.update(this.#user.value());
     this.#location.back();
   }
 }
