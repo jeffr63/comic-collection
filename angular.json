@@ -82,7 +82,9 @@
             "tsConfig": "tsconfig.spec.json",
             "buildTarget": "::development",
             "runner": "vitest",
-            "codeCoverage": false
+            "browsers": [
+              "chromium"
+            ]
           }
         }
       }
