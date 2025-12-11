@@ -115,14 +115,14 @@ export const fakeUserData: User[] = [
     email: 'abc.com',
     password: '123',
     name: 'abc',
-    role: 'admin',
+    userrole: 'admin',
     id: 1,
   },
   {
     email: 'def.com',
     password: '456',
     name: 'def',
-    role: 'editor',
+    userrole: 'editor',
     id: 2,
   },
 ];
@@ -131,6 +131,6 @@ export const fakeUser: User = {
   email: 'ghi.com',
   password: '789',
   name: 'ghi',
-  role: 'editor',
+  userrole: 'editor',
   id: 3,
 };

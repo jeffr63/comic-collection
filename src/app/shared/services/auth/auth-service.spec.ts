@@ -4,15 +4,12 @@ import { describe, expect, beforeEach, it, vi } from 'vitest';
 
 import { AuthService } from './auth-service';
 import { fakeAuthResponse, fakeAuthTokenEncoded, fakeAuthTokenEncodedExpired } from '../../../../testing/testing-data';
-import { provideZoneChangeDetection } from '@angular/core';
 
 describe('Authservice', () => {
   let service: AuthService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [provideZoneChangeDetection({ eventCoalescing: true })],
-    });
+    TestBed.configureTestingModule({});
     service = TestBed.inject(AuthService);
   });
 
@@ -51,7 +48,7 @@ describe('Authservice', () => {
     it('should set the isLoggedInAsAdmin signal value', async () => {
       const userLoginSpy = vi.spyOn(service, 'userLogin').mockReturnValue(Promise.resolve(fakeAuthResponse));
       await service.login('email@test.com', '1234');
-      expect(service.isLoggedInAsAdmin()).toBe(true);
+      expect(service.isLoggedInAsAdmin()).toBeTruthy;
     });
 
     it('should not set login if invalid response from service', () => {
@@ -60,7 +57,7 @@ describe('Authservice', () => {
         .mockReturnValue(Promise.resolve({ accessToken: null, user: { email: '', name: '', role: '', id: 0 } }));
       service.logout();
       service.login('', '');
-      expect(service.isLoggedIn()).toBe(false);
+      expect(service.isLoggedIn()).toBeFalsy;
     });
   });
 
