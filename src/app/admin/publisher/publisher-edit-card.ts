@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
-import { Field, FieldTree } from '@angular/forms/signals';
+import { FormField, FieldTree, ValidationError } from '@angular/forms/signals';
 
 import { MatButton } from '@angular/material/button';
 import { MatCard, MatCardActions, MatCardContent, MatCardTitle } from '@angular/material/card';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
 
 import { Publisher } from '../../shared/models/publisher-interface';
-import { ValidationErrors } from '../../shared/components/validation-errors';
+import * as validatation from '../../shared/services/common/validatation-error';
 
 @Component({
   selector: 'app-publisher-edit-card',
@@ -22,8 +22,8 @@ import { ValidationErrors } from '../../shared/components/validation-errors';
     MatIcon,
     MatInput,
     MatLabel,
-    Field,
-    ValidationErrors,
+    FormField,
+    MatError,
   ],
   template: `
     <mat-card appearance="outlined">
@@ -38,11 +38,15 @@ import { ValidationErrors } from '../../shared/components/validation-errors';
                 type="text"
                 id="title"
                 matInput
-                [field]="form().name"
+                [formField]="form().name"
                 placeholder="Enter name of publisher" />
               @let fname = form().name();
               @if (fname.invalid() && fname.touched()) {
-                <app-validation-errors matError [errors]="fname.errors()" />
+                <mat-error>
+                  @for (error of fname.errors(); track error.kind) {
+                    {{ getError(error) }}
+                  }
+                </mat-error>
               }
             </mat-form-field>
           </form>
@@ -92,4 +96,8 @@ export class PublisherEditCard {
   cancel = output();
   save = output();
   saveNew = output();
+
+  getError(error: ValidationError) {
+    return validatation.getError(error);
+  }
 }

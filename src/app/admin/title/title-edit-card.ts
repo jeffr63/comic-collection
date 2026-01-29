@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
-import { Field, FieldTree } from '@angular/forms/signals';
+import { FormField, FieldTree, ValidationError } from '@angular/forms/signals';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,7 +11,7 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { Publisher } from '../../shared/models/publisher-interface';
 import { Title } from '../../shared/models/title-interface';
-import { ValidationErrors } from '../../shared/components/validation-errors';
+import * as validation from '../../shared/services/common/validatation-error';
 
 @Component({
   selector: 'app-title-edit-card',
@@ -23,8 +23,7 @@ import { ValidationErrors } from '../../shared/components/validation-errors';
     MatIconModule,
     MatInputModule,
     MatSelectModule,
-    Field,
-    ValidationErrors,
+    FormField,
   ],
   template: `
     <mat-card appearance="outlined">
@@ -39,7 +38,7 @@ import { ValidationErrors } from '../../shared/components/validation-errors';
                   matInput
                   id="publisher"
                   #inputPublisher
-                  [field]="form().publisher"
+                  [formField]="form().publisher"
                   [matAutocomplete]="publisherAuto"
                   (keyup)="onAutocompleteKeyUp.emit(inputPublisher.value)" />
                 <mat-autocomplete #publisherAuto="matAutocomplete" autoActiveFirstOption>
@@ -59,9 +58,12 @@ import { ValidationErrors } from '../../shared/components/validation-errors';
                 </button>
 
                 @let fpub = form().publisher();
-                <!-- publisher required error -->
                 @if (fpub.invalid() && fpub.touched()) {
-                  <app-validation-errors matError [errors]="fpub.errors()" />
+                  <mat-error>
+                    @for (error of fpub.errors(); track error.kind) {
+                      {{ getError(error) }}
+                    }
+                  </mat-error>
                 }
               </mat-form-field>
             }
@@ -73,12 +75,15 @@ import { ValidationErrors } from '../../shared/components/validation-errors';
                 type="text"
                 id="title"
                 matInput
-                [field]="form().title"
+                [formField]="form().title"
                 placeholder="Enter title of comic" />
               @let ftitle = form().title();
-              <!-- title required error -->
               @if (ftitle.invalid() && ftitle.touched()) {
-                <app-validation-errors matError [errors]="ftitle.errors()" />
+                <mat-error>
+                  @for (error of ftitle.errors(); track error.kind) {
+                    {{ getError(error) }}
+                  }
+                </mat-error>
               }
             </mat-form-field>
           </form>
@@ -130,4 +135,8 @@ export class TitleEditCard {
   save = output();
   saveNew = output();
   onAutocompleteKeyUp = output<string>();
+
+  getError(error: ValidationError) {
+    return validation.getError(error);
+  }
 }

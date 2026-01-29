@@ -1,15 +1,15 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
-import { Field, FieldTree } from '@angular/forms/signals';
+import { FormField, FieldTree, ValidationError } from '@angular/forms/signals';
 import { RouterLink } from '@angular/router';
 
 import { MatButton } from '@angular/material/button';
 import { MatCard, MatCardActions, MatCardContent, MatCardTitle } from '@angular/material/card';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatFormField, MatLabel, MatError } from '@angular/material/form-field';
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
 
 import { User } from '../../shared/models/user-interface';
-import { ValidationErrors } from '../../shared/components/validation-errors';
+import * as validation from '../../shared/services/common/validatation-error';
 
 @Component({
   selector: 'app-user-edit-card',
@@ -23,11 +23,9 @@ import { ValidationErrors } from '../../shared/components/validation-errors';
     MatIcon,
     MatInput,
     MatLabel,
-    // MatRadio,
-    // MatRadioGroup,
-    Field,
+    FormField,
     RouterLink,
-    ValidationErrors,
+    MatError,
   ],
   template: `
     <mat-card appearance="outlined">
@@ -42,45 +40,49 @@ import { ValidationErrors } from '../../shared/components/validation-errors';
                 type="text"
                 id="name"
                 matInput
-                [field]="form().name"
+                [formField]="form().name"
                 placeholder="Enter name of user" />
               @let fname = form().name();
-              <!-- name required error -->
               @if (fname.invalid() && fname.touched()) {
-                <app-validation-errors matError [errors]="fname.errors()" />
+                <mat-error>
+                  @for (error of fname.errors(); track error.kind) {
+                    {{ getError(error) }}
+                  }
+                </mat-error>
               }
             </mat-form-field>
 
             <mat-form-field appearance="outline">
               <mat-label for="email">Email</mat-label>
-              <input type="text" id="email" matInput [field]="form().email" placeholder="Enter email of user" />
+              <input type="text" id="email" matInput [formField]="form().email" placeholder="Enter email of user" />
               @let femail = form().email();
-              <!-- email required error -->
               @if (femail.invalid() && femail.touched()) {
-                <app-validation-errors matError [errors]="femail.errors()" />
+                <mat-error>
+                  @for (error of femail.errors(); track error.kind) {
+                    {{ getError(error) }}
+                  }
+                </mat-error>
               }
             </mat-form-field>
 
             <label id="role">Role</label>
-            <!-- <mat-radio-group aria-labelledby="Role" class="radio-group" id="role" [field]="form().userrole">
-              <mat-radio-button class="radio-button" value="admin">Admin</mat-radio-button>
-              <mat-radio-button class="radio-button" value="user">User</mat-radio-button>
-            </mat-radio-group>
-            <label> -->
             <div class="radio-group">
               <label>
-                <input type="radio" value="admin" [field]="form().userrole" />
+                <input type="radio" value="admin" [formField]="form().userrole" />
                 Admin
               </label>
               <label>
-                <input type="radio" value="user" [field]="form().userrole" />
+                <input type="radio" value="user" [formField]="form().userrole" />
                 User
               </label>
             </div>
             @let frole = form().userrole();
-            <!-- role required error -->
             @if (frole.invalid() && frole.touched()) {
-              <app-validation-errors matError [errors]="frole.errors()" />
+              <mat-error>
+                @for (error of frole.errors(); track error.kind) {
+                  {{ getError(error) }}
+                }
+              </mat-error>
             }
           </form>
         }
@@ -134,4 +136,8 @@ import { ValidationErrors } from '../../shared/components/validation-errors';
 export class UserEditCard {
   form = input.required<FieldTree<User>>();
   save = output();
+
+  getError(error: ValidationError) {
+    return validation.getError(error);
+  }
 }

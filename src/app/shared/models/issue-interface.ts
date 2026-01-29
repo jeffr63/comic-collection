@@ -1,5 +1,5 @@
 import { inject, resource } from '@angular/core';
-import { customError, min, required, schema, validateAsync } from '@angular/forms/signals';
+import { min, required, schema, validateAsync } from '@angular/forms/signals';
 
 import { PublisherData } from '../services/publisher/publisher-data';
 import { TitleData } from '../services/title/title-data';
@@ -39,10 +39,10 @@ export const ISSUE_EDIT_SCHEMA = schema<Issue>((schemaPath) => {
       if (result) {
         return null;
       }
-      return customError({ kind: 'invalid-publisher', message: 'Please select publisher name from the list' });
+      return { kind: 'invalid-publisher', message: 'Please select publisher name from the list' };
     },
     onError: () => {
-      return customError({ kind: 'invalid-publisher', message: 'Please select publisher name from the list' });
+      return { kind: 'invalid-publisher', message: 'Please select publisher name from the list' };
     },
   });
   validateAsync(schemaPath.title, {
@@ -60,10 +60,10 @@ export const ISSUE_EDIT_SCHEMA = schema<Issue>((schemaPath) => {
       if (result) {
         return null;
       }
-      return customError({ kind: 'invalid-title', message: 'Please select title from the list' });
+      return { kind: 'invalid-title', message: 'Please select title from the list' };
     },
     onError: () => {
-      return customError({ kind: 'invalid-title', message: 'Please select title from the list' });
+      return { kind: 'invalid-title', message: 'Please select title from the list' };
     },
   });
 });
