@@ -75,6 +75,15 @@ export const fakeIssue: Issue = {
   id: 4,
 };
 
+export const fakeIssueUpdate: Issue = {
+  publisher: 'p4',
+  title: 't4',
+  issue: 1,
+  coverPrice: 1,
+  url: '',
+  id: 3,
+};
+
 export const fakeTitleData: Title[] = [
   {
     publisher: 'p1',
