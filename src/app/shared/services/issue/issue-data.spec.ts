@@ -1,49 +1,29 @@
 import { TestBed } from '@angular/core/testing';
 
-import { expect, beforeEach, vi, describe, it } from 'vitest';
+import { expect, beforeEach, describe, it } from 'vitest';
 
 import {
   fakeIssue,
   fakeIssueData,
+  fakeIssueUpdate,
   fakeIssuePublishersData,
   fakeIssueTitlesData,
 } from '../../../../testing/testing-data';
-import { Issue, IssueChartData } from '../../models/issue-interface';
 import { IssueData } from '../issue/issue-data';
-import { DataService } from '../common/data-service';
+import { DataServiceFake, provideDataServiceFake } from '../common/data-service-fake';
 
 describe('IssueDataService', () => {
   let service: IssueData;
+  let dataService;
 
   const url = 'http://localhost:3000/issues';
 
-  const dataServiceStub = {
-    add: vi.fn((data: Issue, url: string) => {
-      return fakeIssue;
-    }),
-    delete: vi.fn((id: number, url: string) => {}),
-    getAll: vi.fn((url: string) => {
-      return fakeIssueData;
-    }),
-    getById: vi.fn((id: number, url: string) => {
-      return fakeIssue;
-    }),
-    search: vi.fn((term: string, url: string) => {
-      if (term === '' || url === '') {
-        return [];
-      }
-      return fakeIssueData;
-    }),
-    update: vi.fn((id: number, data: Issue, url: string) => {
-      return fakeIssue;
-    }),
-  };
-
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [{ provide: DataService, useValue: dataServiceStub }],
+      providers: [provideDataServiceFake()],
     });
     service = TestBed.inject(IssueData);
+    dataService = TestBed.inject(DataServiceFake);
   });
 
   it('creates a service service', () => {
@@ -52,12 +32,8 @@ describe('IssueDataService', () => {
 
   //add
   describe('add', () => {
-    it('should call issue service add with passed issue', async () => {
-      await service.add(fakeIssue);
-      expect(dataServiceStub.add).toBeCalledWith(fakeIssue, url);
-    });
-
     it('should return issue data', async () => {
+      dataService.configure([]);
       const returnedUser = await service.add(fakeIssue);
       expect(returnedUser).toEqual(fakeIssue);
     });
@@ -66,37 +42,32 @@ describe('IssueDataService', () => {
   //delete
   describe('delete', () => {
     it('should call issue service delete with passed id', async () => {
+      dataService.configure(fakeIssueData);
       await service.delete(3);
-      expect(dataServiceStub.delete).toBeCalledWith(3, url);
+      const issues = await dataService.getAll();
+      expect(issues.length).toBe(2);
     });
   });
 
   //getById
   describe('getById', () => {
-    it('should call issue service with passed id', async () => {
-      await service.getById(1);
-      expect(dataServiceStub.getById).toBeCalledWith(1, url);
-    });
-
     it('should return issue data', async () => {
+      dataService.configure(fakeIssueData);
       const result = await service.getById(1);
-      expect(result).toEqual(fakeIssue);
+      expect(result).toEqual(fakeIssueData[0]);
     });
   });
 
   //search
   describe('search', () => {
-    it('should call issue service search with passed search term', async () => {
-      await service.search('abc');
-      expect(dataServiceStub.search).toBeCalledWith('abc', url);
-    });
-
     it('should return array of search result issues', async () => {
+      dataService.configure(fakeIssueData);
       const result = await service.search('abc');
       expect(result).toEqual(fakeIssueData);
     });
 
     it('shoud return empty array when search term is blank', async () => {
+      dataService.configure(fakeIssueData);
       const result = await service.search('');
       expect(result).toEqual([]);
     });
@@ -104,25 +75,23 @@ describe('IssueDataService', () => {
 
   //update
   describe('update', () => {
-    it('should call issue service update with passed issue', async () => {
-      await service.update(fakeIssue);
-      expect(dataServiceStub.update).toBeCalledWith(4, fakeIssue, url);
-    });
-
     it('should return issue data', async () => {
-      const result = await service.update(fakeIssue);
-      expect(result).toEqual(fakeIssue);
+      dataService.configure(fakeIssueData);
+      const result = await service.update(fakeIssueUpdate);
+      expect(result).toEqual(fakeIssueUpdate);
     });
   });
 
   // helper methods
   describe('helper methods', () => {
     it('getByPublisherValue method should return transformed issue data', () => {
+      dataService.configure(fakeIssueData);
       const result = service.getByPublisherValue(fakeIssueData);
       expect(result).toEqual(fakeIssuePublishersData);
     });
 
     it('getByTitleValue method should return transformed issue data', () => {
+      dataService.configure(fakeIssueData);
       const result = service.getByTitleValue(fakeIssueData);
       expect(result).toEqual(fakeIssueTitlesData);
     });
