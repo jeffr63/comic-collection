@@ -1,10 +1,8 @@
-import { computed, inject, Injectable, resource, signal } from '@angular/core';
+import { computed, inject, resource, Service, signal } from '@angular/core';
 import { Title } from '../../models/title-interface';
 import { DataService } from '../common/data-service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class TitleData {
   //readonly #titleService = inject(TitleService);
   readonly #dataService = inject(DataService);
