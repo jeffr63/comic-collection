@@ -5,7 +5,7 @@ import { IssueData } from './issue-data';
 import { Public } from '../common/public';
 
 @Injectable()
-class IssueDataFake implements Public<IssueData> {
+export class IssueDataFake implements Public<IssueData> {
   readonly #issues = signal<Issue[]>([]);
 
   configure({ issues }: { issues: Issue[] }) {
