@@ -1,12 +1,9 @@
-import { computed, inject, Injectable, resource, signal } from '@angular/core';
+import { computed, inject, resource, Service } from '@angular/core';
 
 import { DataService } from '../common/data-service';
 import { Publisher } from '../../models/publisher-interface';
-import { throwError } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class PublisherData {
   readonly #dataService = inject(DataService);
 

@@ -1,11 +1,9 @@
-import { computed, inject, Injectable, resource } from '@angular/core';
+import { computed, inject, resource, Service } from '@angular/core';
 
 import { DataService } from '../common/data-service';
 import { Issue, IssueChartData } from '../../models/issue-interface';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class IssueData {
   readonly #dataService = inject(DataService);
 

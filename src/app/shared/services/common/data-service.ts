@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Service } from '@angular/core';
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class DataService {
   public async add<T>(data: T, url: string): Promise<T> {
     if (!data || !url) {

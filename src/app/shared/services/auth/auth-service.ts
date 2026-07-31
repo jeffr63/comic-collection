@@ -1,9 +1,7 @@
-import { computed, inject, Injectable, signal } from '@angular/core';
+import { computed, Service, signal } from '@angular/core';
 import { AuthToken } from '../../models/auth-interface';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class AuthService {
   readonly #isAdmin = signal(false);
 
@@ -69,7 +67,7 @@ export class AuthService {
         .map(function (c) {
           return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         })
-        .join('')
+        .join(''),
     );
     return JSON.parse(jsonPayload);
   }
